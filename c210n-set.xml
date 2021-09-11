@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<sim>
+		<description type="string">Cessna 210N "Turbo Centurion" (JSBsim)</description>
+		<long-description>
+			The Cessna 210N "Turbo Centurion" is a high-wing, fixed-wing light utility aircraft that was first produced in 1984. It is equipped with a Continental TSIO-520-R turbocharged engine.
+		</long-description>
+		<authors>
+			<author n="0">
+				<description>FDM, 3D, systems</description>
+				<nick>TheEagle</nick>
+				<email>programmer.anonymous@yandex.com</email>
+			</author>
+		</authors>
+		<aircraft-version>1.0.0</aircraft-version>
+		<status>alpha</status>
+		<!--<minimum-fg-version>2018.2.0</minimum-fg-version>-->
+
+		<flight-model>jsb</flight-model>
+		<aero>Systems/FDM/c210n-fdm</aero>
+
+		<type type="string">airplane</type>
+		<primary-set type="bool">true</primary-set>
+		<rating>
+			<FDM type="int">4</FDM>
+			<systems type="int">5</systems>
+			<cockpit type="int">5</cockpit>
+			<model type="int">4</model>
+		</rating>
+
+		<!--<previews>
+			<preview>
+				<type>interior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/caravan-0.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/caravan-1.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/caravan-2.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/caravan-3.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/caravan-4.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/caravan-5.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/caravan-6.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/caravan-7.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/caravan-8.png</path>
+			</preview>
+		</previews>-->
+
+		<tags>
+			<tag>transport</tag>
+			<tag>cessna</tag>
+			<tag>1960s</tag>
+			<tag>fixed-gear</tag>
+			<tag>high-wing</tag>
+			<tag>ifr</tag>
+			<tag>turboprop</tag>
+			<tag>single-engine</tag>
+		</tags>
+		<model>
+			<path>Models/c210n.xml</path>
+		</model>
+		<menubar include="gui/c210n-menu.xml"></menubar>
+		<help include="c210-help.xml"></help>
+	</sim>
+	
+	<nasal>
+		<c210>
+			<file>Nasal/autostart.nas</file>
+		</c210>
+	</nasal>
+</PropertyList>

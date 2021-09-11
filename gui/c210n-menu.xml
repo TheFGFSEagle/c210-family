@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<default>
+		<menu n="10">
+			<label>Cessna 210N</label>
+			<enabled type="bool">true</enabled>
+			<item>
+				<label>Start engine</label>
+				<binding>
+					<command>nasal</command>
+					<script>c210.autostart();</script>
+				</binding>
+			</item>
+		</menu>
+	</default>
+</PropertyList>

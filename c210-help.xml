@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <title>Cessna 210N "Turbo Centurion" (JSBsim)</title>
+
+    <line>_________V Speeds_________</line>
+    <line>Vso: 58 kts</line>
+    <line>Va: 130 kts</line>
+    <line>Vne: 203 kts</line>
+
+</PropertyList>
