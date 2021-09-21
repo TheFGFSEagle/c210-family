@@ -61,7 +61,7 @@
    <location name="VRP" unit="IN">
      <x>0</x>
      <y>0</y>
-     <z>-43</z>
+     <z>0</z><!-- -43</z> -->
    </location>
  </metrics>
 
@@ -99,7 +99,7 @@
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">       3600.00 </spring_coeff>
    <damping_coeff unit="LBS/FT/SEC">   1200.00 </damping_coeff>
-   <max_steer unit="DEG"> 5.00 </max_steer>
+   <max_steer unit="DEG"> 27 </max_steer>
    <brake_group>NONE</brake_group>
    <retractable>1</retractable>
   </contact>
@@ -108,7 +108,7 @@
    <location unit="IN">
      <x> 168.81 </x>
      <y> -60 </y>
-     <z> -30.58 </z>
+     <z> -36 </z>
    </location>
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -124,7 +124,7 @@
    <location unit="IN">
      <x> 168.81 </x>
      <y> 60 </y>
-     <z> -30.58 </z>
+     <z> -36 </z>
    </location>
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -194,21 +194,21 @@
   <tank type="FUEL" number="0">
      <location unit="IN">
        <x> 162.32 </x>
-       <y>   -118.00 </y>
+       <y>   -118 </y>
        <z>  -8.45 </z>
      </location>
-     <capacity unit="LBS"> 43.5 </capacity>
-     <contents unit="LBS"> 43 </contents>
+     <capacity unit="LBS"> 275 </capacity> <!-- guessed -->
+     <contents unit="LBS"> 270 </contents>
   </tank>
 
   <tank type="FUEL" number="1">
      <location unit="IN">
        <x> 162.32 </x>
-       <y>   0.00 </y>
+       <y>   118 </y>
        <z>  -8.45 </z>
      </location>
-     <capacity unit="LBS"> 43.5 </capacity>
-     <contents unit="LBS"> 43 </contents>
+     <capacity unit="LBS"> 275 </capacity> <!-- guessed -->
+     <contents unit="LBS"> 270 </contents>
   </tank>
 
  </propulsion>
@@ -229,8 +229,8 @@
    <aerosurface_scale name="Elevator Control">
       <input>fcs/pitch-trim-sum</input>
       <range>
-        <min> -0.35 </min>
-        <max>  0.35 </max>
+        <min> -0.3 </min>
+        <max>  0.4 </max>
       </range>
       <output>fcs/elevator-pos-rad</output>
    </aerosurface_scale>
@@ -238,8 +238,8 @@
    <aerosurface_scale name="elevator normalization">
       <input>fcs/elevator-pos-rad</input>
       <domain>
-        <min> -0.35 </min>
-        <max>  0.35 </max>
+        <min> -0.3 </min>
+        <max>  0.4 </max>
       </domain>
       <range>
         <min> -1 </min>
@@ -264,7 +264,7 @@
    <aerosurface_scale name="Left Aileron Control">
       <input>fcs/roll-trim-sum</input>
       <range>
-        <min> -0.35 </min>
+        <min> -0.26 </min>
         <max>  0.35 </max>
       </range>
       <output>fcs/left-aileron-pos-rad</output>
@@ -273,7 +273,7 @@
    <aerosurface_scale name="Right Aileron Control">
       <input>fcs/roll-trim-sum</input>
       <range>
-        <min> -0.35 </min>
+        <min> -0.26 </min>
         <max>  0.35 </max>
       </range>
       <output>fcs/right-aileron-pos-rad</output>
@@ -282,7 +282,7 @@
    <aerosurface_scale name="left aileron normalization">
       <input>fcs/left-aileron-pos-rad</input>
       <domain>
-        <min> -0.35 </min>
+        <min> -0.26 </min>
         <max>  0.35 </max>
       </domain>
       <range>
@@ -295,7 +295,7 @@
    <aerosurface_scale name="right aileron normalization">
       <input>fcs/right-aileron-pos-rad</input>
       <domain>
-        <min> -0.35 </min>
+        <min> -0.26 </min>
         <max>  0.35 </max>
       </domain>
       <range>
@@ -321,8 +321,8 @@
    <aerosurface_scale name="Rudder Control">
       <input>fcs/rudder-command-sum</input>
       <range>
-        <min> -0.35 </min>
-        <max>  0.35 </max>
+        <min> -0.47 </min>
+        <max>  0.47 </max>
       </range>
       <output>fcs/rudder-pos-rad</output>
    </aerosurface_scale>
@@ -330,8 +330,8 @@
    <aerosurface_scale name="rudder normalization">
       <input>fcs/rudder-pos-rad</input>
       <domain>
-        <min> -0.35 </min>
-        <max>  0.35 </max>
+        <min> -0.47 </min>
+        <max>  0.47 </max>
       </domain>
       <range>
         <min> -1 </min>
@@ -352,15 +352,15 @@
        </setting>
        <setting>
           <position> 10 </position>
-          <time>      2 </time>
+          <time>      3 </time>
        </setting>
        <setting>
           <position> 20 </position>
-          <time>      3 </time>
+          <time>      4 </time>
        </setting>
        <setting>
           <position> 30 </position>
-          <time>      3 </time>
+          <time>      4 </time>
        </setting>
      </traverse>
      <output>fcs/flap-pos-deg</output>
@@ -399,24 +399,6 @@
 
   </channel>
 
-  <channel name="Speedbrake">
-   <kinematic name="Speedbrake Control">
-     <input>fcs/speedbrake-cmd-norm</input>
-     <traverse>
-       <setting>
-          <position> 0 </position>
-          <time>     0 </time>
-       </setting>
-       <setting>
-          <position> 1 </position>
-          <time>     1 </time>
-       </setting>
-     </traverse>
-     <output>fcs/speedbrake-pos-norm</output>
-   </kinematic>
-
-  </channel>
-
  </flight_control>
 
  <aerodynamics>
@@ -432,8 +414,8 @@
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
               -0.20 -0.750
-               0.00  0.610 <!-- VSP with 0.49/rad -->
-               0.23  1.0790
+               0.00  0.510 <!-- VSP with 5.16/rad -->
+               0.23  1.700
                0.60  0.710
             </tableData>
           </table>
@@ -447,16 +429,6 @@
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
            <value> 0.01333 </value>
-       </product>
-    </function>
-
-    <function name="aero/force/Lift_speedbrake">
-       <description>Delta Lift due to speedbrake</description>
-       <product>
-           <property>aero/qbar-psf</property>
-           <property>metrics/Sw-sqft</property>
-           <property>fcs/speedbrake-pos-norm</property>
-           <value>0</value>
        </product>
     </function>
 
@@ -536,16 +508,6 @@
            <property>metrics/Sw-sqft</property>
            <property>gear/gear-pos-norm</property>
            <value>0.03</value>
-         </product>
-    </function>
-
-    <function name="aero/force/Drag_speedbrake">
-       <description>Drag due to speedbrakes</description>
-         <product>
-           <property>aero/qbar-psf</property>
-           <property>metrics/Sw-sqft</property>
-           <property>fcs/speedbrake-pos-norm</property>
-           <value>0.024</value>
          </product>
     </function>
 
@@ -657,13 +619,13 @@
   <axis name="PITCH">
 
     <function name="aero/moment/Pitch_zero_alpha">
-       <description>Pitch moment due to alpha</description>
+       <description>Pitch moment zero alpha</description>
        <product>
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>metrics/cbarw-ft</property>
-           <value>0</value> <!-- zero, as VSP should be rechecked -->
-           <value>-0.087</value> <!-- VSP -->
+           <value>1</value> <!-- zero, as VSP should be rechecked -->
+           <value>-0.0067</value> <!-- VSP -->
        </product>
     </function>
     <function name="aero/moment/Pitch_alpha">
@@ -673,7 +635,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/cbarw-ft</property>
            <property>aero/alpha-rad</property>
-           <value>-1.03</value> <!-- VSP -->
+           <value>-1</value> <!-- VSP -->
        </product>
     </function>
     <function name="aero/moment/Pitch_elevator">
@@ -701,7 +663,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/ci2vel</property>
            <property>velocities/q-aero-rad_sec</property>
-           <value>-16.3</value> <!-- VSP -->
+           <value>-23</value> <!-- VSP -->
        </product>
     </function>
 

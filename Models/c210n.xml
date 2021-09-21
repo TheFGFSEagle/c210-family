@@ -2,14 +2,44 @@
 
 <PropertyList>
 	<path>c210n.ac</path>
+	
+	<!-- Liveries -->
+	<!--<animation>
+		<type>material</type>
+		<object-name>Fuselage</object-name>
+		<object-name>LeftTailStabilizer</object-name>
+		<object-name>RightTailStabilizer</object-name>
+		<object-name>Rudder</object-name>
+		<object-name>LeftElevator</object-name>
+		<object-name>RightElevator</object-name>
+		<object-name>PilotDoor</object-name>
+		<object-name>CopilotDoor</object-name>
+		<property-base>sim/model/livery</property-base>
+		<texture-prop>texture-fuselage</texture-prop>
+		<texture>Liveries/Default-fuselage.png</texture>
+	</animation>
+	<animation>
+		<type>material</type>
+		<object-name>RightWing</object-name>
+		<object-name>LeftWing</object-name>
+		<object-name>LeftFlap</object-name>
+		<object-name>RightFlap</object-name>
+		<object-name>LeftAileron</object-name>
+		<object-name>RightAileron</object-name>
+		<property-base>sim/model/livery</property-base>
+		<texture-prop>texture-wings</texture-prop>
+		<texture>Liveries/Default-wings.png</texture>
+	</animation>-->
+	
+	<!-- Control surfaces animations-->
 	<animation>
 		<type>rotate</type>
 		<object-name>Rudder</object-name>
 		<axis>
 			<object-name>RudderAxis</object-name>
 		</axis>
-		<property>controls/flight/rudder</property>
-		<factor>-30</factor>
+		<property>surface-positions/rudder-pos-norm</property>
+		<factor>-27</factor>
 	</animation>
 	<animation>
 		<type>rotate</type>
@@ -17,7 +47,7 @@
 		<axis>
 			<object-name>LeftElevatorAxis</object-name>
 		</axis>
-		<property>controls/flight/elevator</property>
+		<property>surface-positions/elevator-pos-norm</property>
 		<factor>-30</factor>
 	</animation>
 	<animation>
@@ -29,45 +59,17 @@
 		<property>controls/flight/elevator</property>
 		<factor>30</factor>
 	</animation>
-	<animation>
-		<type>spin</type>
-		<object-name>PropellerSpinner</object-name>
-		<object-name>PropellerBlade1</object-name>
-		<object-name>PropellerBlade2</object-name>
-		<object-name>PropellerBlade3</object-name>
-		<axis>
-			<object-name>PropellerAxis</object-name>
-		</axis>
-		<property>engines/engine[0]/rpm</property>
-	</animation>
-	<animation>
-		<type>select</type>
-		<object-name>PropellerBlade1</object-name>
-		<object-name>PropellerBlade2</object-name>
-		<object-name>PropellerBlade3</object-name>
-		<condition>
-			<less-than>
-				<property>engines/engine[0]/rpm</property>
-				<value>1200</value>
-			</less-than>
-		</condition>
-	</animation>
-	<animation>
-		<type>select</type>
-		<object-name>FastPropeller</object-name>
-		<condition>
-			<greater-than>
-				<property>engines/engine[0]/rpm</property>
-				<value>600</value>
-			</greater-than>
-		</condition>
-	</animation>
-	<animation>
-		<type>blend</type>
-		<object-name>FastPropeller</object-name>
-		<property>engines/engine[0]/rpm</property>
-		<factor>0.000333333</factor>
-		<min>0.2</min>
-		<max>0.8</max>
-	</animation>
+	
+	<!-- Propeller transparency at higher RPM -->
+
+	
+	<!-- Rain drops, fog and frost effects on exterior glass - transparency weirdly is controlled by the alpha of the emission just the below effect doesn't make the glass transparent-->
+	<effect>
+		<inherits-from>Effects/exterior-glass</inherits-from>
+		 <object-name>WindscreenExterior</object-name>
+		 <object-name>PilotWindowsExterior</object-name>
+		 <object-name>CopilotWindowsExterior</object-name>
+		 <object-name>LeftPassengerWindowsExterior</object-name>
+		 <object-name>RightPassengerWindowsExterior</object-name>
+	</effect>
 </PropertyList>

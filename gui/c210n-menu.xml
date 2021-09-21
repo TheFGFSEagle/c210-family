@@ -3,13 +3,20 @@
 <PropertyList>
 	<default>
 		<menu n="10">
-			<label>Cessna 210N</label>
+			<label>Cessna P210N</label>
 			<enabled type="bool">true</enabled>
 			<item>
 				<label>Start engine</label>
 				<binding>
 					<command>nasal</command>
 					<script>c210.autostart();</script>
+				</binding>
+			</item>
+			<item>
+				<label>Select livery</label>
+				<binding>
+					<command>nasal</command>
+					<script>aircraft.livery.dialog.open();</script>
 				</binding>
 			</item>
 		</menu>
