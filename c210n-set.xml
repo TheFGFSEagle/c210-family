@@ -2,9 +2,9 @@
 
 <PropertyList>
 	<sim>
-		<description type="string">Cessna P210N „Pressurized Centurion“ (JSBsim)</description>
+		<description type="string">Cessna P210N Pressurized Centurion (JSBsim)</description>
 		<long-description>
-			The Cessna P210N „Pressurized Centurion“ is a high-wing, fixed-wing light pressurized utility aircraft that was first produced in 1984. It is equipped with a Continental TSIO-520-R turbocharged engine.
+			The Cessna P210N Pressurized Centurion is a high-wing, fixed-wing light pressurized utility aircraft that was first produced in 1984. It is equipped with a Continental TSIO-520-R turbocharged engine.
 		</long-description>
 		<authors>
 			<author n="0">
@@ -18,7 +18,7 @@
 			</author>
 			<author n="0">
 				<description>FDM</description>
-				<nick>D-Ysop</nick>
+				<nick>Ysop</nick>
 			</author>
 		</authors>
 		<aircraft-version>1.0.0</aircraft-version>
@@ -89,10 +89,8 @@
 			<tag>transport</tag>
 			<tag>cessna</tag>
 			<tag>1960s</tag>
-			<tag>fixed-gear</tag>
 			<tag>high-wing</tag>
 			<tag>ifr</tag>
-			<tag>turboprop</tag>
 			<tag>single-engine</tag>
 		</tags>
 		<model>
@@ -109,9 +107,9 @@
 			<internal type="bool">true</internal>
 			<config>
 				<x-offset-m type="double">-0.3</x-offset-m>
-				<y-offset-m type="double">1.6</y-offset-m>
+				<y-offset-m type="double">0.75</y-offset-m>
 				<z-offset-m type="double">-1.6</z-offset-m>
-				<pitch-offset-deg>0</pitch-offset-deg>
+				<pitch-offset-deg>3</pitch-offset-deg>
 				<default-field-of-view-deg type="double">65.0</default-field-of-view-deg>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
@@ -140,10 +138,10 @@
 		<c210>
 			<file>Nasal/autostart.nas</file>
 		</c210>
-		<load>
+		<!--<load>
 			<script>
 				<![CDATA[
-					var livery_update = aircraft.livery_update.new("Aircraft/c210-family/Models/Liveries", 10);
+					var livery_update = aircraft.livery_update.new("Aircraft/c210-family/Models/Liveries");
 				]]>
 			</script>
 		</load>
@@ -154,6 +152,6 @@
 					livery_update.stop();
 				]]>
 			</script>
-		</unload>
+		</unload>-->
 	</nasal>
 </PropertyList>

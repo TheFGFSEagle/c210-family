@@ -48,22 +48,221 @@
 			<object-name>LeftElevatorAxis</object-name>
 		</axis>
 		<property>surface-positions/elevator-pos-norm</property>
-		<factor>-30</factor>
+		<interpolation>
+			<entry>
+				<ind>1</ind>
+				<dep>23</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>-1</ind>
+				<dep>17</dep>
+			</entry>
+		</interpolation>
 	</animation>
 	<animation>
 		<type>rotate</type>
 		<object-name>RightElevator</object-name>
+		<object-name>ElevatorTrimTab</object-name>
 		<axis>
 			<object-name>RightElevatorAxis</object-name>
 		</axis>
-		<property>controls/flight/elevator</property>
-		<factor>30</factor>
+		<property>surface-positions/elevator-pos-norm</property>
+		<interpolation>
+			<entry>
+				<ind>1</ind>
+				<dep>23</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>-1</ind>
+				<dep>17</dep>
+			</entry>
+		</interpolation>
 	</animation>
 	
 	<!-- Propeller transparency at higher RPM -->
 
+	<animation>
+		<type>spin</type>
+		<object-name>PropellerSpinner</object-name>
+		<object-name>PropellerBlades</object-name>
+		<axis>
+			<object-name>PropellerAxis</object-name>
+		</axis>
+		<property>engines/engine[0]/rpm</property>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>PropellerBlades</object-name>
+		<condition>
+			<less-than>
+				<property>engines/engine[0]/rpm</property>
+				<value>1200</value>
+			</less-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>FastPropeller</object-name>
+		<condition>
+			<greater-than>
+				<property>engines/engine[0]/rpm</property>
+				<value>600</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>blend</type>
+		<object-name>FastPropeller</object-name>
+		<property>engines/engine[0]/rpm</property>
+		<factor>0.003</factor>
+		<min>0.2</min>
+		<max>0.5</max>
+	</animation>
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>FastPropeller</object-name>
+	</effect>
 	
-	<!-- Rain drops, fog and frost effects on exterior glass - transparency weirdly is controlled by the alpha of the emission just the below effect doesn't make the glass transparent-->
+	<!-- Wheels spinning when rolling and bumping when the ground is rough and nose wheel turning -->
+	<animation>
+		<type>rotate</type>
+		<object-name>NoseWheel</object-name>
+		<object-name>NoseWheelStrut</object-name>
+		<axis>
+			<object-name>NoseWheelSteeringAxis</object-name>
+		</axis>
+		<property>gear/gear[0]/steering-norm</property>
+		<factor>27</factor>
+	</animation>
+	<animation>
+		<type>spin</type>
+		<object-name>NoseWheel</object-name>
+		<axis>
+			<object-name>NoseWheelRollingAxis</object-name>
+		</axis>
+		<property>gear/gear[0]/rollspeed-ms</property>
+	</animation>
+	<!--<animation>
+		<type>translate</type>
+		<object-name>NoseWheel</object-name>
+		<object-name>NoseWheelRollingAxis</object-name>
+		<axis>
+			<object-name>NoseWheelSteeringAxis</object-name>
+		</axis>
+		<property>gear/gear[0]/compression-norm</property>
+		<max>0.5</max>
+		<factor>-0.18</factor>
+	</animation>-->
+	<animation>
+		<type>spin</type>
+		<object-name>RightWheel</object-name>
+		<axis>
+			<object-name>RightWheelRollingAxis</object-name>
+		</axis>
+		<property>gear/gear[1]/rollspeed-ms</property>
+	</animation>
+	<!--<animation>
+		<type>translate</type>
+		<object-name>RightWheel</object-name>
+		<object-name>RightWheelRollingAxis</object-name>
+		<axis>
+			<object-name>RightWheelBumpingAxis</object-name>
+		</axis>
+		<property>gear/gear[1]/compression-norm</property>
+		<max>1</max>
+		<factor>0.2</factor>
+	</animation>-->
+	<animation>
+		<type>spin</type>
+		<object-name>LeftWheel</object-name>
+		<axis>
+			<object-name>LeftWheelRollingAxis</object-name>
+		</axis>
+		<property>gear/gear[2]/rollspeed-ms</property>
+	</animation>
+	<!--<animation>
+		<type>translate</type>
+		<object-name>LeftWheel</object-name>
+		<object-name>LeftWheelRollingAxis</object-name>
+		<axis>
+			<object-name>LeftWheelBumpingAxis</object-name>
+		</axis>
+		<property>gear/gear[2]/compression-norm</property>
+		<max>1</max>
+		<factor>0.2</factor>
+	</animation>-->
+	
+	<!-- Gear retraction / extension animations - placeholder for a really animated retraction -->
+	<animation>
+		<type>select</type>
+		<object-name>NoseWheelStrut</object-name>
+		<object-name>NoseWheel</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>RightWheelStrut</object-name>
+		<object-name>RightWheel</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[1]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>LeftWheelStrut</object-name>
+		<object-name>LeftWheel</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[2]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<!-- Doors clickable and opening / closing -->
+	 <animation>
+		<type>pick</type>
+		<object-name>PilotDoorInterior</object-name>
+		<object-name>PilotDoorExterior</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/model/doors/pilot/open</property>
+			</binding>
+		</action>
+	 </animation>
+	 <animation>
+	 	<type>rotate</type>
+	 	<object-name>PilotDoorInterior</object-name>
+	 	<object-name>PilotDoorExterior</object-name>
+	 	<object-name>PilotWindowsExterior</object-name>
+	 	<object-name>PilotWindowsInterior</object-name>
+	 	<axis>
+	 		<object-name>PilotDoorAxis</object-name>
+	 	</axis>
+	 	<property>sim/model/doors/pilot/open</property>
+	 	<factor>80</factor>
+	 </animation>
+		
+	<!-- Rain drops, fog and frost effects on exterior glass - transparency weirdly is controlled by the alpha of the emission, just the below effect does NOT make the glass transparent !-->
 	<effect>
 		<inherits-from>Effects/exterior-glass</inherits-from>
 		 <object-name>WindscreenExterior</object-name>

@@ -61,7 +61,7 @@
    <location name="VRP" unit="IN">
      <x>0</x>
      <y>0</y>
-     <z>0</z><!-- -43</z> -->
+     <z>0</z>
    </location>
  </metrics>
 
@@ -71,7 +71,7 @@
    <izz unit="SLUG*FT2">      3323 </izz>
    <emptywt unit="LBS" >      2303 </emptywt>
    <location name="CG" unit="IN">
-     <x> 85.00</x><!--91.92 </x>-->
+     <x> 91.92 </x>-->
      <y>   0.00 </y>
      <z>  0.00 </z>
    </location>
@@ -90,11 +90,11 @@
 
   <contact type="BOGEY" name="NOSE">
    <location unit="IN">
-     <x>  43.96 </x>
+     <x>  45 </x>
      <y>   0.00 </y>
-     <z> -40.58 </z>
+     <z> -37.5 </z>
    </location>
-   <static_friction>  0.80 </static_friction>
+   <static_friction>  0.8 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">       3600.00 </spring_coeff>
@@ -106,11 +106,11 @@
 
   <contact type="BOGEY" name="LEFT_MAIN">
    <location unit="IN">
-     <x> 168.81 </x>
-     <y> -60 </y>
+     <x> 118 </x>
+     <y> -52 </y>
      <z> -36 </z>
    </location>
-   <static_friction>  0.80 </static_friction>
+   <static_friction>  1 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">       5400.00 </spring_coeff>
@@ -122,11 +122,11 @@
 
   <contact type="BOGEY" name="RIGHT_MAIN">
    <location unit="IN">
-     <x> 168.81 </x>
-     <y> 60 </y>
+     <x> 118 </x>
+     <y> 52 </y>
      <z> -36 </z>
    </location>
-   <static_friction>  0.80 </static_friction>
+   <static_friction> 1 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">       5400.00 </spring_coeff>
@@ -193,7 +193,7 @@
 
   <tank type="FUEL" number="0">
      <location unit="IN">
-       <x> 162.32 </x>
+       <x> 118 </x>
        <y>   -118 </y>
        <z>  -8.45 </z>
      </location>
@@ -203,7 +203,7 @@
 
   <tank type="FUEL" number="1">
      <location unit="IN">
-       <x> 162.32 </x>
+       <x> 118 </x>
        <y>   118 </y>
        <z>  -8.45 </z>
      </location>
