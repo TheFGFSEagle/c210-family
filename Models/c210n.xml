@@ -87,6 +87,15 @@
 		</interpolation>
 	</animation>
 	
+	<animation>
+		<type>rotate</type>
+		<object-name>LeftAileron</object-name>
+		<axis>
+			<object-name>LeftAileronAxis</object-name>
+		</axis>
+		<property>surface-positions/aileron-norm</property>
+	</animation>
+	
 	<!-- Propeller transparency at higher RPM -->
 
 	<animation>
