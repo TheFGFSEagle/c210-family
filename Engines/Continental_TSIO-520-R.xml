@@ -32,7 +32,7 @@
   <man-press-lag> 0.1 </man-press-lag>
   <static-friction  unit="HP"> 1.55 </static-friction>
   <starter-torque> 50.00 </starter-torque>
-  <starter-rpm> 300 </starter-rpm>
+  <starter-rpm> 500 </starter-rpm>
  <!-- Defining <bsfc> over-rides the built-in horsepower calculations -->
  <!--<bsfc>           0.45 </bsfc>-->
   <stroke unit="IN">  4.0 </stroke>

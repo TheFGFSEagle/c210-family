@@ -3,7 +3,7 @@
 	<name>Aircraft/c210-family/Models/Effects/exterior-glass</name>
 	<inherits-from>Effects/model-combined-transparent</inherits-from>
 	<parameters>
-	<splash-x><use>/environment/aircraft-effects/splash-vector-x</use></splash-x>
+		<splash-x><use>/environment/aircraft-effects/splash-vector-x</use></splash-x>
 		<splash-y><use>/environment/aircraft-effects/splash-vector-y</use></splash-y>
 		<splash-z><use>/environment/aircraft-effects/splash-vector-z</use></splash-z>
 		<rnorm><use>/environment/rain-norm</use></rnorm>

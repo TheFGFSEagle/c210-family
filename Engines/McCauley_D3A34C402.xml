@@ -9,11 +9,11 @@ From Douglas DC3 Patrouille de France, NACA Report 640
   <constspeed>1</constspeed>
   <numblades> 3 </numblades>
   <gearratio>  1 </gearratio>
-  <cp_factor> 1.1 </cp_factor>
+  <cp_factor> 1.3 </cp_factor>
   <ct_factor> 3.00 </ct_factor>
   <minpitch> 12.4 </minpitch>
   <maxpitch> 28.5 </maxpitch>
-  <minrpm>   2000 </minrpm>
+  <minrpm>   600 </minrpm>
   <maxrpm>   2700 </maxrpm>
 
 <!-- Data from NACA Report 640 (5868-9, Clark Y section)
