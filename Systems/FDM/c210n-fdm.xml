@@ -38,9 +38,7 @@
     K:             0.04
 
 -->
-<!-- just testing github -->
-   
-   
+
  <metrics>
    <wingarea  unit="FT2">  175.00 </wingarea>
    <wingspan  unit="FT" >   36.74 </wingspan>
