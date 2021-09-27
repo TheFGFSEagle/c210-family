@@ -456,7 +456,7 @@
             <tableData>
              -1.57    0.2
              -0.26    0.036
-              0.00    0.02778 <!-- flight test ref.1 -->
+              0.00    0.01678 <!-- flight test ref.1-0.011 for gear -->
               0.26    0.036
               1.57    0.2
             </tableData>
@@ -507,7 +507,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>gear/gear-pos-norm</property>
-           <value>0.011</value>
+           <value>0.011</value> <!-- typical GA, factor during op to be added -->
          </product>
     </function>
 
