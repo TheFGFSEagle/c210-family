@@ -4,7 +4,7 @@
 	<path>c210n.ac</path>
 	
 	<!-- Liveries -->
-	<!--<animation>
+	<animation>
 		<type>material</type>
 		<object-name>Fuselage</object-name>
 		<object-name>LeftTailStabilizer</object-name>
@@ -29,7 +29,7 @@
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture-wings</texture-prop>
 		<texture>Liveries/Default-wings.png</texture>
-	</animation>-->
+	</animation>
 	
 	<!-- Control surfaces animations-->
 	<animation>
@@ -209,7 +209,19 @@
 	</animation>
 	<animation>
 		<type>translate</type>
-		<object-name>NoseWheel</object-name>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
+	(((((((((((((((((((((((
+		((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
+			((((((((())))))
+		))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+	))))))
+))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))		<object-name>NoseWheel</object-name>
 		<object-name>NoseWheelRollingAxis</object-name>
 		<axis>
 			<object-name>NoseWheelSteeringAxis</object-name>
@@ -487,7 +499,7 @@
 	<!-- Rain drops, fog and frost effects on exterior glass - transparency weirdly is controlled by the alpha of the emission, just the below effect does NOT make the glass transparent !-->
 	<!-- TODO: The effect seems broken as I do not get any rain drops -->
 	<effect>
-		<inherits-from>Effects/exterior-glass</inherits-from>
+		<inherits-from>Aircraft/c210-family/Effects/exterior-glass</inherits-from>
 		 <object-name>WindscreenExterior</object-name>
 		 <object-name>PilotWindowsExterior</object-name>
 		 <object-name>CopilotWindowsExterior</object-name>
