@@ -158,8 +158,9 @@
 	<!-- Propeller transparency at higher RPM -->
 	<animation>
 		<type>spin</type>
-		<object-name>PropellerSpinner</object-name>
+		<!--<object-name>PropellerSpinner</object-name>-->
 		<object-name>PropellerBlades</object-name>
+		<object-name>FastPropeller</object-name>
 		<axis>
 			<object-name>PropellerAxis</object-name>
 		</axis>
@@ -185,10 +186,10 @@
 			</greater-than>
 		</condition>
 	</animation>
-	<animation>
-		<type>noshadow</type>
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
 		<object-name>FastPropeller</object-name>
-	</animation>
+	</effect>
 	
 	<!-- Wheels spinning when rolling and bumping when the ground is rough and nose wheel turning -->
 	<animation>
@@ -215,13 +216,7 @@
 				<value>1</value>
 			</equals>
 		</condition>
-(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
-	(((((((((((((((((((((((
-		((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
-			((((((((())))))
-		))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-	))))))
-))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))		<object-name>NoseWheel</object-name>
+		<object-name>NoseWheel</object-name>
 		<object-name>NoseWheelRollingAxis</object-name>
 		<axis>
 			<object-name>NoseWheelSteeringAxis</object-name>
@@ -494,7 +489,30 @@
 	 	</axis>
 	 	<property>sim/model/doors/copilot/open</property>
 	 	<factor>-80</factor>
-	 </animation>		
+	 </animation>
+	 <animation>
+		<type>pick</type>
+		<object-name>BaggageDoorInterior</object-name>
+		<object-name>BaggageDoorExterior</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/model/doors/baggage/open</property>
+			</binding>
+		</action>
+	 </animation>
+	 <animation>
+	 	<type>rotate</type>
+	 	<object-name>BaggageDoorInterior</object-name>
+	 	<object-name>BaggageDoorExterior</object-name>
+	 	<axis>
+	 		<object-name>BaggageDoorAxis</object-name>
+	 	</axis>
+	 	<property>sim/model/doors/baggage/open</property>
+	 	<factor>90</factor>
+	 </animation>
 	 
 	<!-- Rain drops, fog and frost effects on exterior glass - transparency weirdly is controlled by the alpha of the emission, just the below effect does NOT make the glass transparent !-->
 	<!-- TODO: The effect seems broken as I do not get any rain drops -->

@@ -98,7 +98,7 @@
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">       3600.00 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">   600.00 </damping_coeff>
+   <damping_coeff unit="LBS/FT/SEC">   400.00 </damping_coeff>
    <max_steer unit="DEG"> 27 </max_steer>
    <brake_group>NONE</brake_group>
    <retractable>1</retractable>
@@ -108,13 +108,13 @@
    <location unit="IN">
      <x> 118 </x>
      <y> -52 </y>
-     <z> -42 </z>
+     <z> -43 </z>
    </location>
    <static_friction>  1 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">       5400.00 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  700.00 </damping_coeff>
+   <damping_coeff unit="LBS/FT/SEC">  500.00 </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>LEFT</brake_group>
    <retractable>1</retractable>
@@ -124,13 +124,13 @@
    <location unit="IN">
      <x> 118 </x>
      <y> 52 </y>
-     <z> -42 </z>
+     <z> -43 </z>
    </location>
    <static_friction> 1 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">       5400.00 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  700.00 </damping_coeff>
+   <damping_coeff unit="LBS/FT/SEC">  500.00 </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>RIGHT</brake_group>
    <retractable>1</retractable>
@@ -138,9 +138,9 @@
 
   <contact type="STRUCTURE" name="LEFT_WING">
     <location unit="IN">
-     <x> 162.32 </x>
-     <y> -18.37 </y>
-     <z>  -8.45 </z>
+     <x> 86.6 </x>
+     <y> -220 </y>
+     <z> 31.5 </z>
     </location>
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
@@ -150,9 +150,9 @@
 
   <contact type="STRUCTURE" name="RIGHT_WING">
     <location unit="IN">
-     <x> 162.32 </x>
-     <y>  18.37 </y>
-     <z>  -8.45 </z>
+     <x> 86.6 </x>
+     <y>  220 </y>
+     <z>  31.5 </z>
     </location>
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
@@ -508,6 +508,7 @@
            <property>metrics/Sw-sqft</property>
            <property>gear/gear-pos-norm</property>
            <value>0.011</value> <!-- typical GA, factor during op to be added -->
+                                                                                                      <!-- do we really need this ? The 210N had it's main gear doors removed, and I don't think the drag from the nose gear doors is even measurable (or is it ?) -->
          </product>
     </function>
 
