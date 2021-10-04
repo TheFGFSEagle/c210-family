@@ -164,7 +164,7 @@
 
  <propulsion>
 
-   <engine file="Continental_TSIO-520-R">
+   <engine file="Continental_TSIO-520-P">
     <location unit="IN">
       <x>  36.00 </x>
       <y>   0.00 </y>
@@ -176,7 +176,7 @@
       <yaw>   0.00 </yaw>
     </orient>
     <feed>0</feed>
-    <thruster file="McCauley_D3A34C402">
+    <thruster file="PronyBrake"><!--McCauley_D3A34C402">-->
      <sense> 1 </sense>
      <location unit="IN">
        <x>  5.00 </x>
