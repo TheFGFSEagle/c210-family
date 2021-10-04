@@ -12,11 +12,11 @@
 				<nick>TheEagle</nick>
 				<email>programmer.anonymous@yandex.com</email>
 			</author>
-			<author n="0">
+			<author n="1">
 				<description>FDM</description>
-				<nick>dany63</nick>
+				<nick>dany93</nick>
 			</author>
-			<author n="0">
+			<author n="2">
 				<description>FDM</description>
 				<nick>Ysop</nick>
 			</author>
@@ -37,13 +37,13 @@
 			<model type="int">4</model>
 		</rating>
 
-		<!--<previews>
+		<previews>
 			<preview>
-				<type>interior</type>
+				<type>exterior</type>
 				<splash type="bool">true</splash>
-				<path>Previews/caravan-0.png</path>
+				<path>Previews/preview1.png</path>
 			</preview>
-			<preview>
+			<!--<preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
 				<path>Previews/caravan-1.png</path>
@@ -82,8 +82,8 @@
 				<type>exterior</type>
 				<splash type="bool">true</splash>
 				<path>Previews/caravan-8.png</path>
-			</preview>
-		</previews>-->
+			</preview>-->
+		</previews>
 
 		<tags>
 			<tag>transport</tag>
@@ -137,21 +137,8 @@
 	<nasal>
 		<c210>
 			<file>Nasal/autostart.nas</file>
+			<file>Nasal/rain.nas</file>
+			<file>Nasal/liveries.nas</file>
 		</c210>
-		<!--<load>
-			<script>
-				<![CDATA[
-					var livery_update = aircraft.livery_update.new("Aircraft/c210-family/Models/Liveries");
-				]]>
-			</script>
-		</load>
-		
-		<unload>
-			<script>
-				<![CDATA[
-					livery_update.stop();
-				]]>
-			</script>
-		</unload>-->
 	</nasal>
 </PropertyList>

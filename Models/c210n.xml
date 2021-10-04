@@ -3,7 +3,7 @@
 <PropertyList>
 	<path>c210n.ac</path>
 	
-	<!-- Liveries -->
+	<!-- Livery over MP -->
 	<animation>
 		<type>material</type>
 		<object-name>Fuselage</object-name>
@@ -12,11 +12,12 @@
 		<object-name>Rudder</object-name>
 		<object-name>LeftElevator</object-name>
 		<object-name>RightElevator</object-name>
-		<object-name>PilotDoor</object-name>
-		<object-name>CopilotDoor</object-name>
+		<object-name>PilotDoorExterior</object-name>
+		<object-name>CopilotDoorExterior</object-name>
+		<object-name>BaggageDoorExterior</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture-fuselage</texture-prop>
-		<texture>Liveries/Default-fuselage.png</texture>
+		<texture>fuselage.png</texture>
 	</animation>
 	<animation>
 		<type>material</type>
@@ -28,8 +29,20 @@
 		<object-name>RightAileron</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture-wings</texture-prop>
-		<texture>Liveries/Default-wings.png</texture>
+		<texture>wings.png</texture>
 	</animation>
+	<nasal>
+		<load>
+			<![CDATA[
+				var livery_update = aircraft.livery_update.new("Aircraft/c210-family/Models/Liveries");
+			]]>
+		</load>
+		<unload>
+			<![CDATA[
+				livery_update.stop();
+			]]>
+		</unload>
+	</nasal>
 	
 	<!-- Control surfaces animations-->
 	<animation>
@@ -113,6 +126,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>LeftAileron</object-name>
+		<object-name>LeftAileronTrimTab</object-name>
+		<object-name>LeftAileronTrimTabAxis</object-name>
 		<axis>
 			<object-name>LeftAileronAxis</object-name>
 		</axis>
@@ -135,6 +150,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>RightAileron</object-name>
+		<object-name>RightAileronTrimTab</object-name>
+		<object-name>RightAileronTrimTabAxis</object-name>
 		<axis>
 			<object-name>RightAileronAxis</object-name>
 		</axis>
@@ -153,6 +170,25 @@
 				<dep>15</dep>
 			</entry>
 		</interpolation>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>RightAileronTrimTab</object-name>
+		<axis>
+			<object-name>RightAileronTrimTabAxis</object-name>
+		</axis>
+		<property>surface-positions/right-aileron-trim-norm</property>
+		<factor>15</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>LeftAileronTrimTab</object-name>
+		<axis>
+			<object-name>LeftAileronTrimTabAxis</object-name>
+		</axis>
+		<property>surface-positions/left-aileron-trim-norm</property>
+		<factor>15</factor>
 	</animation>
 	
 	<!-- Propeller transparency at higher RPM -->
@@ -515,7 +551,6 @@
 	 </animation>
 	 
 	<!-- Rain drops, fog and frost effects on exterior glass - transparency weirdly is controlled by the alpha of the emission, just the below effect does NOT make the glass transparent !-->
-	<!-- TODO: The effect seems broken as I do not get any rain drops -->
 	<effect>
 		<inherits-from>Aircraft/c210-family/Effects/exterior-glass</inherits-from>
 		 <object-name>WindscreenExterior</object-name>
@@ -523,5 +558,25 @@
 		 <object-name>CopilotWindowsExterior</object-name>
 		 <object-name>LeftPassengerWindowsExterior</object-name>
 		 <object-name>RightPassengerWindowsExterior</object-name>
+		 <object-name>BackWindowsExterior</object-name>
 	</effect>
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		 <object-name>WindscreenInterior</object-name>
+		 <object-name>PilotWindowsInterior</object-name>
+		 <object-name>CopilotWindowsInterior</object-name>
+		 <object-name>LeftPassengerWindowsInterior</object-name>
+		 <object-name>RightPassengerWindowsInterior</object-name>
+		 <object-name>BackWindowsInterior</object-name>
+	</effect>
+	
+	<!-- Seats -->
+	<model>
+		<path>Aircraft/c210-family/Models/Interior/seat.ac</path>
+		<offsets>
+			<x-m>0.2</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>-0.25</z-m>
+		</offsets>
+	</model>
 </PropertyList>

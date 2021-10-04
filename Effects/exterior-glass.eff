@@ -18,6 +18,8 @@
 		<reflection-noise type="float">0.3</reflection-noise>
 		<reflection-dynamic type="int">1</reflection-dynamic>
 		<ambient-correction type="float">0.2</ambient-correction>
+		<rain-enabled>2</rain-enabled>
+		<snow-enabled>2</snow-enabled>
 		<rendering-hint>transparent</rendering-hint>
 		<transparent>true</transparent>
 		<render-bin>

@@ -197,8 +197,10 @@
        <y>   -118 </y>
        <z>  -8.45 </z>
      </location>
-     <capacity unit="LBS"> 275 </capacity> <!-- guessed -->
-     <contents unit="LBS"> 270 </contents>
+     <capacity unit="LBS"> 270.45 </capacity>
+     <contents unit="LBS"> 267.445 </contents>
+     <unusable unit="LBS">3.005</unusable>
+     <type>AVGAS</type>
   </tank>
 
   <tank type="FUEL" number="1">
@@ -207,8 +209,10 @@
        <y>   118 </y>
        <z>  -8.45 </z>
      </location>
-     <capacity unit="LBS"> 275 </capacity> <!-- guessed -->
-     <contents unit="LBS"> 270 </contents>
+     <capacity unit="LBS"> 270.45 </capacity>
+     <contents unit="LBS"> 267.445 </contents>
+     <unusable unit="LBS">3.005</unusable>
+     <type>AVGAS</type>
   </tank>
 
  </propulsion>

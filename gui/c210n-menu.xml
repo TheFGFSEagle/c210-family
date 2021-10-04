@@ -16,7 +16,7 @@
 				<label>Select livery</label>
 				<binding>
 					<command>nasal</command>
-					<script>aircraft.livery.dialog.open();</script>
+					<script>aircraft.livery.dialog.toggle()</script>
 				</binding>
 			</item>
 		</menu>
