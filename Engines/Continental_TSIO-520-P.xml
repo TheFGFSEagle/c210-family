@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   File:     Continental_TSIO-520-P.xml
-  Author:   Aero-Matic v 0.83
+  Author:   Dany93, TheEagle
 
   Inputs:
     name:           Continental_TSIO-520-P
@@ -13,17 +13,26 @@
   <ram-air-factor>0.1</ram-air-factor>
   <minmp unit="INHG">         18.5 </minmp>
   <maxmp unit="INHG">         35 </maxmp>
+  
+  <takeoffboost unit="INHG">1.5</takeoffboost>
+  <numboostspeeds>1</numboostspeeds>
+  <boostoverride>0</boostoverride>
+  <ratedboost1 unit="INHG">6.5</ratedboost1>
+  <ratedaltitude1>17000</ratedaltitude1>
+  <ratedpower1>310</ratedpower1>
+  <ratedrpm1>2700</ratedrpm1>
+  
   <displacement unit="IN3"> 520.00 </displacement>
   <maxhp>        285.00 </maxhp>
   <cycles>         4.0 </cycles>
-  <idlerpm>      600.0 </idlerpm>
+  <idlerpm>      100.0 </idlerpm>
   <maxrpm>      2600.0 </maxrpm>
   <sparkfaildrop>  0.1 </sparkfaildrop>
   <volumetric-efficiency> 0.85 </volumetric-efficiency>
   <man-press-lag> 0.1 </man-press-lag>
   <static-friction  unit="HP"> 1.55 </static-friction>
-  <starter-torque> 50.00 </starter-torque>
-  <starter-rpm> 550 </starter-rpm>
+  <starter-torque> 500.00 </starter-torque>
+  <starter-rpm> 1400 </starter-rpm>
   <stroke unit="IN">  4.0 </stroke>
   <bore unit="IN">    5.25 </bore>
   <cylinders>         6.0  </cylinders>

@@ -144,8 +144,8 @@
     </location>
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       4000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  4000.00 </damping_coeff>
+    <spring_coeff unit="LBS/FT">       1800.00 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">  370.00 </damping_coeff>
   </contact>
 
   <contact type="STRUCTURE" name="RIGHT_WING">
@@ -156,8 +156,8 @@
     </location>
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       4000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  4000.00 </damping_coeff>
+    <spring_coeff unit="LBS/FT">       1800.00 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">  370.00 </damping_coeff>
   </contact>
 
  </ground_reactions>
@@ -194,8 +194,8 @@
   <tank type="FUEL" number="0">
      <location unit="IN">
        <x> 118 </x>
-       <y>   -118 </y>
-       <z>  -8.45 </z>
+       <y>   -126 </y>
+       <z>  36 </z>
      </location>
      <capacity unit="LBS"> 270.45 </capacity>
      <contents unit="LBS"> 267.445 </contents>
@@ -206,8 +206,8 @@
   <tank type="FUEL" number="1">
      <location unit="IN">
        <x> 118 </x>
-       <y>   118 </y>
-       <z>  -8.45 </z>
+       <y>   126 </y>
+       <z>  36 </z>
      </location>
      <capacity unit="LBS"> 270.45 </capacity>
      <contents unit="LBS"> 267.445 </contents>
@@ -512,7 +512,6 @@
            <property>metrics/Sw-sqft</property>
            <property>gear/gear-pos-norm</property>
            <value>0.011</value> <!-- typical GA, factor during op to be added -->
-                                                                                                      <!-- do we really need this ? The 210N had it's main gear doors removed, and I don't think the drag from the nose gear doors is even measurable (or is it ?) -->
          </product>
     </function>
 

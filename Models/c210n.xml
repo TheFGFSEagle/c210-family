@@ -7,11 +7,13 @@
 	<animation>
 		<type>material</type>
 		<object-name>Fuselage</object-name>
-		<object-name>LeftTailStabilizer</object-name>
-		<object-name>RightTailStabilizer</object-name>
 		<object-name>Rudder</object-name>
+		<object-name>NavAntennas</object-name>
+		<object-name>LeftElevatorMount</object-name>
+		<object-name>RightElevatorMount</object-name>
 		<object-name>LeftElevator</object-name>
 		<object-name>RightElevator</object-name>
+		<object-name>ElevatorTrimTab</object-name>
 		<object-name>PilotDoorExterior</object-name>
 		<object-name>CopilotDoorExterior</object-name>
 		<object-name>BaggageDoorExterior</object-name>
@@ -26,7 +28,9 @@
 		<object-name>LeftFlap</object-name>
 		<object-name>RightFlap</object-name>
 		<object-name>LeftAileron</object-name>
+		<object-name>LeftAileronTrimTab</object-name>s
 		<object-name>RightAileron</object-name>
+		<object-name>RightAileronTrimTab</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture-wings</texture-prop>
 		<texture>wings.png</texture>
@@ -34,6 +38,7 @@
 	<nasal>
 		<load>
 			<![CDATA[
+				# called only when the model is loaded as an AI model (multiplayer)
 				var livery_update = aircraft.livery_update.new("Aircraft/c210-family/Models/Liveries");
 			]]>
 		</load>
@@ -106,7 +111,7 @@
 		<axis>
 			<object-name>ElevatorTrimTabAxis</object-name>
 		</axis>
-		<property>controls/flight/elevator-trim</property><!--surface-positions/elevator-trim-tab-pos-norm</property>-->
+		<property>controls/flight/elevator-trim</property>
 		<interpolation>
 			<entry>
 				<ind>1</ind>
@@ -178,7 +183,7 @@
 		<axis>
 			<object-name>RightAileronTrimTabAxis</object-name>
 		</axis>
-		<property>surface-positions/right-aileron-trim-norm</property>
+		<property>controls/flight/aileron-trim-norm</property>
 		<factor>15</factor>
 	</animation>
 	<animation>
@@ -187,7 +192,7 @@
 		<axis>
 			<object-name>LeftAileronTrimTabAxis</object-name>
 		</axis>
-		<property>surface-positions/left-aileron-trim-norm</property>
+		<property>controls/flight/aileron-trim-norm</property>
 		<factor>15</factor>
 	</animation>
 	
@@ -484,8 +489,10 @@
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
-				<command>property-toggle</command>
-				<property>sim/model/doors/pilot/open</property>
+				<command>nasal</command>
+				<script>
+					c210.baggageDoor.toggle();
+				</script>
 			</binding>
 		</action>
 	 </animation>
@@ -498,7 +505,7 @@
 	 	<axis>
 	 		<object-name>PilotDoorAxis</object-name>
 	 	</axis>
-	 	<property>sim/model/doors/pilot/open</property>
+	 	<property>sim/model/doors/pilot/position-norm</property>
 	 	<factor>80</factor>
 	 </animation>
 	 <animation>
@@ -509,8 +516,10 @@
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
-				<command>property-toggle</command>
-				<property>sim/model/doors/copilot/open</property>
+				<command>nasal</command>
+				<script>
+					c210.copilotDoor.toggle();
+				</script>
 			</binding>
 		</action>
 	 </animation>
@@ -523,7 +532,7 @@
 	 	<axis>
 	 		<object-name>CopilotDoorAxis</object-name>
 	 	</axis>
-	 	<property>sim/model/doors/copilot/open</property>
+	 	<property>sim/model/doors/copilot/position-norm</property>
 	 	<factor>-80</factor>
 	 </animation>
 	 <animation>
@@ -534,8 +543,10 @@
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
-				<command>property-toggle</command>
-				<property>sim/model/doors/baggage/open</property>
+				<command>nasal</command>
+				<script>
+					c210.baggageDoor.toggle();
+				</script>
 			</binding>
 		</action>
 	 </animation>
@@ -546,7 +557,7 @@
 	 	<axis>
 	 		<object-name>BaggageDoorAxis</object-name>
 	 	</axis>
-	 	<property>sim/model/doors/baggage/open</property>
+	 	<property>sim/model/doors/baggage/position-norm</property>
 	 	<factor>90</factor>
 	 </animation>
 	 
@@ -576,6 +587,14 @@
 		<offsets>
 			<x-m>0.2</x-m>
 			<y-m>-0.28</y-m>
+			<z-m>-0.25</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Aircraft/c210-family/Models/Interior/seat.ac</path>
+		<offsets>
+			<x-m>0.2</x-m>
+			<y-m>0.28</y-m>
 			<z-m>-0.25</z-m>
 		</offsets>
 	</model>
