@@ -10,27 +10,31 @@
 -->
 
 <piston_engine name="Continental_TSIO-520-P">
-  <ram-air-factor>0.1</ram-air-factor>
   <minmp unit="INHG">         18.5 </minmp>
   <maxmp unit="INHG">         35 </maxmp>
-  
-  <takeoffboost unit="INHG">1.5</takeoffboost>
-  <numboostspeeds>1</numboostspeeds>
-  <boostoverride>0</boostoverride>
-  <ratedboost1 unit="INHG">6.5</ratedboost1>
-  <ratedaltitude1>17000</ratedaltitude1>
-  <ratedpower1>310</ratedpower1>
-  <ratedrpm1>2700</ratedrpm1>
-  
   <displacement unit="IN3"> 520.00 </displacement>
   <maxhp>        285.00 </maxhp>
   <cycles>         4.0 </cycles>
-  <idlerpm>      100.0 </idlerpm>
+  <idlerpm>      200.0 </idlerpm>
   <maxrpm>      2600.0 </maxrpm>
+  <!-- Aeromatic default value - have to look through the POH and / or engine specs to see if I can find a better value -->
   <sparkfaildrop>  0.1 </sparkfaildrop>
-  <volumetric-efficiency> 0.85 </volumetric-efficiency>
+  
+  <!-- To my understanding, the values of takeoffboost and ratedboost[123] are relative to sea level normal pressure (29.92 in. Hg) -->
+  <!-- This means that to get a boost to an absolure manifold pressure x, we have to specify the result of 29.92 - x -->
+  <takeoffboost unit="INHG">6.58</takeoffboost>
+  <numboostspeeds>1</numboostspeeds>
+  <boostoverride>0</boostoverride>
+  <ratedboost1 unit="INHG">5.08</ratedboost1>
+  <ratedaltitude1>12000</ratedaltitude1><!-- guessed -->
+  <ratedrpm1>2600</ratedrpm1>
+  
+  <!-- Aeromatic put a VE of 0.85, but for boosted engines the JSBsim manual recommends a value greater than 1 -->
+  <!-- See https://jsbsim-team.github.io/jsbsim/classJSBSim_1_1FGPiston.html -->
+  <volumetric-efficiency> 1.1 </volumetric-efficiency>
+  <ram-air-factor>0.1</ram-air-factor>
   <man-press-lag> 0.1 </man-press-lag>
-  <static-friction  unit="HP"> 1.55 </static-friction>
+  <static-friction  unit="HP"> 1.5 </static-friction>
   <starter-torque> 500.00 </starter-torque>
   <starter-rpm> 1400 </starter-rpm>
   <stroke unit="IN">  4.0 </stroke>

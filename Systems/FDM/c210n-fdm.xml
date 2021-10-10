@@ -176,7 +176,7 @@
       <yaw>   0.00 </yaw>
     </orient>
     <feed>0</feed>
-    <thruster file="PronyBrake"><!--McCauley_D3A34C402">-->
+    <thruster file="McCauley_D3A34C402">
      <sense> 1 </sense>
      <location unit="IN">
        <x>  5.00 </x>
