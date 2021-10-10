@@ -17,7 +17,7 @@
    <compression-ratio>  7.5 </compression-ratio>
    <maxhp>        285.00 </maxhp>
    <cycles>         4.0 </cycles>
-   <idlerpm>      600.0 </idlerpm>   
+   <idlerpm>      200.0 </idlerpm>   
    <maxrpm>      2600.0 </maxrpm>   
    <starter-torque> 50.00 </starter-torque>   
    <static-friction> 1.55 </static-friction>
@@ -25,10 +25,10 @@
    <ram-air-factor>0.1</ram-air-factor>
    <air-intake-impedance-factor> 0 </air-intake-impedance-factor>
 
-   <maxmp unit="INHG">         28.8 </maxmp>   
+   <maxmp unit="INHG">         36.5 </maxmp>   
    <minmp unit="INHG">         14.7 </minmp>
 
-      <boostmanual> 1 </boostmanual>
+   <boostmanual> 1 </boostmanual>
    <numboostspeeds>1</numboostspeeds>
    <boostoverride>0</boostoverride>
    <boost-loss-factor> 0 </boost-loss-factor>   
@@ -38,8 +38,8 @@
    <ratedaltitude1>17000</ratedaltitude1>
 
    <sparkfaildrop>  0.1 </sparkfaildrop>
-   <volumetric-efficiency> 1.1 </volumetric-efficiency>
-<!--    <bsfc unit="LBS/HP*HR"> 0.4978 </bsfc> -->
+   <volumetric-efficiency> 0.737 </volumetric-efficiency>
+   <bsfc unit="LBS/HP*HR"> 0.394 </bsfc>
 
    <cylinder-head-mass unit="LBS"> 25.28 </cylinder-head-mass>
    <cooling-factor> 0.36 </cooling-factor>
