@@ -5,10 +5,10 @@
    xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
  <fileheader>
-  <author> Aeromatic v 0.96 </author>
+  <author> TheEagle, Ysop </author>
   <filecreationdate>2021-09-14</filecreationdate>
-  <version>$Revision: 1.20 $</version>
-  <description> Models a c210n. </description>
+  <version>$Revision: 1.0 $</version>
+  <description> Models a Cessna P210N. </description>
  </fileheader>
 
 <!--
@@ -54,12 +54,12 @@
      <z>   0.00 </z>
    </location>
    <location name="EYEPOINT" unit="IN">
-     <x>  43.97 </x>
-     <y> -18.00 </y>
-     <z>  45.00 </z>
+     <x>  95 </x>
+     <y> -12.00 </y>
+     <z>  20.00 </z>
    </location>
    <location name="VRP" unit="IN">
-     <x>0</x>
+     <x>91.92<!--90.43--></x>
      <y>0</y>
      <z>0</z>
    </location>
@@ -69,18 +69,25 @@
    <ixx unit="SLUG*FT2">      1000 </ixx>
    <iyy unit="SLUG*FT2">      1840 </iyy>
    <izz unit="SLUG*FT2">      3323 </izz>
-   <emptywt unit="LBS" >      2303 </emptywt>
+   <emptywt unit="LBS" >      2342 </emptywt>
    <location name="CG" unit="IN">
-     <x> 91.92 </x>-->
+     <x> 91.92 </x>
      <y>   0.00 </y>
      <z>  0.00 </z>
    </location>
-   <pointmass name="Payload">
-    <description> 1105 LBS + full (592 LBS) fuel should bring model up to entered max weight</description>
-    <weight unit="LBS">    552.5 </weight>
+   <pointmass name="Pilot">
+    <weight unit="LBS">    220 </weight>
     <location name="POINTMASS" unit="IN">
       <x> 85 </x>
-      <y> 0.00 </y>
+      <y> -12.00 </y>
+      <z> 0.00 </z>
+    </location>
+  </pointmass> 
+   <pointmass name="Copilot">
+    <weight unit="LBS">    220 </weight>
+    <location name="POINTMASS" unit="IN">
+      <x> 85 </x>
+      <y> 12.00 </y>
       <z> 0.00 </z>
     </location>
   </pointmass> 
@@ -92,7 +99,7 @@
    <location unit="IN">
      <x>  45 </x>
      <y>   0.00 </y>
-     <z> -42 </z>
+     <z> -41 </z>
    </location>
    <static_friction>  0.8 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -108,7 +115,7 @@
    <location unit="IN">
      <x> 118 </x>
      <y> -52 </y>
-     <z> -43 </z>
+     <z> -42 </z>
    </location>
    <static_friction>  1 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -124,7 +131,7 @@
    <location unit="IN">
      <x> 118 </x>
      <y> 52 </y>
-     <z> -43 </z>
+     <z> -42 </z>
    </location>
    <static_friction> 1 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -171,12 +178,12 @@
       <z>   0.00 </z>
     </location>
     <orient unit="DEG">
-      <pitch> 0.00 </pitch>
+      <pitch> 1.50 </pitch>
       <roll>  0.00 </roll>
       <yaw>   0.00 </yaw>
     </orient>
     <feed>0</feed>
-    <thruster file="PronyBrake"><!--McCauley_D3A34C402">-->
+    <thruster file="McCauley_D3A34C402">
      <sense> 1 </sense>
      <location unit="IN">
        <x>  5.00 </x>
@@ -184,7 +191,7 @@
        <z>   0.00 </z>
      </location>
      <orient unit="DEG">
-       <pitch> 0.00 </pitch>
+       <pitch> 1.50 </pitch>
        <roll>  0.00 </roll>
        <yaw>   0.00 </yaw>
      </orient>
@@ -217,7 +224,7 @@
 
  </propulsion>
 
- <flight_control name="FCS: c210n">
+ <flight_control name="FCS: p210n">
 
   <channel name="Pitch">
 
@@ -402,6 +409,50 @@
    </kinematic>
 
   </channel>
+        <channel name="Cowl flaps">
+            <kinematic name="Cowl flaps">
+                <input>/controls/engines/engine[0]/cowl-flaps-norm</input>
+                <traverse>
+                    <setting>
+                        <position>0</position>
+                        <time>0</time>
+                    </setting>
+                    <setting>
+                        <position>1</position>
+                        <time>1</time>
+                    </setting>
+                </traverse>
+                <output>propulsion/engine[0]/cowl-flaps-norm</output>
+            </kinematic>
+            <!--<aerosurface_scale name="Left Cooling Factor">
+                <input>propulsion/engine[0]/cowl-flaps-norm</input>
+                <gain>1.0</gain>
+                <zero_centered>false</zero_centered>
+                <domain>
+                  <min>0</min>
+                  <max>1</max>
+                </domain>
+                <range>
+                    <min>0.48</min>
+                    <max>0.80</max>
+                </range>
+                <output>propulsion/engine[0]/cooling-factor-cowlflaps</output>
+            </aerosurface_scale>-->
+            <!--<fcs_function name="engine-cooling-factor">
+                <function>
+                    <product>
+                        <property>propulsion/engine[0]/cooling-factor-winterkit</property>
+                        <property>propulsion/engine[0]/cooling-factor-cowlflaps</property>
+                        <property>propulsion/engine[0]/cooling-factor-noseicing</property>
+                    </product>
+                </function>
+                <clipto>
+                    <min>0</min>
+                    <max>1</max>
+                </clipto>
+                <output>propulsion/engine[0]/cooling-factor</output>
+            </fcs_function>-->
+	</channel>
 
  </flight_control>
 
@@ -467,7 +518,17 @@
           </table>
        </product>
     </function>
-
+    
+    <function name="aero/force/Drag_cowlflaps">
+        <description>Drag due to cowl flaps</description>
+        <product>
+            <property>aero/qbar-psf</property>
+            <property>metrics/Sw-sqft</property>
+            <property>propulsion/engine[0]/cowl-flaps-norm</property>
+            <value>0.0001</value>
+        </product>
+    </function>
+    
     <function name="aero/force/Drag_induced">
        <description>Induced drag</description>
          <product>

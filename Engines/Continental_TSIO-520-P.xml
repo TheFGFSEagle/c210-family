@@ -17,31 +17,49 @@
    <compression-ratio>  7.5 </compression-ratio>
    <maxhp>        285.00 </maxhp>
    <cycles>         4.0 </cycles>
-   <idlerpm>      200.0 </idlerpm>   
+   <idlerpm>      600.0 </idlerpm>   
    <maxrpm>      2600.0 </maxrpm>   
-   <starter-torque> 50.00 </starter-torque>   
+   <minmp unit="INHG">         15 </minmp>
+   <maxmp unit="INHG">         35.5 </maxmp>   
+   <bsfc unit="LBS/HP*HR"> 0.3939 </bsfc>
+
+   <starter-torque> 100.00 </starter-torque>   
    <static-friction> 1.55 </static-friction>
+   <sparkfaildrop>  0.082 </sparkfaildrop>
+   <!--<volumetric-efficiency> 0.7037 </volumetric-efficiency>-->
+   <function name="volumetric-efficiency">
+       <table>
+           <independentVar lookup="column">atmosphere/density-altitude</independentVar>
+           <tableData>
+               0              1000     5000  10000   15000     17000
+               0.7037    0.698    0.67    0.637    0.6069    0.5962
+           </tableData>
+       </table>
+   </function>
    
-   <ram-air-factor>0.1</ram-air-factor>
+   <ram-air-factor>0</ram-air-factor>
    <air-intake-impedance-factor> 0 </air-intake-impedance-factor>
-
-   <maxmp unit="INHG">         36.5 </maxmp>   
-   <minmp unit="INHG">         14.7 </minmp>
-
-   <boostmanual> 1 </boostmanual>
-   <numboostspeeds>1</numboostspeeds>
-   <boostoverride>0</boostoverride>
-   <boost-loss-factor> 0 </boost-loss-factor>   
-   <ratedboost1 unit="INHG">5.08</ratedboost1>
-   <ratedrpm1>2700</ratedrpm1>
-   <ratedpower1>310</ratedpower1>   
-   <ratedaltitude1>17000</ratedaltitude1>
-
-   <sparkfaildrop>  0.1 </sparkfaildrop>
-   <volumetric-efficiency> 0.737 </volumetric-efficiency>
-   <bsfc unit="LBS/HP*HR"> 0.394 </bsfc>
-
-   <cylinder-head-mass unit="LBS"> 25.28 </cylinder-head-mass>
    <cooling-factor> 0.36 </cooling-factor>
+   <cylinder-head-mass unit="LBS"> 25.28 </cylinder-head-mass>
+
+   <boostmanual> 0 </boostmanual>
+   <numboostspeeds>3</numboostspeeds>
+   <boostoverride>0</boostoverride>
+   <boost-loss-factor> 0 </boost-loss-factor>
+   
+   <ratedboost1 unit="INHG">6.58</ratedboost1>
+   <ratedrpm1>2700</ratedrpm1>
+   <ratedpower1>310</ratedpower1>
+   <ratedaltitude1>17000</ratedaltitude1>
+   
+   <ratedboost2 unit="INHG">3.58</ratedboost2>
+   <ratedrpm2>2700</ratedrpm2>
+   <ratedpower2>310</ratedpower2>
+   <ratedaltitude2>20000</ratedaltitude2>
+   
+   <ratedboost3 unit="INHG">0.58</ratedboost3>
+   <ratedrpm3>2700</ratedrpm3>
+   <ratedpower3>310</ratedpower3>
+   <ratedaltitude3>23000</ratedaltitude3>
 
 </piston_engine>

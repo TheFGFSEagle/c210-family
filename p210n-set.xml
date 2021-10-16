@@ -26,7 +26,7 @@
 		<minimum-fg-version>2017.2.0</minimum-fg-version>
 
 		<flight-model>jsb</flight-model>
-		<aero>Systems/FDM/c210n-fdm</aero>
+		<aero>Systems/FDM/p210n-fdm</aero>
 
 		<type type="string">airplane</type>
 		<primary-set type="bool">true</primary-set>
@@ -94,13 +94,13 @@
 			<tag>single-engine</tag>
 		</tags>
 		<model>
-			<path>Models/c210n.xml</path>
+			<path>Models/p210n.xml</path>
 			<livery>
 				<file type="string">Default</file>
 			</livery>
 		</model>
-		<menubar include="gui/c210n-menu.xml"></menubar>
-		<help include="c210-help.xml"></help>
+		<menubar include="gui/p210n-menu.xml"></menubar>
+		<help include="p210n-help.xml"></help>
 		<view n="0">
 			<name>Cockpit</name>
 			<type>lookfrom</type>
@@ -108,7 +108,7 @@
 			<config>
 				<x-offset-m type="double">-0.3</x-offset-m>
 				<y-offset-m type="double">0.65</y-offset-m>
-				<z-offset-m type="double">0.24</z-offset-m>
+				<z-offset-m type="double">0.3</z-offset-m>
 				<pitch-offset-deg>3</pitch-offset-deg>
 				<default-field-of-view-deg type="double">65.0</default-field-of-view-deg>
 				<from-model type="bool">true</from-model>
@@ -135,34 +135,38 @@
 	</sim>
 	
 	<nasal>
-		<c210>
+		<p210n>
 			<file>Nasal/autostart.nas</file>
 			<file>Nasal/rain.nas</file>
 			<file>Nasal/liveries.nas</file>
-		</c210>
+			<file>Nasal/doors.nas</file>
+		</p210n>
 	</nasal>
 	
 	<payload>
 		<weight>
 			<name type="string">Pilot</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
-			<arm-in alias="/fdm/jsbsim/inertia/pointmass-location-X-inches[0]"/>
 			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">300.0</max-lb>
+			<max-lb type="double">220.0</max-lb>
 		</weight>
 		<weight>
 			<name type="string">Co-Pilot</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
-			<arm-in alias="/fdm/jsbsim/inertia/pointmass-location-X-inches[0]"/>
 			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">300.0</max-lb>
+			<max-lb type="double">220.0</max-lb>
 		</weight>
 		<weight>
-			<name type="string">Baggage</name>
+			<name type="string">Baggage A</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
-			<arm-in alias="/fdm/jsbsim/inertia/pointmass-location-X-inches[0]"/>
 			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">300.0</max-lb>
+			<max-lb type="double">200.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Baggage B</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">80.0</max-lb>
 		</weight>
 	</payload>
 
@@ -170,38 +174,46 @@
 		<max-positive-g>3.8</max-positive-g>
 		<max-negative-g>-1.52</max-negative-g>
 
-		<vne>203</vne>
+		<vne>200</vne>
 
 		<mass-and-balance>
-			<!-- Define some nodes for the Fuel and Payload dialog.
-				 Aliasing is done later in Nasal/c172p.nas.
-			-->
-			<cg>
-				<dimension type="string">in</dimension>
-				<limit>
-					<entry>
-						<position type="double">35.0</position>
-						<mass-lbs type="double">1450</mass-lbs>
-					</entry>
-					<entry>
-						<position type="double">35.0</position>
-						<mass-lbs type="double">1950</mass-lbs>
-					</entry>
-					<entry>
-						<position type="double">41</position>
-						<mass-lbs type="double">2550</mass-lbs>
-					</entry>
-					<entry>
-						<position type="double">47.2</position>
-						<mass-lbs type="double">2550</mass-lbs>
-					</entry>
-					<entry>
-						<position type="double">47.2</position>
-						<mass-lbs type="double">1450</mass-lbs>
-					</entry>
-				</limit>
-			</cg>
+			<maximum-ramp-mass-lbs>4016</maximum-ramp-mass-lbs>
+			<maximum-takeoff-mass-lbs>4000</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>3800</maximum-landing-mass-lbs>
+			<maximum-zero-fuel-mass-lbs>3475.1</maximum-zero-fuel-mass-lbs>
 		</mass-and-balance>
+		<max-flap-extension-speed>
+			<flaps>0.3333</flaps>
+			<speed>160</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.6666</flaps>
+			<speed>130</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>1.0</flaps>
+			<speed>115</speed>
+		</max-flap-extension-speed>
+		<max-gear-extension-speed>200</max-gear-extension-speed>
 	</limits>
+	
+	<engines>
+		<engine>
+			<cowl-flaps-norm alias="/fdm/jsbsim/propulsion/engine[0]/cowl-flaps-norm"/>
+		</engine>
+	</engines>
+	
+	<controls>
+		<gear>
+			<parking-brake>false</parking-brake>
+		</gear>
+		<engines>
+			<engine>
+				<cowl-flaps-norm>1</cowl-flaps-norm>
+				<propeller-pitch>0.22</propeller-pitch>
+				<fuel-pump>true</fuel-pump>
+			</engine>
+		</engines>
+	</controls>
 
 </PropertyList>

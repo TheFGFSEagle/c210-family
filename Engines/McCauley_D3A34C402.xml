@@ -1,7 +1,4 @@
 <?xml version="1.0"?>
-<!-- Dany 12 sept 2021 (proposition for a start)
-From Douglas DC3 Patrouille de France, NACA Report 640
--->
 
 <propeller version="1.01" name="McCauley_D3A34C402">
   <ixx>   4.38 </ixx>
@@ -9,12 +6,11 @@ From Douglas DC3 Patrouille de France, NACA Report 640
   <constspeed>1</constspeed>
   <numblades> 3 </numblades>
   <gearratio>  1 </gearratio>
-  <cp_factor> 1.55 </cp_factor>
-  <cp_factor> 1..55 </cp_factor>
-  <ct_factor> 3.00 </ct_factor>
+  <cp_factor> 1.00 </cp_factor>
+  <ct_factor> 1.00 </ct_factor>
   <minpitch> 12.4 </minpitch>
   <maxpitch> 28.5 </maxpitch>
-  <minrpm>   2000 </minrpm>
+  <minrpm>   2200 </minrpm>
   <maxrpm>   2700 </maxrpm>
 
 <!-- Data from NACA Report 640 (5868-9, Clark Y section)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
-	<path>c210n.ac</path>
+	<path>p210n.ac</path>
 	
 	<!-- Livery over MP -->
 	<animation>
@@ -232,17 +232,37 @@
 		<object-name>FastPropeller</object-name>
 	</effect>
 	
-	<!-- Wheels spinning when rolling and bumping when the ground is rough and nose wheel turning -->
 	<animation>
 		<type>rotate</type>
+		<object-name>LeftCowlFlap</object-name>
+		<axis>
+			<object-name>LeftCowlFlapAxis</object-name>
+		</axis>
+		<property>engines/engine[0]/cowl-flaps-norm</property>
+		<factor>20</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>RightCowlFlap</object-name>
+		<axis>
+			<object-name>RightCowlFlapAxis</object-name>
+		</axis>
+		<property>engines/engine[0]/cowl-flaps-norm</property>
+		<factor>20</factor>
+	</animation>
+		
+	<!-- Wheels spinning when rolling and bumping when the ground is rough and nose wheel turning -->
+	<animation>
 		<condition>
 			<equals>
 				<property>gear/gear[0]/position-norm</property>
 				<value>1</value>
 			</equals>
 		</condition>
+		<type>rotate</type>
 		<object-name>NoseWheel</object-name>
 		<object-name>NoseWheelStrut</object-name>
+		<object-name>NoseWheelRollingAxis</object-name>
 		<axis>
 			<object-name>NoseWheelSteeringAxis</object-name>
 		</axis>
@@ -250,23 +270,30 @@
 		<factor>27</factor>
 	</animation>
 	<animation>
-		<type>translate</type>
 		<condition>
 			<equals>
 				<property>gear/gear[0]/position-norm</property>
 				<value>1</value>
 			</equals>
 		</condition>
+		<type>translate</type>
 		<object-name>NoseWheel</object-name>
 		<object-name>NoseWheelRollingAxis</object-name>
 		<axis>
 			<object-name>NoseWheelSteeringAxis</object-name>
 		</axis>
 		<property>gear/gear[0]/compression-norm</property>
+		<min>0</min>
 		<max>0.5</max>
-		<factor>-0.18</factor>
+		<factor>-0.15</factor>
 	</animation>
 	<animation>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
 		<type>spin</type>
 		<object-name>NoseWheel</object-name>
 		<axis>
@@ -276,6 +303,12 @@
 	</animation>
 	
 	<animation>
+		<condition>
+			<equals>
+				<property>gear/gear[1]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
 		<type>translate</type>
 		<object-name>RightWheel</object-name>
 		<object-name>RightWheelRollingAxis</object-name>
@@ -284,16 +317,15 @@
 		</axis>
 		<property>gear/gear[1]/compression-norm</property>
 		<max>1</max>
-		<factor>0.2</factor>
+		<factor>0.15</factor>
+	</animation>
+	<animation>
 		<condition>
 			<equals>
 				<property>gear/gear[1]/position-norm</property>
 				<value>1</value>
 			</equals>
-		</condition>
-	</animation>
-	<animation>
-		<type>spin</type>
+		</condition>		<type>spin</type>
 		<object-name>RightWheel</object-name>
 		<axis>
 			<object-name>RightWheelRollingAxis</object-name>
@@ -303,6 +335,12 @@
 
 	
 	<animation>
+		<condition>
+			<equals>
+				<property>gear/gear[2]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
 		<type>translate</type>
 		<object-name>LeftWheel</object-name>
 		<object-name>LeftWheelRollingAxis</object-name>
@@ -311,15 +349,16 @@
 		</axis>
 		<property>gear/gear[2]/compression-norm</property>
 		<max>1</max>
-		<factor>0.2</factor>
+		<min>0</min>
+		<factor>0.15</factor>
+	</animation>
+	<animation>
 		<condition>
 			<equals>
 				<property>gear/gear[2]/position-norm</property>
 				<value>1</value>
 			</equals>
 		</condition>
-	</animation>
-	<animation>
 		<type>spin</type>
 		<object-name>LeftWheel</object-name>
 		<axis>
@@ -416,14 +455,6 @@
 		<axis>
 			<object-name>NoseWheelSteeringAxis</object-name>
 		</axis>
-		<!--<condition>
-			<not>
-				<equals>
-					<property>gear/gear[0]/position-norm</property>
-					<value>1</value>
-				</equals>
-			</not>
-		</condition>-->
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry>
@@ -436,6 +467,10 @@
 			</entry>
 			<entry>
 				<ind>0.35</ind>
+				<dep>90</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
 				<dep>90</dep>
 			</entry>
 		</interpolation>
@@ -491,7 +526,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-					c210.baggageDoor.toggle();
+					p210n.doors.baggageDoor.toggle();
 				</script>
 			</binding>
 		</action>
@@ -518,7 +553,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-					c210.copilotDoor.toggle();
+					p210n.doors.copilotDoor.toggle();
 				</script>
 			</binding>
 		</action>
@@ -545,7 +580,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-					c210.baggageDoor.toggle();
+					p210n.doors.baggageDoor.toggle();
 				</script>
 			</binding>
 		</action>

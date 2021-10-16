@@ -9,7 +9,7 @@
 				<label>Start engine</label>
 				<binding>
 					<command>nasal</command>
-					<script>c210.autostart();</script>
+					<script>p210n.autostart();</script>
 				</binding>
 			</item>
 			<item>
