@@ -41,13 +41,13 @@
         </table>
    </function>
    
-   <ram-air-factor>0</ram-air-factor>
+   <ram-air-factor>1</ram-air-factor>
    <air-intake-impedance-factor> 0 </air-intake-impedance-factor>
    <cooling-factor> 0.36 </cooling-factor>
    <cylinder-head-mass unit="LBS"> 25.28 </cylinder-head-mass>
 
    <boostmanual> 0 </boostmanual>
-   <numboostspeeds>3</numboostspeeds>
+   <numboostspeeds>1</numboostspeeds>
    <boostoverride>0</boostoverride>
    <boost-loss-factor> 0 </boost-loss-factor>
    
@@ -55,15 +55,5 @@
    <ratedrpm1>2700</ratedrpm1>
    <ratedpower1>310</ratedpower1>
    <ratedaltitude1>17000</ratedaltitude1>
-   
-   <ratedboost2 unit="INHG">3.58</ratedboost2>
-   <ratedrpm2>2700</ratedrpm2>
-   <ratedpower2>310</ratedpower2>
-   <ratedaltitude2>20000</ratedaltitude2>
-   
-   <ratedboost3 unit="INHG">0.58</ratedboost3>
-   <ratedrpm3>2700</ratedrpm3>
-   <ratedpower3>310</ratedpower3>
-   <ratedaltitude3>23000</ratedaltitude3>
 
 </piston_engine>
