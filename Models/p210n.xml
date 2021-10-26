@@ -250,127 +250,14 @@
 		<property>engines/engine[0]/cowl-flaps-norm</property>
 		<factor>20</factor>
 	</animation>
-		
-	<!-- Wheels spinning when rolling and bumping when the ground is rough and nose wheel turning -->
-	<animation>
-		<condition>
-			<equals>
-				<property>gear/gear[0]/position-norm</property>
-				<value>1</value>
-			</equals>
-		</condition>
-		<type>rotate</type>
-		<object-name>NoseWheel</object-name>
-		<object-name>NoseWheelStrut</object-name>
-		<object-name>NoseWheelRollingAxis</object-name>
-		<axis>
-			<object-name>NoseWheelSteeringAxis</object-name>
-		</axis>
-		<property>gear/gear[0]/steering-norm</property>
-		<factor>27</factor>
-	</animation>
-	<animation>
-		<condition>
-			<equals>
-				<property>gear/gear[0]/position-norm</property>
-				<value>1</value>
-			</equals>
-		</condition>
-		<type>translate</type>
-		<object-name>NoseWheel</object-name>
-		<object-name>NoseWheelRollingAxis</object-name>
-		<axis>
-			<object-name>NoseWheelSteeringAxis</object-name>
-		</axis>
-		<property>gear/gear[0]/compression-norm</property>
-		<min>0</min>
-		<max>0.5</max>
-		<factor>-0.15</factor>
-	</animation>
-	<animation>
-		<condition>
-			<equals>
-				<property>gear/gear[0]/position-norm</property>
-				<value>1</value>
-			</equals>
-		</condition>
-		<type>spin</type>
-		<object-name>NoseWheel</object-name>
-		<axis>
-			<object-name>NoseWheelRollingAxis</object-name>
-		</axis>
-		<property>gear/gear[0]/rollspeed-ms</property>
-	</animation>
-	
-	<animation>
-		<condition>
-			<equals>
-				<property>gear/gear[1]/position-norm</property>
-				<value>1</value>
-			</equals>
-		</condition>
-		<type>translate</type>
-		<object-name>RightWheel</object-name>
-		<object-name>RightWheelRollingAxis</object-name>
-		<axis>
-			<object-name>RightWheelBumpingAxis</object-name>
-		</axis>
-		<property>gear/gear[1]/compression-norm</property>
-		<max>1</max>
-		<factor>0.15</factor>
-	</animation>
-	<animation>
-		<condition>
-			<equals>
-				<property>gear/gear[1]/position-norm</property>
-				<value>1</value>
-			</equals>
-		</condition>		<type>spin</type>
-		<object-name>RightWheel</object-name>
-		<axis>
-			<object-name>RightWheelRollingAxis</object-name>
-		</axis>
-		<property>gear/gear[1]/rollspeed-ms</property>
-	</animation>
-
-	
-	<animation>
-		<condition>
-			<equals>
-				<property>gear/gear[2]/position-norm</property>
-				<value>1</value>
-			</equals>
-		</condition>
-		<type>translate</type>
-		<object-name>LeftWheel</object-name>
-		<object-name>LeftWheelRollingAxis</object-name>
-		<axis>
-			<object-name>LeftWheelBumpingAxis</object-name>
-		</axis>
-		<property>gear/gear[2]/compression-norm</property>
-		<max>1</max>
-		<min>0</min>
-		<factor>0.15</factor>
-	</animation>
-	<animation>
-		<condition>
-			<equals>
-				<property>gear/gear[2]/position-norm</property>
-				<value>1</value>
-			</equals>
-		</condition>
-		<type>spin</type>
-		<object-name>LeftWheel</object-name>
-		<axis>
-			<object-name>LeftWheelRollingAxis</object-name>
-		</axis>
-		<property>gear/gear[2]/rollspeed-ms</property>
-	</animation>
 	
 	<!-- Gear retraction / extension animations -->
 	<animation>
 		<type>rotate</type>
-		<object-name>NoseWheelStrut</object-name>
+		<object-name>NoseGearUpperLink</object-name>
+		<object-name>NoseWheelHinge</object-name>
+		<object-name>NoseGearStrutInnerCylinder</object-name>
+		<object-name>NoseGearStrutOuterCylinder</object-name>
 		<object-name>NoseWheel</object-name>
 		<axis>
 			<object-name>NoseGearRetractionAxis</object-name>
@@ -450,8 +337,11 @@
 	</animation>
 	<animation>
 		<type>rotate</type>
+		<object-name>NoseGearUpperLink</object-name>
+		<object-name>NoseWheelHinge</object-name>
+		<object-name>NoseGearStrutInnerCylinder</object-name>
+		<object-name>NoseGearStrutOuterCylinder</object-name>
 		<object-name>NoseWheel</object-name>
-		<object-name>NoseWheelStrut</object-name>
 		<axis>
 			<object-name>NoseWheelSteeringAxis</object-name>
 		</axis>
@@ -515,6 +405,126 @@
 		</interpolation>
 	</animation>
 	
+	<!-- Wheels spinning when rolling and bumping when the ground is rough and nose wheel turning -->
+	<animation>
+		<condition>
+			<equals>
+				<property>gear/gear[0]/position-norm</property>
+				<value>1</value>
+			</equals>
+		</condition>
+		<type>rotate</type>
+		<object-name>NoseWheel</object-name>
+		<object-name>NoseWheelStrut</object-name>
+		<object-name>NoseWheelRollingAxis</object-name>
+		<axis>
+			<object-name>NoseWheelSteeringAxis</object-name>
+		</axis>
+		<property>gear/gear[0]/steering-norm</property>
+		<factor>27</factor>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>NoseWheel</object-name>
+		<object-name>NoseWheelRollingAxis</object-name>
+		<object-name>NoseWheelHinge</object-name>
+		<object-name>NoseGearStrutInnerCylinder</object-name>
+		<axis>
+			<object-name>NoseWheelSteeringAxis</object-name>
+		</axis>
+		<property>gear/gear[0]/compression-norm</property>
+		<min>0</min>
+		<max>1</max>
+		<factor>-0.18</factor>
+	</animation>
+	<animation>
+		<type>spin</type>
+		<object-name>NoseWheel</object-name>
+		<axis>
+			<object-name>NoseWheelRollingAxis</object-name>
+		</axis>
+		<property>gear/gear[0]/rollspeed-ms</property>
+		<factor>27.283704530039202</factor>
+	</animation>
+	
+	<animation>
+		<type>locked-track</type>
+		<object-name>NoseGearUpperLink</object-name>
+		<center>
+			<x-m>-1.02501</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.531087</z-m>
+		</center>
+		<lock-axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</lock-axis>
+		<track-axis>
+			<x>0.02794</x>
+			<y>0.120226</y>
+			<z>0</z>
+		</track-axis>
+		
+		<target-name>NoseGearStrutInnerCylinder</target-name>
+		<target-center>
+			<x-m>-1.05295</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.651313</z-m>
+		</target-center>
+		
+		<slave-name>NoseGearLowerLink</slave-name>
+		<slave-center>
+			<x-m>-0.982387</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.610849</z-m>
+		</slave-center>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>RightWheel</object-name>
+		<object-name>RightWheelRollingAxis</object-name>
+		<axis>
+			<object-name>RightWheelBumpingAxis</object-name>
+		</axis>
+		<property>gear/gear[1]/compression-norm</property>
+		<min>0</min>
+		<max>1</max>
+		<factor>0.18</factor>
+	</animation>
+	<animation>
+		<type>spin</type>
+		<object-name>RightWheel</object-name>
+		<axis>
+			<object-name>RightWheelRollingAxis</object-name>
+		</axis>
+		<property>gear/gear[1]/rollspeed-ms</property>
+		<factor>-22.736420441699337</factor>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>LeftWheel</object-name>
+		<object-name>LeftWheelRollingAxis</object-name>
+		<axis>
+			<object-name>LeftWheelBumpingAxis</object-name>
+		</axis>
+		<property>gear/gear[2]/compression-norm</property>
+		<min>0</min>
+		<max>1</max>
+		<factor>0.18</factor>
+	</animation>
+	<animation>
+		<type>spin</type>
+		<object-name>LeftWheel</object-name>
+		<axis>
+			<object-name>LeftWheelRollingAxis</object-name>
+		</axis>
+		<property>gear/gear[2]/rollspeed-ms</property>
+		<factor>22.736420441699337</factor>
+	</animation>
+		
 	<!-- Doors clickable and opening / closing -->
 	 <animation>
 		<type>pick</type>
@@ -526,7 +536,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-					p210n.doors.baggageDoor.toggle();
+					p210n.pilotDoor.toggle();
 				</script>
 			</binding>
 		</action>
@@ -545,29 +555,29 @@
 	 </animation>
 	 <animation>
 		<type>pick</type>
-		<object-name>CopilotDoorInterior</object-name>
-		<object-name>CopilotDoorExterior</object-name>
+		<object-name>EmergencyExitInterior</object-name>
+		<object-name>EmergencyExitExterior</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>nasal</command>
 				<script>
-					p210n.doors.copilotDoor.toggle();
+					p210n.emergencyExit.toggle();
 				</script>
 			</binding>
 		</action>
 	 </animation>
 	 <animation>
 	 	<type>rotate</type>
-	 	<object-name>CopilotDoorInterior</object-name>
-	 	<object-name>CopilotDoorExterior</object-name>
-	 	<object-name>CopilotWindowsExterior</object-name>
-	 	<object-name>CopilotWindowsInterior</object-name>
+	 	<object-name>EmergencyExitInterior</object-name>
+	 	<object-name>EmergencyExitExterior</object-name>
+	 	<object-name>EmergencyExitInteriorWindows</object-name>
+	 	<object-name>EmergencyExitExteriorWindows</object-name>
 	 	<axis>
-	 		<object-name>CopilotDoorAxis</object-name>
+	 		<object-name>EmergencyExitAxis</object-name>
 	 	</axis>
-	 	<property>sim/model/doors/copilot/position-norm</property>
+	 	<property>sim/model/doors/emergency-exit/position-norm</property>
 	 	<factor>-80</factor>
 	 </animation>
 	 <animation>
@@ -580,7 +590,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-					p210n.doors.baggageDoor.toggle();
+					p210n.baggageDoor.toggle();
 				</script>
 			</binding>
 		</action>
@@ -618,19 +628,43 @@
 	
 	<!-- Seats -->
 	<model>
-		<path>Aircraft/c210-family/Models/Interior/seat.ac</path>
+		<path>Aircraft/c210-family/Models/Interior/front-seat.ac</path>
 		<offsets>
 			<x-m>0.2</x-m>
 			<y-m>-0.28</y-m>
-			<z-m>-0.25</z-m>
+			<z-m>-0.35</z-m>
 		</offsets>
 	</model>
 	<model>
-		<path>Aircraft/c210-family/Models/Interior/seat.ac</path>
+		<path>Aircraft/c210-family/Models/Interior/front-seat.ac</path>
 		<offsets>
 			<x-m>0.2</x-m>
 			<y-m>0.28</y-m>
-			<z-m>-0.25</z-m>
+			<z-m>-0.35</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Aircraft/c210-family/Models/Interior/middle-seat.ac</path>
+		<offsets>
+			<x-m>1.2</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>-0.34</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Aircraft/c210-family/Models/Interior/middle-seat.ac</path>
+		<offsets>
+			<x-m>1.2</x-m>
+			<y-m>0.28</y-m>
+			<z-m>-0.34</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Aircraft/c210-family/Models/Interior/rear-seat.ac</path>
+		<offsets>
+			<x-m>1.8</x-m>
+			<y-m>0</y-m>
+			<z-m>0.03</z-m>
 		</offsets>
 	</model>
 </PropertyList>

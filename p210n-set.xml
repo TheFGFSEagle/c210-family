@@ -157,14 +157,38 @@
 			<max-lb type="double">220.0</max-lb>
 		</weight>
 		<weight>
-			<name type="string">Baggage A</name>
+			<name type="string">Middle left passenger</name>
 			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Middle right passenger</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Rear left passenger</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Rear right passenger</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[5]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Baggage A</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[6]"/>
 			<min-lb type="double">0.0</min-lb>
 			<max-lb type="double">200.0</max-lb>
 		</weight>
 		<weight>
 			<name type="string">Baggage B</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[7]"/>
 			<min-lb type="double">0.0</min-lb>
 			<max-lb type="double">80.0</max-lb>
 		</weight>
@@ -180,7 +204,7 @@
 			<maximum-ramp-mass-lbs>4016</maximum-ramp-mass-lbs>
 			<maximum-takeoff-mass-lbs>4000</maximum-takeoff-mass-lbs>
 			<maximum-landing-mass-lbs>3800</maximum-landing-mass-lbs>
-			<maximum-zero-fuel-mass-lbs>3475.1</maximum-zero-fuel-mass-lbs>
+			<!--<maximum-zero-fuel-mass-lbs>3475.1</maximum-zero-fuel-mass-lbs>-->
 		</mass-and-balance>
 		<max-flap-extension-speed>
 			<flaps>0.3333</flaps>
@@ -205,13 +229,13 @@
 	
 	<controls>
 		<gear>
-			<parking-brake>false</parking-brake>
+			<parking-brake>true</parking-brake>
 		</gear>
 		<engines>
 			<engine>
 				<cowl-flaps-norm>1</cowl-flaps-norm>
 				<propeller-pitch>0.22</propeller-pitch>
-				<fuel-pump>true</fuel-pump>
+				<fuel-pump>false</fuel-pump>
 			</engine>
 		</engines>
 	</controls>

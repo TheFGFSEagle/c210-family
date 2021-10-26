@@ -26,20 +26,7 @@
    <starter-torque> 100.00 </starter-torque>   
    <static-friction> 1.55 </static-friction>
    <sparkfaildrop>  0.082 </sparkfaildrop>
-   <!--<volumetric-efficiency> 0.7037 </volumetric-efficiency>-->
-   <function name="volumetric-efficiency">
-       <table>
-           <independentVar>atmosphere/density-altitude</independentVar>
-           <tableData>
-                 0           0.7037
-                1000     0.698
-                5000     0.67
-                10000   0.637
-                15000   0.6069
-                17000   0.5962
-            </tableData>
-        </table>
-   </function>
+   <volumetric-efficiency> 0.7038 </volumetric-efficiency>
    
    <ram-air-factor>1</ram-air-factor>
    <air-intake-impedance-factor> 0 </air-intake-impedance-factor>
