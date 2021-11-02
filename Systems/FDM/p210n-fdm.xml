@@ -667,7 +667,7 @@
                 </traverse>
                 <output>propulsion/engine[0]/cowl-flaps-norm</output>
             </kinematic>
-            <!--<aerosurface_scale name="Left Cooling Factor">
+            <aerosurface_scale name="Left Cooling Factor">
                 <input>propulsion/engine[0]/cowl-flaps-norm</input>
                 <gain>1.0</gain>
                 <zero_centered>false</zero_centered>
@@ -679,24 +679,9 @@
                     <min>0.48</min>
                     <max>0.80</max>
                 </range>
-                <output>propulsion/engine[0]/cooling-factor-cowlflaps</output>
-            </aerosurface_scale>
-            <fcs_function name="engine-cooling-factor">
-                <function>
-                    <product>
-                        <property>propulsion/engine[0]/cooling-factor-winterkit</property>
-                        <property>propulsion/engine[0]/cooling-factor-cowlflaps</property>
-                        <property>propulsion/engine[0]/cooling-factor-noseicing</property>
-                    </product>
-                </function>
-                <clipto>
-                    <min>0</min>
-                    <max>1</max>
-                </clipto>
                 <output>propulsion/engine[0]/cooling-factor</output>
-            </fcs_function>-->
+            </aerosurface_scale>
 	</channel>
-
  </flight_control>
 
  <aerodynamics>
@@ -715,6 +700,7 @@
                0.00  0.510
                0.23  1.700
                0.60  0.710
+               1.57  0.010
             </tableData>
           </table>
       </product>
@@ -768,7 +754,7 @@
             <property>aero/qbar-psf</property>
             <property>metrics/Sw-sqft</property>
             <property>propulsion/engine[0]/cowl-flaps-norm</property>
-            <value>0.00057</value>
+            <value>0.0015</value> <!-- calculated -->
         </product>
     </function>
     
@@ -780,23 +766,6 @@
            <property>aero/cl-squared</property>
            <value>0.0501</value>
          </product>
-    </function>
-
-    <function name="aero/force/Drag_mach">
-       <description>Drag due to mach</description>
-        <product>
-          <property>aero/qbar-psf</property>
-          <property>metrics/Sw-sqft</property>
-          <table>
-            <independentVar lookup="row">velocities/mach</independentVar>
-            <tableData>
-                0.00      0.000
-                0.7      0.000
-                1.10      0.023
-                1.80      0.015
-            </tableData>
-          </table>
-        </product>
     </function>
 
     <function name="aero/force/Drag_flap">

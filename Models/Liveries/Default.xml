@@ -4,9 +4,10 @@
 	<sim>
 		<model>
 			<livery>
-				<name type="string">Default</name>
+				<name type="string">Default (white)</name>
 				<texture-fuselage>Liveries/Default-fuselage.png</texture-fuselage>
 				<texture-wings>Liveries/Default-wings.png</texture-wings>
+				<texture-gear>Liveries/Default-gear.png</texture-gear>
 			</livery>
 		</model>
 	</sim>

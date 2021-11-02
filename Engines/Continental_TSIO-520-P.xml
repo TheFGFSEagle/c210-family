@@ -20,7 +20,7 @@
    <idlerpm>      600.0 </idlerpm>   
    <maxrpm>      2600.0 </maxrpm>   
    <minmp unit="INHG">         15 </minmp>
-   <maxmp unit="INHG">         35.5 </maxmp>   
+   <maxmp unit="INHG">         28.8 </maxmp>   
    <bsfc unit="LBS/HP*HR"> 0.3939 </bsfc>
 
    <starter-torque> 100.00 </starter-torque>   
@@ -38,7 +38,7 @@
    <boostoverride>0</boostoverride>
    <boost-loss-factor> 0 </boost-loss-factor>
    
-   <ratedboost1 unit="INHG">6.58</ratedboost1>
+   <ratedboost1 unit="INHG">5.58</ratedboost1>
    <ratedrpm1>2700</ratedrpm1>
    <ratedpower1>310</ratedpower1>
    <ratedaltitude1>17000</ratedaltitude1>
