@@ -49,9 +49,9 @@
    <vtailarea unit="FT2">   17.50 </vtailarea>
    <vtailarm  unit="FT" >   14.09 </vtailarm>
    <location name="AERORP" unit="IN">
-     <x> 91.92 </x>
+     <x> 106.3 </x>
      <y>   0.00 </y>
-     <z>   0.00 </z>
+     <z>   39.37 </z>
    </location>
    <location name="EYEPOINT" unit="IN">
      <x>  95 </x>
@@ -70,8 +70,10 @@
    <iyy unit="SLUG*FT2">      1840 </iyy>
    <izz unit="SLUG*FT2">      3323 </izz>
    <emptywt unit="LBS" >      2342 </emptywt>
+   <!-- ref. datum is at 51.84  inchers -->
+   <!-- maximum aft location of the CG is 51.84 (ref. datum) + 52 = 103.84 inches -->
    <location name="CG" unit="IN">
-     <x> 91.92 </x>
+     <x> 88.84</x>
      <y>   0.00 </y>
      <z>  0.00 </z>
    </location>
@@ -153,7 +155,7 @@
    <static_friction>  0.8 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT">       10000.00 </spring_coeff>
+   <spring_coeff unit="LBS/FT">       4000.00 </spring_coeff>
    <damping_coeff unit="LBS/FT/SEC">   600.00 </damping_coeff>
    <max_steer unit="DEG"> 27 </max_steer>
    <brake_group>NONE</brake_group>
@@ -225,7 +227,7 @@
     </location>
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       1200.00 </spring_coeff>
+    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
   </contact>
  
@@ -237,7 +239,7 @@
     </location>
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       1200.00 </spring_coeff>
+    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
   </contact>
   
@@ -286,7 +288,7 @@
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
+    <damping_coeff unit="LBS/FT/SEC">  500 </damping_coeff>
   </contact>
   
   <contact type="STRUCTURE" name="Right comm antenna">
@@ -298,7 +300,7 @@
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
+    <damping_coeff unit="LBS/FT/SEC">  500 </damping_coeff>
   </contact>
   
   <contact type="STRUCTURE" name="Fuselage, left lower front">
@@ -321,8 +323,8 @@
     </location>
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
+    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
   
   <contact type="STRUCTURE" name="Fuselage, left lower door begin">
@@ -333,8 +335,8 @@
     </location>
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
+    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
   
   <contact type="STRUCTURE" name="Fuselage, right lower door begin">
@@ -345,8 +347,8 @@
     </location>
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
+    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
   
   <contact type="STRUCTURE" name="Fuselage, left lower main wheel well">
@@ -357,8 +359,8 @@
     </location>
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
+    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
   
   <contact type="STRUCTURE" name="Fuselage, right lower main wheel well">
@@ -369,8 +371,8 @@
     </location>
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
+    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
+    <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
   
   <contact type="STRUCTURE" name="Fuselage, tail tip">
@@ -382,7 +384,7 @@
     <static_friction>  1.00 </static_friction>
     <dynamic_friction> 1.00 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
+    <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
  
  </ground_reactions>
@@ -391,9 +393,9 @@
 
    <engine file="Continental_TSIO-520-P">
     <location unit="IN">
-      <x>  36.00 </x>
+      <x>  40.00 </x>
       <y>   0.00 </y>
-      <z>   0.00 </z>
+      <z>   5.00 </z>
     </location>
     <orient unit="DEG">
       <pitch> 1.50 </pitch>
@@ -404,9 +406,9 @@
     <thruster file="McCauley_D3A34C402">
      <sense> 1 </sense>
      <location unit="IN">
-       <x>  5.00 </x>
+       <x>  13.00 </x>
        <y>   0.00 </y>
-       <z>   0.00 </z>
+       <z>   9.00 </z>
      </location>
      <orient unit="DEG">
        <pitch> 1.50 </pitch>
@@ -415,27 +417,29 @@
      </orient>
     </thruster>
   </engine>
-
+  
+  <!-- Left main tank -->
   <tank type="FUEL" number="0">
      <location unit="IN">
        <x> 118 </x>
        <y>   126 </y>
        <z>  36 </z>
      </location>
-     <capacity unit="LBS"> 270.45 </capacity>
-     <contents unit="LBS"> 267.445 </contents>
+     <capacity unit="LBS"> 267.445 </capacity>
+     <contents unit="LBS"> 100 </contents>
      <unusable unit="LBS">3.005</unusable>
      <type>AVGAS</type>
   </tank>
-
+  
+  <!-- Right main tank -->
   <tank type="FUEL" number="1">
      <location unit="IN">
        <x> 118 </x>
        <y>   -126 </y>
        <z>  36 </z>
      </location>
-     <capacity unit="LBS"> 270.45 </capacity>
-     <contents unit="LBS"> 267.445 </contents>
+     <capacity unit="LBS"> 267.445 </capacity>
+     <contents unit="LBS"> 100</contents>
      <unusable unit="LBS">3.005</unusable>
      <type>AVGAS</type>
   </tank>

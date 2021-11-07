@@ -227,6 +227,16 @@
 		</engine>
 	</engines>
 	
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<name>Left wing tank</name>
+			</tank>
+			<tank n="1">
+				<name>Right wing tank</name>
+			</tank>
+		</fuel>
+	</consumables>
 	<controls>
 		<gear>
 			<parking-brake>true</parking-brake>

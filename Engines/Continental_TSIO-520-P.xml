@@ -23,7 +23,7 @@
    <maxmp unit="INHG">         28.8 </maxmp>   
    <bsfc unit="LBS/HP*HR"> 0.3939 </bsfc>
 
-   <starter-torque> 100.00 </starter-torque>   
+   <starter-torque> 200.00 </starter-torque>   
    <static-friction> 1.55 </static-friction>
    <sparkfaildrop>  0.082 </sparkfaildrop>
    <volumetric-efficiency> 0.7038 </volumetric-efficiency>

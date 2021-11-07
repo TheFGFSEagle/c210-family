@@ -487,7 +487,7 @@
 		<property>gear/gear[0]/compression-norm</property>
 		<min>0</min>
 		<max>1</max>
-		<factor>-0.2</factor>
+		<factor>0.2</factor>
 	</animation>
 	<animation>
 		<type>spin</type>
@@ -543,7 +543,7 @@
 		<property>gear/gear[1]/compression-norm</property>
 		<min>0</min>
 		<max>1</max>
-		<factor>0.2</factor>
+		<factor>-0.2</factor>
 	</animation>
 	<animation>
 		<type>spin</type>
@@ -565,7 +565,7 @@
 		<property>gear/gear[2]/compression-norm</property>
 		<min>0</min>
 		<max>1</max>
-		<factor>0.2</factor>
+		<factor>-0.2</factor>
 	</animation>
 	<animation>
 		<type>spin</type>
@@ -624,8 +624,8 @@
 	 	<type>rotate</type>
 	 	<object-name>EmergencyExitInterior</object-name>
 	 	<object-name>EmergencyExitExterior</object-name>
-	 	<object-name>EmergencyExitInteriorWindows</object-name>
-	 	<object-name>EmergencyExitExteriorWindows</object-name>
+	 	<object-name>EmergencyExitWindowsInterior</object-name>
+	 	<object-name>EmergencyExitWindowsExterior</object-name>
 	 	<axis>
 	 		<object-name>EmergencyExitAxis</object-name>
 	 	</axis>
@@ -663,7 +663,7 @@
 		<inherits-from>Aircraft/c210-family/Effects/exterior-glass</inherits-from>
 		 <object-name>WindscreenExterior</object-name>
 		 <object-name>PilotWindowsExterior</object-name>
-		 <object-name>CopilotWindowsExterior</object-name>
+		 <object-name>EmergencyExitWindowsExterior</object-name>
 		 <object-name>LeftPassengerWindowsExterior</object-name>
 		 <object-name>RightPassengerWindowsExterior</object-name>
 		 <object-name>BackWindowsExterior</object-name>
@@ -672,62 +672,14 @@
 		<inherits-from>Effects/glass</inherits-from>
 		 <object-name>WindscreenInterior</object-name>
 		 <object-name>PilotWindowsInterior</object-name>
-		 <object-name>CopilotWindowsInterior</object-name>
+		 <object-name>EmergencyExitWindowsInterior</object-name>
 		 <object-name>LeftPassengerWindowsInterior</object-name>
 		 <object-name>RightPassengerWindowsInterior</object-name>
 		 <object-name>BackWindowsInterior</object-name>
 	</effect>
 	
-	<!-- Seats -->
-	<!--<model>
-		<path>Aircraft/c210-family/Models/Interior/front-seat.ac</path>
-		<usage>interior</usage>
-		<offsets>
-			<x-m>0.2</x-m>
-			<y-m>-0.28</y-m>
-			<z-m>-0.35</z-m>
-		</offsets>
-	</model>
 	<model>
-		<path>Aircraft/c210-family/Models/Interior/front-seat.ac</path>
-		<usage>interior</usage>
-		<offsets>
-			<x-m>0.2</x-m>
-			<y-m>0.28</y-m>
-			<z-m>-0.35</z-m>
-		</offsets>
-	</model>
-	<model>
-		<path>Aircraft/c210-family/Models/Interior/middle-seat.ac</path>
-		<usage>interior</usage>
-		<offsets>
-			<x-m>1.2</x-m>
-			<y-m>-0.28</y-m>
-			<z-m>-0.34</z-m>
-		</offsets>
-	</model>
-	<model>
-		<path>Aircraft/c210-family/Models/Interior/middle-seat.ac</path>
-		<usage>interior</usage>
-		<offsets>
-			<x-m>1.2</x-m>
-			<y-m>0.28</y-m>
-			<z-m>-0.34</z-m>
-		</offsets>
-	</model>-->
-	<model>
-		<path>Aircraft/c210-family/Models/Interior/rear-seat.ac</path>
-		<usage>interior</usage>
-		<offsets>
-			<x-m>1.82</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
-		</offsets>
-	</model>
-	
-	<!-- Panel -->
-	<model>
-		<path>Aircraft/c210-family/Models/Interior/Panel/main-panel.xml</path>
+		<path>Aircraft/c210-family/Models/Interior/p210n-interior.xml</path>
 		<usage>interior</usage>
 	</model>
 </PropertyList>

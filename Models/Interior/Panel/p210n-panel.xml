@@ -3,7 +3,7 @@
 	<model>
 		<path>Aircraft/Instruments-3d/ai/ai.xml</path>
 		<offsets>
-			<x-m>-0.44</x-m>
+			<x-m>-0.45</x-m>
 			<y-m>-0.3</y-m>
 			<z-m>0.45</z-m>
 		</offsets>
@@ -11,7 +11,7 @@
 	<model>
 		<path>Aircraft/Instruments-3d/asi/asi.xml</path>
 		<offsets>
-			<x-m>-0.44</x-m>
+			<x-m>-0.45</x-m>
 			<y-m>-0.39</y-m>
 			<z-m>0.45</z-m>
 		</offsets>
@@ -19,7 +19,7 @@
 	<model>
 		<path>Aircraft/Instruments-3d/alt/alt.xml</path>
 		<offsets>
-			<x-m>-0.44</x-m>
+			<x-m>-0.45</x-m>
 			<y-m>-0.21</y-m>
 			<z-m>0.45</z-m>
 		</offsets>
@@ -27,7 +27,7 @@
 	<model>
 		<path>Aircraft/Instruments-3d/tc/tc.xml</path>
 		<offsets>
-			<x-m>-0.446</x-m>
+			<x-m>-0.44</x-m>
 			<y-m>-0.39</y-m>
 			<z-m>0.35</z-m>
 			<pitch-deg>-5.4</pitch-deg>
@@ -36,7 +36,7 @@
 	<model>
 		<path>Aircraft/Instruments-3d/hi/hi.xml</path>
 		<offsets>
-			<x-m>-0.43</x-m>
+			<x-m>-0.44</x-m>
 			<y-m>-0.3</y-m>
 			<z-m>0.35</z-m>
 		</offsets>
@@ -44,7 +44,7 @@
 	<model>
 		<path>Aircraft/Instruments-3d/vsi/vsi.xml</path>
 		<offsets>
-			<x-m>-0.43</x-m>
+			<x-m>-0.44</x-m>
 			<y-m>-0.21</y-m>
 			<z-m>0.35</z-m>
 		</offsets>

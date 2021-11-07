@@ -10,7 +10,7 @@
   <ct_factor> 1 </ct_factor>
   <minpitch> 12.4 </minpitch>
   <maxpitch> 28.5 </maxpitch>
-  <minrpm>   1000 </minrpm>
+  <minrpm>   800 </minrpm>
   <maxrpm>   2700 </maxrpm>
 
 <!-- Data from NACA Report 640 (5868-9, Clark Y section)
