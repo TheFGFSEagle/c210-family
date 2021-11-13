@@ -1,21 +1,38 @@
 <?xml version="1.0"?>
 <system name="engine">
+    <property>propulsion/engine/ve-offset</property>
     <channel name="Volumetric efficiency">
-        <fcs_function name="propulsion/engine/volumetric-efficiency">
+        <fcs_function name="Volumetric efficiency">
             <function>
-                <table>
-                    <independentVar>atmosphere/density-altitude</independentVar>
-                    <tableData>
-                         0           0.7038
-                        1000     0.698
-                        5000     0.67
-                        10000   0.637
-                        15000   0.6069
-                        17000   0.595
-                    </tableData>
-                </table>
+                <sum>
+                    <table>
+                       <independentVar lookup="row">atmosphere/density-altitude</independentVar>
+                       <independentVar lookup="column">aero/qbar-psf</independentVar>
+                       <tableData>
+                                        0            136.3
+                           0           0.7038   0.7217
+                           1000     0.698     0.7184
+                           5000     0.67       0.6982
+                           10000   0.637     0.673
+                           15000   0.6069   0.6479
+                           17000   0.595     0.6204
+                       </tableData>
+                    </table>
+                    <property>propulsion/engine/ve-offset</property>
+                </sum>
             </function>
             <output>propulsion/engine/volumetric-efficiency</output>
         </fcs_function>
     </channel>
+    <!--<channel name="Fuel flow">
+        <fcs_function name="Fuel flow conversion - PPS tp PPH">
+            <function>
+                <product>
+                    <property>propulsion/engine/fuel-flow-pps</property>
+                    <value>3600</value>
+                </product>
+            </function>
+            <output>propulsion/engine/fuel-flow-pph</output>
+        </fcs_function>
+    </channel>-->
 </system>

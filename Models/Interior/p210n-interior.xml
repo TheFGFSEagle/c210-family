@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<!-- Seats -->
+	<!--<model>
+		<path>Aircraft/c210-family/Models/Interior/front-seat.ac</path>
+		<usage>interior</usage>
+		<offsets>
+			<x-m>0.2</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>-0.35</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Aircraft/c210-family/Models/Interior/front-seat.ac</path>
+		<usage>interior</usage>
+		<offsets>
+			<x-m>0.2</x-m>
+			<y-m>0.28</y-m>
+			<z-m>-0.35</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Aircraft/c210-family/Models/Interior/middle-seat.ac</path>
+		<usage>interior</usage>
+		<offsets>
+			<x-m>1.2</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>-0.34</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Aircraft/c210-family/Models/Interior/middle-seat.ac</path>
+		<usage>interior</usage>
+		<offsets>
+			<x-m>1.2</x-m>
+			<y-m>0.28</y-m>
+			<z-m>-0.34</z-m>
+		</offsets>
+	</model>-->
+	<model>
+		<path>Aircraft/c210-family/Models/Interior/rear-seat.ac</path>
+		<usage>interior</usage>
+		<offsets>
+			<x-m>1.8</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</model>
+	
+	<!-- Panel -->
+	<model>
+		<path>Aircraft/c210-family/Models/Interior/Panel/p210n-panel.xml</path>
+		<usage>interior</usage>
+	</model>
+</PropertyList>

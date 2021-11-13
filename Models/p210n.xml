@@ -485,9 +485,16 @@
 			<object-name>NoseWheelSteeringAxis</object-name>
 		</axis>
 		<property>gear/gear[0]/compression-norm</property>
-		<min>0</min>
-		<max>1</max>
-		<factor>0.2</factor>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>0.15</dep>
+			</entry>
+		</interpolation>
 	</animation>
 	<animation>
 		<type>spin</type>
@@ -503,9 +510,9 @@
 		<type>locked-track</type>
 		<object-name>NoseGearUpperLink</object-name>
 		<center>
-			<x-m>-1.02501</x-m>
+			<x-m>-1.01523</x-m>
 			<y-m>0</y-m>
-			<z-m>-0.531087</z-m>
+			<z-m>-0.482031</z-m>
 		</center>
 		<lock-axis>
 			<x>0</x>
@@ -513,8 +520,8 @@
 			<z>0</z>
 		</lock-axis>
 		<track-axis>
-			<x>0.02794</x>
-			<y>0.120226</y>
+			<x>0.0377</x>
+			<y>0.1695</y> <!-- shouln't z and y be exchanged ? -->
 			<z>0</z>
 		</track-axis>
 		
@@ -527,23 +534,85 @@
 		
 		<slave-name>NoseGearLowerLink</slave-name>
 		<slave-center>
-			<x-m>-0.982387</x-m>
+			<x-m>-0.895282</x-m>
 			<y-m>0</y-m>
-			<z-m>-0.610849</z-m>
+			<z-m>-0.597486</z-m>
 		</slave-center>
 	</animation>
 	
 	<animation>
-		<type>translate</type>
+		<type>rotate</type>
 		<object-name>RightWheel</object-name>
+		<object-name>RightWheelStrut</object-name>
 		<object-name>RightWheelRollingAxis</object-name>
 		<axis>
-			<object-name>RightWheelBumpingAxis</object-name>
+			<object-name>RightGearBumpingAxis</object-name>
 		</axis>
-		<property>gear/gear[1]/compression-norm</property>
-		<min>0</min>
-		<max>1</max>
-		<factor>-0.2</factor>
+		<property>/gear/gear[2]/compression-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>-1.5</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>-3</dep>
+			</entry>
+			<entry>
+				<ind>0.3</ind>
+				<dep>-4.5</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>-6</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>-7.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>-9</dep>
+			</entry>
+			<entry>
+				<ind>0.7</ind>
+				<dep>-10.5</dep>
+			</entry>
+		</interpolation>
+		<!--<expression>
+			<sum>
+				<table>
+					<property>gear/gear[2]/compression-norm</property>
+					<entry>
+						<ind>0</ind>
+						<dep>0.02</dep>
+					</entry>
+					<entry>
+						<ind>1</ind>
+						<dep>0.18</dep>
+					</entry>
+				</table>
+				<table>
+					<property>gear/gear[2]/position-norm</property>
+					<entry>
+						<ind>0</ind>
+						<dep>-0.04</dep>
+					</entry>
+					<entry>
+						<ind>0.5</ind>
+						<dep>0</dep>
+					</entry>
+					<entry>
+						<ind>1</ind>
+						<dep>0</dep>
+					</entry>
+				</table>
+			</sum>
+		</expression>-->
 	</animation>
 	<animation>
 		<type>spin</type>
@@ -556,16 +625,78 @@
 	</animation>
 	
 	<animation>
-		<type>translate</type>
+		<type>rotate</type>
 		<object-name>LeftWheel</object-name>
+		<object-name>LeftWheelStrut</object-name>
 		<object-name>LeftWheelRollingAxis</object-name>
 		<axis>
-			<object-name>LeftWheelBumpingAxis</object-name>
+			<object-name>LeftGearBumpingAxis</object-name>
 		</axis>
-		<property>gear/gear[2]/compression-norm</property>
-		<min>0</min>
-		<max>1</max>
-		<factor>-0.2</factor>
+		<property>/gear/gear[2]/compression-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.1</ind>
+				<dep>1.5</dep>
+			</entry>
+			<entry>
+				<ind>0.2</ind>
+				<dep>3</dep>
+			</entry>
+			<entry>
+				<ind>0.3</ind>
+				<dep>4.5</dep>
+			</entry>
+			<entry>
+				<ind>0.4</ind>
+				<dep>6</dep>
+			</entry>
+			<entry>
+				<ind>0.5</ind>
+				<dep>7.5</dep>
+			</entry>
+			<entry>
+				<ind>0.6</ind>
+				<dep>9</dep>
+			</entry>
+			<entry>
+				<ind>0.7</ind>
+				<dep>10.5</dep>
+			</entry>
+		</interpolation>
+		<!--<expression>
+			<sum>
+				<table>
+					<property>gear/gear[2]/compression-norm</property>
+					<entry>
+						<ind>0</ind>
+						<dep>0.02</dep>
+					</entry>
+					<entry>
+						<ind>1</ind>
+						<dep>0.18</dep>
+					</entry>
+				</table>
+				<table>
+					<property>gear/gear[2]/position-norm</property>
+					<entry>
+						<ind>0</ind>
+						<dep>-0.04</dep>
+					</entry>
+					<entry>
+						<ind>0.5</ind>
+						<dep>0</dep>
+					</entry>
+					<entry>
+						<ind>1</ind>
+						<dep>0</dep>
+					</entry>
+				</table>
+			</sum>
+		</expression>-->
 	</animation>
 	<animation>
 		<type>spin</type>
@@ -578,7 +709,7 @@
 	</animation>
 		
 	<!-- Doors clickable and opening / closing -->
-	 <animation>
+	<animation>
 		<type>pick</type>
 		<object-name>PilotDoorInterior</object-name>
 		<object-name>PilotDoorExterior</object-name>
@@ -592,20 +723,20 @@
 				</script>
 			</binding>
 		</action>
-	 </animation>
-	 <animation>
-	 	<type>rotate</type>
-	 	<object-name>PilotDoorInterior</object-name>
-	 	<object-name>PilotDoorExterior</object-name>
-	 	<object-name>PilotWindowsExterior</object-name>
-	 	<object-name>PilotWindowsInterior</object-name>
-	 	<axis>
-	 		<object-name>PilotDoorAxis</object-name>
-	 	</axis>
-	 	<property>sim/model/doors/pilot/position-norm</property>
-	 	<factor>80</factor>
-	 </animation>
-	 <animation>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>PilotDoorInterior</object-name>
+		<object-name>PilotDoorExterior</object-name>
+		<object-name>PilotWindowsExterior</object-name>
+		<object-name>PilotWindowsInterior</object-name>
+		<axis>
+			<object-name>PilotDoorAxis</object-name>
+		</axis>
+		<property>sim/model/doors/pilot/position-norm</property>
+		<factor>80</factor>
+	</animation>
+	<animation>
 		<type>pick</type>
 		<object-name>EmergencyExitInterior</object-name>
 		<object-name>EmergencyExitExterior</object-name>
@@ -619,20 +750,20 @@
 				</script>
 			</binding>
 		</action>
-	 </animation>
-	 <animation>
-	 	<type>rotate</type>
-	 	<object-name>EmergencyExitInterior</object-name>
-	 	<object-name>EmergencyExitExterior</object-name>
-	 	<object-name>EmergencyExitWindowsInterior</object-name>
-	 	<object-name>EmergencyExitWindowsExterior</object-name>
-	 	<axis>
-	 		<object-name>EmergencyExitAxis</object-name>
-	 	</axis>
-	 	<property>sim/model/doors/emergency-exit/position-norm</property>
-	 	<factor>-80</factor>
-	 </animation>
-	 <animation>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>EmergencyExitInterior</object-name>
+		<object-name>EmergencyExitExterior</object-name>
+		<object-name>EmergencyExitWindowsInterior</object-name>
+		<object-name>EmergencyExitWindowsExterior</object-name>
+		<axis>
+			<object-name>EmergencyExitAxis</object-name>
+		</axis>
+		<property>sim/model/doors/emergency-exit/position-norm</property>
+		<factor>-80</factor>
+	</animation>
+	<animation>
 		<type>pick</type>
 		<object-name>BaggageDoorInterior</object-name>
 		<object-name>BaggageDoorExterior</object-name>
@@ -646,36 +777,94 @@
 				</script>
 			</binding>
 		</action>
-	 </animation>
-	 <animation>
-	 	<type>rotate</type>
-	 	<object-name>BaggageDoorInterior</object-name>
-	 	<object-name>BaggageDoorExterior</object-name>
-	 	<axis>
-	 		<object-name>BaggageDoorAxis</object-name>
-	 	</axis>
-	 	<property>sim/model/doors/baggage/position-norm</property>
-	 	<factor>90</factor>
-	 </animation>
-	 
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>BaggageDoorInterior</object-name>
+		<object-name>BaggageDoorExterior</object-name>
+		<axis>
+			<object-name>BaggageDoorAxis</object-name>
+		</axis>
+		<property>sim/model/doors/baggage/position-norm</property>
+		<factor>90</factor>
+	</animation>
+	
+	<!-- Damage -->
+	<animation>
+		<type>rotate</type>
+		<object-name>Com2Antenna</object-name>
+		<axis>
+			<object-name>ComAntennaDamageAxis</object-name>
+		</axis>
+		<property>/fdm/jsbsim/damage/com2-antenna</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>60</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Com1Antenna</object-name>
+		<axis>
+			<object-name>ComAntennaDamageAxis</object-name>
+		</axis>
+		<property>/fdm/jsbsim/damage/com1-antenna</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>60</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>Com2Antenna</object-name>
+		<condition>
+			<le>
+				<property>/fdm/jsbsim/damage/com2-antenna</property>
+				<value>1</value>
+			</le>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>Com1Antenna</object-name>
+		<condition>
+			<le>
+				<property>/fdm/jsbsim/damage/com1-antenna</property>
+				<value>1</value>
+			</le>
+		</condition>
+	</animation>
+			
 	<!-- Rain drops, fog and frost effects on exterior glass - transparency is controlled by the alpha of the emission, just the below effect does NOT make the glass transparent !-->
 	<effect>
 		<inherits-from>Aircraft/c210-family/Effects/exterior-glass</inherits-from>
-		 <object-name>WindscreenExterior</object-name>
-		 <object-name>PilotWindowsExterior</object-name>
-		 <object-name>EmergencyExitWindowsExterior</object-name>
-		 <object-name>LeftPassengerWindowsExterior</object-name>
-		 <object-name>RightPassengerWindowsExterior</object-name>
-		 <object-name>BackWindowsExterior</object-name>
+		<object-name>WindscreenExterior</object-name>
+		<object-name>PilotWindowsExterior</object-name>
+		<object-name>EmergencyExitWindowsExterior</object-name>
+		<object-name>LeftPassengerWindowsExterior</object-name>
+		<object-name>RightPassengerWindowsExterior</object-name>
+		<object-name>BackWindowsExterior</object-name>
 	</effect>
 	<effect>
 		<inherits-from>Effects/glass</inherits-from>
-		 <object-name>WindscreenInterior</object-name>
-		 <object-name>PilotWindowsInterior</object-name>
-		 <object-name>EmergencyExitWindowsInterior</object-name>
-		 <object-name>LeftPassengerWindowsInterior</object-name>
-		 <object-name>RightPassengerWindowsInterior</object-name>
-		 <object-name>BackWindowsInterior</object-name>
+		<object-name>WindscreenInterior</object-name>
+		<object-name>PilotWindowsInterior</object-name>
+		<object-name>EmergencyExitWindowsInterior</object-name>
+		<object-name>LeftPassengerWindowsInterior</object-name>
+		<object-name>RightPassengerWindowsInterior</object-name>
+		<object-name>BackWindowsInterior</object-name>
 	</effect>
 	
 	<model>

@@ -61,7 +61,7 @@
    <location name="VRP" unit="IN">
      <x>91.92</x><!--90.43-->
      <y>0</y>
-     <z>0</z>
+     <z>-9.84</z>
    </location>
  </metrics>
 
@@ -140,7 +140,7 @@
       <y> 0 </y>
       <z> 0.00 </z>
     </location>
-  </pointmass> 
+  </pointmass>
 
  </mass_balance>
 
@@ -148,9 +148,9 @@
 
   <contact type="BOGEY" name="NOSE">
    <location unit="IN">
-     <x>  45 </x>
+     <x>  45.2 </x>
      <y>   0.00 </y>
-     <z> -41.5 </z>
+     <z> -50 </z>
    </location>
    <static_friction>  0.8 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -165,13 +165,13 @@
   <contact type="BOGEY" name="LEFT_MAIN">
    <location unit="IN">
      <x> 118 </x>
-     <y> 52 </y>
-     <z> -41 </z>
+     <y> 57.6 </y>
+     <z> -50.9 </z>
    </location>
    <static_friction>  0.8 </static_friction>
    <dynamic_friction> 0.40 </dynamic_friction>
    <rolling_friction> 0.03 </rolling_friction>
-   <spring_coeff unit="LBS/FT">       5400.00 </spring_coeff>
+   <spring_coeff unit="LBS/FT">       6000.00 </spring_coeff>
    <damping_coeff unit="LBS/FT/SEC">  800.00 </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>LEFT</brake_group>
@@ -181,13 +181,13 @@
   <contact type="BOGEY" name="RIGHT_MAIN">
    <location unit="IN">
      <x> 118 </x>
-     <y> -52 </y>
-     <z> -41 </z>
+     <y> -57.6 </y>
+     <z> -50.9 </z>
    </location>
    <static_friction> 0.8 </static_friction>
    <dynamic_friction> 0.40 </dynamic_friction>
    <rolling_friction> 0.03 </rolling_friction>
-   <spring_coeff unit="LBS/FT">       5400.00 </spring_coeff>
+   <spring_coeff unit="LBS/FT">       6000.00 </spring_coeff>
    <damping_coeff unit="LBS/FT/SEC">  800.00 </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>RIGHT</brake_group>
@@ -470,6 +470,7 @@
  </propulsion>
  
  <system file="engine"/>
+ <system file="damage"/>
  
  <flight_control name="FCS: p210n">
 
@@ -610,15 +611,15 @@
        </setting>
        <setting>
           <position> 10 </position>
-          <time>      3 </time>
+          <time>      2 </time>
        </setting>
        <setting>
           <position> 20 </position>
-          <time>      4 </time>
+          <time>      3 </time>
        </setting>
        <setting>
           <position> 30 </position>
-          <time>      4 </time>
+          <time>      3 </time>
        </setting>
      </traverse>
      <output>fcs/flap-pos-deg</output>
@@ -758,7 +759,7 @@
             <property>aero/qbar-psf</property>
             <property>metrics/Sw-sqft</property>
             <property>propulsion/engine[0]/cowl-flaps-norm</property>
-            <value>0.0015</value> <!-- calculated -->
+            <value>0.0015</value>
         </product>
     </function>
     

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<system name="damage">
+    <!--
+        Damage values:
+            0 -> no damage
+            1 -> damaged
+            2 -> ripped apart -> will be simply hidden for now, should be flying away behind the aircraft as a submodel
+    -->
+    <channel name="Antenna damage">
+        <switch name="Left antenna damage">
+            <output>damage/com2-antenna</output>
+            <default value="damage/com2-antenna"/>
+            <test logic="OR" value="1">
+                contact/unit[11]/compression-ft gt 0
+                /velocities/airspeed-kt gt 250
+            </test>
+        </switch>
+        <switch name="Right antenna damage">
+            <output>damage/com1-antenna</output>
+            <default value="damage/com1-antenna"/>
+            <test logic="OR" value="1">
+                contact/unit[12]/compression-ft gt 0
+                /velocities/airspeed-kt gt 250
+            </test>
+        </switch>
+    </channel>
+</system>
