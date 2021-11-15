@@ -155,7 +155,7 @@
    <static_friction>  0.8 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT">       4000.00 </spring_coeff>
+   <spring_coeff unit="LBS/FT">       6000.00 </spring_coeff>
    <damping_coeff unit="LBS/FT/SEC">   600.00 </damping_coeff>
    <max_steer unit="DEG"> 27 </max_steer>
    <brake_group>NONE</brake_group>
@@ -169,8 +169,8 @@
      <z> -50.9 </z>
    </location>
    <static_friction>  0.8 </static_friction>
-   <dynamic_friction> 0.40 </dynamic_friction>
-   <rolling_friction> 0.03 </rolling_friction>
+   <dynamic_friction> 0.50 </dynamic_friction>
+   <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">       6000.00 </spring_coeff>
    <damping_coeff unit="LBS/FT/SEC">  800.00 </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
@@ -185,8 +185,8 @@
      <z> -50.9 </z>
    </location>
    <static_friction> 0.8 </static_friction>
-   <dynamic_friction> 0.40 </dynamic_friction>
-   <rolling_friction> 0.03 </rolling_friction>
+   <dynamic_friction> 0.50 </dynamic_friction>
+   <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="LBS/FT">       6000.00 </spring_coeff>
    <damping_coeff unit="LBS/FT/SEC">  800.00 </damping_coeff>
    <max_steer unit="DEG">0</max_steer>
@@ -201,8 +201,8 @@
      <y> 220 </y>
      <z> 33.5 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  0.5 </static_friction>
+    <dynamic_friction> 0.3 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       2000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
   </contact>
@@ -213,8 +213,8 @@
      <y>  -220 </y>
      <z>  33.5 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  0.5 </static_friction>
+    <dynamic_friction> 0.3 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       2000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
   </contact>
@@ -225,8 +225,8 @@
      <y>  0 </y>
      <z>  -25 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  0.01 </static_friction>
+    <dynamic_friction> 0.005 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
   </contact>
@@ -237,8 +237,8 @@
      <y>  0 </y>
      <z>  43 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  0.01 </static_friction>
+    <dynamic_friction> 0.005 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
   </contact>
@@ -249,8 +249,8 @@
      <y>  0 </y>
      <z>  57 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  0.05 </static_friction>
+    <dynamic_friction> 0.025 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
   </contact>
@@ -261,8 +261,8 @@
      <y>  78 </y>
      <z>  -5 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  0.05</static_friction>
+    <dynamic_friction> 0.025 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
   </contact>
@@ -273,8 +273,8 @@
      <y>  -78 </y>
      <z>  -5 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  0.05 </static_friction>
+    <dynamic_friction> 0.025 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
   </contact>
@@ -285,8 +285,8 @@
      <y>  17 </y>
      <z>  41 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  0.01 </static_friction>
+    <dynamic_friction> 0.005 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  500 </damping_coeff>
   </contact>
@@ -297,8 +297,8 @@
      <y>  -17 </y>
      <z>  41 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  0.01 </static_friction>
+    <dynamic_friction> 0.005 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  500 </damping_coeff>
   </contact>
@@ -309,8 +309,8 @@
      <y>  11 </y>
      <z>  -23 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  1 </static_friction>
+    <dynamic_friction> 0.5 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
   </contact>
@@ -321,8 +321,8 @@
      <y>  -11 </y>
      <z>  -23 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  1 </static_friction>
+    <dynamic_friction> 0.5 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
@@ -333,8 +333,8 @@
      <y>  19 </y>
      <z>  -30 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  1</static_friction>
+    <dynamic_friction> 0.5 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
@@ -345,8 +345,8 @@
      <y>  -19 </y>
      <z>  -30 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  1 </static_friction>
+    <dynamic_friction> 0.5 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
@@ -357,8 +357,8 @@
      <y>  17 </y>
      <z>  -27 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  1 </static_friction>
+    <dynamic_friction> 0.5 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
@@ -369,8 +369,8 @@
      <y>  -17 </y>
      <z>  -27 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  1 </static_friction>
+    <dynamic_friction> 0.5 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
@@ -381,8 +381,8 @@
      <y>  0 </y>
      <z>  -6 </z>
     </location>
-    <static_friction>  1.00 </static_friction>
-    <dynamic_friction> 1.00 </dynamic_friction>
+    <static_friction>  1 </static_friction>
+    <dynamic_friction> 0.5 </dynamic_friction>
     <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
@@ -708,6 +708,19 @@
                1.57  0.010
             </tableData>
           </table>
+          <div>
+              <sum>
+                  <difference>
+                      <value>1</value>
+                      <property>damage/left-wing-actual</property>
+                  </difference>
+                  <difference>
+                      <value>1</value>
+                      <property>damage/right-wing-actual</property>
+                  </difference>
+              </sum>
+              <value>2</value>
+          </div>
       </product>
     </function>
 
@@ -749,6 +762,15 @@
               0.26    0.036
               1.57    0.2
             </tableData>
+          </table>
+          <table>
+              <independentVar lookup="row">damage/left-wing-actual</independentVar>
+              <independentVar lookup="column">damage/right-wing-actual</independentVar>
+              <tableData>
+                        0      1
+                  0    0.1   0.5
+                  1    0.5   1
+              </tableData>
           </table>
        </product>
     </function>
@@ -792,7 +814,7 @@
             <independentVar lookup="row">gear/gear-pos-norm</independentVar>
             <tableData>
               0    0              
-               0.7    2 
+               0.5    2 
                1    1
             </tableData>
           </table>   

@@ -4,7 +4,7 @@
 	<sim>
 		<description type="string">Cessna P210N Pressurized Centurion (JSBsim)</description>
 		<long-description>
-			The Cessna P210N Pressurized Centurion is a high-wing, fixed-wing light pressurized utility aircraft that was first produced in 1984. It is equipped with a Continental TSIO-520-R turbocharged engine.
+			The Cessna P210N Pressurized Centurion is a high-wing, fixed-wing light pressurized utility aircraft that was first produced in 1984. It is equipped with a Continental TSIO-520-P turbocharged engine and a McCauley constant-speed propeller.
 		</long-description>
 		<authors>
 			<author n="0">
@@ -237,17 +237,17 @@
 			</tank>
 		</fuel>
 	</consumables>
+	
 	<controls>
 		<gear>
-			<parking-brake>true</parking-brake>
+			<brake-parking>true</brake-parking>
 		</gear>
 		<engines>
 			<engine>
 				<cowl-flaps-norm>1</cowl-flaps-norm>
-				<propeller-pitch>0.22</propeller-pitch>
-				<fuel-pump>false</fuel-pump>
+				<propeller-pitch>1</propeller-pitch>
 			</engine>
 		</engines>
 	</controls>
-
+	
 </PropertyList>

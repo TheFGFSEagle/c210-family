@@ -5,8 +5,8 @@
     <title>Cessna P210N "Pressurized Centurion" (JSBsim)</title>
 
     <line>_________V Speeds_________</line>
-    <line>Vso: 58 kts</line>
+    <line>Vso: 54 kts</line>
     <line>Va: 130 kts</line>
-    <line>Vne: 203 kts</line>
+    <line>Vne: 200 kts</line>
 
 </PropertyList>

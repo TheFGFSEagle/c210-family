@@ -32,7 +32,8 @@
    <air-intake-impedance-factor> 0 </air-intake-impedance-factor>
    <cooling-factor> 0.36 </cooling-factor>
    <cylinder-head-mass unit="LBS"> 25.28 </cylinder-head-mass>
-
+   
+   <turbocharged>1</turbocharged>
    <boostmanual> 0 </boostmanual>
    <numboostspeeds>1</numboostspeeds>
    <boostoverride>0</boostoverride>

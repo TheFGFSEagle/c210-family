@@ -804,7 +804,7 @@
 			</entry>
 			<entry>
 				<ind>1</ind>
-				<dep>60</dep>
+				<dep>-60</dep>
 			</entry>
 		</interpolation>
 	</animation>
@@ -822,7 +822,7 @@
 			</entry>
 			<entry>
 				<ind>1</ind>
-				<dep>60</dep>
+				<dep>-60</dep>
 			</entry>
 		</interpolation>
 	</animation>
@@ -846,6 +846,9 @@
 			</le>
 		</condition>
 	</animation>
+	
+	<!--<animation>
+		<type>select</type>-->
 			
 	<!-- Rain drops, fog and frost effects on exterior glass - transparency is controlled by the alpha of the emission, just the below effect does NOT make the glass transparent !-->
 	<effect>

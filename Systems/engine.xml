@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <system name="engine">
-    <property>propulsion/engine/ve-offset</property>
+    <property>propulsion/engine/ve-dbg-offset</property>
     <channel name="Volumetric efficiency">
         <fcs_function name="Volumetric efficiency">
             <function>
@@ -18,21 +18,10 @@
                            17000   0.595     0.6204
                        </tableData>
                     </table>
-                    <property>propulsion/engine/ve-offset</property>
+                    <property>propulsion/engine/ve-dbg-offset</property>
                 </sum>
             </function>
             <output>propulsion/engine/volumetric-efficiency</output>
         </fcs_function>
     </channel>
-    <!--<channel name="Fuel flow">
-        <fcs_function name="Fuel flow conversion - PPS tp PPH">
-            <function>
-                <product>
-                    <property>propulsion/engine/fuel-flow-pps</property>
-                    <value>3600</value>
-                </product>
-            </function>
-            <output>propulsion/engine/fuel-flow-pph</output>
-        </fcs_function>
-    </channel>-->
 </system>
