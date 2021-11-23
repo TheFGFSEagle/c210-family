@@ -21,14 +21,14 @@
    <maxrpm>      2600.0 </maxrpm>   
    <minmp unit="INHG">         15 </minmp>
    <maxmp unit="INHG">         28.8 </maxmp>   
-   <bsfc unit="LBS/HP*HR"> 0.3939 </bsfc>
+   <bsfc unit="LBS/HP*HR"> 0.44166 </bsfc>
 
    <starter-torque> 150.00 </starter-torque>   
    <static-friction> 1.55 </static-friction>
    <sparkfaildrop>  0.082 </sparkfaildrop>
    <volumetric-efficiency> 0.7038 </volumetric-efficiency>
    
-   <ram-air-factor>1</ram-air-factor>
+   <ram-air-factor>0.81</ram-air-factor>
    <air-intake-impedance-factor> 0 </air-intake-impedance-factor>
    <cooling-factor> 0.36 </cooling-factor>
    <cylinder-head-mass unit="LBS"> 25.28 </cylinder-head-mass>
