@@ -66,9 +66,10 @@
  </metrics>
 
  <mass_balance>
-   <ixx unit="SLUG*FT2">      1000 </ixx>
-   <iyy unit="SLUG*FT2">      1840 </iyy>
-   <izz unit="SLUG*FT2">      3323 </izz>
+   <ixx unit="SLUG*FT2">      2060 </ixx>
+   <iyy unit="SLUG*FT2">      1990 </iyy>
+   <izz unit="SLUG*FT2">      3760 </izz>
+	<ixz unit="SLUG*FT2">      -75 </izz>
    <emptywt unit="LBS" >      2342 </emptywt>
    <!-- ref. datum is at 51.84  inchers -->
    <!-- maximum aft location of the CG is 51.84 (ref. datum) + 52 = 103.84 inches -->
@@ -702,8 +703,8 @@
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
               -0.20 -0.750
-               0.00  0.510
-               0.23  1.700
+               0.00  0.581
+               0.23  1.8161
                0.60  0.710
                1.57  0.010
             </tableData>
@@ -860,7 +861,7 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>aero/beta-rad</property>
-           <value>-2.26</value> <!-- VSP -->
+           <value>-2.33</value> <!-- VSP -->
        </product>
     </function>
 
@@ -875,7 +876,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <property>aero/beta-rad</property>
-           <value>-0.02</value> <!-- VSP -->
+           <value>-0.054</value> <!-- VSP -->
        </product>
     </function>
 
@@ -887,7 +888,7 @@
            <property>metrics/bw-ft</property>
            <property>aero/bi2vel</property>
            <property>velocities/p-aero-rad_sec</property>
-           <value>-0.51</value> <!-- VSP -->
+           <value>-0.516</value> <!-- VSP -->
        </product>
     </function>
 
@@ -899,7 +900,7 @@
            <property>metrics/bw-ft</property>
            <property>aero/bi2vel</property>
            <property>velocities/r-aero-rad_sec</property>
-           <value>0.152</value> <!-- VSP -->
+           <value>0.168</value> <!-- VSP -->
        </product>
     </function>
 
@@ -936,7 +937,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/cbarw-ft</property>
            <value>1</value> <!-- zero, as VSP should be rechecked -->
-           <value>-0.0932</value> <!-- VSP -->
+           <value>0.0087</value> <!-- VSP -->
        </product>
     </function>
     <function name="aero/moment/Pitch_alpha">
@@ -946,7 +947,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/cbarw-ft</property>
            <property>aero/alpha-rad</property>
-           <value>-1.68</value> <!-- VSP -->
+           <value>-2.44</value> <!-- VSP -->
        </product>
     </function>
     <function name="aero/moment/Pitch_elevator">
@@ -968,7 +969,7 @@
            <property>metrics/cbarw-ft</property>
            <property>aero/ci2vel</property>
            <property>velocities/q-aero-rad_sec</property>
-           <value>-19.8</value> <!-- VSP -->
+           <value>-20.2</value> <!-- VSP -->
        </product>
     </function>
 
@@ -995,7 +996,7 @@
            <property>metrics/Sw-sqft</property>
            <property>metrics/bw-ft</property>
            <property>aero/beta-rad</property>
-           <value>0.43</value> <!-- VSP -->
+           <value>0.17</value> <!-- VSP -->
        </product>
     </function>
 
@@ -1007,7 +1008,7 @@
            <property>metrics/bw-ft</property>
            <property>aero/bi2vel</property>
            <property>velocities/r-aero-rad_sec</property>
-           <value>-0.128</value> <!-- VSP -->
+           <value>-0.132</value> <!-- VSP -->
        </product>
     </function>
 
