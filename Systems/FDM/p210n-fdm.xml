@@ -49,7 +49,7 @@
    <vtailarea unit="FT2">   17.50 </vtailarea>
    <vtailarm  unit="FT" >   14.09 </vtailarm>
    <location name="AERORP" unit="IN">
-     <x> 106.3 </x>
+     <x> 91.92 </x>
      <y>   0.00 </y>
      <z>   39.37 </z>
    </location>
@@ -422,7 +422,7 @@
   <!-- Left main tank -->
   <tank type="FUEL" number="0">
      <location unit="IN">
-       <x> 118 </x>
+       <x> 94.75 </x>
        <y>   126 </y>
        <z>  36 </z>
      </location>
@@ -435,7 +435,7 @@
   <!-- Right main tank -->
   <tank type="FUEL" number="1">
      <location unit="IN">
-       <x> 118 </x>
+       <x> 94.75 </x>
        <y>   -126 </y>
        <z>  36 </z>
      </location>
@@ -448,7 +448,7 @@
   <!-- Left reservoir tank -->
   <tank type="FUEL" number="2">
      <location unit="IN">
-       <x> 0 </x>
+       <x> 94.74 </x>
        <y>   14 </y>
        <z>  -21.5 </z>
      </location>
@@ -460,7 +460,7 @@
   <!-- Right reservoir tank -->
   <tank type="FUEL" number="3">
      <location unit="IN">
-       <x> 0 </x>
+       <x> 94.75 </x>
        <y>   14 </y>
        <z>  -21.5 </z>
      </location>
