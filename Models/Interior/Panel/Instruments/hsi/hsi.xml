@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>hsi.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>HeadingScale</object-name>
+		<object-name>HeadingBug</object-name>
+		<object-name>RadialNeedle</object-name>
+		<object-name>RadialDeviationNeedle</object-name>
+		<object-name>RadialDeviationScale</object-name>
+		<object-name>NavFlag</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/heading-indicator/indicated-heading-deg</property>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>HeadingBug</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/heading-indicator/heading-bug-deg</property>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>RadialNeedle</object-name>
+		<object-name>RadialDeviationNeedle</object-name>
+		<object-name>RadialDeviationScale</object-name>
+		<object-name>NavFlag</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/nav/radials/selected-deg</property>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>RadialDeviationNeedle</object-name>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/nav/heading-needle-deflection-norm</property>
+		<factor>0.01261</factor>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>GlideSlopeDeviationMarker</object-name>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<property>instrumentation/nav/gs-needle-deflection-norm</property>
+		<factor>0.012631</factor>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>GSFlag</object-name>
+		<condition>
+			<not>
+				<or>
+					<property>instrumentation/nav/in-range</property>
+					<property>instrumentation/nav/has-gs</property>
+					<property>instrumentation/nav/serviceable</property>
+					<property>instrumentation/nav/gs/serviceable</property>
+					<property>instrumentation/nav/gs-in-range</property>
+				</or>
+			</not>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>NavFlag</object-name>
+		<condition>
+			<not>
+				<or>
+					<property>instrumentation/nav/in-range</property>
+					<property>instrumentation/nav/serviceable</property>
+					<property>instrumentation/nav/operable</property>
+				</or>
+			</not>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>HdgFlag</object-name>
+		<condition>
+			<not>
+				<or>
+					<property>instrumentation/nav/serviceable</property>
+					<property>instrumentation/nav/operable</property>
+					<property>instrumentation/heading-indicator/serviceable</property>
+					<equals>
+						<property>instrumentation/heading-indicator/spin</property>
+						<value>0</value>
+					</equals>
+				</or>
+			</not>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>RadialKnob</object-name>
+		<property>instrumentation/nav/radials/selected-deg</property>
+		<factor>5</factor>
+		<axis>
+			<object-name>RadialKnobAxis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav/radials/selected-deg</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>359</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>HeadingBugKnob</object-name>
+		<property>instrumentation/heading-indicator/heading-bug-deg</property>
+		<factor>5</factor>
+		<axis>
+			<object-name>HeadingBugKnobAxis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/heading-indicator/heading-bug-deg</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>359</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+	</animation>
+	 <text>
+		<name>HSILabel</name>
+		<type type="string">literal</type>
+		<text type="string">Horizontal Situation Indicator</text>
+		<draw-text type="bool">true</draw-text>
+		<font>Helvetica.txf</font>
+		<character-size type="double">0.020</character-size>
+		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+		<axis-alignment>yz-plane</axis-alignment>
+		<max-height>0.08</max-height>
+		<max-width>0.08</max-width>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+		<alignment>center-center</alignment>
+		<offsets>
+			<x-m> 0.02</x-m>
+			<y-m> 0.0 </y-m>
+			<z-m> 0.01 </z-m>
+		</offsets>
+	</text>
+	
+	<animation>
+		<type>material</type>
+		<object-name>HSILabel</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>HSILabel</object-name>
+		<condition>
+			<property>/sim/panel-hotspots</property>
+		</condition>
+	</animation>
+	
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		<object-name>Glass</object-name>
+	</effect>
+</PropertyList>

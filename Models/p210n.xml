@@ -492,7 +492,7 @@
 			</entry>
 			<entry>
 				<ind>0.5</ind>
-				<dep>0.15</dep>
+				<dep>-0.15</dep>
 			</entry>
 		</interpolation>
 	</animation>
@@ -796,7 +796,7 @@
 		<axis>
 			<object-name>ComAntennaDamageAxis</object-name>
 		</axis>
-		<property>/fdm/jsbsim/damage/com2-antenna</property>
+		<property>/fdm/jsbsim/damage/com2-antenna-actual</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -814,7 +814,7 @@
 		<axis>
 			<object-name>ComAntennaDamageAxis</object-name>
 		</axis>
-		<property>/fdm/jsbsim/damage/com1-antenna</property>
+		<property>/fdm/jsbsim/damage/com1-antenna-actual</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -825,26 +825,6 @@
 				<dep>-60</dep>
 			</entry>
 		</interpolation>
-	</animation>
-	<animation>
-		<type>select</type>
-		<object-name>Com2Antenna</object-name>
-		<condition>
-			<le>
-				<property>/fdm/jsbsim/damage/com2-antenna</property>
-				<value>1</value>
-			</le>
-		</condition>
-	</animation>
-	<animation>
-		<type>select</type>
-		<object-name>Com1Antenna</object-name>
-		<condition>
-			<le>
-				<property>/fdm/jsbsim/damage/com1-antenna</property>
-				<value>1</value>
-			</le>
-		</condition>
 	</animation>
 	
 	<!--<animation>

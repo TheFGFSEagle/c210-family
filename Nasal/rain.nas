@@ -1,26 +1,30 @@
 # Update splash vector in a loop in respect to current airspeed
 
-var rainSplashVectorLoop = func() {
-	var airspeed = getprop("/velocities/airspeed-kt");
+var airspeedNode = props.getNode("/velocities/airspeed-kt");
+var splashVectorXNode = props.getNode("/environment/aircraft-effects/splash-vector-x");
+var splashVectorYNode = props.getNode("/environment/aircraft-effects/splash-vector-y");
+var splashVectorZNode = props.getNode("/environment/aircraft-effects/splash-vector-z");
+var airspeed_max = 200;
 
-	var airspeed_max = 200;
+var rainSplashVectorLoop = func() {
+	var airspeed = airspeedNode.getIntValue();
 
 	if (airspeed > airspeed_max) {
 		airspeed = airspeed_max;
 	}
 
 	airspeed = math.sqrt(airspeed / airspeed_max);
-
-	var splash_x = -0.1 - 3.0 * airspeed;
+	
+	var splash_x = 0 - 5 * airspeed;
 	var splash_y = 0.0;
-	var splash_z = 1.0 - 1.35 * airspeed;
+	var splash_z = 2.1 - 2 * airspeed;
 
-	setprop("/environment/aircraft-effects/splash-vector-x", splash_x);
-	setprop("/environment/aircraft-effects/splash-vector-y", splash_y);
-	setprop("/environment/aircraft-effects/splash-vector-z", splash_z);
+	splashVectorXNode.setDoubleValue(splash_x);
+	splashVectorYNode.setDoubleValue(splash_y);
+	splashVectorZNode.setDoubleValue(splash_z);
 }
 
-rainSplashVectorLoopTimer = maketimer(1, rainSplashVectorLoop);
+rainSplashVectorLoopTimer = maketimer(0.1, rainSplashVectorLoop);
 rainSplashVectorLoopTimer.singleShot = 0;
 rainSplashVectorLoopTimer.simulatedTime = 1;
 rainSplashVectorLoopTimer.start();

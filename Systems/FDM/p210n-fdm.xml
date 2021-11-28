@@ -150,7 +150,7 @@
    <location unit="IN">
      <x>  45.2 </x>
      <y>   0.00 </y>
-     <z> -50 </z>
+     <z> -51 </z>
    </location>
    <static_friction>  0.8 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -311,7 +311,7 @@
     </location>
     <static_friction>  1 </static_friction>
     <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
+    <spring_coeff unit="LBS/FT">       5000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
   </contact>
   
@@ -323,7 +323,7 @@
     </location>
     <static_friction>  1 </static_friction>
     <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
+    <spring_coeff unit="LBS/FT">       5000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
   
@@ -335,7 +335,7 @@
     </location>
     <static_friction>  1</static_friction>
     <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
+    <spring_coeff unit="LBS/FT">       5000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
   
@@ -347,7 +347,7 @@
     </location>
     <static_friction>  1 </static_friction>
     <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
+    <spring_coeff unit="LBS/FT">       5000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
   
@@ -359,7 +359,7 @@
     </location>
     <static_friction>  1 </static_friction>
     <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
+    <spring_coeff unit="LBS/FT">       5000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
   
@@ -371,7 +371,7 @@
     </location>
     <static_friction>  1 </static_friction>
     <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
+    <spring_coeff unit="LBS/FT">       5000.00 </spring_coeff>
     <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
   </contact>
   
@@ -708,19 +708,13 @@
                1.57  0.010
             </tableData>
           </table>
-          <div>
+          <quotient>
               <sum>
-                  <difference>
-                      <value>1</value>
-                      <property>damage/left-wing-actual</property>
-                  </difference>
-                  <difference>
-                      <value>1</value>
-                      <property>damage/right-wing-actual</property>
-                  </difference>
+                  <property>damage/left-wing-ripped-off</property>
+                  <property>damage/right-wing-ripped-off</property>
               </sum>
               <value>2</value>
-          </div>
+          </quotient>
       </product>
     </function>
 
@@ -764,12 +758,12 @@
             </tableData>
           </table>
           <table>
-              <independentVar lookup="row">damage/left-wing-actual</independentVar>
-              <independentVar lookup="column">damage/right-wing-actual</independentVar>
+              <independentVar lookup="row">damage/left-wing-ripped-off</independentVar>
+              <independentVar lookup="column">damage/right-wing-ripped-off</independentVar>
               <tableData>
-                        0      1
-                  0    0.1   0.5
-                  1    0.5   1
+                        0       1
+                  0    1       0.6
+                  1    0.6    0.2
               </tableData>
           </table>
        </product>

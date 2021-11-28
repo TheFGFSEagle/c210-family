@@ -19,14 +19,14 @@
    <cycles>         4.0 </cycles>
    <idlerpm>      600.0 </idlerpm>   
    <maxrpm>      2600.0 </maxrpm>   
-   <minmp unit="INHG">         15 </minmp>
+   <minmp unit="INHG">         10 </minmp>
    <maxmp unit="INHG">         28.8 </maxmp>   
    <bsfc unit="LBS/HP*HR"> 0.44166 </bsfc>
 
    <starter-torque> 150.00 </starter-torque>   
-   <static-friction> 1.55 </static-friction>
+   <static-friction> 0.005 </static-friction>
    <sparkfaildrop>  0.082 </sparkfaildrop>
-   <volumetric-efficiency> 0.7038 </volumetric-efficiency>
+   <volumetric-efficiency> 0.814 </volumetric-efficiency>
    
    <ram-air-factor>0.81</ram-air-factor>
    <air-intake-impedance-factor> 0 </air-intake-impedance-factor>
@@ -40,8 +40,8 @@
    <boost-loss-factor> 0 </boost-loss-factor>
    
    <ratedboost1 unit="INHG">5.58</ratedboost1>
-   <ratedrpm1>2700</ratedrpm1>
-   <ratedpower1>310</ratedpower1>
+   <ratedrpm1>2600</ratedrpm1>
+   <ratedpower1>285</ratedpower1>
    <ratedaltitude1>17000</ratedaltitude1>
 
 </piston_engine>
