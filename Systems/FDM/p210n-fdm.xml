@@ -49,9 +49,9 @@
    <vtailarea unit="FT2">   17.50 </vtailarea>
    <vtailarm  unit="FT" >   14.09 </vtailarm>
    <location name="AERORP" unit="IN">
-     <x> 91.92 </x>
+     <x>107</x>
      <y>   0.00 </y>
-     <z>   39.37 </z>
+     <z>   29 </z>
    </location>
    <location name="EYEPOINT" unit="IN">
      <x>  95 </x>
@@ -59,7 +59,7 @@
      <z>  20.00 </z>
    </location>
    <location name="VRP" unit="IN">
-     <x>91.92</x><!--90.43-->
+     <x>91.92</x>
      <y>0</y>
      <z>-9.84</z>
    </location>
@@ -422,9 +422,9 @@
   <!-- Left main tank -->
   <tank type="FUEL" number="0">
      <location unit="IN">
-       <x> 94.75 </x>
+       <x> 107 </x>
        <y>   126 </y>
-       <z>  36 </z>
+       <z>  27 </z>
      </location>
      <capacity unit="LBS"> 267.445 </capacity>
      <contents unit="LBS"> 100 </contents>
@@ -435,9 +435,9 @@
   <!-- Right main tank -->
   <tank type="FUEL" number="1">
      <location unit="IN">
-       <x> 94.75 </x>
+       <x> 107 </x>
        <y>   -126 </y>
-       <z>  36 </z>
+       <z>  27 </z>
      </location>
      <capacity unit="LBS"> 267.445 </capacity>
      <contents unit="LBS"> 100</contents>
@@ -448,9 +448,9 @@
   <!-- Left reservoir tank -->
   <tank type="FUEL" number="2">
      <location unit="IN">
-       <x> 94.74 </x>
+       <x> 90 </x>
        <y>   14 </y>
-       <z>  -21.5 </z>
+       <z>  -25 </z>
      </location>
      <capacity unit="LBS"> 0.5 </capacity>
      <contents unit="LBS"> 0.5 </contents>
@@ -460,9 +460,9 @@
   <!-- Right reservoir tank -->
   <tank type="FUEL" number="3">
      <location unit="IN">
-       <x> 94.75 </x>
+       <x> 90 </x>
        <y>   14 </y>
-       <z>  -21.5 </z>
+       <z>  -25 </z>
      </location>
      <capacity unit="LBS"> 0.5 </capacity>
      <contents unit="LBS"> 0.5 </contents>
@@ -673,7 +673,7 @@
                 </traverse>
                 <output>propulsion/engine[0]/cowl-flaps-norm</output>
             </kinematic>
-            <aerosurface_scale name="Left Cooling Factor">
+            <aerosurface_scale name="Cooling Factor">
                 <input>propulsion/engine[0]/cowl-flaps-norm</input>
                 <gain>1.0</gain>
                 <zero_centered>false</zero_centered>
