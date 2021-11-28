@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>attitude-indicator.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>IndicatorBall</object-name>
+		<object-name>RollScale</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<property>instrumentation/attitude-indicator/indicated-roll-deg</property>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>IndicatorBall</object-name>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<expression>
+			<sum>
+				<property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
+				<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
+			</sum>
+		</expression>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Knob</object-name>
+		<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
+		<factor>5</factor>
+		<axis>
+			<object-name>KnobAxis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
+				<factor>0.1</factor>
+				<min>-90</min>
+				<max>90</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
+	 <text>
+		<name>AILabel</name>
+		<type type="string">literal</type>
+		<text type="string">Attitude Indicator</text>
+		<draw-text type="bool">true</draw-text>
+		<font>Helvetica.txf</font>
+		<character-size type="double">0.020</character-size>
+		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+		<axis-alignment>yz-plane</axis-alignment>
+		<max-height>0.08</max-height>
+		<max-width>0.08</max-width>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+		<alignment>center-center</alignment>
+		<offsets>
+			<x-m> 0.02</x-m>
+			<y-m> 0.0 </y-m>
+			<z-m> 0.01 </z-m>
+		</offsets>
+	</text>
+	
+	<animation>
+		<type>material</type>
+		<object-name>AILabel</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>AILabel</object-name>
+		<condition>
+			<property>/sim/panel-hotspots</property>
+		</condition>
+	</animation>
+		
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		<object-name>Glass</object-name>
+	</effect>
+</PropertyList>

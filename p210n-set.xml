@@ -8,17 +8,21 @@
 		</long-description>
 		<authors>
 			<author n="0">
-				<description>FDM, 3D, systems</description>
+				<description>FDM, 3D, systems, Nasal</description>
 				<nick>TheEagle</nick>
 				<email>programmer.anonymous@yandex.com</email>
 			</author>
 			<author n="1">
-				<description>FDM</description>
+				<description>Engine and propeller</description>
 				<nick>dany93</nick>
 			</author>
 			<author n="2">
 				<description>FDM</description>
 				<nick>Ysop</nick>
+			</author>
+			<author n="3">
+				<description>Engine advice</description>
+				<nick>S&amp;J</nick>
 			</author>
 		</authors>
 		<aircraft-version>1.0.0</aircraft-version>
@@ -41,7 +45,7 @@
 			<preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
-				<path>Previews/preview1.png</path>
+				<path>Previews/cruising.png</path>
 			</preview>
 			<!--<preview>
 				<type>exterior</type>
@@ -235,6 +239,14 @@
 			<tank n="1">
 				<name>Right wing tank</name>
 			</tank>
+			<tank n="2">
+				<name>Left reservoir tank</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="3">
+				<name>Right reservoir tank</name>
+				<hidden>true</hidden>
+			</tank>
 		</fuel>
 	</consumables>
 	
@@ -250,4 +262,9 @@
 		</engines>
 	</controls>
 	
+	<instrumentation>
+		<heading-indicator>
+			<heading-bug-deg>0</heading-bug-deg>
+		</heading-indicator>
+	</instrumentation>
 </PropertyList>
