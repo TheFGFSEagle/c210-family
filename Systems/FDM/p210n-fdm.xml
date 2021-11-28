@@ -69,7 +69,6 @@
    <ixx unit="SLUG*FT2">      2060 </ixx>
    <iyy unit="SLUG*FT2">      1990 </iyy>
    <izz unit="SLUG*FT2">      3760 </izz>
-	<ixz unit="SLUG*FT2">      -75 </izz>
    <emptywt unit="LBS" >      2342 </emptywt>
    <!-- ref. datum is at 51.84  inchers -->
    <!-- maximum aft location of the CG is 51.84 (ref. datum) + 52 = 103.84 inches -->
