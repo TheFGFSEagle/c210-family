@@ -686,7 +686,6 @@ OBJECT poly
 name "Glass"
 data 9
 Plane.005
-hidden
 crease 40.0
 numvert 10
 0.0025 0.02832 0.03328

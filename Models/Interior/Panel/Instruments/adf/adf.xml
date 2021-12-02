@@ -1,57 +1,32 @@
 <?xml version="1.0"?>
 <PropertyList>
-	<path>attitude-indicator.ac</path>
+	<path>adf.ac</path>
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>IndicatorBall</object-name>
-		<object-name>RollScale</object-name>
+		<object-name>Needle</object-name>
 		<axis>
 			<x>1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/attitude-indicator/indicated-roll-deg</property>
-	</animation>
-	<animation>
-		<type>rotate</type>
-		<object-name>IndicatorBall</object-name>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
-		</axis>
-		<expression>
-			<sum>
-				<property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
-				<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
-			</sum>
-		</expression>
+		<property>instrumentation/adf/indicated-bearing-deg</property>
 	</animation>
 	
 	<animation>
-		<type>knob</type>
-		<object-name>Knob</object-name>
-		<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
-		<factor>5</factor>
+		<type>rotate</type>
+		<object-name>HeadingScale</object-name>
 		<axis>
-			<object-name>KnobAxis</object-name>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
 		</axis>
-		<action>
-			<binding>
-				<command>property-adjust</command>
-				<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
-				<factor>0.1</factor>
-				<min>-90</min>
-				<max>90</max>
-				<wrap>false</wrap>
-			</binding>
-		</action>
+		<property>instrumentation/heading-indicator/indicated-heading-deg</property>
 	</animation>
 	 <text>
-		<name>AILabel</name>
+		<name>ADFLabel</name>
 		<type type="string">literal</type>
-		<text type="string">Attitude Indicator</text>
+		<text type="string">Automatic Direction Finder</text>
 		<draw-text type="bool">true</draw-text>
 		<font>Helvetica.txf</font>
 		<character-size type="double">0.020</character-size>
@@ -73,7 +48,7 @@
 	
 	<animation>
 		<type>material</type>
-		<object-name>AILabel</object-name>
+		<object-name>ADFLabel</object-name>
 		<emission>
 			<red>1</red>
 			<green>1</green>
@@ -83,12 +58,12 @@
 	
 	<animation>
 		<type>select</type>
-		<object-name>AILabel</object-name>
+		<object-name>ADFLabel</object-name>
 		<condition>
 			<property>/sim/panel-hotspots</property>
 		</condition>
 	</animation>
-		
+	
 	<effect>
 		<inherits-from>Effects/glass</inherits-from>
 		<object-name>Glass</object-name>

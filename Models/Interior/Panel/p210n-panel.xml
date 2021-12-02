@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <PropertyList>
 	<model>
+		<path>Instruments/asi/airspeed.xml</path>
+		<offsets>
+			<x-m>-0.45</x-m>
+			<y-m>-0.39</y-m>
+			<z-m>0.45</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
 		<path>Instruments/ai/attitude-indicator.xml</path>
 		<offsets>
 			<x-m>-0.49</x-m>
 			<y-m>-0.3</y-m>
-			<z-m>0.445</z-m>
-			<pitch-deg>-5.4</pitch-deg>
-		</offsets>
-	</model>
-	<model>
-		<path>Instruments/asi/airspeed.xml</path>
-		<offsets>
-			<x-m>-0.455</x-m>
-			<y-m>-0.39</y-m>
 			<z-m>0.45</z-m>
-			<pitch-deg>-5.4</pitch-deg>
+			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
 	<model>
@@ -24,7 +24,16 @@
 			<x-m>-0.45</x-m>
 			<y-m>-0.21</y-m>
 			<z-m>0.45</z-m>
-			<pitch-deg>-5.4</pitch-deg>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/dme/dme.xml</path>
+		<offsets>
+			<x-m>-0.45</x-m>
+			<y-m>-0.12</y-m>
+			<z-m>0.45</z-m>
+			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
 	<model>
@@ -33,8 +42,7 @@
 			<x-m>-0.44</x-m>
 			<y-m>-0.39</y-m>
 			<z-m>0.35</z-m>
-			<pitch-deg>-6</pitch-deg>
-			<heading-deg>2</heading-deg>
+			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
 	<model>
@@ -43,7 +51,7 @@
 			<x-m>-0.44</x-m>
 			<y-m>-0.3</y-m>
 			<z-m>0.35</z-m>
-			<pitch-deg>-6</pitch-deg>
+			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
 	<model>
@@ -52,7 +60,25 @@
 			<x-m>-0.44</x-m>
 			<y-m>-0.21</y-m>
 			<z-m>0.35</z-m>
-			<pitch-deg>-6</pitch-deg>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/adf/adf.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>-0.21</y-m>
+			<z-m>0.25</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/alt/standby-alt.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>-0.39</y-m>
+			<z-m>0.25</z-m>
+			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
 </PropertyList>

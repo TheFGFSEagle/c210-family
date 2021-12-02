@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<propeller version="1.01" name="McCauley_D3A34C402">
+    <ixx>   4.38 </ixx>
+    <diameter unit="IN">  80.0 </diameter>
+    <constspeed>1</constspeed>
+    <numblades> 3 </numblades>
+    <gearratio>  1 </gearratio>
+    <cp_factor> 1.5 </cp_factor>
+    <ct_factor> 1.55 </ct_factor>
+    <minpitch> 12.4 </minpitch>
+    <maxpitch> 28.5 </maxpitch>
+    <minrpm>   2000 </minrpm>
+    <maxrpm>   2700 </maxrpm>
+
+    <!-- thrust coefficient as a function of advance ratio and blade angle -->
+    <table name="C_THRUST" type="internal">
+        <tableData>
+                    12.4            28.5
+            0      0.059169   0.070471
+            0.1   0.057872   0.075647
+            0.2   0.053236   0.075084
+            0.3   0.046486   0.073785
+            0.4   0.03723     0.071892
+            0.5   0.025331   0.070132
+            0.6   0.011572   0.069065
+            0.7   -0.00298    0.068736
+            0.8   -0.018        0.067296
+            0.9   -0.035        0.063196
+            1      -0.055        0.054459
+            1.1   -0.075        0.041856
+            1.2   -0.095        0.028984
+        </tableData>
+    </table>
+
+ <!-- power coefficient as a function of advance ratio and blade angle -->
+    <table name="C_POWER" type="internal">
+        <tableData>
+                    12.4            28.5
+            0      0.023747   0.070429
+            0.1   0.023881   0.077167
+            0.2   0.023797   0.075751
+            0.3   0.022897   0.073886
+            0.4   0.02079     0.071894
+            0.5   0.016573   0.069845
+            0.6   0.009758   0.069028
+            0.7   0.000482   0.068737
+            0.8   -0.01           0.06909
+            0.9   -0.022         0.068348
+            1      -0.035         0.063237
+            1.1   -0.048         0.052714
+            1.2   -0.062         0.039982
+        </tableData>
+    </table>
+
+
+    <!-- thrust effects of helical tip Mach -->
+    <table name="CT_MACH" type="internal">
+        <tableData>
+            0.85   1.0
+            1.05   0.8
+        </tableData>
+    </table>
+
+    <!-- power-required effects of helical tip Mach -->
+    <table name="CP_MACH" type="internal">
+        <tableData>
+            0.85   1.0
+            1.05   1.8
+            2.00   1.4
+        </tableData>
+    </table>
+
+</propeller>

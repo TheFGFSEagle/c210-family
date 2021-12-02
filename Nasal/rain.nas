@@ -4,20 +4,16 @@ var airspeedNode = props.getNode("/velocities/airspeed-kt");
 var splashVectorXNode = props.getNode("/environment/aircraft-effects/splash-vector-x");
 var splashVectorYNode = props.getNode("/environment/aircraft-effects/splash-vector-y");
 var splashVectorZNode = props.getNode("/environment/aircraft-effects/splash-vector-z");
-var airspeed_max = 200;
+var airspeedMax = 200;
 
 var rainSplashVectorLoop = func() {
-	var airspeed = airspeedNode.getIntValue();
+	var airspeed = math.clamp(airspeedNode.getIntValue(), 0, airspeedMax);
 
-	if (airspeed > airspeed_max) {
-		airspeed = airspeed_max;
-	}
-
-	airspeed = math.sqrt(airspeed / airspeed_max);
+	airspeed = math.sqrt(airspeed / airspeedMax);
 	
-	var splash_x = 0 - 5 * airspeed;
+	var splash_x = 1 - 5 * airspeed;
 	var splash_y = 0.0;
-	var splash_z = 2.1 - 2 * airspeed;
+	var splash_z = -2 + airspeed;
 
 	splashVectorXNode.setDoubleValue(splash_x);
 	splashVectorYNode.setDoubleValue(splash_y);
