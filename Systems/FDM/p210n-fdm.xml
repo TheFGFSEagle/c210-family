@@ -832,7 +832,7 @@
            <property>metrics/Sw-sqft</property>
            <property>aero/cl-squared</property>
            <property>aero/function/kCDge</property>
-           <value>0.0501</value>
+           <value>0.0481</value>
          </product>
     </function>
 
@@ -856,7 +856,7 @@
             <independentVar lookup="row">gear/gear-pos-norm</independentVar>
             <tableData>
               0    0              
-               0.5    2 
+               0.3    2 
                1    1
             </tableData>
           </table>   
