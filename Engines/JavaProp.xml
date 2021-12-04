@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <propeller version="1.01" name="McCauley_D3A34C402">
-    <ixx>   4.38 </ixx>
+    <ixx>   8.11 </ixx>
     <diameter unit="IN">  80.0 </diameter>
     <constspeed>1</constspeed>
     <numblades> 3 </numblades>
