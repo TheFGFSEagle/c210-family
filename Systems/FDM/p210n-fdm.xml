@@ -745,14 +745,13 @@
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
-              -0.20 -0.750
+              -0.20 -0.493
                0.00  0.581
                0.23  1.8161
                0.60  0.710
                1.57  0.010
             </tableData>
           </table>
-          <value>1.5</value>
           <!--<quotient>
               <sum>
                   <property>damage/left-wing-ripped-off</property>
@@ -797,7 +796,7 @@
             <tableData>
              -1.57    0.2
              -0.26    0.036
-              0.00    0.01678
+              0.00    0.02773
               0.26    0.036
               1.57    0.2
             </tableData>
@@ -832,7 +831,7 @@
            <property>metrics/Sw-sqft</property>
            <property>aero/cl-squared</property>
            <property>aero/function/kCDge</property>
-           <value>0.0501</value>
+           <value>0.0481</value>
          </product>
     </function>
 
@@ -856,7 +855,7 @@
             <independentVar lookup="row">gear/gear-pos-norm</independentVar>
             <tableData>
               0    0              
-               0.5    2 
+               0.3    2 
                1    1
             </tableData>
           </table>   
@@ -977,7 +976,6 @@
            <property>aero/qbar-psf</property>
            <property>metrics/Sw-sqft</property>
            <property>metrics/cbarw-ft</property>
-           <value>1</value> <!-- zero, as VSP should be rechecked -->
            <value>0.0087</value> <!-- VSP -->
        </product>
     </function>
