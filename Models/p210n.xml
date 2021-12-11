@@ -63,6 +63,57 @@
 		<texture-prop>texture-gear</texture-prop>
 		<texture>gear.png></texture>
 	</animation>
+	<effect>
+		<inherits-from>Effects/polished-metal</inherits-from>
+		<!--<object-name>Fuselage</object-name>
+		<object-name>Rudder</object-name>
+		<object-name>NavAntennas</object-name>
+		<object-name>LeftElevatorMount</object-name>
+		<object-name>LeftElevator</object-name>
+		<object-name>RightElevatorMount</object-name>
+		<object-name>RightElevator</object-name>
+		<object-name>ElevatorTrimTab</object-name>
+		<object-name>RudderMount</object-name>
+		<object-name>Rudder</object-name>
+		<object-name>NoseGearLeftDoorExterior</object-name>
+		<object-name>NoseGearRightDoorExterior</object-name>
+		<object-name>LeftCowlFlapExterior</object-name>
+		<object-name>RightCowlFlapExterior</object-name>-->
+		<object-name>PropellerBlade1</object-name>
+		<object-name>PropellerBlade2</object-name>
+		<object-name>PropellerBlade3</object-name>
+		<object-name>PropellerSpinner</object-name>
+		<object-name>LeftEngineExhaustPipe</object-name>
+		<object-name>RightEngineExhaustPipe</object-name>
+		<object-name>CowlPlugsRest</object-name>
+		<!--<object-name>ELTAntenna</object-name>
+		<object-name>TransponderAntenna</object-name>
+		<object-name>MarkerBeaconAntenna</object-name>
+		<object-name>WeatherRadarAntenna</object-name>
+		<object-name>PilotDoorExterior</object-name>
+		<object-name>EmergencyExitExterior</object-name>
+		<object-name>BaggageDoorExterior</object-name>
+		<object-name>LeftWing</object-name>
+		<object-name>LeftAileron</object-name>
+		<object-name>LeftAileronTrimTab</object-name>
+		<object-name>LeftFlap</object-name>
+		<object-name>RightWing</object-name>
+		<object-name>RightFlap</object-name>
+		<object-name>RightAileron</object-name>
+		<object-name>RightAileronTrimTab</object-name>
+		<object-name>Com2Antenna</object-name>
+		<object-name>Com1Antenna</object-name>
+		<object-name>NoseWheel</object-name>
+		<object-name>LeftMainWheel</object-name>
+		<object-name>RightMainWheel</object-name>
+		<object-name>NoseGearUpperLink</object-name>
+		<object-name>NoseGearLowerLink</object-name>
+		<object-name>NoseWheelHinge</object-name>-->
+		<object-name>NoseGearStrutInnerCylinder</object-name><!--
+		<object-name>NoseGearStrutOuterCylinder</object-name>
+		<object-name>LeftWheelStrut</object-name>
+		<object-name>RightWheelStrut</object-name>-->
+	</effect>
 	<nasal>
 		<load>
 			<![CDATA[
@@ -245,8 +296,28 @@
 	
 	<!-- Propeller animations -->
 	<animation>
+		<type>spin</type>
+		<object-name>PropellerSpinner</object-name>
+		<object-name>PropellerBlade1</object-name>
+		<object-name>PropellerBlade1Damaged</object-name>
+		<object-name>PropellerBlade1Axis</object-name>
+		<object-name>PropellerBlade2</object-name>
+		<object-name>PropellerBlade2Damaged</object-name>
+		<object-name>PropellerBlade2Axis</object-name>
+		<object-name>PropellerBlade3</object-name>
+		<object-name>PropellerBlade3Damaged</object-name>
+		<object-name>PropellerBlade3Axis</object-name>
+		<object-name>FastPropeller</object-name>
+		<axis>
+			<object-name>PropellerAxis</object-name>
+		</axis>
+		<property>engines/engine[0]/rpm</property>
+	</animation>
+
+	<animation>
 		<type>rotate</type>
 		<object-name>PropellerBlade1</object-name>
+		<object-name>PropellerBlade1Damaged</object-name>
 		<axis>
 			<object-name>PropellerBlade1Axis</object-name>
 		</axis>
@@ -255,6 +326,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>PropellerBlade2</object-name>
+		<object-name>PropellerBlade2Damaged</object-name>
 		<axis>
 			<object-name>PropellerBlade2Axis</object-name>
 		</axis>
@@ -263,6 +335,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>PropellerBlade3</object-name>
+		<object-name>PropellerBlade3Damaged</object-name>
 		<axis>
 			<object-name>PropellerBlade3Axis</object-name>
 		</axis>
@@ -270,38 +343,17 @@
 	</animation>
 	
 	<animation>
-		<type>spin</type>
-		<object-name>PropellerSpinner</object-name>
-		<object-name>PropellerBlade1</object-name>
-		<object-name>PropellerBlade2</object-name>
-		<object-name>PropellerBlade3</object-name>
-		<object-name>FastPropeller</object-name>
-		<axis>
-			<object-name>PropellerAxis</object-name>
-		</axis>
-		<property>engines/engine[0]/rpm</property>
-	</animation>
-	<!--<animation>
-		<type>select</type>
-		<object-name>PropellerBlade1</object-name>
-		<object-name>PropellerBlade2</object-name>
-		<object-name>PropellerBlade3</object-name>
-		<condition>
-			<less-than>
-				<property>engines/engine[0]/rpm</property>
-				<value>1200</value>
-			</less-than>
-		</condition>
-	</animation>-->
-	<animation>
 		<type>blend</type>
 		<object-name>PropellerBlade1</object-name>
+		<object-name>PropellerBlade1Damaged</object-name>
 		<object-name>PropellerBlade2</object-name>
+		<object-name>PropellerBlade2Damaged</object-name>
 		<object-name>PropellerBlade3</object-name>
+		<object-name>PropellerBlade3Damaged</object-name>
 		<property>engines/engine/rpm</property>
-		<factor>0.0005</factor>
+		<factor>0.00075</factor>
 		<min>0</min>
-		<max>0.9</max>
+		<max>1</max>
 	</animation>
 		
 	<animation>
@@ -314,9 +366,37 @@
 			</greater-than>
 		</condition>
 	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>PropellerBlade1Damaged</object-name>
+		<object-name>PropellerBlade2Damaged</object-name>
+		<object-name>PropellerBlade3Damaged</object-name>
+		<condition>
+			<property>/fdm/jsbsim/damage/propeller</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>PropellerBlade1</object-name>
+		<object-name>PropellerBlade2</object-name>
+		<object-name>PropellerBlade3</object-name>
+		<condition>
+			<not>
+				<property>/fdm/jsbsim/damage/propeller</property>
+			</not>
+		</condition>
+	</animation>
+	
 	<effect>
 		<inherits-from>Effects/model-transparent</inherits-from>
 		<object-name>FastPropeller</object-name>
+		<object-name>PropellerBlade1</object-name>
+		<object-name>PropellerBlade2</object-name>
+		<object-name>PropellerBlade3</object-name>
+		<object-name>PropellerBlade1Damaged</object-name>
+		<object-name>PropellerBlade2Damaged</object-name>
+		<object-name>PropellerBlade3Damaged</object-name>
 	</effect>
 	
 	<animation>
@@ -872,7 +952,7 @@
 			
 	<!-- Rain drops, fog and frost effects on exterior glass - transparency is controlled by the alpha of the emission, just the below effect does NOT make the glass transparent !-->
 	<effect>
-		<inherits-from>Aircraft/c210-family/Effects/exterior-glass</inherits-from>
+		<inherits-from>Effects/exterior-glass</inherits-from>
 		<object-name>WindscreenExterior</object-name>
 		<object-name>PilotWindowsExterior</object-name>
 		<object-name>EmergencyExitWindowsExterior</object-name>

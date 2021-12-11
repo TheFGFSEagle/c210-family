@@ -12,9 +12,9 @@
    viewBox="0 0 2048 2048"
    version="1.1"
    id="svg2620"
-   sodipodi:docname="Default-fuselage.svg"
+   sodipodi:docname="fuselage.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   inkscape:export-filename="/mnt/DATEN/blender-2.83.0-linux64/2.83/datafiles/colormanagement/filmic/fgfs-addons/Aircraft/c210-family/Models/Liveries/Default-fuselage.png"
+   inkscape:export-filename="/mnt/DATEN/blender-2.83.0-linux64/2.83/datafiles/colormanagement/filmic/fgfs-addons/Aircraft/c210-family/Models/fuselage.png"
    inkscape:export-xdpi="192"
    inkscape:export-ydpi="192">
   <metadata
@@ -116,9 +116,9 @@
      inkscape:window-height="706"
      id="namedview2622"
      showgrid="true"
-     inkscape:zoom="22.627417"
-     inkscape:cx="1614.5011"
-     inkscape:cy="1056.0411"
+     inkscape:zoom="11.313709"
+     inkscape:cx="39.487411"
+     inkscape:cy="1604.9508"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -9792,7 +9792,7 @@
     <path
        inkscape:connector-curvature="0"
        id="path2192"
-       d="M 52.005722,600.28629 1546.028,730.811"
+       d="M 51.6555,598.122 1546.028,730.811"
        style="fill:none;stroke:#aa4400;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        sodipodi:nodetypes="cc" />
     <path
@@ -9810,19 +9810,19 @@
   </g>
   <path
      style="fill:none;stroke:#aa4400;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 65.289222,156.40341 1599.9721,114.90729"
+     d="M 62.43234,155.61478 1599.9721,114.90729"
      id="path2240"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cc" />
   <path
      inkscape:connector-curvature="0"
      id="path2242"
-     d="M 64.684635,149.35823 1555.7414,106.86053"
+     d="M 62.24184,147.67628 1555.7414,106.86053"
      style="fill:none;stroke:#ff0000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
      sodipodi:nodetypes="cc" />
   <path
      style="fill:none;stroke:#aa4400;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 64.080047,142.31306 1470.8995,99.660024"
+     d="M 61.424175,139.33272 1470.8995,99.660024"
      id="path2244"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cc" />
@@ -9830,11 +9830,11 @@
      sodipodi:nodetypes="cccc"
      inkscape:connector-curvature="0"
      id="path2257"
-     d="m 36.685,435.638 3.188968,-46.61953 0.999,-29.807 1.16792,-45.65294"
+     d="m 36.685,435.638 2.133,-46.089 0.999,-29.807 2.223888,-46.18347"
      style="fill:none;stroke:#ff0000;stroke-width:4.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   <path
      style="fill:none;stroke:#aa4400;stroke-width:4.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 30.15875,434.2315 1.33575,-44.8765 1.015,-30.2795 3.115413,-45.4203"
+     d="m 30.15875,434.2315 1.33575,-44.8765 1.015,-30.2795 1.834163,-45.34217"
      id="path2259"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cccc" />
@@ -10005,4 +10005,10 @@
      id="path6031"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccc" />
+  <path
+     sodipodi:nodetypes="cccc"
+     inkscape:connector-curvature="0"
+     id="path2239"
+     d="M 43.98131,436.11339 46.943,389.576 l 1.015,-30.2795 1.656,-45.71016"
+     style="fill:none;stroke:#aa4400;stroke-width:4.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
 </svg>

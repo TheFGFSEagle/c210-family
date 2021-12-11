@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>mixture.ac</path>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>Bar</object-name>
+		<object-name>Knob</object-name>
+		<object-name>Vernier</object-name>
+		<property>controls/engines/engine/mixture</property>
+		<factor>0.08</factor>
+		<drag-scale-px>5</drag-scale-px>
+		<drag-direction>vertical</drag-direction>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine/mixture</property>
+				<factor>0.01</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine/mixture</property>
+				<factor>0.001</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
+			</binding>
+		</shift-action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>throttle-control</tooltip-id>
+				<label>Mixture: %3.1f %%</label>
+				<measure-text>Mixture: 100.0 %</measure-text>
+				<property>controls/engines/engine/mixture</property>
+				<mapping>nasal</mapping>
+				<script>
+					return arg[0] * 100;
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+</PropertyList>

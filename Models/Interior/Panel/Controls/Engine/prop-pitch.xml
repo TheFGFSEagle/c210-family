@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>prop-pitch.ac</path>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>Bar</object-name>
+		<object-name>Knob</object-name>
+		<object-name>Vernier</object-name>
+		<property>controls/engines/engine/propeller-pitch</property>
+		<factor>0.08</factor>
+		<drag-scale-px>5</drag-scale-px>
+		<drag-direction>vertical</drag-direction>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine/propeller-pitch</property>
+				<factor>0.0143</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine/propeller-pitch</property>
+				<factor>0.00143</factor>
+				<min>0</min>
+				<max>1</max>
+				<wrap>0</wrap>
+			</binding>
+		</shift-action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>throttle-control</tooltip-id>
+				<label>Propeller RPM: %4d</label>
+				<measure-text>Propeller RPM: 2700</measure-text>
+				<property>controls/engines/engine/propeller-pitch</property>
+				<mapping>nasal</mapping>
+				<script>
+					return 2000 + arg[0] * 700;
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+</PropertyList>
+

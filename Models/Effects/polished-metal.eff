@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<name>Aircraft/c210-family/Models/Effects/polished-metal</name>
+	<inherits-from>Effects/model-combined-transparent</inherits-from>
+	<parameters>
+		<splash-x><use>/environment/aircraft-effects/splash-vector-x</use></splash-x>
+		<splash-y><use>/environment/aircraft-effects/splash-vector-y</use></splash-y>
+		<splash-z><use>/environment/aircraft-effects/splash-vector-z</use></splash-z>
+		<rnorm><use>/environment/rain-norm</use></rnorm>
+		<gsnorm><use>/environment/aircraft-effects/ground-splash-norm</use></gsnorm>
+		<frost-level><use>/environment/aircraft-effects/frost-level</use></frost-level>
+		<fog-level><use>/environment/aircraft-effects/fog-level</use></fog-level>
+		<reflection-enabled type="int">1</reflection-enabled>
+		<reflection-correction type="float">-0.2</reflection-correction>
+		<reflect-map-enabled type="int">0</reflect-map-enabled>
+		<reflection-fresnel-factor type="float">0.1</reflection-fresnel-factor>
+		<reflection-type>1</reflection-type>
+		<ambient-correction>0.2</ambient-correction>
+		<reflection-fresnel>1.0</reflection-fresnel>
+		<reflection-rainbow type="float">1.0</reflection-rainbow>
+		<reflection-noise type="float">0.0</reflection-noise>
+		<reflection-dynamic type="int">1</reflection-dynamic>
+		<texture n="5">
+			<type>cubemap</type>
+			<images>
+				<positive-x>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/2.png</positive-x>
+				<negative-x>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/3.png</negative-x>
+				<positive-y>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/1.png</positive-y>
+				<negative-y>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/4.png</negative-y>
+				<positive-z>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/6.png</positive-z>
+				<negative-z>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/5.png</negative-z>
+			</images>
+		</texture>
+		<rain-enabled>2</rain-enabled>
+		<snow-enabled>2</snow-enabled>
+		<render-bin>
+			<bin-number>111</bin-number>
+			<bin-name>DepthSortedBin</bin-name>
+		</render-bin>
+	</parameters>
+</PropertyList>

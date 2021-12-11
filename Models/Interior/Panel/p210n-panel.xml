@@ -64,6 +64,15 @@
 		</offsets>
 	</model>
 	<model>
+		<path>Instruments/vor/vor.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>-0.12</y-m>
+			<z-m>0.35</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
 		<path>Instruments/adf/adf.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
@@ -79,6 +88,23 @@
 			<y-m>-0.39</y-m>
 			<z-m>0.25</z-m>
 			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/ifcs/ifcs.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>-0.12</y-m>
+			<z-m>0.25</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Controls/Engine/engine.xml</path>
+		<offsets>
+			<x-m>-0.42</x-m>
+			<y-m>0</y-m>
+			<z-m>0.15</z-m>
 		</offsets>
 	</model>
 </PropertyList>

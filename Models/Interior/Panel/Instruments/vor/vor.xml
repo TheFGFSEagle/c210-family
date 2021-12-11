@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>vor.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>HeadingScaleTo</object-name>
+		<object-name>HeadingScaleFrom</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<y>0</y>
+		</axis>
+		<property>instrumentation/nav[1]/radials/selected-deg</property>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>RadialNeedle</object-name>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/nav[1]/heading-needle-deflection-norm</property>
+		<factor>0.0176</factor>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>ToFlag</object-name>
+		<condition>
+			<property>instrumentation/nav[1]/to-flag</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>FromFlag</object-name>
+		<condition>
+			<property>instrumentation/nav[1]/from-flag</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>NavFlag</object-name>
+		<condition>
+			<not>
+				<or>
+					<property>instrumentation/nav[1]/operable</property>
+					<property>instrumentation/nav[1]/serviceable</property>
+				</or>
+			</not>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>OBSKnob</object-name>
+		<property>instrumentation/nav[1]/radials/selected-deg</property>
+		<factor>5</factor>
+		<axis>
+			<object-name>OBSKnobAxis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[1]/radials/selected-deg</property>
+				<factor>1</factor>
+				<min>0</min>
+				<max>359</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+	</animation>
+	
+	 <text>
+		<name>VORLabel</name>
+		<type type="string">literal</type>
+		<text type="string">NAV2 VOR/LOC Indicator</text>
+		<draw-text type="bool">true</draw-text>
+		<font>Helvetica.txf</font>
+		<character-size type="double">0.020</character-size>
+		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+		<axis-alignment>yz-plane</axis-alignment>
+		<max-height>0.08</max-height>
+		<max-width>0.08</max-width>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+		<alignment>center-center</alignment>
+		<offsets>
+			<x-m> 0.02</x-m>
+			<y-m> 0.0 </y-m>
+			<z-m> 0.01 </z-m>
+		</offsets>
+	</text>
+	
+	<animation>
+		<type>material</type>
+		<object-name>VORLabel</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>VORLabel</object-name>
+		<condition>
+			<property>/sim/panel-hotspots</property>
+		</condition>
+	</animation>
+	
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		<object-name>Glass</object-name>
+	</effect>	
+</PropertyList>
