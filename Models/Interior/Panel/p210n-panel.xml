@@ -107,4 +107,28 @@
 			<z-m>0.15</z-m>
 		</offsets>
 	</model>
+	<model>
+		<path>Instruments/egt/egt.xml</path>
+		<offsets>
+			<x-m>-0.425</x-m>
+			<y-m>-0.51</y-m>
+			<z-m>0.30</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/press/cabin-alt.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>-0.51</y-m>
+			<z-m>0.25</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/press/cabin-vsi.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>-0.46</y-m>
+			<z-m>0.25</z-m>
+		</offsets>
+	</model>
 </PropertyList>

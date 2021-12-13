@@ -64,8 +64,8 @@
 		<texture>gear.png></texture>
 	</animation>
 	<effect>
-		<inherits-from>Effects/polished-metal</inherits-from>
-		<!--<object-name>Fuselage</object-name>
+		<inherits-from>Effects/exterior-reflection</inherits-from>
+		<object-name>Fuselage</object-name>
 		<object-name>Rudder</object-name>
 		<object-name>NavAntennas</object-name>
 		<object-name>LeftElevatorMount</object-name>
@@ -76,20 +76,21 @@
 		<object-name>RudderMount</object-name>
 		<object-name>Rudder</object-name>
 		<object-name>NoseGearLeftDoorExterior</object-name>
+		<object-name>NoseGearLeftDoorInterior</object-name>
 		<object-name>NoseGearRightDoorExterior</object-name>
+		<object-name>NoseGearRightDoorInterior</object-name>
+		<object-name>NoseGearWell</object-name>
+		<object-name>MainWheelWell</object-name>
 		<object-name>LeftCowlFlapExterior</object-name>
-		<object-name>RightCowlFlapExterior</object-name>-->
+		<object-name>LeftCowlFlapInterior</object-name>
+		<object-name>RightCowlFlapExterior</object-name>
+		<object-name>RightCowlFlapInterior</object-name>
 		<object-name>PropellerBlade1</object-name>
 		<object-name>PropellerBlade2</object-name>
 		<object-name>PropellerBlade3</object-name>
 		<object-name>PropellerSpinner</object-name>
-		<object-name>LeftEngineExhaustPipe</object-name>
-		<object-name>RightEngineExhaustPipe</object-name>
+		<object-name>EngineExhaustPipe</object-name>
 		<object-name>CowlPlugsRest</object-name>
-		<!--<object-name>ELTAntenna</object-name>
-		<object-name>TransponderAntenna</object-name>
-		<object-name>MarkerBeaconAntenna</object-name>
-		<object-name>WeatherRadarAntenna</object-name>
 		<object-name>PilotDoorExterior</object-name>
 		<object-name>EmergencyExitExterior</object-name>
 		<object-name>BaggageDoorExterior</object-name>
@@ -101,18 +102,15 @@
 		<object-name>RightFlap</object-name>
 		<object-name>RightAileron</object-name>
 		<object-name>RightAileronTrimTab</object-name>
-		<object-name>Com2Antenna</object-name>
-		<object-name>Com1Antenna</object-name>
-		<object-name>NoseWheel</object-name>
-		<object-name>LeftMainWheel</object-name>
-		<object-name>RightMainWheel</object-name>
-		<object-name>NoseGearUpperLink</object-name>
-		<object-name>NoseGearLowerLink</object-name>
-		<object-name>NoseWheelHinge</object-name>-->
-		<object-name>NoseGearStrutInnerCylinder</object-name><!--
-		<object-name>NoseGearStrutOuterCylinder</object-name>
+		<object-name>NoseGearStrutInnerCylinder</object-name>
 		<object-name>LeftWheelStrut</object-name>
-		<object-name>RightWheelStrut</object-name>-->
+		<object-name>RightWheelStrut</object-name>
+		<object-name>WindscreenExterior</object-name>
+		<object-name>PilotWindowsExterior</object-name>
+		<object-name>EmergencyExitWindowsExterior</object-name>
+		<object-name>LeftPassengerWindowsExterior</object-name>
+		<object-name>RightPassengerWindowsExterior</object-name>
+		<object-name>BackWindowsExterior</object-name>
 	</effect>
 	<nasal>
 		<load>
@@ -341,20 +339,6 @@
 		</axis>
 		<property>engines/engine/thruster/pitch</property>
 	</animation>
-	
-	<animation>
-		<type>blend</type>
-		<object-name>PropellerBlade1</object-name>
-		<object-name>PropellerBlade1Damaged</object-name>
-		<object-name>PropellerBlade2</object-name>
-		<object-name>PropellerBlade2Damaged</object-name>
-		<object-name>PropellerBlade3</object-name>
-		<object-name>PropellerBlade3Damaged</object-name>
-		<property>engines/engine/rpm</property>
-		<factor>0.00075</factor>
-		<min>0</min>
-		<max>1</max>
-	</animation>
 		
 	<animation>
 		<type>select</type>
@@ -373,7 +357,13 @@
 		<object-name>PropellerBlade2Damaged</object-name>
 		<object-name>PropellerBlade3Damaged</object-name>
 		<condition>
-			<property>/fdm/jsbsim/damage/propeller</property>
+			<and>
+				<property>/fdm/jsbsim/damage/propeller</property>
+				<less-than>
+					<property>engines/engine/rpm</property>
+					<value>1000</value>
+				</less-than>
+			</and>
 		</condition>
 	</animation>
 	<animation>
@@ -382,9 +372,15 @@
 		<object-name>PropellerBlade2</object-name>
 		<object-name>PropellerBlade3</object-name>
 		<condition>
-			<not>
-				<property>/fdm/jsbsim/damage/propeller</property>
-			</not>
+			<and>
+				<not>
+					<property>/fdm/jsbsim/damage/propeller</property>
+				</not>
+				<less-than>
+					<property>engines/engine/rpm</property>
+					<value>1000</value>
+				</less-than>
+			</and>
 		</condition>
 	</animation>
 	
@@ -924,7 +920,7 @@
 			</entry>
 			<entry>
 				<ind>1</ind>
-				<dep>-60</dep>
+				<dep>-70</dep>
 			</entry>
 		</interpolation>
 	</animation>
@@ -942,24 +938,11 @@
 			</entry>
 			<entry>
 				<ind>1</ind>
-				<dep>-60</dep>
+				<dep>-70</dep>
 			</entry>
 		</interpolation>
 	</animation>
 	
-	<!--<animation>
-		<type>select</type>-->
-			
-	<!-- Rain drops, fog and frost effects on exterior glass - transparency is controlled by the alpha of the emission, just the below effect does NOT make the glass transparent !-->
-	<effect>
-		<inherits-from>Effects/exterior-glass</inherits-from>
-		<object-name>WindscreenExterior</object-name>
-		<object-name>PilotWindowsExterior</object-name>
-		<object-name>EmergencyExitWindowsExterior</object-name>
-		<object-name>LeftPassengerWindowsExterior</object-name>
-		<object-name>RightPassengerWindowsExterior</object-name>
-		<object-name>BackWindowsExterior</object-name>
-	</effect>
 	<effect>
 		<inherits-from>Effects/glass</inherits-from>
 		<object-name>WindscreenInterior</object-name>

@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>egt.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>EGTNeedle</object-name>
+		<axis>
+			<object-name>KnobNeedleAxis</object-name>
+		</axis>
+		<property>instrumentation/egt/indicated-temperature-degf</property>
+		<interpolation>
+			<entry>
+				<ind>1000</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1200</ind>
+				<dep>4</dep>
+			</entry>
+			<entry>
+				<ind>1700</ind>
+				<dep>93</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>MarkerNeedle</object-name>
+		<axis>
+			<object-name>KnobNeedleAxis</object-name>
+		</axis>
+		<property>instrumentation/egt/target-temperature-degf</property>
+		<interpolation>
+			<entry>
+				<ind>1000</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1200</ind>
+				<dep>4</dep>
+			</entry>
+			<entry>
+				<ind>1700</ind>
+				<dep>93</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Knob</object-name>
+		<property>instrumentation/egt/target-temperature-degf</property>
+		<interpolation>
+			<entry>
+				<ind>1000</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1200</ind>
+				<dep>4</dep>
+			</entry>
+			<entry>
+				<ind>1700</ind>
+				<dep>93</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<object-name>KnobNeedleAxis</object-name>
+		</axis>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/egt/target-temperature-degf</property>
+				<factor>10</factor>
+				<min>1000</min>
+				<max>1700</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>egt-indicator</tooltip-id>
+				<label>Target EGT temperature:  %4d °F</label>
+				<measure-text>Target EGT temperature: 1700 °F</measure-text>
+				<property>instrumentation/egt/target-temperature-degf</property>
+			</binding>
+		</hovered>
+	</animation>
+	 <text>
+		<name>Label</name>
+		<type type="string">literal</type>
+		<text type="string">EGT Indicator</text>
+		<draw-text type="bool">true</draw-text>
+		<font>Helvetica.txf</font>
+		<character-size type="double">0.020</character-size>
+		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+		<axis-alignment>yz-plane</axis-alignment>
+		<max-height>0.08</max-height>
+		<max-width>0.08</max-width>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+		<alignment>center-center</alignment>
+		<offsets>
+			<x-m> 0.02</x-m>
+			<y-m> 0.0 </y-m>
+			<z-m> 0.01 </z-m>
+		</offsets>
+	</text>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Label</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Label</object-name>
+		<condition>
+			<property>/sim/panel-hotspots</property>
+		</condition>
+	</animation>
+	
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		<object-name>Glass</object-name>
+	</effect>
+</PropertyList>

@@ -150,7 +150,7 @@
 			</binding>
 		</action>
 	</animation>
-	 <text>
+	<text>
 		<name>HSILabel</name>
 		<type type="string">literal</type>
 		<text type="string">Horizontal Situation Indicator</text>
