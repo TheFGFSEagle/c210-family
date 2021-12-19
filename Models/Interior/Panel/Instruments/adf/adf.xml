@@ -4,17 +4,6 @@
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>Needle</object-name>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-		<property>instrumentation/adf/indicated-bearing-deg</property>
-	</animation>
-	
-	<animation>
-		<type>rotate</type>
 		<object-name>HeadingScale</object-name>
 		<axis>
 			<x>1</x>
@@ -23,6 +12,17 @@
 		</axis>
 		<property>instrumentation/heading-indicator/indicated-heading-deg</property>
 	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/adf/indicated-bearing-deg</property>
+	</animation>
+	
 	 <text>
 		<name>ADFLabel</name>
 		<type type="string">literal</type>

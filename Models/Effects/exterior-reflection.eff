@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
-	<name>Aircraft/c210-family/Models/Effects/polished-metal</name>
+	<name>Aircraft/c210-family/Models/Effects/exterior-reflection</name>
 	<inherits-from>Effects/model-combined-transparent</inherits-from>
 	<parameters>
 		<splash-x><use>/environment/aircraft-effects/splash-vector-x</use></splash-x>
@@ -11,15 +11,15 @@
 		<frost-level><use>/environment/aircraft-effects/frost-level</use></frost-level>
 		<fog-level><use>/environment/aircraft-effects/fog-level</use></fog-level>
 		<reflection-enabled type="int">1</reflection-enabled>
-		<reflection-correction type="float">-1</reflection-correction>
 		<reflect-map-enabled type="int">1</reflect-map-enabled>
-		<reflection-fresnel-factor type="float">0.1</reflection-fresnel-factor>
 		<reflection-type>1</reflection-type>
-		<ambient-correction>0.2</ambient-correction>
-		<reflection-fresnel>1.0</reflection-fresnel>
-		<reflection-rainbow type="float">1.0</reflection-rainbow>
-		<reflection-noise type="float">0.0</reflection-noise>
 		<reflection-dynamic type="int">1</reflection-dynamic>
+		<ambient-correction>0.4</ambient-correction>
+		<reflection-correction type="float">-0.7</reflection-correction>
+		<reflection-fresnel>0.1</reflection-fresnel>
+		<reflection-fresnel-factor type="float">0</reflection-fresnel-factor>
+		<reflection-noise type="float">0.5</reflection-noise>
+		<reflection-rainbow type="float">0.2</reflection-rainbow>
 		<texture n="5">
 			<type>cubemap</type>
 			<images>

@@ -1,48 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-  File:     Continental_TSIO-520-P.xml
-  Author:   Dany93, TheEagle, S&J
-  Inputs:
-    name:           Continental_TSIO-520-P
-    type:           piston
-    power:          310 hp
--->
-
 <piston_engine name="Continental_TSIO-520-P">
 
-   <displacement unit="IN3"> 520.00 </displacement>
-   <bore unit="IN">    5.25 </bore>
-   <stroke unit="IN">  4.0 </stroke>
-   <cylinders>         6.0  </cylinders>
-   <compression-ratio>  7.5 </compression-ratio>
-   <maxhp>        285.00 </maxhp>
-   <cycles>         4.0 </cycles>
-   <idlerpm>      600.0 </idlerpm>   
-   <maxrpm>      2600.0 </maxrpm>   
-   <minmp unit="INHG">         10 </minmp>
-   <maxmp unit="INHG">         28.8 </maxmp>   
-   <bsfc unit="LBS/HP*HR"> 0.44166 </bsfc>
+   <displacement unit="IN3">520.00</displacement>
+   <bore unit="IN">5.25</bore>
+   <stroke unit="IN">4.0</stroke>
+   <cylinders>6.0</cylinders>
+   <compression-ratio>7.5</compression-ratio>
+   <maxhp>285.00</maxhp>
+   <cycles>4.0</cycles>
+   <idlerpm>600.0</idlerpm>   
+   <maxrpm>2600.0</maxrpm>   
+   <starter-torque>150</starter-torque>   
+   <static-friction>1.55</static-friction>
+   
+   <ram-air-factor>1.25</ram-air-factor>
+   <air-intake-impedance-factor>0</air-intake-impedance-factor>
 
-   <starter-torque> 150.00 </starter-torque>   
-   <static-friction> 0.005 </static-friction>
-   <sparkfaildrop>  0.082 </sparkfaildrop>
-   <volumetric-efficiency> 0.814 </volumetric-efficiency>
-   
-   <ram-air-factor>0.81</ram-air-factor>
-   <air-intake-impedance-factor> 0 </air-intake-impedance-factor>
-   <cooling-factor> 0.36 </cooling-factor>
-   <cylinder-head-mass unit="LBS"> 25.28 </cylinder-head-mass>
-   
-   <turbocharged>1</turbocharged>
-   <boostmanual>0</boostmanual>
+   <maxmp unit="INHG">28.8</maxmp>   
+   <minmp unit="INHG">14.7</minmp>
+
+   <boostmanual>1</boostmanual>
    <numboostspeeds>1</numboostspeeds>
    <boostoverride>0</boostoverride>
-   <boost-loss-factor>0</boost-loss-factor>
-   <takeoffboost>3.231794</takeoffboost>
-   
-   <ratedboost1 unit="INHG">5.58</ratedboost1>
+   <boost-loss-factor>0</boost-loss-factor>   
+   <ratedboost1 unit="INHG">5.58</ratedboost1> <!-- 35.5inhg  -->
    <ratedrpm1>2600</ratedrpm1>
-   <ratedpower1>285</ratedpower1>
-   <ratedaltitude1>17000</ratedaltitude1>
+   <ratedpower1>285</ratedpower1>   
+   <ratedaltitude1>16929</ratedaltitude1>
+
+   <sparkfaildrop>0.1</sparkfaildrop>
+   <volumetric-efficiency>0.8447</volumetric-efficiency>
+   <bsfc unit="LBS/HP*HR">0.4811</bsfc>
+
+   <cylinder-head-mass unit="LBS">25.28</cylinder-head-mass>
+   <cooling-factor>0.36</cooling-factor>
 
 </piston_engine>

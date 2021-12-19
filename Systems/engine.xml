@@ -1,56 +1,105 @@
 <?xml version="1.0"?>
 <system name="engine">
+    <property>propulsion/engine/auto-mixture</property>
+    <property>propulsion/engine/AFR-setting</property>
     <channel name="Volumetric efficiency">
-        <fcs_function name="Volumetric efficiency">
+        <fcs_function>
             <function>
                 <table>
-                   <independentVar lookup="row">atmosphere/density-altitude</independentVar>
-                   <independentVar lookup="column">aero/qbar-psf</independentVar>
-                   <tableData>
-                                     0             130
-                       130       0.8443   0.8443
-                       428       0.8239   0.8239
-                       4387     0.7038   0.7038
-                       9188     0.6697   0.6697
-                       13920   0.6373   0.6373
-                       15864   0.6249   0.6249
-                       17796   0.5899   0.5659
-                       19706   0.5899   0.5428
-                       21650   0.5899  0.5428
-                       23672   0.5899  0.5428
-                   </tableData>
-                </table>
-            </function>
-            <output>propulsion/engine/volumetric-efficiency</output>
-        </fcs_function>
-    </channel>
-   
-    <channel name="Power">
-        <fcs_function name="BSFC">
-            <function>
-                <table>
-                    <independentVar lookup="row">atmosphere/density-altitude</independentVar>
-                    <independentVar lookup="column">aero/qbar-psf</independentVar>
+                    <independentVar>atmosphere/P-psf</independentVar>
                     <tableData>
-                                        0               130
-                        130         0.4788     0.4805
-                        428         0.4761     0.4776
-                        4387       0.4464     0.4475
-                        9188       0.4466     0.4475
+                        1006.086   0.6067
+                        1014.51     0.6077
+                        1057.253   0.6181
+                        1101.501   0.6233
+                        1147.261   0.6303
+                        1194.568   0.6365
+                        1243.578   0.6429
+                        1293.893   0.6491
+                        1345.994   0.6555
+                        1399.785   0.6621
+                        1455.481   0.6685
+                        1512.65     0.6753
+                        1571.9       0.6821
+                        1632.86     0.6891
+                        1695.72     0.6959
+                        1760.594   0.7031
+                        1827.434   0.7101
+                        1896.355   0.7343
+                        1967.372   0.7697
+                        2040.768   0.8065
+                        2115.885   0.8447
                     </tableData>
                 </table>
             </function>
-            <output>propulsion/engine/bsfc-lbs_hphr</output>
+            <output>propulsion/engine[0]/volumetric-efficiency</output>
         </fcs_function>
     </channel>
-    
+
+    <channel name="Auto mixture" execute="propulsion/engine[0]/auto-mixture">
+        <switch name="propulsion/engine[0]/mixture-adjust">
+            <default value="0"/>
+                <test logic="AND" value="-0.0001">
+                propulsion/engine[0]/AFR LT propulsion/engine[0]/AFR-setting
+                propulsion/engine[0]/set-running EQ 1
+            </test>
+            <test logic="AND" value="0.0001">
+                propulsion/engine[0]/AFR GT propulsion/engine[0]/AFR-setting
+                propulsion/engine[0]/set-running EQ 1
+            </test>
+        </switch>
+        <summer>
+            <input>/controls/engines/engine[0]/mixture</input>
+            <input>propulsion/engine[0]/mixture-adjust</input>
+            <output>/controls/engines/engine[0]/mixture</output>
+            <clipto>
+                <min>0</min>
+                <max>1</max>
+            </clipto>
+        </summer>
+    </channel>
+
+    <channel name="BSFC">
+        <fcs_function>
+            <function>
+                <table>
+                    <independentVar>atmosphere/P-psf</independentVar>
+                        <tableData>
+                           1006.086   0.4467
+                           1014.51      0.4465
+                           1057.253   0.4475
+                           1101.501   0.4473
+                           1147.261   0.4477
+                           1194.568   0.4475
+                           1243.578   0.4475
+                           1293.893   0.4477
+                           1345.994   0.4475
+                           1399.785   0.4475
+                           1455.481   0.4475
+                           1512.65     0.4477
+                           1571.9       0.4479
+                           1632.86     0.4479
+                           1695.72     0.4479
+                           1760.594   0.4479
+                           1827.434   0.4479
+                           1896.355   0.4549
+                           1967.372   0.4653
+                           2040.768   0.4745
+                           2115.885   0.4811
+                        </tableData>
+                    </table>
+                </function>
+            <output>propulsion/engine[0]/bsfc-lbs_hphr</output>
+        </fcs_function>
+    </channel>
+   
     <channel name="Engine friction">
         <fcs_function name="Normal friction">
             <function>
                 <table>
                     <independentVar lookup="row">propulsion/engine/engine-rpm</independentVar>
                     <tableData>
-                        0          0.05
+                        0         0.05
                         100     0.3
                         200     0.7
                         600     1

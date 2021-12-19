@@ -30,7 +30,7 @@
 		<minimum-fg-version>2017.2.0</minimum-fg-version>
 
 		<flight-model>jsb</flight-model>
-		<aero>Systems/FDM/p210n-fdm</aero>
+		<aero>Systems/p210n-fdm</aero>
 
 		<type type="string">airplane</type>
 		<primary-set type="bool">true</primary-set>

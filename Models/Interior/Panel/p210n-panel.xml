@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <PropertyList>
+	<!-- top row -->
 	<model>
 		<path>Instruments/asi/airspeed.xml</path>
 		<offsets>
@@ -36,6 +37,8 @@
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
+	
+	<!-- middle row -->
 	<model>
 		<path>Instruments/tc/turn-coordinator.xml</path>
 		<offsets>
@@ -72,6 +75,8 @@
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
+	
+	<!-- lower row -->
 	<model>
 		<path>Instruments/adf/adf.xml</path>
 		<offsets>
@@ -99,20 +104,33 @@
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
-	<model>
-		<path>Controls/Engine/engine.xml</path>
-		<offsets>
-			<x-m>-0.42</x-m>
-			<y-m>0</y-m>
-			<z-m>0.15</z-m>
-		</offsets>
-	</model>
+	
+	<!-- auxiliary instruments -->
 	<model>
 		<path>Instruments/egt/egt.xml</path>
 		<offsets>
 			<x-m>-0.425</x-m>
 			<y-m>-0.51</y-m>
-			<z-m>0.30</z-m>
+			<z-m>0.3</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/chrono/chrono.xml</path>
+		<offsets>
+			<x-m>-0.425</x-m>
+			<y-m>-0.46</y-m>
+			<z-m>0.3</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/alt-alert/alt-alert.xml</path>
+		<offsets>
+			<x-m>-0.42</x-m>
+			<y-m>-0.485</y-m>
+			<z-m>0.35</z-m>
+			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
 	<model>
@@ -121,6 +139,7 @@
 			<x-m>-0.43</x-m>
 			<y-m>-0.51</y-m>
 			<z-m>0.25</z-m>
+			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
 	<model>
@@ -129,6 +148,36 @@
 			<x-m>-0.43</x-m>
 			<y-m>-0.46</y-m>
 			<z-m>0.25</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- center column - radio stack and engine controls-->
+	<model>
+		<path>Avionics/audio-control/audio-control.xml</path>
+		<offsets>
+			<x-m>-0.45</x-m>
+			<y-m>0.02</y-m>
+			<z-m>0.47</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Avionics/com-nav/com-nav-1.xml</path>
+		<offsets>
+			<x-m>-0.44</x-m>
+			<y-m>0.02</y-m>
+			<z-m>0.35</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Controls/Engine/engine.xml</path>
+		<offsets>
+			<x-m>-0.42</x-m>
+			<y-m>0</y-m>
+			<z-m>0.15</z-m>
+			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
 </PropertyList>
