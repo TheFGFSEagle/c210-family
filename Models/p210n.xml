@@ -387,14 +387,25 @@
 	<effect>
 		<inherits-from>Effects/model-transparent</inherits-from>
 		<object-name>FastPropeller</object-name>
-		<object-name>PropellerBlade1</object-name>
-		<object-name>PropellerBlade2</object-name>
-		<object-name>PropellerBlade3</object-name>
-		<object-name>PropellerBlade1Damaged</object-name>
-		<object-name>PropellerBlade2Damaged</object-name>
-		<object-name>PropellerBlade3Damaged</object-name>
 	</effect>
 	
+	<animation>
+		<type>noshadow</type>
+		<object-name>FastPropeller</object-name>
+		<object-name>WindscreenExterior</object-name>
+		<object-name>WindscreenInterior</object-name>
+		<object-name>PilotWindowsExterior</object-name>
+		<object-name>PilotWindowsInterior</object-name>
+		<object-name>EmergencyExitWindowsExterior</object-name>
+		<object-name>EmergencyExitWindowsInterior</object-name>
+		<object-name>BackWindowsExterior</object-name>
+		<object-name>BackWindowsInterior</object-name>
+		<object-name>LeftPassengerWindowsExterior</object-name>
+		<object-name>LeftPassengerWindowsInterior</object-name>
+		<object-name>RightPassengerWindowsExterior</object-name>
+		<object-name>RightPassengerWindowsInterior</object-name>
+	</animation>
+		
 	<animation>
 		<type>rotate</type>
 		<object-name>LeftCowlFlapExterior</object-name>

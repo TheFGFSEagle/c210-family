@@ -167,7 +167,16 @@
 		<offsets>
 			<x-m>-0.44</x-m>
 			<y-m>0.02</y-m>
-			<z-m>0.35</z-m>
+			<z-m>0.42</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Avionics/com-nav/com-nav-2.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>0.02</y-m>
+			<z-m>0.36</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>

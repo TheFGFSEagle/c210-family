@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<params>
+		<com-freq-mhz>instrumentation/comm[0]/frequencies/dialed-mhz</com-freq-mhz>
+		<com-freq-khz>instrumentation/comm[0]/frequencies/dialed-khz</com-freq-khz>
+		<com-memory-num>instrumentation/comm[0]/frequencies/memory-num</com-memory-num>
+		<com-volume>instrumentation/comm[0]/volume</com-volume>
+		<com-squelch>instrumentation/comm[0]/squelch</com-squelch>
+		<nav-freq-mhz>instrumentation/nav[0]/frequencies/dialed-mhz</nav-freq-mhz>
+		<nav-freq-khz>instrumentation/nav[0]/frequencies/dialed-khz</nav-freq-khz>
+		<nav-memory-num>instrumentation/nav[0]/frequencies/memory-num</nav-memory-num>
+		<nav-volume>instrumentation/nav[0]/volume</nav-volume>
+		<nav-mode>instrumentation/nav[0]/mode</nav-mode>
+	</params>
+	
+	<path>com-nav.ac</path>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>COMFreqKnobMHz</object-name>
+		<axis>
+			<object-name>COMFreqKnobAxis</object-name>
+		</axis>
+		<property alias="../../params/com-freq-mhz"/>
+		<action>
+			<binding>
+				<command>propert-adjust</command>
+				<property alias="../../../../params/com-freq-mhz"/>
+				<factor>1</factor>
+				<min>118</min>
+				<max>135</max>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>COMFreqKnobKHz</object-name>
+		<axis>
+			<object-name>COMFreqKnobAxis</object-name>
+		</axis>
+		<property alias="../../params/com-freq-khz"/>
+		<action>
+			<binding>
+				<command>propert-adjust</command>
+				<property alias="../../../../params/com-freq-khz"/>
+				<factor>0.05</factor>
+				<min>0</min>
+				<max>0.95</max>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>NAVFreqKnobMHz</object-name>
+		<axis>
+			<object-name>NAVFreqKnobAxis</object-name>
+		</axis>
+		<property alias="../../params/nav-freq-mhz"/>
+		<action>
+			<binding>
+				<command>propert-adjust</command>
+				<property alias="../../../../params/nav-freq-mhz"/>
+				<factor>1</factor>
+				<min>108</min>
+				<max>117</max>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>NAVFreqKnobKHz</object-name>
+		<axis>
+			<object-name>NAVFreqKnobAxis</object-name>
+		</axis>
+		<property alias="../../params/nav-freq-khz"/>
+		<action>
+			<binding>
+				<command>propert-adjust</command>
+				<property alias="../../../../params/nav-freq-khz"/>
+				<factor>0.05</factor>
+				<min>0</min>
+				<max>0.95</max>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>COMVolumeKnob</object-name>
+		<axis>
+			<object-name>COMVolumeKnobAxis</object-name>
+		</axis>
+		<property alias="../../params/com-volume"/>
+		<factor>180</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/com-volume"/>
+				<factor>0.05</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>NAVVolumeKnob</object-name>
+		<axis>
+			<object-name>NAVVolumeKnobAxis</object-name>
+		</axis>
+		<property alias="../../params/nav-volume"/>
+		<factor>180</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/nav-volume"/>
+				<factor>0.05</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>COMSquelchKnob</object-name>
+		<axis>
+			<object-name>COMSquelchKnobAxis</object-name>
+		</axis>
+		<property alias="../../params/com-squelch"/>
+		<factor>180</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/com-squelch"/>
+				<factor>0.05</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>NAVModeSwitch</object-name>
+		<axis>
+			<object-name>NAVModeSwitchAxis</object-name>
+		</axis>
+		<property alias="../../params/nav-mode"/>
+		<factor>20</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/nav-mode"/>
+				<factor>1</factor>
+				<min>-1</min>
+				<max>1</max>
+			</binding>
+		</action>
+		<release>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/nav-mode"/>
+				<factor>0</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</release>
+	</animation>
+	
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		<object-name>Glass</object-name>
+	</effect>
+</PropertyList>

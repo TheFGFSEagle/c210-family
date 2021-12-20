@@ -36,8 +36,8 @@
 		<primary-set type="bool">true</primary-set>
 		<rating>
 			<FDM type="int">4</FDM>
-			<systems type="int">5</systems>
-			<cockpit type="int">5</cockpit>
+			<systems type="int">4</systems>
+			<cockpit type="int">4</cockpit>
 			<model type="int">4</model>
 		</rating>
 
@@ -223,6 +223,7 @@
 			<speed>115</speed>
 		</max-flap-extension-speed>
 		<max-gear-extension-speed>200</max-gear-extension-speed>
+		<max-gear-operation-speed>165</max-gear-operation-speed>
 	</limits>
 	
 	<engines>
@@ -252,19 +253,23 @@
 	
 	<controls>
 		<gear>
-			<brake-parking>true</brake-parking>
+			<brake-parking userarchive="y">true</brake-parking>
 		</gear>
 		<engines>
 			<engine>
-				<cowl-flaps-norm>1</cowl-flaps-norm>
-				<propeller-pitch>1</propeller-pitch>
+				<cowl-flaps-norm userarchive="y">1</cowl-flaps-norm>
+				<propeller-pitch userarchive="y">1</propeller-pitch>
 			</engine>
 		</engines>
 	</controls>
 	
 	<instrumentation>
 		<heading-indicator>
-			<heading-bug-deg>0</heading-bug-deg>
+			<heading-bug-deg userarchive="y">0</heading-bug-deg>
 		</heading-indicator>
+		<egt>
+			<indicated-temperature-degf alias="engines/engine/egt-degf"/>
+			<target-temperature-degf userarchive="y">1350</target-temperature-degf>
+		</egt>
 	</instrumentation>
 </PropertyList>

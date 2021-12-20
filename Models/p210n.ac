@@ -7,7 +7,7 @@ MATERIAL "FuselageMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0
 MATERIAL "CarpetMaterial" rgb 0.000 0.000 0.000  amb 0.000 0.000 0.000  emis 0.000 0.000 0.000  spec 0.000 0.000 0.000  shi 128 trans 0.000
 MATERIAL "WingsMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 1.000 1.000 1.000  shi 90 trans 0.000
 MATERIAL "MetalMaterial" rgb 0.604 0.604 0.604  amb 0.604 0.604 0.604  emis 0.000 0.000 0.000  spec 1.000 1.000 1.000  shi 102 trans 0.000
-MATERIAL "FastPropellerMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.000 0.000 0.000  shi 128 trans 0.800
+MATERIAL "FastPropellerMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.000 0.000 0.000  shi 128 trans 0.400
 MATERIAL "GreenNavLightMaterial" rgb 0.000 1.000 0.000  amb 0.000 1.000 0.000  emis 0.000 0.000 0.000  spec 0.000 0.000 0.000  shi 128 trans 0.000
 MATERIAL "ExteriorImmatMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.000 0.000 0.000  shi 128 trans 0.999
 MATERIAL "GearMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 1.000 1.000 1.000  shi 102 trans 0.000
