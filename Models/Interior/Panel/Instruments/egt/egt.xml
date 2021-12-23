@@ -11,15 +11,15 @@
 		<property>instrumentation/egt/indicated-temperature-degf</property>
 		<interpolation>
 			<entry>
-				<ind>1000</ind>
+				<ind>900</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>1200</ind>
+				<ind>1000</ind>
 				<dep>4</dep>
 			</entry>
 			<entry>
-				<ind>1700</ind>
+				<ind>1500</ind>
 				<dep>93</dep>
 			</entry>
 		</interpolation>
@@ -35,14 +35,10 @@
 		<interpolation>
 			<entry>
 				<ind>1000</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>1200</ind>
 				<dep>4</dep>
 			</entry>
 			<entry>
-				<ind>1700</ind>
+				<ind>1500</ind>
 				<dep>93</dep>
 			</entry>
 		</interpolation>
@@ -74,7 +70,7 @@
 				<command>property-adjust</command>
 				<property>instrumentation/egt/target-temperature-degf</property>
 				<factor>10</factor>
-				<min>1000</min>
+				<min>1200</min>
 				<max>1700</max>
 				<wrap>false</wrap>
 			</binding>
@@ -83,32 +79,33 @@
 			<binding>
 				<command>set-tooltip</command>
 				<tooltip-id>egt-indicator</tooltip-id>
-				<label>Target EGT temperature:  %4d °F</label>
-				<measure-text>Target EGT temperature: 1700 °F</measure-text>
+				<label>Current EGT temperature: %4d °F\nTarget EGT temperature:  %4d °F</label>
+				<measure-text>Current EGT temperature: 1700 °F\nTarget EGT temperature: 1700 °F</measure-text>
+				<property>instrumentation/egt/indicated-temperature-degf</property>
 				<property>instrumentation/egt/target-temperature-degf</property>
 			</binding>
 		</hovered>
 	</animation>
-	 <text>
+	<text>
 		<name>Label</name>
 		<type type="string">literal</type>
 		<text type="string">EGT Indicator</text>
 		<draw-text type="bool">true</draw-text>
 		<font>Helvetica.txf</font>
-		<character-size type="double">0.020</character-size>
+		<character-size type="double">0.01</character-size>
 		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
 		<axis-alignment>yz-plane</axis-alignment>
-		<max-height>0.08</max-height>
-		<max-width>0.08</max-width>
+		<max-height>0.04</max-height>
+		<max-width>0.04</max-width>
 		<font-resolution>
 			<width type="int">32</width>
 			<height type="int">32</height>
 		</font-resolution>
 		<alignment>center-center</alignment>
 		<offsets>
-			<x-m> 0.02</x-m>
-			<y-m> 0.0 </y-m>
-			<z-m> 0.01 </z-m>
+			<x-m>0.01</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
 		</offsets>
 	</text>
 	

@@ -1037,7 +1037,6 @@ OBJECT poly
 name "Glass"
 data 10
 Circle.001
-hidden
 crease 40.0
 numvert 36
 0.0025 0.00651 -0.03692

@@ -2,17 +2,20 @@
 <PropertyList>
 	<model>
 		<path>com-nav-1.xml</path>
-		<params>
-			<com-freq-mhz>instrumentation/comm[1]/frequencies/dialed-mhz</com-freq-mhz>
-			<com-freq-khz>instrumentation/comm[1]/frequencies/dialed-khz</com-freq-khz>
-			<com-memory-num>instrumentation/comm[1]/frequencies/memory-num</com-memory-num>
-			<com-volume>instrumentation/comm[1]/volume</com-volume>
-			<com-squelch>instrumentation/comm[1]/squelch</com-squelch>
-			<nav-freq-mhz>instrumentation/nav[1]/frequencies/dialed-mhz</nav-freq-mhz>
-			<nav-freq-khz>instrumentation/nav[1]/frequencies/dialed-khz</nav-freq-khz>
-			<nav-memory-num>instrumentation/nav[1]/frequencies/memory-num</nav-memory-num>
-			<nav-volume>instrumentation/nav[1]/volume</nav-volume>
-			<nav-mode>instrumentation/nav[1]/mode</nav-mode>
-		</params>
+		<overlay>
+			<params>
+				<com-freq-mhz>instrumentation/comm[1]/frequencies/dialed-mhz</com-freq-mhz>
+				<com-freq-khz>instrumentation/comm[1]/frequencies/dialed-khz</com-freq-khz>
+				<com-memory-num>instrumentation/comm[1]/frequencies/memory-num</com-memory-num>
+				<com-volume>instrumentation/comm[1]/volume</com-volume>
+				<com-squelch>instrumentation/comm[1]/squelch</com-squelch>
+				<nav-freq-mhz>instrumentation/nav[1]/frequencies/dialed-mhz</nav-freq-mhz>
+				<nav-freq-khz>instrumentation/nav[1]/frequencies/dialed-khz</nav-freq-khz>
+				<nav-memory-num>instrumentation/nav[1]/frequencies/memory-num</nav-memory-num>
+				<nav-volume>instrumentation/nav[1]/volume</nav-volume>
+				<nav-mode>instrumentation/nav[1]/mode</nav-mode>
+				<label-text>COM/NAV 2</label-text>
+			</params>
+		</overlay>
 	</model>
 </PropertyList>

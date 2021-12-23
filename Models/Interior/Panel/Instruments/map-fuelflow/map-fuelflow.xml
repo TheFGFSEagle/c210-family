@@ -1,52 +1,89 @@
 <?xml version="1.0"?>
 <PropertyList>
-	<path>cabin-vsi.ac</path>
+	<path>map-fuelflow.ac</path>
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>CabinVSNeedle</object-name>
+		<object-name>MaPNeedle</object-name>
 		<axis>
-			<x>1</x>
+			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/pressurization/indicated-cabin-vertical-speed-fpm</property>
+		<property>instrumentation/map-fuelflow/indicated-map-inhg</property>
 		<interpolation>
-			<entry>
-				<ind>-6000</ind>
-				<dep>-170</dep>
-			</entry>
-			<entry>
-				<ind>-4000</ind>
-				<dep>-130</dep>
-			</entry>
-			<entry>
-				<ind>-2000</ind>
-				<dep>-80</dep>
-			</entry>
-			<entry>
-				<ind>-1000</ind>
-				<dep>-50</dep>
-			</entry>
 			<entry>
 				<ind>0</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>1000</ind>
-				<dep>50</dep>
+				<ind>10</ind>
+				<dep>15</dep>
 			</entry>
 			<entry>
-				<ind>2000</ind>
-				<dep>80</dep>
+				<ind>40</ind>
+				<dep>165</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>FuelFlowNeedle</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/map-fuelflow/indicated-fuelflow-lbhr</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>4000</ind>
-				<dep>130</dep>
+				<ind>10</ind>
+				<dep>15</dep>
 			</entry>
 			<entry>
-				<ind>6000</ind>
-				<dep>170</dep>
+				<ind>20</ind>
+				<dep>20</dep>
+			</entry>
+			<entry>
+				<ind>40</ind>
+				<dep>27</dep>
+			</entry>
+			<entry>
+				<ind>60</ind>
+				<dep>36</dep>
+			</entry>
+			<entry>
+				<ind>80</ind>
+				<dep>47</dep>
+			</entry>
+			<entry>
+				<ind>100</ind>
+				<dep>60</dep>
+			</entry>
+			<entry>
+				<ind>120</ind>
+				<dep>75</dep>
+			</entry>
+			<entry>
+				<ind>140</ind>
+				<dep>92</dep>
+			</entry>
+			<entry>
+				<ind>160</ind>
+				<dep>111</dep>
+			</entry>
+			<entry>
+				<ind>180</ind>
+				<dep>132</dep>
+			</entry>
+			<entry>
+				<ind>190</ind>
+				<dep>143.5</dep>
 			</entry>
 		</interpolation>
 	</animation>
@@ -54,14 +91,14 @@
 	<text>
 		<name>Label</name>
 		<type type="string">literal</type>
-		<text type="string">Cabin vertical speed</text>
+		<text type="string">Manifold pressure and fuel flow</text>
 		<draw-text type="bool">true</draw-text>
 		<font>Helvetica.txf</font>
-		<character-size type="double">0.01</character-size>
+		<character-size type="double">0.015</character-size>
 		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
 		<axis-alignment>yz-plane</axis-alignment>
-		<max-height>0.04</max-height>
-		<max-width>0.04</max-width>
+		<max-height>0.08</max-height>
+		<max-width>0.08</max-width>
 		<font-resolution>
 			<width type="int">32</width>
 			<height type="int">32</height>
@@ -69,7 +106,7 @@
 		<alignment>center-center</alignment>
 		<offsets>
 			<x-m>0.01</x-m>
-			<y-m>0.0 </y-m>
+			<y-m>0.0</y-m>
 			<z-m>0.0</z-m>
 		</offsets>
 	</text>

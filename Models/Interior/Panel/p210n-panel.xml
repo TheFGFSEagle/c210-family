@@ -13,7 +13,7 @@
 	<model>
 		<path>Instruments/ai/attitude-indicator.xml</path>
 		<offsets>
-			<x-m>-0.49</x-m>
+			<x-m>-0.44</x-m>
 			<y-m>-0.3</y-m>
 			<z-m>0.45</z-m>
 			<pitch-deg>-5.5</pitch-deg>
@@ -181,11 +181,49 @@
 		</offsets>
 	</model>
 	<model>
+		<path>Avionics/rnav/rnav.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>0.02</y-m>
+			<z-m>0.29</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Avionics/transponder/transponder.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>0.02</y-m>
+			<z-m>0.23</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Avionics/ap-control/ap-control.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>0.02</y-m>
+			<z-m>0.18</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
 		<path>Controls/Engine/engine.xml</path>
 		<offsets>
 			<x-m>-0.42</x-m>
 			<y-m>0</y-m>
-			<z-m>0.15</z-m>
+			<z-m>0.14</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	
+	<!-- right side of panel -->
+	<model>
+		<path>Instruments/map-fuelflow/map-fuelflow.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>0.15</y-m>
+			<z-m>0.34</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>

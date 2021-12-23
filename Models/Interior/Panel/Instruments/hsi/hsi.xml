@@ -5,7 +5,6 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>HeadingScale</object-name>
-		<object-name>HeadingBug</object-name>
 		<object-name>RadialNeedle</object-name>
 		<object-name>RadialDeviationNeedle</object-name>
 		<object-name>RadialDeviationScale</object-name>
@@ -26,7 +25,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/heading-indicator/heading-bug-deg</property>
+		<property>instrumentation/heading-indicator/heading-bug-error-deg</property>
 	</animation>
 	
 	<animation>
@@ -145,18 +144,18 @@
 				<property>instrumentation/heading-indicator/heading-bug-deg</property>
 				<factor>1</factor>
 				<min>0</min>
-				<max>359</max>
+				<max>360</max> <!-- with wrap=true, max needs too be the real maximum + factor in order to work correctly -->
 				<wrap>true</wrap>
 			</binding>
 		</action>
 	</animation>
 	<text>
-		<name>HSILabel</name>
+		<name>Label</name>
 		<type type="string">literal</type>
 		<text type="string">Horizontal Situation Indicator</text>
 		<draw-text type="bool">true</draw-text>
 		<font>Helvetica.txf</font>
-		<character-size type="double">0.020</character-size>
+		<character-size type="double">0.015</character-size>
 		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
 		<axis-alignment>yz-plane</axis-alignment>
 		<max-height>0.08</max-height>
@@ -167,15 +166,15 @@
 		</font-resolution>
 		<alignment>center-center</alignment>
 		<offsets>
-			<x-m> 0.02</x-m>
-			<y-m> 0.0 </y-m>
-			<z-m> 0.01 </z-m>
+			<x-m>0.01</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
 		</offsets>
 	</text>
 	
 	<animation>
 		<type>material</type>
-		<object-name>HSILabel</object-name>
+		<object-name>Label</object-name>
 		<emission>
 			<red>1</red>
 			<green>1</green>
@@ -185,7 +184,7 @@
 	
 	<animation>
 		<type>select</type>
-		<object-name>HSILabel</object-name>
+		<object-name>Label</object-name>
 		<condition>
 			<property>/sim/panel-hotspots</property>
 		</condition>

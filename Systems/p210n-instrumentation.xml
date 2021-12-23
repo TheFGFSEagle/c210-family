@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+
+<!--
+instrumentation.xml
+You can have several instances of the same instrument type.
+The value inside the name tag becomes the node in the property tree.
+If two instruments have the same name you must use the number tag
+to separate them. They become name[number] in the property tree.
+Some instruments have additional configuration tags like static-port
+and pitot-port. The static- and pitot-ports (and any other system that
+an instrument depend on) have to be configured in the systems
+configuration file: generic-systems.xml
+
+The values in this file are the default values. If any configuration
+tags are omitted in an aircraft specific version of this configuration
+file, these values will be used (they are hardcoded).
+-->
+
+<PropertyList>
+
+	<adf>
+		<name>adf</name>
+		<number>0</number>
+	</adf>
+
+	<airspeed-indicator>
+		<name>airspeed-indicator</name>
+		<number>0</number>
+		<!--<total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
+		<static-pressure>/systems/static-pressure-inhg-selected</static-pressure>-->
+	</airspeed-indicator>
+
+	<altimeter>
+		<name>altimeter</name>
+		<number>0</number>
+		<!--<static-pressure>/systems/static-pressure-inhg-selected</static-pressure>-->
+		<quantum>0</quantum>
+		<tau>0</tau>
+	</altimeter>
+	
+	<altimeter>
+		<name>altimeter</name>
+		<number>1</number>
+		<!--<static-pressure>/systems/static-pressure-inhg-selected</static-pressure>-->
+		<quantum>0</quantum>
+		<tau>0</tau>
+	</altimeter>
+
+	<attitude-indicator>
+		<name>attitude-indicator</name>
+		<number>0</number>
+		<!--<suction>/systems/vacuum/suction-inhg</suction>-->
+	</attitude-indicator>
+
+	<clock>
+		<name>clock</name>
+		<number>0</number>
+	</clock>
+
+	<dme>
+		<name>dme</name>
+		<number>0</number>
+	</dme>
+	
+	<gps>
+		<name>gps</name>
+		<number>0</number>
+	</gps>
+
+	<altimeter>
+		<name>alt-encoder</name>
+		<number>0</number>
+		<!--<static-pressure>/systems/static-pressure-inhg-selected</static-pressure>-->
+		<quantum>10</quantum>
+		<tau>0.1</tau>
+		<encode-mode-c type="bool">1</encode-mode-c>
+		<encode-mode-s type="bool">1</encode-mode-s>
+	</altimeter>
+
+	<marker-beacon>
+		<name>marker-beacon</name>
+		<number>0</number>
+	</marker-beacon>
+
+	<heading-indicator>
+		<name>heading-indicator</name>
+		<number>0</number>
+		<!--<suction>/systems/vacuum/suction-inhg</suction>-->
+	</heading-indicator>
+
+	<magnetic-compass>
+		<name>magnetic-compass</name>
+		<number>0</number>
+		<!-- use either deviation property or deviation table for compass deviation -->
+		<!--deviation>/instrumentation/magnetic-compass/deviation-deg</deviation-->
+		<deviation>
+			<table>
+				<entry>
+					<ind>0</ind>
+					<dep>0</dep>
+				</entry>
+				<entry>
+					<ind>30</ind>
+					<dep>2</dep>
+				</entry>
+				<entry>
+					<ind>60</ind>
+					<dep>3</dep>
+				</entry>
+				<entry>
+					<ind>90</ind>
+					<dep>4</dep>
+				</entry>
+				<entry>
+					<ind>120</ind>
+					<dep>3</dep>
+				</entry>
+				<entry>
+					<ind>150</ind>
+					<dep>2</dep>
+				</entry>
+				<entry>
+					<ind>180</ind>
+					<dep>0</dep>
+				</entry>
+				<entry>
+					<ind>210</ind>
+					<dep>-2</dep>
+				</entry>
+				<entry>
+					<ind>240</ind>
+					<dep>-3</dep>
+				</entry>
+				<entry>
+					<ind>270</ind>
+					<dep>-4</dep>
+				</entry>
+				<entry>
+					<ind>300</ind>
+					<dep>-3</dep>
+				</entry>
+				<entry>
+					<ind>330</ind>
+					<dep>-2</dep>
+				</entry>
+			</table>
+		</deviation>
+	</magnetic-compass>
+
+	<comm-radio>
+		<name>comm</name>
+		<number>0</number>
+		<eight-point-three type="bool">true</eight-point-three>
+		<!--<power-supply>systems/electrical/outputs/comm[0]</power-supply>-->
+	</comm-radio>
+
+	<comm-radio>
+		<name>comm</name>
+		<number>1</number>
+		<eight-point-three type="bool">true</eight-point-three>
+		<!--<power-supply>systems/electrical/outputs/comm[1]</power-supply>-->
+	</comm-radio>
+
+	<nav-radio>
+		<name>nav</name>
+		<number>0</number>
+		<!--<power-supply>systems/electrical/outputs/comm[0]</power-supply>-->
+	</nav-radio>
+
+	<nav-radio>
+		<name>nav</name>
+		<number>1</number>
+		<!--<power-supply>systems/electrical/outputs/comm[1]</power-supply>-->
+	</nav-radio>
+
+	<slip-skid-ball>
+		<name>slip-skid-ball</name>
+		<number>0</number>
+	</slip-skid-ball>
+
+	 <transponder>
+		<name type="string">transponder</name>
+		<number type="int">0</number>
+		<mode type="int">1</mode> <!-- 0 = Mode A, 1 = Mode C, 2 = Mode S -->
+		<bus-volts type="double">8.0</bus-volts>
+		<encoder-path type="string">/instrumentation/alt-encoder</encoder-path>
+		<kt70-compatibility type="bool">0</kt70-compatibility>
+		
+		<inputs>
+			<knob-mode>0</knob-mode> <!-- like KT76c modes, but internal knob state; able to adjust operation -->
+		</inputs>
+	</transponder>
+
+	<turn-indicator>
+		<name>turn-indicator</name>
+		<number>0</number>
+	</turn-indicator>
+
+	<vertical-speed-indicator>
+		<name>vertical-speed-indicator</name>
+		<number>0</number>
+		<!--static-pressure>/systems/static-pressure-inhg-selected</static-pressure>-->
+	</vertical-speed-indicator>
+</PropertyList>

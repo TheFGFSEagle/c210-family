@@ -21,12 +21,21 @@
 	
 	<animation>
 		<type>select</type>
-		<object-name>Flag</object-name>
+		<object-name>GroundFlag</object-name>
 		<condition>
 			<less-than>
 				<property>instrumentation/altimeter/indicated-altitude-ft</property>
 				<value>10000</value>
 			</less-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>FaultFlag</object-name>
+		<condition>
+			<not>
+				<property>instrumentation/altimeter/serviceable</property>
+			</not>
 		</condition>
 	</animation>
 	
@@ -175,12 +184,12 @@
 		</action>
 	</animation>
 	 <text>
-		<name>AltLabel</name>
+		<name>Label</name>
 		<type type="string">literal</type>
 		<text type="string">Altimeter</text>
 		<draw-text type="bool">true</draw-text>
 		<font>Helvetica.txf</font>
-		<character-size type="double">0.020</character-size>
+		<character-size type="double">0.015</character-size>
 		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
 		<axis-alignment>yz-plane</axis-alignment>
 		<max-height>0.08</max-height>
@@ -191,15 +200,15 @@
 		</font-resolution>
 		<alignment>center-center</alignment>
 		<offsets>
-			<x-m> 0.02</x-m>
-			<y-m> 0.0 </y-m>
-			<z-m> 0.01 </z-m>
+			<x-m>0.01</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
 		</offsets>
 	</text>
 	
 	<animation>
 		<type>material</type>
-		<object-name>AltLabel</object-name>
+		<object-name>Label</object-name>
 		<emission>
 			<red>1</red>
 			<green>1</green>
@@ -209,7 +218,7 @@
 	
 	<animation>
 		<type>select</type>
-		<object-name>AltLabel</object-name>
+		<object-name>Label</object-name>
 		<condition>
 			<property>/sim/panel-hotspots</property>
 		</condition>

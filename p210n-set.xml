@@ -103,10 +103,10 @@
 				<file type="string">Default</file>
 			</livery>
 		</model>
-		<menubar include="gui/p210n-menu.xml"></menubar>
-		<help include="p210n-help.xml"></help>
+		<menubar include="gui/menu/p210n-menu.xml"></menubar>
+		<help include="gui/help/p210n-help.xml"></help>
 		<view n="0">
-			<name>Cockpit</name>
+			<name>Pilot</name>
 			<type>lookfrom</type>
 			<internal type="bool">true</internal>
 			<config>
@@ -114,7 +114,7 @@
 				<y-offset-m type="double">0.65</y-offset-m>
 				<z-offset-m type="double">0.3</z-offset-m>
 				<pitch-offset-deg>3</pitch-offset-deg>
-				<default-field-of-view-deg type="double">65.0</default-field-of-view-deg>
+				<default-field-of-view-deg type="double">70.0</default-field-of-view-deg>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
 				<ground-level-nearplane-m type="double">6f</ground-level-nearplane-m>
@@ -136,6 +136,9 @@
 				<enabled type="bool">false</enabled>
 			</dynamic>
 		</view>
+		<instrumentation>
+			<path>Systems/p210n-instrumentation.xml</path>
+		</instrumentation>
 	</sim>
 	
 	<nasal>
@@ -268,7 +271,7 @@
 			<heading-bug-deg userarchive="y">0</heading-bug-deg>
 		</heading-indicator>
 		<egt>
-			<indicated-temperature-degf alias="engines/engine/egt-degf"/>
+			<indicated-temperature-degf alias="/engines/engine/egt-degf"/>
 			<target-temperature-degf userarchive="y">1350</target-temperature-degf>
 		</egt>
 	</instrumentation>

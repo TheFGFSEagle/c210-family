@@ -17,16 +17,18 @@
 		<type>rotate</type>
 		<object-name>IndicatorBall</object-name>
 		<axis>
-			<x>0</x>
-			<y>1</y>
-			<z>0</z>
+			<object-name>IndicatorBallAxis</object-name>
 		</axis>
-		<expression>
-			<sum>
-				<property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
-				<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
-			</sum>
-		</expression>
+		<property>instrumentation/attitude-indicator/indicated-pitch-deg</property>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Airplane</object-name>
+		<axis>
+			<object-name>IndicatorBallAxis</object-name>
+		</axis>
+		<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
 	</animation>
 	
 	<animation>
@@ -41,20 +43,19 @@
 			<binding>
 				<command>property-adjust</command>
 				<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
-				<factor>0.1</factor>
-				<min>-90</min>
-				<max>90</max>
-				<wrap>false</wrap>
+				<factor>0.25</factor>
+				<min>-10</min>
+				<max>10</max>
 			</binding>
 		</action>
 	</animation>
 	 <text>
-		<name>AILabel</name>
+		<name>Label</name>
 		<type type="string">literal</type>
 		<text type="string">Attitude Indicator</text>
 		<draw-text type="bool">true</draw-text>
 		<font>Helvetica.txf</font>
-		<character-size type="double">0.020</character-size>
+		<character-size type="double">0.015</character-size>
 		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
 		<axis-alignment>yz-plane</axis-alignment>
 		<max-height>0.08</max-height>
@@ -65,15 +66,15 @@
 		</font-resolution>
 		<alignment>center-center</alignment>
 		<offsets>
-			<x-m> 0.02</x-m>
-			<y-m> 0.0 </y-m>
-			<z-m> 0.01 </z-m>
+			<x-m>0.01</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
 		</offsets>
 	</text>
 	
 	<animation>
 		<type>material</type>
-		<object-name>AILabel</object-name>
+		<object-name>Label</object-name>
 		<emission>
 			<red>1</red>
 			<green>1</green>
@@ -83,7 +84,7 @@
 	
 	<animation>
 		<type>select</type>
-		<object-name>AILabel</object-name>
+		<object-name>Label</object-name>
 		<condition>
 			<property>/sim/panel-hotspots</property>
 		</condition>

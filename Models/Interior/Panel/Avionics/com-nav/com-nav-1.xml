@@ -11,6 +11,7 @@
 		<nav-memory-num>instrumentation/nav[0]/frequencies/memory-num</nav-memory-num>
 		<nav-volume>instrumentation/nav[0]/volume</nav-volume>
 		<nav-mode>instrumentation/nav[0]/mode</nav-mode>
+		<label-text>COM/NAV 1</label-text>
 	</params>
 	
 	<path>com-nav.ac</path>
@@ -22,9 +23,10 @@
 			<object-name>COMFreqKnobAxis</object-name>
 		</axis>
 		<property alias="../../params/com-freq-mhz"/>
+		<factor>20</factor>
 		<action>
 			<binding>
-				<command>propert-adjust</command>
+				<command>property-adjust</command>
 				<property alias="../../../../params/com-freq-mhz"/>
 				<factor>1</factor>
 				<min>118</min>
@@ -39,9 +41,10 @@
 			<object-name>COMFreqKnobAxis</object-name>
 		</axis>
 		<property alias="../../params/com-freq-khz"/>
+		<factor>200</factor>
 		<action>
 			<binding>
-				<command>propert-adjust</command>
+				<command>property-adjust</command>
 				<property alias="../../../../params/com-freq-khz"/>
 				<factor>0.05</factor>
 				<min>0</min>
@@ -57,9 +60,10 @@
 			<object-name>NAVFreqKnobAxis</object-name>
 		</axis>
 		<property alias="../../params/nav-freq-mhz"/>
+		<factor>20</factor>
 		<action>
 			<binding>
-				<command>propert-adjust</command>
+				<command>property-adjust</command>
 				<property alias="../../../../params/nav-freq-mhz"/>
 				<factor>1</factor>
 				<min>108</min>
@@ -74,9 +78,10 @@
 			<object-name>NAVFreqKnobAxis</object-name>
 		</axis>
 		<property alias="../../params/nav-freq-khz"/>
+		<factor>200</factor>
 		<action>
 			<binding>
-				<command>propert-adjust</command>
+				<command>property-adjust</command>
 				<property alias="../../../../params/nav-freq-khz"/>
 				<factor>0.05</factor>
 				<min>0</min>
@@ -148,7 +153,7 @@
 			<object-name>NAVModeSwitchAxis</object-name>
 		</axis>
 		<property alias="../../params/nav-mode"/>
-		<factor>20</factor>
+		<factor>-20</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>
@@ -167,6 +172,47 @@
 				<max>1</max>
 			</binding>
 		</release>
+	</animation>
+	
+	<text>
+		<name>Label</name>
+		<type type="string">literal</type>
+		<text type="string" alias="../../params/label-text"/>
+		<draw-text type="bool">true</draw-text>
+		<font>Helvetica.txf</font>
+		<character-size type="double">0.015</character-size>
+		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+		<axis-alignment>yz-plane</axis-alignment>
+		<max-height>0.08</max-height>
+		<max-width>0.08</max-width>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+		<alignment>center-center</alignment>
+		<offsets>
+			<x-m>0.01</x-m>
+			<y-m>0.0 </y-m>
+			<z-m>0.02</z-m>
+		</offsets>
+	</text>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Label</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Label</object-name>
+		<condition>
+			<property>/sim/panel-hotspots</property>
+		</condition>
 	</animation>
 	
 	<effect>
