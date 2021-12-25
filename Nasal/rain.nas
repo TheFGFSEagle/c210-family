@@ -11,7 +11,7 @@ var rainSplashVectorLoop = func() {
 
 	airspeed = math.sqrt(airspeed / airspeedMax);
 	
-	var splash_x = 1 - 5 * airspeed;
+	var splash_x = 0 + 5 * airspeed;
 	var splash_y = 0.0;
 	var splash_z = -2 + airspeed;
 

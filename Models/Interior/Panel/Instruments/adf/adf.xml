@@ -23,7 +23,7 @@
 		<property>instrumentation/adf/indicated-bearing-deg</property>
 	</animation>
 	
-	 <text>
+	<text>
 		<name>Label</name>
 		<type type="string">literal</type>
 		<text type="string">Automatic Direction Finder</text>

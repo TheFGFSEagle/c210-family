@@ -227,4 +227,13 @@
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
+	<model>
+		<path>Instruments/tach/tach.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>0.15</y-m>
+			<z-m>0.25</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
 </PropertyList>

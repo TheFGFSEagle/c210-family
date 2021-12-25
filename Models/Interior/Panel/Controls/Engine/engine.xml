@@ -20,7 +20,7 @@
 		</offsets>
 	</model>
 	 <text>
-		<name>AltLabel</name>
+		<name>Label</name>
 		<type type="string">literal</type>
 		<text type="string">Engine controls</text>
 		<draw-text type="bool">true</draw-text>
