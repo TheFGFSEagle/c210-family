@@ -1,14 +1,12 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
-<fdm_config name="c210n" version="2.0" release="ALPHA"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
+<fdm_config name="p210n" version="2.0" release="ALPHA" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
     <fileheader>
-        <author> TheEagle, Ysop </author>
+        <author>TheEagle, Ysop</author>
         <filecreationdate>2021-09-14</filecreationdate>
         <version>$Revision: 1.0 $</version>
-        <description> Models a Cessna P210N. </description>
+        <description>Models a Cessna P210N.</description>
     </fileheader>
 
     <metrics>
@@ -115,522 +113,513 @@
         </pointmass>
     </mass_balance>
 
- <ground_reactions>
+    <ground_reactions>
+        <contact type="BOGEY" name="NOSE">
+            <location unit="IN">
+                <x>  45.2 </x>
+                <y>   0.00 </y>
+                <z> -51 </z>
+            </location>
+            <static_friction>  0.8 </static_friction>
+            <dynamic_friction> 0.50 </dynamic_friction>
+            <rolling_friction> 0.02 </rolling_friction>
+            <spring_coeff unit="LBS/FT">       6000.00 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">   600.00 </damping_coeff>
+            <max_steer unit="DEG"> 27 </max_steer>
+            <brake_group>NONE</brake_group>
+            <retractable>1</retractable>
+        </contact>
 
-  <contact type="BOGEY" name="NOSE">
-   <location unit="IN">
-     <x>  45.2 </x>
-     <y>   0.00 </y>
-     <z> -51 </z>
-   </location>
-   <static_friction>  0.8 </static_friction>
-   <dynamic_friction> 0.50 </dynamic_friction>
-   <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT">       6000.00 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">   600.00 </damping_coeff>
-   <max_steer unit="DEG"> 27 </max_steer>
-   <brake_group>NONE</brake_group>
-   <retractable>1</retractable>
-  </contact>
+        <contact type="BOGEY" name="LEFT_MAIN">
+            <location unit="IN">
+                <x> 118 </x>
+                <y> 57.6 </y>
+                <z> -50.9 </z>
+            </location>
+            <static_friction>  0.8 </static_friction>
+            <dynamic_friction> 0.50 </dynamic_friction>
+            <rolling_friction> 0.02 </rolling_friction>
+            <spring_coeff unit="LBS/FT">       6000.00 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">  800.00 </damping_coeff>
+            <max_steer unit="DEG">0</max_steer>
+            <brake_group>LEFT</brake_group>
+            <retractable>1</retractable>
+        </contact>
 
-  <contact type="BOGEY" name="LEFT_MAIN">
-   <location unit="IN">
-     <x> 118 </x>
-     <y> 57.6 </y>
-     <z> -50.9 </z>
-   </location>
-   <static_friction>  0.8 </static_friction>
-   <dynamic_friction> 0.50 </dynamic_friction>
-   <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT">       6000.00 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  800.00 </damping_coeff>
-   <max_steer unit="DEG">0</max_steer>
-   <brake_group>LEFT</brake_group>
-   <retractable>1</retractable>
-  </contact>
+        <contact type="BOGEY" name="RIGHT_MAIN">
+            <location unit="IN">
+                <x> 118 </x>
+                <y> -57.6 </y>
+                <z> -50.9 </z>
+            </location>
+            <static_friction> 0.8 </static_friction>
+            <dynamic_friction> 0.50 </dynamic_friction>
+            <rolling_friction> 0.02 </rolling_friction>
+            <spring_coeff unit="LBS/FT">       6000.00 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">  800.00 </damping_coeff>
+            <max_steer unit="DEG">0</max_steer>
+            <brake_group>RIGHT</brake_group>
+            <retractable>1</retractable>
+        </contact>
 
-  <contact type="BOGEY" name="RIGHT_MAIN">
-   <location unit="IN">
-     <x> 118 </x>
-     <y> -57.6 </y>
-     <z> -50.9 </z>
-   </location>
-   <static_friction> 0.8 </static_friction>
-   <dynamic_friction> 0.50 </dynamic_friction>
-   <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="LBS/FT">       6000.00 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">  800.00 </damping_coeff>
-   <max_steer unit="DEG">0</max_steer>
-   <brake_group>RIGHT</brake_group>
-   <retractable>1</retractable>
-  </contact>
-  
-  <!-- Damage contacts -->
-  <contact type="STRUCTURE" name="Left wing tip, leading edge">
-    <location unit="IN">
-     <x> 88 </x>
-     <y> 220 </y>
-     <z> 33.5 </z>
-    </location>
-    <static_friction>  0.5 </static_friction>
-    <dynamic_friction> 0.3 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       2000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
-  </contact>
+        <!-- Damage contacts -->
+        <contact type="STRUCTURE" name="Left wing tip, leading edge">
+            <location unit="IN">
+                <x> 88 </x>
+                <y> 220 </y>
+                <z> 33.5 </z>
+            </location>
+            <static_friction>  0.5 </static_friction>
+            <dynamic_friction> 0.3 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">       2000.00 </spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
+        </contact>
 
-  <contact type="STRUCTURE" name="Right wing tip, leading edge">
-    <location unit="IN">
-     <x> 88 </x>
-     <y>  -220 </y>
-     <z>  33.5 </z>
-    </location>
-    <static_friction>  0.5 </static_friction>
-    <dynamic_friction> 0.3 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       2000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Propeller, lower edge">
-    <location unit="IN">
-     <x> 12 </x>
-     <y>  0 </y>
-     <z>  -25 </z>
-    </location>
-    <static_friction>  0.01 </static_friction>
-    <dynamic_friction> 0.005 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
-  </contact>
+        <contact type="STRUCTURE" name="Right wing tip, leading edge">
+            <location unit="IN">
+                <x> 88 </x>
+                <y>  -220 </y>
+                <z>  33.5 </z>
+            </location>
+            <static_friction>  0.5 </static_friction>
+            <dynamic_friction> 0.3 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">2000.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Propeller, lower edge">
+            <location unit="IN">
+                <x> 12 </x>
+                <y>  0 </y>
+                <z>  -25 </z>
+            </location>
+            <static_friction>  0.01 </static_friction>
+            <dynamic_friction> 0.005 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">500.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Propeller, upper edge">
+            <location unit="IN">
+                <x> 13.7 </x>
+                <y>  0 </y>
+                <z>  43 </z>
+            </location>
+            <static_friction>  0.01 </static_friction>
+            <dynamic_friction> 0.005 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">500.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Rudder, upper tip">
+            <location unit="IN">
+                <x> 311 </x>
+                <y>  0 </y>
+                <z>  57 </z>
+            </location>
+            <static_friction>  0.05 </static_friction>
+            <dynamic_friction> 0.025 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">1000.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Left elevator tip">
+            <location unit="IN">
+                <x> 268 </x>
+                <y>  78 </y>
+                <z>  -5 </z>
+            </location>
+            <static_friction>0.05</static_friction>
+            <dynamic_friction>0.025</dynamic_friction>
+            <spring_coeff unit="LBS/FT">1000.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Right elevator tip">
+            <location unit="IN">
+                <x> 268 </x>
+                <y>  -78 </y>
+                <z>  -5 </z>
+            </location>
+            <static_friction>  0.05 </static_friction>
+            <dynamic_friction> 0.025 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">1000.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Left comm antenna">
+            <location unit="IN">
+                <x> 116 </x>
+                <y>  17 </y>
+                <z>  41 </z>
+            </location>
+            <static_friction>  0.01 </static_friction>
+            <dynamic_friction> 0.005 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">500.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">500</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Right comm antenna">
+            <location unit="IN">
+                <x> 116 </x>
+                <y>  -17 </y>
+                <z>  41 </z>
+            </location>
+            <static_friction>  0.01 </static_friction>
+            <dynamic_friction> 0.005 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">500.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">500</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Fuselage, left lower front">
+            <location unit="IN">
+                <x> 26 </x>
+                <y>  11 </y>
+                <z>  -23 </z>
+            </location>
+            <static_friction>  1 </static_friction>
+            <dynamic_friction> 0.5 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">5000.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">1000</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Fuselage, right lower front">
+            <location unit="IN">
+                <x> 26 </x>
+                <y>  -11 </y>
+                <z>  -23 </z>
+            </location>
+            <static_friction>  1 </static_friction>
+            <dynamic_friction> 0.5 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">5000.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Fuselage, left lower door begin">
+            <location unit="IN">
+                <x> 91 </x>
+                <y>  19 </y>
+                <z>  -30 </z>
+            </location>
+            <static_friction>  1</static_friction>
+            <dynamic_friction> 0.5 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">5000.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Fuselage, right lower door begin">
+            <location unit="IN">
+                <x> 91 </x>
+                <y>  -19 </y>
+                <z>  -30 </z>
+            </location>
+            <static_friction>  1 </static_friction>
+            <dynamic_friction> 0.5 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">5000.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Fuselage, left lower main wheel well">
+            <location unit="IN">
+            <x> 170 </x>
+            <y>  17 </y>
+            <z>  -27 </z>
+                </location>
+            <static_friction>  1 </static_friction>
+            <dynamic_friction> 0.5 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">5000.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Fuselage, right lower main wheel well">
+            <location unit="IN">
+                <x> 170 </x>
+                <y>  -17 </y>
+                <z>  -27 </z>
+            </location>
+            <static_friction>  1 </static_friction>
+            <dynamic_friction> 0.5 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">5000.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+        </contact>
+
+        <contact type="STRUCTURE" name="Fuselage, tail tip">
+            <location unit="IN">
+                <x> 311 </x>
+                <y>  0 </y>
+                <z>  -6 </z>
+            </location>
+            <static_friction>  1 </static_friction>
+            <dynamic_friction> 0.5 </dynamic_friction>
+            <spring_coeff unit="LBS/FT">500.00</spring_coeff>
+            <damping_coeff unit="LBS/FT/SEC">2000</damping_coeff>
+        </contact>
+    </ground_reactions>
+
+    <propulsion>
+        <engine file="Continental_TSIO-520-P">
+            <location unit="IN">
+                <x>  40.00 </x>
+                <y>   0.00 </y>
+                <z>   5.00 </z>
+            </location>
+            <orient unit="DEG">
+                <pitch> 1.50 </pitch>
+                <roll>  0.00 </roll>
+                <yaw>   0.00 </yaw>
+            </orient>
+            <feed>0</feed>
+            <thruster file="McCauley_D3A34C402">
+                <sense> 1 </sense>
+                <location unit="IN">
+                    <x>  13.00 </x>
+                    <y>   0.00 </y>
+                    <z>   9.00 </z>
+                </location>
+                <orient unit="DEG">
+                    <pitch> 1.50 </pitch>
+                    <roll>  0.00 </roll>
+                    <yaw>   0.00 </yaw>
+                </orient>
+            </thruster>
+        </engine>
+
+        <!-- Left main tank -->
+        <tank type="FUEL" number="0">
+            <location unit="IN">
+                <x> 94.77 </x>
+                <y>   126 </y>
+                <z>  27 </z>
+            </location>
+            <capacity unit="LBS"> 267.445 </capacity>
+            <contents unit="LBS"> 100 </contents>
+            <unusable unit="LBS">3.005</unusable>
+            <type>AVGAS</type>
+        </tank>
+
+        <!-- Right main tank -->
+        <tank type="FUEL" number="1">
+            <location unit="IN">
+                <x> 94.77 </x>
+                <y>   -126 </y>
+                <z>  27 </z>
+            </location>
+            <capacity unit="LBS"> 267.445 </capacity>
+            <contents unit="LBS"> 100</contents>
+            <unusable unit="LBS">3.005</unusable>
+            <type>AVGAS</type>
+        </tank>
+
+        <!-- Left reservoir tank -->
+        <tank type="FUEL" number="2">
+            <location unit="IN">
+                <x> 90 </x>
+                <y>   14 </y>
+                <z>  -25 </z>
+            </location>
+            <capacity unit="LBS"> 0.5 </capacity>
+            <contents unit="LBS"> 0.5 </contents>
+            <type>AVGAS</type>
+        </tank>
+
+        <!-- Right reservoir tank -->
+        <tank type="FUEL" number="3">
+            <location unit="IN">
+                <x> 90 </x>
+                <y>   -14 </y>
+                <z>  -25 </z>
+            </location>
+            <capacity unit="LBS"> 0.5 </capacity>
+            <contents unit="LBS"> 0.5 </contents>
+            <type>AVGAS</type>
+        </tank>
+    </propulsion>
  
- <contact type="STRUCTURE" name="Propeller, upper edge">
-    <location unit="IN">
-     <x> 13.7 </x>
-     <y>  0 </y>
-     <z>  43 </z>
-    </location>
-    <static_friction>  0.01 </static_friction>
-    <dynamic_friction> 0.005 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Rudder, upper tip">
-    <location unit="IN">
-     <x> 311 </x>
-     <y>  0 </y>
-     <z>  57 </z>
-    </location>
-    <static_friction>  0.05 </static_friction>
-    <dynamic_friction> 0.025 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Left elevator tip">
-    <location unit="IN">
-     <x> 268 </x>
-     <y>  78 </y>
-     <z>  -5 </z>
-    </location>
-    <static_friction>  0.05</static_friction>
-    <dynamic_friction> 0.025 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Right elevator tip">
-    <location unit="IN">
-     <x> 268 </x>
-     <y>  -78 </y>
-     <z>  -5 </z>
-    </location>
-    <static_friction>  0.05 </static_friction>
-    <dynamic_friction> 0.025 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       1000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Left comm antenna">
-    <location unit="IN">
-     <x> 116 </x>
-     <y>  17 </y>
-     <z>  41 </z>
-    </location>
-    <static_friction>  0.01 </static_friction>
-    <dynamic_friction> 0.005 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  500 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Right comm antenna">
-    <location unit="IN">
-     <x> 116 </x>
-     <y>  -17 </y>
-     <z>  41 </z>
-    </location>
-    <static_friction>  0.01 </static_friction>
-    <dynamic_friction> 0.005 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  500 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Fuselage, left lower front">
-    <location unit="IN">
-     <x> 26 </x>
-     <y>  11 </y>
-     <z>  -23 </z>
-    </location>
-    <static_friction>  1 </static_friction>
-    <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       5000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  1000 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Fuselage, right lower front">
-    <location unit="IN">
-     <x> 26 </x>
-     <y>  -11 </y>
-     <z>  -23 </z>
-    </location>
-    <static_friction>  1 </static_friction>
-    <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       5000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Fuselage, left lower door begin">
-    <location unit="IN">
-     <x> 91 </x>
-     <y>  19 </y>
-     <z>  -30 </z>
-    </location>
-    <static_friction>  1</static_friction>
-    <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       5000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Fuselage, right lower door begin">
-    <location unit="IN">
-     <x> 91 </x>
-     <y>  -19 </y>
-     <z>  -30 </z>
-    </location>
-    <static_friction>  1 </static_friction>
-    <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       5000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Fuselage, left lower main wheel well">
-    <location unit="IN">
-     <x> 170 </x>
-     <y>  17 </y>
-     <z>  -27 </z>
-    </location>
-    <static_friction>  1 </static_friction>
-    <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       5000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Fuselage, right lower main wheel well">
-    <location unit="IN">
-     <x> 170 </x>
-     <y>  -17 </y>
-     <z>  -27 </z>
-    </location>
-    <static_friction>  1 </static_friction>
-    <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       5000.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
-  </contact>
-  
-  <contact type="STRUCTURE" name="Fuselage, tail tip">
-    <location unit="IN">
-     <x> 311 </x>
-     <y>  0 </y>
-     <z>  -6 </z>
-    </location>
-    <static_friction>  1 </static_friction>
-    <dynamic_friction> 0.5 </dynamic_friction>
-    <spring_coeff unit="LBS/FT">       500.00 </spring_coeff>
-    <damping_coeff unit="LBS/FT/SEC">  2000 </damping_coeff>
-  </contact>
+    <system file="engine"/>
+    <system file="damage"/>
  
- </ground_reactions>
+    <flight_control name="FCS: p210n">
+        <channel name="Pitch">
+            <summer name="Pitch Trim Sum">
+                <input>fcs/elevator-cmd-norm</input>
+                <input>fcs/pitch-trim-cmd-norm</input>
+                <clipto>
+                    <min> -1 </min>
+                    <max>  1 </max>
+                </clipto>
+            </summer>
 
- <propulsion>
+            <aerosurface_scale name="Elevator Control">
+                <input>fcs/pitch-trim-sum</input>
+                <range>
+                    <min> -0.3 </min>
+                    <max>  0.4 </max>
+                </range>
+                <output>fcs/elevator-pos-rad</output>
+            </aerosurface_scale>
 
-   <engine file="Continental_TSIO-520-P">
-    <location unit="IN">
-      <x>  40.00 </x>
-      <y>   0.00 </y>
-      <z>   5.00 </z>
-    </location>
-    <orient unit="DEG">
-      <pitch> 1.50 </pitch>
-      <roll>  0.00 </roll>
-      <yaw>   0.00 </yaw>
-    </orient>
-    <feed>0</feed>
-    <thruster file="McCauley_D3A34C402">
-     <sense> 1 </sense>
-     <location unit="IN">
-       <x>  13.00 </x>
-       <y>   0.00 </y>
-       <z>   9.00 </z>
-     </location>
-     <orient unit="DEG">
-       <pitch> 1.50 </pitch>
-       <roll>  0.00 </roll>
-       <yaw>   0.00 </yaw>
-     </orient>
-    </thruster>
-  </engine>
-  
-  <!-- Left main tank -->
-  <tank type="FUEL" number="0">
-     <location unit="IN">
-       <x> 94.77 </x>
-       <y>   126 </y>
-       <z>  27 </z>
-     </location>
-     <capacity unit="LBS"> 267.445 </capacity>
-     <contents unit="LBS"> 100 </contents>
-     <unusable unit="LBS">3.005</unusable>
-     <type>AVGAS</type>
-  </tank>
-  
-  <!-- Right main tank -->
-  <tank type="FUEL" number="1">
-     <location unit="IN">
-       <x> 94.77 </x>
-       <y>   -126 </y>
-       <z>  27 </z>
-     </location>
-     <capacity unit="LBS"> 267.445 </capacity>
-     <contents unit="LBS"> 100</contents>
-     <unusable unit="LBS">3.005</unusable>
-     <type>AVGAS</type>
-  </tank>
-  
-  <!-- Left reservoir tank -->
-  <tank type="FUEL" number="2">
-     <location unit="IN">
-       <x> 90 </x>
-       <y>   14 </y>
-       <z>  -25 </z>
-     </location>
-     <capacity unit="LBS"> 0.5 </capacity>
-     <contents unit="LBS"> 0.5 </contents>
-     <type>AVGAS</type>
-  </tank>
-  
-  <!-- Right reservoir tank -->
-  <tank type="FUEL" number="3">
-     <location unit="IN">
-       <x> 90 </x>
-       <y>   -14 </y>
-       <z>  -25 </z>
-     </location>
-     <capacity unit="LBS"> 0.5 </capacity>
-     <contents unit="LBS"> 0.5 </contents>
-     <type>AVGAS</type>
-  </tank>
- </propulsion>
- 
- <system file="engine"/>
- <system file="damage"/>
- 
- <flight_control name="FCS: p210n">
+            <aerosurface_scale name="elevator normalization">
+                <input>fcs/elevator-pos-rad</input>
+                <domain>
+                    <min> -0.3 </min>
+                    <max>  0.4 </max>
+                </domain>
+                <range>
+                    <min> -1 </min>
+                    <max>  1 </max>
+                </range>
+                <output>fcs/elevator-pos-norm</output>
+            </aerosurface_scale>
+        </channel>
 
-  <channel name="Pitch">
+        <channel name="Roll">
+            <summer name="Roll Trim Sum">
+                <input>fcs/aileron-cmd-norm</input>
+                <input>fcs/roll-trim-cmd-norm</input>
+                <clipto>
+                    <min> -1 </min>
+                    <max>  1 </max>
+                </clipto>
+            </summer>
 
-   <summer name="Pitch Trim Sum">
-      <input>fcs/elevator-cmd-norm</input>
-      <input>fcs/pitch-trim-cmd-norm</input>
-      <clipto>
-        <min> -1 </min>
-        <max>  1 </max>
-      </clipto>
-   </summer>
+            <aerosurface_scale name="Left Aileron Control">
+                <input>fcs/roll-trim-sum</input>
+                <range>
+                    <min> -0.26 </min>
+                    <max>  0.35 </max>
+                </range>
+                <output>fcs/left-aileron-pos-rad</output>
+            </aerosurface_scale>
 
-   <aerosurface_scale name="Elevator Control">
-      <input>fcs/pitch-trim-sum</input>
-      <range>
-        <min> -0.3 </min>
-        <max>  0.4 </max>
-      </range>
-      <output>fcs/elevator-pos-rad</output>
-   </aerosurface_scale>
+            <aerosurface_scale name="Right Aileron Control">
+                <input>fcs/roll-trim-sum</input>
+                <range>
+                    <min> -0.26 </min>
+                    <max>  0.35 </max>
+                </range>
+                <output>fcs/right-aileron-pos-rad</output>
+            </aerosurface_scale>
 
-   <aerosurface_scale name="elevator normalization">
-      <input>fcs/elevator-pos-rad</input>
-      <domain>
-        <min> -0.3 </min>
-        <max>  0.4 </max>
-      </domain>
-      <range>
-        <min> -1 </min>
-        <max>  1 </max>
-      </range>
-      <output>fcs/elevator-pos-norm</output>
-   </aerosurface_scale>
+            <aerosurface_scale name="left aileron normalization">
+                <input>fcs/left-aileron-pos-rad</input>
+                <domain>
+                    <min> -0.26 </min>
+                    <max>  0.35 </max>
+                </domain>
+                <range>
+                    <min> -1 </min>
+                    <max>  1 </max>
+                </range>
+                <output>fcs/left-aileron-pos-norm</output>
+            </aerosurface_scale>
 
-  </channel>
-
-  <channel name="Roll">
-
-   <summer name="Roll Trim Sum">
-      <input>fcs/aileron-cmd-norm</input>
-      <input>fcs/roll-trim-cmd-norm</input>
-      <clipto>
-        <min> -1 </min>
-        <max>  1 </max>
-      </clipto>
-   </summer>
-
-   <aerosurface_scale name="Left Aileron Control">
-      <input>fcs/roll-trim-sum</input>
-      <range>
-        <min> -0.26 </min>
-        <max>  0.35 </max>
-      </range>
-      <output>fcs/left-aileron-pos-rad</output>
-   </aerosurface_scale>
-
-   <aerosurface_scale name="Right Aileron Control">
-      <input>fcs/roll-trim-sum</input>
-      <range>
-        <min> -0.26 </min>
-        <max>  0.35 </max>
-      </range>
-      <output>fcs/right-aileron-pos-rad</output>
-   </aerosurface_scale>
-
-   <aerosurface_scale name="left aileron normalization">
-      <input>fcs/left-aileron-pos-rad</input>
-      <domain>
-        <min> -0.26 </min>
-        <max>  0.35 </max>
-      </domain>
-      <range>
-        <min> -1 </min>
-        <max>  1 </max>
-      </range>
-      <output>fcs/left-aileron-pos-norm</output>
-   </aerosurface_scale>
-
-   <aerosurface_scale name="right aileron normalization">
-      <input>fcs/right-aileron-pos-rad</input>
-      <domain>
-        <min> -0.26 </min>
-        <max>  0.35 </max>
-      </domain>
-      <range>
-        <min> -1 </min>
-        <max>  1 </max>
-      </range>
-      <output>fcs/right-aileron-pos-norm</output>
-   </aerosurface_scale>
-
-  </channel>
+            <aerosurface_scale name="right aileron normalization">
+                <input>fcs/right-aileron-pos-rad</input>
+                <domain>
+                    <min> -0.26 </min>
+                    <max>  0.35 </max>
+                </domain>
+                <range>
+                    <min> -1 </min>
+                    <max>  1 </max>
+                </range>
+                <output>fcs/right-aileron-pos-norm</output>
+            </aerosurface_scale>
+        </channel>
+        
         <hysteresis_limits unit="RAD">
             <min>0.122</min>
             <max>0.262</max>
         </hysteresis_limits>
-  <channel name="Yaw">
+        
+        <channel name="Yaw">
+            <summer name="Rudder Command Sum">
+                <input>fcs/rudder-cmd-norm</input>
+                <input>fcs/yaw-trim-cmd-norm</input>
+                <clipto>
+                    <min> -1 </min>
+                    <max>  1 </max>
+                </clipto>
+            </summer>
 
-   <summer name="Rudder Command Sum">
-      <input>fcs/rudder-cmd-norm</input>
-      <input>fcs/yaw-trim-cmd-norm</input>
-      <clipto>
-        <min> -1 </min>
-        <max>  1 </max>
-      </clipto>
-   </summer>
+            <aerosurface_scale name="Rudder Control">
+                <input>fcs/rudder-command-sum</input>
+                <range>
+                    <min> -0.47 </min>
+                    <max>  0.47 </max>
+                </range>
+                <output>fcs/rudder-pos-rad</output>
+            </aerosurface_scale>
 
-   <aerosurface_scale name="Rudder Control">
-      <input>fcs/rudder-command-sum</input>
-      <range>
-        <min> -0.47 </min>
-        <max>  0.47 </max>
-      </range>
-      <output>fcs/rudder-pos-rad</output>
-   </aerosurface_scale>
+            <aerosurface_scale name="rudder normalization">
+                <input>fcs/rudder-pos-rad</input>
+                <domain>
+                    <min> -0.47 </min>
+                    <max>  0.47 </max>
+                </domain>
+                <range>
+                    <min> -1 </min>
+                    <max>  1 </max>
+                </range>
+                <output>fcs/rudder-pos-norm</output>
+            </aerosurface_scale>
+        </channel>
 
-   <aerosurface_scale name="rudder normalization">
-      <input>fcs/rudder-pos-rad</input>
-      <domain>
-        <min> -0.47 </min>
-        <max>  0.47 </max>
-      </domain>
-      <range>
-        <min> -1 </min>
-        <max>  1 </max>
-      </range>
-      <output>fcs/rudder-pos-norm</output>
-   </aerosurface_scale>
+        <channel name="Flaps">
+            <kinematic name="Flaps Control">
+                <input>fcs/flap-cmd-norm</input>
+                <traverse>
+                    <setting>
+                        <position>  0 </position>
+                        <time>      0 </time>
+                    </setting>
+                    <setting>
+                        <position> 10 </position>
+                        <time>      2 </time>
+                    </setting>
+                    <setting>
+                        <position> 20 </position>
+                        <time>      3 </time>
+                    </setting>
+                    <setting>
+                        <position> 30 </position>
+                        <time>      3 </time>
+                    </setting>
+                </traverse>
+                <output>fcs/flap-pos-deg</output>
+            </kinematic>
 
-  </channel>
+            <aerosurface_scale name="flap normalization">
+                <input>fcs/flap-pos-deg</input>
+                <domain>
+                    <min>  0 </min>
+                    <max> 30 </max>
+                </domain>
+                <range>
+                    <min> 0 </min>
+                    <max> 1 </max>
+                </range>
+                <output>fcs/flap-pos-norm</output>
+            </aerosurface_scale>
+        </channel>
 
-  <channel name="Flaps">
-   <kinematic name="Flaps Control">
-     <input>fcs/flap-cmd-norm</input>
-     <traverse>
-       <setting>
-          <position>  0 </position>
-          <time>      0 </time>
-       </setting>
-       <setting>
-          <position> 10 </position>
-          <time>      2 </time>
-       </setting>
-       <setting>
-          <position> 20 </position>
-          <time>      3 </time>
-       </setting>
-       <setting>
-          <position> 30 </position>
-          <time>      3 </time>
-       </setting>
-     </traverse>
-     <output>fcs/flap-pos-deg</output>
-   </kinematic>
-
-   <aerosurface_scale name="flap normalization">
-      <input>fcs/flap-pos-deg</input>
-      <domain>
-        <min>  0 </min>
-        <max> 30 </max>
-      </domain>
-      <range>
-        <min> 0 </min>
-        <max> 1 </max>
-      </range>
-      <output>fcs/flap-pos-norm</output>
-   </aerosurface_scale>
-
-  </channel>
-
-  <channel name="Landing Gear">
-   <kinematic name="Gear Control">
-     <input>gear/gear-cmd-norm</input>
-     <traverse>
-       <setting>
-          <position> 0 </position>
-          <time>     0 </time>
-       </setting>
-       <setting>
-          <position> 1 </position>
-          <time>     5 </time>
-       </setting>
-     </traverse>
-     <output>gear/gear-pos-norm</output>
-   </kinematic>
-
-  </channel>
+        <channel name="Landing Gear">
+            <kinematic name="Gear Control">
+                <input>gear/gear-cmd-norm</input>
+                <traverse>
+                    <setting>
+                        <position> 0 </position>
+                        <time>     0 </time>
+                    </setting>
+                    <setting>
+                        <position> 1 </position>
+                        <time>     5 </time>
+                    </setting>
+                </traverse>
+                <output>gear/gear-pos-norm</output>
+            </kinematic>
+        </channel>
+        
         <channel name="Cowl flaps">
             <kinematic name="Cowl flaps">
                 <input>/controls/engines/engine[0]/cowl-flaps-norm</input>
@@ -646,21 +635,22 @@
                 </traverse>
                 <output>propulsion/engine[0]/cowl-flaps-norm</output>
             </kinematic>
+            
             <aerosurface_scale name="Cooling Factor">
                 <input>propulsion/engine[0]/cowl-flaps-norm</input>
                 <gain>1.0</gain>
                 <zero_centered>false</zero_centered>
                 <domain>
-                  <min>0</min>
-                  <max>1</max>
+                    <min>0</min>
+                    <max>1</max>
                 </domain>
                 <range>
                     <min>0.48</min>
-                    <max>0.80</max>
+                    <max>1</max>
                 </range>
                 <output>propulsion/engine[0]/cooling-factor</output>
             </aerosurface_scale>
-    </channel>
+        </channel>
     </flight_control>
 
     <aerodynamics>
