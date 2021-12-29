@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>suction.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/vacuum/indicated-suction-inhg</property>
+		<factor>30</factor>
+	</animation>
+	
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		<object-name>Glass</object-name>
+	</effect>
+</PropertyList>
