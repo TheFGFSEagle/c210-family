@@ -256,7 +256,7 @@
 	
 	<controls>
 		<gear>
-			<brake-parking userarchive="y">true</brake-parking>
+			<brake-parking userarchive="y" type="bool">true</brake-parking>
 		</gear>
 		<engines>
 			<engine>
