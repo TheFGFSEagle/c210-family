@@ -837,6 +837,8 @@
                 </product>
             </function>
         </axis>
+        
+        <property>aero/force/testwindmill-enabled</property>
 
         <axis name="DRAG">
             <function name="aero/force/Drag_basic">
@@ -977,6 +979,7 @@
                     </table>
                     <value> 0.02 </value>
                     <value> 0.6 </value> <!-- tuning -->
+                    <property>aero/force/testwindmill-enabled</property>
                 </product>
             </function>
         </axis>
