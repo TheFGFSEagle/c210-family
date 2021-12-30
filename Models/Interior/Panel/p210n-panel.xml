@@ -219,6 +219,15 @@
 	
 	<!-- right side of panel -->
 	<model>
+		<path>Avionics/wxradar/wxradar.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>0.19</y-m>
+			<z-m>0.44</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
 		<path>Instruments/map-fuelflow/map-fuelflow.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
@@ -242,6 +251,15 @@
 			<x-m>-0.43</x-m>
 			<y-m>0.22</y-m>
 			<z-m>0.36</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Avionics/adf/adf.xml</path>
+		<offsets>
+			<x-m>-0.43</x-m>
+			<y-m>0.37</y-m>
+			<z-m>0.3</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>

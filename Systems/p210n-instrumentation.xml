@@ -201,4 +201,9 @@ file, these values will be used (they are hardcoded).
 		<number>0</number>
 		<!--static-pressure>/systems/static-pressure-inhg-selected</static-pressure>-->
 	</vertical-speed-indicator>
+	
+	<radar>
+		<name>wxradar</name>
+		<number>0</number>
+	</radar>
 </PropertyList>

@@ -709,7 +709,7 @@
                     <property>velocities/u-aero-fps</property>
                     <property>propulsion/engine/prop-induced-velocity_fps</property>
                 </sum>
-                <value>0   .5</value>
+                <value>0.5</value>
                 <property>atmosphere/rho-slugs_ft3</property>
                 <property>metrics/Sw-sqft</property>        
             </product>
