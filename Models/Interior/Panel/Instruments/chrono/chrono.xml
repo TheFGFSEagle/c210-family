@@ -54,7 +54,7 @@
 	</animation>
 	<animation>
 		<type>slider</type>
-		<object-name>ModeButton</object-name>
+		<object-name>StSpDtAvButton</object-name>
 		<axis>
 			<x>-1</x>
 			<y>0</y>
