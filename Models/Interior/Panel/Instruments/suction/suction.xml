@@ -6,7 +6,7 @@
 		<type>rotate</type>
 		<object-name>Needle</object-name>
 		<axis>
-			<x>1</x>
+			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>

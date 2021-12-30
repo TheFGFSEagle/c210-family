@@ -76,6 +76,5 @@
 	<effect>
 		<inherits-from>Effects/glass</inherits-from>
 		<object-name>Glass</object-name>
-		<object-name>Tube</object-name>
 	</effect>
 </PropertyList>

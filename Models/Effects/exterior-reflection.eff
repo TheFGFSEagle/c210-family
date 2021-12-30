@@ -9,18 +9,19 @@
 		<surface-mapping-scheme type="int">1</surface-mapping-scheme>
 		<rnorm><use>/environment/rain-norm</use></rnorm>
 		<gsnorm><use>/environment/aircraft-effects/ground-splash-norm</use></gsnorm>
-		<frost-level><use>/environment/aircraft-effects/frost-level</use></frost-level>
-		<fog-level><use>/environment/aircraft-effects/fog-level</use></fog-level>
+		<!-- no fog and frost on outside surfaces -->
+		<frost-level>0</frost-level>
+		<fog-level>0</fog-level>
 		<reflection-enabled type="int">1</reflection-enabled>
-		<reflect-map-enabled type="int">1</reflect-map-enabled>
+		<reflect-map-enabled type="int">0</reflect-map-enabled>
 		<reflection-type>1</reflection-type>
 		<reflection-dynamic type="int">1</reflection-dynamic>
 		<ambient-correction>0.4</ambient-correction>
-		<reflection-correction type="float">-0.5</reflection-correction>
+		<reflection-correction type="float">-0.6</reflection-correction>
 		<reflection-fresnel>0.1</reflection-fresnel>
 		<reflection-fresnel-factor type="float">0</reflection-fresnel-factor>
-		<reflection-noise type="float">0.4</reflection-noise>
-		<reflection-rainbow type="float">0.2</reflection-rainbow>
+		<reflection-noise type="float">0.1</reflection-noise>
+		<reflection-rainbow type="float">0.1</reflection-rainbow>
 		<texture n="5">
 			<type>cubemap</type>
 			<images>

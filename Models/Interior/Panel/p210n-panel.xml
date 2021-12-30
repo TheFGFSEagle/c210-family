@@ -222,7 +222,7 @@
 		<path>Avionics/wxradar/wxradar.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>0.19</y-m>
+			<y-m>0.245</y-m>
 			<z-m>0.44</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
@@ -231,8 +231,8 @@
 		<path>Instruments/map-fuelflow/map-fuelflow.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>0.15</y-m>
-			<z-m>0.34</z-m>
+			<y-m>0.22</y-m>
+			<z-m>0.32</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -240,8 +240,8 @@
 		<path>Instruments/tach/tach.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>0.15</y-m>
-			<z-m>0.25</z-m>
+			<y-m>0.22</y-m>
+			<z-m>0.23</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -249,8 +249,8 @@
 		<path>Instruments/suction/suction.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>0.22</y-m>
-			<z-m>0.36</z-m>
+			<y-m>0.27</y-m>
+			<z-m>0.32</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -258,7 +258,7 @@
 		<path>Avionics/adf/adf.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>0.37</y-m>
+			<y-m>0.42</y-m>
 			<z-m>0.3</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
