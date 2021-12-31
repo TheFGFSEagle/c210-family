@@ -5,8 +5,8 @@
 		<path>Instruments/asi/airspeed.xml</path>
 		<offsets>
 			<x-m>-0.45</x-m>
-			<y-m>-0.39</y-m>
-			<z-m>0.45</z-m>
+			<y-m>-0.33</y-m>
+			<z-m>0.455</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -14,8 +14,8 @@
 		<path>Instruments/ai/attitude-indicator.xml</path>
 		<offsets>
 			<x-m>-0.44</x-m>
-			<y-m>-0.3</y-m>
-			<z-m>0.45</z-m>
+			<y-m>-0.24</y-m>
+			<z-m>0.455</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -23,8 +23,8 @@
 		<path>Instruments/alt/alt.xml</path>
 		<offsets>
 			<x-m>-0.45</x-m>
-			<y-m>-0.21</y-m>
-			<z-m>0.45</z-m>
+			<y-m>-0.15</y-m>
+			<z-m>0.455</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -32,8 +32,8 @@
 		<path>Instruments/dme/dme.xml</path>
 		<offsets>
 			<x-m>-0.45</x-m>
-			<y-m>-0.12</y-m>
-			<z-m>0.45</z-m>
+			<y-m>-0.06</y-m>
+			<z-m>0.455</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -43,8 +43,8 @@
 		<path>Instruments/tc/turn-coordinator.xml</path>
 		<offsets>
 			<x-m>-0.44</x-m>
-			<y-m>-0.39</y-m>
-			<z-m>0.35</z-m>
+			<y-m>-0.33</y-m>
+			<z-m>0.37</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -52,8 +52,8 @@
 		<path>Instruments/hsi/hsi.xml</path>
 		<offsets>
 			<x-m>-0.44</x-m>
-			<y-m>-0.3</y-m>
-			<z-m>0.35</z-m>
+			<y-m>-0.24</y-m>
+			<z-m>0.37</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -61,8 +61,8 @@
 		<path>Instruments/vsi/vsi.xml</path>
 		<offsets>
 			<x-m>-0.44</x-m>
-			<y-m>-0.21</y-m>
-			<z-m>0.35</z-m>
+			<y-m>-0.15</y-m>
+			<z-m>0.37</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -70,28 +70,28 @@
 		<path>Instruments/vor/vor.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>-0.12</y-m>
-			<z-m>0.35</z-m>
+			<y-m>-0.06</y-m>
+			<z-m>0.37</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
 	
 	<!-- lower row -->
 	<model>
-		<path>Instruments/adf/adf.xml</path>
+		<path>Instruments/alt/standby-alt.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>-0.21</y-m>
-			<z-m>0.25</z-m>
+			<y-m>-0.33</y-m>
+			<z-m>0.285</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/alt/standby-alt.xml</path>
+		<path>Instruments/adf/adf.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>-0.39</y-m>
-			<z-m>0.25</z-m>
+			<y-m>-0.15</y-m>
+			<z-m>0.285</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -99,19 +99,28 @@
 		<path>Instruments/ifcs/ifcs.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>-0.12</y-m>
-			<z-m>0.25</z-m>
+			<y-m>-0.06</y-m>
+			<z-m>0.285</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
 	
 	<!-- auxiliary instruments -->
 	<model>
+		<path>Instruments/alt-alert/alt-alert.xml</path>
+		<offsets>
+			<x-m>-0.42</x-m>
+			<y-m>-0.45</y-m>
+			<z-m>0.39</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
+	<model>
 		<path>Instruments/egt/egt.xml</path>
 		<offsets>
 			<x-m>-0.425</x-m>
-			<y-m>-0.51</y-m>
-			<z-m>0.3</z-m>
+			<y-m>-0.47</y-m>
+			<z-m>0.335</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -119,17 +128,8 @@
 		<path>Instruments/chrono/chrono.xml</path>
 		<offsets>
 			<x-m>-0.425</x-m>
-			<y-m>-0.46</y-m>
-			<z-m>0.3</z-m>
-			<pitch-deg>-5.5</pitch-deg>
-		</offsets>
-	</model>
-	<model>
-		<path>Instruments/alt-alert/alt-alert.xml</path>
-		<offsets>
-			<x-m>-0.42</x-m>
-			<y-m>-0.485</y-m>
-			<z-m>0.35</z-m>
+			<y-m>-0.405</y-m>
+			<z-m>0.335</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -137,8 +137,8 @@
 		<path>Instruments/press/cabin-alt.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>-0.51</y-m>
-			<z-m>0.25</z-m>
+			<y-m>-0.47</y-m>
+			<z-m>0.2735</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -146,8 +146,8 @@
 		<path>Instruments/press/cabin-vsi.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>-0.46</y-m>
-			<z-m>0.25</z-m>
+			<y-m>-0.405</y-m>
+			<z-m>0.2735</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -157,8 +157,8 @@
 		<path>Avionics/audio-control/audio-control.xml</path>
 		<offsets>
 			<x-m>-0.45</x-m>
-			<y-m>0.02</y-m>
-			<z-m>0.47</z-m>
+			<y-m>0.07</y-m>
+			<z-m>0.49</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -166,8 +166,8 @@
 		<path>Avionics/com-nav/com-nav-1.xml</path>
 		<offsets>
 			<x-m>-0.44</x-m>
-			<y-m>0.02</y-m>
-			<z-m>0.42</z-m>
+			<y-m>0.07</y-m>
+			<z-m>0.4375</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -175,8 +175,8 @@
 		<path>Avionics/com-nav/com-nav-2.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>0.02</y-m>
-			<z-m>0.36</z-m>
+			<y-m>0.07</y-m>
+			<z-m>0.375</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -184,8 +184,8 @@
 		<path>Avionics/rnav/rnav.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>0.02</y-m>
-			<z-m>0.29</z-m>
+			<y-m>0.07</y-m>
+			<z-m>0.3025</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -193,8 +193,8 @@
 		<path>Avionics/transponder/transponder.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>0.02</y-m>
-			<z-m>0.23</z-m>
+			<y-m>0.07</y-m>
+			<z-m>0.24</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -202,17 +202,17 @@
 		<path>Avionics/ap-control/ap-control.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>0.02</y-m>
-			<z-m>0.18</z-m>
+			<y-m>0.07</y-m>
+			<z-m>0.1875</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
 	<model>
-		<path>Controls/Engine/engine.xml</path>
+		<path>Controls/engine/engine.xml</path>
 		<offsets>
 			<x-m>-0.42</x-m>
-			<y-m>0</y-m>
-			<z-m>0.14</z-m>
+			<y-m>0.07</y-m>
+			<z-m>0.135</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -223,7 +223,7 @@
 		<offsets>
 			<x-m>-0.43</x-m>
 			<y-m>0.245</y-m>
-			<z-m>0.44</z-m>
+			<z-m>0.425</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -231,8 +231,8 @@
 		<path>Instruments/map-fuelflow/map-fuelflow.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>0.22</y-m>
-			<z-m>0.32</z-m>
+			<y-m>0.20</y-m>
+			<z-m>0.33</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -240,8 +240,8 @@
 		<path>Instruments/tach/tach.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>0.22</y-m>
-			<z-m>0.23</z-m>
+			<y-m>0.20</y-m>
+			<z-m>0.245</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -249,8 +249,8 @@
 		<path>Instruments/suction/suction.xml</path>
 		<offsets>
 			<x-m>-0.43</x-m>
-			<y-m>0.27</y-m>
-			<z-m>0.32</z-m>
+			<y-m>0.28</y-m>
+			<z-m>0.34</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
@@ -259,7 +259,7 @@
 		<offsets>
 			<x-m>-0.43</x-m>
 			<y-m>0.42</y-m>
-			<z-m>0.3</z-m>
+			<z-m>0.295</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>

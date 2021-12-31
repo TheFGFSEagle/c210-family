@@ -4,7 +4,7 @@
 		<path>throttle.xml</path>
 		<offsets>
 			<x-m>0</x-m>
-			<y-m>-0.05</y-m>
+			<y-m>-0.06</y-m>
 			<z-m>0</z-m>
 		</offsets>
 	</model>
@@ -15,7 +15,7 @@
 		<path>mixture.xml</path>
 		<offsets>
 			<x-m>0</x-m>
-			<y-m>0.05</y-m>
+			<y-m>0.06</y-m>
 			<z-m>0</z-m>
 		</offsets>
 	</model>

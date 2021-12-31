@@ -14,7 +14,7 @@
    id="svg10"
    sodipodi:docname="cabin-vsi.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   inkscape:export-filename="/mnt/DATEN/blender-2.83.0-linux64/2.83/datafiles/colormanagement/filmic/fgfs-addons/Aircraft/c210-family/Models/Interior/Panel/Instruments/cabin-alt/cabin-vsi.png"
+   inkscape:export-filename="/mnt/DATEN/blender-2.83.0-linux64/2.83/datafiles/colormanagement/filmic/fgfs-addons/Aircraft/c210-family/Models/Interior/Panel/Instruments/press/cabin-vsi.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <metadata
@@ -48,9 +48,9 @@
      inkscape:window-height="706"
      id="namedview12"
      showgrid="false"
-     inkscape:zoom="0.921875"
-     inkscape:cx="313.91284"
-     inkscape:cy="260.7026"
+     inkscape:zoom="1.84375"
+     inkscape:cx="35.869052"
+     inkscape:cy="-39.245672"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -84,7 +84,7 @@
      fill-opacity="0"
      points="16.466,501.023 16.466,512.000 0.000,506.511 "
      id="polygon6"
-     style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:0.94047618" />
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-opacity:0.94047618" />
   <polygon
      stroke="black"
      stroke-width="1"
@@ -92,9 +92,9 @@
      fill-opacity="0"
      points="164.661,501.023 164.661,512.000 16.466,512.000 16.466,501.023 "
      id="polygon8"
-     style="fill:#000000;stroke:#000000;stroke-opacity:1;fill-opacity:0.94761902" />
+     style="fill:#ffffff;stroke:#ffffff;stroke-opacity:1;fill-opacity:0.94761902" />
   <path
-     style="fill:#ffffff;stroke:#ffffff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-rule:nonzero"
+     style="fill:#000000;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-rule:nonzero"
      d="M 164.661,512 V 501.023 H 90.5635 V 512 Z"
      id="path823"
      inkscape:connector-curvature="0" />
