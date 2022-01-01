@@ -110,10 +110,10 @@
 			<type>lookfrom</type>
 			<internal type="bool">true</internal>
 			<config>
-				<x-offset-m type="double">-0.3</x-offset-m>
+				<x-offset-m type="double">-0.25</x-offset-m>
 				<y-offset-m type="double">0.65</y-offset-m>
-				<z-offset-m type="double">0.3</z-offset-m>
-				<pitch-offset-deg>3</pitch-offset-deg>
+				<z-offset-m type="double">0.2</z-offset-m>
+				<pitch-offset-deg>-3</pitch-offset-deg>
 				<default-field-of-view-deg type="double">70.0</default-field-of-view-deg>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>

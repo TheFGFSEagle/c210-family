@@ -116,9 +116,9 @@
      inkscape:window-height="706"
      id="namedview2622"
      showgrid="true"
-     inkscape:zoom="11.313709"
-     inkscape:cx="39.487411"
-     inkscape:cy="1604.9508"
+     inkscape:zoom="2.8284273"
+     inkscape:cx="1395.0391"
+     inkscape:cy="956.1835"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -562,7 +562,7 @@
        style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:5;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
     <path
        style="fill:#aa4400;fill-opacity:1;stroke:#aa4400;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 1383.075,1052.788 61.836,2.229 57.162,7.71 -20.895,15.391 -5.3162,15.1357 -60.5863,-5.3484 -28.3613,-1.9774 z"
+       d="m 1383.075,1052.788 61.836,2.229 57.162,7.71 -20.895,15.391 -4.4453,12.6563 -61.4572,-2.869 -28.3613,-1.9774 z"
        id="path5948"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccc" />
@@ -587,6 +587,12 @@
        id="path5954"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
+    <path
+       style="opacity:1;fill:#aa4400;fill-opacity:1;fill-rule:nonzero;stroke:#aa4400;stroke-width:7;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.99285715;paint-order:normal"
+       d="m 1476.7327,1090.7743 5.6008,4.8889 4.7325,-12.8722 19.526,-13.565 -4.519,-6.499 -20.895,15.391 z"
+       id="path2241"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
   </g>
   <g
      id="ELTAntenna"
