@@ -115,9 +115,9 @@
      inkscape:window-height="706"
      id="namedview312"
      showgrid="true"
-     inkscape:zoom="8"
-     inkscape:cx="392.89276"
-     inkscape:cy="381.44142"
+     inkscape:zoom="0.5"
+     inkscape:cx="517.79186"
+     inkscape:cy="325.25967"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -158,7 +158,7 @@
      fill-opacity="1"
      points="171.559,394.868 166.670,396.647 161.781,398.427 157.275,401.028 152.769,403.630 148.784,406.974 144.798,410.318 141.454,414.304 138.109,418.290 135.508,422.796 132.906,427.301 131.127,432.191 129.347,437.080 128.444,442.203 127.540,447.327 127.540,452.530 127.540,457.733 128.444,462.857 129.347,467.981 131.127,472.870 132.906,477.759 135.508,482.265 138.109,486.771 141.454,490.757 144.798,494.742 148.784,498.087 152.769,501.431 157.275,504.033 161.781,506.634 166.670,508.414 171.559,510.193 176.683,511.097 181.807,512.000 187.010,512.000 192.213,512.000 197.337,511.097 202.461,510.193 207.350,508.414 212.239,506.634 216.745,504.033 221.251,501.431 225.236,498.087 229.222,494.742 232.566,490.757 235.911,486.771 238.512,482.265 241.114,477.759 242.893,472.870 244.673,467.981 245.576,462.857 246.480,457.733 246.480,452.530 246.480,447.327 245.576,442.204 244.673,437.080 242.893,432.190 241.114,427.301 238.512,422.796 235.911,418.290 232.567,414.304 229.222,410.318 225.237,406.974 221.251,403.630 216.745,401.028 212.239,398.427 207.350,396.647 202.461,394.868 197.337,393.964 192.213,393.061 187.010,393.061 181.807,393.061 176.683,393.964 "
      id="polygon72"
-     style="fill:#ffffff;stroke:#ffffff" />
+     style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
   <polygon
      stroke="black"
      stroke-width="1"
@@ -166,10 +166,10 @@
      fill-opacity="1"
      points="17.258,494.742 21.243,498.087 25.229,501.431 29.735,504.033 34.241,506.634 39.130,508.414 44.019,510.193 49.143,511.097 54.267,512.000 59.470,512.000 64.673,512.000 69.796,511.097 74.920,510.193 79.810,508.413 84.699,506.634 89.204,504.033 93.710,501.431 97.696,498.087 101.682,494.742 105.026,490.757 108.370,486.771 110.972,482.265 113.573,477.759 115.353,472.870 117.132,467.981 118.036,462.857 118.939,457.733 118.939,452.530 118.939,447.327 118.036,442.203 117.132,437.080 115.353,432.191 113.573,427.301 110.972,422.796 108.371,418.290 105.026,414.304 101.682,410.318 97.696,406.974 93.710,403.630 89.205,401.028 84.699,398.427 79.810,396.647 74.920,394.868 69.797,393.964 64.673,393.061 59.470,393.061 54.267,393.061 49.143,393.964 44.019,394.868 39.130,396.647 34.241,398.427 29.735,401.028 25.229,403.629 21.243,406.974 17.258,410.318 13.913,414.304 10.569,418.290 7.967,422.795 5.366,427.301 3.587,432.190 1.807,437.080 0.904,442.203 0.000,447.327 0.000,452.530 0.000,457.733 0.903,462.857 1.807,467.981 3.586,472.870 5.366,477.759 7.967,482.265 10.569,486.771 13.913,490.757 "
      id="polygon78"
-     style="fill:#ffffff;stroke:#ffffff;stroke-opacity:1" />
+     style="fill:#ffffff;stroke:#ffffff;stroke-opacity:1;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
   <g
      id="g1241"
-     style="fill:#000000;stroke:#000000">
+     style="fill:#000000;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none">
     <polygon
        stroke="black"
        stroke-width="1"
@@ -177,7 +177,7 @@
        fill-opacity="1"
        points="462.785,205.892 464.000,192.000 462.785,178.108 459.175,164.638 453.282,152.000 445.283,140.577 435.423,130.717 424.000,122.718 411.361,116.825 397.892,113.215 424.000,261.282 435.423,253.284 445.283,243.423 453.282,232.000 459.175,219.362 "
        id="polygon228"
-       style="fill:#000000;stroke:#000000" />
+       style="fill:#000000;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        stroke="black"
        stroke-width="1"
@@ -185,7 +185,7 @@
        fill-opacity="1"
        points="424.000,261.282 397.892,113.215 384.000,112.000 370.108,113.215 344.000,261.282 356.638,267.175 370.108,270.785 384.000,272.000 397.892,270.785 411.361,267.175 "
        id="polygon230"
-       style="fill:#000000;stroke:#000000" />
+       style="fill:#000000;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        stroke="black"
        stroke-width="1"
@@ -193,11 +193,11 @@
        fill-opacity="1"
        points="344.000,261.282 370.108,113.215 356.638,116.825 344.000,122.718 332.577,130.717 322.716,140.577 314.718,152.000 308.825,164.638 305.215,178.108 304.000,192.000 305.215,205.892 308.825,219.362 314.718,232.000 322.716,243.423 332.577,253.284 "
        id="polygon220"
-       style="fill:#000000;stroke:#000000" />
+       style="fill:#000000;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
      id="g1159"
-     style="fill:#ffffff;stroke:#ffffff">
+     style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none">
     <polygon
        id="polygon22"
        points="739.341,442.155 739.341,395.591 725.813,395.591 725.813,442.155 "
@@ -205,7 +205,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon24"
        points="712.285,442.155 712.285,395.591 698.758,395.591 698.758,442.155 "
@@ -213,7 +213,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon26"
        points="685.230,442.155 685.230,395.591 671.703,395.591 671.703,442.155 "
@@ -221,7 +221,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon28"
        points="658.175,442.155 658.175,395.591 644.648,395.591 644.648,442.155 "
@@ -229,7 +229,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon30"
        points="631.120,442.155 631.120,395.591 617.592,395.591 617.592,442.155 "
@@ -237,7 +237,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon32"
        points="604.065,442.155 604.065,395.591 590.537,395.591 590.537,442.155 "
@@ -245,7 +245,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon34"
        points="577.010,442.155 577.010,395.591 563.482,395.591 563.482,442.155 "
@@ -253,7 +253,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon36"
        points="549.954,442.155 549.954,395.591 536.427,395.591 536.427,442.155 "
@@ -261,7 +261,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon38"
        points="522.899,442.155 522.899,395.591 509.372,395.591 509.372,442.155 "
@@ -269,7 +269,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon40"
        points="495.844,442.155 495.844,395.591 482.317,395.591 482.316,442.155 "
@@ -277,7 +277,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon42"
        points="468.789,442.155 468.789,395.591 455.261,395.591 455.261,442.155 "
@@ -285,7 +285,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon44"
        points="441.734,442.155 441.734,395.591 428.206,395.591 428.206,442.155 "
@@ -293,7 +293,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon46"
        points="414.678,442.155 414.678,395.591 401.151,395.591 401.151,442.155 "
@@ -301,7 +301,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon48"
        points="387.623,442.155 387.623,395.591 374.096,395.591 374.096,442.155 "
@@ -309,7 +309,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon50"
        points="360.568,442.155 360.568,395.591 347.041,395.591 347.041,442.155 "
@@ -317,7 +317,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon52"
        points="333.513,442.155 333.513,395.591 319.985,395.591 319.985,442.155 "
@@ -325,7 +325,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon54"
        points="306.458,442.155 306.458,395.591 292.930,395.591 292.930,442.155 "
@@ -333,7 +333,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon56"
        points="279.403,442.155 279.403,395.591 265.875,395.591 265.875,442.155 "
@@ -341,7 +341,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon96"
        points="265.875,442.155 265.875,395.591 252.347,395.591 252.348,442.155 "
@@ -349,7 +349,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon98"
        points="292.930,442.155 292.930,395.591 279.403,395.591 279.403,442.155 "
@@ -357,7 +357,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon100"
        points="319.985,442.155 319.985,395.591 306.458,395.591 306.458,442.155 "
@@ -365,7 +365,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon102"
        points="347.041,442.155 347.041,395.591 333.513,395.591 333.513,442.155 "
@@ -373,7 +373,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon104"
        points="374.096,442.155 374.096,395.591 360.568,395.591 360.568,442.155 "
@@ -381,7 +381,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon106"
        points="401.151,442.155 401.151,395.591 387.623,395.591 387.623,442.155 "
@@ -389,7 +389,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon108"
        points="428.206,442.155 428.206,395.591 414.678,395.591 414.678,442.155 "
@@ -397,7 +397,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon110"
        points="455.261,442.155 455.261,395.591 441.734,395.591 441.734,442.155 "
@@ -405,7 +405,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon112"
        points="482.316,442.155 482.317,395.591 468.789,395.591 468.789,442.155 "
@@ -413,7 +413,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon114"
        points="509.372,442.155 509.372,395.591 495.844,395.591 495.844,442.155 "
@@ -421,7 +421,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon116"
        points="536.427,442.155 536.427,395.591 522.899,395.591 522.899,442.155 "
@@ -429,7 +429,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon118"
        points="563.482,442.155 563.482,395.591 549.954,395.591 549.954,442.155 "
@@ -437,7 +437,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon120"
        points="590.537,442.155 590.537,395.591 577.010,395.591 577.010,442.155 "
@@ -445,7 +445,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon122"
        points="617.592,442.155 617.592,395.591 604.065,395.591 604.065,442.155 "
@@ -453,7 +453,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon124"
        points="644.648,442.155 644.648,395.591 631.120,395.591 631.120,442.155 "
@@ -461,7 +461,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon126"
        points="671.703,442.155 671.703,395.591 658.175,395.591 658.175,442.155 "
@@ -469,7 +469,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon128"
        points="698.758,442.155 698.758,395.591 685.230,395.591 685.230,442.155 "
@@ -477,7 +477,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon130"
        points="725.813,442.155 725.813,395.591 712.285,395.591 712.285,442.155 "
@@ -485,11 +485,11 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
      id="g1197"
-     style="fill:#ffffff;stroke:#ffffff">
+     style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none">
     <polygon
        id="polygon4"
        points="495.844,512.000 509.372,512.000 509.372,465.437 495.844,465.437 "
@@ -497,7 +497,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon6"
        points="522.899,465.436 522.899,512.000 536.427,512.000 536.427,465.436 "
@@ -505,7 +505,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon8"
        points="549.954,465.436 549.954,512.000 563.482,512.000 563.482,465.436 "
@@ -513,7 +513,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon10"
        points="577.010,465.436 577.010,512.000 590.537,512.000 590.537,465.436 "
@@ -521,7 +521,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon12"
        points="604.065,465.436 604.065,512.000 617.592,512.000 617.592,465.436 "
@@ -529,7 +529,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon14"
        points="631.120,465.436 631.120,512.000 644.648,512.000 644.648,465.436 "
@@ -537,7 +537,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon16"
        points="658.175,465.436 658.175,512.000 671.703,512.000 671.703,465.436 "
@@ -545,7 +545,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon18"
        points="685.230,465.436 685.230,512.000 698.758,512.000 698.758,465.436 "
@@ -553,7 +553,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon20"
        points="712.286,465.436 712.286,512.000 725.813,512.000 725.813,465.436 "
@@ -561,7 +561,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon58"
        points="252.347,465.436 252.347,512.000 265.875,512.000 265.875,465.436 "
@@ -569,7 +569,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon60"
        points="279.402,465.436 279.402,512.000 292.930,512.000 292.930,465.436 "
@@ -577,7 +577,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon62"
        points="306.458,465.436 306.458,512.000 319.985,512.000 319.985,465.436 "
@@ -585,7 +585,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon64"
        points="333.513,465.436 333.513,512.000 347.040,512.000 347.040,465.437 "
@@ -593,7 +593,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon66"
        points="360.568,465.437 360.568,512.000 374.096,512.000 374.096,465.437 "
@@ -601,7 +601,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon68"
        points="387.623,465.437 387.623,512.000 401.151,512.000 401.151,465.437 "
@@ -609,7 +609,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon70"
        points="414.678,465.437 414.678,512.000 428.206,512.000 428.206,465.437 "
@@ -617,7 +617,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon74"
        points="441.734,465.437 441.734,512.000 455.261,512.000 455.261,465.437 "
@@ -625,7 +625,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon76"
        points="468.789,465.437 468.789,512.000 482.316,512.000 482.316,465.437 "
@@ -633,7 +633,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon80"
        points="455.261,465.437 455.261,512.000 468.789,512.000 468.789,465.437 "
@@ -641,7 +641,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon82"
        points="428.206,465.437 428.206,512.000 441.734,512.000 441.734,465.437 "
@@ -649,7 +649,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon84"
        points="401.151,465.437 401.151,512.000 414.678,512.000 414.678,465.437 "
@@ -657,7 +657,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon86"
        points="374.096,465.437 374.096,512.000 387.623,512.000 387.623,465.437 "
@@ -665,7 +665,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon88"
        points="347.040,465.437 347.040,512.000 360.568,512.000 360.568,465.437 "
@@ -673,7 +673,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon90"
        points="319.985,465.436 319.985,512.000 333.513,512.000 333.513,465.436 "
@@ -681,7 +681,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon92"
        points="292.930,465.436 292.930,512.000 306.458,512.000 306.458,465.436 "
@@ -689,7 +689,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon94"
        points="265.875,465.436 265.875,512.000 279.402,512.000 279.402,465.436 "
@@ -697,7 +697,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon132"
        points="725.813,465.436 725.813,512.000 739.341,512.000 739.341,465.436 "
@@ -705,7 +705,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon134"
        points="698.758,465.436 698.758,512.000 712.286,512.000 712.286,465.436 "
@@ -713,7 +713,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon136"
        points="671.703,465.436 671.703,512.000 685.230,512.000 685.230,465.436 "
@@ -721,7 +721,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon138"
        points="644.648,465.436 644.648,512.000 658.175,512.000 658.175,465.436 "
@@ -729,7 +729,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon140"
        points="617.592,465.436 617.592,512.000 631.120,512.000 631.120,465.436 "
@@ -737,7 +737,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon142"
        points="590.537,465.436 590.537,512.000 604.065,512.000 604.065,465.436 "
@@ -745,7 +745,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon144"
        points="563.482,465.436 563.482,512.000 577.010,512.000 577.010,465.436 "
@@ -753,7 +753,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon146"
        points="536.427,465.436 536.427,512.000 549.954,512.000 549.954,465.436 "
@@ -761,7 +761,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon148"
        points="509.372,465.437 509.372,512.000 522.899,512.000 522.899,465.436 "
@@ -769,7 +769,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
     <polygon
        id="polygon150"
        points="482.316,465.437 482.316,512.000 495.844,512.000 495.844,465.437 "
@@ -777,7 +777,7 @@
        fill="rgb(204, 204, 204)"
        stroke-width="1"
        stroke="black"
-       style="fill:#ffffff;stroke:#ffffff" />
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
   </g>
   <g
      id="g1231"
