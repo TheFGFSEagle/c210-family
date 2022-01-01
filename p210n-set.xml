@@ -266,13 +266,5 @@
 		</engines>
 	</controls>
 	
-	<instrumentation>
-		<heading-indicator>
-			<heading-bug-deg userarchive="y">0</heading-bug-deg>
-		</heading-indicator>
-		<egt>
-			<indicated-temperature-degf alias="/engines/engine/egt-degf"/>
-			<target-temperature-degf userarchive="y">1350</target-temperature-degf>
-		</egt>
-	</instrumentation>
+	<instrumentation include="Systems/p210n-init-instrumentation.xml"/>
 </PropertyList>

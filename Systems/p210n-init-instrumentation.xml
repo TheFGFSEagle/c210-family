@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<!-- most of this should be replaced by system files to support electrcial / other system failures -->
+	<egt>
+		<indicated-temperature-degf alias="/engines/engine/egt-degf"/>
+	</egt>
+	<map-fuelflow>
+		<indicated-map-inhg alias="/engines/engine/mp-inhg"/>
+		<indicated-fuelflow-lbhr alias="/engine/engine/fuel-flow-lbs-hr"/>
+	</map-fuelflow>
+	<vacuum>
+		<indicated-suction-inhg alias="/systems/vacuum/suction-inhg"/>
+	</vacuum>
+	<tachometer>
+		<indicated-engine-rpm alias="/engines/engine/rpm"/>
+	</tachometer>
+	<altimeter n="1">
+		<serviceable type="bool">true</serviceable>
+	</altimeter>
+</PropertyList>
