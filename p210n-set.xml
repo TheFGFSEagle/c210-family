@@ -13,20 +13,16 @@
 				<email>programmer.anonymous@yandex.com</email>
 			</author>
 			<author n="1">
-				<description>Engine and propeller</description>
-				<nick>dany93</nick>
-			</author>
-			<author n="2">
 				<description>FDM</description>
 				<nick>Ysop</nick>
 			</author>
-			<author n="3">
+			<author n="2">
 				<description>Engine advice</description>
 				<nick>S&amp;J</nick>
 			</author>
 		</authors>
-		<aircraft-version>1.0.0</aircraft-version>
-		<status>alpha</status>
+		<aircraft-version>0.0.0</aircraft-version>
+		<status>beta</status>
 		<minimum-fg-version>2017.2.0</minimum-fg-version>
 
 		<flight-model>jsb</flight-model>

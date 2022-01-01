@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <PropertyList>
 	<!-- Seats -->
-	<!--<model>
+	<model>
 		<path>Aircraft/c210-family/Models/Interior/front-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
@@ -36,7 +36,7 @@
 			<y-m>0.28</y-m>
 			<z-m>-0.34</z-m>
 		</offsets>
-	</model>-->
+	</model>
 	<model>
 		<path>Aircraft/c210-family/Models/Interior/rear-seat.ac</path>
 		<usage>interior</usage>

@@ -35,7 +35,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/map-fuelflow/indicated-fuelflow-lbhr</property>
+		<property>instrumentation/map-fuelflow/indicated-fuelflow-pph</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>

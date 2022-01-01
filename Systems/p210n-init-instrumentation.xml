@@ -6,7 +6,7 @@
 	</egt>
 	<map-fuelflow>
 		<indicated-map-inhg alias="/engines/engine/mp-inhg"/>
-		<indicated-fuelflow-lbhr alias="/engine/engine/fuel-flow-lbs-hr"/>
+		<indicated-fuelflow-pph alias="/engines/engine/fuel-flow_pph"/>
 	</map-fuelflow>
 	<vacuum>
 		<indicated-suction-inhg alias="/systems/vacuum/suction-inhg"/>
