@@ -16,11 +16,11 @@
 		<reflect-map-enabled type="int">0</reflect-map-enabled>
 		<reflection-type>1</reflection-type>
 		<reflection-dynamic type="int">1</reflection-dynamic>
-		<ambient-correction>0.4</ambient-correction>
-		<reflection-correction type="float">-0.6</reflection-correction>
+		<ambient-correction>0.5</ambient-correction>
+		<reflection-correction type="float">-0.5</reflection-correction>
 		<reflection-fresnel>0.1</reflection-fresnel>
 		<reflection-fresnel-factor type="float">0</reflection-fresnel-factor>
-		<reflection-noise type="float">0.1</reflection-noise>
+		<reflection-noise type="float">0</reflection-noise>
 		<reflection-rainbow type="float">0.1</reflection-rainbow>
 		<texture n="5">
 			<type>cubemap</type>

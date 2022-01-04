@@ -17,4 +17,42 @@
 	<altimeter n="1">
 		<serviceable type="bool">true</serviceable>
 	</altimeter>
+	
+	<!-- radios -->
+	<comm n="0">
+		<frequencies>
+			<selected-mhz type="double">118.000</selected-mhz>
+			<memory n="0" type="double">118.000</memory>
+			<memory n="1" type="double">118.000</memory>
+			<memory n="2" type="double">118.000</memory>
+			<current-memory type="int">0</current-memory>
+		</frequencies>
+	</comm>
+	<comm n="1">
+		<frequencies>
+			<selected-mhz type="double">118.000</selected-mhz>
+			<memory n="0" type="double">118.000</memory>
+			<memory n="1" type="double">118.000</memory>
+			<memory n="2" type="double">118.000</memory>
+			<current-memory type="int">0</current-memory>
+		</frequencies>
+	</comm>
+	<nav n="0">
+		<frequencies>
+			<selected-mhz type="double">108.000</selected-mhz>
+			<memory n="0" type="double">108.000</memory>
+			<memory n="1" type="double">108.000</memory>
+			<memory n="2" type="double">108.000</memory>
+			<current-memory type="int">0</current-memory>
+		</frequencies>
+	</nav>
+	<nav n="1">
+		<frequencies>
+			<selected-mhz type="double">108.000</selected-mhz>
+			<memory n="0" type="double">108.000</memory>
+			<memory n="1" type="double">108.000</memory>
+			<memory n="2" type="double">108.000</memory>
+			<current-memory type="int">0</current-memory>
+		</frequencies>
+	</nav>
 </PropertyList>

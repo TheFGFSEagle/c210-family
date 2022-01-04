@@ -6,14 +6,26 @@
 			<params>
 				<com-freq-mhz>instrumentation/comm[1]/frequencies/dialed-mhz</com-freq-mhz>
 				<com-freq-khz>instrumentation/comm[1]/frequencies/dialed-khz</com-freq-khz>
-				<com-memory-num>instrumentation/comm[1]/frequencies/memory-num</com-memory-num>
 				<com-volume>instrumentation/comm[1]/volume</com-volume>
 				<com-squelch>instrumentation/comm[1]/squelch</com-squelch>
 				<nav-freq-mhz>instrumentation/nav[1]/frequencies/dialed-mhz</nav-freq-mhz>
 				<nav-freq-khz>instrumentation/nav[1]/frequencies/dialed-khz</nav-freq-khz>
-				<nav-memory-num>instrumentation/nav[1]/frequencies/memory-num</nav-memory-num>
 				<nav-volume>instrumentation/nav[1]/volume</nav-volume>
 				<nav-mode>instrumentation/nav[1]/mode</nav-mode>
+				<com-memory1-pressed>instrumentation/comm[1]/memory1-pressed</com-memory1-pressed>
+				<com-memory2-pressed>instrumentation/comm[1]/memory2-pressed</com-memory2-pressed>
+				<com-memory3-pressed>instrumentation/comm[1]/memory3-pressed</com-memory3-pressed>
+				<nav-memory1-pressed>instrumentation/nav[1]/memory1-pressed</nav-memory1-pressed>
+				<nav-memory2-pressed>instrumentation/nav[1]/memory2-pressed</nav-memory2-pressed>
+				<nav-memory3-pressed>instrumentation/nav[1]/memory1-pressed</nav-memory3-pressed>
+				<com-memory1-script>p210n.comNav2.memoryPressed("com", 1);</com-memory1-script>
+				<com-memory2-script>p210n.comNav2.memoryPressed("com", 2);</com-memory2-script>
+				<com-memory3-script>p210n.comNav2.memoryPressed("com", 3);</com-memory3-script>
+				<nav-memory1-script>p210n.comNav2.memoryPressed("nav", 1);</nav-memory1-script>
+				<nav-memory2-script>p210n.comNav2.memoryPressed("nav", 2);</nav-memory2-script>
+				<nav-memory3-script>p210n.comNav2.memoryPressed("nav", 3);</nav-memory3-script>
+				<cycle-pressed>instrumentation/comm[1]/cycle-pressed</cycle-pressed>
+				<cycle-script>p210n.comNav2.cyclePressed()</cycle-script>
 				<label-text>COM/NAV 2</label-text>
 			</params>
 		</overlay>

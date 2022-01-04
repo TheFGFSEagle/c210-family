@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <piston_engine name="Continental_TSIO-520-P">
 
    <displacement unit="IN3">520.00</displacement>
@@ -10,7 +12,7 @@
    <idlerpm>600.0</idlerpm>   
    <maxrpm>2600.0</maxrpm>   
    <starter-torque>150</starter-torque>   
-   <static-friction>1.55</static-friction>
+   <static-friction>1.50</static-friction>
    
    <ram-air-factor>1.25</ram-air-factor>
    <air-intake-impedance-factor>0</air-intake-impedance-factor>
@@ -22,12 +24,12 @@
    <numboostspeeds>1</numboostspeeds>
    <boostoverride>0</boostoverride>
    <boost-loss-factor>0</boost-loss-factor>   
-   <ratedboost1 unit="INHG">5.58</ratedboost1> <!-- 35.5inhg  -->
+   <ratedboost1 unit="INHG">5.58</ratedboost1> <!-- 35.5 inHg  -->
    <ratedrpm1>2600</ratedrpm1>
    <ratedpower1>285</ratedpower1>   
    <ratedaltitude1>17000</ratedaltitude1>
 
-   <sparkfaildrop>0.1</sparkfaildrop>
+   <sparkfaildrop>0.082</sparkfaildrop>
    <volumetric-efficiency>0.8447</volumetric-efficiency>
    <bsfc unit="LBS/HP*HR">0.4811</bsfc>
 

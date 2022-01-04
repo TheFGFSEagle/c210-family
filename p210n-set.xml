@@ -135,14 +135,21 @@
 		<instrumentation>
 			<path>Systems/p210n-instrumentation.xml</path>
 		</instrumentation>
+		<systems>
+			<path>Systems/systems.xml</path>
+			<property-rule n="100">
+				<path>Systems/glass-rain.xml</path>
+			</property-rule>
+		</systems>
 	</sim>
 	
 	<nasal>
 		<p210n>
+			<!--<file>Nasal/p210n.nas</file>-->
 			<file>Nasal/autostart.nas</file>
-			<file>Nasal/rain.nas</file>
 			<file>Nasal/liveries.nas</file>
 			<file>Nasal/doors.nas</file>
+			<file>Nasal/radios.nas</file>
 		</p210n>
 	</nasal>
 	
