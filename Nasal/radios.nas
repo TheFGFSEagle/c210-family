@@ -8,6 +8,15 @@ var ComNav = {
 			"com": instrumentationNode.getNode("comm[" ~ deviceNum ~ "]"),
 			"nav": instrumentationNode.getNode("nav[" ~ deviceNum ~ "]")
 		};
+		
+		obj.powered = {
+			"com": obj.root["com"].getNode("powered"),
+			"nav": obj.root["nav"].getNode("powered")
+		};
+		obj.volume = {
+			"com": obj.root["com"].getNode("volume"),
+			"nav": obj.root["nav"].getNode("volume")
+		};
 		obj.currentMemory = {
 			"com": obj.root["com"].getNode("frequencies/current-memory"),
 			"nav": obj.root["nav"].getNode("frequencies/current-memory")
@@ -54,9 +63,56 @@ var ComNav = {
 			khz = hundreds ~ tenths ~ units;
 			me.selected[device].setDoubleValue(mhz ~ "." ~ khz);
 		}
+	},
+	
+	adjustComVolume: func() {
+		if (me.volume["com"].getDoubleValue() == 0) {
+			me.powered["com"].setBoolValue(0);
+			me.powered["nav"].setBoolValue(0);
+		} else {
+			me.powered["com"].setBoolValue(1);
+			me.powered["nav"].setBoolValue(1);
+		}
 	}
 };
 
-comNav1 = ComNav.new(0, props.globals.getNode("/instrumentation"));
-comNav2 = ComNav.new(1, props.globals.getNode("/instrumentation"));
+var comNav1 = ComNav.new(0, props.globals.getNode("/instrumentation"));
+var comNav2 = ComNav.new(1, props.globals.getNode("/instrumentation"));
 
+
+var AudioControl = {
+	new: func(instrumentationNode) {
+		var obj = {
+			parents: [AudioControl],
+		};
+				
+		obj.root = instrumentationNode.getNode("audio-control", 1);
+		obj.markerBeaconBrightness = obj.root.getNode("marker-beacon-brightness", );
+		
+		obj.markerBeacon = instrumentationNode.getNode("marker-beacon");
+		obj.markerBeaconOuterBrightness = obj.markerBeacon.getNode("outer-brightness", 1);
+		obj.markerBeaconMiddleBrightness = obj.markerBeacon.getNode("middle-brightness", 1);
+		obj.markerBeaconInnerBrightness = obj.markerBeacon.getNode("inner-brightness", 1);
+		obj.markerBeaconTest = obj.markerBeacon.getNode("test", 1);
+		
+		return obj;
+	},
+	adjustMarkerBeaconBrightness: func() {
+		pos = me.markerBeaconBrightness.getDoubleValue();
+		if (pos == 0) { # pos ==  DAY
+			me.markerBeaconOuterBrightness.setIntValue(1);
+			me.markerBeaconMiddleBrightness.setIntValue(1);
+			me.markerBeaconInnerBrightness.setIntValue(1);
+			me.markerBeaconTest.setBoolValue(0);
+		} elsif (pos == 1) { # pos == NITE
+			me.markerBeaconOuterBrightness.setIntValue(0.5);
+			me.markerBeaconMiddleBrightness.setIntValue(0.5);
+			me.markerBeaconInnerBrightness.setIntValue(0.5);
+			me.markerBeaconTest.setBoolValue(0);
+		} else { # pos == TEST
+			me.markerBeaconTest.setBoolValue(1);
+		}
+	}
+};
+
+var audioControl = AudioControl.new(props.globals.getNode("/instrumentation"))

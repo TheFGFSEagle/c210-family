@@ -7,6 +7,7 @@
 				<com-freq-mhz>instrumentation/comm[1]/frequencies/dialed-mhz</com-freq-mhz>
 				<com-freq-khz>instrumentation/comm[1]/frequencies/dialed-khz</com-freq-khz>
 				<com-volume>instrumentation/comm[1]/volume</com-volume>
+				<com-volume-script>p210n.comNav2.adjustComVolume()</com-volume-script>
 				<com-squelch>instrumentation/comm[1]/squelch</com-squelch>
 				<nav-freq-mhz>instrumentation/nav[1]/frequencies/dialed-mhz</nav-freq-mhz>
 				<nav-freq-khz>instrumentation/nav[1]/frequencies/dialed-khz</nav-freq-khz>

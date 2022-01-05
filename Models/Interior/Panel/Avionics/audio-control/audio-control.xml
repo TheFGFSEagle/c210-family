@@ -6,10 +6,10 @@
 		<type>material</type>
 		<object-name>MarkerBeaconOuterLamp</object-name>
 		<emission>
-			<red>0</red>
-			<green>0</green>
+			<red>0.2</red>
+			<green>0.2</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/marker-beacon/lamp-brightness</factor-prop>
+			<factor-prop>instrumentation/marker-beacon/outer-brightness</factor-prop>
 		</emission>
 		<condition>
 			<or>
@@ -24,8 +24,8 @@
 		<emission>
 			<red>1</red>
 			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/marker-beacon/lamp-brightness</factor-prop>
+			<blue>0.1</blue>
+			<factor-prop>instrumentation/marker-beacon/middle-brightness</factor-prop>
 		</emission>
 		<condition>
 			<or>
@@ -41,7 +41,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/marker-beacon/lamp-brightness</factor-prop>
+			<factor-prop>instrumentation/marker-beacon/inner-brightness</factor-prop>
 		</emission>
 		<condition>
 			<or>
@@ -248,38 +248,25 @@
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/audio-control/marker-beacon-lamp-brightness</property>
+		<property>instrumentation/audio-control/marker-beacon-brightness</property>
 		<factor>20</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>instrumentation/audio-control/marker-beacon-lamp-brightness</property>
+				<property>instrumentation/audio-control/marker-beacon-brightness</property>
 				<factor>1</factor>
 				<min>-1</min>
 				<max>1</max>
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script><![CDATA[
-					# TODO: move this into its own module so we can initialize props.Node's once and then just setValue
-					pos = getprop("instrumentation/audio-control/marker-beacon-lamp-brightness");
-					print(pos);
-					if (pos == 0) { # pos ==  DAY
-						setprop("instrumentation/marker-beacon/lamp-brightness", 1);
-						setprop("instrumentation/marker-beacon/test", 0);
-					} elsif (pos == 1) { # pos == NITE
-						setprop("instrumentation/marker-beacon/lamp-brightness", 0.5);
-						setprop("instrumentation/marker-beacon/test", 0);
-					} else {
-						setprop("instrumentation/marker-beacon/test", 1);
-					}
-				]]></script>
+				<script>p210n.audioControl.adjustMarkerBeaconBrightness();</script>
 			</binding>
 		</action>
 		<release>
 			<binding>
 				<command>property-adjust</command>
-				<property>instrumentation/audio-control/marker-beacon-lamp-brightness</property>
+				<property>instrumentation/audio-control/marker-beacon-brightness</property>
 				<step>0</step>
 				<min>0</min>
 				<max>1</max>

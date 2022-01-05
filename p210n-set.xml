@@ -21,7 +21,7 @@
 				<nick>S&amp;J</nick>
 			</author>
 		</authors>
-		<aircraft-version>0.0.0</aircraft-version>
+		<aircraft-version>1.0.0</aircraft-version>
 		<status>beta</status>
 		<minimum-fg-version>2017.2.0</minimum-fg-version>
 
@@ -92,6 +92,8 @@
 			<tag>high-wing</tag>
 			<tag>ifr</tag>
 			<tag>single-engine</tag>
+			<tag>pressurized</tag>
+			<tag>retractable-gear</tag>
 		</tags>
 		<model>
 			<path>Models/p210n.xml</path>
@@ -113,7 +115,7 @@
 				<default-field-of-view-deg type="double">70.0</default-field-of-view-deg>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
-				<ground-level-nearplane-m type="double">6f</ground-level-nearplane-m>
+				<ground-level-nearplane-m type="double">2</ground-level-nearplane-m>
 				<limits>
 					<enabled type="bool">false</enabled>
 					<left>
@@ -141,69 +143,34 @@
 				<path>Systems/glass-rain.xml</path>
 			</property-rule>
 		</systems>
+		<aircraft-data>
+			<path>/controls/engines/engine/cowl-flaps-norm</path>
+			<path>/controls/engines/engine/throttle</path>
+			<path>/controls/engines/engine/propeller-pitch</path>
+			<path>/controls/engines/engine/mixture</path>
+			<path>/controls/engines/engine/magnetos</path>
+			<path>/controls/flight/rudder</path>
+			<path>/controls/flight/aileron</path>
+			<path>/controls/flight/elevator</path>
+			<path>/controls/flight/flaps</path>
+			<path>/controls/gear/brake-parking</path>
+			<path>/sim/model/doors/pilot/position-norm</path>
+			<path>/sim/model/doors/emergency-exit/position-norm</path>
+			<path>/sim/model/doors/bagagge/position-norm</path>
+		</aircraft-data>
 	</sim>
 	
 	<nasal>
+		<utils>
+			<file>Nasal/utils.nas</file>
+		</utils>
 		<p210n>
-			<!--<file>Nasal/p210n.nas</file>-->
+			<file>Nasal/p210n.nas</file>
 			<file>Nasal/autostart.nas</file>
-			<file>Nasal/liveries.nas</file>
-			<file>Nasal/doors.nas</file>
 			<file>Nasal/radios.nas</file>
 		</p210n>
 	</nasal>
 	
-	<payload>
-		<weight>
-			<name type="string">Pilot</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
-			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">220.0</max-lb>
-		</weight>
-		<weight>
-			<name type="string">Co-Pilot</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
-			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">220.0</max-lb>
-		</weight>
-		<weight>
-			<name type="string">Middle left passenger</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
-			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">220.0</max-lb>
-		</weight>
-		<weight>
-			<name type="string">Middle right passenger</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
-			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">220.0</max-lb>
-		</weight>
-		<weight>
-			<name type="string">Rear left passenger</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
-			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">220.0</max-lb>
-		</weight>
-		<weight>
-			<name type="string">Rear right passenger</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[5]"/>
-			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">220.0</max-lb>
-		</weight>
-		<weight>
-			<name type="string">Baggage A</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[6]"/>
-			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">200.0</max-lb>
-		</weight>
-		<weight>
-			<name type="string">Baggage B</name>
-			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[7]"/>
-			<min-lb type="double">0.0</min-lb>
-			<max-lb type="double">80.0</max-lb>
-		</weight>
-	</payload>
-
 	<limits>
 		<max-positive-g>3.8</max-positive-g>
 		<max-negative-g>-1.52</max-negative-g>
@@ -237,6 +204,13 @@
 			<cowl-flaps-norm alias="/fdm/jsbsim/propulsion/engine[0]/cowl-flaps-norm"/>
 		</engine>
 	</engines>
+	<controls>
+		<engines>
+			<engine>
+				<cowl-flaps-norm>1</cowl-flaps-norm>
+			</engine>
+		</engines>
+	</controls>
 	
 	<consumables>
 		<fuel>
@@ -257,17 +231,56 @@
 		</fuel>
 	</consumables>
 	
-	<controls>
-		<gear>
-			<brake-parking userarchive="y" type="bool">true</brake-parking>
-		</gear>
-		<engines>
-			<engine>
-				<cowl-flaps-norm userarchive="y">1</cowl-flaps-norm>
-				<propeller-pitch userarchive="y">1</propeller-pitch>
-			</engine>
-		</engines>
-	</controls>
+	<payload>
+		<weight>
+			<name type="string">Pilot</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Copilot</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Front left passenger</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Front right passenger</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Rear left passenger</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Rear right passenger</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[5]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Baggage A</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[6]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">200.0</max-lb>
+		</weight>
+		<weight>
+			<name type="string">Baggage B</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[7]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">80.0</max-lb>
+		</weight>
+	</payload>
 	
 	<instrumentation include="Systems/p210n-init-instrumentation.xml"/>
 </PropertyList>

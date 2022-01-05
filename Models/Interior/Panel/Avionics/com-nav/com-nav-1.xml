@@ -4,6 +4,7 @@
 		<com-freq-mhz>instrumentation/comm[0]/frequencies/dialed-mhz</com-freq-mhz>
 		<com-freq-khz>instrumentation/comm[0]/frequencies/dialed-khz</com-freq-khz>
 		<com-volume>instrumentation/comm[0]/volume</com-volume>
+		<com-volume-script>p210n.comNav1.adjustComVolume()</com-volume-script>
 		<com-squelch>instrumentation/comm[0]/squelch</com-squelch>
 		<nav-freq-mhz>instrumentation/nav[0]/frequencies/dialed-mhz</nav-freq-mhz>
 		<nav-freq-khz>instrumentation/nav[0]/frequencies/dialed-khz</nav-freq-khz>
@@ -117,6 +118,10 @@
 				<factor>0.05</factor>
 				<min>0</min>
 				<max>1</max>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script alias="../../../../params/com-volume-script"/>
 			</binding>
 		</action>
 	</animation>
