@@ -23,7 +23,7 @@
 		<path>Aircraft/c210-family/Models/Interior/middle-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
-			<x-m>1.2</x-m>
+			<x-m>1</x-m>
 			<y-m>-0.28</y-m>
 			<z-m>-0.34</z-m>
 		</offsets>
@@ -32,7 +32,7 @@
 		<path>Aircraft/c210-family/Models/Interior/middle-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
-			<x-m>1.2</x-m>
+			<x-m>1</x-m>
 			<y-m>0.28</y-m>
 			<z-m>-0.34</z-m>
 		</offsets>

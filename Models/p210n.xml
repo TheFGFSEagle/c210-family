@@ -64,7 +64,7 @@
 		<texture>gear.png></texture>
 	</animation>
 	<effect>
-		<inherits-from>Effects/exterior-reflection</inherits-from>
+		<inherits-from>Effects/exterior-opaque</inherits-from>
 		<object-name>Fuselage</object-name>
 		<object-name>Rudder</object-name>
 		<object-name>NavAntennas</object-name>
@@ -76,15 +76,15 @@
 		<object-name>RudderMount</object-name>
 		<object-name>Rudder</object-name>
 		<object-name>NoseGearLeftDoorExterior</object-name>
-		<object-name>NoseGearLeftDoorInterior</object-name>
+		<!--<object-name>NoseGearLeftDoorInterior</object-name>-->
 		<object-name>NoseGearRightDoorExterior</object-name>
-		<object-name>NoseGearRightDoorInterior</object-name>
+		<!--<object-name>NoseGearRightDoorInterior</object-name>
 		<object-name>NoseGearWell</object-name>
-		<object-name>MainWheelWell</object-name>
+		<object-name>MainWheelWell</object-name>-->
 		<object-name>LeftCowlFlapExterior</object-name>
-		<object-name>LeftCowlFlapInterior</object-name>
+		<!--<object-name>LeftCowlFlapInterior</object-name>-->
 		<object-name>RightCowlFlapExterior</object-name>
-		<object-name>RightCowlFlapInterior</object-name>
+		<!--<object-name>RightCowlFlapInterior</object-name>-->
 		<object-name>PropellerBlade1</object-name>
 		<object-name>PropellerBlade2</object-name>
 		<object-name>PropellerBlade3</object-name>
@@ -105,6 +105,9 @@
 		<object-name>NoseGearStrutInnerCylinder</object-name>
 		<object-name>LeftWheelStrut</object-name>
 		<object-name>RightWheelStrut</object-name>
+	</effect>
+	<effect>
+		<inherits-from>Effects/exterior-glass</inherits-from>
 		<object-name>WindscreenExterior</object-name>
 		<object-name>PilotWindowsExterior</object-name>
 		<object-name>EmergencyExitWindowsExterior</object-name>
@@ -112,6 +115,37 @@
 		<object-name>RightPassengerWindowsExterior</object-name>
 		<object-name>BackWindowsExterior</object-name>
 	</effect>
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		<object-name>WindscreenInterior</object-name>
+		<object-name>PilotWindowsInterior</object-name>
+		<object-name>EmergencyExitWindowsInterior</object-name>
+		<object-name>LeftPassengerWindowsInterior</object-name>
+		<object-name>RightPassengerWindowsInterior</object-name>
+		<object-name>BackWindowsInterior</object-name>
+	</effect>
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>FastPropeller</object-name>
+	</effect>
+	
+	<animation>
+		<type>noshadow</type>
+		<object-name>FastPropeller</object-name>
+		<object-name>WindscreenExterior</object-name>
+		<object-name>WindscreenInterior</object-name>
+		<object-name>PilotWindowsExterior</object-name>
+		<object-name>PilotWindowsInterior</object-name>
+		<object-name>EmergencyExitWindowsExterior</object-name>
+		<object-name>EmergencyExitWindowsInterior</object-name>
+		<object-name>BackWindowsExterior</object-name>
+		<object-name>BackWindowsInterior</object-name>
+		<object-name>LeftPassengerWindowsExterior</object-name>
+		<object-name>LeftPassengerWindowsInterior</object-name>
+		<object-name>RightPassengerWindowsExterior</object-name>
+		<object-name>RightPassengerWindowsInterior</object-name>
+	</animation>
+	
 	<nasal>
 		<load>
 			<![CDATA[
@@ -384,28 +418,6 @@
 		</condition>
 	</animation>
 	
-	<effect>
-		<inherits-from>Effects/model-transparent</inherits-from>
-		<object-name>FastPropeller</object-name>
-	</effect>
-	
-	<animation>
-		<type>noshadow</type>
-		<object-name>FastPropeller</object-name>
-		<object-name>WindscreenExterior</object-name>
-		<object-name>WindscreenInterior</object-name>
-		<object-name>PilotWindowsExterior</object-name>
-		<object-name>PilotWindowsInterior</object-name>
-		<object-name>EmergencyExitWindowsExterior</object-name>
-		<object-name>EmergencyExitWindowsInterior</object-name>
-		<object-name>BackWindowsExterior</object-name>
-		<object-name>BackWindowsInterior</object-name>
-		<object-name>LeftPassengerWindowsExterior</object-name>
-		<object-name>LeftPassengerWindowsInterior</object-name>
-		<object-name>RightPassengerWindowsExterior</object-name>
-		<object-name>RightPassengerWindowsInterior</object-name>
-	</animation>
-		
 	<animation>
 		<type>rotate</type>
 		<object-name>LeftCowlFlapExterior</object-name>
@@ -837,11 +849,14 @@
 		
 	<!-- Doors clickable and opening / closing -->
 	<animation>
-		<type>pick</type>
+		<type>knob</type>
 		<object-name>PilotDoorInterior</object-name>
 		<object-name>PilotDoorExterior</object-name>
+		<axis>
+			<object-name>PilotDoorAxis</object-name>
+		</axis>
+		<property>sim/model/doors/pilot/position-norm</property>
 		<action>
-			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>nasal</command>
@@ -850,11 +865,26 @@
 				</script>
 			</binding>
 		</action>
+		<shift-increase>
+			<binding>
+				<command>nasal</command>
+				<script><![CDATA[
+					p210n.pilotDoor.move(p210n.pilotDoor.getpos() + 0.05);
+				]]></script>
+			</binding>
+		</shift-increase>
+		<shift-decrease>
+			<binding>
+				<command>nasal</command>
+				<script><![CDATA[
+					p210n.pilotDoor.move(p210n.pilotDoor.getpos() - 0.05);
+				]]></script>
+			</binding>
+		</shift-decrease>
 	</animation>
+	<!-- keep the windows in an extra animation for now because the foremost left window is openable IRL -->
 	<animation>
 		<type>rotate</type>
-		<object-name>PilotDoorInterior</object-name>
-		<object-name>PilotDoorExterior</object-name>
 		<object-name>PilotWindowsExterior</object-name>
 		<object-name>PilotWindowsInterior</object-name>
 		<axis>
@@ -863,23 +893,9 @@
 		<property>sim/model/doors/pilot/position-norm</property>
 		<factor>80</factor>
 	</animation>
+	
 	<animation>
-		<type>pick</type>
-		<object-name>EmergencyExitInterior</object-name>
-		<object-name>EmergencyExitExterior</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>nasal</command>
-				<script>
-					p210n.emergencyExit.toggle();
-				</script>
-			</binding>
-		</action>
-	</animation>
-	<animation>
-		<type>rotate</type>
+		<type>knob</type>
 		<object-name>EmergencyExitInterior</object-name>
 		<object-name>EmergencyExitExterior</object-name>
 		<object-name>EmergencyExitWindowsInterior</object-name>
@@ -888,14 +904,44 @@
 			<object-name>EmergencyExitAxis</object-name>
 		</axis>
 		<property>sim/model/doors/emergency-exit/position-norm</property>
-		<factor>-80</factor>
+		<factor>-90</factor>
+		<action>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>
+					p210n.emergencyExit.toggle();
+				</script>
+			</binding>
+		</action>
+		<shift-increase>
+			<binding>
+				<command>nasal</command>
+				<script><![CDATA[
+					p210n.emergencyExit.move(p210n.emergencyExit.getpos() + 0.05);
+				]]></script>
+			</binding>
+		</shift-increase>
+		<shift-decrease>
+			<binding>
+				<command>nasal</command>
+				<script><![CDATA[
+					p210n.emergencyExit.move(p210n.emergencyExit.getpos() - 0.05);
+				]]></script>
+			</binding>
+		</shift-decrease>
 	</animation>
+	
 	<animation>
-		<type>pick</type>
+		<type>knob</type>
 		<object-name>BaggageDoorInterior</object-name>
 		<object-name>BaggageDoorExterior</object-name>
+		<axis>
+			<object-name>BaggageDoorAxis</object-name>
+		</axis>
+		<property>sim/model/doors/baggage/position-norm</property>
+		<factor>110</factor>
 		<action>
-			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>nasal</command>
@@ -904,16 +950,22 @@
 				</script>
 			</binding>
 		</action>
-	</animation>
-	<animation>
-		<type>rotate</type>
-		<object-name>BaggageDoorInterior</object-name>
-		<object-name>BaggageDoorExterior</object-name>
-		<axis>
-			<object-name>BaggageDoorAxis</object-name>
-		</axis>
-		<property>sim/model/doors/baggage/position-norm</property>
-		<factor>90</factor>
+		<shift-increase>
+			<binding>
+				<command>nasal</command>
+				<script><![CDATA[
+					p210n.baggageDoor.move(p210n.baggageDoor.getpos() + 0.05);
+				]]></script>
+			</binding>
+		</shift-increase>
+		<shift-decrease>
+			<binding>
+				<command>nasal</command>
+				<script><![CDATA[
+					p210n.baggageDoor.move(p210n.baggageDoor.getpos() - 0.05);
+				]]></script>
+			</binding>
+		</shift-decrease>
 	</animation>
 	
 	<!-- Damage -->
@@ -953,16 +1005,6 @@
 			</entry>
 		</interpolation>
 	</animation>
-	
-	<effect>
-		<inherits-from>Effects/glass</inherits-from>
-		<object-name>WindscreenInterior</object-name>
-		<object-name>PilotWindowsInterior</object-name>
-		<object-name>EmergencyExitWindowsInterior</object-name>
-		<object-name>LeftPassengerWindowsInterior</object-name>
-		<object-name>RightPassengerWindowsInterior</object-name>
-		<object-name>BackWindowsInterior</object-name>
-	</effect>
 	
 	<model>
 		<path>Aircraft/c210-family/Models/Interior/p210n-interior.xml</path>

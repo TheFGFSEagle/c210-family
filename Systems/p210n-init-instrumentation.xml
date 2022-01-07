@@ -55,4 +55,11 @@
 			<current-memory type="int">0</current-memory>
 		</frequencies>
 	</nav>
+	<marker-beacon>
+		<test type="bool">false</test>
+		<inner type="bool">false</inner>
+		<middle type="bool">false</middle>
+		<outer type="bool">false</outer>
+		<sensitivity>1.0</sensitivity>
+	</marker-beacon>
 </PropertyList>

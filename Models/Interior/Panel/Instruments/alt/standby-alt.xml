@@ -10,7 +10,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
 		<factor>0.36</factor>	
 	</animation>
 	<animation>
@@ -21,7 +21,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
 		<factor>0.036</factor>
 	</animation>
 	<animation>
@@ -32,7 +32,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
 		<factor>0.0036</factor>
 	</animation>
 	
@@ -44,7 +44,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/altimeter/setting-inhg</property>
+		<property>instrumentation/altimeter[1]/setting-inhg</property>
 		<interpolation>
 			<entry>
 				<ind>27.5</ind>
@@ -65,7 +65,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
 		<interpolation>
 			<entry>
 				<ind>10000</ind>
@@ -81,7 +81,7 @@
 	<animation>
 		<type>knob</type>
 		<object-name>InHgKnob</object-name>
-		<property>instrumentation/altimeter/setting-inhg</property>
+		<property>instrumentation/altimeter[1]/setting-inhg</property>
 		<factor>800</factor>
 		<axis>
 			<object-name>InHgKnobAxis</object-name>
@@ -89,7 +89,7 @@
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>instrumentation/altimeter/setting-inhg</property>
+				<property>instrumentation/altimeter[1]/setting-inhg</property>
 				<factor>0.01</factor>
 				<min>26.0</min>
 				<max>33.0</max>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
-	<name>Aircraft/c210-family/Models/Effects/exterior-reflection</name>
-	<inherits-from>Effects/model-combined-transparent</inherits-from>
+	<name>Aircraft/c210-family/Models/Effects/exterior-opaque</name>
+	<inherits-from>Effects/model-combined</inherits-from>
 	<parameters>
 		<splash-x><use>/environment/aircraft-effects/splash-vector-x</use></splash-x>
 		<splash-y><use>/environment/aircraft-effects/splash-vector-y</use></splash-y>
@@ -35,11 +35,5 @@
 		</texture>
 		<rain-enabled>2</rain-enabled>
 		<snow-enabled>2</snow-enabled>
-		<rendering-hint>transparent</rendering-hint>
-		<transparent>true</transparent>
-		<render-bin>
-			<bin-number>111</bin-number>
-			<bin-name>DepthSortedBin</bin-name>
-		</render-bin>
 	</parameters>
 </PropertyList>

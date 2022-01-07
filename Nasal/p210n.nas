@@ -9,8 +9,9 @@
 aircraft.livery.init("Aircraft/c210-family/Models/Liveries");
 
 # Doors
-var pilotDoor = aircraft.door.new("sim/model/doors/pilot", 3);
-var emergencyExit = aircraft.door.new("sim/model/doors/emergency-exit", 3);
-var baggageDoor = aircraft.door.new("sim/model/doors/baggage", 2);
+var pilotDoor = aircraft.door.new("sim/model/doors/pilot", 1);
+var emergencyExit = aircraft.door.new("sim/model/doors/emergency-exit", 2);
+var baggageDoor = aircraft.door.new("sim/model/doors/baggage", 1);
 
-#utils.addDelayed(func () { print("called"); }, 5)
+debug.dump(utils.deleteV([1, 2], 0))#utils.addDelayed(func() { print("called"); }, 5)
+
