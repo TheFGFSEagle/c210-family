@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
-
 	<filter>
 		<name>splash-xa</name>
 		<update-interval-secs type="double">0.1</update-interval-secs>
@@ -21,7 +20,6 @@
 			<property>/environment/aircraft-effects/splash-xa</property>
 		</output>
 	</filter>
-
 	<filter>
 		<name>splash-za</name>
 		<update-interval-secs type="double">0.1</update-interval-secs>
@@ -63,7 +61,6 @@
 			<property>/environment/aircraft-effects/splash-xr</property>
 		</output>
 	</filter>
-
 	<filter>
 		<name>splash-zr</name>
 		<update-interval-secs type="double">0.1</update-interval-secs>
@@ -112,7 +109,6 @@
 			<property>/environment/aircraft-effects/splash-vector-x</property>
 		</output>
 	</filter>
-
 	<filter>
 		<name>splash-y</name>
 		<update-interval-secs type="double">0.1</update-interval-secs>
@@ -125,7 +121,6 @@
 			<property>/environment/aircraft-effects/splash-vector-y</property>
 		</output>
 	</filter>
-
 	<filter>
 		<name>splash-z</name>
 		<update-interval-secs type="double">0.1</update-interval-secs>
@@ -153,5 +148,4 @@
 			<property>/environment/aircraft-effects/splash-vector-z</property>
 		</output>
 	</filter>
-
 </PropertyList>

@@ -6,12 +6,14 @@
 #p210nModule.load();
 
 # Livery dialog
-aircraft.livery.init("Aircraft/c210-family/Models/Liveries");
+aircraft.livery.init("Models/Liveries");
+aircraft.data.save(1);
 
 # Doors
 var pilotDoor = aircraft.door.new("sim/model/doors/pilot", 1);
 var emergencyExit = aircraft.door.new("sim/model/doors/emergency-exit", 2);
 var baggageDoor = aircraft.door.new("sim/model/doors/baggage", 1);
 
-debug.dump(utils.deleteV([1, 2], 0))#utils.addDelayed(func() { print("called"); }, 5)
-
+print("called ", systime());
+utils.addDelayed(func() { print("called ", systime()); }, 5);
+utils.addDelayed(func() { print("called ", systime()); }, 10);

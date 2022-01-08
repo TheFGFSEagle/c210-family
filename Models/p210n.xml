@@ -116,7 +116,7 @@
 		<object-name>BackWindowsExterior</object-name>
 	</effect>
 	<effect>
-		<inherits-from>Effects/glass</inherits-from>
+		<inherits-from>Effects/p210n-interior-glass</inherits-from>
 		<object-name>WindscreenInterior</object-name>
 		<object-name>PilotWindowsInterior</object-name>
 		<object-name>EmergencyExitWindowsInterior</object-name>
@@ -127,6 +127,14 @@
 	<effect>
 		<inherits-from>Effects/model-transparent</inherits-from>
 		<object-name>FastPropeller</object-name>
+	</effect>
+	<effect>
+		<inherits-from>Effects/p210n-interior</inherits-from>
+		<object-name>Interior</object-name>
+		<object-name>PilotDoorInterior</object-name>
+		<object-name>EmergencyExitInterior</object-name>
+		<object-name>BaggageDoorInterior</object-name>
+		<object-name>BaggageCompartment</object-name>
 	</effect>
 	
 	<animation>

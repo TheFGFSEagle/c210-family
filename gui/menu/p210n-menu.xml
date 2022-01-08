@@ -19,6 +19,13 @@
 					<script>aircraft.livery.dialog.toggle()</script>
 				</binding>
 			</item>
+			<item>
+				<label>Aircraft options</label>
+				<binding>
+					<command>dialog-show</command>
+					<dialog-name>p210n-options</dialog-name>
+				</binding>
+			</item>
 		</menu>
 	</default>
 </PropertyList>

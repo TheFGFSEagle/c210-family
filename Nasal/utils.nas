@@ -13,7 +13,7 @@
 #		debug.dump(v);
 #	prints [1, 3]
 
-var deleteV = func(vector, index) {
+var vecdelete = func(vector, index) {
 	s = size(vector);
 	if (s == 1 or s == 0) {
 		return [];
@@ -106,23 +106,30 @@ var range = func(stop, args...) {
 };
 
 _delayedFunctions = [];
+var elapsedSecNode = props.globals.getNode("/sim/time/elapsed-sec");
 
 var addDelayed = func(function, timeDelta, args...) {
-	runTime = systime() + timeDelta;
+	runTime = elapsedSecNode.getDoubleValue() + timeDelta;
 	append(_delayedFunctions, {"func": function, "args": args, "time": runTime});
 };
 
 var _runDelayedLoop = func() {
-	forindex (var i; _delayedFunctions) {
+	var i = 0;
+	while (i < size(_delayedFunctions)) {
 		data = _delayedFunctions[i];
-		if (data["time"] <= systime()) {
+		if (data["time"] <= elapsedSecNode.getDoubleValue()) {
 			data["func"](data["args"]);
-			deleteV(_delayedFunctions, i);
+			_delayedFunctions = vecdelete(_delayedFunctions, i);
+			i = i - 1; # vecdelete shortens the vector, so we need to set our counter back by one
 		}
+		i = i + 1;
 	}
 };
 
 _delayedFunctionsTimer = maketimer(0.1, _runDelayedLoop);
 _delayedFunctionsTimer.simulatedTime = 1;
 _delayedFunctionsTimer.singleShot = 0;
-#_delayedFunctionsTimer.start();
+setlistener("/sim/signals/fdm-initialized", func() {
+	_delayedFunctionsTimer.start();
+});
+

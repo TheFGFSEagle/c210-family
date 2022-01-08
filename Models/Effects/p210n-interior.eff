@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<name>Effects/p210n-interior</name>
+	<inherits-from>Effects/model-interior</inherits-from>
+	<parameters>
+		<texture n="4">
+			<type>cubemap</type>
+			<images>
+				<positive-x>Effects/p210n-shadow-px.png</positive-x>
+				<negative-x>Effects/p210n-shadow-nx.png</negative-x>
+				<positive-y>Effects/p210n-shadow-py.png</positive-y>
+				<negative-y>Effects/p210n-shadow-ny.png</negative-y>
+				<positive-z>Effects/p210n-shadow-pz.png</positive-z>
+				<negative-z>Effects/p210n-shadow-nz.png</negative-z>
+			</images>
+		</texture>
+		<opacity-cube-center type="vec3d" n="0">0.5 0.0 0.3</opacity-cube-center>
+		<opacity-cube-scale type="vec3d" n="0">1.5 0.5 0.7</opacity-cube-scale>
+		<opacity-cube-angle type="float">0.0</opacity-cube-angle>
+		<shadow-mapping-enabled type="bool">true</shadow-mapping-enabled>
+		<irradiance-map-type type="int">2</irradiance-map-type>
+		<irradiance-map-strength type="float">0.5</irradiance-map-strength>
+		<light-filter-one type="vec3d">1 1 1</light-filter-one>
+		<light-filter-two type="vec3d">1 1 1</light-filter-two>
+		<light-radius type="float">15</light-radius>
+	</parameters>
+</PropertyList>

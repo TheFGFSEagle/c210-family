@@ -100,6 +100,22 @@
 			<livery>
 				<file type="string">Default</file>
 			</livery>
+			<effects>
+				<enable-interior-glass-reflections type="bool">true</enable-interior-glass-reflections>
+				<enable-glass-rain type="bool">true</enable-glass-rain>
+				<enable-fog-frost type="bool">true</enable-fog-frost>
+			</effects>
+			<doors>
+				<pilot>
+					<position-norm>0</position-norm>
+				</pilot>
+				<emergency-exit>
+					<position-norm>0</position-norm>
+				</emergency-exit>
+				<baggage>
+					<position-norm>0</position-norm>
+				</baggage>
+			</doors>
 		</model>
 		<menubar include="gui/menu/p210n-menu.xml"></menubar>
 		<help include="gui/help/p210n-help.xml"></help>
@@ -142,6 +158,9 @@
 			<property-rule n="100">
 				<path>Systems/glass-rain.xml</path>
 			</property-rule>
+			<property-rule n="101">
+				<path>Systems/render-options.xml</path>
+			</property-rule>
 		</systems>
 		<aircraft-data>
 			<path>/controls/engines/engine/cowl-flaps-norm</path>
@@ -156,18 +175,24 @@
 			<path>/controls/gear/brake-parking</path>
 			<path>/sim/model/doors/pilot/position-norm</path>
 			<path>/sim/model/doors/emergency-exit/position-norm</path>
-			<path>/sim/model/doors/bagagge/position-norm</path>
+			<path>/sim/model/doors/baggagge/position-norm</path>
+			<path>/sim/model/effects/enable-interior-glass-reflections</path>
+			<path>/sim/model/effects/enable-glass-rain</path>
+			<path>/sim/model/effects/enable-fog-frost</path>
+			<path>/sim/model/livery/file</path>
 		</aircraft-data>
 	</sim>
 	
 	<nasal>
 		<utils>
 			<file>Nasal/utils.nas</file>
+			<enabled type="bool">true</enabled>
 		</utils>
 		<p210n>
 			<file>Nasal/p210n.nas</file>
 			<file>Nasal/autostart.nas</file>
 			<file>Nasal/radios.nas</file>
+			<enabled type="bool">true</enabled>
 		</p210n>
 	</nasal>
 	

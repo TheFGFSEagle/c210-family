@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<name>p210n-options</name>
+	<layout>vbox</layout>
+	<resizable>true</resizable>
+	<modal>false</modal>
+	<draggable>true</draggable>
+	<group>
+		<layout>hbox</layout>
+
+		<empty>
+			<stretch>true</stretch>
+		</empty>
+		<text>
+			<label>Aircraft options</label>
+		</text>
+		<empty>
+			<stretch>true</stretch>
+		</empty>
+
+		<button>
+			<legend>X</legend>
+			<key>Esc</key>
+			<pref-width>16</pref-width>
+			<pref-height>16</pref-height>
+			<binding>
+				<command>dialog-close</command>
+			</binding>
+		</button>
+	</group>
+	<checkbox>
+		<halign>left</halign>
+		<label>Enable interior glass reflections</label>
+		<property>/sim/model/effects/enable-interior-glass-reflections</property>
+		<live>true</live>
+		<binding>
+			<command>property-toggle</command>
+			<property>/sim/model/effects/enable-interior-glass-reflections</property>
+		</binding>
+	</checkbox>
+	<checkbox>
+		<halign>left</halign>
+		<label>Enable glass rain drops</label>
+		<property>/sim/model/effects/enable-glass-rain</property>
+		<live>true</live>
+		<binding>
+			<command>property-toggle</command>
+			<property>/sim/model/effects/enable-glass-rain</property>
+		</binding>
+	</checkbox>
+	<checkbox>
+		<halign>left</halign>
+		<label>Enable fog and frost</label>
+		<property>/sim/model/effects/enable-fog-frost</property>
+		<live>true</live>
+		<binding>
+			<command>property-toggle</command>
+			<property>/sim/model/effects/enable-fog-frost</property>
+		</binding>
+	</checkbox>
+</PropertyList>
