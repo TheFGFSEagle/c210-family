@@ -1015,7 +1015,24 @@
 	</animation>
 	
 	<model>
-		<path>Aircraft/c210-family/Models/Interior/p210n-interior.xml</path>
+		<path>Models/Interior/p210n-interior.xml</path>
 		<usage>interior</usage>
+	</model>
+	
+	<model>
+		<path>Models/Effects/landing-light-left.xml</path>
+		<offsets>
+			<x-m>-1.74</x-m>
+			<y-m>-0.1</y-m>
+			<z-m>-0.04</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Models/Effects/landing-light-right.xml</path>
+		<offsets>
+			<x-m>-1.74</x-m>
+			<y-m>0.1</y-m>
+			<z-m>-0.04</z-m>
+		</offsets>
 	</model>
 </PropertyList>

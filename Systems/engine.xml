@@ -92,21 +92,4 @@
             <output>propulsion/engine[0]/bsfc-lbs_hphr</output>
         </fcs_function>
     </channel>
-   
-    <channel name="Engine friction">
-        <fcs_function name="Normal friction">
-            <function>
-                <table>
-                    <independentVar lookup="row">propulsion/engine/engine-rpm</independentVar>
-                    <tableData>
-                        0         0.05
-                        100     0.3
-                        200     0.7
-                        600     1
-                    </tableData>
-                </table>
-            </function>
-            <output>propulsion/engine/friction-hp</output>
-        </fcs_function>
-    </channel>
 </system>
