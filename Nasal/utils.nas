@@ -108,11 +108,18 @@ var range = func(stop, args...) {
 _delayedFunctions = [];
 var elapsedSecNode = props.globals.getNode("/sim/time/elapsed-sec");
 
+# Add a function to be executed when /sim/time/elapsed-sec equals (its value at calling time + timeDelta)
+# Synopsis:
+#	function: Mandatory. Callable to be executed after timeDelta seconds
+#	timeDelta: Mandatory. Amount of seconds to delay function call by.
+#	args: Optional. Any additional arguments to adDelayed will be passed to function as arguments
+
 var addDelayed = func(function, timeDelta, args...) {
 	runTime = elapsedSecNode.getDoubleValue() + timeDelta;
 	append(_delayedFunctions, {"func": function, "args": args, "time": runTime});
 };
 
+# Runs the delayed functions added with the above function
 var _runDelayedLoop = func() {
 	var i = 0;
 	while (i < size(_delayedFunctions)) {
