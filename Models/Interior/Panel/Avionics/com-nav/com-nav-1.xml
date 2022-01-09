@@ -451,7 +451,7 @@
 	</animation>
 	
 	<effect>
-		<inherits-from>Effects/glass</inherits-from>
+		<inherits-from>Models/Effects/p210n-instrument-glass</inherits-from>
 		<object-name>Glass</object-name>
 	</effect>
 </PropertyList>

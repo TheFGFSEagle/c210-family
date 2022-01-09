@@ -127,7 +127,7 @@ var _runDelayedLoop = func() {
 };
 
 _delayedFunctionsTimer = maketimer(0.1, _runDelayedLoop);
-_delayedFunctionsTimer.simulatedTime = 1;
+_delayedFunctionsTimer.simulatedTime = 0;
 _delayedFunctionsTimer.singleShot = 0;
 setlistener("/sim/signals/fdm-initialized", func() {
 	_delayedFunctionsTimer.start();

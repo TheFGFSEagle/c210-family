@@ -6,12 +6,12 @@
 		<texture n="4">
 			<type>cubemap</type>
 			<images>
-				<positive-x>Effects/p210n-shadow-px.png</positive-x>
-				<negative-x>Effects/p210n-shadow-nx.png</negative-x>
-				<positive-y>Effects/p210n-shadow-py.png</positive-y>
-				<negative-y>Effects/p210n-shadow-ny.png</negative-y>
-				<positive-z>Effects/p210n-shadow-pz.png</positive-z>
-				<negative-z>Effects/p210n-shadow-nz.png</negative-z>
+				<positive-x>Models/Effects/p210n-shadow-px.png</positive-x>
+				<negative-x>Models/Effects/p210n-shadow-nx.png</negative-x>
+				<positive-y>Models/Effects/p210n-shadow-py.png</positive-y>
+				<negative-y>Models/Effects/p210n-shadow-ny.png</negative-y>
+				<positive-z>Models/Effects/p210n-shadow-pz.png</positive-z>
+				<negative-z>Models/Effects/p210n-shadow-nz.png</negative-z>
 			</images>
 		</texture>
 		<opacity-cube-center type="vec3d" n="0">0.5 0.0 0.3</opacity-cube-center>

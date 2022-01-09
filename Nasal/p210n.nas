@@ -14,6 +14,6 @@ var pilotDoor = aircraft.door.new("sim/model/doors/pilot", 1);
 var emergencyExit = aircraft.door.new("sim/model/doors/emergency-exit", 2);
 var baggageDoor = aircraft.door.new("sim/model/doors/baggage", 1);
 
-print("called ", systime());
-utils.addDelayed(func() { print("called ", systime()); }, 5);
-utils.addDelayed(func() { print("called ", systime()); }, 10);
+print("called ", getprop("/sim/time/elapsed-sec"));
+utils.addDelayed(func() { print("called ", getprop("/sim/time/elapsed-sec")); }, 5);
+utils.addDelayed(func() { print("called ", getprop("/sim/time/elapsed-sec")); }, 10);

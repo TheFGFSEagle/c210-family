@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <PropertyList>
-	<name>Effects/p210n-interior-glass</name>
+	<name>Effects/p210n-instrument-glass</name>
 	<inherits-from>Effects/glass</inherits-from>
 	<parameters>
-		<fog-level><use>sim/model/effects/fog-level</use></fog-level>
-		<frost-level><use>sim/model/effects/frost-level</use></frost-level>
-		<rnorm><use>sim/model/effects/rain-norm</use></rnorm>
-		<gsnorm><use>sim/model/effects/ground-splash-norm</use></gsnorm>
+		<fog-level>0</fog-level>
+		<frost-level>0</frost-level>
+		<rnorm>0</rnorm>
+		<gsnorm>0</gsnorm>
 		<glass-tint type="vec4d" n="0">0.692 1.0 1.0 1.0</glass-tint>
 		<texture n="3">
 			<type>cubemap</type>
@@ -24,3 +24,4 @@
 		<reflection-strength type="float">1</reflection-strength>
 	</parameters>
 </PropertyList>
+
