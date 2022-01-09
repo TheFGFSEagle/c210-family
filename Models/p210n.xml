@@ -65,6 +65,12 @@
 	</animation>
 	<effect>
 		<inherits-from>Effects/exterior-opaque</inherits-from>
+		<!--<object-name>NoseGearLeftDoorInterior</object-name>-->
+		<!--<object-name>NoseGearRightDoorInterior</object-name>
+		<object-name>NoseGearWell</object-name>
+		<object-name>MainWheelWell</object-name>-->
+		<!--<object-name>LeftCowlFlapInterior</object-name>-->
+		<!--<object-name>RightCowlFlapInterior</object-name>-->
 		<object-name>Fuselage</object-name>
 		<object-name>Rudder</object-name>
 		<object-name>NavAntennas</object-name>
@@ -76,15 +82,9 @@
 		<object-name>RudderMount</object-name>
 		<object-name>Rudder</object-name>
 		<object-name>NoseGearLeftDoorExterior</object-name>
-		<!--<object-name>NoseGearLeftDoorInterior</object-name>-->
 		<object-name>NoseGearRightDoorExterior</object-name>
-		<!--<object-name>NoseGearRightDoorInterior</object-name>
-		<object-name>NoseGearWell</object-name>
-		<object-name>MainWheelWell</object-name>-->
 		<object-name>LeftCowlFlapExterior</object-name>
-		<!--<object-name>LeftCowlFlapInterior</object-name>-->
 		<object-name>RightCowlFlapExterior</object-name>
-		<!--<object-name>RightCowlFlapInterior</object-name>-->
 		<object-name>PropellerBlade1</object-name>
 		<object-name>PropellerBlade2</object-name>
 		<object-name>PropellerBlade3</object-name>
@@ -125,7 +125,7 @@
 		<object-name>BackWindowsInterior</object-name>
 	</effect>
 	<effect>
-		<inherits-from>Effects/model-transparent</inherits-from>
+		<inherits-from>Effects/glass</inherits-from>
 		<object-name>FastPropeller</object-name>
 	</effect>
 	<effect>
@@ -1022,7 +1022,7 @@
 	<model>
 		<path>Models/Effects/landing-light-left.xml</path>
 		<offsets>
-			<x-m>-1.74</x-m>
+			<x-m>-1.75</x-m>
 			<y-m>-0.1</y-m>
 			<z-m>-0.04</z-m>
 		</offsets>
@@ -1030,7 +1030,7 @@
 	<model>
 		<path>Models/Effects/landing-light-right.xml</path>
 		<offsets>
-			<x-m>-1.74</x-m>
+			<x-m>-1.75</x-m>
 			<y-m>0.1</y-m>
 			<z-m>-0.04</z-m>
 		</offsets>
