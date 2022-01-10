@@ -729,7 +729,7 @@
                 </product>
             </quotient>
         </function>
-        <!-- schutz gegen div/0 -->        
+        <!-- zero division error protection -->        
         <axis name="LIFT">
             <function name="aero/force/Lift_alpha">
                 <description>Lift due to alpha</description>
