@@ -729,7 +729,7 @@
                 </product>
             </quotient>
         </function>
-<!-- schutz gegen div/0 -->        
+        <!-- schutz gegen div/0 -->        
         <axis name="LIFT">
             <function name="aero/force/Lift_alpha">
                 <description>Lift due to alpha</description>
@@ -804,7 +804,7 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/flap-pos-deg</property>
-                    <value> 0.01333 </value>
+                    <value>0.01333</value>
                 </product>
             </function>
 
@@ -982,8 +982,7 @@
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
                     <property>fcs/rudder-pos-rad</property>
-                    <value>-0.137</value> 
-                    <value>-1</value> 
+                    <value>0.137</value> 
                 </product>
             </function>
         </axis>
@@ -1042,8 +1041,7 @@
                     <property>metrics/Sw-sqft</property>
                     <property>metrics/bw-ft</property>
                     <property>fcs/rudder-pos-rad</property>
-                    <value>0.01</value>
-                    <value>-1</value> 
+                    <value>-0.01</value>
                 </product>
             </function>
         </axis>
@@ -1057,8 +1055,8 @@
                     <property>metrics/cbarw-ft</property>
                     <value>0.096</value> 
                 </product>
-                </function>
-                        <function name="aero/moment/Pitch_alpha">
+            </function>
+            <function name="aero/moment/Pitch_alpha">
                 <description>Pitch moment due to alpha</description>
                 <product>
                     <property>aero/qbar-psf</property>
@@ -1080,13 +1078,13 @@
                     <table>
                         <independentVar lookup="row">aero/beta-rad</independentVar>
                         <tableData>
-				-3.14	-1
-				-1.57    0
-				-0.50    1
-				0.00    1
-				0.50    1
-				1.57    0
-				3.14	-1
+                            -3.14   -1
+                            -1.57    0
+                            -0.50    1
+                             0.00    1
+                             0.50    1
+                             1.57    0
+                             3.14   -1
                         </tableData>
                     </table>
                 </product>
@@ -1140,13 +1138,13 @@
                     <value>0.044</value> 
                         <independentVar lookup="row">aero/beta-rad</independentVar>
                         <tableData>
-				-3.14	0
-				-1.57    0.8
-				-0.44   1
-				0.00    1
-				0.44    1
-				1.57    0.8
-				3.14	0
+                            -3.14    0
+                            -1.57    0.8
+                            -0.44    1
+                             0.00    1
+                             0.44    1
+                             1.57    0.8
+                             3.14    0
                         </tableData>
                 </product>
             </function>
@@ -1173,13 +1171,13 @@
                     <table>
                         <independentVar lookup="row">aero/beta-rad</independentVar>
                         <tableData>
-				-3.14	-1
-				-1.57    0
-				-0.50    1
-				0.00    1
-				0.50    1
-				1.57    0
-				3.14	-1
+                            -3.14    -1
+                            -1.57    0
+                            -0.50    1
+                             0.00    1
+                             0.50    1
+                             1.57    0
+                             3.14    -1
                         </tableData>
                     </table>
                     <value>-0.078</value>
