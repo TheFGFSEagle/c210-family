@@ -1135,7 +1135,8 @@
                     <property>metrics/Sw-sqft</property>
                     <property>metrics/bw-ft</property>
                     <property>aero/beta-rad</property>
-                    <value>0.044</value> 
+                    <value>0.044</value>
+                    <table>
                         <independentVar lookup="row">aero/beta-rad</independentVar>
                         <tableData>
                             -3.14    0
@@ -1146,6 +1147,7 @@
                              1.57    0.8
                              3.14    0
                         </tableData>
+                    </table>
                 </product>
             </function>
 
