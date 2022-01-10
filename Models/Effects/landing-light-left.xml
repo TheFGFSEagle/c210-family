@@ -30,7 +30,7 @@
 		<name>LandingLightLeft</name>
 		<type>spot</type>
 		<position>
-			<x-m>0</x-m>
+			<x-m>-0.25</x-m>
 			<y-m>0</y-m>
 			<z-m>0</z-m>
 		</position>
@@ -63,7 +63,7 @@
 			<q>0.000001875</q>
 		</attenuation>
 		<spot-exponent>40</spot-exponent>
-		<spot-cutoff>30</spot-cutoff>
+		<spot-cutoff>40</spot-cutoff>
 		<range-m>500</range-m>
 		<dim-factor>
 			<property>controls/lighting/landing-lights</property>

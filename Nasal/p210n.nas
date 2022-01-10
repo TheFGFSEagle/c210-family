@@ -10,7 +10,8 @@ aircraft.livery.init("Models/Liveries");
 aircraft.data.save(1);
 
 # Doors
-var pilotDoor = aircraft.door.new("sim/model/doors/pilot", 1);
-var emergencyExit = aircraft.door.new("sim/model/doors/emergency-exit", 2);
-var baggageDoor = aircraft.door.new("sim/model/doors/baggage", 1);
+var pilotDoor = aircraft.door.new("/sim/model/doors/pilot", 1);
+var emergencyExit = aircraft.door.new("/sim/model/doors/emergency-exit", 2);
+var baggageDoor = aircraft.door.new("/sim/model/doors/baggage", 1);
 
+var strobeLight = aircraft.light.new("/sim/model/lights/strobe", [0.2, 1.3], "/controls/lighting/strobe");

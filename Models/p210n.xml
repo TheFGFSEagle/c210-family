@@ -347,7 +347,6 @@
 		<object-name>PropellerBlade3</object-name>
 		<object-name>PropellerBlade3Damaged</object-name>
 		<object-name>PropellerBlade3Axis</object-name>
-		<object-name>FastPropeller</object-name>
 		<axis>
 			<object-name>PropellerAxis</object-name>
 		</axis>
@@ -1019,6 +1018,7 @@
 		<usage>interior</usage>
 	</model>
 	
+	<!-- Lights -->
 	<model>
 		<path>Models/Effects/landing-light-left.xml</path>
 		<offsets>
@@ -1033,6 +1033,62 @@
 			<x-m>-1.75</x-m>
 			<y-m>0.1</y-m>
 			<z-m>-0.04</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Models/Effects/left-nav-light.xml</path>
+		<offsets>
+			<x-m>0.03</x-m>
+			<y-m>-5.43</y-m>
+			<z-m>1</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Models/Effects/right-nav-light.xml</path>
+		<offsets>
+			<x-m>0.03</x-m>
+			<y-m>5.43</y-m>
+			<z-m>1</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Models/Effects/tail-nav-light.xml</path>
+		<offsets>
+			<x-m>5.65</x-m>
+			<y-m>0</y-m>
+			<z-m>1.72</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Models/Effects/left-strobe-light.xml</path>
+		<offsets>
+			<x-m>1.05</x-m>
+			<y-m>-5.53</y-m>
+			<z-m>0.85</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Models/Effects/right-strobe-light.xml</path>
+		<offsets>
+			<x-m>1.05</x-m>
+			<y-m>5.53</y-m>
+			<z-m>0.85</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Models/Effects/left-logo-light.xml</path>
+		<offsets>
+			<x-m>4.65</x-m>
+			<y-m>-1.6</y-m>
+			<z-m>0.155</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Models/Effects/right-logo-light.xml</path>
+		<offsets>
+			<x-m>4.65</x-m>
+			<y-m>1.6</y-m>
+			<z-m>0.155</z-m>
 		</offsets>
 	</model>
 </PropertyList>
