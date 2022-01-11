@@ -1020,7 +1020,7 @@
 	
 	<!-- Lights -->
 	<model>
-		<path>Models/Effects/landing-light-left.xml</path>
+		<path>Effects/landing-light-left.xml</path>
 		<offsets>
 			<x-m>-1.75</x-m>
 			<y-m>-0.1</y-m>
@@ -1028,7 +1028,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Models/Effects/landing-light-right.xml</path>
+		<path>Effects/landing-light-right.xml</path>
 		<offsets>
 			<x-m>-1.75</x-m>
 			<y-m>0.1</y-m>
@@ -1036,7 +1036,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Models/Effects/left-nav-light.xml</path>
+		<path>Effects/left-nav-light.xml</path>
 		<offsets>
 			<x-m>0.03</x-m>
 			<y-m>-5.43</y-m>
@@ -1044,7 +1044,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Models/Effects/right-nav-light.xml</path>
+		<path>Effects/right-nav-light.xml</path>
 		<offsets>
 			<x-m>0.03</x-m>
 			<y-m>5.43</y-m>
@@ -1052,7 +1052,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Models/Effects/tail-nav-light.xml</path>
+		<path>Effects/tail-nav-light.xml</path>
 		<offsets>
 			<x-m>5.65</x-m>
 			<y-m>0</y-m>
@@ -1060,7 +1060,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Models/Effects/left-strobe-light.xml</path>
+		<path>Effects/left-strobe-light.xml</path>
 		<offsets>
 			<x-m>1.05</x-m>
 			<y-m>-5.53</y-m>
@@ -1068,7 +1068,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Models/Effects/right-strobe-light.xml</path>
+		<path>Effects/right-strobe-light.xml</path>
 		<offsets>
 			<x-m>1.05</x-m>
 			<y-m>5.53</y-m>
@@ -1076,7 +1076,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Models/Effects/left-logo-light.xml</path>
+		<path>Effects/left-logo-light.xml</path>
 		<offsets>
 			<x-m>4.65</x-m>
 			<y-m>-1.6</y-m>
@@ -1084,7 +1084,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Models/Effects/right-logo-light.xml</path>
+		<path>Effects/right-logo-light.xml</path>
 		<offsets>
 			<x-m>4.65</x-m>
 			<y-m>1.6</y-m>

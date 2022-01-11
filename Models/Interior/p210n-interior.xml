@@ -3,7 +3,7 @@
 	<!-- Seats -->
 	<model>
 		<name>FrontLeftSeat</name>
-		<path>Aircraft/c210-family/Models/Interior/front-seat.ac</path>
+		<path>front-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
 			<x-m>0.2</x-m>
@@ -13,7 +13,7 @@
 	</model>
 	<model>
 		<name>FrontRightSeat</name>
-		<path>Aircraft/c210-family/Models/Interior/front-seat.ac</path>
+		<path>front-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
 			<x-m>0.2</x-m>
@@ -23,7 +23,7 @@
 	</model>
 	<model>
 		<name>MiddleLeftSeat</name>
-		<path>Aircraft/c210-family/Models/Interior/middle-seat.ac</path>
+		<path>middle-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
 			<x-m>1</x-m>
@@ -33,7 +33,7 @@
 	</model>
 	<model>
 		<name>MiddleRightSeat</name>
-		<path>Aircraft/c210-family/Models/Interior/middle-seat.ac</path>
+		<path>middle-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
 			<x-m>1</x-m>
@@ -43,7 +43,7 @@
 	</model>
 	<model>
 		<name>RearSeat</name>
-		<path>Aircraft/c210-family/Models/Interior/rear-seat.ac</path>
+		<path>rear-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
 			<x-m>1.8</x-m>
@@ -60,7 +60,7 @@
 	</model>
 	
 	<effect>
-		<inherits-from>Models/Effects/p210n-interior</inherits-from>
+		<inherits-from>../Effects/p210n-interior</inherits-from>
 		<object-name>FrontLeftSeat</object-name>
 		<object-name>FrontRightSeat</object-name>
 		<object-name>MiddleLeftSeat</object-name>
