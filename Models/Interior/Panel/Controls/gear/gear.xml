@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>gear.ac</path>
+	
+	<!-- gear lever needs to be pulled out in order to be moveable -->
+	<animation>
+		<type>translate</type>
+		<object-name>Bar</object-name>
+		<object-name>Handle</object-name>
+		<axis>
+			<object-name>PullAxis</object-name>
+		</axis>
+		<property>sim/model/controls/gear/lever</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.25</ind>
+				<dep>1</dep> <!-- translates full length of axis object (4 cm) -->
+			</entry>
+			<entry>
+				<ind>0.75</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Bar</object-name>
+		<object-name>Handle</object-name>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>-0.04</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<property>sim/model/controls/gear/lever</property>
+		<interpolation>
+			<entry>
+				<ind>0.25</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.75</ind>
+				<dep>40</dep>
+			</entry>
+		</interpolation>
+		<action>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/gear/gear-down</property>
+			</binding>
+	</animation>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>RetractedLamp</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>sim/model/controls/gear/retracted-lamp-test</property>
+		<factor>0.0075</factor>
+		<action>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/model/controls/gear/retracted-lamp-test</property>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>ExtendedLamp</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>sim/model/controls/gear/extended-lamp-test</property>
+		<factor>0.00375</factor>
+		<action>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>sim/model/controls/gear/extended-lamp-test</property>
+				<value>0</value> <!-- normal operation -->
+				<value>1</value> <!-- test warning tone operation -->
+				<value>2</value> <!-- test lamp illumination -->
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>RetractedLamp</object-name>
+		<emission>
+			<red>1</red>
+			<green>0.3</green>
+			<blue>0</blue>
+			<factor-prop>sim/model/controls/gear/retracted-lamp-illumination</factor-prop>
+		</emission>
+	</animation>
+	<animation>
+		<type>material</type>
+		<object-name>ExtendedLamp</object-name>
+		<emission>
+			<red>0</red>
+			<green>1</green>
+			<blue>0</blue>
+			<factor-prop>sim/model/controls/gear/extended-lamp-illumination</factor-prop>
+		</emission>
+	</animation>
+</PropertyList>

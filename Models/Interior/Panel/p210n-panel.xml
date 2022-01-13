@@ -263,4 +263,15 @@
 			<pitch-deg>-5.7</pitch-deg>
 		</offsets>
 	</model>
+	
+	<!-- controls panel -->
+	<model>
+		<path>Controls/gear/gear.xml</path>
+		<offsets>
+			<x-m>-0.428</x-m>
+			<y-m>-0.02</y-m>
+			<z-m>0.14</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+		</offsets>
+	</model>
 </PropertyList>

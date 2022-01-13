@@ -161,6 +161,9 @@
 			<property-rule n="101">
 				<path>Systems/render-options.xml</path>
 			</property-rule>
+			<property-rule n="102">
+				<path>Systems/instruments.xml</path>
+			</property-rule>
 		</systems>
 		<aircraft-data>
 			<path>/controls/engines/engine/cowl-flaps-norm</path>
@@ -173,6 +176,7 @@
 			<path>/controls/flight/elevator</path>
 			<path>/controls/flight/flaps</path>
 			<path>/controls/gear/brake-parking</path>
+			<path>/controls/gear/gear-down</path>
 			<path>/sim/model/doors/pilot/position-norm</path>
 			<path>/sim/model/doors/emergency-exit/position-norm</path>
 			<path>/sim/model/doors/baggagge/position-norm</path>
