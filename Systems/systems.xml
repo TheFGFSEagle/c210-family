@@ -1,19 +1,17 @@
 <?xml version="1.0"?>
 <PropertyList>
-
 	<electrical>
 		<name>electrical</name>
 		<number>0</number>
-		<path/>
+		<path>Systems/electrical.xml</path>
 	</electrical>
-
-
+	
 	<pitot>
 		<name>pitot</name>
 		<number>0</number>
 		<stall-deg>60</stall-deg>
 	</pitot>
-
+	
 	<static n="0"> <!-- Primary source is from fuselage, see POH p. 7-42 -->
 			<name>static</name>
 			<number>0</number>
@@ -28,20 +26,19 @@
 			<type>0</type>
 			<error-factor>0.35</error-factor>
 	</static>
-
+	
 	<vacuum>
 		<name>vacuum</name>
 		<number>0</number>
-		<rpm>engines/engine[0]/rpm</rpm>
+		<rpm>/engines/engine[0]/rpm</rpm>
 		<scale>1.0</scale>
 	</vacuum>
-
+	
 	<vacuum>
 		<name>vacuum</name>
 		<number>1</number>
-		<rpm>engines/engine[0]/rpm</rpm>
+		<rpm>/engines/engine[0]/rpm</rpm>
 		<scale>1.0</scale>
 	</vacuum>
-
 </PropertyList>
 
