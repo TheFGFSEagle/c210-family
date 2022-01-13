@@ -2,39 +2,12 @@
 <PropertyList>
 	<path>gear.ac</path>
 	
-	<!-- gear lever needs to be pulled out in order to be moveable -->
+	<!-- need to keep the rotation extra - using knob directly for some reason messes up the animation -->
 	<animation>
-		<type>translate</type>
+		<type>rotate</type>
 		<object-name>Bar</object-name>
 		<object-name>Handle</object-name>
-		<axis>
-			<object-name>PullAxis</object-name>
-		</axis>
-		<property>sim/model/controls/gear/lever</property>
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>0.25</ind>
-				<dep>1</dep> <!-- translates full length of axis object (4 cm) -->
-			</entry>
-			<entry>
-				<ind>0.75</ind>
-				<dep>1</dep>
-			</entry>
-			<entry>
-				<ind>1</ind>
-				<dep>0</dep>
-			</entry>
-		</interpolation>
-	</animation>
-	
-	<animation>
-		<type>knob</type>
-		<object-name>Bar</object-name>
-		<object-name>Handle</object-name>
+		<object-name>PullAxis</object-name>
 		<axis>
 			<x>0</x>
 			<y>1</y>
@@ -56,6 +29,12 @@
 				<dep>40</dep>
 			</entry>
 		</interpolation>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Bar</object-name>
+		<object-name>Handle</object-name>
 		<action>
 			<repeatable>false</repeatable>
 			<binding>
@@ -63,6 +42,35 @@
 				<property>controls/gear/gear-down</property>
 			</binding>
 		</action>
+	</animation>
+	
+	<!-- gear lever needs to be pulled out in order to be moveable -->
+	<animation>
+		<type>translate</type>
+		<object-name>Bar</object-name>
+		<object-name>Handle</object-name>
+		<axis>
+			<object-name>PullAxis</object-name>
+		</axis>
+		<property>sim/model/controls/gear/lever</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.25</ind>
+				<dep>-1</dep> <!-- translates full length of axis object (4 cm) -->
+			</entry>
+			<entry>
+				<ind>0.75</ind>
+				<dep>-1</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
 	</animation>
 	
 	<animation>

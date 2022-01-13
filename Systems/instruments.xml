@@ -68,5 +68,11 @@
 		</input>
 		<output>/sim/model/controls/gear/extended-lamp-illumination</output>
 	</filter>
+	<filter>
+		<type>noise-spike</type>
+		<max-rate-of-change>1</max-rate-of-change>
+		<input>/controls/gear/gear-down</input>
+		<output>/sim/model/controls/gear/lever</output>
+	</filter>
 </PropertyList>
 					
