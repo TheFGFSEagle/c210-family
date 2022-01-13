@@ -62,6 +62,7 @@
 				<command>property-toggle</command>
 				<property>controls/gear/gear-down</property>
 			</binding>
+		</action>
 	</animation>
 	
 	<animation>
