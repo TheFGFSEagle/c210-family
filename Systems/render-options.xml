@@ -2,7 +2,7 @@
 <PropertyList>
 	<filter>
 		<name>render-rain</name>
-		<update-interval-secs type="double">0.1</update-interval-secs>
+		<update-interval-secs type="double">1</update-interval-secs>
 		<type>gain</type>
 		<gain>1.0</gain>
 		<input>
@@ -12,11 +12,6 @@
 			<property>/environment/rain-norm</property>
 		</input>
 		<input>
-			<condition>
-				<not>
-					<property>/sim/model/effects/enable-glass-rain</property>
-				</not>
-			</condition>
 			<value>0</value>
 		</input>
 		<output>
@@ -25,7 +20,7 @@
 	</filter>
 	<filter>
 		<name>render-groundsplash</name>
-		<update-interval-secs type="double">0.1</update-interval-secs>
+		<update-interval-secs type="double">1</update-interval-secs>
 		<type>gain</type>
 		<gain>1.0</gain>
 		<input>
@@ -35,11 +30,6 @@
 			<property>/environment/aircraft-effects/ground-splash-norm</property>
 		</input>
 		<input>
-			<condition>
-				<not>
-					<property>/sim/model/effects/enable-glass-rain</property>
-				</not>
-			</condition>
 			<value>0</value>
 		</input>
 		<output>
@@ -48,7 +38,7 @@
 	</filter>
 	<filter>
 		<name>render-fog</name>
-		<update-interval-secs type="double">0.1</update-interval-secs>
+		<update-interval-secs type="double">1</update-interval-secs>
 		<type>gain</type>
 		<gain>1.0</gain>
 		<input>
@@ -58,11 +48,6 @@
 			<property>/environment/aircraft-effects/fog-level</property>
 		</input>
 		<input>
-			<condition>
-				<not>
-					<property>/sim/model/effects/enable-fog-frost</property>
-				</not>
-			</condition>
 			<value>0</value>
 		</input>
 		<output>
@@ -71,7 +56,7 @@
 	</filter>
 	<filter>
 		<name>render-frost</name>
-		<update-interval-secs type="double">0.1</update-interval-secs>
+		<update-interval-secs type="double">1</update-interval-secs>
 		<type>gain</type>
 		<gain>1.0</gain>
 		<input>
@@ -81,11 +66,6 @@
 			<property>/environment/aircraft-effects/frost-level</property>
 		</input>
 		<input>
-			<condition>
-				<not>
-					<property>/sim/model/effects/enable-fog-frost</property>
-				</not>
-			</condition>
 			<value>0</value>
 		</input>
 		<output>

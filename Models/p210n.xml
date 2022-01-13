@@ -41,6 +41,7 @@
 		<object-name>RightFlap</object-name>
 		<object-name>RightAileron</object-name>
 		<object-name>RightAileronTrimTab</object-name>
+		<object-name>WingMount</object-name>
 		<object-name>Com2Antenna</object-name> <!-- Com2Antenna is left, Com1 right -->
 		<object-name>Com1Antenna</object-name>
 		<property-base>sim/model/livery</property-base>
@@ -102,6 +103,8 @@
 		<object-name>RightFlap</object-name>
 		<object-name>RightAileron</object-name>
 		<object-name>RightAileronTrimTab</object-name>
+		<object-name>WingMount</object-name>
+		<object-name>PitotTube</object-name>
 		<object-name>NoseGearStrutInnerCylinder</object-name>
 		<object-name>LeftWheelStrut</object-name>
 		<object-name>RightWheelStrut</object-name>
@@ -1011,6 +1014,25 @@
 				<dep>-70</dep>
 			</entry>
 		</interpolation>
+	</animation>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>PitotTubeCover</object-name>
+		<cursor>pointer</cursor>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/model/pitot-tube-cover</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>PitotTubeCover</object-name>
+		<condition>
+			<property>sim/model/pilot-tube-cover</property>
+		</condition>
 	</animation>
 	
 	<model>

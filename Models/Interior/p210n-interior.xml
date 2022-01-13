@@ -66,5 +66,6 @@
 		<object-name>MiddleLeftSeat</object-name>
 		<object-name>MiddleRightSeat</object-name>
 		<object-name>RearSeat</object-name>
+		<object-name>Panel</object-name>
 	</effect>
 </PropertyList>
