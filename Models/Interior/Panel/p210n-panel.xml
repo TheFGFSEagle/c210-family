@@ -264,13 +264,13 @@
 		</offsets>
 	</model>
 	
-	<!-- controls panel -->
+	<!-- controls panels -->
 	<model>
-		<path>Controls/gear/gear.xml</path>
+		<path>Controls/left-controls-panel.xml</path>
 		<offsets>
-			<x-m>-0.428</x-m>
-			<y-m>-0.02</y-m>
-			<z-m>0.14</z-m>
+			<x-m>-0.429</x-m>
+			<y-m>-0.27</y-m>
+			<z-m>0.16</z-m>
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>

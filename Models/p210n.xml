@@ -387,11 +387,24 @@
 	<animation>
 		<type>select</type>
 		<object-name>FastPropeller</object-name>
+		<object-name>FastPropellerSpinner</object-name>
 		<condition>
 			<greater-than>
 				<property>engines/engine[0]/rpm</property>
 				<value>600</value>
 			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>PropellerSpinner</object-name>
+		<condition>
+			<not>
+				<greater-than>
+					<property>engines/engine[0]/rpm</property>
+					<value>600</value>
+				</greater-than>
+			</not>
 		</condition>
 	</animation>
 	

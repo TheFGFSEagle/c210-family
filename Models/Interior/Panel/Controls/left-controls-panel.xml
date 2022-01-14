@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>left-controls-panel.ac</path>
+	
+	<model>
+		<path>gear/gear.xml</path>
+		<offsets>
+			<x-m>0.001</x-m>
+			<y-m>0.23</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>press/alt-sel.xml</path>
+		<offsets>
+			<x-m>0.001</x-m>
+			<y-m>-0.2</y-m>
+			<z-m>0.03</z-m>
+		</offsets>
+	</model>
+</PropertyList>
