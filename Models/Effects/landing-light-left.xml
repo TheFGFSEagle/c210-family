@@ -8,6 +8,11 @@
 	</effect>
 	
 	<animation>
+		<type>noshadow</type>
+		<object-name>Light</object-name>
+	</animation>
+	
+	<animation>
 		<type>scale</type>
 		<object-name>Light</object-name>
 		<x-offset>0.2</x-offset>
