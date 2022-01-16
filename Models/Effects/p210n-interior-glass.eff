@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <PropertyList>
 	<name>Effects/p210n-interior-glass</name>
 	<inherits-from>Effects/glass</inherits-from>
@@ -20,7 +19,7 @@
 				<negative-z>Models/Effects/p210n-reflection-nz.png</negative-z>
 			</images>
 		</texture>
-		<use-reflection type="int"><use>sim/model/enable-interior-glass-reflections</use></use-reflection>
+		<use-reflection type="int"><use>sim/model/effects/enable-interior-glass-reflections</use></use-reflection>
 		<reflection-strength type="float">1</reflection-strength>
 	</parameters>
 </PropertyList>

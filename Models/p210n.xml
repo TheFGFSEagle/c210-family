@@ -66,12 +66,12 @@
 	</animation>
 	<effect>
 		<inherits-from>Effects/exterior-opaque</inherits-from>
-		<!--<object-name>NoseGearLeftDoorInterior</object-name>-->
-		<!--<object-name>NoseGearRightDoorInterior</object-name>
+		<object-name>NoseGearLeftDoorInterior</object-name>
+		<object-name>NoseGearRightDoorInterior</object-name>
 		<object-name>NoseGearWell</object-name>
-		<object-name>MainWheelWell</object-name>-->
-		<!--<object-name>LeftCowlFlapInterior</object-name>-->
-		<!--<object-name>RightCowlFlapInterior</object-name>-->
+		<object-name>MainWheelWell</object-name>
+		<object-name>LeftCowlFlapInterior</object-name>
+		<object-name>RightCowlFlapInterior</object-name>
 		<object-name>Fuselage</object-name>
 		<object-name>Rudder</object-name>
 		<object-name>NavAntennas</object-name>
@@ -106,6 +106,9 @@
 		<object-name>WingMount</object-name>
 		<object-name>PitotTube</object-name>
 		<object-name>NoseGearStrutInnerCylinder</object-name>
+		<object-name>NoseGearStrutOuterCylinder</object-name>
+		<object-name>NoseGearUpperLink</object-name>
+		<object-name>NoseGearLowerLink</object-name>
 		<object-name>LeftWheelStrut</object-name>
 		<object-name>RightWheelStrut</object-name>
 	</effect>
@@ -1032,7 +1035,8 @@
 	<animation>
 		<type>slider</type>
 		<object-name>PitotTubeCover</object-name>
-		<cursor>pointer</cursor>
+		<object-name>PitotTube</object-name>
+		<cursor>hand</cursor>
 		<action>
 			<binding>
 				<command>property-toggle</command>
@@ -1044,7 +1048,7 @@
 		<type>select</type>
 		<object-name>PitotTubeCover</object-name>
 		<condition>
-			<property>sim/model/pilot-tube-cover</property>
+			<property>sim/model/pitot-tube-cover</property>
 		</condition>
 	</animation>
 	

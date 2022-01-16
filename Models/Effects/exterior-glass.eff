@@ -13,24 +13,23 @@
 		<frost-level>0</frost-level>
 		<fog-level>0</fog-level>
 		<reflection-enabled type="int">1</reflection-enabled>
-		<reflect-map-enabled type="int">0</reflect-map-enabled>
-		<reflection-type>1</reflection-type>
+		<reflection-type type="int">2</reflection-type>
 		<reflection-dynamic type="int">1</reflection-dynamic>
-		<ambient-correction>0.4</ambient-correction>
+		<ambient-correction type="float">0.1</ambient-correction>
 		<reflection-correction type="float">0</reflection-correction>
-		<reflection-fresnel>0.2</reflection-fresnel>
-		<reflection-fresnel-factor type="float">1</reflection-fresnel-factor>
-		<reflection-noise type="float">0</reflection-noise>
-		<reflection-rainbow type="float">0.3</reflection-rainbow>
-		<texture n="5">
+		<reflection-fresnel type="float">1.0</reflection-fresnel>
+		<reflection-fresnel-factor type="float">0.8</reflection-fresnel-factor>
+		<reflection-noise type="float">0.0</reflection-noise>
+		<reflection-rainbow type="float">0.2</reflection-rainbow>
+		<texture n= "5">
 			<type>cubemap</type>
 			<images>
-				<positive-x>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/2.png</positive-x>
-				<negative-x>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/3.png</negative-x>
-				<positive-y>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/1.png</positive-y>
-				<negative-y>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/4.png</negative-y>
-				<positive-z>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/6.png</positive-z>
-				<negative-z>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/5.png</negative-z>
+				<positive-x>Aircraft/Generic/Effects/CubeMaps/buildings/N.png</positive-x>
+				<negative-x>Aircraft/Generic/Effects/CubeMaps/buildings/S.png</negative-x>
+				<positive-y>Aircraft/Generic/Effects/CubeMaps/buildings/W.png</positive-y>
+				<negative-y>Aircraft/Generic/Effects/CubeMaps/buildings/E.png</negative-y>
+				<positive-z>Aircraft/Generic/Effects/CubeMaps/buildings/U.png</positive-z>
+				<negative-z>Aircraft/Generic/Effects/CubeMaps/buildings/D.png</negative-z>
 			</images>
 		</texture>
 		<rain-enabled>2</rain-enabled>
