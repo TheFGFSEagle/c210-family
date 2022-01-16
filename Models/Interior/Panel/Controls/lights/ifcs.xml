@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>ifcs.ac</path>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>OuterKnob</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/ifcs/white-light-intensity-norm</property>
+		<factor>180</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/ifcs/white-light-intensity-norm</property>
+				<min>0.1</min>
+				<max>1</max>
+				<factor>0.05</factor>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>InnerKnob</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/ifcs/green-light-intensity-norm</property>
+		<factor>180</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/ifcs/green-light-intensity-norm</property>
+				<min>0.1</min>
+				<max>1</max>
+				<factor>0.05</factor>
+			</binding>
+		</action>
+		<!-- push to test green lights -->
+		<shift-action>
+			<binding>
+				<command>property-cycle</command>
+				<property>instrumentation/ifcs/green-light-test</property>
+				<value>0</value>
+				<value>1</value>
+			</binding>
+		</shift-action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>InnerKnob</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/ifcs/green-light-test</property>
+		<factor>0.008</factor>
+	</animation>
+</PropertyList>

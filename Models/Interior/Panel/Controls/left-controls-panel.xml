@@ -15,12 +15,12 @@
 		<path>switches/rocker-switch.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.18</y-m>
+			<y-m>0.08</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 		<overlay>
 			<params>
-				<property>controls/lighting/landing-lights</property>
+				<property>controls/lighting/nav-lights</property>
 			</params>
 		</overlay>
 	</model>
@@ -28,25 +28,12 @@
 		<path>switches/rocker-switch.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.165</y-m>
+			<y-m>0.1</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 		<overlay>
 			<params>
-				<property>controls/lighting/landing-lights</property>
-			</params>
-		</overlay>
-	</model>
-	<model>
-		<path>switches/rocker-switch.xml</path>
-		<offsets>
-			<x-m>0.001</x-m>
-			<y-m>0.14</y-m>
-			<z-m>0.03</z-m>
-		</offsets>
-		<overlay>
-			<params>
-				<property>controls/lighting/logo-lights</property>
+				<property>controls/lighting/beacon</property>
 			</params>
 		</overlay>
 	</model>
@@ -67,12 +54,12 @@
 		<path>switches/rocker-switch.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.1</y-m>
+			<y-m>0.14</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 		<overlay>
 			<params>
-				<property>controls/lighting/beacon</property>
+				<property>controls/lighting/logo-lights</property>
 			</params>
 		</overlay>
 	</model>
@@ -80,12 +67,25 @@
 		<path>switches/rocker-switch.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.08</y-m>
+			<y-m>0.165</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 		<overlay>
 			<params>
-				<property>controls/lighting/nav-lights</property>
+				<property>controls/lighting/landing-lights</property>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>switches/rocker-switch.xml</path>
+		<offsets>
+			<x-m>0.001</x-m>
+			<y-m>0.18</y-m>
+			<z-m>0.03</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/lighting/landing-lights</property>
 			</params>
 		</overlay>
 	</model>
@@ -94,7 +94,7 @@
 		<path>switches/rocker-switch.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.18</y-m>
+			<y-m>0.08</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 		<overlay>
@@ -107,7 +107,7 @@
 		<path>switches/rocker-switch.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.16</y-m>
+			<y-m>0.10</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 		<overlay>
@@ -120,7 +120,7 @@
 		<path>switches/rocker-switch.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.14</y-m>
+			<y-m>0.12</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 		<overlay>
@@ -133,7 +133,7 @@
 		<path>switches/rocker-switch.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.12</y-m>
+			<y-m>0.14</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 		<overlay>
@@ -146,7 +146,7 @@
 		<path>switches/rocker-switch.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.1</y-m>
+			<y-m>0.16</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 		<overlay>
@@ -159,7 +159,7 @@
 		<path>switches/rocker-switch.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.08</y-m>
+			<y-m>0.18</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 		<overlay>
@@ -170,10 +170,19 @@
 	</model>
 	
 	<model>
+		<path>lights/ifcs.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.05</y-m>
+			<z-m>-0.035</z-m>
+		</offsets>
+	</model>
+	
+	<model>
 		<path>press/alt-sel.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>-0.2</y-m>
+			<y-m>0</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 	</model>
