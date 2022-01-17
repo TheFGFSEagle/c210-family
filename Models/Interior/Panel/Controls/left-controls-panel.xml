@@ -177,13 +177,49 @@
 			<z-m>-0.035</z-m>
 		</offsets>
 	</model>
+	<model>
+		<path>lights/panel.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.05</y-m>
+			<z-m>0.03</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<outer-prop>controls/lighting/panel-flood-norm</outer-prop>
+				<inner-prop>controls/lighting/panel-post-norm</inner-prop>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>lights/panel.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0.03</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<outer-prop>controls/lighting/panel-integral-norm</outer-prop>
+				<inner-prop>controls/lighting/panel-electroluminescent-norm</inner-prop>
+			</params>
+		</overlay>
+	</model>
 	
 	<model>
 		<path>press/alt-sel.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
 			<y-m>0</y-m>
-			<z-m>0.03</z-m>
+			<z-m>-0.03</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>press/press-switch.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.04</y-m>
+			<z-m>-0.03</z-m>
 		</offsets>
 	</model>
 </PropertyList>

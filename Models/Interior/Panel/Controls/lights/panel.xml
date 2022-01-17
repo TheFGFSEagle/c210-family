@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>panel.ac</path>
+	
+	<params>
+		<outer-prop>controls/lighting/panel-flood-norm</outer-prop>
+		<inner-prop>controls/lighting/panel-post-norm</inner-prop>
+	</params>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>OuterKnob</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property alias="../../params/outer-prop"/>
+		<factor>180</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/outer-prop"/>
+				<min>0</min>
+				<max>1</max>
+				<factor>0.05</factor>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>InnerKnob</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property alias="../../params/inner-prop"/>
+		<factor>180</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/inner-prop"/>
+				<min>0</min>
+				<max>1</max>
+				<factor>0.05</factor>
+			</binding>
+		</action>
+	</animation>
+</PropertyList>
