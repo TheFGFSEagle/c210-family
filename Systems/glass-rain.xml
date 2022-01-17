@@ -29,12 +29,10 @@
 			<expression>
 				<prod>
 					<sin>
-						<deg2rad>
-							<property>/orientation/side-slip-deg</property>
-						</deg2rad>
+						<property>/orientation/side-slip-rad</property>
 					</sin>
 					<property>/velocities/airspeed-kt</property>
-					<value>0.001</value>
+					<value>0.2</value>
 				</prod>
 			</expression>
 		</input>
@@ -161,7 +159,7 @@
 	</filter>
 	<filter>
 		<name>splash-y</name>
-		<update-interval-secs type="double">1</update-interval-secs>
+		<update-interval-secs type="double">0.1</update-interval-secs>
 		<type>gain</type>
 		<gain>1.0</gain>
 		<input>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>magnetos.ac</path>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>MagnetoSwitch</object-name>
+		<action>
+			<binding>
+				<condition>
+					<equals>
+						<property>controls/engines/engine/magnetos</property>
+						<value>0</value>
+					</equals>
+				</condition>
+				<command>property-toggle</command>
+				<property>sim/model/controls/magnetos/key-inserted</property>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<condition>
+			<property>sim/model/controls/magnetos/key-inserted</property>
+		</condition>
+		<type>select</type>
+		<object-name>MainKey</object-name>
+		<object-name>SecondKey</object-name>
+		<object-name>Ring</object-name>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>MainKey</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>controls/engines/engine/magnetos</property>
+		<factor>25</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine/magnetos</property>
+				<min>0</min>
+				<max>4</max> <!-- 0 = OFF, 1 = LEFT, 2 = RIGHT, 3 = BOTH, 4 = START -->
+				<factor>1</factor>
+			</binding>
+			<binding>
+				<condition>
+					<equals>
+						<property>controls/engines/engine/magnetos</property>
+						<value>3</value>
+					</equals>
+				</condition>
+				<command>property-assign</command>
+				<property>controls/engines/engine/starter</property>
+				<value type="bool">true</value>
+			</binding>
+		</action>
+		<release>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine/magnetos</property>
+				<min>0</min>
+				<max>3</max> <!-- spring-loaded START position -->
+				<factor>1</factor>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/engines/engine/starter</property>
+				<value type="bool">false</value>
+			</binding>
+		</release>
+	</animation>
+</PropertyList>

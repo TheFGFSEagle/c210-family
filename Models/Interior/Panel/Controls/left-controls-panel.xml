@@ -207,6 +207,15 @@
 	</model>
 	
 	<model>
+		<path>magnetos/magnetos.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.04</y-m>
+			<z-m>0.02</z-m>
+		</offsets>
+	</model>
+	
+	<model>
 		<path>press/alt-sel.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
