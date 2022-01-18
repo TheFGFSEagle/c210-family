@@ -6,16 +6,16 @@
 		<path>gear/gear.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.23</y-m>
+			<y-m>0.215</y-m>
 			<z-m>0</z-m>
 		</offsets>
 	</model>
 	
 	<model>
-		<path>switches/rocker-switch.xml</path>
+		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.08</y-m>
+			<y-m>0.06</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 		<overlay>
@@ -25,10 +25,10 @@
 		</overlay>
 	</model>
 	<model>
-		<path>switches/rocker-switch.xml</path>
+		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.1</y-m>
+			<y-m>0.08</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 		<overlay>
@@ -38,10 +38,10 @@
 		</overlay>
 	</model>
 	<model>
-		<path>switches/rocker-switch.ac</path>
+		<path>switches/white.ac</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.12</y-m>
+			<y-m>0.1</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 		<overlay>
@@ -51,10 +51,10 @@
 		</overlay>
 	</model>
 	<model>
-		<path>switches/rocker-switch.xml</path>
+		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.14</y-m>
+			<y-m>0.12</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 		<overlay>
@@ -64,10 +64,10 @@
 		</overlay>
 	</model>
 	<model>
-		<path>switches/rocker-switch.xml</path>
+		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.165</y-m>
+			<y-m>0.145</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 		<overlay>
@@ -77,10 +77,10 @@
 		</overlay>
 	</model>
 	<model>
-		<path>switches/rocker-switch.xml</path>
+		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.18</y-m>
+			<y-m>0.16</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 		<overlay>
@@ -91,10 +91,10 @@
 	</model>
 	
 	<model>
-		<path>switches/rocker-switch.xml</path>
+		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.08</y-m>
+			<y-m>0.06</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 		<overlay>
@@ -104,10 +104,10 @@
 		</overlay>
 	</model>
 	<model>
-		<path>switches/rocker-switch.xml</path>
+		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.10</y-m>
+			<y-m>0.08</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 		<overlay>
@@ -117,10 +117,10 @@
 		</overlay>
 	</model>
 	<model>
-		<path>switches/rocker-switch.xml</path>
+		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.12</y-m>
+			<y-m>0.1</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 		<overlay>
@@ -130,10 +130,10 @@
 		</overlay>
 	</model>
 	<model>
-		<path>switches/rocker-switch.xml</path>
+		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.14</y-m>
+			<y-m>0.12</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 		<overlay>
@@ -143,10 +143,10 @@
 		</overlay>
 	</model>
 	<model>
-		<path>switches/rocker-switch.xml</path>
+		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.16</y-m>
+			<y-m>0.14</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 		<overlay>
@@ -156,10 +156,10 @@
 		</overlay>
 	</model>
 	<model>
-		<path>switches/rocker-switch.xml</path>
+		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.18</y-m>
+			<y-m>0.16</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 		<overlay>
@@ -173,7 +173,7 @@
 		<path>lights/ifcs.xml</path>
 		<offsets>
 			<x-m>0</x-m>
-			<y-m>0.05</y-m>
+			<y-m>0.02</y-m>
 			<z-m>-0.035</z-m>
 		</offsets>
 	</model>
@@ -181,7 +181,7 @@
 		<path>lights/panel.xml</path>
 		<offsets>
 			<x-m>0</x-m>
-			<y-m>0.05</y-m>
+			<y-m>0.02</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 		<overlay>
@@ -195,7 +195,7 @@
 		<path>lights/panel.xml</path>
 		<offsets>
 			<x-m>0</x-m>
-			<y-m>0</y-m>
+			<y-m>-0.03</y-m>
 			<z-m>0.03</z-m>
 		</offsets>
 		<overlay>
@@ -210,8 +210,70 @@
 		<path>magnetos/magnetos.xml</path>
 		<offsets>
 			<x-m>0</x-m>
-			<y-m>-0.04</y-m>
+			<y-m>-0.11</y-m>
 			<z-m>0.02</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>switches/fuelpump-hi.xml</path>
+		<offsets>
+			<x-m>0.001</x-m>
+			<y-m>-0.16</y-m>
+			<z-m>0.02</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>switches/fuelpump.xml</path>
+		<offsets>
+			<x-m>0.001</x-m>
+			<y-m>-0.15</y-m>
+			<z-m>0.02</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>switches/master.xml</path>
+		<offsets>
+			<x-m>0.001</x-m>
+			<y-m>-0.19</y-m>
+			<z-m>0.02</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/engines/engine/master-alt</property>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>switches/master.xml</path>
+		<offsets>
+			<x-m>0.001</x-m>
+			<y-m>-0.18</y-m>
+			<z-m>0.02</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/battery-switch</property>
+			</params>
+		</overlay>
+	</model>
+	
+	<model>
+		<path>alt-static-air/alt-static-air.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.18</y-m>
+			<z-m>-0.03</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>press/dump-valve.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.23</y-m>
+			<z-m>0.03</z-m>
 		</offsets>
 	</model>
 	
@@ -219,7 +281,7 @@
 		<path>press/alt-sel.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0</y-m>
+			<y-m>-0.06</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 	</model>
@@ -227,7 +289,7 @@
 		<path>press/press-switch.xml</path>
 		<offsets>
 			<x-m>0</x-m>
-			<y-m>-0.04</y-m>
+			<y-m>-0.05</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 	</model>

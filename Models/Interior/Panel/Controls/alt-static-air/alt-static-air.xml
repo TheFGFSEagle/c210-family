@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>alt-static-air.ac</path>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>Knob</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>controls/alt-static-air</property>
+		<factor>0.03</factor>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/alt-static-air</property>
+			</binding>
+		</action>
+	</animation>
+</PropertyList>

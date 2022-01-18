@@ -1,25 +1,21 @@
 <?xml version="1.0"?>
 <PropertyList>
-	<path>rocker-switch.ac</path>
-	
-	<params>
-		<property>none</property>
-	</params>
+	<path>yellow.ac</path>
 	
 	<animation>
 		<type>knob</type>
-		<object-name>RockerSwitch</object-name>
+		<object-name>Switch</object-name>
 		<axis>
 			<x>0</x>
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-		<property alias="../../params/property"/>
+		<property>controls/engines/engine/fuel-pump</property>
 		<factor>40</factor>
 		<action>
 			<binding>
 				<command>property-toggle</command>
-				<property alias="../../../../params/property"/>
+				<property>controls/engines/engine/fuel-pump</property>
 			</binding>
 		</action>
 	</animation>

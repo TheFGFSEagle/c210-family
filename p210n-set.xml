@@ -116,6 +116,11 @@
 					<position-norm>0</position-norm>
 				</baggage>
 			</doors>
+			<controls>
+				<magnetos>
+					<key-inserted type="bool">true</key-inserted>
+				</magnetos>
+			</controls>
 		</model>
 		<menubar include="gui/menu/p210n-menu.xml"></menubar>
 		<help include="gui/help/p210n-help.xml"></help>
@@ -183,6 +188,7 @@
 			<path>/sim/model/effects/enable-interior-glass-reflections</path>
 			<path>/sim/model/effects/enable-glass-rain</path>
 			<path>/sim/model/effects/enable-fog-frost</path>
+			<path>/sim/model/controls/magnetos/key-inserted</path>
 			<path>/sim/model/livery/file</path>
 		</aircraft-data>
 	</sim>
@@ -237,6 +243,7 @@
 		<engines>
 			<engine>
 				<cowl-flaps-norm>1</cowl-flaps-norm>
+				<fuel-pump-hi type="bool">false</fuel-pump-hi>
 			</engine>
 		</engines>
 	</controls>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>dump-valve.ac</path>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>Handle</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>controls/pressurization/dump-valve</property>
+		<factor>0.05</factor>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/pressurization/dump-valve</property>
+			</binding>
+		</action>
+	</animation>
+</PropertyList>

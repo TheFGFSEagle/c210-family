@@ -30,6 +30,18 @@
 	</animation>
 	
 	<animation>
+		<type>rotate</type>
+		<object-name>MainKey</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>controls/engines/engine/starter</property>
+		<factor>25</factor>
+	</animation>
+	
+	<animation>
 		<type>knob</type>
 		<object-name>MainKey</object-name>
 		<axis>
@@ -44,7 +56,7 @@
 				<command>property-adjust</command>
 				<property>controls/engines/engine/magnetos</property>
 				<min>0</min>
-				<max>4</max> <!-- 0 = OFF, 1 = LEFT, 2 = RIGHT, 3 = BOTH, 4 = START -->
+				<max>3</max>
 				<factor>1</factor>
 			</binding>
 			<binding>
@@ -60,13 +72,6 @@
 			</binding>
 		</action>
 		<release>
-			<binding>
-				<command>property-adjust</command>
-				<property>controls/engines/engine/magnetos</property>
-				<min>0</min>
-				<max>3</max> <!-- spring-loaded START position -->
-				<factor>1</factor>
-			</binding>
 			<binding>
 				<command>property-assign</command>
 				<property>controls/engines/engine/starter</property>

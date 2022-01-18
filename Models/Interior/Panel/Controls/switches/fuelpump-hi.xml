@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>red.ac</path>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Switch</object-name>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<property>controls/engines/engine/fuel-pump-hi</property>
+		<factor>40</factor>
+		<action>
+			<binding>
+				<!-- do nothing if the fuel pump isn't already switched on in normal mode -->
+				<condition>
+					<property>controls/engines/engine/fuel-pump</property>
+				</condition>
+				<command>property-assign</command>
+				<property>controls/engines/engine/fuel-pump-hi</property>
+				<value type="bool">true</value>
+			</binding>
+		</action>
+		<release>
+			<binding>
+				<!-- do nothing if the fuel pump isn't already switched on in normal mode -->
+				<condition>
+					<property>controls/engines/engine/fuel-pump</property>
+				</condition>
+				<command>property-assign</command>
+				<property>controls/engines/engine/fuel-pump-hi</property>
+				<value type="bool">false</value>
+			</binding>
+		</release>
+	</animation>
+</PropertyList>
