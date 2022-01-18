@@ -246,6 +246,10 @@
 				<fuel-pump-hi type="bool">false</fuel-pump-hi>
 			</engine>
 		</engines>
+		<anti-ice>
+			<window-heat>false</window-heat>
+			<wing-deice>0</wing-deice>
+		</anti-ice>
 	</controls>
 	
 	<consumables>

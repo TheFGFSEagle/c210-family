@@ -156,17 +156,12 @@
 		</overlay>
 	</model>
 	<model>
-		<path>switches/white.xml</path>
+		<path>switches/wing-deice.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
 			<y-m>0.16</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
-		<overlay>
-			<params>
-				<property>controls/anti-ice/deice-press</property>
-			</params>
-		</overlay>
 	</model>
 	
 	<model>

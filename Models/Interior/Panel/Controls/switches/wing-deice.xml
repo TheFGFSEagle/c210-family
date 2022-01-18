@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>white.ac</path>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Switch</object-name>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<property>controls/anti-ice/wing-deice</property>
+		<factor>40</factor>
+		<action>
+			<binding>
+				<command>property-assign</command>
+				<property>controls/anti-ice/wing-deice</property>
+				<value>1</value>
+			</binding>
+		</action>
+		<release>
+			<binding>
+				<command>property-interpolate</command>
+				<property>controls/anti-ice/wing-deice</property>
+				<value>0</value>
+				<time>0.01</time>
+			</binding>
+		</release>
+	</animation>
+</PropertyList>
