@@ -67,7 +67,7 @@
 				<property>instrumentation/nav[1]/radials/selected-deg</property>
 				<factor>1</factor>
 				<min>0</min>
-				<max>359</max>
+				<max>360</max>
 				<wrap>true</wrap>
 			</binding>
 		</action>

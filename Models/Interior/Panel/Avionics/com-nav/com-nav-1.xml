@@ -1,13 +1,11 @@
 <?xml version="1.0"?>
 <PropertyList>
 	<params>
-		<com-freq-mhz>instrumentation/comm[0]/frequencies/dialed-mhz</com-freq-mhz>
-		<com-freq-khz>instrumentation/comm[0]/frequencies/dialed-khz</com-freq-khz>
+		<com-freq-mhz>instrumentation/comm[0]/frequencies/selected-mhz</com-freq-mhz>
 		<com-volume>instrumentation/comm[0]/volume</com-volume>
 		<com-volume-script>p210n.comNav1.adjustComVolume()</com-volume-script>
 		<com-squelch>instrumentation/comm[0]/squelch</com-squelch>
-		<nav-freq-mhz>instrumentation/nav[0]/frequencies/dialed-mhz</nav-freq-mhz>
-		<nav-freq-khz>instrumentation/nav[0]/frequencies/dialed-khz</nav-freq-khz>
+		<nav-freq-mhz>instrumentation/nav[0]/frequencies/selected-mhz</nav-freq-mhz>
 		<nav-volume>instrumentation/nav[0]/volume</nav-volume>
 		<nav-mode>instrumentation/nav[0]/mode</nav-mode>
 		<com-memory1-pressed>instrumentation/comm[0]/memory1-pressed</com-memory1-pressed>
@@ -27,7 +25,7 @@
 		<label-text>COM/NAV 1</label-text>
 	</params>
 	
-	<path>com-nav.ac</path>
+	<path>com-nav-1.ac</path>
 	
 	<animation>
 		<type>knob</type>
@@ -44,6 +42,7 @@
 				<factor>1</factor>
 				<min>118</min>
 				<max>135</max>
+				<mask>integer</mask>
 			</binding>
 		</action>
 	</animation>
@@ -53,15 +52,16 @@
 		<axis>
 			<object-name>COMFreqKnobAxis</object-name>
 		</axis>
-		<property alias="../../params/com-freq-khz"/>
+		<property alias="../../params/com-freq-mhz"/>
 		<factor>200</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property alias="../../../../params/com-freq-khz"/>
+				<property alias="../../../../params/com-freq-mhz"/>
 				<factor>0.05</factor>
 				<min>0</min>
 				<max>0.95</max>
+				<mask>decimal</mask>
 			</binding>
 		</action>
 	</animation>
@@ -81,6 +81,7 @@
 				<factor>1</factor>
 				<min>108</min>
 				<max>117</max>
+				<mask>integer</mask>
 			</binding>
 		</action>
 	</animation>
@@ -90,15 +91,16 @@
 		<axis>
 			<object-name>NAVFreqKnobAxis</object-name>
 		</axis>
-		<property alias="../../params/nav-freq-khz"/>
+		<property alias="../../params/nav-freq-mhz"/>
 		<factor>200</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property alias="../../../../params/nav-freq-khz"/>
+				<property alias="../../../../params/nav-freq-mhz"/>
 				<factor>0.05</factor>
 				<min>0</min>
 				<max>0.95</max>
+				<mask>decimal</mask>
 			</binding>
 		</action>
 	</animation>
@@ -188,11 +190,10 @@
 						<value>-1</value>
 					</equals>
 				</condition>						
-				<command>property-adjust</command>
+				<command>property-interpolate</command>
 				<property alias="../../../../params/nav-mode"/>
-				<factor>0</factor>
-				<min>0</min>
-				<max>1</max>
+				<value>0</value>
+				<time>0.01</time>
 			</binding>
 		</release>
 	</animation>

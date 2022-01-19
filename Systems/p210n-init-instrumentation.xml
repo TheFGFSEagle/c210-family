@@ -21,7 +21,8 @@
 	<!-- radios -->
 	<comm n="0">
 		<frequencies>
-			<selected-mhz type="double">118.000</selected-mhz>
+			<selected-mhz type="string">118.000</selected-mhz>
+			<selected-mhz-fmt type="string">118.00</selected-mhz-fmt>
 			<memory n="0" type="double">118.000</memory>
 			<memory n="1" type="double">118.000</memory>
 			<memory n="2" type="double">118.000</memory>
@@ -30,7 +31,8 @@
 	</comm>
 	<comm n="1">
 		<frequencies>
-			<selected-mhz type="double">118.000</selected-mhz>
+			<selected-mhz type="string">118.000</selected-mhz>
+			<selected-mhz-fmt type="string">118.00</selected-mhz-fmt>
 			<memory n="0" type="double">118.000</memory>
 			<memory n="1" type="double">118.000</memory>
 			<memory n="2" type="double">118.000</memory>
@@ -39,7 +41,8 @@
 	</comm>
 	<nav n="0">
 		<frequencies>
-			<selected-mhz type="double">108.000</selected-mhz>
+			<selected-mhz type="string">108.000</selected-mhz>
+			<selected-mhz-fmt type="string">108.00</selected-mhz-fmt>
 			<memory n="0" type="double">108.000</memory>
 			<memory n="1" type="double">108.000</memory>
 			<memory n="2" type="double">108.000</memory>
@@ -48,7 +51,8 @@
 	</nav>
 	<nav n="1">
 		<frequencies>
-			<selected-mhz type="double">108.000</selected-mhz>
+			<selected-mhz type="string">108.000</selected-mhz>
+			<selected-mhz-fmt type="string">108.00</selected-mhz-fmt>
 			<memory n="0" type="double">108.000</memory>
 			<memory n="1" type="double">108.000</memory>
 			<memory n="2" type="double">108.000</memory>
@@ -60,6 +64,5 @@
 		<inner type="bool">false</inner>
 		<middle type="bool">false</middle>
 		<outer type="bool">false</outer>
-		<sensitivity>1.0</sensitivity>
 	</marker-beacon>
 </PropertyList>

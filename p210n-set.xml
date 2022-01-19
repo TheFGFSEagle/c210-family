@@ -176,12 +176,25 @@
 			<path>/controls/engines/engine/propeller-pitch</path>
 			<path>/controls/engines/engine/mixture</path>
 			<path>/controls/engines/engine/magnetos</path>
+			<path>/controls/engines/engine/fuel-pump</path>
+			<path>/controls/engines/engine/fuel-pump-hi</path>
+			<path>/controls/engines/engine/master-alt</path>
+			<path>/controls/electric/battery-switch</path>
+			<path>/controls/anti-ice/pitot-heat</path>
+			<path>/controls/anti-ice/wing-deice</path>
+			<path>/controls/anti-ice/deice-light</path>
+			<path>/controls/anti-ice/window-heat</path>
 			<path>/controls/flight/rudder</path>
 			<path>/controls/flight/aileron</path>
 			<path>/controls/flight/elevator</path>
 			<path>/controls/flight/flaps</path>
 			<path>/controls/gear/brake-parking</path>
 			<path>/controls/gear/gear-down</path>
+			<path>/controls/alt-static-air</path>
+			<path>/controls/pressurization/dump-valve</path>
+			<path>/controls/pressurization/pressurize</path>
+			<path>/controls/pressurization/selected-cabin-altitude-ft</path>
+			<path>/controls/lighting</path>
 			<path>/sim/model/doors/pilot/position-norm</path>
 			<path>/sim/model/doors/emergency-exit/position-norm</path>
 			<path>/sim/model/doors/baggagge/position-norm</path>
@@ -190,19 +203,47 @@
 			<path>/sim/model/effects/enable-fog-frost</path>
 			<path>/sim/model/controls/magnetos/key-inserted</path>
 			<path>/sim/model/livery/file</path>
+			<path>/instrumentation/nav[0]/radials/selected-deg</path>
+			<path>/instrumentation/nav[0]/frequencies</path>
+			<path>/instrumentation/nav[0]/power-btn</path>
+			<path>/instrumentation/nav[0]/ident</path>
+			<path>/instrumentation/nav[0]/volume</path>
+			<path>/instrumentation/nav[1]/radials/selected-deg</path>
+			<path>/instrumentation/nav[1]/frequencies</path>
+			<path>/instrumentation/nav[1]/power-btn</path>
+			<path>/instrumentation/nav[1]/ident</path>
+			<path>/instrumentation/nav[1]/volume</path>
+			<path>/instrumentation/comm[0]/frequencies</path>
+			<path>/instrumentation/comm[0]/power-btn</path>
+			<path>/instrumentation/comm[0]/volume</path>
+			<path>/instrumentation/comm[1]/frequencies</path>
+			<path>/instrumentation/comm[1]/power-btn</path>
+			<path>/instrumentation/comm[1]/volume</path>
+			<path>/instrumentation/dme[0]/frequencies/selected-mhz</path>
+			<path>/instrumentation/dme[0]/power-btn</path>
+			<path>/instrumentation/dme[0]/ident</path>
+			<path>/instrumentation/adf[0]/frequencies/selected-khz</path>
+			<path>/instrumentation/adf[0]/frequencies/standby-khz</path>
+			<path>/instrumentation/adf[0]/power-btn</path>
+			<path>/instrumentation/adf[0]/volume-norm</path>
+			<path>/instrumentation/altimeter/setting-inhg</path>
+			<path>/instrumentation/altimeter[1]/setting-inhg</path>
+			<path>/instrumentation/heading-indicator/heading-bug-deg</path>
+			<path>/instrumentation/attitude-indicator/pitch-offset-deg</path>
+			<path>/instrumentation/egt/target-temperature-degf</path>
+			<path>/instrumentation/ifcs/green-light-intensity-norm</path>
+			<path>/instrumentation/ifcs/white-light-intensity-norm</path>
 		</aircraft-data>
 	</sim>
 	
 	<nasal>
 		<utils>
 			<file>Nasal/utils.nas</file>
-			<enabled type="bool">true</enabled>
 		</utils>
 		<p210n>
 			<file>Nasal/p210n.nas</file>
 			<file>Nasal/autostart.nas</file>
 			<file>Nasal/radios.nas</file>
-			<enabled type="bool">true</enabled>
 		</p210n>
 	</nasal>
 	
