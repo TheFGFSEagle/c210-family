@@ -16,7 +16,7 @@
 				<com-memory3-pressed>instrumentation/comm[1]/memory3-pressed</com-memory3-pressed>
 				<nav-memory1-pressed>instrumentation/nav[1]/memory1-pressed</nav-memory1-pressed>
 				<nav-memory2-pressed>instrumentation/nav[1]/memory2-pressed</nav-memory2-pressed>
-				<nav-memory3-pressed>instrumentation/nav[1]/memory1-pressed</nav-memory3-pressed>
+				<nav-memory3-pressed>instrumentation/nav[1]/memory3-pressed</nav-memory3-pressed>
 				<com-memory1-script>p210n.comNav2.memoryPressed("com", 1);</com-memory1-script>
 				<com-memory2-script>p210n.comNav2.memoryPressed("com", 2);</com-memory2-script>
 				<com-memory3-script>p210n.comNav2.memoryPressed("com", 3);</com-memory3-script>
