@@ -233,6 +233,7 @@
 			<path>/instrumentation/egt/target-temperature-degf</path>
 			<path>/instrumentation/ifcs/green-light-intensity-norm</path>
 			<path>/instrumentation/ifcs/white-light-intensity-norm</path>
+			<path>/fdm/jsbsim/propulsion/engine/tach-time-sec</path>
 		</aircraft-data>
 	</sim>
 	
