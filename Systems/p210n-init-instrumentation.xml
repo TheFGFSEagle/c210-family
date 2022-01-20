@@ -13,6 +13,7 @@
 	</vacuum>
 	<tachometer>
 		<indicated-engine-rpm alias="/engines/engine/rpm"/>
+		<indicated-tach-time-hours alias="/fdm/jsbsim/propulsion/engine/tach-time-hours"/>
 	</tachometer>
 	<altimeter n="1">
 		<serviceable type="bool">true</serviceable>

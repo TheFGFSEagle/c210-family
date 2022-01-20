@@ -92,4 +92,31 @@
             <output>propulsion/engine[0]/bsfc-lbs_hphr</output>
         </fcs_function>
     </channel>
+    
+    <!-- Allow disabling of engine time recording for testing purposes -->
+    <property value="1">propulsion/engine/record-tach-time</property>
+    <channel name="Engine tach time" execrate="120" execute="propulsion/engine/record-tach-time">
+        <fcs_function>
+            <function>
+                <sum>
+                    <quotient>
+                        <property>propulsion/engine/rpm</property>
+                        <value>2700</value>
+                    </quotient>
+                    <property>propulsion/engine/tach-time-sec</property>
+                </sum>
+            </function>
+            <output>propulsion/engine/tach-time-sec</output>
+        </fcs_function>
+        
+        <fcs_function>
+            <function>
+                <product>
+                    <property>propulsion/engine/tach-time-sec</property>
+                    <value>0.000277777777777777</value>
+                </product>
+            </function>
+            <output>propulsion/engine/tach-time-hours</output>
+        </fcs_function>
+    </channel>
 </system>

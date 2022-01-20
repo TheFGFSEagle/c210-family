@@ -24,7 +24,7 @@
 			<prod>
 				<floor>
 					<div>
-						<property>instrumentation/tachometer/indicated-engine-time-hours</property>
+						<property>instrumentation/tachometer/indicated-tach-time-hours</property>
 						<value>1000</value>
 					</div>
 				</floor>
@@ -42,7 +42,7 @@
 			<prod>
 				<floor>
 					<div>
-						<property>instrumentation/tachometer/indicated-engine-time-hours</property>
+						<property>instrumentation/tachometer/indicated-tach-time-hours</property>
 						<value>100</value>
 					</div>
 				</floor>
@@ -60,7 +60,7 @@
 			<prod>
 				<floor>
 					<div>
-						<property>instrumentation/tachometer/indicated-engine-time-hours</property>
+						<property>instrumentation/tachometer/indicated-tach-time-hours</property>
 						<value>10</value>
 					</div>
 				</floor>
@@ -77,7 +77,7 @@
 		<expression>
 			<prod>
 				<floor>
-					<property>instrumentation/tachometer/indicated-engine-time-hours</property>
+					<property>instrumentation/tachometer/indicated-tach-time-hours</property>
 				</floor>
 				<value>-36</value>
 			</prod>
@@ -92,7 +92,7 @@
 		<expression>
 			<prod>
 				<prod>
-					<property>instrumentation/tachometer/indicated-engine-time-hours</property>
+					<property>instrumentation/tachometer/indicated-tach-time-hours</property>
 					<value>10</value>
 				</prod>
 				<value>-36</value>
