@@ -10,19 +10,19 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/chronometer/mode-button-pressed</property>
+		<property>instrumentation/clock/mode-button-pressed</property>
 		<factor>0.003</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/chronometer/mode-button-pressed</property>
+				<property>instrumentation/clock/mode-button-pressed</property>
 				<value>1</value>
 			</binding>
 		</action>
 		<release>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/chronometer/mode-button-pressed</property>
+				<property>instrumentation/clock/mode-button-pressed</property>
 				<value>0</value>
 			</binding>
 		</release>
@@ -35,19 +35,19 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/chronometer/set-button-pressed</property>
+		<property>instrumentation/clock/set-button-pressed</property>
 		<factor>0.003</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/chronometer/set-button-pressed</property>
+				<property>instrumentation/clock/set-button-pressed</property>
 				<value>1</value>
 			</binding>
 		</action>
 		<release>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/chronometer/set-button-pressed</property>
+				<property>instrumentation/clock/set-button-pressed</property>
 				<value>0</value>
 			</binding>
 		</release>
@@ -60,19 +60,19 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/chronometer/start-stop-button-pressed</property>
+		<property>instrumentation/clock/start-stop-button-pressed</property>
 		<factor>0.003</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/chronometer/start-stop-button-pressed</property>
+				<property>instrumentation/clock/start-stop-button-pressed</property>
 				<value>1</value>
 			</binding>
 		</action>
 		<release>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/chronometer/start-stop-button-pressed</property>
+				<property>instrumentation/clock/start-stop-button-pressed</property>
 				<value>0</value>
 			</binding>
 		</release>
