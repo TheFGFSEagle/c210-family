@@ -100,8 +100,8 @@
             <function>
                 <sum>
                     <quotient>
-                        <property>propulsion/engine/rpm</property>
-                        <value>2700</value>
+                        <property>propulsion/engine/engine-rpm</property>
+                        <value>2500</value>
                     </quotient>
                     <property>propulsion/engine/tach-time-sec</property>
                 </sum>
