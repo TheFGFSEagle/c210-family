@@ -1,4 +1,5 @@
 # Miscellaneous utility functions
+# by TheEagle
 
 
 # Remove an item from a vector

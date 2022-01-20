@@ -1,3 +1,6 @@
+# Classes to handle COM/NAV/DME/ADF radios and displays and audio panel
+# by TheEagle
+
 var ComNav = {
 	new: func(deviceNum, instrumentationNode) {
 		var obj = {

@@ -1,3 +1,6 @@
+# Miscellaneous aircraft setup
+# by TheEagle
+
 # XXX: For some reason this throws an Nasal error "too many open files" ?
 #var p210nModule = modules.Module.new("p210n");
 #p210nModule.setDebug(1);
@@ -7,6 +10,8 @@
 
 # Livery dialog
 aircraft.livery.init("Models/Liveries");
+
+# Save aircraft data once a minute
 aircraft.data.save(1);
 
 # Doors
