@@ -11,7 +11,7 @@
 			<z>0</z>
 		</axis>
 		<property>instrumentation/chronometer/mode-button-pressed</property>
-		<factor>0.002</factor>
+		<factor>0.003</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
@@ -36,7 +36,7 @@
 			<z>0</z>
 		</axis>
 		<property>instrumentation/chronometer/set-button-pressed</property>
-		<factor>0.002</factor>
+		<factor>0.003</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
@@ -61,7 +61,7 @@
 			<z>0</z>
 		</axis>
 		<property>instrumentation/chronometer/start-stop-button-pressed</property>
-		<factor>0.002</factor>
+		<factor>0.003</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
