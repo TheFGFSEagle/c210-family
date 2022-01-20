@@ -1,7 +1,6 @@
 var autostart = func() {
 	setprop("/controls/electric/battery-switch", 1);
 	setprop("/controls/engines/engine[0]/magnetos", 3);
-	setprop("/controls/engines/engine[0]/cutoff", 1);
 	setprop("/controls/engines/engine[0]/propeller-pitch", 1);
 	setprop("/controls/engines/engine[0]/starter", 1);
 	t = maketimer(3, func() {

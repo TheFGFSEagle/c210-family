@@ -225,7 +225,7 @@
 			<path>/instrumentation/adf[0]/frequencies/selected-khz</path>
 			<path>/instrumentation/adf[0]/frequencies/standby-khz</path>
 			<path>/instrumentation/adf[0]/power-btn</path>
-			<path>/instrumentation/adf[0]/volume-norm</path>
+			<path>/instrumentation/adf[0]/volume</path>
 			<path>/instrumentation/altimeter/setting-inhg</path>
 			<path>/instrumentation/altimeter[1]/setting-inhg</path>
 			<path>/instrumentation/heading-indicator/heading-bug-deg</path>
