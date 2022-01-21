@@ -168,3 +168,184 @@ var AudioControl = {
 };
 
 var audioControl = AudioControl.new(props.globals.getNode("/instrumentation"))
+
+
+var DME = {
+	new: func(instrumentationNode) {
+		var obj = {
+			parents: [DME],
+			sources: ["NAV2", "HOLD", "NAV1", "RNAV"],
+			modes: ["OFF", "ON", "TEST"],
+		};
+		
+		obj.rootNode = instrumentationNode.getNode("dme");
+		obj.nav1Node = instrumentationNode.getNode("nav");
+		obj.nav2Node = instrumentationNode.getNode("nav[1]");
+		obj.rnavNode = instrumentationNode.getNode("rnav", 1);
+		obj.sourceNode = obj.rootNode.getNode("source");
+		obj.sourceKnobNode = obj.rootNode.getNode("source-switch", 1);
+		obj.frequencyNode = obj.rootNode.getNode("hold-frequency-mhz", 1);
+		obj.modeNode = obj.rootNode.getNode("mode", 1);
+		obj.poweredNode = obj.rootNode.getNode("power-btn");
+		obj.testNode = obj.rootNode.getNode("test", 1);
+		obj.distanceNode = obj.rootNode.getNode("distance-nm", 1);
+		obj.ttsNode = obj.rootNode.getNode("tts-min");
+		obj.speedNode = obj.rootNode.getNode("groundspeed-kt", 1);
+		
+		obj.updateTimer = maketimer(1, func obj.update());
+		obj.updateTimer.simulatedTime = 1;
+		obj.updateTimer.singleShot = 0;
+		obj.updateTimer.start();
+		return obj;
+	},
+	
+	sourceChanged: func() {
+		newSource = me.sources[me.sourceKnobNode.getValue()];
+		if (source == "NAV1") {
+			me.sourceNode.setValue(me.nav1Node.getNode("frequencies/selected-mhz").getPath())
+		} elsif (source == "NAV2" or source == "RNAV") {
+			me.sourceNode.setValue(me.nav2Node.getNode("frequencies/selected-mhz").getPath())			
+		} elsif (source == "HOLD") {
+			me.frequencyNode.setValue(props.globals.getNode(me.sourceNode.getValue()).getValue());
+			me.sourceNode.setValue(me.frequencyNode.getPath());
+		}
+	},
+	
+	modeChanged: func() {
+		mode = me.modes[me.modeNode.getValue()];
+		if (mode == "OFF") {
+			me.poweredNode.setBoolValue(0);
+		} elsif (mode == "ON") {
+			me.poweredNode.setBoolValue(1);
+			me.testNode.setBoolValue(0);
+		} else {
+			me.testNode.setBoolValue(1);
+		}
+	},
+}
+
+var dme = DME.new(props.globals.getNode("/instrumentation"));
+
+
+var DMEDisplays = {
+	new: func(instrumentationNode) {
+		var obj = {
+			parents: [DMEDistanceDisplay],
+			_distanceCanvas: canvas.new({"size": [224, 64], "view": [224, 64]}),
+			_speedTimeCanvas: canvas.new({"size": [160, 64], "view": [160, 64]}),
+			rootNode: instrumentationNode.getNode("dme"),
+			rnavNode: instrumentationNode.getNode("rnav"),
+			placement: placement,
+			displayModes: ["TTS", "GS"],
+			sources: ["NAV2", "HOLD", "NAV1", "RNAV"],
+		};
+		
+		obj.poweredNode = obj.rootNode.getNode("power-btn");
+		obj.distanceNode = obj.rootNode.getNode("distance-nm", 1);
+		obj.speedNode = obj.rootNode.getNode("groundspeed-kt", 1);
+		obj.ttsNode = obj.rootNode.getNode("tts-min");
+		obj.sourceKnobNode = obj.rootNode.getNode("source-knob", 1);
+		obj.modeNode = obj.rootNode.getNode("mode", 1);
+		obj.displayNode = obj.rootNode.getNode("display-mode", 1);
+		obj.testNode = obj.rootNode.getNode("test", 1);
+		
+		obj.init();
+		return obj;
+	},
+	
+	init: func() {
+		me._distanceCanvas.addPlacement({"node": "DMEDistanceDisplay"});
+		me._speedTimeCanvas.addPlacement({"node": "DMESpeedTimeDisplay"});
+		
+		me.distanceDisplay = me._canvas.createGroup();
+		me.speedTimeDisplay = me._canvas.createGroup();
+		
+		me.distanceDisplay.text = me.display.createChild("text")
+						.setTranslation(200, 32)
+						.setAlignment("right-center")
+						.setFont("DSEG/DSEG7/Classic-MINI/DSEG7ClassicMini-Regular.ttf")
+						.setFontSize(60)
+						.setColor(1, 0.7, 0.7);
+						
+		me.distanceDisplay.rnavAnnun = me.display.createChild("text")
+						.setTranslation(230, 12)
+						.setAlignment("right-center")
+						.setFont("DSEG/DSEG7/Classic-MINI/DSEG7ClassicMini-Regular.ttf")
+						.setFontSize(15)
+						.setColor(1, 0.7, 0.7)
+						.setText("RN");
+						
+		me.distanceDisplay.dmeAnnun = me.display.createChild("text")
+						.setTranslation(230, 52)
+						.setAlignment("right-center")
+						.setFont("DSEG/DSEG7/Classic-MINI/DSEG7ClassicMini-Regular.ttf")
+						.setFontSize(15)
+						.setColor(1, 0.7, 0.7)
+						.setText("NM");
+		
+		me.speedTimeDisplay.text = me.display.createChild("text")
+						.setTranslation(120, 32)
+						.setAlignment("right-center")
+						.setFont("DSEG/DSEG7/Classic-MINI/DSEG7ClassicMini-Regular.ttf")
+						.setFontSize(15)
+						.setColor(1, 0.7, 0.7);
+		
+		me.speedTimeDisplay.ktsAnnun = me.display.createChild("text")
+						.setTranslation(150, 12)
+						.setAlignment("right-center")
+						.setFont("DSEG/DSEG7/Classic-MINI/DSEG7ClassicMini-Regular.ttf")
+						.setFontSize(15)
+						.setColor(1, 0.7, 0.7)
+						.setText("KTS");
+		
+		me.speedTimeDisplay.minAnnun = me.display.createChild("text")
+						.setTranslation(150, 52)
+						.setAlignment("right-center")
+						.setFont("DSEG/DSEG7/Classic-MINI/DSEG7ClassicMini-Regular.ttf")
+						.setFontSize(15)
+						.setColor(1, 0.7, 0.7)
+						.setText("MIN");
+		
+		setlistener(me.poweredNode, func me.update());
+		setlistener(me.distanceNode, func me.update());
+		setlistener(me.speedNode, func me.update());
+		setlistener(me.ttsNode, func me.update());
+		setlistener(me.sourceKnobNode, func me.update());
+		setlistener(me.modeNode, func me.update());
+		setlistener(me.displayNode, func me.update());
+		
+		me.update();
+	},
+	
+	update: func() {
+		if (!me.poweredNode.getBoolValue()) {
+			me.distanceDisplay.text.hide();
+			me.distanceDisplay.rnavAnnun.hide();
+			me.distanceDisplay.dmeAnnun.hide();
+			me.speedTimeDisplay.text.hide();
+			me.speedTimeDisplay.ktsAnnun.hide();
+			me.speedTimeDisplay.minAnnun.hide();
+		} else {
+			if (me.displayModes[me.displayNode.getValue()] == "TTS") {
+				me.speedTimeDisplay.minAnnun.show();
+				me.speedTimeDisplay.ktsAnnun.hide();
+				me.speedTimeDisplay.text.setText(me.ttsNode.getValue());
+			} else {
+				me.speedTimeDisplay.minAnnun.hide();
+				me.speedTimeDisplay.ktsAnnun.show();
+				me.speedTimeDisplay.text.setText(me.speedNode.getValue());
+			}
+			
+			source = me.sources[me.sourceKnobNode.getValue()];
+			if (source == "RNAV") {
+				me.distanceDisplay.rnavAnnun.show();
+			} else {
+				me.distanceDisplay.rnavAnnun.hide();
+			}
+			me.distanceDisplay.dmeAnnun.show();
+			me.distanceDisplay.text.setText(me.distanceNode.getValue());
+		}
+	},
+};
+
+var dmeDisplays = DMEDisplays.new(props.globals.getNode("/instrumentation"));

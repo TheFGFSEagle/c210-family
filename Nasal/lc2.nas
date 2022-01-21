@@ -166,7 +166,7 @@ var LC2 = {
 	},
 	
 	updateClock: func() {
-		if (me._clockMode => 1) {
+		if (me._clockMode >= 1) {
 			me._clockMode -= 1;
 			var utcDays = sprintf("%02d", me.utcDayNode.getValue());
 			var utcTenDay = substr(utcDays, 0, 1);

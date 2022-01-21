@@ -18,6 +18,10 @@
 				<max>3</max>
 				<factor>1</factor>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>p210n.dme.sourceChanged();</script>
+			</binding>
 		</action>
 	</animation>
 	
@@ -37,6 +41,10 @@
 				<max>2</max>
 				<factor>1</factor>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>p210n.dme.modeChanged();</script>
+			</binding>
 		</action>
 		<release>
 			<binding>
@@ -51,20 +59,30 @@
 				<value>1</value>
 				<time>0.01</time>
 			</binding>
+			<binding>
+				<condition>
+					<equals>
+						<property>instrumentation/dme/mode</property>
+						<value>2</value>
+					</equals>
+				</condition>
+				<command>nasal</command>
+				<script>p210n.dme.modeChanged();</script>
+			</binding>
 		</release>
 	</animation>
 	<animation>
 		<type>knob</type>
-		<object-name>DisplaySwitch</object-name>
+		<object-name>DisplayModeSwitch</object-name>
 		<axis>
-			<object-name>DisplaySwitch</object-name>
+			<object-name>DisplayModeSwitchAxis</object-name>
 		</axis>
-		<property>instrumentation/dme/display</property>
+		<property>instrumentation/dme/display-mode</property>
 		<factor>-40</factor>
 		<action>
 			<binding>
 				<command>property-toggle</command>
-				<property>instrumentation/dme/display</property>
+				<property>instrumentation/dme/display-mode</property>
 				<value>0</value>
 				<value>1</value>
 			</binding>
