@@ -2,6 +2,75 @@
 <PropertyList>
 	<path>dme.ac</path>
 	
+	<animation>
+		<type>knob</type>
+		<object-name>SourceKnob</object-name>
+		<axis>
+			<object-name>SourceKnobAxis</object-name>
+		</axis>
+		<property>instrumentation/dme/source-knob</property>
+		<factor>-20</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/dme/source-knob</property>
+				<min>0</min>
+				<max>3</max>
+				<factor>1</factor>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>ModeSwitch</object-name>
+		<axis>
+			<object-name>ModeSwitchAxis</object-name>
+		</axis>
+		<property>instrumentation/dme/mode</property>
+		<factor>-20</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/dme/mode</property>
+				<min>0</min>
+				<max>2</max>
+				<factor>1</factor>
+			</binding>
+		</action>
+		<release>
+			<binding>
+				<condition>
+					<equals>
+						<property>instrumentation/dme/mode</property>
+						<value>2</value>
+					</equals>
+				</condition>
+				<command>property-interpolate</command>
+				<property>instrumentation/dme/mode</property>
+				<value>1</value>
+				<time>0.01</time>
+			</binding>
+		</release>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>DisplaySwitch</object-name>
+		<axis>
+			<object-name>DisplaySwitch</object-name>
+		</axis>
+		<property>instrumentation/dme/display</property>
+		<factor>-40</factor>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>instrumentation/dme/display</property>
+				<value>0</value>
+				<value>1</value>
+			</binding>
+		</action>
+	</animation>
+	
 	<text>
 		<name>Label</name>
 		<type type="string">literal</type>
