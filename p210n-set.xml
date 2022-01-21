@@ -130,29 +130,29 @@
 			<internal type="bool">true</internal>
 			<config>
 				<x-offset-m type="double">-0.25</x-offset-m>
-				<y-offset-m type="double">0.65</y-offset-m>
+				<y-offset-m type="double">0.69</y-offset-m>
 				<z-offset-m type="double">0.2</z-offset-m>
-				<pitch-offset-deg>-3</pitch-offset-deg>
+				<pitch-offset-deg>-6.5</pitch-offset-deg>
 				<default-field-of-view-deg type="double">70.0</default-field-of-view-deg>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
 				<ground-level-nearplane-m type="double">2</ground-level-nearplane-m>
 				<limits>
-					<enabled type="bool">false</enabled>
+					<enabled type="bool">true</enabled>
 					<left>
-						<heading-max-deg type="double">140</heading-max-deg>
+						<heading-max-deg type="double">180</heading-max-deg>
 						<x-offset-max-m type="double">0.15</x-offset-max-m>
 						<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
 					</left>
 					<right>
-						<heading-max-deg type="double">140</heading-max-deg>
+						<heading-max-deg type="double">180</heading-max-deg>
 						<x-offset-max-m type="double">0.15</x-offset-max-m>
 						<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
 					</right>
 				</limits>
 			</config>
 			<dynamic>
-				<enabled type="bool">false</enabled>
+				<enabled type="bool">true</enabled>
 			</dynamic>
 		</view>
 		<instrumentation>
@@ -246,6 +246,9 @@
 			<file>Nasal/autostart.nas</file>
 			<file>Nasal/radios.nas</file>
 		</p210n>
+		<lc2>
+			<file>Nasal/lc2.nas</file>
+		</lc2>
 	</nasal>
 	
 	<limits>

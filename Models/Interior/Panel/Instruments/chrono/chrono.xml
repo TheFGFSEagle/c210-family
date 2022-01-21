@@ -21,9 +21,14 @@
 		</action>
 		<release>
 			<binding>
-				<command>property-assign</command>
+				<command>property-interpolate</command>
 				<property>instrumentation/clock/mode-button-pressed</property>
 				<value>0</value>
+				<time>0.01</time>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>lc2.lc2.modePressed();</script>
 			</binding>
 		</release>
 	</animation>
@@ -46,9 +51,14 @@
 		</action>
 		<release>
 			<binding>
-				<command>property-assign</command>
+				<command>property-interpolate</command>
 				<property>instrumentation/clock/set-button-pressed</property>
 				<value>0</value>
+				<time>0.01</time>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>lc2.lc2.setResetPressed();</script>
 			</binding>
 		</release>
 	</animation>
@@ -71,9 +81,14 @@
 		</action>
 		<release>
 			<binding>
-				<command>property-assign</command>
+				<command>property-interpolate</command>
 				<property>instrumentation/clock/start-stop-button-pressed</property>
 				<value>0</value>
+				<time>0.01</time>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>lc2.lc2.startStopPressed();</script>
 			</binding>
 		</release>
 	</animation>
