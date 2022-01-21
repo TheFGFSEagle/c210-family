@@ -3,9 +3,10 @@
 
 
 var Timer = {
-	new: func(root, callback=nil) {
+	new: func(rootNode, callback=nil) {
 		var obj = {
 			parents: [Timer],
+			rootNode: rootNode,
 			_interval: 0.5,
 			elapsed: 0,
 			active: 0,
@@ -14,12 +15,6 @@ var Timer = {
 			_pausedTime: 0,
 			_offset: 0,
 		};
-		
-		if (isa(root, props.Node)) {
-			obj.rootNode = root;
-		} else {
-			obj.rootNode = props.getNode(root);
-		}
 		
 		obj.callback = callback;
 		if (callback == nil) {
@@ -39,10 +34,10 @@ var Timer = {
 	},
 	
 	_timerFunc: func {
-		if (me.active == 1) {
+		if (me.active) {
 			me.elapsed = int(me.simElapsedNode.getValue() - me._startTime);
 			me.elapsedNode.setIntValue(me.elapsed);
-		} elsif (me.paused == 1) {
+		} elsif (me.paused) {
 			me._offset = me.simElapsedNode.getValue() - me._pausedTime;
 		}
 		me.callback();
@@ -70,11 +65,11 @@ var Timer = {
 	},
 	
 	cycle: func {
-		if (me.active == 0 and me.paused == 0) {
+		if (!me.active and !me.paused) {
 			me.start();
-		} elsif (me.active == 1 and me.paused == 0) {
+		} elsif (me.active and !me.paused) {
 			me.pause();
-		} elsif (me.active == 0 and me.paused == 1) {
+		} elsif (!me.active and me.paused) {
 			me.unpause();
 		}
 	},
@@ -101,10 +96,21 @@ var LC2 = {
 		obj.modeNode = obj.rootNode.getNode("mode", 1);
 		obj.mode = obj.modeNode.getValue() or "timer";
 		obj.timerNode = obj.rootNode.getNode("timer", 1);
+		obj.utcNode = obj.rootNode.getNode("utc");
+		obj.utcDayNode = obj.utcNode.getNode("day");
+		obj.utcMonthNode = obj.utcNode.getNode("month");
+		obj.utcHourNode = obj.utcNode.getNode("hour");
+		obj.utcMinuteNode = obj.utcNode.getNode("minute");
+		
 		obj.timer = Timer.new(obj.timerNode, callback=func obj.updateTimer());
-		obj.clockTimer = maketimer(1, func obj.updateClock());
+		
+		obj.clockTimer = maketimer(0.5, func obj.updateClock());
 		obj.clockTimer.simulatedTime = 1;
 		obj.clockTimer.singleShot = 0;
+		
+		obj.annunTimer = maketimer(0.5, func obj.updateAnnunciators());
+		obj.annunTimer.simulatedTime = 1;
+		obj.annunTimer.singleShot = 0;
 		obj.init();
 		
 		return obj;
@@ -138,9 +144,21 @@ var LC2 = {
 						.setFontSize(66)
 						.setColor(0, 0, 0)
 						.setText("0 0:0 0");
+		
+		me.annunTimer.start();
 	},
 	
 	updateClock: func() {
+		if (me._clockMode > 0) {
+			me._clockMode -= 1;
+			var (utcTenDay, utcDay) = sprintf("%02d", me.utcDayNode.getValue());
+			var (utcTenMonth, utcMonth) = sprintf("%02d", me.utcMonthNode.getValue());
+			me.text.setText(sprintf("%1d %1d.%1d %1d", utcTenDay, utcDay, utcTenMonth, utcMonth));
+		} else {
+			var (utcTenHour, utcHour) = sprintf("%02d", me.utcHourNode.getValue());
+			var (utcTenMinute, utcMinute) = sprintf("%02d", me.utcMinuteNode.getValue());
+			me.text.setText(sprintf("%1d %1d:%1d %1d", utcTenHour, utcHour, utcTenMinute, utcMinute));
+		}
 	},
 	
 	updateTimer: func() {
@@ -167,23 +185,27 @@ var LC2 = {
 		me.text.setText(time);
 	},
 	
-	startStopPressed: func() {
+	stSpDtAvPressed: func() {
 		if (me.mode == "timer") {
 			me.timer.cycle();
+		} else {
+			if (me._clockMode == 0) {
+				me._clockMode == 3; # display date for 1.5 seconds
+			}
 		}
 	},
 	
 	setResetPressed: func() {
-		if (me.mode == "timer" and me.timer.active == 0) {
+		if (me.mode == "timer" and !me.timer.active) {
 			me.timer.reset();
 		}
 	},
 	
 	modePressed: func() {
-		if (me.mode == "timer" and me.timer.active == 0) {
+		if (me.mode == "timer" and !me.timer.active) {
 			me.mode = "clock";
 			me.modeNode.setValue("clock");
-			me.timer.stop();
+			me.timer.reset();
 			me.clockTimer.start();
 		} else {
 			me.mode = "timer";
