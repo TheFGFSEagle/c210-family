@@ -91,16 +91,19 @@ var LC2 = {
 			parents: [LC2],
 			_canvas: canvas.new({"size": [256, 90], "view": [256, 90]}),
 			rootNode: instrumentationNode.getNode("clock", 1),
+			_colon: ":",
+			_clockMode: 0,
 		};
 		
 		obj.modeNode = obj.rootNode.getNode("mode", 1);
 		obj.mode = obj.modeNode.getValue() or "timer";
 		obj.timerNode = obj.rootNode.getNode("timer", 1);
-		obj.utcNode = obj.rootNode.getNode("utc");
+		obj.utcNode = props.globals.getNode("/sim/time/utc");
 		obj.utcDayNode = obj.utcNode.getNode("day");
 		obj.utcMonthNode = obj.utcNode.getNode("month");
 		obj.utcHourNode = obj.utcNode.getNode("hour");
 		obj.utcMinuteNode = obj.utcNode.getNode("minute");
+		obj.utcSecondNode = obj.utcNode.getNode("second");
 		
 		obj.timer = Timer.new(obj.timerNode, callback=func obj.updateTimer());
 		
@@ -160,33 +163,51 @@ var LC2 = {
 			}
 			me.timerAnnun.hide();
 		}
-	}
+	},
 	
 	updateClock: func() {
-		if (me._clockMode > 0) {
+		if (me._clockMode => 1) {
 			me._clockMode -= 1;
-			var (utcTenDay, utcDay) = sprintf("%02d", me.utcDayNode.getValue());
-			var (utcTenMonth, utcMonth) = sprintf("%02d", me.utcMonthNode.getValue());
+			var utcDays = sprintf("%02d", me.utcDayNode.getValue());
+			var utcTenDay = substr(utcDays, 0, 1);
+			var utcDay = substr(utcDays, 1, 1);
+			var utcMonths = sprintf("%02d", me.utcMonthNode.getValue());
+			var utcTenMonth = substr(utcMonths, 0, 1);
+			var utcMonth = substr(utcMonths, 1, 1);
 			me.text.setText(sprintf("%1d %1d.%1d %1d", utcTenDay, utcDay, utcTenMonth, utcMonth));
 		} else {
-			var (utcTenHour, utcHour) = sprintf("%02d", me.utcHourNode.getValue());
-			var (utcTenMinute, utcMinute) = sprintf("%02d", me.utcMinuteNode.getValue());
-			me.text.setText(sprintf("%1d %1d:%1d %1d", utcTenHour, utcHour, utcTenMinute, utcMinute));
+			var utcHours = sprintf("%02d", me.utcHourNode.getValue());
+			var utcTenHour = substr(utcHours, 0, 1);
+			var utcHour = substr(utcHours, 1, 1);
+			var utcMinutes = sprintf("%02d", me.utcMinuteNode.getValue());
+			var utcTenMinute = substr(utcMinutes, 0, 1);
+			var utcMinute = substr(utcMinutes, 1, 1);
+			me._colon = " ";
+			if (math.mod(me.utcSecondNode.getValue(), 10) == 0) {
+				me._colon = ":";
+			}
+			me.text.setText(sprintf("%1d %1d%s%1d %1d", utcTenHour, utcHour, me._colon, utcTenMinute, utcMinute));
 		}
 	},
 	
 	updateTimer: func() {
+		# don't show timer time when the clock date / time is displayed
+		if (me.clockTimer.isRunning) {
+			return;
+		}
+		
 		var time = me.timer.elapsed;
+		var displayHours = 0;
 		
 		# we can't show times greater than 23:59:59
 		if (time > 86399) {
-			me.timer.reset();
-			time = me.timer.elapsed;
+			time = 86399;
 		}
 		
 		# if elapsed time is more than 59 min 59 sec, format changes from mm:ss to hh:mm
 		if (time > 3599) {
 			time = int(time / 60);
+			displayHours = 1;
 		}
 		time = sprintf("%04d", time);
 		
@@ -195,7 +216,21 @@ var LC2 = {
 		var minutes = math.mod(int(time / 60), 10);
 		var tenMinutes = math.mod(int(time / 600), 10);
 		
-		time = sprintf("%1d %1d:%1d %1d", tenMinutes, minutes, tenSeconds, seconds);
+		if (me.timer.active) {
+			if (displayHours and seconds == 0) {
+				# in hours mode, show colon every ten seconds
+				me._colon = ":";
+			} else {
+				# in minutes mode, show colon every second
+				if (me._colon == " ") {
+					me._colon = ":";
+				} else {
+					me._colon = " ";
+				}
+			}
+		}
+		
+		time = sprintf("%1d %1d%s%1d %1d", tenMinutes, minutes, me._colon, tenSeconds, seconds);
 		me.text.setText(time);
 	},
 	
@@ -204,7 +239,7 @@ var LC2 = {
 			me.timer.cycle();
 		} else {
 			if (me._clockMode == 0) {
-				me._clockMode == 3; # display date for 1.5 seconds
+				me._clockMode = 4; # display date for 1.5 seconds
 			}
 		}
 	},
@@ -216,11 +251,12 @@ var LC2 = {
 	},
 	
 	modePressed: func() {
-		if (me.mode == "timer" and !me.timer.active) {
-			me.mode = "clock";
-			me.modeNode.setValue("clock");
-			me.timer.reset();
-			me.clockTimer.start();
+		if (me.mode == "timer") {
+			if (!me.timer.active) {
+				me.mode = "clock";
+				me.modeNode.setValue("clock");
+				me.clockTimer.start();
+			}
 		} else {
 			me.mode = "timer";
 			me.modeNode.setValue("timer");

@@ -88,14 +88,14 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>lc2.lc2.startStopPressed();</script>
+				<script>lc2.lc2.stSpDtAvPressed();</script>
 			</binding>
 		</release>
 	</animation>
 	 <text>
 		<name>Label</name>
 		<type type="string">literal</type>
-		<text type="string">Chrono-meter</text>
+		<text type="string">Clock</text>
 		<draw-text type="bool">true</draw-text>
 		<font>Helvetica.txf</font>
 		<character-size type="double">0.01</character-size>
