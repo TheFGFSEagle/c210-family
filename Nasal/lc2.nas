@@ -148,6 +148,20 @@ var LC2 = {
 		me.annunTimer.start();
 	},
 	
+	updateAnnunciators: func() {
+		if (me.mode == "timer") {
+			me.timerAnnun.show();
+			me.clockAnnun.hide();
+		} else {
+			if (me._clockMode == 0) {
+				me.clockAnnun.show();
+			} else {
+				me.clockAnnun.hide();
+			}
+			me.timerAnnun.hide();
+		}
+	}
+	
 	updateClock: func() {
 		if (me._clockMode > 0) {
 			me._clockMode -= 1;
