@@ -234,6 +234,7 @@
 			<path>/instrumentation/ifcs/green-light-intensity-norm</path>
 			<path>/instrumentation/ifcs/white-light-intensity-norm</path>
 			<path>/fdm/jsbsim/propulsion/engine/tach-time-sec</path>
+			<path>/instrumentation/clock/mode</path>
 		</aircraft-data>
 	</sim>
 	
