@@ -9,7 +9,7 @@
 			<object-name>SourceKnobAxis</object-name>
 		</axis>
 		<property>instrumentation/dme/source-knob</property>
-		<factor>-20</factor>
+		<factor>20</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>
@@ -81,10 +81,12 @@
 		<factor>-40</factor>
 		<action>
 			<binding>
-				<command>property-toggle</command>
+				<command>property-adjust</command>
 				<property>instrumentation/dme/display-mode</property>
-				<value>0</value>
-				<value>1</value>
+				<min>0</min>
+				<max>2</max>
+				<factor>1</factor>
+				<wrap type="bool">true</wrap>
 			</binding>
 		</action>
 	</animation>

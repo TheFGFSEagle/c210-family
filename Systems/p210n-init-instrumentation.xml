@@ -66,4 +66,14 @@
 		<middle type="bool">false</middle>
 		<outer type="bool">false</outer>
 	</marker-beacon>
+	
+	<dme>
+		<hold-frequency-mhz>108.000</hold-frequency-mhz>
+		<mode>0</mode> <!-- OFF -->
+		<display-mode>0</display-mode> <!-- TTS -->
+		<test type="bool">false</test>
+		<power-btn type="bool">false</power-btn>
+		<source-knob>2</source-knob> <!-- NAV1 -->
+		<source>/instrumentation/nav/frequencies/selected-mhz</source>
+	</dme>
 </PropertyList>
