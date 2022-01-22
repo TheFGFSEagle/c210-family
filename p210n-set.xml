@@ -184,6 +184,7 @@
 			<path>/controls/anti-ice/wing-deice</path>
 			<path>/controls/anti-ice/deice-light</path>
 			<path>/controls/anti-ice/window-heat</path>
+			<path>controls/anti-ice/propeller-heat</path>
 			<path>/controls/flight/rudder</path>
 			<path>/controls/flight/aileron</path>
 			<path>/controls/flight/elevator</path>
@@ -297,8 +298,11 @@
 			</engine>
 		</engines>
 		<anti-ice>
-			<window-heat>false</window-heat>
-			<wing-deice>0</wing-deice>
+			<window-heat type="bool">false</window-heat>
+			<wing-deice type="bool">false</wing-deice>
+			<deice-light type="bool">false</deice-light>
+			<propeller-heat type="bool">false</propeller-heat>
+			<pitot-heat type="bool">false</pitot-heat>
 		</anti-ice>
 	</controls>
 	

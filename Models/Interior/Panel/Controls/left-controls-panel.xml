@@ -112,7 +112,7 @@
 		</offsets>
 		<overlay>
 			<params>
-				<property>controls/icing/propeller-heat</property>
+				<property>controls/anti-ice/propeller-heat</property>
 			</params>
 		</overlay>
 	</model>
