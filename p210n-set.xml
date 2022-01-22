@@ -219,9 +219,6 @@
 			<path>/instrumentation/comm[1]/frequencies</path>
 			<path>/instrumentation/comm[1]/power-btn</path>
 			<path>/instrumentation/comm[1]/volume</path>
-			<path>/instrumentation/dme[0]/frequencies/selected-mhz</path>
-			<path>/instrumentation/dme[0]/power-btn</path>
-			<path>/instrumentation/dme[0]/ident</path>
 			<path>/instrumentation/adf[0]/frequencies/selected-khz</path>
 			<path>/instrumentation/adf[0]/frequencies/standby-khz</path>
 			<path>/instrumentation/adf[0]/power-btn</path>
@@ -235,6 +232,13 @@
 			<path>/instrumentation/ifcs/white-light-intensity-norm</path>
 			<path>/fdm/jsbsim/propulsion/engine/tach-time-sec</path>
 			<path>/instrumentation/clock/mode</path>
+			<path>/instrumentation/dme/frequencies</path>
+			<path>/instrumentation/dme/mode</path>
+			<path>/instrumentation/dme/source-knob</path>
+			<path>/instrumentation/dme/source</path>
+			<path>/instrumentation/dme/display-mode</path>
+			<path>/instrumentation/dme/power-btn</path>
+			<path>/instrumentation/dme/ident</path>
 		</aircraft-data>
 	</sim>
 	

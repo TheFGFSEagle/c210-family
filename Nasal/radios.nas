@@ -182,9 +182,9 @@ var DME = {
 		obj.nav1Node = instrumentationNode.getNode("nav");
 		obj.nav2Node = instrumentationNode.getNode("nav[1]");
 		obj.rnavNode = instrumentationNode.getNode("rnav", 1);
-		obj.sourceNode = obj.rootNode.getNode("source");
+		obj.sourceNode = obj.rootNode.getNode("frequencies/source");
 		obj.sourceKnobNode = obj.rootNode.getNode("source-knob", 1);
-		obj.frequencyNode = obj.rootNode.getNode("hold-frequency-mhz", 1);
+		obj.frequencyNode = obj.rootNode.getNode("frequencies/hold-mhz", 1);
 		obj.modeNode = obj.rootNode.getNode("mode", 1);
 		obj.poweredNode = obj.rootNode.getNode("power-btn");
 		obj.testNode = obj.rootNode.getNode("test", 1);
@@ -198,9 +198,9 @@ var DME = {
 	sourceChanged: func() {
 		newSource = me.sources[me.sourceKnobNode.getValue()];
 		if (newSource == "NAV1") {
-			me.sourceNode.setValue(me.nav1Node.getNode("frequencies/selected-mhz").getPath())
+			me.sourceNode.setValue(me.nav1Node.getNode("frequencies/selected-mhz").getPath());
 		} elsif (newSource == "NAV2" or newSource == "RNAV") {
-			me.sourceNode.setValue(me.nav2Node.getNode("frequencies/selected-mhz").getPath())			
+			me.sourceNode.setValue(me.nav2Node.getNode("frequencies/selected-mhz").getPath());			
 		} elsif (newSource == "HOLD") {
 			me.frequencyNode.setValue(props.globals.getNode(me.sourceNode.getValue()).getValue());
 			me.sourceNode.setValue(me.frequencyNode.getPath());
