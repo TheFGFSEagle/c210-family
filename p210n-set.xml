@@ -325,11 +325,47 @@
 				<name>Right wing tank</name>
 			</tank>
 			<tank n="2">
-				<name>Left reservoir tank</name>
+				<name>Left fuel pipe wing tank -> reservoir tank</name>
 				<hidden>true</hidden>
 			</tank>
 			<tank n="3">
+				<name>Right fuel pipe wing tank -> reservoir tank</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="4">
+				<name>Left reservoir tank</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="5">
 				<name>Right reservoir tank</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="6">
+				<name>Left fuel pipe reservoir tank -> fuel selector</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="7">
+				<name>Right fuel pipe reservoir tank -> fuel selector</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="8">
+				<name>Fuel selector sump</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="9">
+				<name>Fuel pipe fuel selector -> fuel strainer</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="10">
+				<name>Fuel strainer sump</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="11">
+				<name>Fuel pipe fuel strainer -> engine manifold</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="12">
+				<name>Engine manifold</name>
 				<hidden>true</hidden>
 			</tank>
 		</fuel>

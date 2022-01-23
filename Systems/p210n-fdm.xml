@@ -125,7 +125,7 @@
             <rolling_friction> 0.03 </rolling_friction>
             <spring_coeff unit="LBS/FT">6000.00</spring_coeff>
             <damping_coeff unit="LBS/FT/SEC">500.00</damping_coeff>
-            <max_steer unit="DEG">27</max_steer>
+            <max_steer unit="DEG">35</max_steer>
             <brake_group>NONE</brake_group>
             <retractable>1</retractable>
         </contact>
@@ -386,9 +386,9 @@
         <!-- Left main tank -->
         <tank type="FUEL" number="0">
             <location unit="IN">
-                <x> 94.77 </x>
-                <y>   126 </y>
-                <z>  27 </z>
+                <x>95</x>
+                <y>126</y>
+                <z>27</z>
             </location>
             <capacity unit="LBS"> 267.445 </capacity>
             <contents unit="LBS"> 100 </contents>
@@ -399,9 +399,9 @@
         <!-- Right main tank -->
         <tank type="FUEL" number="1">
             <location unit="IN">
-                <x> 94.77 </x>
-                <y>   -126 </y>
-                <z>  27 </z>
+                <x>95</x>
+                <y>-126</y>
+                <z>27</z>
             </location>
             <capacity unit="LBS"> 267.445 </capacity>
             <contents unit="LBS"> 100</contents>
@@ -409,27 +409,135 @@
             <type>AVGAS</type>
         </tank>
 
-        <!-- Left reservoir tank -->
+        <!-- Left fuel pipe wing tank -> reservoir tank -->
         <tank type="FUEL" number="2">
             <location unit="IN">
-                <x> 90 </x>
-                <y>   14 </y>
-                <z>  -25 </z>
+                <x>125</x>
+                <y>22.5</y>
+                <z>7</z>
             </location>
-            <capacity unit="LBS"> 0.5 </capacity>
-            <contents unit="LBS"> 0.5 </contents>
+            <capacity unit="LBS"> 1</capacity>
+            <contents unit="LBS">1</contents>
+            <type>AVGAS</type>
+        </tank>
+
+        <!-- Right fuel pipe wing tank -> reservoir tank -->
+        <tank type="FUEL" number="3">
+            <location unit="IN">
+                <x>125</x>
+                <y>-22.5</y>
+                <z>7</z>
+            </location>
+            <capacity unit="LBS"> 1</capacity>
+            <contents unit="LBS">1</contents>
+            <type>AVGAS</type>
+        </tank>
+
+        <!-- Left reservoir tank -->
+        <tank type="FUEL" number="4">
+            <location unit="IN">
+                <x>70</x>
+                <y>15</y>
+                <z>-15</z>
+            </location>
+            <capacity unit="LBS">0.5</capacity>
+            <contents unit="LBS">0.5</contents>
             <type>AVGAS</type>
         </tank>
 
         <!-- Right reservoir tank -->
-        <tank type="FUEL" number="3">
+        <tank type="FUEL" number="5">
             <location unit="IN">
-                <x> 90 </x>
-                <y>   -14 </y>
-                <z>  -25 </z>
+                <x>70</x>
+                <y>-15</y>
+                <z>-15</z>
             </location>
-            <capacity unit="LBS"> 0.5 </capacity>
-            <contents unit="LBS"> 0.5 </contents>
+            <capacity unit="LBS">0.5</capacity>
+            <contents unit="LBS">0.5</contents>
+            <type>AVGAS</type>
+        </tank>
+        
+        <!-- Left fuel pipe reservoir tank -> fuel selector -->
+        <tank type="FUEL" number="6">
+            <location unit="IN">
+                <x>125</x>
+                <y>10</y>
+                <z>-16</z>
+            </location>
+            <capacity unit="LBS"> 0.2</capacity>
+            <contents unit="LBS">0.2</contents>
+            <type>AVGAS</type>
+        </tank>
+        
+        <!-- Right fuel pipe reservoir tank -> fuel selector -->
+        <tank type="FUEL" number="7">
+            <location unit="IN">
+                <x>125</x>
+                <y>-10</y>
+                <z>-16</z>
+            </location>
+            <capacity unit="LBS"> 0.2</capacity>
+            <contents unit="LBS">0.2</contents>
+            <type>AVGAS</type>
+        </tank>
+        
+        <!-- Fuel selector sump-->
+        <tank type="FUEL" number="8">
+            <location unit="IN">
+                <x>63</x>
+                <y>0</y>
+                <z>-17</z>
+            </location>
+            <capacity unit="LBS"> 0.25</capacity>
+            <contents unit="LBS">0.25</contents>
+            <type>AVGAS</type>
+        </tank>
+        
+        <!-- Fuel pipe fuel selector -> fuel strainer -->
+        <tank type="FUEL" number="9">
+            <location unit="IN">
+                <x>63</x>
+                <y>0</y>
+                <z>-17</z>
+            </location>
+            <capacity unit="LBS"> 0.1</capacity>
+            <contents unit="LBS">0.1</contents>
+            <type>AVGAS</type>
+        </tank>
+        
+        <!-- Fuel strainer sump -->
+        <tank type="FUEL" number="10">
+            <location unit="IN">
+                <x>50</x>
+                <y>0</y>
+                <z>-14</z>
+            </location>
+            <capacity unit="LBS"> 0.25</capacity>
+            <contents unit="LBS">0.25</contents>
+            <type>AVGAS</type>
+        </tank>
+        
+        <!-- Fuel pipe fuel strainer -> engine manifold-->
+        <tank type="FUEL" number="11">
+            <location unit="IN">
+                <x>40</x>
+                <y>0</y>
+                <z>-5</z>
+            </location>
+            <capacity unit="LBS"> 0.1</capacity>
+            <contents unit="LBS">0.1</contents>
+            <type>AVGAS</type>
+        </tank>
+        
+        <!-- Engine manifold -->
+        <tank type="FUEL" number="12">
+            <location unit="IN">
+                <x>20</x>
+                <y>0</y>
+                <z>0</z>
+            </location>
+            <capacity unit="LBS"> 0.1</capacity>
+            <contents unit="LBS">0.1</contents>
             <type>AVGAS</type>
         </tank>
     </propulsion>
@@ -438,6 +546,53 @@
     <system file="damage"/>
  
     <flight_control name="FCS: p210n">
+        <channel name="NWS">
+            <switch name="gear/steering-enabled">
+                <default value="0"/>
+                <test logic="OR" value="1">
+                    /gear/gear[0]/position-norm EQ 1
+                </test>
+            </switch>
+
+            <fcs_function name="gear/brakes-steer-factor">
+                <function>
+                    <product>
+                        <sum>
+                            <product>
+                                <property>fcs/left-brake-cmd-norm</property>
+                                <value>-1</value>
+                            </product>
+                            <property>fcs/right-brake-cmd-norm</property>
+                        </sum>
+                        <property>/gear/gear[0]/rollspeed-ms</property>
+                        <value>0.5</value> <!-- for adjusting braking influence -->
+                        <property>gear/steering-enabled</property>
+                    </product>
+                </function>
+            </fcs_function>
+            
+            <!-- Drive the nose wheel with the rudder and brakes -->
+            <fcs_function name="gear/steer-cmd-deg">
+                <function>
+                    <table>
+                        <independentVar lookup="row">gear/brakes-steer-factor</independentVar>
+                        <independentVar lookup="column">/controls/flight/rudder</independentVar>
+                        <tableData>
+                                    -1       0        1
+                          -1    -35       0   14.5
+                           0    -14.5    0   14.5
+                           1    -14.5       0      35
+                        </tableData>
+                    </table>
+                </function>
+            </fcs_function>
+            
+            <actuator name="fcs/steer-pos-deg">
+                <input>fcs/steer-cmd-deg</input>
+                <rate_limit>80</rate_limit>
+            </actuator>
+        </channel>
+        
         <channel name="Pitch">
             <summer name="Pitch Trim Sum">
                 <input>fcs/elevator-cmd-norm</input>
