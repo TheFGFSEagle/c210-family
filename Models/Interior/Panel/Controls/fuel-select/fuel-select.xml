@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
+	<path>fuel-select.ac</path>
 	<animation>
 		<type>knob</type>
 		<object-name>Handle</object-name>
