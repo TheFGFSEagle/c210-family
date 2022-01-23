@@ -358,27 +358,27 @@
     <propulsion>
         <engine file="Continental_TSIO-520-P">
             <location unit="IN">
-                <x>  40.00 </x>
-                <y>   0.00 </y>
-                <z>   5.00 </z>
+                <x>40</x>
+                <y>0</y>
+                <z>5</z>
             </location>
             <orient unit="DEG">
-                <pitch> 1.50 </pitch>
-                <roll>  0.00 </roll>
-                <yaw>   0.00 </yaw>
+                <pitch>1.5</pitch>
+                <roll>0</roll>
+                <yaw>0</yaw>
             </orient>
-            <feed>0</feed>
+            <feed>12</feed>
             <thruster file="McCauley_D3A34C402">
-                <sense> 1 </sense>
+                <sense>1</sense>
                 <location unit="IN">
-                    <x>  13.00 </x>
-                    <y>   0.00 </y>
-                    <z>   9.00 </z>
+                    <x>13</x>
+                    <y>0</y>
+                    <z>9</z>
                 </location>
                 <orient unit="DEG">
-                    <pitch> 1.50 </pitch>
-                    <roll>  0.00 </roll>
-                    <yaw>   0.00 </yaw>
+                    <pitch>1.5</pitch>
+                    <roll>0</roll>
+                    <yaw>0</yaw>
                 </orient>
             </thruster>
         </engine>
@@ -543,6 +543,7 @@
     </propulsion>
  
     <system file="engine"/>
+    <system file="fuel"/>
     <system file="damage"/>
  
     <flight_control name="FCS: p210n">
@@ -572,7 +573,7 @@
             </fcs_function>
             
             <!-- Drive the nose wheel with the rudder and brakes -->
-            <fcs_function name="gear/steer-cmd-deg">
+            <fcs_function name="fcs/steer-cmd-deg">
                 <function>
                     <table>
                         <independentVar lookup="row">gear/brakes-steer-factor</independentVar>
@@ -587,9 +588,10 @@
                 </function>
             </fcs_function>
             
-            <actuator name="fcs/steer-pos-deg">
+            <actuator>
                 <input>fcs/steer-cmd-deg</input>
                 <rate_limit>80</rate_limit>
+                <output>fcs/steer-pos-norm</output>
             </actuator>
         </channel>
         
