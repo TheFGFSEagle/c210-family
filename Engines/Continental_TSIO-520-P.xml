@@ -11,7 +11,7 @@
    <cycles>4.0</cycles>
    <idlerpm>600.0</idlerpm>   
    <maxrpm>2600.0</maxrpm>   
-   <starter-torque>150</starter-torque>   
+   <starter-torque>300</starter-torque>   
    <static-friction>0.5</static-friction>
    
    <ram-air-factor>1.25</ram-air-factor>
@@ -28,6 +28,7 @@
    <ratedrpm1>2600</ratedrpm1>
    <ratedpower1>285</ratedpower1>   
    <ratedaltitude1>17000</ratedaltitude1>
+   <takeoffboost>3.2317943</takeoffboost> <!-- 36.5 inHg in PSI -->
 
    <sparkfaildrop>0.082</sparkfaildrop>
    <volumetric-efficiency>0.8447</volumetric-efficiency>
