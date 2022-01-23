@@ -304,6 +304,16 @@
 			<propeller-heat type="bool">false</propeller-heat>
 			<pitot-heat type="bool">false</pitot-heat>
 		</anti-ice>
+		<fuel>
+			<tank n="0">
+				<drain-valve type="bool">false</drain-valve>
+			</tank>
+			<tank n="1">
+				<drain-valve type="bool">false</drain-valve>
+			</tank>
+			<!-- 0=OFF, -1=LEFT, 1=RIGHT -->
+			<selected-tank>0</selected-tank>
+		</fuel>
 	</controls>
 	
 	<consumables>

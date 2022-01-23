@@ -274,4 +274,15 @@
 			<pitch-deg>-5.5</pitch-deg>
 		</offsets>
 	</model>
+	
+	<!-- pedestal -->
+	<model>
+		<path>Controls/fuel-select/fuel-select.xml</path>
+		<offsets>
+			<x-m>-0.265</x-m>
+			<y-m>0.07</y-m>
+			<z-m>-0.25</z-m>
+			<pitch-deg>3.5</pitch-deg>
+		</offsets>
+	</model>
 </PropertyList>

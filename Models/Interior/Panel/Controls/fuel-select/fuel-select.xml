@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<animation>
+		<type>knob</type>
+		<object-name>Handle</object-name>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<property>controls/fuel/selected-tank</property>
+		<factor>90</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/fuel/selected-tank</property>
+				<min>-1</min>
+				<max>1</max>
+				<factor>1</factor>
+			</binding>
+		</action>
+	</animation>
+</PropertyList>
