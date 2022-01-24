@@ -192,6 +192,7 @@
 			<path>/controls/gear/brake-parking</path>
 			<path>/controls/gear/gear-down</path>
 			<path>/controls/alt-static-air</path>
+			<path>/controls/fuel/selected-tank</path>
 			<path>/controls/pressurization/dump-valve</path>
 			<path>/controls/pressurization/pressurize</path>
 			<path>/controls/pressurization/selected-cabin-altitude-ft</path>
