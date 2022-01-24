@@ -3,7 +3,7 @@
     <property>damage/repairing</property>
     
     <channel name="Antenna damage">
-        <fcs_function name="Calculated COM2 antenna damage">
+        <fcs_function>
             <function>
                 <table>
                     <independentVar>contact/unit[10]/compression-ft</independentVar>
@@ -15,7 +15,7 @@
             </function>
             <output>damage/com2-antenna-calculated</output>
         </fcs_function>
-        <fcs_function name="Calculated COM1 antenna damage">
+        <fcs_function>
             <function>
                 <table>
                     <independentVar>contact/unit[11]/compression-ft</independentVar>
@@ -28,7 +28,7 @@
             <output>damage/com1-antenna-calculated</output>
         </fcs_function>
         
-        <switch name="Actual COM2 antenna damage">
+        <switch>
             <output>damage/com2-antenna-actual</output>
             <default value="damage/com2-antenna-actual"/>
             <test logic="OR" value="damage/com2-antenna-calculated">
@@ -38,7 +38,7 @@
                 damage/repairing EQ 1
             </test>
         </switch>
-        <switch name="Actual COM1 antenna damage">
+        <switch>
             <output>damage/com1-antenna-actual</output>
             <default value="damage/com1-antenna-actual"/>
             <test logic="OR" value="damage/com1-antenna-calculated">
@@ -51,7 +51,7 @@
     </channel>
     
     <channel name="Wing damage">
-        <fcs_function name="Wing force due to airspeed">
+        <fcs_function>
             <function>
                 <table>
                     <independentVar lookup="row">/velocities/airspeed-kt</independentVar>
@@ -65,7 +65,7 @@
             <output>damage/wing-force-airspeed</output>
         </fcs_function>
         
-        <fcs_function name="Left wing force due to ground contact">
+        <fcs_function>
             <function>
                 <table>
                     <independentVar lookup="row">contact/unit[3]/compression-ft</independentVar>
@@ -78,7 +78,7 @@
             <output>damage/left-wing-force-contact</output>
         </fcs_function>
         
-        <fcs_function name="Right wing force due to ground contact">
+        <fcs_function>
             <function>
                 <table>
                     <independentVar lookup="row">contact/unit[4]/compression-ft</independentVar>
@@ -91,7 +91,7 @@
             <output>damage/right-wing-force-contact</output>
         </fcs_function>
         
-        <fcs_function name="Total left wing force">
+        <fcs_function>
             <function>
                 <table>
                     <independentVar lookup="row">damage/wing-force-airspeed</independentVar>
@@ -107,7 +107,7 @@
             <output>damage/left-wing-force-total</output>
         </fcs_function>
         
-        <fcs_function name="Total right wing force">
+        <fcs_function>
             <function>
                 <table>
                     <independentVar lookup="row">damage/wing-force-airspeed</independentVar>
@@ -123,7 +123,7 @@
             <output>damage/right-wing-force-total</output>
         </fcs_function>
         
-        <switch name="Left wing ripped off">
+        <switch>
             <output>damage/left-wing-ripped-off</output>
             <default value="damage/left-wing-ripped-off"/>
             <test logic="OR" value="1">
@@ -133,7 +133,7 @@
                 damage/repairing EQ 1
             </test>
         </switch>
-        <switch name="Right wing ripped off">
+        <switch>
             <output>damage/right-wing-ripped-off</output>
             <default value="damage/right-wing-ripped-off"/>
             <test logic="OR" value="1">
@@ -143,7 +143,7 @@
                 damage/repairing EQ 1
             </test>
         </switch>
-        <switch name="Left wing damaged">
+        <switch>
             <output>damage/left-wing-damaged</output>
             <default value="damage/left-wing-damaged"/>
             <test logic="OR" value="1">
@@ -153,7 +153,7 @@
                 damage/repairing EQ 1
             </test>
         </switch>
-        <switch name="Right wing damaged">
+        <switch>
             <output>damage/right-wing-damaged</output>
             <default value="damage/right-wing-damaged"/>
             <test logic="OR" value="1">
@@ -164,7 +164,7 @@
             </test>
         </switch>
                 
-        <fcs_function name="Lift center position normalized">
+        <fcs_function>
             <function>
                 <sum>
                     <product>
@@ -177,7 +177,7 @@
             <output>damage/lift-center-norm</output>
         </fcs_function>
         
-        <fcs_function name="Apply lift center translation to AeroRP">
+        <fcs_function>
             <function>
                 <product>
                     <property>damage/lift-center-norm</property>
@@ -189,7 +189,7 @@
                     
     </channel>
     <channel name="Gear damage">
-        <fcs_function name="Calculated nose gear damage">
+        <fcs_function>
             <function>
                 <table>
                     <independentVar lookup="row">gear/unit[0]/compression-ft</independentVar>
@@ -203,7 +203,7 @@
             </function>
             <output>damage/nose-gear-calculated</output>
         </fcs_function>
-        <switch name="Nose gear damage">
+        <switch>
             <output>damage/nose-gear-actual</output>
             <default value="damage/nose-gear-actual"/>
             <test logic="OR" value="damage/nose-gear-calculated">
@@ -214,7 +214,7 @@
             </test>
         </switch>
         
-        <fcs_function name="Calculated left main gear damage">
+        <fcs_function>
             <function>
                 <table>
                     <independentVar lookup="row">gear/unit[1]/compression-ft</independentVar>
@@ -228,7 +228,7 @@
             </function>
             <output>damage/left-main-gear-calculated</output>
         </fcs_function>
-        <switch name="Actual left main gear damage">
+        <switch>
             <output>damage/left-main-gear-actual</output>
             <default value="damage/left-main-gear-actual"/>
             <test logic="OR" value="damage/left-main-gear-calculated">
@@ -239,7 +239,7 @@
             </test>
         </switch>
         
-        <fcs_function name="Calculated right main gear damage">
+        <fcs_function>
             <function>
                 <table>
                     <independentVar lookup="row">gear/unit[2]/compression-ft</independentVar>
@@ -253,7 +253,7 @@
             </function>
             <output>damage/right-main-gear-calculated</output>
         </fcs_function>
-        <switch name="Actual right main gear damage">
+        <switch>
             <output>damage/right-main-gear-actual</output>
             <default value="damage/right-main-gear-actual"/>
             <test logic="OR" value="damage/right-main-gear-calculated">
