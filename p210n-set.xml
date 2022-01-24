@@ -311,6 +311,15 @@
 			<tank n="1">
 				<drain-valve type="bool">false</drain-valve>
 			</tank>
+			<tank n="4">
+				<drain-valve type="bool">false</drain-valve>
+			</tank>
+			<tank n="5">
+				<drain-valve type="bool">false</drain-valve>
+			</tank>
+			<tank n="10">
+				<drain-valve type="bool">false</drain-valve>
+			</tank>
 			<!-- 0=OFF, -1=LEFT, 1=RIGHT -->
 			<selected-tank>0</selected-tank>
 		</fuel>
