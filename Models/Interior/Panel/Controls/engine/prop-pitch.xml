@@ -20,7 +20,7 @@
 			<binding>
 				<command>property-adjust</command>
 				<property>controls/engines/engine/propeller-pitch</property>
-				<factor>0.0143</factor>
+				<factor>0.02</factor>
 				<min>0</min>
 				<max>1</max>
 				<wrap>0</wrap>
@@ -30,7 +30,7 @@
 			<binding>
 				<command>property-adjust</command>
 				<property>controls/engines/engine/propeller-pitch</property>
-				<factor>0.00143</factor>
+				<factor>0.002</factor>
 				<min>0</min>
 				<max>1</max>
 				<wrap>0</wrap>
@@ -45,7 +45,7 @@
 				<property>controls/engines/engine/propeller-pitch</property>
 				<mapping>nasal</mapping>
 				<script>
-					return 2000 + arg[0] * 700;
+					return 2200 + arg[0] * 500;
 				</script>
 			</binding>
 		</hovered>
