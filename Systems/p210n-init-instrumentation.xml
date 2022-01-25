@@ -76,4 +76,27 @@
 		<source-knob>2</source-knob> <!-- NAV1 -->
 		<source>/instrumentation/nav/frequencies/selected-mhz</source>
 	</dme>
+	
+	<rnav>
+		<selected-bearing-deg>0.0</selected-bearing-deg>
+		<selected-bearing-deg-hundreds>0</selected-bearing-deg-hundreds>
+		<selected-bearing-deg-tenths>0</selected-bearing-deg-tenths>
+		<selected-bearing-deg-units>0</selected-bearing-deg-units>
+		<selected-bearing-deg-decimals>0</selected-bearing-deg-decimals>
+		<selected-distance-nm>0.0</selected-distance-nm>
+		<selected-distance-nm-hundreds>0</selected-distance-nm-hundreds>
+		<selected-distance-nm-tenths>0</selected-distance-nm-tenths>
+		<selected-distance-nm-units>0</selected-distance-nm-units>
+		<selected-distance-nm-decimals>0</selected-distance-nm-decimals>
+		<waypoint n="0">
+			<bearing-deg>0</bearing-deg>
+			<distance-nm>0</distance-nm>
+		</waypoint>
+		<waypoint n="1">
+			<bearing-deg>0</bearing-deg>
+			<distance-nm>0</distance-nm>
+		</waypoint>
+		<display-waypoint type="int">1</display-waypoint>
+		<fly-waypoint type="int">1</fly-waypoint>
+	</rnav>
 </PropertyList>
