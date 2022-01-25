@@ -294,6 +294,26 @@
 			</binding>
 		</action>
 	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>SensitivitySwitch</object-name>
+		<axis>
+			<object-name>SensitivitySwitchAxis</object-name>
+		</axis>
+		<property>instrumentation/rnav/sensitivity</property>
+		<offset>-1</offset>
+		<factor>40</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/rnav/sensitivity</property>
+				<min>0</min>
+				<max>2</max> <!-- real max + factor needed with wrap = true-->
+				<factor>1</factor>
+				<wrap type="bool">true</wrap>
+			</binding>
+		</action>
+	</animation>
 	
 	<animation>
 		<type>slider</type>

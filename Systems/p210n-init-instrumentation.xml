@@ -98,5 +98,7 @@
 		</waypoint>
 		<display-waypoint type="int">1</display-waypoint>
 		<fly-waypoint type="int">1</fly-waypoint>
+		<!-- sensitivity of the CDI needle 0=ENR (enroute), 1=APPR (approach) -->
+		<sensitivity>0</sensitivity>
 	</rnav>
 </PropertyList>
