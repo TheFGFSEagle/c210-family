@@ -95,6 +95,11 @@
 			<tag>pressurized</tag>
 			<tag>retractable-gear</tag>
 		</tags>
+		<urls>
+		        <home-page>https://wiki.flightgear.org/Cessna_210_Centurion_family</home-page>
+		        <wikipedia>https://en.wikipedia.org/wiki/Cessna_210_Centurion</wikipedia>
+		        <code-repository>https://github.com/TheFGFSEagle/c210-family</code-repository>
+		</urls>
 		<model>
 			<path>Models/p210n.xml</path>
 			<livery>
