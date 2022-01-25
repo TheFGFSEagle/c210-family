@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<sim>
+		<description type="string">Cessna P210N Pressurized Centurion FDMTEST (JSBsim)</description>
+		<aero>Systems/p210n-fdmtest</aero>
+		<variant-of>p210n</variant-of>
+	</sim>
+</PropertyList>
+
