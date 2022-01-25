@@ -111,10 +111,10 @@
         
         <fcs_function>
             <function>
-                <product>
+                <quotient>
                     <property>propulsion/engine/tach-time-sec</property>
-                    <value>0.000277777777777777</value>
-                </product>
+                    <value>3600</value>
+                </quotient>
             </function>
             <output>propulsion/engine/tach-time-hours</output>
         </fcs_function>
