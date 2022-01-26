@@ -247,6 +247,13 @@
 			<path>/instrumentation/dme/power-btn</path>
 			<path>/instrumentation/dme/ident</path>
 		</aircraft-data>
+		<hitches>
+			<aerotow>
+				<force_name_jsbsim type="string">hitch</force_name_jsbsim>
+				<force-is-calculated-by-other type="bool">true</force-is-calculated-by-other>
+				<mp-auto-connect-period type="float">1.0</mp-auto-connect-period>
+			</aerotow>
+		</hitches>
 	</sim>
 	
 	<nasal>
@@ -438,4 +445,17 @@
 	</payload>
 	
 	<instrumentation include="Systems/p210n-init-instrumentation.xml"/>
+	
+	<input>
+		<keyboard>
+			<key n="79">
+				<name>O</name>
+				<desc>Open aerotow-hook</desc>
+				<binding>
+					<command>nasal</command>
+					<script>towing.releaseHitch("aerotow")</script>
+				</binding>
+			</key>
+		</keyboard>
+	</input>
 </PropertyList>
