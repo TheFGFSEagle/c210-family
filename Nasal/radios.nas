@@ -1,6 +1,8 @@
 # Nasal implementations of the Cessna 400 COM/NAV, DME, RNAV and ADF radios and their displays, the Cessna 400 audio panel and the Cessna 400 transponder
 # by TheEagle
 
+var instrumentationNode = props.globals.getNode("/instrumentation");
+
 var ComNav = {
 	new: func(deviceNum, instrumentationNode) {
 		var obj = {
@@ -78,8 +80,8 @@ var ComNav = {
 	}
 };
 
-var comNav1 = ComNav.new(0, props.globals.getNode("/instrumentation"));
-var comNav2 = ComNav.new(1, props.globals.getNode("/instrumentation"));
+var comNav1 = ComNav.new(0, instrumentationNode);
+var comNav2 = ComNav.new(1, instrumentationNode);
 
 var ComNavFreqDisplay = {
 	new: func(deviceNode, placement) {
@@ -167,7 +169,7 @@ var AudioControl = {
 	}
 };
 
-var audioControl = AudioControl.new(props.globals.getNode("/instrumentation"));
+var audioControl = AudioControl.new(instrumentationNode);
 
 
 var DME = {
@@ -220,7 +222,7 @@ var DME = {
 	},
 };
 
-var dme = DME.new(props.globals.getNode("/instrumentation"));
+var dme = DME.new(instrumentationNode);
 
 
 var DMEDisplays = {
@@ -359,7 +361,7 @@ var DMEDisplays = {
 	},
 };
 
-var dmeDisplays = DMEDisplays.new(props.globals.getNode("/instrumentation"));
+var dmeDisplays = DMEDisplays.new(instrumentationNode);
 
 
 # RNAV. Only setting of distance and bearing and transfer of those nto the waypoints is managed here
@@ -448,7 +450,7 @@ var RNAV = {
 	}
 };
 
-var rnav = RNAV.new(props.globals.getNode("/instrumentation"));
+var rnav = RNAV.new(instrumentationNode);
 
 var RNAVDisplay = {
 	new: func(instrumentationNode, numberPath, placement) {
@@ -503,6 +505,6 @@ var RNAVDisplay = {
 	},
 };
 
-var RNAVBearingDisplay = RNAVDisplay.new(props.globals.getNode("/instrumentation"), "bearing-deg", "RNAVBearingDisplay");
-var RNAVDistanceDisplay = RNAVDisplay.new(props.globals.getNode("/instrumentation"), "distance-nm", "RNAVDistanceDisplay");
+var RNAVBearingDisplay = RNAVDisplay.new(instrumentationNode, "bearing-deg", "RNAVBearingDisplay");
+var RNAVDistanceDisplay = RNAVDisplay.new(instrumentationNode, "distance-nm", "RNAVDistanceDisplay");
 

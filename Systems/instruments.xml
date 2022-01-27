@@ -4,7 +4,6 @@
 		<name>Gear retracted indicator light illumination</name>
 		<type>gain</type>
 		<gain>1</gain>
-		<update-interval-secs>0.1</update-interval-secs>
 		<input>
 			<condition>
 				<or>
@@ -37,7 +36,6 @@
 		<name>Gear extended indicator light illumination</name>
 		<type>gain</type>
 		<gain>1</gain>
-		<update-interval-secs>0.1</update-interval-secs>
 		<input>
 			<condition>
 				<or>
@@ -73,6 +71,48 @@
 		<max-rate-of-change>1</max-rate-of-change>
 		<input>/controls/gear/gear-down</input>
 		<output>/sim/model/controls/gear/lever</output>
+	</filter>
+	
+	<!-- NAV2 ARC - TO=-1, FROM=1, normal OBS=0-->
+	<filter>
+		<name>NAV2 Automatic Radial Centering</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<enable>
+			<condition>
+				<not-equals>
+					<property>/instrumentation/nav[1]/radials/arc-mode</property>
+					<value>0</value>
+				</not-equals>
+			</condition>
+		</enable>
+		<input>
+			<expression>
+				<floor>
+					<diff>
+						<property>/instrumentation/nav[1]/heading-deg</property>
+						<property>/environment/magnetic-variation-deg</property>
+					</diff>
+				</floor>
+			</expression>
+		</input>
+		<!-- in FROM mode, add 180 to the heading to achieve a FROM radial -->
+		<reference>
+			<condition>
+				<equals>
+					<property>/instrumentation/nav[1]/radials/arc-mode</property>
+					<value>1</value>
+				</equals>
+			</condition>					
+			<value>-180</value>
+		</reference>
+		<output>
+			<property>/instrumentation/nav[1]/radials/selected-deg</property>
+			<period>
+				<min>0</min>
+				<max>359</max>
+			</period>
+		</output>
 	</filter>
 </PropertyList>
 					

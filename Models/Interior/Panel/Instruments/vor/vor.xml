@@ -71,6 +71,41 @@
 				<wrap>true</wrap>
 			</binding>
 		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/nav[1]/radials/arc-mode</property>
+				<min>-1</min>
+				<max>1</max>
+				<factor>1</factor>
+			</binding>
+		</shift-action>
+		<release>
+			<binding>
+				<condition>
+					<equals>
+						<property>instrumentation/nav[1]/radials/arc-mode</property>
+						<value>-1</value> <!-- spring-loaded pushed-in position for TO mode -->
+					</equals>
+				</condition>
+				<command>property-interpolate</command>
+				<property>instrumentation/nav[1]/radials/arc-mode</property>
+				<value>0</value>
+				<time>0.1</time>
+			</binding>
+		</release>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>OBSKnob</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/nav[1]/radials/arc-mode</property>
+		<factor>0.005</factor>
 	</animation>
 	
 	<text>
