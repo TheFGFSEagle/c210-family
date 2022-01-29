@@ -344,9 +344,9 @@
 
         <contact type="STRUCTURE" name="Fuselage, tail tip">
             <location unit="IN">
-                <x> 311 </x>
-                <y>  0 </y>
-                <z>  -6 </z>
+                <x>212</x>
+                <y>0</y>
+                <z>-2</z>
             </location>
             <static_friction>  1 </static_friction>
             <dynamic_friction> 0.5 </dynamic_friction>
@@ -1381,9 +1381,9 @@
     <external_reactions>
         <force name="hitch" frame="BODY" unit="LBS" >
             <location unit="IN">
-                <x>311</x>
+                <x>212</x>
                 <y>0</y>
-                <z>-8</z>
+                <z>-1.7</z>
             </location>
             <direction>
                 <x>0.0</x>
