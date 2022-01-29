@@ -89,10 +89,10 @@
 		<input>
 			<expression>
 				<floor>
-					<diff>
+					<dif>
 						<property>/instrumentation/nav[1]/heading-deg</property>
 						<property>/environment/magnetic-variation-deg</property>
-					</diff>
+					</dif>
 				</floor>
 			</expression>
 		</input>
