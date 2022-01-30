@@ -675,9 +675,9 @@
 		<type>locked-track</type>
 		<object-name>NoseGearUpperLink</object-name>
 		<center>
-			<x-m>-1.01523</x-m>
+			<x-m>-0.145352</x-m>
 			<y-m>0</y-m>
-			<z-m>-0.482031</z-m>
+			<z-m>-0.549674</z-m>
 		</center>
 		<lock-axis>
 			<x>0</x>
@@ -692,16 +692,16 @@
 		
 		<target-name>NoseGearStrutInnerCylinder</target-name>
 		<target-center>
-			<x-m>-1.05295</x-m>
+			<x-m>-0.183072</x-m>
 			<y-m>0</y-m>
-			<z-m>-0.651313</z-m>
+			<z-m>-0.718956</z-m>
 		</target-center>
 		
 		<slave-name>NoseGearLowerLink</slave-name>
 		<slave-center>
-			<x-m>-0.895282</x-m>
+			<x-m>-0.025404</x-m>
 			<y-m>0</y-m>
-			<z-m>-0.597486</z-m>
+			<z-m>-0.665129</z-m>
 		</slave-center>
 	</animation>
 	
@@ -1061,73 +1061,73 @@
 	<model>
 		<path>Effects/landing-light-left.xml</path>
 		<offsets>
-			<x-m>-1.75</x-m>
+			<x-m>-0.88</x-m>
 			<y-m>-0.1</y-m>
-			<z-m>-0.04</z-m>
+			<z-m>-0.107</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Effects/landing-light-right.xml</path>
 		<offsets>
-			<x-m>-1.75</x-m>
+			<x-m>-0.88</x-m>
 			<y-m>0.1</y-m>
-			<z-m>-0.04</z-m>
+			<z-m>-0.107</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Effects/left-nav-light.xml</path>
 		<offsets>
-			<x-m>0.03</x-m>
+			<x-m>0.9</x-m>
 			<y-m>-5.43</y-m>
-			<z-m>1</z-m>
+			<z-m>0.93</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Effects/right-nav-light.xml</path>
 		<offsets>
-			<x-m>0.03</x-m>
+			<x-m>0.9</x-m>
 			<y-m>5.43</y-m>
-			<z-m>1</z-m>
+			<z-m>0.93</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Effects/tail-nav-light.xml</path>
 		<offsets>
-			<x-m>5.65</x-m>
+			<x-m>6.52</x-m>
 			<y-m>0</y-m>
-			<z-m>1.72</z-m>
+			<z-m>1.65</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Effects/left-strobe-light.xml</path>
 		<offsets>
-			<x-m>1.05</x-m>
+			<x-m>1.92</x-m>
 			<y-m>-5.53</y-m>
-			<z-m>0.85</z-m>
+			<z-m>0.78</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Effects/right-strobe-light.xml</path>
 		<offsets>
-			<x-m>1.05</x-m>
+			<x-m>1.92</x-m>
 			<y-m>5.53</y-m>
-			<z-m>0.85</z-m>
+			<z-m>0.78</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Effects/left-logo-light.xml</path>
 		<offsets>
-			<x-m>4.65</x-m>
+			<x-m>5.52</x-m>
 			<y-m>-1.6</y-m>
-			<z-m>0.155</z-m>
+			<z-m>0.087</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Effects/right-logo-light.xml</path>
 		<offsets>
-			<x-m>4.65</x-m>
+			<x-m>5.52</x-m>
 			<y-m>1.6</y-m>
-			<z-m>0.155</z-m>
+			<z-m>0.0.87</z-m>
 		</offsets>
 	</model>
 </PropertyList>
