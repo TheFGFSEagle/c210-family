@@ -368,7 +368,7 @@
                 <yaw>0</yaw>
             </orient>
             <feed>12</feed>
-            <thruster file="McCauley_D3A34C402">
+            <thruster file="propjavacruise"><!--McCauley_D3A34C402">-->
                 <sense>1</sense>
                 <location unit="IN">
                     <x>13</x>
