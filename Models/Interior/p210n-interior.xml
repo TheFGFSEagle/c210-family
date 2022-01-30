@@ -6,9 +6,9 @@
 		<path>front-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
-			<x-m>0.2</x-m>
+			<x-m>1.07</x-m>
 			<y-m>-0.28</y-m>
-			<z-m>-0.35</z-m>
+			<z-m>-0.418</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -16,9 +16,9 @@
 		<path>front-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
-			<x-m>0.2</x-m>
+			<x-m>1.07</x-m>
 			<y-m>0.28</y-m>
-			<z-m>-0.35</z-m>
+			<z-m>-0.418</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -26,9 +26,9 @@
 		<path>middle-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
-			<x-m>1</x-m>
+			<x-m>1.87</x-m>
 			<y-m>-0.28</y-m>
-			<z-m>-0.34</z-m>
+			<z-m>-0.408</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -36,9 +36,9 @@
 		<path>middle-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
-			<x-m>1</x-m>
+			<x-m>1.87</x-m>
 			<y-m>0.28</y-m>
-			<z-m>-0.34</z-m>
+			<z-m>-0.408</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -46,9 +46,9 @@
 		<path>rear-seat.ac</path>
 		<usage>interior</usage>
 		<offsets>
-			<x-m>1.8</x-m>
+			<x-m>2.67</x-m>
 			<y-m>0</y-m>
-			<z-m>0</z-m>
+			<z-m>-0.05</z-m>
 		</offsets>
 	</model>
 	
