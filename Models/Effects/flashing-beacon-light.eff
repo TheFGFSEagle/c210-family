@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+	<name>flashing-beacon-light</name>
+	<inherits-from>Effects/procedural-light</inherits-from>
+
+	<parameters>
+		<light_color_base_r type="float">1</light_color_base_r>
+		<light_color_base_g type="float">0.5</light_color_base_g>
+		<light_color_base_b type="float">0.5</light_color_base_b>
+		<light_color_center_r type="float">1</light_color_center_r>
+		<light_color_center_g type="float">0</light_color_center_g>
+		<light_color_center_b type="float">0</light_color_center_b>
+		
+		<is_directional type="bool">false</is_directional>
+		<is_strobe type="bool">false</is_strobe>
+		<intensity_scale type="float"><use>sim/model/lights/beacon/state</use></intensity_scale>
+	</parameters>
+</PropertyList>

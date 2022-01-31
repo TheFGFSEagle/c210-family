@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>Models/Effects/procedural-light.ac</path>
+
+	<effect>
+		<inherits-from>Models/Effects/flashing-beacon-light</inherits-from>
+		<object-name>Light</object-name>
+	</effect>
+	
+	<animation>
+		<type>noshadow</type>
+		<object-name>Light</object-name>
+	</animation>
+	
+	<animation>
+		<type>dist-scale</type>
+		<object-name>Light</object-name>
+		<factor>0.005</factor>
+		<min>0.2</min>
+		<max>10</max>
+	</animation>
+	
+	<model>
+		<name>LightPlate</name>
+		<path>Models/Effects/lights.xml</path>
+		<overlay>
+			<params>
+				<light-used>white</light-used>
+				<show-prop>controls/lighting/beacon</show-prop>
+			</params>
+		</overlay>
+	</model>
+	
+	<!-- Compositor light - we're not going to support any Rembrandt nonsense -->
+	<light>
+		<name>FlashingBeaconLight</name>
+		<type>point</type>
+		<position>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</position>
+		<ambient>
+			<r>1</r>
+			<g>0</g>
+			<b>0</b>
+			<a>0</a>
+		</ambient>
+		<diffuse>
+			<r>1</r>
+			<g>0</g>
+			<b>0</b>
+			<a>0</a>
+		</diffuse>
+		<specular>
+			<r>1</r>
+			<g>0</g>
+			<b>0</b>
+			<a>0</a>
+		</specular>
+		<attenuation>
+			<c>0.1</c>
+			<l>0.5</l>
+			<q>0.01</q>
+		</attenuation>
+		<range-m>5</range-m>
+		<dim-factor>
+			<property>sim/model/lights/beacon/state</property>
+		</dim-factor>
+	</light>
+</PropertyList>
