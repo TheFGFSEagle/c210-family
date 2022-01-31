@@ -20,3 +20,5 @@ var emergencyExit = aircraft.door.new("/sim/model/doors/emergency-exit", 2);
 var baggageDoor = aircraft.door.new("/sim/model/doors/baggage", 1);
 
 var strobeLight = aircraft.light.new("/sim/model/lights/strobe", [0.05, 0.05, 0.05, 1.85], "/controls/lighting/strobe");
+var beaconLight = aircraft.light.new("/sim/model/lights/beacon", [0.2, 0.8], "/controls/lighting/beacon");
+

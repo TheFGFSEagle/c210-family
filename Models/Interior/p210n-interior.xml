@@ -4,7 +4,6 @@
 	<model>
 		<name>FrontLeftSeat</name>
 		<path>front-seat.ac</path>
-		<usage>interior</usage>
 		<offsets>
 			<x-m>1.07</x-m>
 			<y-m>-0.28</y-m>
@@ -14,7 +13,6 @@
 	<model>
 		<name>FrontRightSeat</name>
 		<path>front-seat.ac</path>
-		<usage>interior</usage>
 		<offsets>
 			<x-m>1.07</x-m>
 			<y-m>0.28</y-m>
@@ -24,7 +22,6 @@
 	<model>
 		<name>MiddleLeftSeat</name>
 		<path>middle-seat.ac</path>
-		<usage>interior</usage>
 		<offsets>
 			<x-m>1.87</x-m>
 			<y-m>-0.28</y-m>
@@ -34,7 +31,6 @@
 	<model>
 		<name>MiddleRightSeat</name>
 		<path>middle-seat.ac</path>
-		<usage>interior</usage>
 		<offsets>
 			<x-m>1.87</x-m>
 			<y-m>0.28</y-m>
@@ -44,7 +40,6 @@
 	<model>
 		<name>RearSeat</name>
 		<path>rear-seat.ac</path>
-		<usage>interior</usage>
 		<offsets>
 			<x-m>2.67</x-m>
 			<y-m>0</y-m>
@@ -56,7 +51,6 @@
 	<model>
 		<name>Panel</name>
 		<path>Panel/p210n-panel.xml</path>
-		<usage>interior</usage>
 	</model>
 	
 	<effect>

@@ -638,7 +638,7 @@
 			<object-name>NoseWheelSteeringAxis</object-name>
 		</axis>
 		<property>gear/gear[0]/steering-norm</property>
-		<factor>27</factor>
+		<factor>35</factor>
 	</animation>
 	<animation>
 		<type>translate</type>
@@ -1093,9 +1093,9 @@
 	<model>
 		<path>Effects/tail-nav-light.xml</path>
 		<offsets>
-			<x-m>6.52</x-m>
+			<x-m>6.483</x-m>
 			<y-m>0</y-m>
-			<z-m>1.65</z-m>
+			<z-m>0.034 m</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -1128,6 +1128,14 @@
 			<x-m>5.52</x-m>
 			<y-m>1.6</y-m>
 			<z-m>0.0.87</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Effects/flashing-beacon-light.xml</path>
+		<offsets>
+			<x-m>6.52</x-m>
+			<y-m>0</y-m>
+			<z-m>1.652</z-m>
 		</offsets>
 	</model>
 </PropertyList>
