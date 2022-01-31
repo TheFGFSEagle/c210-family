@@ -46,14 +46,16 @@
         <izz unit="SLUG*FT2">3600</izz>
         <emptywt unit="LBS" >2342</emptywt>
         <!-- ref. datum is at 51.84  inches -->
-        <!-- maximum aft location of the CG is 51.84 (ref. datum) + 52 = 103.84 inches -->
+        <!-- maximum aft location of the CG is 52 inches 
+               maximum forward location of the CG is 37 inches (at 3000 pound gross weight
+               empty weight CG is 42 inches-->
         <location name="CG" unit="IN">
             <x>42</x>
             <y>0</y>
             <z>-3</z>
         </location>
         <pointmass name="Pilot">
-            <weight unit="LBS">165</weight>
+            <weight unit="LBS">200</weight>
             <location name="POINTMASS" unit="IN">
                 <x>42.1</x>
                 <y>11</y>
@@ -61,7 +63,7 @@
             </location>
         </pointmass> 
         <pointmass name="Copilot">
-            <weight unit="LBS">165</weight>
+            <weight unit="LBS">200</weight>
             <location name="POINTMASS" unit="IN">
                 <x>42.1</x>
                 <y>-11</y>
@@ -69,7 +71,7 @@
             </location>
         </pointmass>
         <pointmass name="Middle left passenger">
-            <weight unit="LBS">165</weight>
+            <weight unit="LBS">170</weight>
             <location name="POINTMASS" unit="IN">
                 <x>73.6</x>
                 <y>11</y>
@@ -77,7 +79,7 @@
             </location>
         </pointmass>
         <pointmass name="Middle right passenger">
-            <weight unit="LBS">165</weight>
+            <weight unit="LBS">170</weight>
             <location name="POINTMASS" unit="IN">
                 <x>73.6</x>
                 <y>-11</y>
@@ -85,7 +87,7 @@
             </location>
         </pointmass>
         <pointmass name="Rear left passenger">
-            <weight unit="LBS">165</weight>
+            <weight unit="LBS">0</weight>
             <location name="POINTMASS" unit="IN">
                 <x>105.1</x>
                 <y>11</y>
@@ -93,7 +95,7 @@
             </location>
         </pointmass>
         <pointmass name="Rear right passenger">
-            <weight unit="LBS">165</weight>
+            <weight unit="LBS">0</weight>
             <location name="POINTMASS" unit="IN">
                 <x>105.1</x>
                 <y>-11</y>
@@ -109,7 +111,7 @@
             </location>
         </pointmass>
         <pointmass name="Baggage B">
-            <weight unit="LBS"> 80</weight>
+            <weight unit="LBS">80</weight>
             <location name="POINTMASS" unit="IN">
                 <x>159.3</x>
                 <y>0</y>
@@ -752,7 +754,7 @@
                 <z>30.9</z>
             </location>
             <capacity unit="LBS">267.445</capacity>
-            <contents unit="LBS">100</contents>
+            <contents unit="LBS">267.445</contents>
             <unusable unit="LBS">3.005</unusable>
             <type>AVGAS</type>
         </tank>
@@ -765,7 +767,7 @@
                 <z>30.9</z>
             </location>
             <capacity unit="LBS">267.445</capacity>
-            <contents unit="LBS">100</contents>
+            <contents unit="LBS">267.445</contents>
             <unusable unit="LBS">3.005</unusable>
             <type>AVGAS</type>
         </tank>
