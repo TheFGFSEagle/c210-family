@@ -41,16 +41,16 @@
     </metrics>
 
     <mass_balance>
-        <ixx unit="SLUG*FT2">      2034 </ixx>
-        <iyy unit="SLUG*FT2">      1812 </iyy>
-        <izz unit="SLUG*FT2">      3600 </izz>
-        <emptywt unit="LBS" >      2342 </emptywt>
+        <ixx unit="SLUG*FT2">2034</ixx>
+        <iyy unit="SLUG*FT2">1812</iyy>
+        <izz unit="SLUG*FT2">3600</izz>
+        <emptywt unit="LBS" >2342</emptywt>
         <!-- ref. datum is at 51.84  inches -->
         <!-- maximum aft location of the CG is 51.84 (ref. datum) + 52 = 103.84 inches -->
         <location name="CG" unit="IN">
-            <x> 88.84</x>
-            <y>   0.00 </y>
-            <z>  0.20 </z>
+            <x>42</x>
+            <y>0</y>
+            <z>-3</z>
         </location>
         <pointmass name="Pilot">
             <weight unit="LBS">165</weight>
@@ -747,12 +747,12 @@
         <!-- Left main tank -->
         <tank type="FUEL" number="0">
             <location unit="IN">
-                <x>95</x>
-                <y>126</y>
-                <z>27</z>
+                <x>57.5</x>
+                <y>69.3</y>
+                <z>30.9</z>
             </location>
-            <capacity unit="LBS"> 267.445 </capacity>
-            <contents unit="LBS"> 100 </contents>
+            <capacity unit="LBS">267.445</capacity>
+            <contents unit="LBS">100</contents>
             <unusable unit="LBS">3.005</unusable>
             <type>AVGAS</type>
         </tank>
@@ -760,24 +760,25 @@
         <!-- Right main tank -->
         <tank type="FUEL" number="1">
             <location unit="IN">
-                <x>95</x>
-                <y>-126</y>
-                <z>27</z>
+                <x>57.5</x>
+                <y>-69.3</y>
+                <z>30.9</z>
             </location>
-            <capacity unit="LBS"> 267.445 </capacity>
-            <contents unit="LBS"> 100</contents>
+            <capacity unit="LBS">267.445</capacity>
+            <contents unit="LBS">100</contents>
             <unusable unit="LBS">3.005</unusable>
             <type>AVGAS</type>
         </tank>
         
+        <!-- XXX: All capacity values below are made up and working but shoul be replaced with real world values some day -->
         <!-- Left fuel pipe wing tank -> reservoir tank -->
         <tank type="FUEL" number="2">
             <location unit="IN">
-                <x>125</x>
+                <x>71.5</x>
                 <y>22.5</y>
-                <z>7</z>
+                <z>0</z>
             </location>
-            <capacity unit="LBS"> 1</capacity>
+            <capacity unit="LBS">1</capacity>
             <contents unit="LBS">1</contents>
             <type>AVGAS</type>
         </tank>
@@ -785,11 +786,11 @@
         <!-- Right fuel pipe wing tank -> reservoir tank -->
         <tank type="FUEL" number="3">
             <location unit="IN">
-                <x>125</x>
+                <x>71.5</x>
                 <y>-22.5</y>
-                <z>7</z>
+                <z>0</z>
             </location>
-            <capacity unit="LBS"> 1</capacity>
+            <capacity unit="LBS">1</capacity>
             <contents unit="LBS">1</contents>
             <type>AVGAS</type>
         </tank>
@@ -797,9 +798,9 @@
         <!-- Left reservoir tank -->
         <tank type="FUEL" number="4">
             <location unit="IN">
-                <x>70</x>
-                <y>15</y>
-                <z>-15</z>
+                <x>23.9</x>
+                <y>11.8</y>
+                <z>-20</z>
             </location>
             <capacity unit="LBS">0.5</capacity>
             <contents unit="LBS">0.5</contents>
@@ -809,9 +810,9 @@
         <!-- Right reservoir tank -->
         <tank type="FUEL" number="5">
             <location unit="IN">
-                <x>70</x>
-                <y>-15</y>
-                <z>-15</z>
+                <x>23.9</x>
+                <y>-11.8</y>
+                <z>-20</z>
             </location>
             <capacity unit="LBS">0.5</capacity>
             <contents unit="LBS">0.5</contents>
@@ -821,11 +822,11 @@
         <!-- Left fuel pipe reservoir tank -> fuel selector -->
         <tank type="FUEL" number="6">
             <location unit="IN">
-                <x>125</x>
-                <y>10</y>
-                <z>-16</z>
+                <x>23.9</x>
+                <y>5</y>
+                <z>-19</z>
             </location>
-            <capacity unit="LBS"> 0.2</capacity>
+            <capacity unit="LBS">0.2</capacity>
             <contents unit="LBS">0.2</contents>
             <type>AVGAS</type>
         </tank>
@@ -833,11 +834,11 @@
         <!-- Right fuel pipe reservoir tank -> fuel selector -->
         <tank type="FUEL" number="7">
             <location unit="IN">
-                <x>125</x>
-                <y>-10</y>
-                <z>-16</z>
+                <x>23.9</x>
+                <y>-5</y>
+                <z>-19</z>
             </location>
-            <capacity unit="LBS"> 0.2</capacity>
+            <capacity unit="LBS">0.2</capacity>
             <contents unit="LBS">0.2</contents>
             <type>AVGAS</type>
         </tank>
@@ -845,11 +846,11 @@
         <!-- Fuel selector sump-->
         <tank type="FUEL" number="8">
             <location unit="IN">
-                <x>63</x>
+                <x>26</x>
                 <y>0</y>
-                <z>-17</z>
+                <z>-18</z>
             </location>
-            <capacity unit="LBS"> 0.25</capacity>
+            <capacity unit="LBS">0.25</capacity>
             <contents unit="LBS">0.25</contents>
             <type>AVGAS</type>
         </tank>
@@ -861,7 +862,7 @@
                 <y>0</y>
                 <z>-17</z>
             </location>
-            <capacity unit="LBS"> 0.1</capacity>
+            <capacity unit="LBS">0.1</capacity>
             <contents unit="LBS">0.1</contents>
             <type>AVGAS</type>
         </tank>
@@ -873,7 +874,7 @@
                 <y>0</y>
                 <z>-14</z>
             </location>
-            <capacity unit="LBS"> 0.25</capacity>
+            <capacity unit="LBS">0.25</capacity>
             <contents unit="LBS">0.25</contents>
             <type>AVGAS</type>
         </tank>
@@ -885,7 +886,7 @@
                 <y>0</y>
                 <z>-5</z>
             </location>
-            <capacity unit="LBS"> 0.1</capacity>
+            <capacity unit="LBS">0.1</capacity>
             <contents unit="LBS">0.1</contents>
             <type>AVGAS</type>
         </tank>
@@ -897,7 +898,7 @@
                 <y>0</y>
                 <z>0</z>
             </location>
-            <capacity unit="LBS"> 0.1</capacity>
+            <capacity unit="LBS">0.1</capacity>
             <contents unit="LBS">0.1</contents>
             <type>AVGAS</type>
         </tank>
