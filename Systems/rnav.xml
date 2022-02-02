@@ -249,6 +249,10 @@
 			</expression>
 		</input>
 		<output>/instrumentation/rnav/radial-bearing-difference</output>
+		<period>
+			<min>0</min>
+			<max>360</max>
+		</period>
 	</filter>
 	<logic>
 		<input>

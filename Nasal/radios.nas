@@ -202,7 +202,7 @@ var DME = {
 		if (newSource == "NAV1") {
 			me.sourceNode.setValue(me.nav1Node.getNode("frequencies/selected-mhz").getPath());
 		} elsif (newSource == "NAV2" or newSource == "RNAV") {
-			me.sourceNode.setValue(me.nav2Node.getNode("frequencies/selected-mhz").getPath());	
+			me.sourceNode.setValue(me.nav2Node.getNode("frequencies/selected-mhz").getPath());
 		} elsif (newSource == "HOLD") {
 			me.frequencyNode.setValue(props.globals.getNode(me.sourceNode.getValue()).getValue());
 			me.sourceNode.setValue(me.frequencyNode.getPath());
@@ -353,7 +353,7 @@ var DMEDisplays = {
 			source = me.sources[me.sourceKnobNode.getValue() or 0];
 			if (source == "RNAV") {
 				me.distanceDisplay.rnavAnnun.show();
-				me.distanceDisplay.text.setText(me.rnavDistanceNode.getValue())
+				me.distanceDisplay.text.setText(sprintf("%3.1f", me.rnavDistanceNode.getValue()));
 			} else {
 				me.distanceDisplay.rnavAnnun.hide();
 				me.distanceDisplay.text.setText(me.distanceNode.getValue());

@@ -97,7 +97,7 @@
 			<expression>
 				<floor>
 					<sum>
-						<property>/instrumentation/nav[1]/radials/actual-deg</property>
+						<property>/instrumentation/rnav/actual-radial-deg</property>
 						<value>0.5</value>
 					</sum>
 				</floor>
@@ -113,7 +113,7 @@
 			<expression>
 				<floor>
 					<sum>
-						<property>/instrumentation/nav[1]/radials/reciprocal-radial-deg</property>
+						<property>/instrumentation/rnav/reciprocal-radial-deg</property>
 						<value>0.5</value>
 					</sum>
 				</floor>
