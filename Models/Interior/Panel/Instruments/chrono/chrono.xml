@@ -92,7 +92,19 @@
 			</binding>
 		</release>
 	</animation>
-	 <text>
+	
+	<animation>
+		<type>material</type>
+		<object-name>ChronoDisplay</object-name>
+		<emission>
+			<red>1</red>
+			<green>0.6</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/panel-integral-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<text>
 		<name>Label</name>
 		<type type="string">literal</type>
 		<text type="string">Clock</text>

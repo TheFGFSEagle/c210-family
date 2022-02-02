@@ -25,7 +25,7 @@
         </location>
         <location name="EYEPOINT" unit="IN">
             <x>41</x>
-            <y>15</y>
+            <y>-15</y>
             <z>17</z>
         </location>
         <!--<location name="VRP" unit="IN">
@@ -58,7 +58,7 @@
             <weight unit="LBS">170</weight>
             <location name="POINTMASS" unit="IN">
                 <x>42.1</x>
-                <y>11</y>
+                <y>-11</y>
                 <z>0</z>
             </location>
         </pointmass> 
@@ -74,23 +74,23 @@
             <weight unit="LBS">170</weight>
             <location name="POINTMASS" unit="IN">
                 <x>73.6</x>
-                <y>11</y>
-                <z>0.00</z>
+                <y>-11</y>
+                <z>0</z>
             </location>
         </pointmass>
         <pointmass name="Middle right passenger">
             <weight unit="LBS">170</weight>
             <location name="POINTMASS" unit="IN">
                 <x>73.6</x>
-                <y>-11</y>
-                <z>0.00</z>
+                <y>11</y>
+                <z>0</z>
             </location>
         </pointmass>
         <pointmass name="Rear left passenger">
             <weight unit="LBS">170</weight>
             <location name="POINTMASS" unit="IN">
                 <x>105.1</x>
-                <y>11</y>
+                <y>-11</y>
                 <z>3</z>
             </location>
         </pointmass>
@@ -98,7 +98,7 @@
             <weight unit="LBS">170</weight>
             <location name="POINTMASS" unit="IN">
                 <x>105.1</x>
-                <y>-11</y>
+                <y>11</y>
                 <z>3</z>
             </location>
         </pointmass>
@@ -141,7 +141,7 @@
         <contact type="BOGEY" name="LEFT_MAIN">
             <location unit="IN">
                 <x>61.5</x>
-                <y>-57.6</y>
+                <y>57.6</y>
                 <z>-43</z>
             </location>
             <static_friction>0.8</static_friction>
@@ -157,7 +157,7 @@
         <contact type="BOGEY" name="RIGHT_MAIN">
             <location unit="IN">
                 <x>61.5</x>
-                <y>57.6</y>
+                <y>-57.6</y>
                 <z>-43</z>
             </location>
             <static_friction>0.8</static_friction>
@@ -210,7 +210,7 @@
         <contact type="STRUCTURE" name="Propeller, left edge">
             <location unit="IN">
                 <x>-44</x>
-                <y>40</y>
+                <y>-40</y>
                 <z>6.7</z>
             </location>
             <static_friction>0.01</static_friction>
@@ -222,7 +222,7 @@
         <contact type="STRUCTURE" name="Propeller, right edge">
             <location unit="IN">
                 <x>-44</x>
-                <y>-40</y>
+                <y>40</y>
                 <z>6.7</z>
             </location>
             <static_friction>0.01</static_friction>
@@ -235,7 +235,7 @@
         <contact type="STRUCTURE" name="Left wing tip, leading edge">
             <location unit="IN">
                 <x>32.2</x>
-                <y>212.6</y>
+                <y>-212.6</y>
                 <z>34.7</z>
             </location>
             <static_friction>0.5</static_friction>
@@ -247,7 +247,7 @@
         <contact type="STRUCTURE" name="Right wing tip, leading edge">
             <location unit="IN">
                 <x>32.2</x>
-                <y>-212.6</y>
+                <y>212.6</y>
                 <z>34.7</z>
             </location>
             <static_friction>0.5</static_friction>
@@ -259,7 +259,7 @@
         <contact type="STRUCTURE" name="Left wing tip, trailing edge">
             <location unit="IN">
                 <x>78.3</x>
-                <y>219.8</y>
+                <y>-219.8</y>
                 <z>27</z>
             </location>
             <static_friction>0.5</static_friction>
@@ -271,7 +271,7 @@
         <contact type="STRUCTURE" name="Right wing tip, trailing edge">
             <location unit="IN">
                 <x>78.3</x>
-                <y>-219.8</y>
+                <y>219.8</y>
                 <z>27</z>
             </location>
             <static_friction>0.5</static_friction>
@@ -283,7 +283,7 @@
         <contact type="STRUCTURE" name="Left wing center, leading edge">
             <location unit="IN">
                 <x>31</x>
-                <y>115</y>
+                <y>-115</y>
                 <z>35.7</z>
             </location>
             <static_friction>0.5</static_friction>
@@ -295,7 +295,7 @@
         <contact type="STRUCTURE" name="Right wing center, leading edge">
             <location unit="IN">
                 <x>31</x>
-                <y>-115</y>
+                <y>115</y>
                 <z>35.7</z>
             </location>
             <static_friction>0.5</static_friction>
@@ -307,7 +307,7 @@
         <contact type="STRUCTURE" name="Left wing center, trailing edge">
             <location unit="IN">
                 <x>89.1</x>
-                <y>115.3</y>
+                <y>-115.3</y>
                 <z>27.2</z>
             </location>
             <static_friction>0.5</static_friction>
@@ -319,7 +319,7 @@
         <contact type="STRUCTURE" name="Right wing center, trailing edge">
             <location unit="IN">
                 <x>89.1</x>
-                <y>-115.3</y>
+                <y>115.3</y>
                 <z>27.2</z>
             </location>
             <static_friction>0.5</static_friction>
@@ -332,7 +332,7 @@
         <contact type="STRUCTURE" name="Rudder, leading edge upper tip">
             <location unit="IN">
                 <x>255.6</x>
-                <y>  0 </y>
+                <y>0</y>
                 <z>65.1</z>
             </location>
             <static_friction>0.05</static_friction>
@@ -369,7 +369,7 @@
         <contact type="STRUCTURE" name="Left elevator leading edge tip">
             <location unit="IN">
                 <x>210.1</x>
-                <y>75.2</y>
+                <y>-75.2</y>
                 <z>3.1</z>
             </location>
             <static_friction>0.05</static_friction>
@@ -381,7 +381,7 @@
         <contact type="STRUCTURE" name="Right elevator leading edge tip">
             <location unit="IN">
                 <x>210.1</x>
-                <y>-75.2</y>
+                <y>75.2</y>
                 <z>3.1</z>
             </location>
             <static_friction>  0.05 </static_friction>
@@ -393,7 +393,7 @@
         <contact type="STRUCTURE" name="Left elevator trailing edge tip">
             <location unit="IN">
                 <x>242.6</x>
-                <y>76.4</y>
+                <y>-76.4</y>
                 <z>1.9</z>
             </location>
             <static_friction>0.05</static_friction>
@@ -405,7 +405,7 @@
         <contact type="STRUCTURE" name="Right elevator trailing edge tip">
             <location unit="IN">
                 <x>242.6</x>
-                <y>-76.4</y>
+                <y>76.4</y>
                 <z>1.9</z>
             </location>
             <static_friction>  0.05 </static_friction>
@@ -418,7 +418,7 @@
         <contact type="STRUCTURE" name="Left comm antenna tip">
             <location unit="IN">
                 <x>58.1</x>
-                <y>17.6</y>
+                <y>-17.6</y>
                 <z>49.3</z>
             </location>
             <static_friction>  0.01 </static_friction>
@@ -430,7 +430,7 @@
         <contact type="STRUCTURE" name="Right comm antenna tip">
             <location unit="IN">
                 <x>58.1</x>
-                <y>-17.6</y>
+                <y>17.6</y>
                 <z>49.3</z>
             </location>
             <static_friction>  0.01 </static_friction>
@@ -442,7 +442,7 @@
         <contact type="STRUCTURE" name="ELT antenna tip">
             <location unit="IN">
                 <x>150.8</x>
-                <y>4.6</y>
+                <y>-4.6</y>
                 <z>28.6</z>
             </location>
             <static_friction>  0.01 </static_friction>
@@ -454,7 +454,7 @@
         <contact type="STRUCTURE" name="Transponder antenna tip">
             <location unit="IN">
                 <x>52.2</x>
-                <y>11</y>
+                <y>-11</y>
                 <z>-24.9</z>
             </location>
             <static_friction>0.01</static_friction>
@@ -466,7 +466,7 @@
         <contact type="STRUCTURE" name="Marker beacon antenna">
             <location unit="IN">
                 <x>148.5</x>
-                <y>1.2</y>
+                <y>-1.2</y>
                 <z>-17.9</z>
             </location>
             <static_friction>0.01</static_friction>
@@ -478,7 +478,7 @@
         <contact type="STRUCTURE" name="Weather radar">
             <location unit="IN">
                 <x>163.2</x>
-                <y>3</y>
+                <y>-3</y>
                 <z>-15.1</z>
             </location>
             <static_friction>0.01</static_friction>
@@ -491,7 +491,7 @@
         <contact type="STRUCTURE" name="Fuselage bottom, left front">
             <location unit="IN">
                 <x>-28.7</x>
-                <y>9.9</y>
+                <y>-9.9</y>
                 <z>-11.7</z>
             </location>
             <static_friction>1</static_friction>
@@ -503,7 +503,7 @@
         <contact type="STRUCTURE" name="Fuselage bottom, right front">
             <location unit="IN">
                 <x>28.7</x>
-                <y>-9.9</y>
+                <y>9.9</y>
                 <z>-11.7</z>
             </location>
             <static_friction>1</static_friction>
@@ -515,7 +515,7 @@
         <contact type="STRUCTURE" name="Fuselage bottom, aft of left cowl flap">
             <location unit="IN">
                 <x>-2.3</x>
-                <y>10.8</y>
+                <y>-10.8</y>
                 <z>-20.5</z>
             </location>
             <static_friction>1</static_friction>
@@ -527,7 +527,7 @@
         <contact type="STRUCTURE" name="Fuselage bottom, aft of right cowl flap">
             <location unit="IN">
                 <x>-2.3</x>
-                <y>-10.8</y>
+                <y>10.8</y>
                 <z>-20.5</z>
             </location>
             <static_friction>1</static_friction>
@@ -539,7 +539,7 @@
         <contact type="STRUCTURE" name="Fuselage bottom, left below door post">
             <location unit="IN">
                 <x>64</x>
-                <y>12.2</y>
+                <y>-12.2</y>
                 <z>-23.5</z>
             </location>
             <static_friction>1</static_friction>
@@ -551,7 +551,7 @@
         <contact type="STRUCTURE" name="Fuselage bottom, right below door post">
             <location unit="IN">
                 <x>64</x>
-                <y>-12.2</y>
+                <y>12.2</y>
                 <z>-23.5</z>
             </location>
             <static_friction>1</static_friction>
@@ -563,7 +563,7 @@
         <contact type="STRUCTURE" name="Fuselage bottom, left rear end main wheel well">
             <location unit="IN">
                 <x>108.5</x>
-                <y>11.3</y>
+                <y>-11.3</y>
                 <z>-20.3</z>
             </location>
             <static_friction>1</static_friction>
@@ -575,7 +575,7 @@
         <contact type="STRUCTURE" name="Fuselage bottom, right rear end of main wheel well">
             <location unit="IN">
                 <x>108.5</x>
-                <y>-11.3</y>
+                <y>11.3</y>
                 <z>-20.3</z>
             </location>
             <static_friction>1</static_friction>
@@ -600,7 +600,7 @@
         <contact type="STRUCTURE" name="Fuselage top, left front">
             <location unit="IN">
                 <x>-39.3</x>
-                <y>11.8</y>
+                <y>-11.8</y>
                 <z>12.2</z>
             </location>
             <static_friction>1</static_friction>
@@ -612,7 +612,7 @@
         <contact type="STRUCTURE" name="Fuselage top, right front">
             <location unit="IN">
                 <x>-39.3</x>
-                <y>-11.8</y>
+                <y>11.8</y>
                 <z>12.2</z>
             </location>
             <static_friction>1</static_friction>
@@ -624,7 +624,7 @@
         <contact type="STRUCTURE" name="Fuselage top, left at top edge of windshield">
             <location unit="IN">
                 <x>32.7</x>
-                <y>18</y>
+                <y>-18</y>
                 <z>34.4</z>
             </location>
             <static_friction>1</static_friction>
@@ -636,7 +636,7 @@
         <contact type="STRUCTURE" name="Fuselage top, right at top edge of windshield">
             <location unit="IN">
                 <x>32.7</x>
-                <y>-18</y>
+                <y>18</y>
                 <z>34.4</z>
             </location>
             <static_friction>1</static_friction>
@@ -648,7 +648,7 @@
         <contact type="STRUCTURE" name="Fuselage top, left aft of COM antennas">
             <location unit="IN">
                 <x>58.6</x>
-                <y>23.6</y>
+                <y>-23.6</y>
                 <z>35.1</z>
             </location>
             <static_friction>1</static_friction>
@@ -660,7 +660,7 @@
         <contact type="STRUCTURE" name="Fuselage top, right aft of COM antennas">
             <location unit="IN">
                 <x>58.6</x>
-                <y>-23.6</y>
+                <y>23.6</y>
                 <z>35.1</z>
             </location>
             <static_friction>1</static_friction>
@@ -672,7 +672,7 @@
         <contact type="STRUCTURE" name="Fuselage top, left aft of rear windows">
             <location unit="IN">
                 <x>114</x>
-                <y>10.2</y>
+                <y>-10.2</y>
                 <z>23.1</z>
             </location>
             <static_friction>1</static_friction>
@@ -684,7 +684,7 @@
         <contact type="STRUCTURE" name="Fuselage top, right aft of rear windows">
             <location unit="IN">
                 <x>114</x>
-                <y>-10.2</y>
+                <y>10.2</y>
                 <z>23.1</z>
             </location>
             <static_friction>1</static_friction>
@@ -696,7 +696,7 @@
         <contact type="STRUCTURE" name="Fuselage top, left foward of ELT antenna">
             <location unit="IN">
                 <x>139.4</x>
-                <y>9.3</y>
+                <y>-9.3</y>
                 <z>13.7</z>
             </location>
             <static_friction>1</static_friction>
@@ -708,7 +708,7 @@
         <contact type="STRUCTURE" name="Fuselage top, right forward of ELT antenna">
             <location unit="IN">
                 <x>139.4</x>
-                <y>-9.3</y>
+                <y>9.3</y>
                 <z>13.7</z>
             </location>
             <static_friction>1</static_friction>
@@ -750,7 +750,7 @@
         <tank type="FUEL" number="0">
             <location unit="IN">
                 <x>57.5</x>
-                <y>69.3</y>
+                <y>-69.3</y>
                 <z>30.9</z>
             </location>
             <capacity unit="LBS">267.445</capacity>
@@ -763,7 +763,7 @@
         <tank type="FUEL" number="1">
             <location unit="IN">
                 <x>57.5</x>
-                <y>-69.3</y>
+                <y>69.3</y>
                 <z>30.9</z>
             </location>
             <capacity unit="LBS">267.445</capacity>
@@ -777,7 +777,7 @@
         <tank type="FUEL" number="2">
             <location unit="IN">
                 <x>71.5</x>
-                <y>22.5</y>
+                <y>-22.5</y>
                 <z>0</z>
             </location>
             <capacity unit="LBS">1</capacity>
@@ -789,7 +789,7 @@
         <tank type="FUEL" number="3">
             <location unit="IN">
                 <x>71.5</x>
-                <y>-22.5</y>
+                <y>22.5</y>
                 <z>0</z>
             </location>
             <capacity unit="LBS">1</capacity>
@@ -801,7 +801,7 @@
         <tank type="FUEL" number="4">
             <location unit="IN">
                 <x>23.9</x>
-                <y>11.8</y>
+                <y>-11.8</y>
                 <z>-20</z>
             </location>
             <capacity unit="LBS">0.5</capacity>
@@ -813,7 +813,7 @@
         <tank type="FUEL" number="5">
             <location unit="IN">
                 <x>23.9</x>
-                <y>-11.8</y>
+                <y>11.8</y>
                 <z>-20</z>
             </location>
             <capacity unit="LBS">0.5</capacity>
@@ -825,7 +825,7 @@
         <tank type="FUEL" number="6">
             <location unit="IN">
                 <x>23.9</x>
-                <y>5</y>
+                <y>-5</y>
                 <z>-19</z>
             </location>
             <capacity unit="LBS">0.2</capacity>
@@ -837,7 +837,7 @@
         <tank type="FUEL" number="7">
             <location unit="IN">
                 <x>23.9</x>
-                <y>-5</y>
+                <y>5</y>
                 <z>-19</z>
             </location>
             <capacity unit="LBS">0.2</capacity>

@@ -410,6 +410,20 @@
 		</release>
 	</animation>
 	
+	<animation>
+		<type>material</type>
+		<object-name>COM1FreqDisplay</object-name>
+		<object-name>NAV1FreqDisplay</object-name>
+		<object-name>COM2FreqDisplay</object-name>
+		<object-name>NAV2FreqDisplay</object-name>
+		<emission>
+			<red>1</red>
+			<green>0.6</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/panel-integral-norm</factor-prop>
+		</emission>
+	</animation>
+	
 	<text>
 		<name>Label</name>
 		<type type="string">literal</type>
