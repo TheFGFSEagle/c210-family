@@ -55,7 +55,7 @@
             <z>-3</z>
         </location>
         <pointmass name="Pilot">
-            <weight unit="LBS">200</weight>
+            <weight unit="LBS">170</weight>
             <location name="POINTMASS" unit="IN">
                 <x>42.1</x>
                 <y>11</y>
@@ -63,7 +63,7 @@
             </location>
         </pointmass> 
         <pointmass name="Copilot">
-            <weight unit="LBS">200</weight>
+            <weight unit="LBS">170</weight>
             <location name="POINTMASS" unit="IN">
                 <x>42.1</x>
                 <y>-11</y>
@@ -87,7 +87,7 @@
             </location>
         </pointmass>
         <pointmass name="Rear left passenger">
-            <weight unit="LBS">0</weight>
+            <weight unit="LBS">170</weight>
             <location name="POINTMASS" unit="IN">
                 <x>105.1</x>
                 <y>11</y>
@@ -95,7 +95,7 @@
             </location>
         </pointmass>
         <pointmass name="Rear right passenger">
-            <weight unit="LBS">0</weight>
+            <weight unit="LBS">170</weight>
             <location name="POINTMASS" unit="IN">
                 <x>105.1</x>
                 <y>-11</y>
@@ -754,7 +754,7 @@
                 <z>30.9</z>
             </location>
             <capacity unit="LBS">267.445</capacity>
-            <contents unit="LBS">267.445</contents>
+            <contents unit="LBS">223</contents>
             <unusable unit="LBS">3.005</unusable>
             <type>AVGAS</type>
         </tank>
@@ -767,7 +767,7 @@
                 <z>30.9</z>
             </location>
             <capacity unit="LBS">267.445</capacity>
-            <contents unit="LBS">267.445</contents>
+            <contents unit="LBS">223</contents>
             <unusable unit="LBS">3.005</unusable>
             <type>AVGAS</type>
         </tank>

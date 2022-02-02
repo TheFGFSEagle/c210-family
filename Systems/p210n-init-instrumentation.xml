@@ -59,6 +59,9 @@
 			<memory n="2" type="double">108.000</memory>
 			<current-memory type="int">0</current-memory>
 		</frequencies>
+		<radials>
+			<arc-mode type="int">0</arc-mode>
+		</radials>
 	</nav>
 	<marker-beacon>
 		<test type="bool">false</test>
@@ -78,27 +81,31 @@
 	</dme>
 	
 	<rnav>
-		<selected-bearing-deg>0.0</selected-bearing-deg>
-		<selected-bearing-deg-hundreds>0</selected-bearing-deg-hundreds>
-		<selected-bearing-deg-tenths>0</selected-bearing-deg-tenths>
-		<selected-bearing-deg-units>0</selected-bearing-deg-units>
-		<selected-bearing-deg-decimals>0</selected-bearing-deg-decimals>
-		<selected-distance-nm>0.0</selected-distance-nm>
-		<selected-distance-nm-hundreds>0</selected-distance-nm-hundreds>
-		<selected-distance-nm-tenths>0</selected-distance-nm-tenths>
-		<selected-distance-nm-units>0</selected-distance-nm-units>
-		<selected-distance-nm-decimals>0</selected-distance-nm-decimals>
+		<selected-bearing-deg type="double">0.0</selected-bearing-deg>
+		<selected-bearing-deg-hundreds type="int">0</selected-bearing-deg-hundreds>
+		<selected-bearing-deg-tenths type="int">0</selected-bearing-deg-tenths>
+		<selected-bearing-deg-units type="int">0</selected-bearing-deg-units>
+		<selected-bearing-deg-decimals type="int">0</selected-bearing-deg-decimals>
+		<selected-distance-nm type="double">0.0</selected-distance-nm>
+		<selected-distance-nm-hundreds type="int">0</selected-distance-nm-hundreds>
+		<selected-distance-nm-tenths type="int">0</selected-distance-nm-tenths>
+		<selected-distance-nm-units type="int">0</selected-distance-nm-units>
+		<selected-distance-nm-decimals type="int">0</selected-distance-nm-decimals>
 		<waypoint n="0">
-			<bearing-deg>0</bearing-deg>
-			<distance-nm>0</distance-nm>
+			<bearing-deg type="double">0</bearing-deg>
+			<distance-nm type="double">0</distance-nm>
 		</waypoint>
 		<waypoint n="1">
-			<bearing-deg>0</bearing-deg>
-			<distance-nm>0</distance-nm>
+			<bearing-deg type="double">0</bearing-deg>
+			<distance-nm type="double">0</distance-nm>
 		</waypoint>
+		<current-waypoint>
+			<bearing-deg type="double">0</bearing-deg>
+			<distance-nm type="double">0</distance-nm>
+		</current-waypoint>
 		<display-waypoint type="int">1</display-waypoint>
 		<fly-waypoint type="int">1</fly-waypoint>
-		<!-- sensitivity of the CDI needle 0=ENR (enroute), 1=APPR (approach) -->
-		<sensitivity>0</sensitivity>
+		<!-- mode for determining sensitivity of the CDI needle 0=ENR (enroute), 1=APPR (approach) -->
+		<mode type="int">0</mode>
 	</rnav>
 </PropertyList>

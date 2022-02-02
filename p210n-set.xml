@@ -166,13 +166,20 @@
 		<systems>
 			<path>Systems/systems.xml</path>
 			<property-rule n="100">
+				<name>Glass rain effect properties</name>
 				<path>Systems/glass-rain.xml</path>
 			</property-rule>
 			<property-rule n="101">
+				<name>Re-route properties based on selection in aircraft options dialog</name>
 				<path>Systems/render-options.xml</path>
 			</property-rule>
 			<property-rule n="102">
+				<name>Miscellaneous instrument property rules</name>
 				<path>Systems/instruments.xml</path>
+			</property-rule>
+			<property-rule n="103">
+				<name>RNAV</name>
+				<path>Systems/rnav.xml</path>
 			</property-rule>
 		</systems>
 		<aircraft-data>
@@ -246,6 +253,7 @@
 			<path>/instrumentation/dme/display-mode</path>
 			<path>/instrumentation/dme/power-btn</path>
 			<path>/instrumentation/dme/ident</path>
+			<path>/instrumentation/rnav</path>
 		</aircraft-data>
 		<hitches>
 			<aerotow>

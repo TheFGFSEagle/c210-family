@@ -202,7 +202,7 @@ var DME = {
 		if (newSource == "NAV1") {
 			me.sourceNode.setValue(me.nav1Node.getNode("frequencies/selected-mhz").getPath());
 		} elsif (newSource == "NAV2" or newSource == "RNAV") {
-			me.sourceNode.setValue(me.nav2Node.getNode("frequencies/selected-mhz").getPath());			
+			me.sourceNode.setValue(me.nav2Node.getNode("frequencies/selected-mhz").getPath());	
 		} elsif (newSource == "HOLD") {
 			me.frequencyNode.setValue(props.globals.getNode(me.sourceNode.getValue()).getValue());
 			me.sourceNode.setValue(me.frequencyNode.getPath());
@@ -223,6 +223,7 @@ var DME = {
 };
 
 var dme = DME.new(instrumentationNode);
+dme.modeChanged();
 
 
 var DMEDisplays = {
@@ -241,6 +242,7 @@ var DMEDisplays = {
 		obj.distanceNode = obj.rootNode.getNode("KDI572-574/nm", 1);
 		obj.speedNode = obj.rootNode.getNode("KDI572-574/kt", 1);
 		obj.timeNode = obj.rootNode.getNode("KDI572-574/min", 1);
+		obj.rnavDistanceNode = obj.rnavNode.getNode("waypoint-distance-nm");
 		obj.sourceKnobNode = obj.rootNode.getNode("source-knob", 1);
 		obj.modeNode = obj.rootNode.getNode("mode", 1);
 		obj.displayNode = obj.rootNode.getNode("display-mode", 1);
@@ -333,7 +335,7 @@ var DMEDisplays = {
 			
 			me.distanceDisplay.text.setText("000.0");
 			me.distanceDisplay.text.show();
-			me.speedTimeDisplay.text.setText("000.0");
+			me.speedTimeDisplay.text.setText("000");
 			me.speedTimeDisplay.text.show();
 		} else {
 			# normal operation
@@ -351,11 +353,12 @@ var DMEDisplays = {
 			source = me.sources[me.sourceKnobNode.getValue() or 0];
 			if (source == "RNAV") {
 				me.distanceDisplay.rnavAnnun.show();
+				me.distanceDisplay.text.setText(me.rnavDistanceNode.getValue())
 			} else {
 				me.distanceDisplay.rnavAnnun.hide();
+				me.distanceDisplay.text.setText(me.distanceNode.getValue());
 			}
 			me.distanceDisplay.dmeAnnun.show();
-			me.distanceDisplay.text.setText(me.distanceNode.getValue());
 			me.distanceDisplay.text.show();
 		}
 	},
@@ -364,7 +367,7 @@ var DMEDisplays = {
 var dmeDisplays = DMEDisplays.new(instrumentationNode);
 
 
-# RNAV. Only setting of distance and bearing and transfer of those nto the waypoints is managed here
+# RNAV. Only setting of distance and bearing and transfer of those into the waypoints is managed here
 # VOR needle deflection etc. will be calculated by a property rules file because they need to be calculated very frequently
 # as they are neededby the autopilot - running a Nasal loop at 120 Hz is not very resource-friendly.
 var RNAV = {
@@ -389,11 +392,14 @@ var RNAV = {
 		obj.selectedBearingDecimalsNode = obj.rootNode.getNode("selected-bearing-deg-decimals", 1);
 		
 		obj.waypoint1Node = obj.rootNode.getNode("waypoint[0]", 1);
-		obj.waypoint1BearingNode = obj.waypoint1Node.getNode("bearing-deg");
-		obj.waypoint1DistanceNode = obj.waypoint1Node.getNode("distance-nm");
+		obj.waypoint1BearingNode = obj.waypoint1Node.getNode("bearing-deg", 1);
+		obj.waypoint1DistanceNode = obj.waypoint1Node.getNode("distance-nm", 1);
 		obj.waypoint2Node = obj.rootNode.getNode("waypoint[1]", 1);
-		obj.waypoint2BearingNode = obj.waypoint2Node.getNode("bearing-deg");
-		obj.waypoint2DistanceNode = obj.waypoint2Node.getNode("distance-nm");
+		obj.waypoint2BearingNode = obj.waypoint2Node.getNode("bearing-deg", 1);
+		obj.waypoint2DistanceNode = obj.waypoint2Node.getNode("distance-nm", 1);
+		obj.currentWaypointNode = obj.rootNode.getNode("current-waypoint", 1);
+		obj.currentWaypointBearingNode = obj.currentWaypointNode.getNode("bearing-deg", 1);
+		obj.currentWaypointDistanceNode = obj.currentWaypointNode.getNode("distance-nm", 1);
 		
 		obj.displayWaypointNode = obj.rootNode.getNode("display-waypoint", 1);
 		obj.flyWaypointNode = obj.rootNode.getNode("fly-waypoint", 1);
@@ -402,10 +408,10 @@ var RNAV = {
 	},
 	
 	updateBearing: func {
-		hundreds = me.selectedBearingHundredsNode.getValue();
-		tenths = me.selectedBearingTenthsNode.getValue();
-		units = me.selectedBearingUnitsNode.getValue();
-		decimals = me.selectedBearingDecimalsNode.getValue();
+		var hundreds = me.selectedBearingHundredsNode.getValue();
+		var tenths = me.selectedBearingTenthsNode.getValue();
+		var units = me.selectedBearingUnitsNode.getValue();
+		var decimals = me.selectedBearingDecimalsNode.getValue();
 		# limit bearing selection to 359.9 degrees
 		if (hundreds == 3 and tenths > 5) {
 			tenths = 5;
@@ -415,10 +421,10 @@ var RNAV = {
 	},
 	
 	updateDistance: func {
-		hundreds = me.selectedDistanceHundredsNode.getValue();
-		tenths = me.selectedDistanceTenthsNode.getValue();
-		units = me.selectedDistanceUnitsNode.getValue();
-		decimals = me.selectedDistanceDecimalsNode.getValue();
+		var hundreds = me.selectedDistanceHundredsNode.getValue();
+		var tenths = me.selectedDistanceTenthsNode.getValue();
+		var units = me.selectedDistanceUnitsNode.getValue();
+		var decimals = me.selectedDistanceDecimalsNode.getValue();
 		if (hundreds == 2) {
 			if (tenths > 0) {
 				tenths = 0;
@@ -437,9 +443,9 @@ var RNAV = {
 	},
 	
 	transferPressed: func {
-		displayWaypoint = me.displayWaypointNode.getValue();
-		bearing = me.selectedBearingNode.getValue();
-		distance = me.selectedDistanceNode.getValue();
+		var displayWaypoint = me.displayWaypointNode.getValue();
+		var bearing = me.selectedBearingNode.getValue();
+		var distance = me.selectedDistanceNode.getValue();
 		if (displayWaypoint == 1) {
 			me.waypoint1BearingNode.setDoubleValue(bearing);
 			me.waypoint1DistanceNode.setDoubleValue(distance);
@@ -447,10 +453,26 @@ var RNAV = {
 			me.waypoint2BearingNode.setDoubleValue(bearing);
 			me.waypoint2DistanceNode.setDoubleValue(distance);
 		}
+		me.updateCurrentWaypoint();
+	},
+	
+	updateCurrentWaypoint: func {
+		var flyWaypoint = me.flyWaypointNode.getValue();
+		# waypoint 1
+		var bearing = me.waypoint1BearingNode.getValue();
+		var distance = me.waypoint1DistanceNode.getValue();
+		# waypoint 2
+		if (flyWaypoint == 2) {
+			bearing = me.waypoint2BearingNode.getValue();
+			distance = me.waypoint2DistanceNode.getValue();
+		}
+		me.currentWaypointBearingNode.setDoubleValue(bearing);
+		me.currentWaypointDistanceNode.setDoubleValue(distance);
 	}
 };
 
 var rnav = RNAV.new(instrumentationNode);
+rnav.updateCurrentWaypoint();
 
 var RNAVDisplay = {
 	new: func(instrumentationNode, numberPath, placement) {

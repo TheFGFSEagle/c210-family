@@ -292,21 +292,25 @@
 				<factor>1</factor>
 				<wrap type="bool">true</wrap>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>p210n.rnav.updateCurrentWaypoint();</script>
+			</binding>
 		</action>
 	</animation>
 	<animation>
 		<type>knob</type>
-		<object-name>SensitivitySwitch</object-name>
+		<object-name>ModeSwitch</object-name>
 		<axis>
-			<object-name>SensitivitySwitchAxis</object-name>
+			<object-name>ModeSwitchAxis</object-name>
 		</axis>
-		<property>instrumentation/rnav/sensitivity</property>
+		<property>instrumentation/rnav/mode</property>
 		<offset>-1</offset>
 		<factor>40</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>instrumentation/rnav/sensitivity</property>
+				<property>instrumentation/rnav/mode</property>
 				<min>0</min>
 				<max>2</max> <!-- real max + factor needed with wrap = true-->
 				<factor>1</factor>
@@ -344,6 +348,18 @@
 				<time>0.01</time>
 			</binding>
 		</release>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>RNAVBearingDisplay</object-name>
+		<object-name>RNAVDistanceDisplay</object-name>
+		<emission>
+			<red>1</red>
+			<green>0.6</green>
+			<blue>0.3</blue>
+			<factor-prop>controls/lighting/panel-electroluminescent-norm</factor-prop>
+		</emission>
 	</animation>
 	
 	<animation>

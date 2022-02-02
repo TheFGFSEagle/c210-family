@@ -87,25 +87,38 @@
 			</condition>
 		</enable>
 		<input>
+			<!-- TO mode -->
+			<condition>
+				<less-than>
+					<property>/instrumentation/nav[1]/radials/arc-mode</property>
+					<value>0</value>
+				</less-than>
+			</condition>
 			<expression>
 				<floor>
-					<dif>
-						<property>/instrumentation/nav[1]/heading-deg</property>
-						<property>/environment/magnetic-variation-deg</property>
-					</dif>
+					<sum>
+						<property>/instrumentation/nav[1]/radials/actual-deg</property>
+						<value>0.5</value>
+					</sum>
 				</floor>
 			</expression>
 		</input>
-		<!-- in FROM mode, add 180 to the heading to achieve a FROM radial -->
-		<reference>
+		<input>
 			<condition>
 				<equals>
 					<property>/instrumentation/nav[1]/radials/arc-mode</property>
 					<value>1</value>
 				</equals>
-			</condition>					
-			<value>-180</value>
-		</reference>
+			</condition>
+			<expression>
+				<floor>
+					<sum>
+						<property>/instrumentation/nav[1]/radials/reciprocal-radial-deg</property>
+						<value>0.5</value>
+					</sum>
+				</floor>
+			</expression>
+		</input>
 		<output>
 			<property>/instrumentation/nav[1]/radials/selected-deg</property>
 			<period>
