@@ -4,7 +4,8 @@
 	
 	<animation>
 		<type>slider</type>
-		<object-name>Knob</object-name>
+		<object-name>Handle</object-name>
+		<object-name>Bar</object-name>
 		<axis>
 			<x>1</x>
 			<y>0</y>
@@ -19,4 +20,9 @@
 			</binding>
 		</action>
 	</animation>
+	
+	<effect>
+		<inherits-from>Models/Effects/p210n-interior-metal</inherits-from>
+		<object-name>Bar</object-name>
+	</effect>
 </PropertyList>

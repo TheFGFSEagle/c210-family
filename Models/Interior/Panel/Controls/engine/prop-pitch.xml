@@ -50,5 +50,12 @@
 			</binding>
 		</hovered>
 	</animation>
+	
+	<effect>
+		<inherits-from>Models/Effects/p210n-interior-metal</inherits-from>
+		<object-name>Bar</object-name>
+		<object-name>Vernier</object-name>
+		<object-name>Mount</object-name>
+	</effect>
 </PropertyList>
 

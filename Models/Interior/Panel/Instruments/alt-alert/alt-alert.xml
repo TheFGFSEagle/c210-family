@@ -157,4 +157,11 @@
 			<property>/sim/panel-hotspots</property>
 		</condition>
 	</animation>
+	
+	<effect>
+		<inherits-from>Models/Effects/p210n-interior-metal</inherits-from>
+		<object-name>Knob100</object-name>
+		<object-name>Knob1000</object-name>
+		<object-name>Knob10000</object-name>
+	</effect>
 </PropertyList>

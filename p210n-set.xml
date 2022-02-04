@@ -143,7 +143,7 @@
 				<from-model-idx type="int">0</from-model-idx>
 				<ground-level-nearplane-m type="double">2</ground-level-nearplane-m>
 				<limits>
-					<enabled type="bool">true</enabled>
+					<enabled type="bool">false</enabled>
 					<left>
 						<heading-max-deg type="double">180</heading-max-deg>
 						<x-offset-max-m type="double">0.15</x-offset-max-m>
@@ -157,7 +157,7 @@
 				</limits>
 			</config>
 			<dynamic>
-				<enabled type="bool">true</enabled>
+				<enabled type="bool">false</enabled>
 			</dynamic>
 		</view>
 		<instrumentation>

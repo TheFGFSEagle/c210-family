@@ -134,4 +134,10 @@
 			<factor-prop>sim/model/controls/gear/extended-lamp-illumination</factor-prop>
 		</emission>
 	</animation>
+	
+	<effect>
+		<inherits-from>Models/Effects/p210n-interior-metal</inherits-from>
+		<object-name>Bar</object-name>
+		<object-name>ExtendedLampMount</object-name>
+	</effect>
 </PropertyList>

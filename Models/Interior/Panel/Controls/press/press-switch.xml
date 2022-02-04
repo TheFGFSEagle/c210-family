@@ -22,4 +22,9 @@
 			</binding>
 		</action>
 	</animation>
+	
+	<effect>
+		<inherits-from>Models/Effects/p210n-interior-metal</inherits-from>
+		<object-name>Switch</object-name>
+	</effect>
 </PropertyList>

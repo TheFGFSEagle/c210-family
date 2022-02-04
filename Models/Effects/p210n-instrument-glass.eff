@@ -20,6 +20,9 @@
 				<negative-z>Models/Effects/p210n-reflection-nz.png</negative-z>
 			</images>
 		</texture>
+		<opacity-cube-center type="vec3d" n="0">1.2 0.0 0.5</opacity-cube-center>
+		<opacity-cube-scale type="vec3d" n="0">3.4 1.2 1.8</opacity-cube-scale>
+		<opacity-cube-angle type="float">0.0</opacity-cube-angle>
 		<use-reflection type="int"><use>sim/model/effects/enable-interior-glass-reflections</use></use-reflection>
 		<reflection-strength type="float">1</reflection-strength>
 	</parameters>

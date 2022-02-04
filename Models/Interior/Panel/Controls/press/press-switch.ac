@@ -1,5 +1,5 @@
 AC3Db
-MATERIAL "Material" rgb 0.214 0.214 0.214  amb 0.214 0.214 0.214  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "Material" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 1.000 1.000 1.000  shi 102 trans 0.000
 OBJECT world
 name "Blender_exporter_v3.3__press-switch.ac"
 kids 1
@@ -7,7 +7,7 @@ OBJECT poly
 name "Switch"
 data 8
 Cylinder
-crease 40.0
+crease 50.0
 numvert 216
 0.0094 -0.00342 -0.0025
 0.00925 -0.00383 -0.00246

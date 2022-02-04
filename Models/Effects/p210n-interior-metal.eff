@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<name>Aircraft/c210-family/Models/Effects/exterior-opaque</name>
+	<inherits-from>Effects/model-combined</inherits-from>
+	<parameters>
+		<rnorm>0</rnorm>
+		<gsnorm>0</gsnorm>
+		<frost-level>0</frost-level>
+		<fog-level>0</fog-level>
+		<reflection-enabled type="int">1</reflection-enabled>
+		<reflection-type type="int">2</reflection-type>
+		<reflection-dynamic type="int">1</reflection-dynamic>
+		<ambient-correction type="float">0.1</ambient-correction>
+		<reflection-correction type="float">0</reflection-correction>
+		<reflection-fresnel type="float">1</reflection-fresnel>
+		<reflection-fresnel-factor type="float">1</reflection-fresnel-factor>
+		<reflection-noise type="float">0.0</reflection-noise>
+		<reflection-rainbow type="float">0</reflection-rainbow>
+		<texture n= "5">
+			<type>cubemap</type>
+			<images>
+				<positive-x>Aircraft/Generic/Effects/CubeMaps/buildings/N.png</positive-x>
+				<negative-x>Aircraft/Generic/Effects/CubeMaps/buildings/S.png</negative-x>
+				<positive-y>Aircraft/Generic/Effects/CubeMaps/buildings/W.png</positive-y>
+				<negative-y>Aircraft/Generic/Effects/CubeMaps/buildings/E.png</negative-y>
+				<positive-z>Aircraft/Generic/Effects/CubeMaps/buildings/U.png</positive-z>
+				<negative-z>Aircraft/Generic/Effects/CubeMaps/buildings/D.png</negative-z>
+			</images>
+		</texture>
+	</parameters>
+</PropertyList>

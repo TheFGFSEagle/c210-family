@@ -480,20 +480,12 @@
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry>
-				<ind>1</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
 				<ind>0.65</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
 				<ind>0.35</ind>
-				<dep>-100</dep>
-			</entry>
-			<entry>
-				<ind>0</ind>
-				<dep>-100</dep>
+				<dep>-96</dep>
 			</entry>
 		</interpolation>
 	</animation>

@@ -79,4 +79,12 @@
 			</binding>
 		</release>
 	</animation>
+	
+	<effect>
+		<inherits-from>Models/Effects/p210n-interior-metal</inherits-from>
+		<object-name>MainKey</object-name>
+		<object-name>SecondKey</object-name>
+		<object-name>Ring</object-name>
+		<object-name>MagnetoSwitch</object-name>
+	</effect>
 </PropertyList>

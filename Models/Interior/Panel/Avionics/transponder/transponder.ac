@@ -1,5 +1,6 @@
 AC3Db
-MATERIAL "CaseMaterial" rgb 0.000 0.000 0.000  amb 0.000 0.000 0.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "CaseMaterial" rgb 0.050 0.050 0.050  amb 0.050 0.050 0.050  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "FaceMaterial" rgb 0.000 0.000 0.000  amb 0.000 0.000 0.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 OBJECT world
 name "Blender_exporter_v3.3__transponder.ac"
 kids 2
@@ -66,7 +67,7 @@ numvert 4
 -0 -0.02 -0.08
 numsurf 1
 SURF 0X0
-mat 0
+mat 1
 refs 4
 0 0 0
 1 1 0

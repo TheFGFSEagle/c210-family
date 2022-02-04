@@ -319,4 +319,18 @@
 			<property>/sim/panel-hotspots</property>
 		</condition>
 	</animation>
+	
+	<effect>
+		<inherits-from>Models/Effects/p210n-interior-metal</inherits-from>
+		<object-name>MarkerBeaconLampsBrightnessSwitch</object-name>
+		<object-name>MarkerBeaconSensitivitySwitch</object-name>
+		<object-name>MarkerBeaconOutputSwitch</object-name>
+		<object-name>NAV1Switch</object-name>
+		<object-name>NAV2Switch</object-name>
+		<object-name>COMAutoSwitch</object-name>
+		<object-name>COMBothSwitch</object-name>
+		<object-name>ADFSwitch</object-name>
+		<object-name>DMESwitch</object-name>
+		<object-name>TransmitterSwitch</object-name>
+	</effect>
 </PropertyList>

@@ -379,4 +379,9 @@
 			<blue>0</blue>
 		</emission>
 	</animation>
+	
+	<effect>
+		<inherits-from>Models/Effects/p210n-instrument-glass</inherits-from>
+		<object-name>Glass</object-name>
+	</effect>
 </PropertyList>
