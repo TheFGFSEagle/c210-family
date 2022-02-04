@@ -43,27 +43,27 @@
 				<splash type="bool">true</splash>
 				<path>Previews/cruising.png</path>
 			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/landing-sunset.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/cruising-sunset.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/cruising-sunset-few-clouds.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/cruising-over-industry.png</path>
+			</preview>
 			<!--<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Previews/caravan-1.png</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Previews/caravan-2.png</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Previews/caravan-3.png</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Previews/caravan-4.png</path>
-			</preview>
-			<preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
 				<path>Previews/caravan-5.png</path>
