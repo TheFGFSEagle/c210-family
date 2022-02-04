@@ -6,7 +6,7 @@
 		<path>gear/gear.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>0.215</y-m>
+			<y-m>0.205</y-m>
 			<z-m>0</z-m>
 		</offsets>
 	</model>
@@ -95,7 +95,7 @@
 		<offsets>
 			<x-m>0.001</x-m>
 			<y-m>0.06</y-m>
-			<z-m>-0.03</z-m>
+			<z-m>-0.04</z-m>
 		</offsets>
 		<overlay>
 			<params>
@@ -108,7 +108,7 @@
 		<offsets>
 			<x-m>0.001</x-m>
 			<y-m>0.08</y-m>
-			<z-m>-0.03</z-m>
+			<z-m>-0.04</z-m>
 		</offsets>
 		<overlay>
 			<params>
@@ -121,7 +121,7 @@
 		<offsets>
 			<x-m>0.001</x-m>
 			<y-m>0.1</y-m>
-			<z-m>-0.03</z-m>
+			<z-m>-0.04</z-m>
 		</offsets>
 		<overlay>
 			<params>
@@ -129,25 +129,25 @@
 			</params>
 		</overlay>
 	</model>
-	<model>
+	<!--<model>
 		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
 			<y-m>0.12</y-m>
-			<z-m>-0.03</z-m>
+			<z-m>-0.04</z-m>
 		</offsets>
 		<overlay>
 			<params>
-				<property>controls/anti-ice/wing-deice</property>
+				<property></property>
 			</params>
 		</overlay>
-	</model>
+	</model>-->
 	<model>
 		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
 			<y-m>0.14</y-m>
-			<z-m>-0.03</z-m>
+			<z-m>-0.04</z-m>
 		</offsets>
 		<overlay>
 			<params>
@@ -160,7 +160,7 @@
 		<offsets>
 			<x-m>0.001</x-m>
 			<y-m>0.16</y-m>
-			<z-m>-0.03</z-m>
+			<z-m>-0.04</z-m>
 		</offsets>
 	</model>
 	
@@ -169,7 +169,7 @@
 		<offsets>
 			<x-m>0</x-m>
 			<y-m>0.02</y-m>
-			<z-m>-0.035</z-m>
+			<z-m>-0.045</z-m>
 		</offsets>
 	</model>
 	<model>
@@ -177,7 +177,7 @@
 		<offsets>
 			<x-m>0</x-m>
 			<y-m>0.02</y-m>
-			<z-m>0.03</z-m>
+			<z-m>0.025</z-m>
 		</offsets>
 		<overlay>
 			<params>
@@ -191,7 +191,7 @@
 		<offsets>
 			<x-m>0</x-m>
 			<y-m>-0.03</y-m>
-			<z-m>0.03</z-m>
+			<z-m>0.025</z-m>
 		</offsets>
 		<overlay>
 			<params>
@@ -259,7 +259,7 @@
 		<offsets>
 			<x-m>0</x-m>
 			<y-m>-0.18</y-m>
-			<z-m>-0.03</z-m>
+			<z-m>-0.035</z-m>
 		</offsets>
 	</model>
 	
@@ -268,7 +268,7 @@
 		<offsets>
 			<x-m>0</x-m>
 			<y-m>-0.23</y-m>
-			<z-m>0.03</z-m>
+			<z-m>0.035</z-m>
 		</offsets>
 	</model>
 	
@@ -276,7 +276,7 @@
 		<path>press/alt-sel.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
-			<y-m>-0.06</y-m>
+			<y-m>-0.05</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 	</model>
@@ -284,7 +284,7 @@
 		<path>press/press-switch.xml</path>
 		<offsets>
 			<x-m>0</x-m>
-			<y-m>-0.07</y-m>
+			<y-m>-0.095</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 	</model>
