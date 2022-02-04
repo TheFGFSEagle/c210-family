@@ -38,7 +38,7 @@
 		</overlay>
 	</model>
 	<model>
-		<path>switches/white.ac</path>
+		<path>switches/white.xml</path>
 		<offsets>
 			<x-m>0.001</x-m>
 			<y-m>0.1</y-m>
