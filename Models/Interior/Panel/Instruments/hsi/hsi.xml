@@ -70,13 +70,11 @@
 		<object-name>GSFlag</object-name>
 		<condition>
 			<not>
-				<or>
-					<property>instrumentation/nav/in-range</property>
+				<and>
 					<property>instrumentation/nav/has-gs</property>
-					<property>instrumentation/nav/serviceable</property>
 					<property>instrumentation/nav/gs/serviceable</property>
 					<property>instrumentation/nav/gs-in-range</property>
-				</or>
+				</and>
 			</not>
 		</condition>
 	</animation>
@@ -85,11 +83,11 @@
 		<object-name>NavFlag</object-name>
 		<condition>
 			<not>
-				<or>
+				<and>
 					<property>instrumentation/nav/in-range</property>
 					<property>instrumentation/nav/serviceable</property>
 					<property>instrumentation/nav/operable</property>
-				</or>
+				</and>
 			</not>
 		</condition>
 	</animation>
@@ -98,15 +96,13 @@
 		<object-name>HdgFlag</object-name>
 		<condition>
 			<not>
-				<or>
-					<property>instrumentation/nav/serviceable</property>
-					<property>instrumentation/nav/operable</property>
+				<and>
 					<property>instrumentation/heading-indicator/serviceable</property>
-					<equals>
+					<less-than>
 						<property>instrumentation/heading-indicator/spin</property>
-						<value>0</value>
-					</equals>
-				</or>
+						<value>0.2</value>
+					</less-than>
+				</and>
 			</not>
 		</condition>
 	</animation>

@@ -284,7 +284,7 @@
 		<path>press/press-switch.xml</path>
 		<offsets>
 			<x-m>0</x-m>
-			<y-m>-0.05</y-m>
+			<y-m>-0.07</y-m>
 			<z-m>-0.03</z-m>
 		</offsets>
 	</model>

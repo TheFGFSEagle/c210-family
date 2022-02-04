@@ -2,7 +2,7 @@ AC3Db
 MATERIAL "DefaultWhite" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 MATERIAL "MetalMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 1.000 1.000 1.000  shi 102 trans 0.000
 MATERIAL "ExtendedLampMaterial" rgb 0.051 0.214 0.000  amb 0.051 0.214 0.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 90 trans 0.000
-MATERIAL "HandleMaterial" rgb 0.050 0.050 0.050  amb 0.050 0.050 0.050  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "HandleMaterial" rgb 0.000 0.000 0.000  amb 0.000 0.000 0.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 MATERIAL "RetractedLampMaterial" rgb 0.500 0.150 0.000  amb 0.500 0.150 0.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 90 trans 0.000
 OBJECT world
 name "Blender_exporter_v3.3__gear.ac"
