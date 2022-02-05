@@ -261,7 +261,7 @@
 			<object-name>DisplayFlySwitchAxis</object-name>
 		</axis>
 		<property>instrumentation/rnav/display-waypoint</property>
-		<offset-deg>-40</offset>
+		<offset-deg>-40</offset-deg>
 		<factor>40</factor>
 		<action>
 			<binding>
@@ -281,7 +281,7 @@
 			<object-name>DisplayFlySwitchAxis</object-name>
 		</axis>
 		<property>instrumentation/rnav/fly-waypoint</property>
-		<offset-deg>-40</offset>
+		<offset-deg>-40</offset-deg>
 		<factor>40</factor>
 		<action>
 			<binding>
