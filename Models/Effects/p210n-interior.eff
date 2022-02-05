@@ -29,7 +29,7 @@
 		<opacity-cube-angle type="float">0.0</opacity-cube-angle>
 		<shadow-mapping-enabled type="bool">true</shadow-mapping-enabled>
 		<irradiance-map-type type="int">2</irradiance-map-type>
-		<irradiance-map-strength type="float">1</irradiance-map-strength>
+		<irradiance-map-strength type="float">0.25</irradiance-map-strength>
 		<light-filter-one type="vec3d">1 1 1</light-filter-one>
 		<light-filter-two type="vec3d">1 0.3 0.3</light-filter-two>
 		<light-radius type="float">15</light-radius>
