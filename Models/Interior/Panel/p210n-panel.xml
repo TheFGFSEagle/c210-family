@@ -264,6 +264,47 @@
 		</offsets>
 	</model>
 	
+	<model>
+		<path>Instruments/cht/cht.xml</path>
+		<offsets>
+			<x-m>0.42</x-m>
+			<y-m>0.4</y-m>
+			<z-m>0.39</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+			<heading-deg>-20</heading-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/oil/oil-temp.xml</path>
+		<offsets>
+			<x-m>0.44</x-m>
+			<y-m>0.45</y-m>
+			<z-m>0.39</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+			<heading-deg>-20</heading-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/ammeter/ammeter.xml</path>
+		<offsets>
+			<x-m>0.42</x-m>
+			<y-m>0.4</y-m>
+			<z-m>0.34</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+			<heading-deg>-20</heading-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/oil/oil-press.xml</path>
+		<offsets>
+			<x-m>0.44</x-m>
+			<y-m>0.45</y-m>
+			<z-m>0.34</z-m>
+			<pitch-deg>-5.5</pitch-deg>
+			<heading-deg>-20</heading-deg>
+		</offsets>
+	</model>
+	
 	<!-- controls panels -->
 	<model>
 		<path>Controls/left-controls-panel.xml</path>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>oil-press.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle</object-name>
+		<axis>
+			<object-name>NeedleAxis</object-name>
+		</axis>
+		<property>instrumentation/oil/indicated-pressure-osi</property>
+		<interpolation>
+			<entry>
+				<ind>-15</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>23</dep>
+			</entry>
+			<entry>
+				<ind>100</ind>
+				<dep>87</dep>
+			</entry>
+			<entry>
+				<ind>115</ind>
+				<dep>110</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	
+	<effect>
+		<inherits-from>Models/Effects/p210n-instrument-glass</inherits-from>
+		<object-name>Glass</object-name>
+	</effect>
+</PropertyList>

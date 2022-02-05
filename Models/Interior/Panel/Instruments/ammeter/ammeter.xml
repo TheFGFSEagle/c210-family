@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>ammeter.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle</object-name>
+		<axis>
+			<object-name>NeedleAxis</object-name>
+		</axis>
+		<property>instrumentation/ammeter/indicated-charge-rate-amps</property>
+		<factor>2</factor>
+		<min-deg>-55</min-deg>
+		<max-deg>55</max-deg>
+	</animation>
+	
+	<effect>
+		<inherits-from>Models/Effects/p210n-instrument-glass</inherits-from>
+		<object-name>Glass</object-name>
+	</effect>
+</PropertyList>

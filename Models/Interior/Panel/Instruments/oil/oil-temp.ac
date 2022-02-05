@@ -1,0 +1,125 @@
+AC3Db
+MATERIAL "DefaultWhite" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "CaseMaterial" rgb 0.001 0.001 0.001  amb 0.001 0.001 0.001  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "FaceMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "GlassMaterial" rgb 0.787 1.000 1.000  amb 0.787 1.000 1.000  emis 0.000 0.000 0.000  spec 1.000 1.000 1.000  shi 102 trans 0.800
+OBJECT world
+name "Blender_exporter_v3.3__oil-temp.ac"
+kids 5
+OBJECT poly
+name "Case"
+data 9
+Plane.003
+crease 40.0
+numvert 8
+0 0.0125 0.025
+-0 -0.0125 0.025
+0 0.0125 -0.025
+-0 -0.0125 -0.025
+-0.005 0.0125 0.025
+-0.005 -0.0125 0.025
+-0.005 0.0125 -0.025
+-0.005 -0.0125 -0.025
+numsurf 4
+SURF 0X0
+mat 1
+refs 4
+3 1 1
+2 0 1
+6 0 1
+7 1 1
+SURF 0X0
+mat 1
+refs 4
+0 0 0
+1 1 0
+5 1 0
+4 0 0
+SURF 0X0
+mat 1
+refs 4
+1 1 0
+3 1 1
+7 1 1
+5 1 0
+SURF 0X0
+mat 1
+refs 4
+2 0 1
+0 0 0
+4 0 0
+6 0 1
+kids 0
+OBJECT poly
+name "Face"
+data 5
+Plane
+crease 40.0
+texture "oil-temp.png"
+numvert 4
+-0.005 0.0125 0.025
+-0.005 -0.0125 0.025
+-0.005 0.0125 -0.025
+-0.005 -0.0125 -0.025
+numsurf 1
+SURF 0X0
+mat 2
+refs 4
+0 0 1
+1 0 0
+3 1 0
+2 1 1
+kids 0
+OBJECT poly
+name "Glass"
+data 9
+Plane.002
+crease 40.0
+numvert 4
+0 0.0125 0.025
+-0 -0.0125 0.025
+0 0.0125 -0.025
+-0 -0.0125 -0.025
+numsurf 1
+SURF 0X0
+mat 3
+refs 4
+0 0 0
+2 0 1
+3 1 1
+1 1 0
+kids 0
+OBJECT poly
+name "Needle"
+data 9
+Plane.001
+crease 40.0
+numvert 4
+-0.004 -0.0057 0.02486
+-0.004 -0.02332 0.00057
+-0.004 -0.00488 0.02429
+-0.004 -0.02168 -0.00057
+numsurf 1
+SURF 0X0
+mat 2
+refs 4
+0 0 0
+1 1 0
+3 1 1
+2 0 1
+kids 0
+OBJECT poly
+name "NeedleAxis"
+data 9
+Plane.004
+crease 40.0
+numvert 2
+-0.025 -0.0225 0
+0.025 -0.0225 0
+numsurf 1
+SURF 0X12
+mat 0
+refs 2
+0 0 0
+1 0 0
+kids 0

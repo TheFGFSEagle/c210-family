@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertyList>
-	<!-- most of this should be replaced by system files to support electrcial / other system failures -->
+	<!-- most of the stuff before <altimeter n="1"> should be replaced by system files to support electrcial / other system failures -->
 	<egt>
 		<indicated-temperature-degf alias="/engines/engine/egt-degf"/>
 	</egt>
@@ -15,6 +15,17 @@
 		<indicated-engine-rpm alias="/engines/engine/rpm"/>
 		<indicated-tach-time-hours alias="/fdm/jsbsim/propulsion/engine/tach-time-hours"/>
 	</tachometer>
+	<cht>
+		<indicated-cht-degf alias="/engines/engine/cht-degf"/>
+	</cht>
+	<oil>
+		<indicated-temperature-degf alias="/engines/engine/oil-temperature-degf"/>
+		<indicated-pressure-osi alias="/engines/engine/oil-pressure-osi"/>
+	</oil>
+	<ammeter>
+		<indicated-charge-rate-amps alias="/systems/electrical/amps"/>
+	</ammeter>
+	
 	<altimeter n="1">
 		<serviceable type="bool">true</serviceable>
 	</altimeter>
