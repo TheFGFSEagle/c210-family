@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
  
-<!-- Generic 28 Volt electrical system -->
-
 <PropertyList>
 
   <!-- Supplier list -->
@@ -10,8 +8,8 @@
     <name>Battery 1</name>
     <prop>/systems/electrical/suppliers/battery[0]</prop>
     <kind>battery</kind>
-    <volts>28</volts> <!-- needs to be > 24.5, but this is a guess -->
-    <amps>60</amps>   <!-- I have no idea! -->
+    <volts>28</volts>
+    <amps>60</amps>
   </supplier>
 
   <supplier>
@@ -19,8 +17,8 @@
     <prop>/systems/electrical/suppliers/alternator[0]</prop>
     <kind>alternator</kind>
     <rpm-source>/engines/engine[0]/rpm</rpm-source>
-    <volts>28</volts> <!-- stubbed in -->
-    <amps>60</amps>   <!-- from the 172S Skyhawk Information Manual -->
+    <volts>28</volts>
+    <amps>60</amps>
   </supplier>
 
   <supplier>
@@ -50,7 +48,6 @@
     <prop>/systems/electrical/outputs/transponder</prop>
     <prop>/systems/electrical/outputs/audio-panel[0]</prop>
     <prop>/systems/electrical/outputs/autopilot</prop>
-    <prop>/systems/electrical/outputs/mk-viii</prop>
   </bus>
 
   <!-- Generic Outputs -->
@@ -108,11 +105,6 @@
   <output>
     <name>Strobe Lights Power</name>
     <prop>/systems/electrical/outputs/strobe-lights</prop>
-  </output>
-
-  <output>
-    <name>Taxi Lights Power</name>
-    <prop>/systems/electrical/outputs/taxi-lights</prop>
   </output>
 
   <output>
@@ -234,14 +226,6 @@
     <output>Strobe Lights Power</output>
     <switch>
       <prop>/controls/switches/strobe-lights</prop>
-    </switch>
-  </connector>
-
-  <connector>
-    <input>Master Bus</input>
-    <output>Taxi Lights Power</output>
-    <switch>
-      <prop>/controls/switches/taxi-lights</prop>
     </switch>
   </connector>
 
