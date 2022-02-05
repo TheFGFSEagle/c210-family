@@ -41,11 +41,6 @@
 			<preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
-				<path>Previews/cruising.png</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
 				<path>Previews/landing-sunset.png</path>
 			</preview>
 			<preview>
