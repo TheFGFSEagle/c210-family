@@ -133,6 +133,11 @@
 		<type>gain</type>
 		<gain>1</gain>
 		<update-interval-secs>1</update-interval-secs>
+		<enable>
+			<condition>
+				<property>/controls/electric/battery-switch</property>
+			</condition>
+		</enable>
 		<input>
 			<expression>
 				<sum>
