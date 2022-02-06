@@ -268,7 +268,7 @@
 		<path>Instruments/cht/cht.xml</path>
 		<offsets>
 			<x-m>0.42</x-m>
-			<y-m>0.385</y-m>
+			<y-m>0.375</y-m>
 			<z-m>0.39</z-m>
 			<pitch-deg>-5.7</pitch-deg>
 			<heading-deg>-20</heading-deg>
@@ -278,7 +278,7 @@
 		<path>Instruments/oil/oil-temp.xml</path>
 		<offsets>
 			<x-m>0.437</x-m>
-			<y-m>0.432</y-m>
+			<y-m>0.422</y-m>
 			<z-m>0.39</z-m>
 			<pitch-deg>-5.7</pitch-deg>
 			<heading-deg>-20</heading-deg>
@@ -288,7 +288,7 @@
 		<path>Instruments/ammeter/ammeter.xml</path>
 		<offsets>
 			<x-m>0.4243</x-m>
-			<y-m>0.383</y-m>
+			<y-m>0.373</y-m>
 			<z-m>0.33</z-m>
 			<pitch-deg>-5.7</pitch-deg>
 			<heading-deg>-20</heading-deg>
@@ -298,10 +298,19 @@
 		<path>Instruments/oil/oil-press.xml</path>
 		<offsets>
 			<x-m>0.4413</x-m>
-			<y-m>0.43</y-m>
+			<y-m>0.42</y-m>
 			<z-m>0.33</z-m>
 			<pitch-deg>-5.7</pitch-deg>
 			<heading-deg>-20</heading-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/hobbs/hobbs.xml</path>
+		<offsets>
+			<x-m>0.42</x-m>
+			<y-m>0.502</y-m>
+			<z-m>0.287</z-m>
+			<pitch-deg>-5.7</pitch-deg>
 		</offsets>
 	</model>
 	

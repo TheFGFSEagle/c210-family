@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>hobbs.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>HoursScale1000</object-name>
+		<axis>
+			<object-name>HoursScaleAxis</object-name>
+		</axis>
+		<expression>
+			<prod>
+				<floor>
+					<div>
+						<property>instrumentation/hobbs-meter/indicated-hobbs-time-hours</property>
+						<value>1000</value>
+					</div>
+				</floor>
+				<value>-36</value>
+			</prod>
+		</expression>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>HoursScale100</object-name>
+		<axis>
+			<object-name>HoursScaleAxis</object-name>
+		</axis>
+		<expression>
+			<prod>
+				<floor>
+					<div>
+						<property>instrumentation/hobbs-meter/indicated-hobbs-time-hours</property>
+						<value>100</value>
+					</div>
+				</floor>
+				<value>-36</value>
+			</prod>
+		</expression>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>HoursScale10</object-name>
+		<axis>
+			<object-name>HoursScaleAxis</object-name>
+		</axis>
+		<expression>
+			<prod>
+				<floor>
+					<div>
+						<property>instrumentation/hobbs-meter/indicated-hobbs-time-hours</property>
+						<value>10</value>
+					</div>
+				</floor>
+				<value>-36</value>
+			</prod>
+		</expression>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>HoursScale1</object-name>
+		<axis>
+			<object-name>HoursScaleAxis</object-name>
+		</axis>
+		<expression>
+			<prod>
+				<floor>
+					<property>instrumentation/hobbs-meter/indicated-hobbs-time-hours</property>
+				</floor>
+				<value>-36</value>
+			</prod>
+		</expression>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>HoursScale0.1</object-name>
+		<axis>
+			<object-name>HoursScaleAxis</object-name>
+		</axis>
+		<expression>
+			<prod>
+				<prod>
+					<property>instrumentation/hobbs-meter/indicated-hobbs-time-hours</property>
+					<value>10</value>
+				</prod>
+				<value>-36</value>
+			</prod>
+		</expression>
+	</animation>
+	
+	<text>
+		<name>Label</name>
+		<type type="string">literal</type>
+		<text type="string">Hobbs meter</text>
+		<draw-text type="bool">true</draw-text>
+		<font>Helvetica.txf</font>
+		<character-size type="double">0.015</character-size>
+		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+		<axis-alignment>yz-plane</axis-alignment>
+		<max-height>0.03</max-height>
+		<max-width>0.05</max-width>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+		<alignment>center-center</alignment>
+		<offsets>
+			<x-m>0.01</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</text>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Label</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Label</object-name>
+		<condition>
+			<property>/sim/panel-hotspots</property>
+		</condition>
+	</animation>
+	
+	<effect>
+		<inherits-from>Models/Effects/p210n-instrument-glass</inherits-from>
+		<object-name>Glass</object-name>
+	</effect>
+</PropertyList>

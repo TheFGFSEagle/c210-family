@@ -127,5 +127,36 @@
 			</period>
 		</output>
 	</filter>
+	
+	<filter>
+		<name>Hobbs meter time (seconds)</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<update-interval-secs>1</update-interval-secs>
+		<input>
+			<expression>
+				<sum>
+					<property>/instrumentation/hobbs-meter/indicated-hobbs-time-seconds</property>
+					<value>1</value>
+				</sum>
+			</expression>
+		</input>
+		<output>/instrumentation/hobbs-meter/indicated-hobbs-time-seconds</output>
+	</filter>
+	<filter>
+		<name>Hobbs meter time (hours)</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<update-interval-secds>1</update-interval-secds>
+		<input>
+			<expression>
+				<quotient>
+					<property>/instrumentation/hobbs-meter/indicated-hobbs-time-seconds</property>
+					<value>3600</value>
+				</quotient>
+			</expression>
+		</input>
+		<output>/instrumentation/hobbs-meter/indicated-hobbs-time-hours</output>
+	</filter>
 </PropertyList>
 					
