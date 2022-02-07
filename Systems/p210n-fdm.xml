@@ -1680,7 +1680,7 @@
                     <property>aero/bi2vel</property>
                     <property>velocities/r-aero-rad_sec</property>
                     <value>-0.132</value>
-                    <value>7</value>
+                    <!--<value>7</value>-->
                 </product>
             </function>
             
@@ -1756,12 +1756,4 @@
             </direction>
         </force>
     </external_reactions>
-    <output name="p210n.csv" type="CSV" rate="10">
-        <property>aero/moment/Roll_beta</property>
-        <property>aero/moment/Roll_damp</property>
-        <property>aero/moment/Roll_yaw</property>
-        <property>aero/moment/Yaw_beta</property>
-        <property>aero/moment/Yaw_damp</property>
-        <property>aero/moment/Yaw_roll_rate</property>
-    </output>
 </fdm_config>

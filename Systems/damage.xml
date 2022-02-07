@@ -184,7 +184,7 @@
                     <value>220.5</value>
                 </product>
             </function>
-            <output>metrics/aero-rp-y-in</output>
+            <output>metrics/aero-rp-y-in-damage</output>
         </fcs_function>
                     
     </channel>
