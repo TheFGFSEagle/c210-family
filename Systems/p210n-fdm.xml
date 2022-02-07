@@ -1756,4 +1756,12 @@
             </direction>
         </force>
     </external_reactions>
+    <output name="p210n.csv" type="CSV" rate="10">
+        <property>aero/moment/Roll_beta</property>
+        <property>aero/moment/Roll_damp</property>
+        <property>aero/moment/Roll_yaw</property>
+        <property>aero/moment/Yaw_beta</property>
+        <property>aero/moment/Yaw_damp</property>
+        <property>aero/moment/Yaw_roll_rate</property>
+    </output>
 </fdm_config>
