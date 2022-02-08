@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>yoke.ac</path>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>Bar</object-name>
+		<object-name>Middle</object-name>
+		<object-name>Handle</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>controls/flight/elevator</property>
+		<factor>0.125</factor>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Middle</object-name>
+		<object-name>Handle</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>controls/flight/aileron</property>
+		<factor>60</factor>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Mount</object-name>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>sim/model/controls/show-yokes</property>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>yokes-show</tooltip-id>
+				<label>Show / hide yokes</label>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Bar</object-name>
+		<object-name>Middle</object-name>
+		<object-name>Handle</object-name>
+		<condition>
+			<property>sim/model/controls/show-yokes</property>
+		</condition>
+	</animation>
+</PropertyList>

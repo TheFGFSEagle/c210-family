@@ -120,6 +120,7 @@
 				<magnetos>
 					<key-inserted type="bool">true</key-inserted>
 				</magnetos>
+				<show-yokes type="bool">true</show-yokes>
 			</controls>
 		</model>
 		<menubar include="gui/menu/p210n-menu.xml"></menubar>
@@ -212,6 +213,7 @@
 			<path>/sim/model/effects/enable-fog-frost</path>
 			<path>/sim/model/controls/magnetos/key-inserted</path>
 			<path>/sim/model/livery/file</path>
+			<path>/sim/model/controls/show-yoke</path>
 			<path>/instrumentation/nav[0]/radials/selected-deg</path>
 			<path>/instrumentation/nav[0]/frequencies</path>
 			<path>/instrumentation/nav[0]/power-btn</path>
