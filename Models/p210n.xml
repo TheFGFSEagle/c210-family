@@ -1130,4 +1130,22 @@
 			<z-m>1.652</z-m>
 		</offsets>
 	</model>
+	
+	<!-- pushback / towbar -->
+	<animation>
+		<type>select</type>
+		<object-name>Towbar</object-name>
+		<condition>
+			<property>sim/model/pushback/attached</property>
+		</condition>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Towbar</object-name>
+		<axis>
+			<object-name>TowbarSteeringAxis</object-name>
+		</axis>
+		<property>gear/gear[0]/steering-norm</property>
+		<factor>35</factor>
+	</animation>
 </PropertyList>

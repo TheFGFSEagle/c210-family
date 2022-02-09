@@ -1750,10 +1750,23 @@
                 <z>4.4</z>
             </location>
             <direction>
-                <x>0.0</x>
-                <y>0.0</y>
-                <z>0.0</z>
+                <x>0</x>
+                <y>0</y>
+                <z>0</z>
             </direction>
         </force>
+        
+        <force name="pushback" frame="BODY" unit="LBS">
+        	<location unit="IN">
+        		<x>-10.5</x>
+        		<y>0</y>
+        		<z>-35.8</z>
+        	</location>
+        	<direction>
+        		<x>1</x>
+        		<y>0</y>
+        		<z>0.05</z>
+		</direction>
+	</force>
     </external_reactions>
 </fdm_config>

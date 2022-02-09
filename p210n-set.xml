@@ -122,6 +122,9 @@
 				</magnetos>
 				<show-yokes type="bool">true</show-yokes>
 			</controls>
+			<pushback>
+				<attached type="bool">false</attached>
+			</pushback>
 		</model>
 		<menubar include="gui/menu/p210n-menu.xml"></menubar>
 		<help include="gui/help/p210n-help.xml"></help>
