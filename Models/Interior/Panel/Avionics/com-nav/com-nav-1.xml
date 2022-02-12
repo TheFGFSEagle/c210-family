@@ -3,7 +3,7 @@
 	<params>
 		<com-freq-mhz>instrumentation/comm[0]/frequencies/selected-mhz</com-freq-mhz>
 		<com-volume>instrumentation/comm[0]/volume</com-volume>
-		<com-volume-script>p210n.comNav1.adjustComVolume()</com-volume-script>
+		<com-volume-script>c210.comNav1.adjustComVolume()</com-volume-script>
 		<com-squelch>instrumentation/comm[0]/squelch</com-squelch>
 		<nav-freq-mhz>instrumentation/nav[0]/frequencies/selected-mhz</nav-freq-mhz>
 		<nav-volume>instrumentation/nav[0]/volume</nav-volume>
@@ -14,14 +14,14 @@
 		<nav-memory1-pressed>instrumentation/nav[0]/memory1-pressed</nav-memory1-pressed>
 		<nav-memory2-pressed>instrumentation/nav[0]/memory2-pressed</nav-memory2-pressed>
 		<nav-memory3-pressed>instrumentation/nav[0]/memory3-pressed</nav-memory3-pressed>
-		<com-memory1-script>p210n.comNav1.memoryPressed("com", 1);</com-memory1-script>
-		<com-memory2-script>p210n.comNav1.memoryPressed("com", 2);</com-memory2-script>
-		<com-memory3-script>p210n.comNav1.memoryPressed("com", 3);</com-memory3-script>
-		<nav-memory1-script>p210n.comNav1.memoryPressed("nav", 1);</nav-memory1-script>
-		<nav-memory2-script>p210n.comNav1.memoryPressed("nav", 2);</nav-memory2-script>
-		<nav-memory3-script>p210n.comNav1.memoryPressed("nav", 3);</nav-memory3-script>
+		<com-memory1-script>c210.comNav1.memoryPressed("com", 1);</com-memory1-script>
+		<com-memory2-script>c210.comNav1.memoryPressed("com", 2);</com-memory2-script>
+		<com-memory3-script>c210.comNav1.memoryPressed("com", 3);</com-memory3-script>
+		<nav-memory1-script>c210.comNav1.memoryPressed("nav", 1);</nav-memory1-script>
+		<nav-memory2-script>c210.comNav1.memoryPressed("nav", 2);</nav-memory2-script>
+		<nav-memory3-script>c210.comNav1.memoryPressed("nav", 3);</nav-memory3-script>
 		<cycle-pressed>instrumentation/comm[0]/cycle-pressed</cycle-pressed>
-		<cycle-script>p210n.comNav1.cyclePressed()</cycle-script>
+		<cycle-script>c210.comNav1.cyclePressed()</cycle-script>
 		<label-text>COM/NAV 1</label-text>
 	</params>
 	

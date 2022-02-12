@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
-	<path>p210n.ac</path>
+	<path>c210.ac</path>
 	
 	<!-- Livery over MP -->
 	<animation>
@@ -879,7 +879,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-					p210n.pilotDoor.toggle();
+					c210.pilotDoor.toggle();
 				</script>
 			</binding>
 		</action>
@@ -887,7 +887,7 @@
 			<binding>
 				<command>nasal</command>
 				<script><![CDATA[
-					p210n.pilotDoor.move(p210n.pilotDoor.getpos() + 0.05);
+					c210.pilotDoor.move(c210.pilotDoor.getpos() + 0.05);
 				]]></script>
 			</binding>
 		</shift-increase>
@@ -895,7 +895,7 @@
 			<binding>
 				<command>nasal</command>
 				<script><![CDATA[
-					p210n.pilotDoor.move(p210n.pilotDoor.getpos() - 0.05);
+					c210.pilotDoor.move(c210.pilotDoor.getpos() - 0.05);
 				]]></script>
 			</binding>
 		</shift-decrease>
@@ -928,7 +928,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-					p210n.emergencyExit.toggle();
+					c210.emergencyExit.toggle();
 				</script>
 			</binding>
 		</action>
@@ -936,7 +936,7 @@
 			<binding>
 				<command>nasal</command>
 				<script><![CDATA[
-					p210n.emergencyExit.move(p210n.emergencyExit.getpos() + 0.05);
+					c210.emergencyExit.move(c210.emergencyExit.getpos() + 0.05);
 				]]></script>
 			</binding>
 		</shift-increase>
@@ -944,7 +944,7 @@
 			<binding>
 				<command>nasal</command>
 				<script><![CDATA[
-					p210n.emergencyExit.move(p210n.emergencyExit.getpos() - 0.05);
+					c210.emergencyExit.move(c210.emergencyExit.getpos() - 0.05);
 				]]></script>
 			</binding>
 		</shift-decrease>
@@ -964,7 +964,7 @@
 			<binding>
 				<command>nasal</command>
 				<script>
-					p210n.baggageDoor.toggle();
+					c210.baggageDoor.toggle();
 				</script>
 			</binding>
 		</action>
@@ -972,7 +972,7 @@
 			<binding>
 				<command>nasal</command>
 				<script><![CDATA[
-					p210n.baggageDoor.move(p210n.baggageDoor.getpos() + 0.05);
+					c210.baggageDoor.move(c210.baggageDoor.getpos() + 0.05);
 				]]></script>
 			</binding>
 		</shift-increase>
@@ -980,7 +980,7 @@
 			<binding>
 				<command>nasal</command>
 				<script><![CDATA[
-					p210n.baggageDoor.move(p210n.baggageDoor.getpos() - 0.05);
+					c210.baggageDoor.move(c210.baggageDoor.getpos() - 0.05);
 				]]></script>
 			</binding>
 		</shift-decrease>

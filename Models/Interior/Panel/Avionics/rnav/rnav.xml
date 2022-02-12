@@ -19,7 +19,7 @@
 				<factor>1</factor>
 			<binding>
 				<command>nasal</command>
-				<script>p210n.rnav.updateBearing();</script>
+				<script>c210.rnav.updateBearing();</script>
 			</binding>
 			</binding>
 		</action>
@@ -42,7 +42,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>p210n.rnav.updateBearing();</script>
+				<script>c210.rnav.updateBearing();</script>
 			</binding>
 		</action>
 	</animation>
@@ -64,7 +64,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>p210n.rnav.updateBearing();</script>
+				<script>c210.rnav.updateBearing();</script>
 			</binding>
 		</action>
 	</animation>
@@ -86,7 +86,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>p210n.rnav.updateBearing();</script>
+				<script>c210.rnav.updateBearing();</script>
 			</binding>
 		</action>
 	</animation>
@@ -109,7 +109,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>p210n.rnav.updateDistance();</script>
+				<script>c210.rnav.updateDistance();</script>
 			</binding>
 		</action>
 	</animation>
@@ -131,7 +131,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>p210n.rnav.updateDistance();</script>
+				<script>c210.rnav.updateDistance();</script>
 			</binding>
 		</action>
 	</animation>
@@ -153,7 +153,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>p210n.rnav.updateDistance();</script>
+				<script>c210.rnav.updateDistance();</script>
 			</binding>
 		</action>
 	</animation>
@@ -175,7 +175,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>p210n.rnav.updateDistance();</script>
+				<script>c210.rnav.updateDistance();</script>
 			</binding>
 		</action>
 	</animation>
@@ -294,7 +294,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>p210n.rnav.updateCurrentWaypoint();</script>
+				<script>c210.rnav.updateCurrentWaypoint();</script>
 			</binding>
 		</action>
 	</animation>
@@ -336,7 +336,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>p210n.rnav.transferPressed();</script>
+				<script>c210.rnav.transferPressed();</script>
 			</binding>
 		</action>
 		<release>

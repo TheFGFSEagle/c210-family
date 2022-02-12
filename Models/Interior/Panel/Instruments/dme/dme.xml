@@ -20,7 +20,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>p210n.dme.sourceChanged();</script>
+				<script>c210.dme.sourceChanged();</script>
 			</binding>
 		</action>
 	</animation>
@@ -43,7 +43,7 @@
 			</binding>
 			<binding>
 				<command>nasal</command>
-				<script>p210n.dme.modeChanged();</script>
+				<script>c210.dme.modeChanged();</script>
 			</binding>
 		</action>
 		<release>
@@ -67,7 +67,7 @@
 					</equals>
 				</condition>
 				<command>nasal</command>
-				<script>p210n.dme.modeChanged();</script>
+				<script>c210.dme.modeChanged();</script>
 			</binding>
 		</release>
 	</animation>

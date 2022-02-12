@@ -5,7 +5,7 @@
 #var p210nModule = modules.Module.new("p210n");
 #p210nModule.setDebug(1);
 #p210nModule.setFilePath(getprop("/sim/aircraft-dir") ~ "/Nasal");
-#p210nModule.setMainFile("p210n.nas");
+#p210nModule.setMainFile("c210.nas");
 #p210nModule.load();
 
 # Livery dialog
