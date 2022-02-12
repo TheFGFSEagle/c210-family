@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<default>
+		<menu n="10">
+			<label>Cessna Silver Eagle</label>
+			<enabled type="bool">true</enabled>
+			<item>
+				<label>Start engine</label>
+				<binding>
+					<command>nasal</command>
+					<script>c210.autostart();</script>
+				</binding>
+			</item>
+			<item>
+				<label>Select livery</label>
+				<binding>
+					<command>nasal</command>
+					<script>aircraft.livery.dialog.toggle()</script>
+				</binding>
+			</item>
+			<item>
+				<label>Aircraft options</label>
+				<binding>
+					<command>dialog-show</command>
+					<dialog-name>p210n-options</dialog-name>
+				</binding>
+			</item>
+			<item>
+				<label>Pushback control (not working yet)</label>
+				<binding>
+					<command>nasal</command>
+					<script>pushback.showPushbackDialog();</script>
+				</binding>
+			</item>
+		</menu>
+	</default>
+</PropertyList>

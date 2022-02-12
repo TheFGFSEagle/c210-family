@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <PropertyList>
-    <title>Cessna P210N "Pressurized Centurion" (JSBsim)</title>
+    <title>Cessna P210N "Silver Eagle" (JSBsim)</title>
 
     <line>_________V Speeds_________</line>
-    <line>Vso: 54 kts</line>
+    <line>Vso: 61 kts</line>
     <line>Va: 130 kts</line>
-    <line>Vne: 200 kts</line>
+    <line>Vmo: 167 kts</line>
 </PropertyList>

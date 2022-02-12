@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+	<sim>
+		<authors>
+			<author n="0">
+				<description>FDM, 3D, systems, Nasal</description>
+				<nick>TheEagle</nick>
+				<email>programmer.anonymous@yandex.com</email>
+			</author>
+			<author n="1">
+				<description>FDM</description>
+				<nick>Ysop</nick>
+			</author>
+			<author n="2">
+				<description>Engine advice</description>
+				<nick>S&amp;J</nick>
+			</author>
+		</authors>
+		<aircraft-version>1.0.0</aircraft-version>
+		<status>beta</status>
+		<minimum-fg-version>2017.2.0</minimum-fg-version>
+
+		<flight-model>jsb</flight-model>
+
+		<type type="string">airplane</type>
+		<primary-set type="bool">true</primary-set>
+		<rating>
+			<FDM type="int">4</FDM>
+			<systems type="int">4</systems>
+			<cockpit type="int">4</cockpit>
+			<model type="int">4</model>
+		</rating>
+		
+		<tags>
+			<tag>transport</tag>
+			<tag>cessna</tag>
+			<tag>1960s</tag>
+			<tag>high-wing</tag>
+			<tag>ifr</tag>
+			<tag>single-engine</tag>
+			<tag>pressurized</tag>
+			<tag>retractable-gear</tag>
+		</tags>
+		<urls>
+			<home-page>https://wiki.flightgear.org/Cessna_210_Centurion_family</home-page>
+			<wikipedia>https://en.wikipedia.org/wiki/Cessna_210_Centurion</wikipedia>
+			<code-repository>https://github.com/TheFGFSEagle/c210-family</code-repository>
+		</urls>
+		<model>
+			<livery>
+				<file type="string">Default</file>
+			</livery>
+			<effects>
+				<enable-interior-glass-reflections type="bool">true</enable-interior-glass-reflections>
+				<enable-glass-rain type="bool">true</enable-glass-rain>
+				<enable-fog-frost type="bool">true</enable-fog-frost>
+			</effects>
+			<doors>
+				<pilot>
+					<position-norm>0</position-norm>
+				</pilot>
+				<emergency-exit>
+					<position-norm>0</position-norm>
+				</emergency-exit>
+				<baggage>
+					<position-norm>0</position-norm>
+				</baggage>
+			</doors>
+			<controls>
+				<show-yokes type="bool">true</show-yokes>
+			</controls>
+			<pushback>
+				<attached type="bool">false</attached>
+			</pushback>
+		</model>
+		<view n="0">
+			<name>Pilot</name>
+			<type>lookfrom</type>
+			<internal type="bool">true</internal>
+			<config>
+				<x-offset-m type="double">-0.24</x-offset-m>
+				<y-offset-m type="double">0.61</y-offset-m>
+				<z-offset-m type="double">1</z-offset-m>
+				<pitch-offset-deg>-9</pitch-offset-deg>
+				<default-field-of-view-deg type="double">80.0</default-field-of-view-deg>
+				<from-model type="bool">true</from-model>
+				<from-model-idx type="int">0</from-model-idx>
+				<ground-level-nearplane-m type="double">2</ground-level-nearplane-m>
+				<limits>
+					<enabled type="bool">true</enabled>
+					<left>
+						<heading-max-deg type="double">140</heading-max-deg>
+						<x-offset-max-m type="double">0.15</x-offset-max-m>
+						<x-offset-threshold-deg type="double">0</x-offset-threshold-deg>
+					</left>
+					<right>
+						<heading-max-deg type="double">140</heading-max-deg>
+						<x-offset-max-m type="double">0.15</x-offset-max-m>
+						<x-offset-threshold-deg type="double">0</x-offset-threshold-deg>
+					</right>
+				</limits>
+			</config>
+			<dynamic>
+				<enabled type="bool">false</enabled>
+			</dynamic>
+		</view>
+		<instrumentation>
+			<path>Systems/p210n-instrumentation.xml</path>
+		</instrumentation>
+		<systems>
+			<path>Systems/systems.xml</path>
+			<property-rule n="100">
+				<name>Glass rain effect properties</name>
+				<path>Systems/glass-rain.xml</path>
+			</property-rule>
+			<property-rule n="101">
+				<name>Re-route properties based on selection in aircraft options dialog</name>
+				<path>Systems/render-options.xml</path>
+			</property-rule>
+			<property-rule n="102">
+				<name>Miscellaneous instrument property rules</name>
+				<path>Systems/instruments.xml</path>
+			</property-rule>
+			<property-rule n="103">
+				<name>RNAV</name>
+				<path>Systems/rnav.xml</path>
+			</property-rule>
+		</systems>
+		<aircraft-data>
+			<path>/controls/engines/engine/cowl-flaps-norm</path>
+			<path>/controls/engines/engine/throttle</path>
+			<path>/controls/engines/engine/propeller-pitch</path>
+			<path>/controls/engines/engine/magnetos</path>
+			<path>/controls/engines/engine/master-alt</path>
+			<path>/controls/electric/battery-switch</path>
+			<path>/controls/anti-ice/pitot-heat</path>
+			<path>/controls/anti-ice/wing-deice</path>
+			<path>/controls/anti-ice/deice-light</path>
+			<path>/controls/anti-ice/window-heat</path>
+			<path>/controls/anti-ice/propeller-heat</path>
+			<path>/controls/flight/rudder</path>
+			<path>/controls/flight/aileron</path>
+			<path>/controls/flight/elevator</path>
+			<path>/controls/flight/flaps</path>
+			<path>/controls/gear/brake-parking</path>
+			<path>/controls/gear/gear-down</path>
+			<path>/controls/alt-static-air</path>
+			<path>/controls/fuel/selected-tank</path>
+			<path>/controls/pressurization/dump-valve</path>
+			<path>/controls/pressurization/pressurize</path>
+			<path>/controls/pressurization/selected-cabin-altitude-ft</path>
+			<path>/controls/lighting</path>
+			<path>/sim/model/doors/pilot/position-norm</path>
+			<path>/sim/model/doors/emergency-exit/position-norm</path>
+			<path>/sim/model/doors/baggagge/position-norm</path>
+			<path>/sim/model/effects/enable-interior-glass-reflections</path>
+			<path>/sim/model/effects/enable-glass-rain</path>
+			<path>/sim/model/effects/enable-fog-frost</path>
+			<path>/sim/model/livery/file</path>
+			<path>/sim/model/controls/show-yoke</path>
+			<path>/instrumentation/nav[0]/radials/selected-deg</path>
+			<path>/instrumentation/nav[0]/frequencies</path>
+			<path>/instrumentation/nav[0]/power-btn</path>
+			<path>/instrumentation/nav[0]/ident</path>
+			<path>/instrumentation/nav[0]/volume</path>
+			<path>/instrumentation/nav[1]/radials/selected-deg</path>
+			<path>/instrumentation/nav[1]/frequencies</path>
+			<path>/instrumentation/nav[1]/power-btn</path>
+			<path>/instrumentation/nav[1]/ident</path>
+			<path>/instrumentation/nav[1]/volume</path>
+			<path>/instrumentation/comm[0]/frequencies</path>
+			<path>/instrumentation/comm[0]/power-btn</path>
+			<path>/instrumentation/comm[0]/volume</path>
+			<path>/instrumentation/comm[1]/frequencies</path>
+			<path>/instrumentation/comm[1]/power-btn</path>
+			<path>/instrumentation/comm[1]/volume</path>
+			<path>/instrumentation/adf[0]/frequencies/selected-khz</path>
+			<path>/instrumentation/adf[0]/frequencies/standby-khz</path>
+			<path>/instrumentation/adf[0]/power-btn</path>
+			<path>/instrumentation/adf[0]/volume</path>
+			<path>/instrumentation/altimeter/setting-inhg</path>
+			<path>/instrumentation/altimeter[1]/setting-inhg</path>
+			<path>/instrumentation/heading-indicator/heading-bug-deg</path>
+			<path>/instrumentation/attitude-indicator/pitch-offset-deg</path>
+			<path>/instrumentation/ifcs/green-light-intensity-norm</path>
+			<path>/instrumentation/ifcs/white-light-intensity-norm</path>
+			<path>/fdm/jsbsim/propulsion/engine/tach-time-sec</path>
+			<path>/instrumentation/hobbs-meter/indicated-hobbs-time-sec</path>
+			<path>/instrumentation/clock/mode</path>
+			<path>/instrumentation/dme/frequencies</path>
+			<path>/instrumentation/dme/mode</path>
+			<path>/instrumentation/dme/source-knob</path>
+			<path>/instrumentation/dme/source</path>
+			<path>/instrumentation/dme/display-mode</path>
+			<path>/instrumentation/dme/power-btn</path>
+			<path>/instrumentation/dme/ident</path>
+			<path>/instrumentation/rnav</path>
+		</aircraft-data>
+		<hitches>
+			<aerotow>
+				<force_name_jsbsim type="string">hitch</force_name_jsbsim>
+				<force-is-calculated-by-other type="bool">true</force-is-calculated-by-other>
+				<mp-auto-connect-period type="float">1.0</mp-auto-connect-period>
+			</aerotow>
+		</hitches>
+	</sim>
+	
+	<nasal>
+		<utils>
+			<file>Nasal/utils.nas</file>
+		</utils>
+		<p210n>
+			<file>Nasal/p210n.nas</file>
+			<file>Nasal/autostart.nas</file>
+			<file>Nasal/radios.nas</file>
+		</p210n>
+		<lc2>
+			<file>Nasal/lc2.nas</file>
+		</lc2>
+		<pushback>
+			<file>Nasal/pushback.nas</file>
+		</pushback>
+	</nasal>
+	
+	<limits>
+		<max-positive-g>3.8</max-positive-g>
+		<max-negative-g>-1.52</max-negative-g>
+
+		<vne>200</vne>
+
+		<mass-and-balance>
+			<maximum-ramp-mass-lbs>4016</maximum-ramp-mass-lbs>
+			<maximum-takeoff-mass-lbs>4000</maximum-takeoff-mass-lbs>
+			<maximum-landing-mass-lbs>3800</maximum-landing-mass-lbs>
+			<!--<maximum-zero-fuel-mass-lbs>3475.1</maximum-zero-fuel-mass-lbs>-->
+		</mass-and-balance>
+		<max-flap-extension-speed>
+			<flaps>0.3333</flaps>
+			<speed>160</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>0.6666</flaps>
+			<speed>130</speed>
+		</max-flap-extension-speed>
+		<max-flap-extension-speed>
+			<flaps>1.0</flaps>
+			<speed>115</speed>
+		</max-flap-extension-speed>
+		<max-gear-extension-speed>200</max-gear-extension-speed>
+		<max-gear-operation-speed>165</max-gear-operation-speed>
+	</limits>
+	
+	<engines>
+		<engine>
+			<cowl-flaps-norm alias="/fdm/jsbsim/propulsion/engine[0]/cowl-flaps-norm"/>
+		</engine>
+	</engines>
+	<controls>
+		<engines>
+			<engine>
+				<cowl-flaps-norm>1</cowl-flaps-norm>
+			</engine>
+		</engines>
+		<anti-ice>
+			<window-heat type="bool">false</window-heat>
+			<wing-deice type="bool">false</wing-deice>
+			<deice-light type="bool">false</deice-light>
+			<propeller-heat type="bool">false</propeller-heat>
+			<pitot-heat type="bool">false</pitot-heat>
+		</anti-ice>
+		<fuel>
+			<tank n="0">
+				<drain-valve type="bool">false</drain-valve>
+			</tank>
+			<tank n="1">
+				<drain-valve type="bool">false</drain-valve>
+			</tank>
+			<tank n="4">
+				<drain-valve type="bool">false</drain-valve>
+			</tank>
+			<tank n="5">
+				<drain-valve type="bool">false</drain-valve>
+			</tank>
+			<tank n="10">
+				<drain-valve type="bool">false</drain-valve>
+			</tank>
+			<!-- 0=OFF, -1=LEFT, 1=RIGHT -->
+			<selected-tank>0</selected-tank>
+		</fuel>
+	</controls>
+	
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<name>Left wing tank</name>
+			</tank>
+			<tank n="1">
+				<name>Right wing tank</name>
+			</tank>
+			<tank n="2">
+				<name>Left fuel pipe wing tank -> reservoir tank</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="3">
+				<name>Right fuel pipe wing tank -> reservoir tank</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="4">
+				<name>Left reservoir tank</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="5">
+				<name>Right reservoir tank</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="6">
+				<name>Left fuel pipe reservoir tank -> fuel selector</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="7">
+				<name>Right fuel pipe reservoir tank -> fuel selector</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="8">
+				<name>Fuel selector sump</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="9">
+				<name>Fuel pipe fuel selector -> fuel strainer</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="10">
+				<name>Fuel strainer sump</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="11">
+				<name>Fuel pipe fuel strainer -> engine manifold</name>
+				<hidden>true</hidden>
+			</tank>
+			<tank n="12">
+				<name>Engine manifold</name>
+				<hidden>true</hidden>
+			</tank>
+		</fuel>
+	</consumables>
+	
+	<payload>
+		<weight n="0">
+			<name type="string">Pilot</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight n="1">
+			<name type="string">Copilot</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight n="2">
+			<name type="string">Front left passenger</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight n="3">
+			<name type="string">Front right passenger</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[3]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight n="4">
+			<name type="string">Rear left passenger</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[4]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight n="5">
+			<name type="string">Rear right passenger</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[5]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">220.0</max-lb>
+		</weight>
+		<weight n="6">
+			<name type="string">Baggage A</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[6]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">200.0</max-lb>
+		</weight>
+		<weight n="7">
+			<name type="string">Baggage B</name>
+			<weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[7]"/>
+			<min-lb type="double">0.0</min-lb>
+			<max-lb type="double">80.0</max-lb>
+		</weight>
+	</payload>
+	
+	<input>
+		<keyboard>
+			<key n="79">
+				<name>O</name>
+				<desc>Open aerotow hook</desc>
+				<binding>
+					<command>nasal</command>
+					<script>towing.releaseHitch("aerotow")</script>
+				</binding>
+			</key>
+		</keyboard>
+	</input>
+</PropertyList>

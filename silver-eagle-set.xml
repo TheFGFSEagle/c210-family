@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList include="set-base.xml">
+	<sim>
+		<description type="string">Cessna P210N Silver Eagle (JSBsim)</description>
+		<long-description>
+			The Cessna Silver Eagle is an O&amp;N modfication of the P219N, a high-wing, fixed-wing light pressurized utility aircraft that was first produced in 1984. It is equipped with a Rolls Royce 250-B17F/2 turboprop engine and a Hartzell constant-speed propeller.
+		</long-description>
+		<aircraft-version>1.0.0</aircraft-version>
+		<status>alpha</status>
+		<minimum-fg-version>2017.2.0</minimum-fg-version>
+
+		<flight-model>jsb</flight-model>
+		<aero>Systems/silver-eagle-fdm</aero>
+		<model>
+			<path>Models/p210n.xml</path>
+			<variant>silver-eagle</variant>
+		</model>
+		<variant-of>p210n</variant-of>
+		
+		<menubar include="gui/menu/silver-eagle-menu.xml"></menubar>
+		<help include="gui/help/silver-eagle-help.xml"></help>
+	</sim>
+	<controls>
+		<fuel>
+			<tank n="13">
+				<left-drain-valve type="bool">false</left-drain-valve>
+				<right-drain-valve type="bool">false</right-drain-valve>
+			</tank>
+			<tank n="14">
+				<drain-valve type="bool">false</drain-valve>
+			</tank>
+			<tank n="15">
+				<drain-valve type="bool">false</drain-valve>
+			</tank>
+		</fuel>
+	</controls>
+	<consumables>
+		<fuel>
+			<tank n="13">
+				<name>Transfer tank</name>
+			</tank>
+			<tank n="14">
+				<name>Left fuel pipe transfer tank -> left wing tank</name>
+				<hidden type="bool">true</hidden>
+			</tank>
+			<tank n="15">
+				<name>Right fuel pipe transfer tank -> right wing tank</name>
+				<hidden type="bool">true</hidden>
+			</tank>
+		</fuel>
+	</consumables>
+	<payload>
+		<weight n="6">
+			<max-lbs>181.5</max-lbs>
+		</weight>
+	</payload>
+</PropertyList>
