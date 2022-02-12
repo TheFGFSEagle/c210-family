@@ -9,7 +9,7 @@
 				<label>Start engine</label>
 				<binding>
 					<command>nasal</command>
-					<script>p210n.autostart();</script>
+					<script>c210.autostart();</script>
 				</binding>
 			</item>
 			<item>
@@ -24,6 +24,13 @@
 				<binding>
 					<command>dialog-show</command>
 					<dialog-name>p210n-options</dialog-name>
+				</binding>
+			</item>
+			<item>
+				<label>Pushback control (not working yet)</label>
+				<binding>
+					<command>nasal</command>
+					<script>pushback.showPushbackDialog();</script>
 				</binding>
 			</item>
 		</menu>
