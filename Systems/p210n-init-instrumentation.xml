@@ -20,7 +20,7 @@
 	</cht>
 	<oil>
 		<indicated-temperature-degf alias="/engines/engine/oil-temperature-degf"/>
-		<indicated-pressure-osi alias="/engines/engine/oil-pressure-osi"/>
+		<indicated-pressure-psi alias="/engines/engine/oil-pressure-psi"/>
 	</oil>
 	<ammeter>
 		<indicated-charge-rate-amps alias="/systems/electrical/amps"/>
