@@ -21,3 +21,4 @@ Then, tell FlightGear to search `/some/path/Aircraft` for aircraft by either
 ## Contents
 
 * Cessna P210N "Pressurized Centurion"
+* Cessna P210N turboprop conversion "Silver Eagle"
