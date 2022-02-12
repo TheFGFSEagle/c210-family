@@ -907,7 +907,7 @@
     </propulsion>
     
     <system file="engine"/>
-    <system file="fuel"/>
+    <system file="p210n-fuel"/>
     <system file="damage"/>
     
     <flight_control name="FCS: p210n">
