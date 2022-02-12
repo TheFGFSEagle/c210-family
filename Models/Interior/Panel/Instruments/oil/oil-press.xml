@@ -8,7 +8,7 @@
 		<axis>
 			<object-name>NeedleAxis</object-name>
 		</axis>
-		<property>instrumentation/oil/indicated-pressure-osi</property>
+		<property>instrumentation/oil/indicated-pressure-psi</property>
 		<interpolation>
 			<entry>
 				<ind>-15</ind>
