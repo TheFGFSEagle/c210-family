@@ -13,7 +13,7 @@
 		<flight-model>jsb</flight-model>
 		<aero>Systems/silver-eagle-fdm</aero>
 		<model>
-			<path>Models/p210n.xml</path>
+			<path>Aircraft/c210-family/Models/p210n.xml</path>
 			<variant>silver-eagle</variant>
 		</model>
 		<variant-of>p210n</variant-of>

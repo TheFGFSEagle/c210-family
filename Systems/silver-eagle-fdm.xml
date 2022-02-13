@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
 <fdm_config name="p210n" version="2.0" release="ALPHA" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
-
     <fileheader>
         <author>TheEagle, Ysop</author>
         <filecreationdate>2021-09-14</filecreationdate>
-        <version>$Revision: 1.0 $</version>
+        <version>0.5</version>
         <description>Models a Cessna P210N.</description>
     </fileheader>
 
@@ -981,7 +980,7 @@
                                     -1       0        1
                           -1    -35       0   14.5
                            0    -14.5    0   14.5
-                           1    -14.5       0      35
+                           1    -14.5    0      35
                         </tableData>
                     </table>
                 </function>
@@ -999,16 +998,16 @@
                 <input>fcs/elevator-cmd-norm</input>
                 <input>fcs/pitch-trim-cmd-norm</input>
                 <clipto>
-                    <min> -1 </min>
-                    <max>  1 </max>
+                    <min>-1</min>
+                    <max>1</max>
                 </clipto>
             </summer>
             
             <aerosurface_scale name="Elevator Control">
                 <input>fcs/pitch-trim-sum</input>
                 <range>
-                    <min> -0.3 </min>
-                    <max>  0.4 </max>
+                    <min>-0.3</min>
+                    <max>0.4</max>
                 </range>
                 <output>fcs/elevator-pos-rad</output>
             </aerosurface_scale>
@@ -1016,12 +1015,12 @@
             <aerosurface_scale name="elevator normalization">
                 <input>fcs/elevator-pos-rad</input>
                 <domain>
-                    <min> -0.3 </min>
-                    <max>  0.4 </max>
+                    <min>-0.3</min>
+                    <max>0.4</max>
                 </domain>
                 <range>
-                    <min> -1 </min>
-                    <max>  1 </max>
+                    <min>-1</min>
+                    <max>1</max>
                 </range>
                 <output>fcs/elevator-pos-norm</output>
             </aerosurface_scale>
@@ -1032,8 +1031,8 @@
                 <input>fcs/aileron-cmd-norm</input>
                 <input>fcs/roll-trim-cmd-norm</input>
                 <clipto>
-                    <min> -1 </min>
-                    <max>  1 </max>
+                    <min>-1</min>
+                    <max>1</max>
                 </clipto>
             </summer>
             
@@ -1092,16 +1091,16 @@
                 <input>fcs/rudder-cmd-norm</input>
                 <input>fcs/yaw-trim-cmd-norm</input>
                 <clipto>
-                    <min> -1 </min>
-                    <max>  1 </max>
+                    <min>-1</min>
+                    <max>1</max>
                 </clipto>
             </summer>
             
             <aerosurface_scale name="Rudder Control">
                 <input>fcs/rudder-command-sum</input>
                 <range>
-                    <min> -0.47 </min>
-                    <max>  0.47 </max>
+                    <min>-0.47</min>
+                    <max>0.47</max>
                 </range>
                 <output>fcs/rudder-pos-rad</output>
             </aerosurface_scale>
@@ -1109,12 +1108,12 @@
             <aerosurface_scale name="rudder normalization">
                 <input>fcs/rudder-pos-rad</input>
                 <domain>
-                    <min> -0.47 </min>
-                    <max>  0.47 </max>
+                    <min>-0.47</min>
+                    <max>0.47</max>
                 </domain>
                 <range>
-                    <min> -1 </min>
-                    <max>  1 </max>
+                    <min>-1</min>
+                    <max>1</max>
                 </range>
                 <output>fcs/rudder-pos-norm</output>
             </aerosurface_scale>
@@ -1125,20 +1124,20 @@
                 <input>fcs/flap-cmd-norm</input>
                 <traverse>
                     <setting>
-                        <position>  0 </position>
-                        <time>      0 </time>
+                        <position>0</position>
+                        <time>0</time>
                     </setting>
                     <setting>
-                        <position> 10 </position>
-                        <time>      2 </time>
+                        <position>10</position>
+                        <time>2</time>
                     </setting>
                     <setting>
-                        <position> 20 </position>
-                        <time>      3 </time>
+                        <position>20</position>
+                        <time>3</time>
                     </setting>
                     <setting>
-                        <position> 30 </position>
-                        <time>      3 </time>
+                        <position>30</position>
+                        <time>3</time>
                     </setting>
                 </traverse>
                 <output>fcs/flap-pos-deg</output>
@@ -1147,12 +1146,12 @@
             <aerosurface_scale name="flap normalization">
                 <input>fcs/flap-pos-deg</input>
                 <domain>
-                    <min>  0 </min>
-                    <max> 30 </max>
+                    <min>0</min>
+                    <max>30</max>
                 </domain>
                 <range>
-                    <min> 0 </min>
-                    <max> 1 </max>
+                    <min>0</min>
+                    <max>1</max>
                 </range>
                 <output>fcs/flap-pos-norm</output>
             </aerosurface_scale>
@@ -1163,12 +1162,12 @@
                 <input>gear/gear-cmd-norm</input>
                 <traverse>
                     <setting>
-                        <position> 0 </position>
-                        <time>     0 </time>
+                        <position>0</position>
+                        <time>0</time>
                     </setting>
                     <setting>
-                        <position> 1 </position>
-                        <time>     5 </time>
+                        <position>1</position>
+                        <time>7</time>
                     </setting>
                 </traverse>
                 <output>gear/gear-pos-norm</output>
@@ -1191,7 +1190,7 @@
                 <output>propulsion/engine[0]/cowl-flaps-norm</output>
             </kinematic>
         </channel>
-        <!-- TODO: find a way to have open cowl flaps influence on ITT an engtemp-c -->
+        <!-- TODO: model TOT and influence of open cowl flaps -->
     </flight_control>
     
     <aerodynamics>
@@ -1239,7 +1238,7 @@
             </table>
         </function>
         
-        <function name="qbar_empennage">
+        <function name="aero/qbar-empennage">
             <description>qbar as effective on empennage</description>
             <product>
                 <sum>
