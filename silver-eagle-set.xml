@@ -4,7 +4,7 @@
 	<sim>
 		<description type="string">Cessna P210N Silver Eagle (JSBsim)</description>
 		<long-description>
-			The Cessna Silver Eagle is an O&amp;N modfication of the P219N, a high-wing, fixed-wing light pressurized utility aircraft that was first produced in 1984. It is equipped with a Rolls Royce 250-B17F/2 turboprop engine and a Hartzell constant-speed propeller.
+			The Cessna Silver Eagle is an O&amp;N modfication of the P210N, a high-wing, fixed-wing light pressurized utility aircraft that was first produced in 1984. It is equipped with a Rolls Royce 250-B17F/2 turboprop engine and a Hartzell constant-speed propeller.
 		</long-description>
 		<aircraft-version>1.0.0</aircraft-version>
 		<status>alpha</status>
@@ -20,6 +20,28 @@
 		
 		<menubar include="gui/menu/silver-eagle-menu.xml"></menubar>
 		<help include="gui/help/silver-eagle-help.xml"></help>
+		<previews>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/landing-sunset.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/cruising-sunset.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/cruising-sunset-few-clouds.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Previews/cruising-over-industry.png</path>
+			</preview>
+		</previews>
 	</sim>
 	<controls>
 		<fuel>
@@ -33,6 +55,8 @@
 			<tank n="15">
 				<drain-valve type="bool">false</drain-valve>
 			</tank>
+			<left-transfer-pump type="bool">false</left-transfer-pump>
+			<right-transfer-pump type="bool">false</right-transfer-pump>
 		</fuel>
 	</controls>
 	<consumables>

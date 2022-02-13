@@ -169,7 +169,7 @@
     </channel>
     
     <channel name="Fuel selector sump">
-        <switch name="propulsion/tank[8]/to-fuel-strainer-pipe-flow-rate-pps">
+        <switch name="propulsion/tank[8]/to-fuel-filter-pipe-flow-rate-pps">
             <default value="0"/>
             <test logic="AND" value="0.1">
                 propulsion/tank[8]/pct-full GT 0
@@ -180,12 +180,12 @@
         <summer name="propulsion/tank[8]/external-flow-rate-pps">
             <input>propulsion/tank[6]/to-fuel-selector-flow-rate-pps</input>
             <input>propulsion/tank[7]/to-fuel-selector-flow-rate-pps</input>
-            <input>-propulsion/tank[8]/to-fuel-strainer-pipe-flow-rate-pps</input>
+            <input>-propulsion/tank[8]/to-fuel-filter-pipe-flow-rate-pps</input>
         </summer>
     </channel>
     
     <channel name="Fuel pipe fuel selector -> fuel filter">
-        <switch name="propulsion/tank[9]/to-fuel-strainer-flow-rate-pps">
+        <switch name="propulsion/tank[9]/to-fuel-filter-flow-rate-pps">
             <default value="0"/>
             <test logic="AND" value="0.1">
                 propulsion/tank[9]/pct-full GT 0
@@ -194,8 +194,8 @@
         </switch>
         
         <summer name="propulsion/tank[9]/external-flow-rate-pps">
-            <input>propulsion/tank[8]/to-fuel-strainer-pipe-flow-rate-pps</input>
-            <input>-propulsion/tank[9]/to-fuel-strainer-flow-rate-pps</input>
+            <input>propulsion/tank[8]/to-fuel-filter-pipe-flow-rate-pps</input>
+            <input>-propulsion/tank[9]/to-fuel-filter-flow-rate-pps</input>
         </summer>
     </channel>
     
@@ -327,9 +327,9 @@
         </switch>
         
         <summer name="propulsion/tank[15]/external-flow-rate-pps">
-            <input>propulsion/tank[13]/to-left-wing-tank-pipe-flow-rate-pps</input>
+            <input>propulsion/tank[13]/to-right-wing-tank-pipe-flow-rate-pps</input>
             <input>-propulsion/tank[15]/drain-valve-flow-rate-pps</input>
-            <input>-propulsion/tank[15]/to-left-wing-tank-flow-rate-pps</input>
+            <input>-propulsion/tank[15]/to-right-wing-tank-flow-rate-pps</input>
         </summer>
     </channel>
 </system>
