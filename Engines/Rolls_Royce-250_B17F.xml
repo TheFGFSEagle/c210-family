@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- most of the data here 
+<!-- most of the data here is taken from the engine of the Extra 500 -->
 <turboprop_engine name="Rolls_Royce-250_B17F">
 	<milthrust unit="LBS">1270.0</milthrust>
 	<idlen1>60</idlen1>
