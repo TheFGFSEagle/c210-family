@@ -59,6 +59,13 @@
 			<right-transfer-pump type="bool">false</right-transfer-pump>
 		</fuel>
 	</controls>
+	
+	<engines>
+		<engine>
+			<rpm alias="/fdm/jsbsim/propulsion/engine/propeller-rpm"/>
+		</engine>
+	</engines>
+	
 	<consumables>
 		<fuel>
 			<tank n="13">
@@ -74,9 +81,10 @@
 			</tank>
 		</fuel>
 	</consumables>
+	
 	<payload>
 		<weight n="6">
-			<max-lbs>181.5</max-lbs>
+			<max-lb>181.5</max-lb>
 		</weight>
 	</payload>
 </PropertyList>
