@@ -22,7 +22,7 @@
 			<description> Engine power, function of airspeed and pressure </description>
 			<independentVar lookup="row">atmosphere/P-psf</independentVar>
 			<independentVar lookup="column">velocities/ve-kts</independentVar>
-			<tableData>
+			<!--<tableData>
 				               0         50     100     150      200     250     300     350
 				  503   0.357  0.380  0.400  0.425  0.457  0.486  0.517  0.550
 				1048   0.586  0.589  0.600  0.621  0.650  0.686  0.724  0.764
@@ -32,24 +32,17 @@
 				1896   0.914  0.929  0.946  0.971  1          1.057  1.117  1.181
 				2135   1          1.011  1.029  1.043  1.083  1.150  1.221  1.297
 				2213   1.029  1.043  1.057  1.079  1.114  1.171  1.231  1.294
+			</tableData>-->
+			<tableData>
+					0	1
+				0	1	1
+				1	1	1
 			</tableData>
 		</table>
 	</function>
-
-  <!--<table name="EnginePowerRPM_N1" type="internal">
-    <description> Engine Power, function of RPM and N1 </description>
-    <tableData>
-              0       5       60      86      94      95      96      97      98      99     100     105
-      0.0     0.0     0.3     0.3     0.3     0.3     0.3     0.3     0.3     0.3     0.3     0.3     0.3
-    910.6     0.0     0.3    21.2   121.1   212.0   230.1   254.4   278.6   302.8   321.0   351.3   375.5
-   1363.4     0.0     0.3    18.2   139.3   242.3   260.4   284.7   305.9   333.1   357.3   387.6   411.8
-   1818.8     0.0     0.3     3.0   145.4   266.5   287.7   308.9   333.1   360.4   381.6   411.8   436.0
-   2274.1     0.0     0.0     0.0   136.3   272.6   299.8   318.0   342.2   369.4   393.7   423.9   451.2
-   2501.7     0.0     0.0     0.0   124.2   266.5   290.7   311.9   339.2   366.4   390.6   420.9   450.0
-    </tableData>
-  </table>-->
+	
 	<table name="EnginePowerRPM_N1" type="internal">
-		<description> Engine Power, function of RPM and N1 </description>
+		<description>Engine Power, function of RPM and N1</description>
 		<tableData>
 				     0   60       88     93    96.1    96.3     99.7       105       106
 			       0    0  0.5      0.5    0.5      0.5      0.5       0.5         0.5        0.5
@@ -62,7 +55,7 @@
 	</table>
 
 	<table name="ITT_N1" type="internal">
-		<description> Inter-Turbine Temperature ITT [deg C] depending on N1 and engine run (0=off / 1=running) </description>
+		<description>Inter-Turbine Temperature ITT [deg C] depending on N1 and engine run (0=off / 1=running)</description>
 		<tableData>
 				      0       1
 			    0        0       0
