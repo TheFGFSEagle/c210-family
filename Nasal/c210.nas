@@ -9,7 +9,7 @@
 #p210nModule.load();
 
 # Livery dialog
-var initLiverySystem = {
+var initLiverySystem = func {
 	variant = getprop("/sim/model/variant");
 	aircraft.livery.init("Models/Liveries/" ~ variant);
 };
