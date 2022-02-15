@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList include="base.xml">
-	<path>p210n.ac</path>
+	<path>silver-eagle.ac</path>
 	
-	<!-- Livery over MP -->
 	<animation>
 		<type>material</type>
 		<object-name>Fuselage</object-name>
@@ -16,8 +15,10 @@
 		<object-name>ElevatorTrimTab</object-name>
 		<object-name>RudderMount</object-name>
 		<object-name>Rudder</object-name>
-		<object-name>NoseGearLeftDoorExterior</object-name>
-		<object-name>NoseGearRightDoorExterior</object-name>
+		<object-name>LeftForwardNoseGearDoorExterior</object-name>
+		<object-name>LeftAftNoseGearDoorExterior</object-name>
+		<object-name>RightForwardNoseGearDoorExterior</object-name>
+		<object-name>RightAftNoseGearDoorExterior
 		<object-name>LeftCowlFlapExterior</object-name>
 		<object-name>RightCowlFlapExterior</object-name>
 		<object-name>ELTAntenna</object-name>
@@ -53,7 +54,7 @@
 		<load>
 			<![CDATA[
 				# called only when the model is loaded as an AI model (multiplayer)
-				var livery_update = aircraft.livery_update.new("Aircraft/c210-family/Models/Liveries/p210n");
+				var livery_update = aircraft.livery_update.new("Aircraft/c210-family/Models/Liveries/silver-eagle");
 			]]>
 		</load>
 		<unload>
@@ -65,10 +66,10 @@
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>NoseGearLeftDoorExterior</object-name>
-		<object-name>NoseGearLeftDoorInterior</object-name>
+		<object-name>LeftForwardNoseGearDoorExterior</object-name>
+		<object-name>LeftForwardNoseGearDoorInterior</object-name>
 		<axis>
-			<object-name>NoseGearLeftDoorAxis</object-name>
+			<object-name>LeftForwardNoseGearDoorAxis</object-name>
 		</axis>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
@@ -90,30 +91,87 @@
 			</entry>
 		</interpolation>
 	</animation>
+	
 	<animation>
 		<type>rotate</type>
-		<object-name>NoseGearRightDoorExterior</object-name>
-		<object-name>NoseGearRightDoorInterior</object-name>
+		<object-name>LeftAftNoseGearDoorExterior</object-name>
+		<object-name>LeftAftNoseGearDoorInterior</object-name>
 		<axis>
-			<object-name>NoseGearRightDoorAxis</object-name>
+			<object-name>LeftAftNoseGearDoorAxis</object-name>
 		</axis>
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry>
 				<ind>1</ind>
-				<dep>-30</dep>
+				<dep>30</dep>
 			</entry>
 			<entry>
 				<ind>0.7</ind>
-				<dep>-70</dep>
+				<dep>70</dep>
 			</entry>
 			<entry>
 				<ind>0.3</ind>
-				<dep>-70</dep>
+				<dep>70</dep>
 			</entry>
 			<entry>
 				<ind>0</ind>
-				<dep>-0</dep>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>RightForwardNoseGearDoorExterior</object-name>
+		<object-name>RightForwardNoseGearDoorInterior</object-name>
+		<axis>
+			<object-name>RightForwardNoseGearDoorAxis</object-name>
+		</axis>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>1</ind>
+				<dep>30</dep>
+			</entry>
+			<entry>
+				<ind>0.7</ind>
+				<dep>70</dep>
+			</entry>
+			<entry>
+				<ind>0.3</ind>
+				<dep>70</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>RightAftNoseGearDoorExterior</object-name>
+		<object-name>RightAftNoseGearDoorInterior</object-name>
+		<axis>
+			<object-name>RightAftNoseGearDoorAxis</object-name>
+		</axis>
+		<property>gear/gear[0]/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>1</ind>
+				<dep>30</dep>
+			</entry>
+			<entry>
+				<ind>0.7</ind>
+				<dep>70</dep>
+			</entry>
+			<entry>
+				<ind>0.3</ind>
+				<dep>70</dep>
+			</entry>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
 			</entry>
 		</interpolation>
 	</animation>
