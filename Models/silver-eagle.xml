@@ -1204,7 +1204,7 @@
 	</model>
 	
 	<model>
-		<path>Models/Interior/p210n-interior.xml</path>
+		<path>Models/Interior/silver-eagle-interior.xml</path>
 		<usage>interior</usage>
 	</model>
 	

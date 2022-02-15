@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<!-- Seats -->
+	<model>
+		<name>FrontLeftSeat</name>
+		<path>front-seat.ac</path>
+		<offsets>
+			<x-m>1.07</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>-0.418</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>FrontRightSeat</name>
+		<path>front-seat.ac</path>
+		<offsets>
+			<x-m>1.07</x-m>
+			<y-m>0.28</y-m>
+			<z-m>-0.418</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>MiddleLeftSeat</name>
+		<path>middle-seat.ac</path>
+		<offsets>
+			<x-m>1.87</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>-0.408</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>MiddleRightSeat</name>
+		<path>middle-seat.ac</path>
+		<offsets>
+			<x-m>1.87</x-m>
+			<y-m>0.28</y-m>
+			<z-m>-0.408</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>RearSeat</name>
+		<path>rear-seat.ac</path>
+		<offsets>
+			<x-m>2.67</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.05</z-m>
+		</offsets>
+	</model>
+	
+	<!-- Panel -->
+	<model>
+		<name>Panel</name>
+		<path>Panel/silver-eagle-panel.xml</path>
+	</model>
+	
+	<effect>
+		<inherits-from>../Effects/p210n-interior</inherits-from>
+		<object-name>FrontLeftSeat</object-name>
+		<object-name>FrontRightSeat</object-name>
+		<object-name>MiddleLeftSeat</object-name>
+		<object-name>MiddleRightSeat</object-name>
+		<object-name>RearSeat</object-name>
+		<object-name>Panel</object-name>
+	</effect>
+</PropertyList>
