@@ -1125,17 +1125,17 @@
 	<model>
 		<path>Effects/landing-light-left.xml</path>
 		<offsets>
-			<x-m>-0.88</x-m>
-			<y-m>-0.1</y-m>
-			<z-m>-0.107</z-m>
+			<x-m>-0.95</x-m>
+			<y-m>-0.085</y-m>
+			<z-m>-0.24</z-m>
 		</offsets>
 	</model>
 	<model>
 		<path>Effects/landing-light-right.xml</path>
 		<offsets>
-			<x-m>-0.88</x-m>
-			<y-m>0.1</y-m>
-			<z-m>-0.107</z-m>
+			<x-m>-0.95</x-m>
+			<y-m>0.085</y-m>
+			<z-m>-0.24</z-m>
 		</offsets>
 	</model>
 	<model>
