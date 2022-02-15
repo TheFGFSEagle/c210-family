@@ -9,7 +9,11 @@
 #p210nModule.load();
 
 # Livery dialog
-aircraft.livery.init("Models/Liveries");
+var initLiverySystem = {
+	variant = getprop("/sim/model/variant");
+	aircraft.livery.init("Models/Liveries/" ~ variant);
+};
+initLiverySystem();
 
 # Save aircraft data once a minute
 aircraft.data.save(1);

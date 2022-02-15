@@ -798,7 +798,7 @@ name "BaggageDoorExterior"
 data 20
 FuselageGeometry.032
 crease 30.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 30
 3.52089 -0.03439 0.4058
 3.53086 0.16939 0.40522
@@ -2204,7 +2204,7 @@ name "ElevatorTrimTab"
 data 20
 FuselageGeometry.050
 crease 60.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 24
 6.38725 0.04717 -0.64355
 6.20531 0.05428 -1.7278
@@ -2351,7 +2351,7 @@ name "ElevatorTrimTabAxis"
 data 20
 FuselageGeometry.051
 crease 60.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 2
 6.27339 0.04705 -0.61843
 6.09092 0.05349 -1.70851
@@ -2367,7 +2367,7 @@ name "ELTAntenna"
 data 12
 Cylinder.002
 crease 40.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 41
 3.79758 0.31644 0.08956
 3.81484 0.31492 0.09921
@@ -2715,7 +2715,7 @@ name "EmergencyExitExterior"
 data 20
 FuselageGeometry.004
 crease 30.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 66
 0.81733 0.4047 -0.59603
 0.97057 0.6526 -0.58022
@@ -14277,7 +14277,7 @@ name "Fuselage"
 data 20
 FuselageGeometry.022
 crease 40.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 1047
 5.91853 0.1979 0.00043
 4.27507 0.30109 0.00043
@@ -36834,7 +36834,7 @@ name "LeftCowlFlapExterior"
 data 20
 FuselageGeometry.033
 crease 30.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 10
 -0.46933 -0.37336 0.26433
 -0.28972 -0.30548 0.39178
@@ -36951,7 +36951,7 @@ name "LeftElevator"
 data 20
 FuselageGeometry.014
 crease 60.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 112
 5.97422 0.06629 1.99989
 5.9751 0.07634 1.98605
@@ -37822,7 +37822,7 @@ name "LeftElevatorMount"
 data 20
 FuselageGeometry.013
 crease 60.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 46
 5.88753 0.08679 0.10206
 5.86541 0.08756 1.77787
@@ -55620,7 +55620,7 @@ name "MarkerBeaconAntenna"
 data 20
 FuselageGeometry.041
 crease 30.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 72
 3.71926 -0.40875 0.03875
 3.72227 -0.40864 0.04457
@@ -56321,7 +56321,7 @@ name "NavAntennas"
 data 9
 Plane.010
 crease 40.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 18
 6.41167 1.24647 0.25
 6.56143 1.23426 0.25
@@ -56475,7 +56475,7 @@ name "NoseGearLeftDoorExterior"
 data 20
 FuselageGeometry.008
 crease 50.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 27
 -0.05813 -0.52954 0
 -0.54399 -0.46769 0
@@ -56845,7 +56845,7 @@ name "NoseGearRightDoorExterior"
 data 20
 FuselageGeometry.001
 crease 40.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 27
 -0.80088 -0.35483 0
 -0.05813 -0.52457 -0.18262
@@ -83735,7 +83735,7 @@ name "PilotDoorExterior"
 data 20
 FuselageGeometry.028
 crease 30.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 67
 1.6822 0.30968 0.59021
 1.13479 -0.39224 0.53007
@@ -113218,7 +113218,7 @@ name "RightCowlFlapExterior"
 data 20
 FuselageGeometry.036
 crease 30.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 10
 -0.4577 -0.32404 -0.40808
 -0.26343 -0.38961 -0.4209
@@ -113335,7 +113335,7 @@ name "RightElevator"
 data 20
 FuselageGeometry.006
 crease 60.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 132
 5.97422 0.06629 -1.9999
 5.9751 0.07634 -1.98605
@@ -114316,7 +114316,7 @@ name "RightElevatorMount"
 data 20
 FuselageGeometry.002
 crease 60.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 46
 5.88753 0.08679 -0.10206
 5.86541 0.08756 -1.77787
@@ -131418,7 +131418,7 @@ name "Rudder"
 data 20
 FuselageGeometry.005
 crease 30.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 16
 5.92421 0.1979 0.02
 6.46904 0.16679 0.02
@@ -131536,7 +131536,7 @@ name "RudderMount"
 data 20
 FuselageGeometry.042
 crease 30.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 27
 5.92421 0.1979 -0.02
 5.00958 0.52276 -0.02
@@ -133342,7 +133342,7 @@ name "TransponderAntenna"
 data 20
 FuselageGeometry.040
 crease 30.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 88
 1.33077 -0.5827 0.29011
 1.2794 -0.58133 0.29011
@@ -134021,7 +134021,7 @@ name "WeatherRadarAntenna"
 data 20
 FuselageGeometry.034
 crease 30.0
-texture "fuselage.png"
+texture "p210n-fuselage.png"
 numvert 84
 4.21895 -0.35072 0.04672
 4.21895 -0.35072 0.10727
