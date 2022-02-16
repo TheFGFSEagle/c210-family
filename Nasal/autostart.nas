@@ -15,7 +15,7 @@ var autostartP210N = func {
 }
 
 var autostartSilverEagle = func {
-	# TODO: Implement proper fuel system for the silver eagle and add fuel selector BOTH position
+	# TODO: add fuel selector BOTH position
 	setprop("/controls/fuel/selected-tank", 1);
 	setprop("/controls/electric/engine/generator", 1);
 	setprop("/controls/engines/engine/cutoff", 0);

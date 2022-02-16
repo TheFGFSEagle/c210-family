@@ -210,9 +210,11 @@
 		<utils>
 			<file>Nasal/utils.nas</file>
 		</utils>
+		<engines>
+			<file>Nasal/engines.nas</file>
+		</engines>
 		<c210>
 			<file>Nasal/c210.nas</file>
-			<file>Nasal/autostart.nas</file>
 			<file>Nasal/radios.nas</file>
 		</c210>
 		<lc2>

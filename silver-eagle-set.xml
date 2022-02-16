@@ -87,4 +87,17 @@
 			<max-lb>181.5</max-lb>
 		</weight>
 	</payload>
+	
+	<input>
+		<keyboard>
+			<key n="127">
+				<name>Delete</name>
+				<desc>Toggle reverse thrust</desc>
+				<binding>
+					<command>nasal</command>
+					<script>c210.engine.toggleReverseThrust();</script>
+				</binding>
+			</key>
+		</keyboard>
+	</input>
 </PropertyList>

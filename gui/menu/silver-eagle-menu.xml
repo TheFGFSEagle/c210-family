@@ -9,7 +9,14 @@
 				<label>Start engine</label>
 				<binding>
 					<command>nasal</command>
-					<script>c210.autostart();</script>
+					<script>c210.engine.autostart();</script>
+				</binding>
+			</item>
+			<item>
+				<label>Shutdown engine</label>
+				<binding>
+					<command>nasal</command>
+					<script>c210.engine.autoshutdown();</script>
 				</binding>
 			</item>
 			<item>
