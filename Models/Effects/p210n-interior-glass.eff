@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PropertyList>
-	<name>Effects/p210n-interior-glass</name>
+	<name>p210n-interior-glass</name>
 	<inherits-from>Effects/glass</inherits-from>
 	<parameters>
 		<fog-level><use>sim/model/effects/fog-level</use></fog-level>
@@ -11,12 +11,12 @@
 		<texture n="3">
 			<type>cubemap</type>
 			<images>
-				<positive-x>Models/Effects/p210n-reflection-px.png</positive-x>
-				<negative-x>Models/Effects/p210n-reflection-nx.png</negative-x>
-				<positive-y>Models/Effects/p210n-reflection-py.png</positive-y>
-				<negative-y>Models/Effects/p210n-reflection-ny.png</negative-y>
-				<positive-z>Models/Effects/p210n-reflection-pz.png</positive-z>
-				<negative-z>Models/Effects/p210n-reflection-nz.png</negative-z>
+				<positive-x>p210n-reflection-px.png</positive-x>
+				<negative-x>p210n-reflection-nx.png</negative-x>
+				<positive-y>p210n-reflection-py.png</positive-y>
+				<negative-y>p210n-reflection-ny.png</negative-y>
+				<positive-z>p210n-reflection-pz.png</positive-z>
+				<negative-z>p210n-reflection-nz.png</negative-z>
 			</images>
 		</texture>
 		<opacity-cube-center type="vec3d" n="0">1.2 0.0 0.5</opacity-cube-center>

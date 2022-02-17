@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <PropertyList>
-	<path>Models/Effects/procedural-light.ac</path>
+	<path>procedural-light.ac</path>
 
 	<effect>
-		<inherits-from>Models/Effects/left-nav-light</inherits-from>
+		<inherits-from>left-nav-light</inherits-from>
 		<object-name>Light</object-name>
 	</effect>
 	
@@ -22,7 +22,7 @@
 	
 	<model>
 		<name>LightPlate</name>
-		<path>Models/Effects/lights.xml</path>
+		<path>lights.xml</path>
 		<overlay>
 			<params>
 				<light-used>red</light-used>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
-	<name>Aircraft/c210-family/Models/Effects/exterior-opaque</name>
+	<name>exterior-opaque</name>
 	<inherits-from>Effects/model-combined</inherits-from>
 	<parameters>
 		<splash-x><use>/environment/aircraft-effects/splash-vector-x</use></splash-x>

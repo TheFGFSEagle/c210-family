@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
-	<name>Aircraft/c210-family/Models/Effects/exterior-opaque</name>
+	<name>p210n-interior-metal</name>
 	<inherits-from>Effects/model-combined</inherits-from>
 	<parameters>
 		<rnorm>0</rnorm>

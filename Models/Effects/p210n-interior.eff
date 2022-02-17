@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <PropertyList>
-	<name>Effects/p210n-interior</name>
+	<name>p210n-interior</name>
 	<inherits-from>Effects/model-interior</inherits-from>
 	<parameters>
 		<texture n="4">
 			<type>cubemap</type>
 			<images>
-				<positive-x>Models/Effects/p210n-shadow-px.png</positive-x>
-				<negative-x>Models/Effects/p210n-shadow-nx.png</negative-x>
-				<positive-y>Models/Effects/p210n-shadow-py.png</positive-y>
-				<negative-y>Models/Effects/p210n-shadow-ny.png</negative-y>
-				<positive-z>Models/Effects/p210n-shadow-pz.png</positive-z>
-				<negative-z>Models/Effects/p210n-shadow-nz.png</negative-z>
+				<positive-x>p210n-shadow-px.png</positive-x>
+				<negative-x>p210n-shadow-nx.png</negative-x>
+				<positive-y>p210n-shadow-py.png</positive-y>
+				<negative-y>p210n-shadow-ny.png</negative-y>
+				<positive-z>p210n-shadow-pz.png</positive-z>
+				<negative-z>p210n-shadow-nz.png</negative-z>
 			</images>
 		</texture>
 		<opacity-cube-center type="vec3d" n="0">1.2 0.0 0.5</opacity-cube-center>

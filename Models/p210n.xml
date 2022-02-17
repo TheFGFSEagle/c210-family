@@ -1130,7 +1130,7 @@
 	</model>
 	
 	<model>
-		<path>Models/Interior/p210n-interior.xml</path>
+		<path>Interior/p210n-interior.xml</path>
 		<usage>interior</usage>
 	</model>
 	
