@@ -321,7 +321,7 @@
 	</animation>
 	
 	<effect>
-		<inherits-from>Models/Effects/p210n-interior-metal</inherits-from>
+		<inherits-from>../../../../Effects/p210n-interior-metal</inherits-from>
 		<object-name>MarkerBeaconLampsBrightnessSwitch</object-name>
 		<object-name>MarkerBeaconSensitivitySwitch</object-name>
 		<object-name>MarkerBeaconOutputSwitch</object-name>

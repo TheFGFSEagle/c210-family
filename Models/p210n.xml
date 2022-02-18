@@ -142,6 +142,12 @@
 	</effect>
 	<effect>
 		<inherits-from>Effects/glass</inherits-from>
+		<parameters>
+			<rain-norm>0</rain-norm>
+			<frost-level>0</frost-level>
+			<fog-level>0</fog-level>
+			<gsnorm>0</gsnorm>
+		</parameters>
 		<object-name>FastPropeller</object-name>
 	</effect>
 	
