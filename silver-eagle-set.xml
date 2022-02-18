@@ -62,7 +62,10 @@
 	
 	<engines>
 		<engine>
-			<rpm alias="/fdm/jsbsim/propulsion/engine/propeller-rpm"/>
+			<rpm alias="/fdm/jsbsim/propulsion/engine/engine-rpm"/>
+			<thruster>
+				<rpm alias="/fdm/jsbsim/propulsion/engine/propeller-rpm"/>
+			</thruster>
 		</engine>
 	</engines>
 	
