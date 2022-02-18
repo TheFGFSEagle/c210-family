@@ -11,12 +11,12 @@
 		<texture n="3">
 			<type>cubemap</type>
 			<images>
-				<positive-x>p210n-reflection-px.png</positive-x>
-				<negative-x>p210n-reflection-nx.png</negative-x>
-				<positive-y>p210n-reflection-py.png</positive-y>
-				<negative-y>p210n-reflection-ny.png</negative-y>
-				<positive-z>p210n-reflection-pz.png</positive-z>
-				<negative-z>p210n-reflection-nz.png</negative-z>
+				<positive-x>Aircraft/c210-family/Models/Effects/p210n-reflection-px.png</positive-x>
+				<negative-x>Aircraft/c210-family/Models/Effects/p210n-reflection-nx.png</negative-x>
+				<positive-y>Aircraft/c210-family/Models/Effects/p210n-reflection-py.png</positive-y>
+				<negative-y>Aircraft/c210-family/Models/Effects/p210n-reflection-ny.png</negative-y>
+				<positive-z>Aircraft/c210-family/Models/Effects/p210n-reflection-pz.png</positive-z>
+				<negative-z>Aircraft/c210-family/Models/Effects/p210n-reflection-nz.png</negative-z>
 			</images>
 		</texture>
 		<opacity-cube-center type="vec3d" n="0">1.2 0.0 0.5</opacity-cube-center>
