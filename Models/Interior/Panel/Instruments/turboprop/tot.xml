@@ -10,7 +10,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/engine/tot-degc</property>
+		<property>instrumentation/engine/indicated-tot-degc</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
