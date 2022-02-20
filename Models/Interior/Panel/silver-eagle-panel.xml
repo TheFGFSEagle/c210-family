@@ -208,6 +208,72 @@
 		</offsets>
 	</model>
 	
+	<!-- right side of panel -->
+	<model>
+		<path>Instruments/turboprop/tot.xml</path>
+		<offsets>
+			<x-m>0.43</x-m>
+			<y-m>0.2</y-m>
+			<z-m>0.36</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/turboprop/n1.xml</path>
+		<offsets>
+			<x-m>0.43</x-m>
+			<y-m>0.26</y-m>
+			<z-m>0.36</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/turboprop/fuel-pressure.xml</path>
+		<offsets>
+			<x-m>0.43</x-m>
+			<y-m>0.32</y-m>
+			<z-m>0.36</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/turboprop/torque.xml</path>
+		<offsets>
+			<x-m>0.435</x-m>
+			<y-m>0.2</y-m>
+			<z-m>0.3</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/turboprop/prop-rpm.xml</path>
+		<offsets>
+			<x-m>0.435</x-m>
+			<y-m>0.26</y-m>
+			<z-m>0.3</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/suction/suction.xml</path>
+		<offsets>
+			<x-m>0.435</x-m>
+			<y-m>0.32</y-m>
+			<z-m>0.3</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/turboprop/torque.xml</path>
+		<offsets>
+			<x-m>0.44</x-m>
+			<y-m>0.2</y-m>
+			<z-m>0.24</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>Instruments/turboprop/torque.xml</path>
+		<offsets>
+			<x-m>0.445</x-m>
+			<y-m>0.2</y-m>
+			<z-m>0.18</z-m>
+		</offsets>
+	</model>
+	
 	<!-- controls panels -->
 	<model>
 		<path>Controls/left-controls-panel.xml</path>
