@@ -20,7 +20,7 @@
   <diameter unit="IN">90</diameter>
   <numblades>3</numblades>
   <gearratio>16.399</gearratio>
-  <cp_factor>1.1</cp_factor>
+  <cp_factor>1</cp_factor>
   <ct_factor>1</ct_factor>
   <minpitch>6.9</minpitch>
   <maxpitch>89</maxpitch>
