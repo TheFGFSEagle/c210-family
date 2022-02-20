@@ -4,11 +4,9 @@
 	<vacuum>
 		<indicated-suction-inhg alias="/systems/vacuum/suction-inhg"/>
 	</vacuum>
-	<electrical>
+	<engine>
 		<indicated-amps alias="/systems/electrical/amps"/>
 		<indicated-volts alias="/systems/electrical/volts"/>
-	</electrical>
-	<engine>
 		<!-- TODO: implement fuel pressure calculation -->
 		<indicated-fuel-pressure-psi alias="/engines/engine/fuel-pressure-psi"/>
 		<indicated-n1-percent alias="/engines/engine/n1"/>
