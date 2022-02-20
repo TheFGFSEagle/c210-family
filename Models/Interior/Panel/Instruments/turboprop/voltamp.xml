@@ -1,40 +1,39 @@
 <?xml version="1.0"?>
 <PropertyList>
-	<path>tot.ac</path>
+	<path>voltamp.ac</path>
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>Needle</object-name>
+		<object-name>VoltNeedle</object-name>
 		<axis>
 			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/engine/indicated-tot-degc</property>
-		<interpolation>
-			<entry>
-				<ind>0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>600</ind>
-				<dep>96</dep>
-			</entry>
-			<entry>
-				<ind>850</ind>
-				<dep>296</dep>
-			</entry>
-			<entry>
-				<ind>1000</ind>
-				<dep>320</dep>
-			</entry>
-		</interpolation>
+		<property>instrumentation/engine/indicated-volts</property>
+		<factor>3.125</factor>
+		<min-deg>0</min-deg>
+		<max-deg>100</max-deg>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>TemperatureNeedle</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/engine/indicated-amps</property>
+		<factor>0.5</factor>
+		<min-deg>0</min-deg>
+		<max-deg>100</max-deg>
 	</animation>
 	
 	<text>
 		<name>Label</name>
 		<type type="string">literal</type>
-		<text type="string">Turbine Outlet Temperature</text>
+		<text type="string">Voltmeter / Ammeter</text>
 		<draw-text type="bool">true</draw-text>
 		<font>Helvetica.txf</font>
 		<character-size type="double">0.015</character-size>

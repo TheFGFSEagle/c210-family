@@ -116,7 +116,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/egt/egt.xml</path>
+		<path>Instruments/piston/egt.xml</path>
 		<offsets>
 			<x-m>0.419</x-m>
 			<y-m>-0.47</y-m>
@@ -228,7 +228,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/map-fuelflow/map-fuelflow.xml</path>
+		<path>Instruments/piston/map-fuelflow.xml</path>
 		<offsets>
 			<x-m>0.42</x-m>
 			<y-m>0.20</y-m>
@@ -237,7 +237,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/tach/tach.xml</path>
+		<path>Instruments/piston/tach.xml</path>
 		<offsets>
 			<x-m>0.428</x-m>
 			<y-m>0.20</y-m>
@@ -265,7 +265,7 @@
 	</model>
 	
 	<model>
-		<path>Instruments/cht/cht.xml</path>
+		<path>Instruments/piston/cht.xml</path>
 		<offsets>
 			<x-m>0.42</x-m>
 			<y-m>0.375</y-m>
@@ -275,7 +275,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/oil/oil-temp.xml</path>
+		<path>Instruments/piston/oil-temp.xml</path>
 		<offsets>
 			<x-m>0.437</x-m>
 			<y-m>0.422</y-m>
@@ -285,7 +285,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/ammeter/ammeter.xml</path>
+		<path>Instruments/piston/ammeter.xml</path>
 		<offsets>
 			<x-m>0.4243</x-m>
 			<y-m>0.373</y-m>
@@ -295,7 +295,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/oil/oil-press.xml</path>
+		<path>Instruments/piston/oil-press.xml</path>
 		<offsets>
 			<x-m>0.4413</x-m>
 			<y-m>0.42</y-m>

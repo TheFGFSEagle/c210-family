@@ -364,7 +364,7 @@
 		<axis>
 			<object-name>PropellerAxis</object-name>
 		</axis>
-		<property>engines/engine[0]/rpm</property>
+		<property>engines/engine[0]/thruster/rpm</property>
 	</animation>
 	
 	<animation>
@@ -411,7 +411,7 @@
 		<object-name>FastPropellerSpinner</object-name>
 		<condition>
 			<greater-than>
-				<property>engines/engine[0]/rpm</property>
+				<property>engines/engine[0]/thruster/rpm</property>
 				<value>600</value>
 			</greater-than>
 		</condition>
@@ -422,7 +422,7 @@
 		<condition>
 			<not>
 				<greater-than>
-					<property>engines/engine[0]/rpm</property>
+					<property>engines/engine[0]/thruster/rpm</property>
 					<value>600</value>
 				</greater-than>
 			</not>
@@ -438,7 +438,7 @@
 			<and>
 				<property>/fdm/jsbsim/damage/propeller</property>
 				<less-than>
-					<property>engines/engine/rpm</property>
+					<property>engines/engine/thruster/rpm</property>
 					<value>1000</value>
 				</less-than>
 			</and>
@@ -455,7 +455,7 @@
 					<property>/fdm/jsbsim/damage/propeller</property>
 				</not>
 				<less-than>
-					<property>engines/engine/rpm</property>
+					<property>engines/engine/thruster/rpm</property>
 					<value>1000</value>
 				</less-than>
 			</and>

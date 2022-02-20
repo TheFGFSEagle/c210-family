@@ -3,7 +3,7 @@ MATERIAL "CaseMaterial" rgb 0.000 0.000 0.000  amb 0.000 0.000 0.000  emis 0.000
 MATERIAL "FaceMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 MATERIAL "GlassMaterial" rgb 0.787 0.869 1.000  amb 0.787 0.869 1.000  emis 0.000 0.000 0.000  spec 1.000 1.000 1.000  shi 102 trans 0.900
 OBJECT world
-name "Blender_exporter_v3.3__tot.ac"
+name "Blender_exporter_v3.3__fuel-pressure.ac"
 kids 4
 OBJECT poly
 name "Case"
@@ -957,7 +957,7 @@ name "Face"
 data 10
 Circle.002
 crease 30.0
-texture "tot.png"
+texture "fuel-pressure.png"
 numvert 36
 -0.005 0.00433 -0.02455
 -0.005 0 -0.02492
@@ -1125,11 +1125,11 @@ data 9
 Plane.001
 crease 40.0
 numvert 5
--0.004 -0 0.02
--0.004 0.00113 -0.01
--0.004 -0.00112 -0.01
--0.004 0.00112 0.01625
--0.004 -0.00113 0.01625
+-0.004 -0.01 0.01732
+-0.004 0.00597 -0.0081
+-0.004 0.00403 -0.00922
+-0.004 -0.00715 0.01464
+-0.004 -0.0091 0.01351
 numsurf 2
 SURF 0X0
 mat 1

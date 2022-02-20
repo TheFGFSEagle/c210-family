@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertyList>
-	<path>tot.ac</path>
+	<path>torque.ac</path>
 	
 	<animation>
 		<type>rotate</type>
@@ -10,23 +10,19 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/engine/indicated-tot-degc</property>
+		<property>instrumentation/engine/indicated-torque-psi</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>600</ind>
-				<dep>96</dep>
+				<ind>90</ind>
+				<dep>234</dep>
 			</entry>
 			<entry>
-				<ind>850</ind>
-				<dep>296</dep>
-			</entry>
-			<entry>
-				<ind>1000</ind>
-				<dep>320</dep>
+				<ind>110</ind>
+				<dep>300</dep>
 			</entry>
 		</interpolation>
 	</animation>
@@ -34,7 +30,7 @@
 	<text>
 		<name>Label</name>
 		<type type="string">literal</type>
-		<text type="string">Turbine Outlet Temperature</text>
+		<text type="string">Torque</text>
 		<draw-text type="bool">true</draw-text>
 		<font>Helvetica.txf</font>
 		<character-size type="double">0.015</character-size>
