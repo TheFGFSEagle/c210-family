@@ -45,8 +45,8 @@ var PistonEngine = {
 		obj.selectedTankNode = obj.rootNode.getNode("controls/fuel/selected-tank");
 		
 		obj.disengageStarterTimer = maketimer(5, func() {
-			me.starterNode.setBoolValue(1);
-			me.throttleNode.setDoubleValue(0);
+			obj.starterNode.setBoolValue(1);
+			obj.throttleNode.setDoubleValue(0);
 			obj.disengageStarterTimer.stop();
 		});
 		obj.disengageStarterTimer.simulatedTime = 1;
