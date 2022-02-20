@@ -14,7 +14,8 @@
    <starter-torque>300</starter-torque>   
    <static-friction>0.5</static-friction>
    
-   <ram-air-factor>1.25</ram-air-factor>
+   <!--<ram-air-factor>1.25</ram-air-factor>-->
+   <ram-air-factor>0.75</ram-air-factor>
    <air-intake-impedance-factor>0</air-intake-impedance-factor>
 
    <maxmp unit="INHG">28.8</maxmp>   
