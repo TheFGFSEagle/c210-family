@@ -729,7 +729,7 @@
 				<z>7</z>
 			</location>
 			<orient unit="DEG">
-				<pitch>2</pitch>
+				<pitch>0</pitch>
 				<roll>0</roll>
 				<yaw>0</yaw>
 			</orient>
@@ -742,7 +742,7 @@
 					<z>6.7</z>
 				</location>
 				<orient unit="DEG">
-					<pitch>2</pitch>
+					<pitch>0</pitch>
 					<roll>0</roll>
 					<yaw>0</yaw>
 				</orient>
@@ -2691,6 +2691,7 @@
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/cbarw-ft</property>
 					<property>fcs/elevator-pos-rad</property>
+					<value>0.95</value>
 					<value>-1</value>
 					<table>
 						<independentVar lookup="row">aero/alpha-deg</independentVar>						
