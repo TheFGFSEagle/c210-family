@@ -2838,6 +2838,8 @@
 							20	-19.0112839	-19.0112839	-19.0112839
 						</tableData>						
 					</table>
+					<!-- need at least 2 to enable the default autopilot to maintain altitude without getting into worse and worse oscillations - but 4 is better to also be able to hold an altitude manually -->
+					<value>4</value>
 				</product>
 			</function>
 												
