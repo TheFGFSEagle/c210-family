@@ -8,7 +8,7 @@
 		<axis>
 			<object-name>NeedleAxis</object-name>
 		</axis>
-		<property>instrumentation/oil/indicated-temperature-degf</property>
+		<property>instrumentation/engine/indicated-oil-temperature-degf</property>
 		<interpolation>
 			<entry>
 				<ind>90</ind>

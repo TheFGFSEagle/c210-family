@@ -8,7 +8,7 @@
 		<axis>
 			<object-name>KnobNeedleAxis</object-name>
 		</axis>
-		<property>instrumentation/egt/indicated-temperature-degf</property>
+		<property>instrumentation/engine/indicated-egt-degf</property>
 		<interpolation>
 			<entry>
 				<ind>900</ind>
@@ -31,7 +31,7 @@
 		<axis>
 			<object-name>KnobNeedleAxis</object-name>
 		</axis>
-		<property>instrumentation/egt/target-temperature-degf</property>
+		<property>instrumentation/engine/target-egt-degf</property>
 		<interpolation>
 			<entry>
 				<ind>1000</ind>
@@ -47,7 +47,7 @@
 	<animation>
 		<type>knob</type>
 		<object-name>Knob</object-name>
-		<property>instrumentation/egt/target-temperature-degf</property>
+		<property>instrumentation/engine/target-egt-degf</property>
 		<interpolation>
 			<entry>
 				<ind>1000</ind>
@@ -68,7 +68,7 @@
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>instrumentation/egt/target-temperature-degf</property>
+				<property>instrumentation/engine/target-egt-degf</property>
 				<factor>10</factor>
 				<min>1200</min>
 				<max>1700</max>
@@ -81,8 +81,8 @@
 				<tooltip-id>egt-indicator</tooltip-id>
 				<label>Current EGT temperature: %4d °F\nTarget EGT temperature:  %4d °F</label>
 				<measure-text>Current EGT temperature: 1700 °F\nTarget EGT temperature: 1700 °F</measure-text>
-				<property>instrumentation/egt/indicated-temperature-degf</property>
-				<property>instrumentation/egt/target-temperature-degf</property>
+				<property>instrumentation/engine/indicated-egt-degf</property>
+				<property>instrumentation/engine/target-egt-degf</property>
 			</binding>
 		</hovered>
 	</animation>

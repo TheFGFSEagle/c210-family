@@ -1,30 +1,21 @@
 <?xml version="1.0"?>
 <PropertyList>
 	<!-- most of the stuff before <altimeter n="1"> should be replaced by system files to support electrcial / other system failures -->
-	<egt>
-		<indicated-temperature-degf alias="/engines/engine/egt-degf"/>
-	</egt>
-	<map-fuelflow>
-		<indicated-map-inhg alias="/engines/engine/mp-inhg"/>
+	<engine>
+		<indicated-egt-degf alias="/engines/engine/egt-degf"/>
+		<indicated-mp-inhg alias="/engines/engine/mp-inhg"/>
 		<indicated-fuelflow-pph alias="/engines/engine/fuel-flow_pph"/>
-	</map-fuelflow>
+		<indicated-engine-rpm alias="/engines/engine/rpm"/>
+		<indicated-tach-time-hours alias="/fdm/jsbsim/propulsion/engine/tach-time-hours"/>
+		<indicated-cht-degf alias="/engines/engine/cht-degf"/>
+		<indicated-oil-temperature-degf alias="/engines/engine/oil-temperature-degf"/>
+		<indicated-oil-pressure-psi alias="/engines/engine/oil-pressure-psi"/>
+		<indicated-battery-charge-rate-amps alias="/systems/electrical/amps"/>
+	</engine>
+	
 	<vacuum>
 		<indicated-suction-inhg alias="/systems/vacuum/suction-inhg"/>
 	</vacuum>
-	<tachometer>
-		<indicated-engine-rpm alias="/engines/engine/rpm"/>
-		<indicated-tach-time-hours alias="/fdm/jsbsim/propulsion/engine/tach-time-hours"/>
-	</tachometer>
-	<cht>
-		<indicated-cht-degf alias="/engines/engine/cht-degf"/>
-	</cht>
-	<oil>
-		<indicated-temperature-degf alias="/engines/engine/oil-temperature-degf"/>
-		<indicated-pressure-psi alias="/engines/engine/oil-pressure-psi"/>
-	</oil>
-	<ammeter>
-		<indicated-charge-rate-amps alias="/systems/electrical/amps"/>
-	</ammeter>
 	
 	<altimeter n="1">
 		<serviceable type="bool">true</serviceable>

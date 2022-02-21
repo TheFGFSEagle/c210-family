@@ -8,7 +8,7 @@
 		<axis>
 			<object-name>NeedleAxis</object-name>
 		</axis>
-		<property>instrumentation/cht/indicated-cht-degf</property>
+		<property>instrumentation/engine/indicated-cht-degf</property>
 		<interpolation>
 			<entry>
 				<ind>142</ind>

@@ -10,7 +10,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/map-fuelflow/indicated-map-inhg</property>
+		<property>instrumentation/engine/indicated-mp-inhg</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -35,7 +35,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/map-fuelflow/indicated-fuelflow-pph</property>
+		<property>instrumentation/engine/indicated-fuelflow-pph</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
