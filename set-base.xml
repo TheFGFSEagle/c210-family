@@ -109,7 +109,6 @@
 			<path>Systems/p210n-instrumentation.xml</path>
 		</instrumentation>
 		<systems>
-			<path>Systems/systems.xml</path>
 			<property-rule n="100">
 				<name>Glass rain effect properties</name>
 				<path>Systems/glass-rain.xml</path>

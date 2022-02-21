@@ -18,6 +18,7 @@
 	
 	<animation>
 		<type>rotate</type>
+		<object-name>SmallNeedle</object-name>
 		<axis>
 			<object-name>SmallNeedleAxis</object-name>
 		</axis>

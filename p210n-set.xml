@@ -88,6 +88,9 @@
 			<path>/sim/model/controls/magnetos/key-inserted</path>
 			<path>/instrumentation/egt/target-temperature-degf</path>
 		</aircraft-data>
+		<systems>
+			<path>Systems/silver-eagle-systems.xml</path>
+		</systems>
 	</sim>
 	<controls>
 		<engines>

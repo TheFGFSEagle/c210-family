@@ -42,6 +42,13 @@
 				<path>Previews/cruising-over-industry.png</path>
 			</preview>
 		</previews>
+		<systems>
+			<path>Systems/silver-eagle-systems.xml</path>
+		</systems>
+		<aircraft-data>
+			<path>/controls/engines/engine/cutoff</path>
+			<path>/controls/electric/engine/generator</path>
+		</aircraft-data>
 	</sim>
 	<controls>
 		<fuel>
@@ -84,6 +91,8 @@
 			</tank>
 		</fuel>
 	</consumables>
+	
+	<instrumentation include="Systems/silver-eagle-init-instrumentation.xml"/>
 	
 	<payload>
 		<weight n="6">
