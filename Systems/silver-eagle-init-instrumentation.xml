@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<PropertyList>
+<PropertyList include="init-instrumentation-base.xml">
 	<!-- most of the stuff before <altimeter n="1"> should be replaced by system files to support electrcial / other system failures -->
 	<engine>
 		<indicated-amps alias="/systems/electrical/amps"/>
