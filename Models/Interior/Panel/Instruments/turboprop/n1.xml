@@ -13,7 +13,7 @@
 		<property>instrumentation/engine/indicated-n1-percent</property>
 		<factor>2.7</factor>
 		<min-deg>0</min-deg>
-		<max-deg>270</max-deg>
+		<max-deg>297</max-deg>
 	</animation>
 	
 	<animation>

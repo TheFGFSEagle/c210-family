@@ -114,14 +114,10 @@
 				<path>Systems/glass-rain.xml</path>
 			</property-rule>
 			<property-rule n="101">
-				<name>Re-route properties based on selection in aircraft options dialog</name>
+				<name>Re-route rendering properties based on selection in aircraft options dialog</name>
 				<path>Systems/render-options.xml</path>
 			</property-rule>
 			<property-rule n="102">
-				<name>Miscellaneous instrument property rules</name>
-				<path>Systems/instruments.xml</path>
-			</property-rule>
-			<property-rule n="103">
 				<name>RNAV</name>
 				<path>Systems/rnav.xml</path>
 			</property-rule>

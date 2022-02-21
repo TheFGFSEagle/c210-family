@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<PropertyList include="instruments-base.xml">
+	<filter>
+		<name>Engine torque psf to psi</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<expression>
+				<quotient>
+					<property>/engines/engine/thruster/torque</property>
+					<value>1</value>
+				</quotient>
+			</expression>
+		</input>
+		<output>/engines/engine/torque-psi</output>
+	</filter>
+</PropertyList>

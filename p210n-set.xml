@@ -89,7 +89,11 @@
 			<path>/instrumentation/egt/target-temperature-degf</path>
 		</aircraft-data>
 		<systems>
-			<path>Systems/silver-eagle-systems.xml</path>
+			<path>Systems/p210n-systems.xml</path>
+			<property-rule n="103">
+				<name>Miscellaneous instrument property rules</name>
+				<path>Systems/p210n-instruments.xml</path>
+			</property-rule>
 		</systems>
 	</sim>
 	<controls>
