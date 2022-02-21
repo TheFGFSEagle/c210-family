@@ -106,7 +106,7 @@
 			</dynamic>
 		</view>
 		<instrumentation>
-			<path>Systems/p210n-instrumentation.xml</path>
+			<path>Systems/instrumentation.xml</path>
 		</instrumentation>
 		<systems>
 			<property-rule n="100">
@@ -120,6 +120,10 @@
 			<property-rule n="102">
 				<name>RNAV</name>
 				<path>Systems/rnav.xml</path>
+			</property-rule>
+			<property-rule n="103">
+				<name>Instrument indications</name>
+				<path>Systems/instruments-base.xml</path>
 			</property-rule>
 		</systems>
 		<aircraft-data>
@@ -152,6 +156,7 @@
 			<path>/sim/model/effects/enable-interior-glass-reflections</path>
 			<path>/sim/model/effects/enable-glass-rain</path>
 			<path>/sim/model/effects/enable-fog-frost</path>
+			<path>/sim/model/controls/show-yokes</path>
 			<path>/sim/model/livery/file</path>
 			<path>/sim/model/controls/show-yoke</path>
 			<path>/instrumentation/nav[0]/radials/selected-deg</path>

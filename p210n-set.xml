@@ -90,8 +90,8 @@
 		</aircraft-data>
 		<systems>
 			<path>Systems/p210n-systems.xml</path>
-			<property-rule n="103">
-				<name>Miscellaneous instrument property rules</name>
+			<property-rule n="104">
+				<name>P210N specific instrument indications</name>
 				<path>Systems/p210n-instruments.xml</path>
 			</property-rule>
 		</systems>

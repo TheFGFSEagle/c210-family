@@ -18,7 +18,7 @@
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>TemperatureNeedle</object-name>
+		<object-name>AmpereNeedle</object-name>
 		<axis>
 			<x>1</x>
 			<y>0</y>

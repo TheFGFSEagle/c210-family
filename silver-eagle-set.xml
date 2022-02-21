@@ -44,8 +44,8 @@
 		</previews>
 		<systems>
 			<path>Systems/silver-eagle-systems.xml</path>
-			<property-rule n="103">
-				<name>Miscellaneous instrument property rules</name>
+			<property-rule n="104">
+				<name>Silver eagle specific instrument indications</name>
 				<path>Systems/silver-eagle-instruments.xml</path>
 			</property-rule>
 		</systems>

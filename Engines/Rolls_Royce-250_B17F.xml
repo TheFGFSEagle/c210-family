@@ -6,8 +6,8 @@
 	<idlen2>1400</idlen2>
 	<maxn1>105</maxn1>
 	
-	<!-- using 495 here to allow simulation of overspeed - else it would be 450 -->
-	<maxpower unit="HP">495</maxpower>
+	<!-- using 466 here to allow simulation of overspeed - else it would be 450 -->
+	<maxpower unit="HP">466</maxpower>
 	<psfc unit="LBS/HR/HP">0.613</psfc>
 	<!--idlefuelflow>                 75.0   </idlefuelflow-->
 	<n1idle_max_delay>1</n1idle_max_delay>
@@ -42,16 +42,24 @@
 	</function>
 	
 	<table name="EnginePowerRPM_N1" type="internal">
-		<description>Engine Power, function of RPM and N1</description>
+		<description>Engine Power, function of engine RPM and N1</description>
 		<tableData>
-				     0   60       88     93    96.1    96.3     99.7       105       106
-			       0    0  0.5      0.5    0.5      0.5      0.5       0.5         0.5        0.5
-			  800    0     3        50     60       63       64        65          66         67	
-			1300    0   35     190   201     241     243     288        303       306
-			1850    0   35     205   286     344     346     410	       432       436
-			2030    0   35     225   314     377     380     450        474       478
-			2100    0   35     233   325     390     393     466        490       495
+				        0   60       88     93    96.1    96.3     105
+			         0    0  0.5      0.5    0.5      0.5      0.5       0.5
+			13120    0     3       50     60       63       64        65
+			21320    0   35     190   201     241     243     288
+			30340    0   35     205   286     344     346     410
+			33290    0   35     225   314     377     380     450
+			34440    0   35     233   325     390     393     466
 		</tableData>
+		<!-- RPM
+		engine	prop
+		13120	800
+		21320	1300
+		30340	1850
+		33290	2030
+		34440	2100
+		-->
 	</table>
 
 	<table name="ITT_N1" type="internal">

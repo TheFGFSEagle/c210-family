@@ -18,11 +18,11 @@
 			</entry>
 			<entry>
 				<ind>90</ind>
-				<dep>234</dep>
+				<dep>250</dep>
 			</entry>
 			<entry>
-				<ind>110</ind>
-				<dep>300</dep>
+				<ind>120</ind>
+				<dep>310</dep>
 			</entry>
 		</interpolation>
 	</animation>

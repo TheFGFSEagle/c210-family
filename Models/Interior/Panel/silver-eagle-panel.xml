@@ -258,7 +258,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/turboprop/torque.xml</path>
+		<path>Instruments/turboprop/oil.xml</path>
 		<offsets>
 			<x-m>0.44</x-m>
 			<y-m>0.2</y-m>
@@ -266,7 +266,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/turboprop/torque.xml</path>
+		<path>Instruments/turboprop/voltamp.xml</path>
 		<offsets>
 			<x-m>0.445</x-m>
 			<y-m>0.2</y-m>
