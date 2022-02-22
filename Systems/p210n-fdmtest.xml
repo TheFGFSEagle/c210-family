@@ -1606,7 +1606,7 @@
 			</function>
 												
 			<function name="aero/force/X_pitch">
-				<description>Roll X due to pitch rate rate</description>
+				<description>Roll X due to pitch rate</description>
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
@@ -1925,7 +1925,7 @@
 												
 		<axis name="Y">
 			<function name="aero/force/Y_base">
-				<description>Side Y due to beta</description>
+				<description>Y-base</description>
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
@@ -1996,7 +1996,7 @@
 			</function>
 												
 			<function name="aero/force/Y_roll">
-				<description>Roll side force due to roll rate</description>
+				<description>side force due to roll rate</description>
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
@@ -2070,7 +2070,7 @@
 												
 												
 			<function name="aero/force/side_yaw">
-				<description>Roll side force due to yaw rate</description>
+				<description>side force due to yaw rate</description>
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
@@ -2218,7 +2218,7 @@
 												
 		<axis name="ROLL">
 			<function name="aero/moment/Roll_base">
-				<description>Roll moment due to beta</description>
+				<description>Roll base</description>
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
@@ -2603,7 +2603,7 @@
 												
 		<axis name="PITCH">
 			<function name="aero/moment/Pitch_base">
-				<description>Pitch moment zero alpha</description>						
+				<description>Pitch base</description>						
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
@@ -2858,7 +2858,7 @@
 			</function>
 												
 			<function name="aero/moment/pitch_yaw">
-				<description>Roll moment due to yaw rate</description>
+				<description>pitch moment due to yaw rate</description>
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
@@ -2932,7 +2932,7 @@
 			</function>
 												
 			<function name="aero/moment/Pitch_mach">
-				<description>Pitch moment due to mach rate</description>
+				<description>Pitch moment due to mach</description>
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
@@ -3087,7 +3087,7 @@
 												
 												
 			<function name="aero/moment/Yaw_base">
-				<description>Yaw moment due to beta</description>
+				<description>Yaw base</description>
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
