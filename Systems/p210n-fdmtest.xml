@@ -2589,13 +2589,14 @@
 				</product>
 			</function>
 
-			<function name="aero/moment/Pitch_test">
-				<description>Pitch test moment for unknown geometric</description>
+			<function name="aero/moment/Pitch_gear">
+				<description>Pitch moment gear</description>
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/cbarw-ft</property>
-					<value>-0.1635</value>
+					<propertygear/gear-pos-norm</property>
+					<value>-0.011</value>
 				</product>
 			</function>
 												
