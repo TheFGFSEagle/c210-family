@@ -2595,7 +2595,7 @@
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
 					<property>metrics/cbarw-ft</property>
-					<propertygear/gear-pos-norm</property>
+					<property>gear/gear-pos-norm</property>
 					<value>-0.011</value>
 				</product>
 			</function>
