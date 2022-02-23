@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>cowlflaps.ac</path>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Handle</object-name>
+		<object-name>Wheel</object-name>
+		<axis>
+			<object-name>HandleAxis</object-name>
+		</axis>
+		<property>controls/engines/engine/cowl-flaps-norm</property>
+		<factor>80</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine/cowl-flaps-norm</property>
+				<factor>0.1</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>cowlflaps-lever</tooltip-id>
+				<label>Cowl flaps: %3d%%</label>
+				<measure-text>Cowl flaps: 100%</measure-text>
+				<mapping>percent</mapping>
+				<property>controls/engines/engine/cowl-flaps-norm</property>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<effect>
+		<inherits-from>../../../../Effects/p210n-interior-metal</inherits-from>
+		<object-name>Wheel</object-name>
+	</effect>
+</PropertyList>

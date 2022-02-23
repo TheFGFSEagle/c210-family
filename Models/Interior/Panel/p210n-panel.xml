@@ -355,4 +355,15 @@
 			<pitch-deg>-5.7</pitch-deg>
 		</offsets>
 	</model>
+	
+	<!-- pedestal -->
+	<model>
+		<path>Controls/cowlflaps/cowlflaps.xml</path>
+		<offsets>
+			<x-m>0.468</x-m>
+			<y-m>0.137</y-m>
+			<z-m>-0.077</z-m>
+			<pitch-deg>-13</pitch-deg>
+		</offsets>
+	</model>
 </PropertyList>
