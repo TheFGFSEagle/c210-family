@@ -27,3 +27,10 @@ var strobeLight = aircraft.light.new("/sim/model/lights/strobe", [0.05, 0.05, 0.
 var beaconLight = aircraft.light.new("/sim/model/lights/beacon", [0.2, 0.8], "/controls/lighting/beacon");
 
 var engine = engines.createEngine();
+
+if (getprop("/sim/presets/onground")) {
+	setprop("/controls/gear/gear-down", 1);
+	setprop("/fdm/jsbsim/gear/unit[0]/pos-norm", 1);
+	setprop("/fdm/jsbsim/gear/unit[1]/pos-norm", 1);
+	setprop("/fdm/jsbsim/gear/unit[2]/pos-norm", 1);
+}
