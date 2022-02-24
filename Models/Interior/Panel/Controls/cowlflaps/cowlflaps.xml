@@ -20,6 +20,15 @@
 				<max>1</max>
 			</binding>
 		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine/cowl-flaps-norm</property>
+				<factor>0.01</factor>
+				<min>0</min>
+				<max>1</max>
+			</binding>
+		</shift-action>
 		<hovered>
 			<binding>
 				<command>set-tooltip</command>

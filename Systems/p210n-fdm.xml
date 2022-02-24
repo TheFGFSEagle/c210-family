@@ -1555,8 +1555,8 @@
 				<product>
 					<property>aero/qbar-psf</property>
 					<property>metrics/Sw-sqft</property>
+					<value>-1</value>
 					<table>
-						<value>-1</value>
 						<independentVar lookup="row">gear/gear-pos-norm</independentVar>						
 						<tableData>						
 						0	0					
