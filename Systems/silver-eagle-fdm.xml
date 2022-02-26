@@ -1135,8 +1135,23 @@
 				<output>fcs/elevator-pos-rad</output>
 			</aerosurface_scale>
 			
-			<aerosurface_scale name="elevator normalization">
+			<kinematic name="Elevator control damping">
 				<input>fcs/elevator-pos-rad</input>
+				<traverse>
+					<setting>
+						<position>-1</position>
+						<time>0</time>
+					</setting>
+					<setting>
+						<position>1</position>
+						<time>0.5</time>
+					</setting>
+				</traverse>
+				<output>fcs/elevator-pos-rad-damped</output>
+			</kinematic>
+			
+			<aerosurface_scale name="elevator normalization">
+				<input>fcs/elevator-pos-rad-damped</input>
 				<domain>
 					<min>-0.3</min>
 					<max>0.4</max>
@@ -1167,6 +1182,22 @@
 				</range>
 				<output>fcs/left-aileron-pos-rad</output>
 			</aerosurface_scale>
+			
+			<kinematic name="Left aileron control damping">
+				<input>fcs/left-aileron-pos-rad</input>
+				<traverse>
+					<setting>
+						<position>-1</position>
+						<time>0</time>
+					</setting>
+					<setting>
+						<position>1</position>
+						<time>0.5</time>
+					</setting>
+				</traverse>
+				<output>fcs/left-aileron-pos-rad-damped</output>
+			</kinematic>
+			
 
 			<aerosurface_scale name="Right Aileron Control">
 				<input>fcs/roll-trim-sum</input>
@@ -1176,6 +1207,21 @@
 				</range>
 				<output>fcs/right-aileron-pos-rad</output>
 			</aerosurface_scale>
+			
+			<kinematic name="Right aileron control damping">
+				<input>fcs/right-aileron-pos-rad</input>
+				<traverse>
+					<setting>
+						<position>-1</position>
+						<time>0</time>
+					</setting>
+					<setting>
+						<position>1</position>
+						<time>0.5</time>
+					</setting>
+				</traverse>
+				<output>fcs/right-aileron-pos-rad-damped</output>
+			</kinematic>
 			
 			<aerosurface_scale name="left aileron normalization">
 				<input>fcs/left-aileron-pos-rad</input>
@@ -1227,6 +1273,21 @@
 				</range>
 				<output>fcs/rudder-pos-rad</output>
 			</aerosurface_scale>
+			
+			<kinematic name="Rudder control damping">
+				<input>fcs/rudder-pos-rad</input>
+				<traverse>
+					<setting>
+						<position>-1</position>
+						<time>0</time>
+					</setting>
+					<setting>
+						<position>1</position>
+						<time>0.5</time>
+					</setting>
+				</traverse>
+				<output>fcs/rudder-pos-rad-damped</output>
+			</kinematic>
 			
 			<aerosurface_scale name="rudder normalization">
 				<input>fcs/rudder-pos-rad</input>
