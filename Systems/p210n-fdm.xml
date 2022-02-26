@@ -136,7 +136,7 @@
 			<max_steer unit="DEG">35</max_steer>
 			<brake_group>NONE</brake_group>
 			<retractable>1</retractable>
-			<table name="CONERING_COEFF" type="internal">
+			<table name="CORNERING_COEFF" type="internal">
 				<tableData>
 					-90.0	-0.6276256632207626
 					-85.0	-0.6417393571173159
@@ -193,7 +193,7 @@
 			<max_steer unit="DEG">0</max_steer>
 			<brake_group>LEFT</brake_group>
 			<retractable>1</retractable>
-			<table name="CONERING_COEFF" type="internal">
+			<table name="CORNERING_COEFF" type="internal">
 				<tableData>
 					-90.0	-0.36002473976092286
 					-85.0	-0.36102751131832267
@@ -250,7 +250,7 @@
 			<max_steer unit="DEG">0</max_steer>
 			<brake_group>RIGHT</brake_group>
 			<retractable>1</retractable>
-			<table name="CONERING_COEFF" type="internal">
+			<table name="CORNERING_COEFF" type="internal">
 				<tableData>
 					-90.0	-0.36002473976092286
 					-85.0	-0.36102751131832267
