@@ -1193,7 +1193,7 @@
 		<!-- TODO: model TOT and influence of open cowl flaps -->
 	</flight_control>
 	
-	<aerodynamics file="fdm-aerodynamics.xml"/>
+	<aerodynamics file="Systems/fdm-aerodynamics.xml"/>
 	
 	<external_reactions>
 		<force name="hitch" frame="BODY" unit="LBS" >
