@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>elevator-trim-wheel.ac</path>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>TrimWheel</object-name>
+		<axis>
+			<object-name>WheelAxis</object-name>
+		</axis>
+		<property>controls/flight/elevator-trim</property>
+		<factor>-180</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/flight/elevator-trim</property>
+				<factor>0.0437</factor>
+				<min>-1</min>
+				<max>1</max>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/flight/elevator-trim</property>
+				<factor>0.00437</factor>
+				<min>-1</min>
+				<max>1</max>
+			</binding>
+		</shift-action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>elevator-trim-wheel</tooltip-id>
+				<label>Elevator trim: %2.1f°</label>
+				<measure-text>Elevator trim: 22.9°</measure-text>
+				<property>controls/flight/elevator-trim</property>
+				<mapping>nasal</mapping>
+				<script><![CDATA[
+					var value = arg[0];
+					if (value < 1) {
+						return value * -17;
+					} else {
+						return value * -23;
+					}
+				]]></script>
+			</binding>
+		</hovered>
+	</animation>
+</PropertyList>

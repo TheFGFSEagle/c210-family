@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>elevator-trim-indicator.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Mark</object-name>
+		<axis>
+			<object-name>MarkAxis</object-name>
+		</axis>
+		<property>controls/flight/elevator-trim</property>
+		<factor>-10.25</factor>
+	</animation>
+</PropertyList>

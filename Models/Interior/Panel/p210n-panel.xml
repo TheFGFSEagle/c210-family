@@ -375,4 +375,22 @@
 			<pitch-deg>-7.8</pitch-deg>
 		</offsets>
 	</model>
+	<model>
+		<path>Controls/trim/elevator-trim-wheel.xml</path>
+		<offsets>
+			<x-m>0.456</x-m>
+			<y-m>-0.058</y-m>
+			<z-m>-0.092</z-m>
+			<pitch-deg>-3.6</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Controls/trim/elevator-trim-indicator.xml</path>
+		<offsets>
+			<x-m>0.458</x-m>
+			<y-m>-0.026</y-m>
+			<z-m>-0.04</z-m>
+			<pitch-deg>-14</pitch-deg>
+		</offsets>
+	</model>
 </PropertyList>
