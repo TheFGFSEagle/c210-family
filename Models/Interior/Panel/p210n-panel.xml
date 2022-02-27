@@ -360,10 +360,19 @@
 	<model>
 		<path>Controls/cowlflaps/cowlflaps.xml</path>
 		<offsets>
-			<x-m>0.468</x-m>
+			<x-m>0.47</x-m>
 			<y-m>0.137</y-m>
-			<z-m>-0.077</z-m>
+			<z-m>-0.088</z-m>
 			<pitch-deg>-13</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Controls/trim/rudder-trim.xml</path>
+		<offsets>
+			<x-m>0.447</x-m>
+			<y-m>0.069</y-m>
+			<z-m>0.015</z-m>
+			<pitch-deg>-7.8</pitch-deg>
 		</offsets>
 	</model>
 </PropertyList>

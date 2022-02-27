@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>rudder-trim.ac</path>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>TrimWheel</object-name>
+		<axis>
+			<object-name>WheelMarkAxis</object-name>
+		</axis>
+		<property>controls/flight/rudder-trim</property>
+		<factor>180</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/flight/rudder-trim</property>
+				<factor>0.05</factor>
+				<min>-1</min>
+				<max>1</max>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/flight/rudder-trim</property>
+				<factor>0.005</factor>
+				<min>-1</min>
+				<max>1</max>
+			</binding>
+		</shift-action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rudder-trim-wheel</tooltip-id>
+				<label>Rudder trim: %2.1f°</label>
+				<measure-text>Rudder trim: 26.9°</measure-text>
+				<property>controls/flight/rudder-trim</property>
+				<mapping>nasal</mapping>
+				<script>
+					return arg[0] * 27;
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>TrimMark</object-name>
+		<axis>
+			<object-name>WheelMarkAxis</object-name>
+		</axis>
+		<property>controls/flight/rudder-trim</property>
+		<factor>14.5</factor>
+	</animation>
+</PropertyList>
