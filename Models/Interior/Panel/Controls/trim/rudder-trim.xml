@@ -14,7 +14,7 @@
 			<binding>
 				<command>property-adjust</command>
 				<property>controls/flight/rudder-trim</property>
-				<factor>0.05</factor>
+				<factor>0.037037037037</factor>
 				<min>-1</min>
 				<max>1</max>
 			</binding>
@@ -23,7 +23,7 @@
 			<binding>
 				<command>property-adjust</command>
 				<property>controls/flight/rudder-trim</property>
-				<factor>0.005</factor>
+				<factor>0.0037037037037</factor>
 				<min>-1</min>
 				<max>1</max>
 			</binding>
