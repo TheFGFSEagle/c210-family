@@ -669,9 +669,7 @@
 						100	0				
 					</tableData>						
 				</table>
-				<value>-1</value>
-				<value>0.02</value>
-				<value>0.6</value>	<!--	tuning	-->
+				<value>-0.011</value>
 				<property>aero/force/testwindmill-enabled</property>
 			</product>
 		</function>
