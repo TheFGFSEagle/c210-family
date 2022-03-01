@@ -1031,7 +1031,7 @@
 	
 	<system file="engine"/>
 	<system file="p210n-fuel"/>
-	<system file="damage"/>
+	<!--<system file="damage"/>-->
 	
 	<flight_control name="FCS: p210n">
 		<channel name="NWS">
