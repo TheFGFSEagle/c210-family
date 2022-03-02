@@ -48,6 +48,11 @@
 				<name>Silver eagle specific instrument indications</name>
 				<path>Systems/silver-eagle-instruments.xml</path>
 			</property-rule>
+			<property-rule n="105">
+				<name>Silver Eagle specific controls (mostly animations)</name>
+				<path>Systems/silver-eagle-controls.xml</path>
+			</property-rule>
+		</systems>
 		</systems>
 		<aircraft-data>
 			<path>/controls/engines/engine/cutoff</path>

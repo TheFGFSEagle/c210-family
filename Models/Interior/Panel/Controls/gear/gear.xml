@@ -18,7 +18,7 @@
 			<y-m>0</y-m>
 			<z-m>0</z-m>
 		</center>
-		<property>sim/model/controls/gear/lever</property>
+		<property>sim/model/controls/gear-lever-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0.25</ind>
@@ -52,7 +52,7 @@
 		<axis>
 			<object-name>PullAxis</object-name>
 		</axis>
-		<property>sim/model/controls/gear/lever</property>
+		<property>sim/model/controls/gear-lever-norm</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>

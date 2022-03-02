@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>parking-brake.ac</path>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>Handle</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>sim/model/controls/parking-brake-lever-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.33</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>0.66</ind>
+				<dep>1</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>0</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Handle</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>sim/model/controls/parking-brake-lever-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.33</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.66</ind>
+				<dep>90</dep>
+			</entry>
+		</interpolation>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/gear/brake-parking</property>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>parking-brake</tooltip-id>
+				<label>Parking brake: %s</label>
+				<measure-text>Parking brake: Released</measure-text>
+				<property>controls/gear/brake-parking</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Released", "Set"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<effect>
+		<inherits-from>../../../../Effects/p210n-interior-metal</inherits-from>
+		<object-name>Handle</object-name>
+	</effect>
+	<effect>
+		<inherits-from>../../../../Effects/p210n-interior-metal</inherits-from>
+		<object-name>Mount</object-name>
+		<parameters>
+			<reflection-correction>-0.4</reflection-correction>
+		</parameters>
+	</effect>
+</PropertyList>

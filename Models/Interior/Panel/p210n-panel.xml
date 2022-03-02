@@ -393,4 +393,13 @@
 			<pitch-deg>-14</pitch-deg>
 		</offsets>
 	</model>
+	<model>
+		<path>Controls/parking-brake/parking-brake.xml</path>
+		<offsets>
+			<x-m>0.379</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>-0.02</z-m>
+			<pitch-deg>-7</pitch-deg>
+		</offsets>
+	</model>
 </PropertyList>
