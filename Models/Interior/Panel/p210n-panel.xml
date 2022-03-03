@@ -325,14 +325,13 @@
 		</offsets>
 	</model>
 	
-	<!-- pedestal -->
 	<model>
-		<path>Controls/fuel-select/fuel-select.xml</path>
+		<path>Controls/parking-brake/parking-brake.xml</path>
 		<offsets>
-			<x-m>0.605</x-m>
-			<y-m>0.07</y-m>
-			<z-m>-0.318</z-m>
-			<pitch-deg>3.5</pitch-deg>
+			<x-m>0.379</x-m>
+			<y-m>-0.28</y-m>
+			<z-m>-0.02</z-m>
+			<pitch-deg>-7</pitch-deg>
 		</offsets>
 	</model>
 	
@@ -393,13 +392,13 @@
 			<pitch-deg>-14</pitch-deg>
 		</offsets>
 	</model>
+	
 	<model>
-		<path>Controls/parking-brake/parking-brake.xml</path>
+		<path>Controls/fuel-select/fuel-select.xml</path>
 		<offsets>
-			<x-m>0.379</x-m>
-			<y-m>-0.28</y-m>
-			<z-m>-0.02</z-m>
-			<pitch-deg>-7</pitch-deg>
+			<x-m>0.215</x-m>
+			<y-m>0.062</y-m>
+			<z-m>-0.311</z-m>
 		</offsets>
 	</model>
 </PropertyList>
