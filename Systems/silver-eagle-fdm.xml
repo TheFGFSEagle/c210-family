@@ -872,11 +872,11 @@
 		<tank type="FUEL" number="0">
 			<location unit="IN">
 				<x>57.5</x>
-				<y>-69.3</y>
+				<y>69.3</y>
 				<z>30.9</z>
 			</location>
 			<capacity unit="LBS">301.5</capacity>
-			<contents unit="LBS">223</contents>
+			<contents unit="LBS">298.15</contents>
 			<unusable unit="LBS">3.35</unusable>
 			<type>JET-A</type>
 		</tank>
@@ -885,11 +885,11 @@
 		<tank type="FUEL" number="1">
 			<location unit="IN">
 				<x>57.5</x>
-				<y>69.3</y>
+				<y>-69.3</y>
 				<z>30.9</z>
 			</location>
 			<capacity unit="LBS">301.5</capacity>
-			<contents unit="LBS">223</contents>
+			<contents unit="LBS">298.15</contents>
 			<unusable unit="LBS">3.35</unusable>
 			<type>JET-A</type>
 		</tank>

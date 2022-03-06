@@ -876,9 +876,9 @@
 				<y>69.3</y>
 				<z>30.9</z>
 			</location>
-			<capacity unit="LBS">267.445</capacity>
-			<contents unit="LBS">223</contents>
-			<unusable unit="LBS">3.005</unusable>
+			<capacity unit="LBS">279</capacity>
+			<contents unit="LBS">275.9</contents>
+			<unusable unit="LBS">3.1</unusable>
 			<type>AVGAS</type>
 		</tank>
 		
@@ -889,9 +889,9 @@
 				<y>-69.3</y>
 				<z>30.9</z>
 			</location>
-			<capacity unit="LBS">267.445</capacity>
-			<contents unit="LBS">223</contents>
-			<unusable unit="LBS">3.005</unusable>
+			<capacity unit="LBS">279</capacity>
+			<contents unit="LBS">275.9</contents>
+			<unusable unit="LBS">3.1</unusable>
 			<type>AVGAS</type>
 		</tank>
 		

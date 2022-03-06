@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <system name="engine">
     <property>propulsion/engine/auto-mixture</property>
-    <property>propulsion/engine/AFR-setting</property>
+    <property value="9.87">propulsion/engine/AFR-setting</property>
     <channel name="Volumetric efficiency">
         <fcs_function>
             <function>
