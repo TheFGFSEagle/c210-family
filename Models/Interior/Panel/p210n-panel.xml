@@ -394,11 +394,11 @@
 	</model>
 	
 	<model>
-		<path>Controls/fuel-select/fuel-select.xml</path>
+		<path>Controls/fuel-selector/fuel-selector.xml</path>
 		<offsets>
-			<x-m>0.215</x-m>
-			<y-m>0.062</y-m>
-			<z-m>-0.311</z-m>
+			<x-m>0.581</x-m>
+			<y-m>0.06</y-m>
+			<z-m>-0.295</z-m>
 		</offsets>
 	</model>
 </PropertyList>

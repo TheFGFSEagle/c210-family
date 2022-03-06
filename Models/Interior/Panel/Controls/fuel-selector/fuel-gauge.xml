@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<params>
+		<indicated-fuel-level-lbs>consumables/fuel/tank[0]/level-lbs</indicated-fuel-level-lbs>
+	</params>
+	<path>fuel-gauge.ac</path>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle</object-name>
+		<axis>
+			<object-name>NeedleAxis</object-name>
+		</axis>
+		<property alias="../../params/indicated-fuel-level-lbs"/>
+		<factor>0.27732</factor>
+		<min-deg>0</min-deg>
+		<max-deg>70</max-deg>
+	</animation>
+	
+	<effect>
+		<inherits-from>../../../../Effects/p210n-instrument-glass</inherits-from>
+		<object-name>Glass</object-name>
+	</effect>
+</PropertyList>

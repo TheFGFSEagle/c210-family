@@ -4,6 +4,11 @@
 		<indicated-suction-inhg alias="/systems/vacuum/suction-inhg"/>
 	</vacuum>
 	
+	<fuel>
+		<indicated-left-wing-fuel-level-lbs alias="/consumables/fuel/tank[0]/level-lbs"/>
+		<indicated-right-wing-fuel-level-lbs alias="/consumables/fuel/tank[1]/level-lbs"/>
+	</fuel>
+	
 	<altimeter n="1">
 		<serviceable type="bool">true</serviceable>
 	</altimeter>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>fuel-selector.ac</path>
+	
+	<model>
+		<path>fuel-gauge.xml</path>
+		<offsets>
+			<x-m>-0.03</x-m>
+			<y-m>-0.0275</y-m>
+			<z-m>0.02</z-m>
+			<pitch-deg>-51</pitch-deg>
+		</offsets>
+		<overlay>
+			<params>
+				<indicated-fuel-level-lbs>instrumentation/fuel/indicated-left-wing-fuel-level-lbs</indicated-fuel-level-lbs>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>fuel-gauge.xml</path>
+		<offsets>
+			<x-m>-0.03</x-m>
+			<y-m>0.0275</y-m>
+			<z-m>0.02</z-m>
+			<pitch-deg>-51</pitch-deg>
+		</offsets>
+		<overlay>
+			<params>
+				<indicated-fuel-level-lbs>instrumentation/fuel/indicated-right-wing-fuel-level-lbs</indicated-fuel-level-lbs>
+			</params>
+		</overlay>
+	</model>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Handle</object-name>
+		<axis>
+			<object-name>HandleAxis</object-name>
+		</axis>
+		<property>controls/fuel/selected-tank</property>
+		<factor>90</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/fuel/selected-tank</property>
+				<min>-1</min>
+				<max>1</max>
+				<factor>1</factor>
+			</binding>
+		</action>
+		<hovered>
+			<command>
+				<binding>set-tooltip</binding>
+				<tooltip-id>fuel-selector</tooltip-id>
+				<label>Selected fuel tank: %s</label>
+				<measure-text>Selected fuel tank: Right</measure-text>
+				<mapping>nasal</mapping>
+				<script>
+					var pos = arg[0];
+					if (pos == -1) {
+						return "Left";
+					} elsif (pos == 1) {
+						return "Right";
+					} else {
+						return "Off";
+					}
+				</script>
+			</command>
+		</hovered>
+	</animation>
+</PropertyList>
