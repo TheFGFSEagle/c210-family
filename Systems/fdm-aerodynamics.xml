@@ -273,7 +273,7 @@
 		</function>
 	</axis>
 											
-<<!--	<property>aero/force/testwindmill-enabled</property> -->
+	<!--<property>aero/force/testwindmill-enabled</property>-->
 											
 	<axis name="X">
 		<function name="aero/force/X_base">
