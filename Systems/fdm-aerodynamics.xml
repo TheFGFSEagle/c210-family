@@ -205,7 +205,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/elevator-pos-rad</property>
-				<value>1</value>
+				<value>-1</value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>						
 					<independentVar lookup="column">aero/beta-deg</independentVar>						
