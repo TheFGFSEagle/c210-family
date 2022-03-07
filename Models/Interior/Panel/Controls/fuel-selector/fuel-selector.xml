@@ -5,9 +5,9 @@
 	<model>
 		<path>fuel-gauge.xml</path>
 		<offsets>
-			<x-m>-0.03</x-m>
+			<x-m>-0.033</x-m>
 			<y-m>-0.0275</y-m>
-			<z-m>0.02</z-m>
+			<z-m>0.005</z-m>
 			<pitch-deg>-51</pitch-deg>
 		</offsets>
 		<overlay>
@@ -19,9 +19,9 @@
 	<model>
 		<path>fuel-gauge.xml</path>
 		<offsets>
-			<x-m>-0.03</x-m>
+			<x-m>-0.033</x-m>
 			<y-m>0.0275</y-m>
-			<z-m>0.02</z-m>
+			<z-m>0.005</z-m>
 			<pitch-deg>-51</pitch-deg>
 		</offsets>
 		<overlay>

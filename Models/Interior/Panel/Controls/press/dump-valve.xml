@@ -5,6 +5,7 @@
 	<animation>
 		<type>slider</type>
 		<object-name>Handle</object-name>
+		<object-name>Bar</object-name>
 		<axis>
 			<x>1</x>
 			<y>0</y>

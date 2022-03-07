@@ -176,7 +176,7 @@
 		<path>lights/panel.xml</path>
 		<offsets>
 			<x-m>0</x-m>
-			<y-m>0.02</y-m>
+			<y-m>-0.03</y-m>
 			<z-m>0.025</z-m>
 		</offsets>
 		<overlay>
@@ -190,7 +190,7 @@
 		<path>lights/panel.xml</path>
 		<offsets>
 			<x-m>0</x-m>
-			<y-m>-0.03</y-m>
+			<y-m>0.02</y-m>
 			<z-m>0.025</z-m>
 		</offsets>
 		<overlay>
@@ -281,7 +281,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>press/press-switch.xml</path>
+		<path>switches/silver.xml</path>
 		<offsets>
 			<x-m>0</x-m>
 			<y-m>-0.095</y-m>

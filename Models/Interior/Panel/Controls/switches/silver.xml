@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>silver.ac</path>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Switch</object-name>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<property>controls/pressurization/pressurize</property>
+		<factor>40</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>/controls/pressurization/pressurize</property>
+				<min>0</min>
+				<max>1</max>
+				<factor>1</factor>
+			</binding>
+		</action>
+	</animation>
+	
+	<effect>
+		<inherits-from>../../../../Effects/p210n-interior-metal</inherits-from>
+		<object-name>Switch</object-name>
+	</effect>
+</PropertyList>
