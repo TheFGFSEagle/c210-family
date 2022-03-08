@@ -72,7 +72,7 @@
 		</offsets>
 		<overlay>
 			<params>
-				<property>controls/lighting/landing-lights</property>
+				<property>controls/lighting/taxi-light</property>
 			</params>
 		</overlay>
 	</model>

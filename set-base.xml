@@ -122,8 +122,12 @@
 				<path>Systems/rnav.xml</path>
 			</property-rule>
 			<property-rule n="103">
-				<name>Instrument indications</name>
+				<name>Instrument indications common to all variants</name>
 				<path>Systems/instruments-base.xml</path>
+			</property-rule>
+			<property-rule n="104">
+				<name>Lights</name>
+				<path>Systems/lights.xml</path>
 			</property-rule>
 		</systems>
 		<aircraft-data>

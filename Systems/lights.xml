@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<filter>
+		<name>Left landing light is also used as taxi light</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<expression>
+				<max>
+					<property>/controls/lights/landing-lights</property>
+					<property>/controls/lighting/taxi-light</property>
+				</max>
+			</expression>
+		</input>
+		<output>/sim/model/lights/landing-taxi</output>
+	</filter>
+</PropertyList>

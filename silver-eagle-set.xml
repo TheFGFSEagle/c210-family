@@ -44,11 +44,11 @@
 		</previews>
 		<systems>
 			<path>Systems/silver-eagle-systems.xml</path>
-			<property-rule n="104">
+			<property-rule n="105">
 				<name>Silver eagle specific instrument indications</name>
 				<path>Systems/silver-eagle-instruments.xml</path>
 			</property-rule>
-			<property-rule n="105">
+			<property-rule n="106">
 				<name>Silver Eagle specific controls (mostly animations)</name>
 				<path>Systems/silver-eagle-controls.xml</path>
 			</property-rule>
