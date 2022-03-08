@@ -255,12 +255,17 @@
 	</model>
 	
 	<model>
-		<path>alt-static-air/alt-static-air.xml</path>
+		<path>valve/valve.xml</path>
 		<offsets>
 			<x-m>0</x-m>
 			<y-m>-0.18</y-m>
 			<z-m>-0.035</z-m>
 		</offsets>
+		<overlay>
+			<params>
+				<property>controls/alt-static-air</property>
+			</params>
+		</overlay>
 	</model>
 	
 	<model>
@@ -281,7 +286,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>switches/silver.xml</path>
+		<path>switches/pressurize.xml</path>
 		<offsets>
 			<x-m>0</x-m>
 			<y-m>-0.095</y-m>

@@ -79,4 +79,10 @@
 		<input>/controls/gear/brake-parking</input>
 		<output>/sim/model/controls/parking-brake-lever-norm</output>
 	</filter>
+	<filter>
+		<type>noise-spike</type>
+		<max-rate-of-change>1</max-rate-of-change>
+		<input>/controls/flight/flaps</input>
+		<output>/sim/model/controls/flaps-lever-norm</output>
+	</filter>
 </PropertyList>

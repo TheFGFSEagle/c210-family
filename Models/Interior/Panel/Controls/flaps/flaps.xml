@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>flaps.ac</path>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>Handle</object-name>
+		<object-name>Bar</object-name>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+		<property>sim/model/controls/flaps-lever-norm</property>
+		<factor>0.0775</factor>
+		<drag-direction>vertical</drag-direction>
+		<drag-scale-px>30</drag-scale-px>
+		<increase>
+			<binding>
+				<command>nasal</command>
+				<script>
+					controls.flapsDown(1);
+				</script>
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>nasal</command>
+				<script>
+					controls.flapsDown(-1);
+				</script>
+			</binding>
+		</decrease>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>flaps</tooltip-id>
+				<label>Flaps: %s°</label>
+				<measure-text>Flaps: 20° (landing / short takeoff)</measure-text>
+				<property>controls/flight/flaps</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["retracted", "10° (takeoff)", "20° (landing / short takeoff)", "30° (short landing)"][math.round(arg[0] * 3)];
+				</script>
+				</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>Handle</object-name>
+		<object-name>Bar</object-name>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<property>sim/model/controls/flaps-lever-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.33334</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>0.36667</ind>
+				<dep>0.005</dep>
+			</entry>
+			<entry>
+				<ind>0.66667</ind>
+				<dep>0.005</dep>
+			</entry>
+			<entry>
+				<ind>0.7</ind>
+				<dep>0.01</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>Mark</object-name>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+		<property>surface-positions/flap-pos-norm</property>
+		<factor>0.075</factor>
+	</animation>
+	
+	<effect>
+		<inherits-from>../../../../Effects/p210n-interior-metal</inherits-from>
+		<object-name>Bar</object-name>
+	</effect>
+</PropertyList>

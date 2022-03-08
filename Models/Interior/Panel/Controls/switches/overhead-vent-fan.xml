@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>overhead-vent-fan.ac</path>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>Switch</object-name>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<property>controls/cabin-air/overhead-vent-fan</property>
+		<factor>20</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/cabin-air/overhead-vent-fan</property>
+				<min>-1</min>
+				<max>1</max>
+				<factor>1</factor>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>overhead-vent-fan</tooltip-id>
+				<label>Overhead vent fan speed: %s</label>
+				<measure-text>Overhead vent fan speed: High</measure-text>
+				<property>controls/cabin-air/overhead-vent-fan</property>
+				<mapping>nasal</mapping>
+				<script>
+					# 0 = Off, 1 = High, -1 = Low
+					return ["Off", "High", "Low"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<effect>
+		<inherits-from>../../../../Effects/p210n-interior-metal</inherits-from>
+		<object-name>Switch</object-name>
+	</effect>
+</PropertyList>

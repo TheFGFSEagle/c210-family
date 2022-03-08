@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="307"
+   height="256"
+   viewBox="0 0 307 256"
+   version="1.1"
+   id="svg14"
+   sodipodi:docname="right-controls-panel.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   inkscape:export-filename="/mnt/DATEN/blender-2.83.0-linux64/2.83/datafiles/colormanagement/filmic/fgfs-addons/Aircraft/c210-family/Models/Interior/Panel/Controls/right-controls-panel.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs18">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect842"
+       is_visible="true" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1362"
+     inkscape:window-height="706"
+     id="namedview16"
+     showgrid="false"
+     inkscape:zoom="1.3037281"
+     inkscape:cx="167.98657"
+     inkscape:cy="132.62057"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg14"
+     inkscape:snap-object-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-center="true" />
+  <desc
+     id="desc2">right-controls-panel.blend, (Blender 2.83.0)</desc>
+  <g
+     id="g832"
+     style="fill:#000000;stroke:#0d0d0d;opacity:1;fill-opacity:1;stroke-opacity:1">
+    <polygon
+       id="polygon4"
+       points="307.000,0.000 255.833,189.440 259.394,189.747 262.833,190.669 266.067,192.184 268.993,194.232 271.511,196.751 273.558,199.680 275.072,202.916 275.993,206.356 276.300,209.920 307.000,256.000 "
+       style="fill:#000000;stroke:#0d0d0d;fill-opacity:1;stroke-opacity:1"
+       stroke-width="1"
+       stroke="black"
+       fill-opacity="0.25"
+       fill="rgb(204, 204, 204)" />
+    <polygon
+       id="polygon6"
+       points="31.007,62.997 31.928,59.556 33.442,56.320 35.489,53.391 38.007,50.872 40.933,48.824 44.167,47.309 47.605,46.387 51.167,46.080 54.728,46.387 58.166,47.309 61.400,48.824 64.327,50.872 66.844,53.391 68.891,56.320 70.405,59.556 71.326,62.997 71.633,66.560 307.000,0.000 0.000,0.000 30.700,66.560 "
+       style="fill:#000000;stroke:#0d0d0d;fill-opacity:1;stroke-opacity:1"
+       stroke-width="1"
+       stroke="black"
+       fill-opacity="0.25"
+       fill="rgb(204, 204, 204)" />
+    <polygon
+       id="polygon8"
+       points="307.000,256.000 276.300,209.920 275.993,213.484 275.072,216.924 273.558,220.160 271.511,223.089 268.993,225.608 266.067,227.656 262.833,229.171 259.394,230.093 255.833,230.400 252.272,230.093 248.834,229.171 245.600,227.656 242.673,225.608 240.156,223.089 238.109,220.160 236.595,216.924 235.674,213.484 235.367,209.920 156.693,209.920 156.652,210.473 156.509,211.006 156.263,211.517 155.956,211.968 155.547,212.378 155.097,212.685 154.585,212.931 154.053,213.074 153.500,213.115 152.947,213.074 152.415,212.931 151.904,212.685 151.453,212.378 151.044,211.968 150.737,211.517 150.491,211.005 150.348,210.473 150.307,209.920 71.633,209.920 71.326,213.484 70.405,216.924 68.891,220.160 66.844,223.089 64.327,225.608 61.400,227.656 58.166,229.171 54.728,230.093 51.167,230.400 47.605,230.093 44.167,229.171 40.933,227.656 38.007,225.608 35.489,223.089 33.442,220.160 31.928,216.924 31.007,213.484 30.700,209.920 0.000,256.000 "
+       style="fill:#000000;stroke:#0d0d0d;fill-opacity:1;stroke-opacity:1"
+       stroke-width="1"
+       stroke="black"
+       fill-opacity="0.25"
+       fill="rgb(204, 204, 204)" />
+    <polygon
+       id="polygon10"
+       points="51.167,87.040 51.167,189.440 54.728,189.747 58.166,190.669 61.400,192.184 64.327,194.232 66.844,196.751 68.891,199.680 70.405,202.916 71.326,206.356 71.633,209.920 150.307,209.920 150.348,209.367 150.491,208.835 150.737,208.323 151.044,207.872 151.453,207.462 151.904,207.155 152.415,206.909 152.947,206.766 153.500,206.725 154.053,206.766 154.585,206.909 155.097,207.155 155.547,207.462 155.956,207.872 156.263,208.323 156.509,208.835 156.652,209.367 156.693,209.920 235.367,209.920 235.674,206.357 236.595,202.916 238.109,199.680 240.156,196.751 242.673,194.232 245.600,192.184 248.834,190.669 252.272,189.747 255.833,189.440 307.000,0.000 71.633,66.560 71.326,70.123 70.405,73.564 68.891,76.800 66.844,79.729 64.327,82.248 61.400,84.296 58.166,85.811 54.728,86.733 "
+       style="fill:#000000;stroke:#0d0d0d;fill-opacity:1;stroke-opacity:1"
+       stroke-width="1"
+       stroke="black"
+       fill-opacity="0.25"
+       fill="rgb(204, 204, 204)" />
+    <polygon
+       id="polygon12"
+       points="0.000,0.000 0.000,256.000 30.700,209.920 31.007,206.356 31.928,202.916 33.442,199.680 35.489,196.751 38.007,194.232 40.933,192.184 44.167,190.669 47.605,189.747 51.167,189.440 51.167,87.040 47.605,86.733 44.167,85.811 40.933,84.296 38.007,82.248 35.489,79.729 33.442,76.800 31.928,73.564 31.007,70.123 30.700,66.560 "
+       style="fill:#000000;stroke:#0d0d0d;fill-opacity:1;stroke-opacity:1"
+       stroke-width="1"
+       stroke="black"
+       fill-opacity="0.25"
+       fill="rgb(204, 204, 204)" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.10000002;font-family:Beteckna;-inkscape-font-specification:Beteckna;text-align:center;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.25;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+     x="51.784187"
+     y="169.51161"
+     id="text836"><tspan
+       sodipodi:role="line"
+       id="tspan834"
+       x="51.784187"
+       y="169.51161">CABIN HEAT</tspan><tspan
+       sodipodi:role="line"
+       x="51.784187"
+       y="178.31161"
+       id="tspan838">PULL oN</tspan></text>
+  <text
+     id="text848"
+     y="169.25072"
+     x="254.64336"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.10000002;font-family:Beteckna;-inkscape-font-specification:Beteckna;text-align:center;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.25;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+     xml:space="preserve"><tspan
+       y="169.25072"
+       x="254.64336"
+       id="tspan844"
+       sodipodi:role="line">FWD AIR/PUSH</tspan><tspan
+       id="tspan846"
+       y="178.07251"
+       x="254.64336"
+       sodipodi:role="line">FLOOR DEFROST/PULL</tspan></text>
+  <text
+     id="text860"
+     y="25.240423"
+     x="51.784187"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.10000002;font-family:Beteckna;-inkscape-font-specification:Beteckna;text-align:center;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.25;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+     xml:space="preserve"><tspan
+       y="25.240423"
+       x="51.784187"
+       id="tspan856"
+       sodipodi:role="line">DEFROST</tspan><tspan
+       id="tspan858"
+       y="34.040424"
+       x="51.784187"
+       sodipodi:role="line">PULL oN</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.10000002;font-family:Beteckna;-inkscape-font-specification:Beteckna;text-align:center;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.25;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+     x="154.29604"
+     y="168.7045"
+     id="text864"><tspan
+       sodipodi:role="line"
+       id="tspan862"
+       x="154.29604"
+       y="168.7045">OVERHEAD</tspan><tspan
+       sodipodi:role="line"
+       x="154.29604"
+       y="177.5045"
+       id="tspan866">VENT FAN</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1;font-family:Beteckna;-inkscape-font-specification:Beteckna;text-align:center;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.25;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+     x="120.8074"
+     y="188.70515"
+     id="text870"><tspan
+       sodipodi:role="line"
+       id="tspan868"
+       x="120.8074"
+       y="188.70515">HIGH</tspan><tspan
+       sodipodi:role="line"
+       x="120.8074"
+       y="196.70515"
+       id="tspan872" /><tspan
+       sodipodi:role="line"
+       x="120.8074"
+       y="204.70515"
+       id="tspan874" /><tspan
+       sodipodi:role="line"
+       x="120.8074"
+       y="212.70515"
+       id="tspan876">OFF</tspan><tspan
+       sodipodi:role="line"
+       x="120.8074"
+       y="220.70515"
+       id="tspan878" /><tspan
+       sodipodi:role="line"
+       x="120.8074"
+       y="228.70515"
+       id="tspan880" /><tspan
+       sodipodi:role="line"
+       x="120.8074"
+       y="236.70515"
+       id="tspan882">LOW</tspan></text>
+</svg>

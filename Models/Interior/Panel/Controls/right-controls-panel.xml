@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>right-controls-panel.ac</path>
+	
+	<model>
+		<path>flaps/flaps.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.1</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>valve/valve.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.05</y-m>
+			<z-m>-0.04</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/cabin-air/cabin-heat</property>
+			</params>
+		</overlay>
+	</model>
+	
+	<model>
+		<path>valve/valve.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.05</y-m>
+			<z-m>0.03</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/cabin-air/defrost</property>
+			</params>
+		</overlay>
+	</model>
+	
+	<model>
+		<path>switches/overhead-vent-fan.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.04</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<path>valve/valve.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.05</y-m>
+			<z-m>-0.04</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/cabin-air/floor-defrost</property>
+			</params>
+		</overlay>
+	</model>
+</PropertyList>

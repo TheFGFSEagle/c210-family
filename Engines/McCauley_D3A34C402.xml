@@ -10,8 +10,8 @@
 	<minrpm>2200</minrpm>
 	<maxrpm>2700</maxrpm>
 
-	<ct_factor>1.4</ct_factor>
-	<cp_factor>1.6</cp_factor>
+	<ct_factor>1.2</ct_factor>
+	<cp_factor>1.4</cp_factor>
  
 	<!-- thrust coefficient as a function of advance ratio and blade angle -->
 	<!--<table name="C_THRUST" type="internal">

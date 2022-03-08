@@ -195,6 +195,7 @@
 			<path>/instrumentation/dme/power-btn</path>
 			<path>/instrumentation/dme/ident</path>
 			<path>/instrumentation/rnav</path>
+			<path>/controls/cabin-air</path>
 		</aircraft-data>
 		<hitches>
 			<aerotow>
@@ -289,6 +290,13 @@
 			<!-- 0=OFF, -1=LEFT, 1=RIGHT -->
 			<selected-tank>0</selected-tank>
 		</fuel>
+		<cabin-air>
+			<cabin-heat type="bool">false</cabin-heat>
+			<defrost type="bool">false</defrost>
+			<!-- Pushed in (false): Floor defrost, pulled out (true): Forward air -->
+			<floor-defrost type="bool">false</floor-defrost>
+			<overhead-vent-fan type="int">0</overhead-vent-fan>
+		</cabin-air>
 	</controls>
 	
 	<consumables>

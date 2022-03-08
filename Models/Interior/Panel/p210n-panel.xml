@@ -221,36 +221,36 @@
 	<model>
 		<path>Avionics/wxradar/wxradar.xml</path>
 		<offsets>
-			<x-m>0.411</x-m>
+			<x-m>0.409</x-m>
 			<y-m>0.245</y-m>
-			<z-m>0.355</z-m>
+			<z-m>0.375</z-m>
 			<pitch-deg>-5.7</pitch-deg>
 		</offsets>
 	</model>
 	<model>
 		<path>Instruments/piston/map-fuelflow.xml</path>
 		<offsets>
-			<x-m>0.42</x-m>
+			<x-m>0.418</x-m>
 			<y-m>0.20</y-m>
-			<z-m>0.261</z-m>
+			<z-m>0.281</z-m>
 			<pitch-deg>-5.7</pitch-deg>
 		</offsets>
 	</model>
 	<model>
 		<path>Instruments/piston/tach.xml</path>
 		<offsets>
-			<x-m>0.428</x-m>
+			<x-m>0.426</x-m>
 			<y-m>0.20</y-m>
-			<z-m>0.176</z-m>
+			<z-m>0.196</z-m>
 			<pitch-deg>-5.7</pitch-deg>
 		</offsets>
 	</model>
 	<model>
 		<path>Instruments/suction/suction.xml</path>
 		<offsets>
-			<x-m>0.419</x-m>
+			<x-m>0.417</x-m>
 			<y-m>0.28</y-m>
-			<z-m>0.27</z-m>
+			<z-m>0.29</z-m>
 			<pitch-deg>-5.7</pitch-deg>
 		</offsets>
 	</model>
@@ -324,7 +324,6 @@
 			<pitch-deg>-5.7</pitch-deg>
 		</offsets>
 	</model>
-	
 	<model>
 		<path>Controls/parking-brake/parking-brake.xml</path>
 		<offsets>
@@ -332,6 +331,15 @@
 			<y-m>-0.28</y-m>
 			<z-m>-0.02</z-m>
 			<pitch-deg>-7</pitch-deg>
+		</offsets>
+	</model>
+	<model>
+		<path>Controls/right-controls-panel.xml</path>
+		<offsets>
+			<x-m>0.441</x-m>
+			<y-m>0.28</y-m>
+			<z-m>0.092</z-m>
+			<pitch-deg>-5.7</pitch-deg>
 		</offsets>
 	</model>
 	
