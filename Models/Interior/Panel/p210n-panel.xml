@@ -368,7 +368,7 @@
 		<path>Controls/cowlflaps/cowlflaps.xml</path>
 		<offsets>
 			<x-m>0.469</x-m>
-			<y-m>0.137</y-m>
+			<y-m>0.092</y-m>
 			<z-m>-0.0885</z-m>
 			<pitch-deg>-13</pitch-deg>
 		</offsets>
@@ -377,7 +377,7 @@
 		<path>Controls/trim/rudder-trim.xml</path>
 		<offsets>
 			<x-m>0.4475</x-m>
-			<y-m>0.08</y-m>
+			<y-m>0.035</y-m>
 			<z-m>0.0153</z-m>
 			<pitch-deg>-7.8</pitch-deg>
 		</offsets>
@@ -386,7 +386,7 @@
 		<path>Controls/trim/elevator-trim-wheel.xml</path>
 		<offsets>
 			<x-m>0.4555</x-m>
-			<y-m>-0.0576</y-m>
+			<y-m>-0.1026</y-m>
 			<z-m>-0.092</z-m>
 			<pitch-deg>-3.6</pitch-deg>
 		</offsets>
@@ -395,7 +395,7 @@
 		<path>Controls/trim/elevator-trim-indicator.xml</path>
 		<offsets>
 			<x-m>0.46</x-m>
-			<y-m>-0.0266</y-m>
+			<y-m>-0.0716</y-m>
 			<z-m>-0.0478</z-m>
 			<pitch-deg>-14</pitch-deg>
 		</offsets>
@@ -405,7 +405,7 @@
 		<path>Controls/fuel-selector/fuel-selector.xml</path>
 		<offsets>
 			<x-m>0.581</x-m>
-			<y-m>0.06</y-m>
+			<y-m>0.015</y-m>
 			<z-m>-0.295</z-m>
 		</offsets>
 	</model>
