@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>pedals.ac</path>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>LeftPedal</object-name>
+		<object-name>RightPedal</object-name>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rudder-pedals</tooltip-id>
+				<label>Rudder: %d°</label>
+				<measure-text>Rudder: 27°</measure-text>
+				<property>controls/flight/rudder</property>
+				<mapping>nasal</mapping>
+				<script>
+					return arg[0] * 27;
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>LeftPedal</object-name>
+		<object-name>LeftPedalBar</object-name>
+		<object-name>LeftBrakeAxis</object-name>
+		<object-name>LeftBrakeAxisBar</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>controls/flight/rudder</property>
+		<factor>0.075</factor>
+	</animation>
+	<animation>
+		<type>translate</type>
+		<object-name>RightPedal</object-name>
+		<object-name>RightPedalBar</object-name>
+		<object-name>RightBrakeAxis</object-name>
+		<object-name>RightBrakeAxisBar</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>controls/flight/rudder</property>
+		<factor>0.075</factor>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>LeftPedal</object-name>
+		<axis>
+			<object-name>LeftBrakeAxis</object-name>
+		</axis>
+		<property>controls/gear/brake-left</property>
+		<factor>10</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>RightPedal</object-name>
+		<axis>
+			<object-name>RightBrakeAxis</object-name>
+		</axis>
+		<property>controls/gear/brake-right</property>
+		<factor>-10</factor>
+	</animation>
+</PropertyList>

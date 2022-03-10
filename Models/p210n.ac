@@ -84535,6 +84535,11 @@ refs 3
 SURF 0X12
 mat 13
 refs 2
+2553 0 0
+2578 0 0
+SURF 0X12
+mat 13
+refs 2
 2592 0 0
 2606 0 0
 SURF 0X12
@@ -84542,11 +84547,6 @@ mat 13
 refs 2
 2595 0 0
 2611 0 0
-SURF 0X12
-mat 13
-refs 2
-2553 0 0
-2578 0 0
 kids 0
 OBJECT poly
 name "PilotDoorAxis"

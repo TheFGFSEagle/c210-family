@@ -53,6 +53,25 @@
 		<path>Panel/p210n-panel.xml</path>
 	</model>
 	
+	<model>
+		<name>LeftPedals</name>
+		<path>pedals/pedals.xml</path>
+		<offsets>
+			<x-m>0.3</x-m>
+			<y-m>-0.29</y-m>
+			<z-m>-0.42</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>RightPedals</name>
+		<path>pedals/pedals.xml</path>
+		<offsets>
+			<x-m>0.3</x-m>
+			<y-m>0.29</y-m>
+			<z-m>-0.42</z-m>
+		</offsets>
+	</model>
+	
 	<effect>
 		<inherits-from>../Effects/p210n-interior</inherits-from>
 		<object-name>FrontLeftSeat</object-name>
@@ -61,5 +80,7 @@
 		<object-name>MiddleRightSeat</object-name>
 		<object-name>RearSeat</object-name>
 		<object-name>Panel</object-name>
+		<object-name>LeftPedals</object-name>
+		<object-name>RightPedals</object-name>
 	</effect>
 </PropertyList>

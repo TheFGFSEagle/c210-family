@@ -32,6 +32,7 @@
 	<animation>
 		<type>knob</type>
 		<object-name>Mount</object-name>
+		<object-name>Bar</object-name>
 		<action>
 			<binding>
 				<command>property-toggle</command>
