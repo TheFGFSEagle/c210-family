@@ -10,11 +10,11 @@
 	<minrpm>2200</minrpm>
 	<maxrpm>2700</maxrpm>
 
-	<ct_factor>1.2</ct_factor>
-	<cp_factor>1.4</cp_factor>
+	<ct_factor>1.5</ct_factor>
+	<cp_factor>1</cp_factor>
  
 	<!-- thrust coefficient as a function of advance ratio and blade angle -->
-	<!--<table name="C_THRUST" type="internal">
+	<table name="C_THRUST" type="internal">
 		<tableData>
 					12.4		26.9		28.5
 			0		0.105		0.1264		0.127192
@@ -81,9 +81,9 @@
 			1.4		0.000518	-0.002141	0.004198
 			1.42	0.000518	-0.002141	-0.002141
 		</tableData>
-	</table>-->
+	</table>
 	
-	<table name="C_THRUST" type="internal">
+	<!--<table name="C_THRUST" type="internal">
 		<tableData>
 					12.4		20.0		27.2		28.5
 			0		0.106692	0.121551	0.128065	0.128975
@@ -163,7 +163,7 @@
 			1.65	-0.155033	-0.149607	-0.082688	-0.066673
 			1.7		-0.163268	-0.161622	-0.098196	-0.083798
 		</tableData>
-	</table>
+	</table>-->
 
 	<!-- thrust effects of helical tip Mach -->
 	<table name="CT_MACH" type="internal">
