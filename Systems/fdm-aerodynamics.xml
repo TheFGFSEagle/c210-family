@@ -282,7 +282,6 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<value>-1</value>
-				<value>0.7</value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>						
 					<independentVar lookup="column">aero/beta-deg</independentVar>						
