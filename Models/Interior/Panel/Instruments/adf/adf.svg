@@ -44,9 +44,9 @@
      id="namedview80"
      showgrid="true"
      inkscape:object-paths="true"
-     inkscape:zoom="0.81175286"
-     inkscape:cx="214.06797"
-     inkscape:cy="266.0966"
+     inkscape:zoom="3.2470114"
+     inkscape:cx="82.839247"
+     inkscape:cy="44.253488"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -1066,4 +1066,168 @@
        id="tspan1153"
        x="97.466454"
        y="176.21387">33</tspan></text>
+  <g
+     id="Knob"
+     style="fill:#000000;stroke:#000000"
+     transform="matrix(2,0,0,2,-0.071189,0.071)">
+    <polygon
+       id="polygon78"
+       points="34.142,238.929 33.883,241.893 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon80"
+       points="33.883,241.893 33.113,244.768 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon82"
+       points="33.113,244.768 31.855,247.464 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon84"
+       points="31.855,247.464 30.148,249.902 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon86"
+       points="30.148,249.902 28.044,252.006 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon88"
+       points="28.044,252.006 25.607,253.713 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon90"
+       points="25.607,253.713 22.91,254.97 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon92"
+       points="22.91,254.97 20.035,255.741 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon94"
+       points="20.035,255.741 17.071,256 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon96"
+       points="17.071,256 14.107,255.741 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon98"
+       points="14.107,255.741 11.232,254.97 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon100"
+       points="11.232,254.97 8.536,253.713 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon102"
+       points="8.536,253.713 6.098,252.006 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon104"
+       points="6.098,252.006 3.994,249.902 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon106"
+       points="3.994,249.902 2.287,247.464 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon108"
+       points="2.287,247.464 1.03,244.768 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon110"
+       points="1.03,244.768 0.259,241.893 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon112"
+       points="0.259,241.893 0,238.929 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon114"
+       points="0,238.929 0.259,235.965 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon116"
+       points="0.259,235.965 1.03,233.09 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon118"
+       points="1.03,233.09 2.287,230.393 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon120"
+       points="2.287,230.393 3.994,227.956 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon122"
+       points="3.994,227.956 6.098,225.852 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon124"
+       points="6.098,225.852 8.536,224.145 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon126"
+       points="8.536,224.145 11.232,222.887 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon128"
+       points="11.232,222.887 14.107,222.117 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon130"
+       points="14.107,222.117 17.071,221.858 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon132"
+       points="17.071,221.858 20.035,222.117 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon134"
+       points="20.035,222.117 22.91,222.887 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon136"
+       points="22.91,222.887 25.607,224.145 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon138"
+       points="25.607,224.145 28.044,225.852 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon140"
+       points="28.044,225.852 30.148,227.956 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon142"
+       points="30.148,227.956 31.855,230.393 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon144"
+       points="31.855,230.393 33.113,233.09 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon146"
+       points="31.855,230.393 30.148,227.956 28.044,225.852 25.607,224.145 22.91,222.887 20.035,222.117 17.071,221.858 14.107,222.117 11.232,222.887 8.536,224.145 6.098,225.852 3.994,227.956 2.287,230.393 1.03,233.09 0.259,235.965 0,238.929 0.259,241.893 1.03,244.768 2.287,247.464 3.994,249.902 6.098,252.006 8.536,253.713 11.232,254.97 14.107,255.741 17.071,256 20.035,255.741 22.91,254.97 25.607,253.713 28.044,252.006 30.148,249.902 31.855,247.464 33.113,244.768 33.883,241.893 34.142,238.929 33.883,235.965 33.113,233.09 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon148"
+       points="33.113,233.09 33.883,235.965 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+    <polygon
+       id="polygon150"
+       points="33.883,235.965 34.142,238.929 "
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24px;line-height:1.25;font-family:Beteckna;-inkscape-font-specification:Beteckna;text-align:center;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.89600003;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+     x="35.969246"
+     y="486.27277"
+     id="text1153"><tspan
+       sodipodi:role="line"
+       id="tspan1151"
+       x="35.969246"
+       y="486.27277"
+       style="stroke-width:0.89600003">HDG</tspan></text>
 </svg>

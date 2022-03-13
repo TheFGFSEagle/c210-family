@@ -23,6 +23,43 @@
 		<property>instrumentation/adf/indicated-bearing-deg</property>
 	</animation>
 	
+	<animation>
+		<type>knob</type>
+		<object-name>HeadingOffsetKnob</object-name>
+		<axis>
+			<object-name>HeadingOffsetKnobAxis</object-name>
+		</axis>
+		<property>instrumentation/adf/error-deg</property>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<min>0</min>
+				<max>360</max>
+				<factor>1</factor>
+				<wrap type="bool">true</wrap>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/adf/error-deg</property>
+				<min>0</min>
+				<max>360</max>
+				<factor>0.1</factor>
+				<wrap type="bool">true</wrap>
+			</binding>
+		</shift-action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-heading-offset</tooltip-id>
+				<label>Bearing offset: %.1f°</label>
+				<measure-text>Bearing offset: 359.9°</measure-text>
+				<property>instrumentation/adf/error-deg</property>
+			</binding>
+		</hovered>
+	</animation>
+	
 	<text>
 		<name>Label</name>
 		<type type="string">literal</type>
