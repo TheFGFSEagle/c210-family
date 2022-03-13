@@ -530,3 +530,63 @@ var RNAVDisplay = {
 var RNAVBearingDisplay = RNAVDisplay.new(instrumentationNode, "bearing-deg", "RNAVBearingDisplay");
 var RNAVDistanceDisplay = RNAVDisplay.new(instrumentationNode, "distance-nm", "RNAVDistanceDisplay");
 
+var ADF = {
+	new: func(instrumentationNode) {
+		var obj = {
+			parents: [ADF],
+			rootNode: instrumentationNode.getNode("adf"),
+		};
+		
+		obj.poweredNode = obj.rootNode.getNode("power-btn");
+		obj.volumeNode = obj.rootNode.getNode("volume-norm");
+		obj.frequenciesNode = obj.rootNode.getNode("frequencies");
+		obj.priFreqThousandsNode = obj.frequenciesNode.getNode("primary-thousands", 1);
+		obj.priFreqHundredsNode = obj.frequenciesNode.getNode("primary-hundreds", 1);
+		obj.priFreqTenthsNode = obj.frequenciesNode.getNode("primary-tenths", 1);
+		obj.priFreqUnitsNode = obj.frequenciesNode.getNode("primary-units", 1);
+		obj.secFreqThousandsNode = obj.frequenciesNode.getNode("secondary-thousands", 1);
+		obj.secFreqHundredsNode = obj.frequenciesNode.getNode("secondary-hundreds", 1);
+		obj.secFreqTenthsNode = obj.frequenciesNode.getNode("secondary-tenths", 1);
+		obj.secFreqUnitsNode = obj.frequenciesNode.getNode("secondary-units", 1);
+		obj.primaryFreqNode = obj.frequenciesNode.getNode("primary-khz", 1);
+		obj.secondaryFreqNode = obj.frequenciesNode.getNode("secondary-khz", 1);
+		obj.selectedFreqNode = obj.frequenciesNode.getNode("selected", 1);
+		obj.selectedKHzNode = obj.frequenciesNode.getNode("selected-khz");
+		
+		return obj;
+	},
+	
+	adjustFrequency: func(which) {
+		var priFreq = me.priFreqThousandsNode.getValue() * 1000 +
+			me.priFreqHundredsNode.getValue() * 100 +
+			me.priFreqTenthsNode.getValue() * 10 +
+			me.priFreqUnitsNode.getValue();
+		me.primaryFreqNode.setIntValue(priFreq);
+		var secFreq = me.secFreqThousandsNode.getValue() * 1000 +
+			me.secFreqHundredsNode.getValue() * 100 +
+			me.secFreqTenthsNode.getValue() * 10 +
+			me.secFreqUnitsNode.getValue();
+		me.secondaryFreqNode.setIntValue(secFreq);
+		
+		if (which == "primary") {
+			me.selectedKHzNode.setIntValue(priFreq);
+		} else {
+			me.selectedKHzNode.setIntValue(secFreq);
+		}
+	},
+	
+	adjustVolume: func {
+		me.poweredNode.setBoolValue(me.volumeNode.getValue() > 0);
+	},
+	
+	changeSelectedFreq: func {
+		var which = me.selectedFreqNode.getValue();
+		if (which == 1) {
+			me.selectedKHzNode.setIntValue(me.primaryFreqNode.getValue());
+		} else {
+			me.selectedKHzNode.setIntValue(me.secondaryFreqNode.getValue());
+		}
+	},
+};
+
+var adf = ADF.new(instrumentationNode);

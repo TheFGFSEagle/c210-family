@@ -1,4 +1,660 @@
 <?xml version="1.0"?>
 <PropertyList>
 	<path>adf.ac</path>
+	
+	<params>
+		<frequencies>
+			<selected>instrumentation/adf/frequencies/selected</selected>
+			<primary>instrumentation/adf/frequencies/primary-khz</primary>
+			<primary-thousands>instrumentation/adf/frequencies/primary-thousands</primary-thousands>
+			<primary-hundreds>instrumentation/adf/frequencies/primary-hundreds</primary-hundreds>
+			<primary-tenths>instrumentation/adf/frequencies/primary-tenths</primary-tenths>
+			<primary-units>instrumentation/adf/frequencies/primary-units</primary-units>
+			<secondary>instrumentation/adf/frequencies/secondary-khz</secondary>
+			<secondary-thousands>instrumentation/adf/frequencies/secondary-thousands</secondary-thousands>
+			<secondary-hundreds>instrumentation/adf/frequencies/secondary-hundreds</secondary-hundreds>
+			<secondary-tenths>instrumentation/adf/frequencies/secondary-tenths</secondary-tenths>
+			<secondary-units>instrumentation/adf/frequencies/secondary-units</secondary-units>
+		</frequencies>
+	</params>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>PriFreqMinilever1000</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/primary-thousands"/>
+		<factor>-5.8</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/frequencies/primary-thousands"/>
+				<min>0</min>
+				<max>9</max>
+				<factor>1</factor>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					c210.adf.adjustFrequency("primary");
+				</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-primary-freq</tooltip-id>
+				<label>ADF primary frequency: %d KHz</label>
+				<measure-text>ADF primary frequency: 1000 KHz</measure-text>
+				<property alias="../../../../params/frequencies/primary"/>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>PriFreqMinilever100</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/primary-hundreds"/>
+		<factor>-5.8</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/frequencies/primary-hundreds"/>
+				<min>0</min>
+				<max>9</max>
+				<factor>1</factor>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					c210.adf.adjustFrequency("primary");
+				</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-primary-freq</tooltip-id>
+				<label>ADF primary frequency: %d KHz</label>
+				<measure-text>ADF primary frequency: 1000 KHz</measure-text>
+				<property alias="../../../../params/frequencies/primary"/>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>PriFreqMinilever10</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/primary-tenths"/>
+		<factor>-5.8</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/frequencies/primary-tenths"/>
+				<min>0</min>
+				<max>9</max>
+				<factor>1</factor>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					c210.adf.adjustFrequency("primary");
+				</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-primary-freq</tooltip-id>
+				<label>ADF primary frequency: %d KHz</label>
+				<measure-text>ADF primary frequency: 1000 KHz</measure-text>
+				<property alias="../../../../params/frequencies/primary"/>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>PriFreqMinilever1</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/primary-units"/>
+		<factor>-5.8</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/frequencies/primary-units"/>
+				<min>0</min>
+				<max>9</max>
+				<factor>1</factor>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					c210.adf.adjustFrequency("primary");
+				</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-primary-freq</tooltip-id>
+				<label>ADF primary frequency: %d KHz</label>
+				<measure-text>ADF primary frequency: 1000 KHz</measure-text>
+				<property alias="../../../../params/frequencies/primary"/>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>SecFreqMinilever1000</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/secondary-thousands"/>
+		<factor>-5.8</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/frequencies/secondary-thousands"/>
+				<min>0</min>
+				<max>9</max>
+				<factor>1</factor>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					c210.adf.adjustFrequency("secondary");
+				</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-secondary-freq</tooltip-id>
+				<label>ADF secondary frequency: %d KHz</label>
+				<measure-text>ADF secondary frequency: 1000 KHz</measure-text>
+				<property alias="../../../../params/frequencies/secondary"/>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>SecFreqMinilever100</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/secondary-hundreds"/>
+		<factor>-5.8</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/frequencies/secondary-hundreds"/>
+				<min>0</min>
+				<max>9</max>
+				<factor>1</factor>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					c210.adf.adjustFrequency("secondary");
+				</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-secondary-freq</tooltip-id>
+				<label>ADF secondary frequency: %d KHz</label>
+				<measure-text>ADF secondary frequency: 1000 KHz</measure-text>
+				<property alias="../../../../params/frequencies/secondary"/>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>SecFreqMinilever10</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/secondary-tenths"/>
+		<factor>-5.8</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/frequencies/secondary-tenths"/>
+				<min>0</min>
+				<max>9</max>
+				<factor>1</factor>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					c210.adf.adjustFrequency("secondary");
+				</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-secondary-freq</tooltip-id>
+				<label>ADF secondary frequency: %d KHz</label>
+				<measure-text>ADF secondary frequency: 1000 KHz</measure-text>
+				<property alias="../../../../params/frequencies/secondary"/>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>SecFreqMinilever1</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/secondary-units"/>
+		<factor>-5.8</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/frequencies/secondary-units"/>
+				<min>0</min>
+				<max>9</max>
+				<factor>1</factor>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					c210.adf.adjustFrequency("secondary");
+				</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-secondary-freq</tooltip-id>
+				<label>ADF secondary frequency: %d KHz</label>
+				<measure-text>ADF secondary frequency: 1000 KHz</measure-text>
+				<property alias="../../../../params/frequencies/secondary"/>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>PriFreqScale1000</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/primary-thousands"/>
+		<factor>-36</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>PriFreqScale100</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/primary-hundreds"/>
+		<factor>36</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>PriFreqScale10</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/primary-tenths"/>
+		<factor>-36</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>PriFreqScale1</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/primary-units"/>
+		<factor>-36</factor>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>SecFreqScale1000</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/secondary-thousands"/>
+		<factor>-36</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>SecFreqScale100</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/secondary-hundreds"/>
+		<factor>-36</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>SecFreqScale10</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/secondary-tenths"/>
+		<factor>-36</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>SecFreqScale1</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property alias="../../params/frequencies/secondary-units"/>
+		<factor>-36</factor>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>VolumeKnob</object-name>
+		<axis>
+			<object-name>VolumeKnobAxis</object-name>
+		</axis>
+		<property>instrumentation/adf/volume-norm</property>
+		<factor>270</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/adf/volume-norm</property>
+				<min>0</min>
+				<max>1</max>
+				<factor>0.1</factor>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					c210.adf.adjustVolume();
+				</script>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/adf/volume-norm</property>
+				<min>0</min>
+				<max>1</max>
+				<factor>0.01</factor>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					c210.adf.adjustVolume();
+				</script>
+			</binding>
+		</shift-action>
+		<hovered>
+			<command>set-tooltip</command>
+			<tooltip-id>adf-volume</tooltip-id>
+			<label>ADF volume: %s</label>
+			<measure-text>ADF volume: 100%</measure-text>
+			<property>instrumentation/adf/volume-norm</property>
+			<mapping>nasal</mapping>
+			<script>
+				return sprintf("%d%%%s", arg[0] * 100, arg[0] > 0: "" ? " (off)");
+			</script>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>PriSecSwitch</object-name>
+		<axis>
+			<object-name>PriSecSwitchAxis</object-name>
+		</axis>
+		<property>instrumentation/adf/frequencies/selected</property>
+		<factor>40</factor>
+		<offset-deg>-40</offset-deg>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/adf/frequencies/selected</property>
+				<min>1</min>
+				<max>3</max>
+				<wrap type="bool">true</wrap>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+					c210.adf.changeSelectedFreq();
+				</script>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-selected-freq</tooltip-id>
+				<label>ADF selected frequency: %s</label>
+				<measure-text>ADF selected frequency: secondary</measure-text>
+				<property>instrumentation/adf/frequencies/selected</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["", "primary", "secondary"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>ADFButton</object-name>
+		<action>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/adf/mode</property>
+				<value>adf</value>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-mode</tooltip-id>
+				<label>ADF mode: %s</label>
+				<measure-text>ADF mode: ADF</measure-text>
+				<property>instrumentation/adf/mode</property>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<condition>
+			<equals>
+				<property>instrumentation/adf/mode</property>
+				<value>adf</value>
+			</equals>
+		</condition>
+		<type>translate</type>
+		<object-name>ADFButton</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<offset-m>-0.01</offset-m>
+	</animation>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>RECButton</object-name>
+		<action>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/adf/mode</property>
+				<value>ant</value>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-mode</tooltip-id>
+				<label>ADF mode: %s</label>
+				<measure-text>ADF mode: ADF</measure-text>
+				<property>instrumentation/adf/mode</property>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<condition>
+			<equals>
+				<property>instrumentation/adf/mode</property>
+				<value>ant</value>
+			</equals>
+		</condition>
+		<type>translate</type>
+		<object-name>RECButton</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<offset-m>-0.01</offset-m>
+	</animation>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>BFOButton</object-name>
+		<action>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/adf/mode</property>
+				<value>bfo</value>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-mode</tooltip-id>
+				<label>ADF mode: %s</label>
+				<measure-text>ADF mode: ADF</measure-text>
+				<property>instrumentation/adf/mode</property>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<condition>
+			<equals>
+				<property>instrumentation/adf/mode</property>
+				<value>bfo</value>
+			</equals>
+		</condition>
+		<type>translate</type>
+		<object-name>BFOButton</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<offset-m>-0.01</offset-m>
+	</animation>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>TestButton</object-name>
+		<action>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/adf/mode</property>
+				<value>test</value>
+			</binding>
+		</action>
+		<released>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/adf/mode</property>
+				<value>adf</value>
+			</binding>
+		</released>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-mode</tooltip-id>
+				<label>ADF mode: %s</label>
+				<measure-text>ADF mode: ADF</measure-text>
+				<property>instrumentation/adf/mode</property>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<condition>
+			<equals>
+				<property>instrumentation/adf/mode</property>
+				<value>test</value>
+			</equals>
+		</condition>
+		<type>translate</type>
+		<object-name>TestButton</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<offset-m>-0.01</offset-m>
+	</animation>
+	
+	<animation>
+		<condition>
+			<and>
+				<equals>
+					<property alias="../../../../../params/frequencies/selected"/>
+					<value>1</value>
+				</equals>
+				<or>
+					<less-than>
+						<property alias="../../../../../../params/frequencies/primary"/>
+						<value>200</value>
+					</less-than>
+					<greater-than>
+						<property alias="../../../../../../params/frequencies/primary"/>
+						<value>1699</value>
+					</greater-than>
+				</or>
+			</and>
+		</condition>
+		<type>material</type>
+		<object-name>PriFreqLamp</object-name>
+		<emission>
+			<red>0.8</red>
+			<green>0.4</green>
+			<blue>0.2</blue>
+		</emission>
+	</animation>
+	<animation>
+		<condition>
+			<and>
+				<equals>
+					<property alias="../../../../../params/frequencies/selected"/>
+					<value>2</value>
+				</equals>
+				<or>
+					<less-than>
+						<property alias="../../../../../../params/frequencies/secondary"/>
+						<value>200</value>
+					</less-than>
+					<greater-than>
+						<property alias="../../../../../../params/frequencies/secondary"/>
+						<value>1699</value>
+					</greater-than>
+				</and>
+			</and>
+		</condition>
+		<type>material</type>
+		<object-name>SecFreqLamp</object-name>
+		<emission>
+			<red>0.8</red>
+			<green>0.4</green>
+			<blue>0.2</blue>
+		</emission>
+	</animation>
 </PropertyList>
