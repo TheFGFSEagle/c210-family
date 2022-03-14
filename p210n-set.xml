@@ -8,6 +8,7 @@
 		</long-description>
 		
 		<aero>Systems/p210n-fdm</aero>
+		<primary-set type="bool">true</primary-set>
 		
 		<previews>
 			<preview>
@@ -54,25 +55,6 @@
 		<model>
 			<variant>p210n</variant>
 			<path>Aircraft/c210-family/Models/p210n.xml</path>
-			<livery>
-				<file type="string">Default</file>
-			</livery>
-			<effects>
-				<enable-interior-glass-reflections type="bool">true</enable-interior-glass-reflections>
-				<enable-glass-rain type="bool">true</enable-glass-rain>
-				<enable-fog-frost type="bool">true</enable-fog-frost>
-			</effects>
-			<doors>
-				<pilot>
-					<position-norm>0</position-norm>
-				</pilot>
-				<emergency-exit>
-					<position-norm>0</position-norm>
-				</emergency-exit>
-				<baggage>
-					<position-norm>0</position-norm>
-				</baggage>
-			</doors>
 			<controls>
 				<magnetos>
 					<key-inserted type="bool">true</key-inserted>
@@ -82,6 +64,8 @@
 		<menubar include="gui/menu/p210n-menu.xml"></menubar>
 		<help include="gui/help/p210n-help.xml"></help>
 		<aircraft-data>
+			<path>/controls/engines/engine/propeller-pitch</path>
+			<path>/controls/engines/engine/magnetos</path>
 			<path>/controls/engines/engine/mixture</path>
 			<path>/controls/engines/engine/fuel-pump</path>
 			<path>/controls/engines/engine/fuel-pump-hi</path>

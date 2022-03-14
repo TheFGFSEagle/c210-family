@@ -6,11 +6,8 @@
 		<long-description>
 			The Cessna Silver Eagle is an O&amp;N modfication of the P210N, a high-wing, fixed-wing light pressurized utility aircraft that was first produced in 1984. It is equipped with a Rolls Royce 250-B17F/2 turboprop engine and a Hartzell constant-speed propeller.
 		</long-description>
-		<aircraft-version>1.0.0</aircraft-version>
 		<status>alpha</status>
-		<minimum-fg-version>2017.2.0</minimum-fg-version>
 
-		<flight-model>jsb</flight-model>
 		<aero>Systems/silver-eagle-fdm</aero>
 		<model>
 			<path>Aircraft/c210-family/Models/silver-eagle.xml</path>

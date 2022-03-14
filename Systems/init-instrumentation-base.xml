@@ -66,13 +66,34 @@
 	
 	<dme>
 		<hold-frequency-mhz>108.000</hold-frequency-mhz>
-		<mode>0</mode> <!-- OFF -->
-		<display-mode>0</display-mode> <!-- TTS -->
+		<mode>0</mode> <!-- 0=OFF, 1=ON, 2=TEST -->
+		<display-mode>0</display-mode> <!-- 0=TTS, 1=GS -->
 		<test type="bool">false</test>
 		<power-btn type="bool">false</power-btn>
-		<source-knob>2</source-knob> <!-- NAV1 -->
+		<source-knob>2</source-knob> <!-- 0=NAV2, 1=HOLD, 2=NAV1, 3=RNAV (?)-->
 		<source>/instrumentation/nav/frequencies/selected-mhz</source>
 	</dme>
+	
+	<adf>
+		<frequencies>
+			<selected type="int">1</selected>
+			<selected-khz type="int">300</selected-khz>
+			<!-- standby-khz is not used by the Cessna 400 ADF, so let's just alias it to the selected-khz as we can't simply delete it -->
+			<standby-khz alias="/instrumentation/adf/frequencies/selected-khz"/>
+			<primary-khz type="int">300</primary-khz>
+			<secondary-khz type="int">300</secondary-khz>
+			<primary-thousands type="int">0</primary-thousands>
+			<primary-hundreds type="int">3</primary-hundreds>
+			<primary-tenths type="int">0</primary-tenths>
+			<primary-units type="int">0</primary-units>
+			<secondary-thousands type="int">0</secondary-thousands>
+			<secondary-hundreds type="int">3</secondary-hundreds>
+			<secondary-tenths type="int">0</secondary-tenths>
+			<secondary-units type="int">0</secondary-units>
+			<mode type="string">adf</mode>
+		</frequencies>
+		<error-deg type="double">0</error-deg>
+	</adf>
 	
 	<rnav>
 		<selected-bearing-deg type="double">0.0</selected-bearing-deg>

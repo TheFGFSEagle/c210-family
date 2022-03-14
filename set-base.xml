@@ -24,7 +24,6 @@
 		<flight-model>jsb</flight-model>
 
 		<type type="string">airplane</type>
-		<primary-set type="bool">true</primary-set>
 		<rating>
 			<FDM type="int">4</FDM>
 			<systems type="int">4</systems>
@@ -133,8 +132,6 @@
 		<aircraft-data>
 			<path>/controls/engines/engine/cowl-flaps-norm</path>
 			<path>/controls/engines/engine/throttle</path>
-			<path>/controls/engines/engine/propeller-pitch</path>
-			<path>/controls/engines/engine/magnetos</path>
 			<path>/controls/engines/engine/master-alt</path>
 			<path>/controls/electric/battery-switch</path>
 			<path>/controls/anti-ice/pitot-heat</path>
@@ -178,10 +175,11 @@
 			<path>/instrumentation/comm[1]/frequencies</path>
 			<path>/instrumentation/comm[1]/power-btn</path>
 			<path>/instrumentation/comm[1]/volume</path>
-			<path>/instrumentation/adf[0]/frequencies/selected-khz</path>
-			<path>/instrumentation/adf[0]/frequencies/standby-khz</path>
-			<path>/instrumentation/adf[0]/power-btn</path>
-			<path>/instrumentation/adf[0]/volume</path>
+			<path>/instrumentation/adf/frequencies</path>
+			<path>/instrumentation/adf/mode</path>
+			<path>/instrumentation/adf/error-deg</path>
+			<path>/instrumentation/adf/power-btn</path>
+			<path>/instrumentation/adf/volume-norm</path>
 			<path>/instrumentation/altimeter/setting-inhg</path>
 			<path>/instrumentation/altimeter[1]/setting-inhg</path>
 			<path>/instrumentation/heading-indicator/heading-bug-deg</path>
