@@ -98,10 +98,10 @@
 			<not>
 				<and>
 					<property>instrumentation/heading-indicator/serviceable</property>
-					<less-than>
+					<greater-than>
 						<property>instrumentation/heading-indicator/spin</property>
-						<value>0.2</value>
-					</less-than>
+						<value>0.5</value>
+					</greater-than>
 				</and>
 			</not>
 		</condition>
@@ -125,6 +125,15 @@
 				<wrap>true</wrap>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>hsi-radial</tooltip-id>
+				<label>NAV1 radial: %d°</label>
+				<measure-text>NAV1 radial: 359°</measure-text>
+				<property>instrumentation/nav/radials/selected-deg</property>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -144,6 +153,15 @@
 				<wrap>true</wrap>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>hsi-heading bug</tooltip-id>
+				<label>Heading bug: %d°</label>
+				<measure-text>Heading bug: 359°</measure-text>
+				<property>instrumentation/heading-indicator/heading-bug-deg</property>
+			</binding>
+		</hovered>
 	</animation>
 	<text>
 		<name>Label</name>
