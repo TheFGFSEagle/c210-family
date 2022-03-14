@@ -177,8 +177,8 @@
 				<command>property-adjust</command>
 				<property>instrumentation/altimeter/setting-inhg</property>
 				<factor>0.01</factor>
-				<min>26.0</min>
-				<max>33.0</max>
+				<min>27.9</min>
+				<max>31.0</max>
 				<wrap>false</wrap>
 			</binding>
 		</action>
