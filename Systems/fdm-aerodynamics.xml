@@ -70,10 +70,13 @@
 					<value>2.5</value>
 					<property>propulsion/engine/thrust-coefficient</property>
 				</product>
-				<product>
-					<property>propulsion/engine/advance-ratio</property>
-					<property>propulsion/engine/advance-ratio</property>
-				</product>
+    				        <min>
+						<product>
+							<property>propulsion/engine/advance-ratio</property>
+							<property>propulsion/engine/advance-ratio</property>
+						</product>
+						<value>0.000001</value>
+            				</min>
 			</quotient>
 		</sum>
 	</function>
