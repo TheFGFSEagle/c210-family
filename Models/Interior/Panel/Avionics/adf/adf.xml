@@ -646,7 +646,7 @@
 						<property alias="../../../../../../params/frequencies/secondary"/>
 						<value>1699</value>
 					</greater-than>
-				</and>
+				</or>
 			</and>
 		</condition>
 		<type>material</type>
@@ -656,5 +656,46 @@
 			<green>0.4</green>
 			<blue>0.2</blue>
 		</emission>
+	</animation>
+	
+	<text>
+		<name>Label</name>
+		<type type="string">literal</type>
+		<text type="string">ADF control</text>
+		<draw-text type="bool">true</draw-text>
+		<font>Helvetica.txf</font>
+		<character-size type="double">0.015</character-size>
+		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+		<axis-alignment>yz-plane</axis-alignment>
+		<max-height>0.08</max-height>
+		<max-width>0.16</max-width>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+		<alignment>center-center</alignment>
+		<offsets>
+			<x-m>0.01</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</text>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Label</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Label</object-name>
+		<condition>
+			<property>/sim/panel-hotspots</property>
+		</condition>
 	</animation>
 </PropertyList>
