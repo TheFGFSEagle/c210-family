@@ -65,19 +65,19 @@
 		<description>added stream</description>
 		<sum>
 			<value>1</value>
-			<quotient>
+			<product>
 				<product>
 					<value>2.5</value>
 					<property>propulsion/engine/thrust-coefficient</property>
 				</product>
-    				        <min>
-						<product>
-							<property>propulsion/engine/advance-ratio</property>
-							<property>propulsion/engine/advance-ratio</property>
-						</product>
-						<value>0.000001</value>
-            				</min>
-			</quotient>
+			        <min>
+					<product>
+						<property>propulsion/engine/advance-ratio</property>
+						<property>propulsion/engine/advance-ratio</property>
+					</product>
+					<value>0.0000001</value>
+    				</min>
+			</product>
 		</sum>
 	</function>
 	
