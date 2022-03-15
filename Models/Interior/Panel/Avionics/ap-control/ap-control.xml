@@ -126,7 +126,7 @@
 	<text>
 		<name>Label</name>
 		<type type="string">literal</type>
-		<text type="string">Autopilot control unit</text>
+		<text type="string">Autopilot control</text>
 		<draw-text type="bool">true</draw-text>
 		<font>Helvetica.txf</font>
 		<character-size type="double">0.015</character-size>
