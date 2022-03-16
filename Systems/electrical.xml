@@ -9,7 +9,7 @@
     <prop>/systems/electrical/suppliers/battery</prop>
     <kind>battery</kind>
     <volts>24</volts>
-    <amp-hours>43</amp-hours>
+    <amp-hours>12.75</amp-hours>
   </supplier>
 
   <supplier>
