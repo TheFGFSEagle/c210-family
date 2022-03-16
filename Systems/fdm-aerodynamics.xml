@@ -61,24 +61,32 @@
 		</product>
 	</function>
 	
+	<function name="propulsion/engine/J-init">
+		<description>advance factor to be larger than zero</description>
+            <max>
+               <property>propulsion/engine/advance-ratio</property>
+               <value>0.0001</value>
+            </max>
+	</function>
+
 	<function name="aero/streamfactor">
 		<description>added stream</description>
+            <min>
+               <value>2</value>
 		<sum>
 			<value>1</value>
-			<quotient>
-				<product>
-					<value>2.5</value>
-					<property>propulsion/engine/thrust-coefficient</property>
+		        <quotient>
+			        <product>
+               			<value>2.5</value>
+			               <property>propulsion/engine/thrust-coefficient</property>
 				</product>
-    				        <min>
-						<product>
-							<property>propulsion/engine/advance-ratio</property>
-							<property>propulsion/engine/advance-ratio</property>
-						</product>
-						<value>0.000001</value>
-            				</min>
+				<product>
+					<property>propulsion/engine/J-init</property>
+					<property>propulsion/engine/J-init</property>
+				</product>
 			</quotient>
 		</sum>
+            </min>
 	</function>
 	
 	<axis name="Z">
