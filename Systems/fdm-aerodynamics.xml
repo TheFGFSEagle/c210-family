@@ -61,24 +61,32 @@
 		</product>
 	</function>
 	
-	<function name="aero/streamfactor">
-		<description>added stream</description>
-		<sum>
-			<value>1</value>
-			<product>
-				<product>
-					<value>2.5</value>
-					<property>propulsion/engine/thrust-coefficient</property>
-				</product>
-			        <min>
+	<function name="propulsion/engine/advance-ratio-clamped">
+		<description>Clamp advance-ratio to be greater than zero</description>
+		<max>
+			<property>propulsion/engine/advance-ratio</property>
+			<value>0.0001</value>
+		</max>
+	</function>
+	
+	<function name="aero/propeller-stream-factor">
+		<description>Additional stream from propeller</description>
+		<min>
+			<value>2</value>
+			<sum>
+				<value>1</value>
+				<quotient>
 					<product>
-						<property>propulsion/engine/advance-ratio</property>
-						<property>propulsion/engine/advance-ratio</property>
+						<value>2.5</value>
+						<property>propulsion/engine/thrust-coefficient</property>
 					</product>
-					<value>0.0000001</value>
-    				</min>
-			</product>
-		</sum>
+					<product>
+						<property>propulsion/engine/advance-ratio-clamped</property>
+						<property>propulsion/engine/advance-ratio-clamped</property>
+					</product>
+				</quotient>
+			</sum>
+		</min>
 	</function>
 	
 	<axis name="Z">
