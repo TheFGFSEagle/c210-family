@@ -300,7 +300,7 @@
 			<object-name>ScaleMinileverAxis</object-name>
 		</axis>
 		<property alias="../../params/frequencies/primary-hundreds"/>
-		<factor>36</factor>
+		<factor>-36</factor>
 	</animation>
 	<animation>
 		<type>rotate</type>
@@ -482,7 +482,13 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<offset-m>-0.01</offset-m>
+		<expression>
+			<sum>
+				<value>0</value>
+				<!-- this is the real offset -->
+				<value>0.01</value>
+			</sum>
+		</expression>
 	</animation>
 	
 	<animation>
@@ -515,11 +521,17 @@
 		<type>translate</type>
 		<object-name>RECButton</object-name>
 		<axis>
-			<x>1</x>
+			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<offset-m>-0.01</offset-m>
+		<expression>
+			<sum>
+				<value>0</value>
+				<!-- this is the real offset -->
+				<value>0.01</value>
+			</sum>
+		</expression>
 	</animation>
 	
 	<animation>
@@ -556,7 +568,13 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<offset-m>-0.01</offset-m>
+		<expression>
+			<sum>
+				<value>0</value>
+				<!-- this is the real offset -->
+				<value>0.01</value>
+			</sum>
+		</expression>
 	</animation>
 	
 	<animation>
@@ -600,7 +618,13 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<offset-m>-0.01</offset-m>
+		<expression>
+			<sum>
+				<value>0</value>
+				<!-- this is the real offset -->
+				<value>0.01</value>
+			</sum>
+		</expression>
 	</animation>
 	
 	<animation>
