@@ -95,6 +95,20 @@
 		<error-deg type="double">0</error-deg>
 	</adf>
 	
+	<transponder>
+		<inputs>
+			<digit n="0">0</digit>
+			<digit n="1">0</digit>
+			<digit n="2">2</digit>
+			<digit n="3">1</digit>
+			<knob-mode>0</knob-mode>
+			<ident-btn type="bool">false</ident-btn>
+			<ident-pressed>0</ident-pressed>
+		</inputs>
+		<test type="bool">false</test>
+		<reply-lamp-dim-factor type="double">1</reply-lamp-dim-factor>
+	</transponder>
+	
 	<rnav>
 		<selected-bearing-deg type="double">0.0</selected-bearing-deg>
 		<selected-bearing-deg-hundreds type="int">0</selected-bearing-deg-hundreds>

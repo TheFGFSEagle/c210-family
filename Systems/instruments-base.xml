@@ -79,7 +79,7 @@
 		<name>Hobbs meter time (hours)</name>
 		<type>gain</type>
 		<gain>1</gain>
-		<update-interval-secds>1</update-interval-secds>
+		<update-interval-secs>1</update-interval-secs>
 		<input>
 			<expression>
 				<quotient>
@@ -89,6 +89,27 @@
 			</expression>
 		</input>
 		<output>/instrumentation/hobbs-meter/indicated-hobbs-time-hours</output>
+	</filter>
+	
+	<!-- transponder reply lamp flashing -->
+	<filter>
+		<name>Cessna 400 Transponder (RT-459A) reply lamp flashing</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<expression>
+				<floor>
+					<div>
+						<mod>
+							<property>/sim/time/elapsed-sec</property>
+							<value>5</value> <!-- this value sets the frequency of the flash … -->
+						</mod>
+						<value>4.5</value> <!-- and this one minus the last one will be the duration of the flash -->
+					</div>
+				</floor>
+			</expression>
+		</input>
+		<output>/instrumentation/transponder/reply-lamp-flash</output>
 	</filter>
 </PropertyList>
 					

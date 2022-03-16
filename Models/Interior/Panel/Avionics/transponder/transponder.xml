@@ -1,4 +1,394 @@
 <?xml version="1.0"?>
 <PropertyList>
 	<path>transponder.ac</path>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>CodeMinilever1000</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property>instrumentation/transponder/inputs/digit[3]</property>
+		<factor>7</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/transponder/inputs/digit[3]</property>
+				<min>0</min>
+				<max>7</max>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>transponder-code</tooltip-id>
+				<label>Squawk code: %04d</label>
+				<measure-text>Squawk code: 7777</measure-text>
+				<property>instrumentation/transponder/id-code</property>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>CodeMinilever100</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property>instrumentation/transponder/inputs/digit[2]</property>
+		<factor>7</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/transponder/inputs/digit[2]</property>
+				<min>0</min>
+				<max>7</max>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>transponder-code</tooltip-id>
+				<label>Squawk code: %04d</label>
+				<measure-text>Squawk code: 7777</measure-text>
+				<property>instrumentation/transponder/id-code</property>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>CodeMinilever10</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property>instrumentation/transponder/inputs/digit[1]</property>
+		<factor>7</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/transponder/inputs/digit[1]</property>
+				<min>0</min>
+				<max>7</max>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>transponder-code</tooltip-id>
+				<label>Squawk code: %04d</label>
+				<measure-text>Squawk code: 7777</measure-text>
+				<property>instrumentation/transponder/id-code</property>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>knob</type>
+		<object-name>CodeMinilever1</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property>instrumentation/transponder/inputs/digit[0]</property>
+		<factor>7</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/transponder/inputs/digit[0]</property>
+				<min>0</min>
+				<max>7</max>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>transponder-code</tooltip-id>
+				<label>Squawk code: %04d</label>
+				<measure-text>Squawk code: 7777</measure-text>
+				<property>instrumentation/transponder/id-code</property>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>CodeScale1000</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property>instrumentation/transponder/inputs/digit[3]</property>
+		<factor>36</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>CodeScale100</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property>instrumentation/transponder/inputs/digit[2]</property>
+		<factor>36</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>CodeScale10</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property>instrumentation/transponder/inputs/digit[1]</property>
+		<factor>36</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>CodeScale1</object-name>
+		<axis>
+			<object-name>ScaleMinileverAxis</object-name>
+		</axis>
+		<property>instrumentation/transponder/inputs/digit[0]</property>
+		<factor>36</factor>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>ReplyLampDimKnob</object-name>
+		<axis>
+			<object-name>ReplyLampDimKnobAxis</object-name>
+		</axis>
+		<property>instrumentation/transponder/reply-lamp-dim-factor</property>
+		<factor>720</factor>
+		<action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/transponder/reply-lamp-dim-factor</property>
+				<min>0.1</min>
+				<max>1</max>
+				<factor>0.1</factor>
+			</binding>
+		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/transponder/reply-lamp-dim-factor</property>
+				<min>0.1</min>
+				<max>1</max>
+				<factor>0.01</factor>
+			</binding>
+		</shift-action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>transponder-reply-lamp-dim</tooltip-id>
+				<label>Reply lamp brightness: %d%%</label>
+				<measure-text>Reply lamp brightness: 100%</measure-text>
+				<property>instrumentation/transponder/reply-lamp-dim-factor</property>
+				<mapping>percent</mapping>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>ModeSwitch</object-name>
+		<axis>
+			<object-name>ModeSwitchAxis</object-name>
+		</axis>
+		<property>instrumentation/transponder/inputs/knob-mode</property>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-37.5</dep>
+			</entry>
+			<entry>
+				<ind>4</ind>
+				<dep>-75</dep>
+			</entry>
+			<entry>
+				<ind>5</ind>
+				<dep>-112.5</dep>
+			</entry>
+		</interpolation>
+		<increase>
+			<binding>
+				<command>property-cycle</command>
+				<property>instrumentation/transponder/inputs/knob-mode</property>
+				<wrap type="bool">false</wrap>
+				<value>0</value> <!-- OFF -->
+				<value>1</value> <!-- SBY -->
+				<value>4</value> <!-- ON  -->
+				<value>5</value> <!-- ALT -->
+			</binding>
+		</increase>
+		<decrease>
+			<binding>
+				<command>property-cycle</command>
+				<property>instrumentation/transponder/inputs/knob-mode</property>
+				<wrap type="bool">false</wrap>
+				<value>5</value> <!-- ALT -->
+				<value>4</value> <!-- ON  -->
+				<value>1</value> <!-- SBY -->
+				<value>0</value> <!-- OFF -->
+			</binding>
+		</decrease>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>transponder-mode</tooltip-id>
+				<label>Transponder mode: %s</label>
+				<measure-text>Transponder mode: Altitude</measure-text>
+				<property>instrumentation/transponder/inputs/knob-mode</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Off", "Standby", "", "", "On", "Atitude"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>IdentButton</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/transponder/inputs/ident-pressed</property>
+		<factor>0.005</factor>
+		<action>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/transponder/inputs/ident-pressed</property>
+				<value>1</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/transponder/inputs/ident-btn</property>
+				<value type="bool">true</value>
+			</binding>
+		</action>
+		<release>
+			<binding>
+				<command>property-interpolate</command>
+				<property>instrumentation/transponder/inputs/ident-pressed</property>
+				<value>0</value>
+				<time>0.01</time>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/transponder/inputs/ident-btn</property>
+				<value type="bool">false</value>
+			</binding>
+		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>transponder-ident</tooltip-id>
+				<label>Push to Ident</label>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>slider</type>
+		<object-name>TestButton</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/transponder/test</property>
+		<factor>0.005</factor>
+		<action>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/transponder/test</property>
+				<value type="bool">true</value>
+			</binding>
+		</action>
+		<release>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/transponder/test</property>
+				<value type="bool">false</value>
+			</binding>
+		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>transponder-test</tooltip-id>
+				<label>Push to test</label>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<condition>
+			<or>
+				<property>instrumentation/transponder/warmup</property>
+				<property>instrumentation/transponder/inputs/ident-btn</property>
+				<property>instrumentation/transponder/reply-lamp-flash</property>
+			</or>
+		</condition>
+		<type>material</type>
+		<object-name>ReplyLamp</object-name>
+		<emission>
+			<red>1</red>
+			<green>0.5</green>
+			<blue>0.1</blue>
+			<factor-prop>instrumentation/transponder/reply-lamp-dim-factor</factor-prop>
+		</emission>
+	</animation>
+	<!-- Transponder test illumination of reply lamp is not dimmable, so need an extra animation for that -->
+	<animation>
+		<condition>
+			<property>instrumentation/transponder/test</property>
+		</condition>
+		<type>material</type>
+		<object-name>ReplyLamp</object-name>
+		<emission>
+			<red>1</red>
+			<green>0.5</green>
+			<blue>0.1</blue>
+		</emission>
+	</animation>
+	
+	<text>
+		<name>Label</name>
+		<type type="string">literal</type>
+		<text type="string">Transponder control</text>
+		<draw-text type="bool">true</draw-text>
+		<font>Helvetica.txf</font>
+		<character-size type="double">0.015</character-size>
+		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+		<axis-alignment>yz-plane</axis-alignment>
+		<max-height>0.04</max-height>
+		<max-width>0.16</max-width>
+		<font-resolution>
+			<width type="int">32</width>
+			<height type="int">32</height>
+		</font-resolution>
+		<alignment>center-center</alignment>
+		<offsets>
+			<x-m>0.01</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</offsets>
+	</text>
+	
+	<animation>
+		<type>material</type>
+		<object-name>Label</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Label</object-name>
+		<condition>
+			<property>/sim/panel-hotspots</property>
+		</condition>
+	</animation>
 </PropertyList>
