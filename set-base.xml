@@ -128,6 +128,10 @@
 				<name>Lights</name>
 				<path>Systems/lights.xml</path>
 			</property-rule>
+			<property-rule n="105">
+				<name>Electrical</name>
+				<path>Systems/electrical.xml</path>
+			</property-rule>
 		</systems>
 		<aircraft-data>
 			<path>/controls/engines/engine/cowl-flaps-norm</path>
@@ -272,6 +276,9 @@
 				<cowl-flaps-norm>1</cowl-flaps-norm>
 			</engine>
 		</engines>
+		<electrical>
+			<ground-power-connected type="bool">false</ground-power-connected>
+		</electrical>
 		<anti-ice>
 			<window-heat type="bool">false</window-heat>
 			<wing-deice type="bool">false</wing-deice>
@@ -425,4 +432,15 @@
 			</key>
 		</keyboard>
 	</input>
+	
+	<systems>
+		<electrical>
+			<suppliers>
+				<battery>
+					<max-capacity-amp_hours type="double">12.75</max-capacity-amp_hours>
+					<charge-amp_hours type="double">12.75</charge-amp_hours>
+				</battery>
+			</suppliers>
+		</electrical>
+	</systems>
 </PropertyList>

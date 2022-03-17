@@ -74,11 +74,11 @@
 		</aircraft-data>
 		<systems>
 			<path>Systems/p210n-systems.xml</path>
-			<property-rule n="105">
+			<property-rule n="201">
 				<name>P210N specific instrument indications</name>
 				<path>Systems/p210n-instruments.xml</path>
 			</property-rule>
-			<property-rule n="106">
+			<property-rule n="202">
 				<name>P210N specific controls (mostly animations)</name>
 				<path>Systems/p210n-controls.xml</path>
 			</property-rule>

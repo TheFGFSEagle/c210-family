@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<!-- Alternator -->
+	<filter>
+		<name>Alternator amps</name>
+		<type>gain</type>
+		<gain>60</gain>
+		<input>
+			<expression>
+				<quotient>
+					<log>
+						<!-- log not defined for x <= 0 -->
+						<max>
+							<!-- log gives negative values between 1 and 0, so offset the RPM by 1-->
+							<dif>
+								<property>/engines/engine/rpm</property>
+								<value>1</value>
+							</dif>
+							<value>1</value>
+						</max>
+					</log>
+					<!-- log 800 -->
+					<value>6.684611727667927</value>
+				</quotient>
+			</expression>
+		</input>
+		<output>/systems/electrical/suppliers/alternator/amps</output>
+		<min>0</min>
+		<max>60</max>
+	</filter>
+	<filter>
+		<name>Alternator volts</name>
+		<type>gain</type>
+		<gain>0.035</gain>
+		<input>/engines/engine/rpm</input>
+		<output>/systems/electrical/suppliers/alternator/volts</output>
+		<min>0</min>
+		<max>28</max>
+	</filter>
+	
+	<!-- Ground power -->
+	<filter>
+		<type>gain</type>
+		<gain>60</gain>
+		<input>/controls/electric/ground-power-connected</input>
+		<output>/systems/electrical/suppliers/gpu/amps</output>
+		<min>0</min>
+		<max>60</max>
+	</filter>
+	<filter>
+		<type>gain</type>
+		<gain>28</gain>
+		<input>/controls/electric/ground-power-connected</input>
+		<output>/systems/electrical/suppliers/gpu/volts</output>
+		<min>0</min>
+		<max>28</max>
+	</filter>
+	
+	<!-- Battery -->
+	<filter>
+		<name>Battery output factor based on charge</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<expression>
+				<prod>
+					<quotient>
+						<sum>
+							<pow>
+								<prod>
+									<dif>
+										<prod>
+											<value>3</value>
+											<dif>
+												<value>1</value>
+												<property>/systems/electrical/suppliers/battery/charge-percent</property>
+											</dif>
+										</prod>
+										<value>1</value>
+									</dif>
+									<value>-1</value>
+								</prod>
+								<value>5</value>
+							</pow>
+							<value>32</value>
+						</sum>
+						<value>32</value>
+					</quotient>
+				</property>
+			</expression>
+		</input>
+		<output>/systems/electrical/suppliers/battery/charge-output-factor</output>
+	</filter>
+	<filter>
+		<name>Battery volts</name>
+		<type>gain</type>
+		<gain>/systems/electrical/suppliers/battery/charge-output-factor</gain>
+		<input>24</input>
+		<output>/systems/electrical/suppliers/battery/volts</output>
+	</filter>
+	<filter>
+		<name>Battery amps</name>
+		<type>gain</type>
+		<gain>/systems/electrical/suppliers/battery/charge-output-factor</gain>
+		<input>60</input>
+		<output>/systems/electrical/suppliers/battery/amps</output>
+	</filter>
+	<filter>
+		<name>Apply battery input / output to charge</name>
+		<input>
+			<expression>
+				<sum>
+					<property>/systems/electrical/suppliers/battery/charge-amp_hours</property>
+					<quotient>
+						<value>432000</value> <!-- Seconds of an hour (3600) * 120 Hz -->
+						<dif>
+							<property>/systems/electrical/suppliers/battery/input-amps</property>
+							<property>/systems/electrical/suppliers/battery/output-amps</property>
+						</dif>
+					</quotient>
+				</sum>
+			</expression>
+		</input>
+		<output>/systems/electrical/suppliers/battery/charge-amp_hours</output>
+		<min>0</min>
+		<max>/systems/electrical/suppliers/battery/capacity-amp_hours</max>
+	</filter>
+	<filter>
+		<name>Battery charge normalized</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<expression>
+				<quotient>
+					<property>/systems/electrical/suppliers/battery/capacity-amp_hours</property>
+					<property>/systems/electrical/suppliers/battery/charge-amp_hours</input>
+				</property>
+			</quotient>
+		</expression>
+		<output>/systems/electrical/battery/charge-norm</output>
+	</filter>
+	<filter>
+		<name>Battery charge percent</name>
+		<type>gain</type>
+		<gain>100</gain>
+		<input>/systems/electrical/battery/charge-norm</input>
+		<output>/systems/electrical/battery/charge-percent</output>
+	</filter>
+</PropertyList>
