@@ -86,7 +86,7 @@
 						</sum>
 						<value>32</value>
 					</quotient>
-				</property>
+				</prod>
 			</expression>
 		</input>
 		<output>/systems/electrical/suppliers/battery/charge-output-factor</output>
@@ -133,10 +133,10 @@
 			<expression>
 				<quotient>
 					<property>/systems/electrical/suppliers/battery/capacity-amp_hours</property>
-					<property>/systems/electrical/suppliers/battery/charge-amp_hours</input>
-				</property>
-			</quotient>
-		</expression>
+					<property>/systems/electrical/suppliers/battery/charge-amp_hours</property>
+				</quotient>
+			</expression>
+		</input>
 		<output>/systems/electrical/battery/charge-norm</output>
 	</filter>
 	<filter>
