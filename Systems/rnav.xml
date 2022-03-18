@@ -227,7 +227,7 @@
 				</product>
 			</expression>
 		</input>
-		<output>/instrumentation/nav[1]/heading-needle-deflection-norm</output>
+		<output>/instrumentation/rnav/heading-needle-deflection-norm</output>
 		<min>-1</min>
 		<max>1</max>
 	</filter>
@@ -267,14 +267,14 @@
 				</greater-than>
 			</or>
 		</input>
-		<output>/instrumentation/nav[1]/from-flag</output>
+		<output>/instrumentation/rnav/from-flag</output>
 	</logic>
 	<logic>
 		<inverted>true</inverted>
 		<input>
-			<property>/instrumentation/nav[1]/from-flag</property>
+			<property>/instrumentation/rnav/from-flag</property>
 		</input>
-		<output>/instrumentation/nav[1]/to-flag</output>
+		<output>/instrumentation/rnav/to-flag</output>
 	</logic>
 </PropertyList>
 
