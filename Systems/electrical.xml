@@ -7,21 +7,17 @@
 		<gain>60</gain>
 		<input>
 			<expression>
-				<quotient>
+				<div>
 					<log>
-						<!-- log not defined for x <= 0 -->
-						<max>
-							<!-- log gives negative values between 1 and 0, so offset the RPM by 1-->
-							<dif>
-								<property>/engines/engine/rpm</property>
-								<value>1</value>
-							</dif>
+						<!-- log gives negative values between 1 and 0, so offset the RPM by 1-->
+						<sum>
+							<property>/engines/engine/rpm</property>
 							<value>1</value>
-						</max>
+						</sum>
 					</log>
 					<!-- log 800 -->
-					<value>6.684611727667927</value>
-				</quotient>
+					<value>6.68586094706836</value>
+				</div>
 			</expression>
 		</input>
 		<output>/systems/electrical/suppliers/alternator/amps</output>
@@ -63,30 +59,28 @@
 		<gain>1</gain>
 		<input>
 			<expression>
-				<prod>
-					<quotient>
-						<sum>
-							<pow>
-								<prod>
-									<dif>
-										<prod>
-											<value>3</value>
-											<dif>
-												<value>1</value>
-												<property>/systems/electrical/suppliers/battery/charge-percent</property>
-											</dif>
-										</prod>
-										<value>1</value>
-									</dif>
-									<value>-1</value>
-								</prod>
-								<value>5</value>
-							</pow>
-							<value>32</value>
-						</sum>
+				<div>
+					<sum>
+						<pow>
+							<prod>
+								<dif>
+									<prod>
+										<value>3</value>
+										<dif>
+											<value>1</value>
+											<property>/systems/electrical/suppliers/battery/charge-norm</property>
+										</dif>
+									</prod>
+									<value>1</value>
+								</dif>
+								<value>-1</value>
+							</prod>
+							<value>5</value>
+						</pow>
 						<value>32</value>
-					</quotient>
-				</prod>
+					</sum>
+					<value>32</value>
+				</div>
 			</expression>
 		</input>
 		<output>/systems/electrical/suppliers/battery/charge-output-factor</output>
@@ -107,17 +101,19 @@
 	</filter>
 	<filter>
 		<name>Apply battery input / output to charge</name>
+		<type>gain</type>
+		<gain>1</gain>
 		<input>
 			<expression>
 				<sum>
 					<property>/systems/electrical/suppliers/battery/charge-amp_hours</property>
-					<quotient>
-						<value>432000</value> <!-- Seconds of an hour (3600) * 120 Hz -->
+					<div>
 						<dif>
 							<property>/systems/electrical/suppliers/battery/input-amps</property>
 							<property>/systems/electrical/suppliers/battery/output-amps</property>
 						</dif>
-					</quotient>
+						<value>432000</value> <!-- Seconds of an hour (3600) * 120 Hz -->
+					</div>
 				</sum>
 			</expression>
 		</input>
@@ -131,19 +127,19 @@
 		<gain>1</gain>
 		<input>
 			<expression>
-				<quotient>
-					<property>/systems/electrical/suppliers/battery/capacity-amp_hours</property>
+				<div>
 					<property>/systems/electrical/suppliers/battery/charge-amp_hours</property>
-				</quotient>
+					<property>/systems/electrical/suppliers/battery/capacity-amp_hours</property>
+				</div>
 			</expression>
 		</input>
-		<output>/systems/electrical/battery/charge-norm</output>
+		<output>/systems/electrical/suppliers/battery/charge-norm</output>
 	</filter>
 	<filter>
 		<name>Battery charge percent</name>
 		<type>gain</type>
 		<gain>100</gain>
-		<input>/systems/electrical/battery/charge-norm</input>
-		<output>/systems/electrical/battery/charge-percent</output>
+		<input>/systems/electrical/suppliers/battery/charge-norm</input>
+		<output>/systems/electrical/suppliers/battery/charge-percent</output>
 	</filter>
 </PropertyList>

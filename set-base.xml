@@ -437,7 +437,7 @@
 		<electrical>
 			<suppliers>
 				<battery>
-					<max-capacity-amp_hours type="double">12.75</max-capacity-amp_hours>
+					<capacity-amp_hours type="double">12.75</capacity-amp_hours>
 					<charge-amp_hours type="double">12.75</charge-amp_hours>
 				</battery>
 			</suppliers>
