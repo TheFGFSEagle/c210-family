@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Electrical system for the P210N, by TheEagle, started in March 2022
+	
+	Technical data:
+		Battery:
+			Capacity: 12.75 Ah
+			Voltage: 24 V
+			Current: 60 (?) A
+			Type: Lead-acid
+		Alternator:
+			Voltage: 28 V
+			Current: 60 A
+		Ground power:
+			Voltage: 24 V
+			Current 60 (?) A
+		System:
+			Voltage: 28 V
+			Current: 60 A
+			Type: Direct current
+-->
 <PropertyList>
+	<!-- First, every supplier calculates it's avilable voltage and current -->
 	<!-- Alternator -->
 	<filter>
-		<name>Alternator amps</name>
+		<name>Available alternator amps</name>
 		<type>gain</type>
 		<gain>60</gain>
 		<input>
@@ -20,40 +41,44 @@
 				</div>
 			</expression>
 		</input>
-		<output>/systems/electrical/suppliers/alternator/amps</output>
+		<output>/systems/electrical/suppliers/alternator/available-amps</output>
 		<min>0</min>
 		<max>60</max>
 	</filter>
 	<filter>
-		<name>Alternator volts</name>
+		<name>Available alternator volts</name>
 		<type>gain</type>
 		<gain>0.035</gain>
 		<input>/engines/engine/rpm</input>
-		<output>/systems/electrical/suppliers/alternator/volts</output>
+		<output>/systems/electrical/suppliers/alternator/available-volts</output>
 		<min>0</min>
 		<max>28</max>
 	</filter>
 	
 	<!-- Ground power -->
 	<filter>
+		<name>Available ground power amps</name>
 		<type>gain</type>
 		<gain>60</gain>
-		<input>/controls/electric/ground-power-connected</input>
-		<output>/systems/electrical/suppliers/gpu/amps</output>
+		<input>/controls/electrical/ground-power-connected</input>
+		<output>/systems/electrical/suppliers/gpu/available-amps</output>
 		<min>0</min>
 		<max>60</max>
 	</filter>
 	<filter>
+		<name>Available ground power volts</name>
 		<type>gain</type>
-		<gain>28</gain>
-		<input>/controls/electric/ground-power-connected</input>
-		<output>/systems/electrical/suppliers/gpu/volts</output>
+		<gain>24</gain>
+		<input>/controls/electrical/ground-power-connected</input>
+		<output>/systems/electrical/suppliers/gpu/available-volts</output>
 		<min>0</min>
-		<max>28</max>
+		<max>24</max>
 	</filter>
 	
 	<!-- Battery -->
 	<filter>
+		<!-- TODO: find a better formula - this is a simple polynomial that I just copied from the C182S,
+			but the resulting curve looks quite different from an actual power-vs-charge curve of a lea-acid battery -->
 		<name>Battery output factor based on charge</name>
 		<type>gain</type>
 		<gain>1</gain>
@@ -83,22 +108,107 @@
 				</div>
 			</expression>
 		</input>
-		<output>/systems/electrical/suppliers/battery/charge-output-factor</output>
+		<output>/systems/electrical/suppliers/battery/available-power-factor</output>
+	</filter>
+	<filter>
+		<name>Available battery volts</name>
+		<type>gain</type>
+		<gain>/systems/electrical/suppliers/battery/available-power-factor</gain>
+		<input>24</input>
+		<output>/systems/electrical/suppliers/battery/available-volts</output>
+	</filter>
+	<filter>
+		<name>Available battery amps</name>
+		<type>gain</type>
+		<gain>/systems/electrical/suppliers/battery/available-power-factor</gain>
+		<input>60</input>
+		<output>/systems/electrical/suppliers/battery/available-amps</output>
+	</filter>
+	
+	<!-- Then, every supplier sets it's actual voltage and current based on the master switches -->
+	<filter>
+		<name>Alternator amps</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<and>
+					<property>/controls/electric/battery-switch</property>
+					<property>/controls/electric/engine[0]/master-alt</property>
+				</and>
+			</condition>
+			<property>/systems/electrical/suppliers/alternator/available-amps</property>
+		</input>
+		<output>/systems/electrical/suppliers/alternator/amps</output>
+	</filter>
+	<filter>
+		<name>Alternator volts</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<and>
+					<property>/controls/electric/battery-switch</property>
+					<property>/controls/electric/engine[0]/master-alt</property>
+				</and>
+			</condition>
+			<property>/systems/electrical/suppliers/alternator/available-volts</property>
+		</input>
+		<output>/systems/electrical/suppliers/alternator/volts</output>
+	</filter>
+	
+	<filter>
+		<name>Ground power amps</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<property>/controls/electric/battery-switch</property>
+			</condition>
+			<property>/systems/electrical/suppliers/gpu/available-amps</property>
+		</input>
+		<output>/systems/electrical/suppliers/gpu/amps</output>
+	</filter>
+	<filter>
+		<name>Ground power volts</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<property>/controls/electric/battery-switch</property>
+			</condition>
+			<property>/systems/electrical/suppliers/gpu/available-volts</property>
+		</input>
+		<output>/systems/electrical/suppliers/gpu/volts</output>
+	</filter>
+	
+	<!-- Battery -->
+	<filter>
+		<name>Battery amps</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<property>/controls/electric/battery-switch</property>
+			</condition>
+			<property>/systems/electrical/suppliers/battery/available-amps</property>
+		</input>
+		<output>/systems/electrical/suppliers/battery/amps</output>
 	</filter>
 	<filter>
 		<name>Battery volts</name>
 		<type>gain</type>
-		<gain>/systems/electrical/suppliers/battery/charge-output-factor</gain>
-		<input>24</input>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<property>/controls/electric/battery-switch</property>
+			</condition>
+			<property>/systems/electrical/suppliers/battery/available-volts</property>
+		</input>
 		<output>/systems/electrical/suppliers/battery/volts</output>
 	</filter>
-	<filter>
-		<name>Battery amps</name>
-		<type>gain</type>
-		<gain>/systems/electrical/suppliers/battery/charge-output-factor</gain>
-		<input>60</input>
-		<output>/systems/electrical/suppliers/battery/amps</output>
-	</filter>
+	
+	<!-- Some extra work for the battery: Charge / discharge the battery based on available / needed current -->
 	<filter>
 		<name>Apply battery input / output to charge</name>
 		<type>gain</type>
@@ -109,10 +219,21 @@
 					<property>/systems/electrical/suppliers/battery/charge-amp_hours</property>
 					<div>
 						<dif>
-							<property>/systems/electrical/suppliers/battery/input-amps</property>
+							<max>
+								<sum>
+									<property>/systems/electrical/suppliers/alternator/amps</property>
+									<property>/systems/electrical/suppliers/gpu/amps</property>
+								</sum>
+								<!-- most sources I found recommend charging a lead-acid battery at a quarter of their Ah rating -->
+								<quotient>
+									<property>/systems/electrical/suppliers/battery/capacity-amp_hours</property>
+									<value>4</value>
+								</quotient>
+							</max>
 							<property>/systems/electrical/suppliers/battery/output-amps</property>
 						</dif>
-						<value>432000</value> <!-- Seconds of an hour (3600) * 120 Hz -->
+						 <!-- Seconds of an hour (3600) * 120 Hz - that will empty the battery in one hour if discharged at it's Ah rating -->
+						<value>432000</value>
 					</div>
 				</sum>
 			</expression>
@@ -142,4 +263,46 @@
 		<input>/systems/electrical/suppliers/battery/charge-norm</input>
 		<output>/systems/electrical/suppliers/battery/charge-percent</output>
 	</filter>
+	
+	<logic>
+		<name>Determine if battery is supplying power</name>
+		<input>
+			<condition>
+				<greater-than>
+					<property>/systems/electrical/suppliers/battery/volts</property>
+					<value>12</value>
+				</greater-than>
+			</condition>
+		</input>
+		<output>/systems/electrical/suppliers/battery/power</output>
+	</logic>
+	<logic>
+		<name>Determine if alternator is supplying power</name>
+		<input>
+			<condition>
+				<greater-than>
+					<property>/systems/electrical/suppliers/alternator/volts</property>
+					<property>/systems/electrical/suppliers/battery/volts</property>
+				</greater-than>
+			</condition>
+		</input>
+		<output>/systems/electrical/suppliers/alternator/power</output>
+	</logic>
+	<logic>
+		<name>Determine if ground power receptacle is supplying power</name>
+		<input>
+			<condition>
+				<greater-than>
+					<property>/systems/electrical/suppliers/gpu/volts</property>
+					<expression>
+						<max>
+							<property>/systems/electrical/suppliers/alternator/volts</property>
+							<property>/systems/electrical/suppliers/battery/volts</property>
+						</max>
+					</expression>
+				</greater-than>
+			</condition>
+		</input>
+		<output>/systems/electrical/suppliers/gpu/power</output>
+	</logic>
 </PropertyList>
