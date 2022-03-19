@@ -441,6 +441,165 @@
 					<charge-amp_hours type="double">12.75</charge-amp_hours>
 				</battery>
 			</suppliers>
+			<!-- every consumer component amps property that has a value of 0 is not included yet in the electrical system as I need 
+				to find correct values for these first -->
+			<buses>
+				<primary>
+					<consumers>
+						<radio-instrument-lights>
+							<post-lights-amps type="double">0.8</post-lights-amps>
+							<engine-instrument-lights-amps type="double">0.1</engine-instrument-lights-amps>
+							<!-- both guessed -->
+							<pedestal-lights-amps type="double">0.5</pedestal-lights-amps>
+							<digital-clock-backlight-amps type="double">0.05</digital-clock-backlight-amps>
+							<approach-plate-map-light-amps type="double">0.1</approach-plate-map-light-amps>
+							<!-- both guessed -->
+							<compass-light-amps type="double">0.1</compass-light-amps>
+							<radio-lights-amps type="double">0.5</radio-lights-amps>
+						</radio-instrument-lights>
+						<cabin-lights>
+							<ice-detector-light-amps type="double">1.5</ice-detector-light-amps>
+							<dome-courtesy-baggage-lights-amps type="double">1.2</dome-courtesy-baggage-lights-amps>
+							<!-- all other cabin lights guessed -->
+							<low-voltage-warning-light-amps type="double">1.5</low-voltage-warning-light-amps>
+							<oxygen-lights-amps type="double">3</oxygen-lights-amps>
+							<overhead-flood-light-amps type="double">0.3</overhead-flood-light-amps>
+							<ignition-switch-amps type="double">3</ignition-switch-amps>
+						</cabin-lights>
+						<instrument-flood-lights>
+							<glareshield-flood-lights-amps type="double">2.2</glareshield-flood-lights-amps>
+						</instrument-flood-lights>
+						<nav-lights>
+							<!-- service manual labels them as position-lights -->
+							<nav-lights-amps type="double">2.5</nav-lights-amps>
+							<yoke-map-light-amps type="double">0.1</yoke-map-light-amps>
+							<electroluminescent-panel-lights-amps type="double">0.7</electroluminescent-panel-lights-amps>
+						</nav-lights>
+						<strobe>
+							<strobe-lights-amps type="double">3</strobe-lights-amps>
+						</strobe>
+						<beacon>
+							<flashing-beacon-light-amps type="double">6</flashing-beacon-light-amps>
+						</beacon>
+						<tail-flood>
+							<tail-flood-lights-amps type="double">5.35</tail-flood-lights-amps>
+						</tail-flood>
+						<taxi>
+							<taxi-light-amps type="double">3.6</taxi-light-amps>
+						</taxi>
+						<landing>
+							<!-- NOTE: the cigar lighter is branched before the circuit breaker, so not affected by it and protected by a fuse instead -->
+							<cigar-lighter-amps type="double">7</cigar-lighter-amps>
+							<landing-light-amps type="double">3.6</landing-light-amps>
+						</landing>
+						<flaps>
+							<wing-flaps-motor-amps type="double">10</wing-flaps-motor-amps>
+						</flaps>
+						<vent-fan>
+							<overhead-vent-fan-amps type="double">6</overhead-vent-fan-amps>
+							<air-conditioning-amps type="double">22.8</air-conditioning-amps>
+						</vent-fan>
+						<avionics-fan>
+							<avionics-cooling-fan-amps type="double">1</avionics-cooling-fan-amps>
+						</avionics-fan>
+						<wing-deice>
+							<wing-deice-system-amps type="double">1.6</wing-deice-system-amps>
+						</wing-deice>
+						<gear-pump>
+							<gear-pump-motor-amps type="double">17.5</gear-pump-motor-amps>
+						</gear-pump>
+						<trim>
+							<electric-elevator-trim-amps type="double">0.7</electric-elevator-trim-amps>
+						</trim>
+						<alt-reg>
+							<alternator-control-unit-amps type="double">2</alternator-control-unit-amps>
+						</alt-reg>
+						<pressurization>
+							<pressurization-system-amps type="double">0.9</pressurization-system-amps>
+						</pressurization>
+						<prop-anti-ice>
+							<propeller-anti-ice-amps type="double">18</propeller-anti-ice-amps>
+						</prop-anti-ice>
+						<windshield-anti-ice>
+							<windshield-anti-ice-amps type="double">4.4</windshield-anti-ice-amps>
+						</windshield-anti-ice>
+						<pitot-heat>
+							<!-- service manual says 5.8 for both combined -->
+							<pitot-heat-amps type="double">3</pitot-heat-amps>
+							<stall-warning-heat-amps type="double">2.8</stall-warning-heat-amps>
+							<!-- service manual says negligible, so guessed -->
+							<digital-clock-amps type="double">0.01</digital-clock-amps>
+						</pitot-heat>
+						<fuel-pump>
+							<aux-fuel-pump-amps type="double">3</aux-fuel-pump-amps>
+						</fuel-pump>
+						<engine-instruments>
+							<!-- service manual indicates 0.2 for both combined -->
+							<cht-gauge-amps type="double">0.1</cht-gauge-amps>
+							<oil-temp-gauges-amps type="double">0.1</oil-temp-gauges-amps>
+						</engine-instruments>
+						<turn-coordinator>
+							<turn-coordinator-amps type="double">0.3</turn-coordinator-amps>
+							<turn-and-bank-indicator-amps type="double">0.2</turn-and-bank-indicator-amps>
+						</turn-coordinator>
+						<fuel-quantity>
+							<!-- guessed -->
+							<fuel-quantity-indicators-amps type="double">0.2</fuel-quantity-indicators-amps>
+						</fuel-quantity>
+						<stall-warning>
+							<stall-warning-system-amps type="double">0.28</stall-warning-system-amps>
+						</stall-warning>
+						<landing-gear>
+							<!-- guessed -->
+							<landing-gear-system-amps type="double">5</landing-gear-system-amps>
+							<gear-position-lights-amps type="double">0.04</gear-position-lights-amps>
+							<gear-warning-system-amps type="double">0.8</gear-warning-system-amps>
+						</landing-gear>
+					</consumers>
+				</primary>
+				<avionics>
+					<consumers>
+						<radio-1>
+							<com-nav-1-amps type="double">1.6</com-nav-1-glideslope-amps>
+							<glideslope-amps type="double">0.5</glideslope-amps>
+						</radio-1>
+						<radio-2>
+							<com-nav-2-amps type="double">1.6</com-nav-2-amps>
+							<rnav-amps type="double">1</rnav-amps>
+						</radio-2>
+						<radio-3>
+							<transponder-amps type="double">2</transponder-amps>
+						</radio-3>
+						<radio-4>
+							<dme-amps type="double">1.5</dme-amps>
+						</radio-4>
+						<radio-5>
+							<adf-amps type="double">1.6</adf-amps>
+						</radio-5>
+						<marker-beacon>
+							<marker-beacon-amps type="double">0.1</marker-beacon-amps>
+						</marker-beacon>
+						<wxradar>
+							<weather-radar-amps type="double">3.5</weather-radar-amps>
+						</wxradar>
+						<gyro-slaving>
+							<slaved-gyros-hsi-amps type="double">1</slaved-gyros-hsi-amps>
+						</gyro-slaving>
+						<ap-control>
+							<!-- service manual says 5 for both combined -->
+							<autopilot-amps type="double">4</autopilot-amps>
+							<ap-control-amps type="double">1</ap-control-amps>
+							<!-- guessed -->
+							<backcourse-light-amps type="double">0.01</backcourse-light-amps>
+						</ap-control>
+						<ap-actuators>
+							<!-- both guessed -->
+							<roll-actuator-amps type="double">5</roll-actuator-amps>
+							<pitch-actuator-amps type="double">5</pitch-actuator-amps>
+						</ap-actuators>
+					</consumers>
+				</avionics>
+			</buses>
 		</electrical>
 	</systems>
 </PropertyList>

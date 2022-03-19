@@ -135,6 +135,7 @@
 				<and>
 					<property>/controls/electric/battery-switch</property>
 					<property>/controls/electric/engine[0]/master-alt</property>
+					<property>/controls/electric/circuit-breakers/alt-reg</property>
 				</and>
 			</condition>
 			<property>/systems/electrical/suppliers/alternator/available-amps</property>
@@ -150,6 +151,7 @@
 				<and>
 					<property>/controls/electric/battery-switch</property>
 					<property>/controls/electric/engine[0]/master-alt</property>
+					<property>/controls/electric/circuit-breakers/alt-reg</property>
 				</and>
 			</condition>
 			<property>/systems/electrical/suppliers/alternator/available-volts</property>
@@ -214,6 +216,11 @@
 		<type>gain</type>
 		<gain>1</gain>
 		<input>
+			<condition>
+				<not>
+					<property>/systems/electrical/suppliers/battery/reset-to-full-charge</property>
+				</not>
+			</condition>
 			<expression>
 				<sum>
 					<property>/systems/electrical/suppliers/battery/charge-amp_hours</property>
@@ -221,8 +228,14 @@
 						<dif>
 							<max>
 								<sum>
-									<property>/systems/electrical/suppliers/alternator/amps</property>
-									<property>/systems/electrical/suppliers/gpu/amps</property>
+									<prod>
+										<property>/systems/electrical/suppliers/alternator/amps</property>
+										<property>/systems/electrical/suppliers/alternator/power</property>
+									</prod>
+									<prod>
+										<property>/systems/electrical/suppliers/gpu/amps</property>
+										<property>/systems/electrical/suppliers/gpu/power</property>
+									</prod>
 								</sum>
 								<!-- most sources I found recommend charging a lead-acid battery at a quarter of their Ah rating -->
 								<quotient>
@@ -238,10 +251,24 @@
 				</sum>
 			</expression>
 		</input>
+		<!-- reset to full charge if the condition for the above input is not true -->
+		<input>/systems/electrical/suppliers/battery/capacity-amp_hours</input>
 		<output>/systems/electrical/suppliers/battery/charge-amp_hours</output>
 		<min>0</min>
 		<max>/systems/electrical/suppliers/battery/capacity-amp_hours</max>
 	</filter>
+	<logic>
+		<name>Reset recharge flag</name>
+		<input>
+			<condition>
+				<equals>
+					<value>1</value>
+					<value>0</value>
+				</equals>
+			</condition>
+		</input>
+		<output>/systems/electrical/suppliers/battery/reset-to-full-charge</output>
+	</logic>
 	<filter>
 		<name>Battery charge normalized</name>
 		<type>gain</type>
@@ -268,10 +295,16 @@
 		<name>Determine if battery is supplying power</name>
 		<input>
 			<condition>
-				<greater-than>
-					<property>/systems/electrical/suppliers/battery/volts</property>
-					<value>12</value>
-				</greater-than>
+				<and>
+					<not>
+						<property>/systems/electrical/suppliers/alternator/power</property>
+						<property>/systems/electrical/suppliers/gpu/power</property>
+					</not>
+					<greater-than>
+						<property>/systems/electrical/suppliers/battery/volts</property>
+						<value>12</value>
+					</greater-than>
+				</and>
 			</condition>
 		</input>
 		<output>/systems/electrical/suppliers/battery/power</output>
@@ -280,10 +313,15 @@
 		<name>Determine if alternator is supplying power</name>
 		<input>
 			<condition>
-				<greater-than>
-					<property>/systems/electrical/suppliers/alternator/volts</property>
-					<property>/systems/electrical/suppliers/battery/volts</property>
-				</greater-than>
+				<and>
+					<not>
+						<property>/systems/electrical/suppliers/gpu/power</property>
+					</not>
+					<greater-than>
+						<property>/systems/electrical/suppliers/alternator/volts</property>
+						<property>/systems/electrical/suppliers/battery/volts</property>
+					</greater-than>
+				</and>
 			</condition>
 		</input>
 		<output>/systems/electrical/suppliers/alternator/power</output>
@@ -305,4 +343,94 @@
 		</input>
 		<output>/systems/electrical/suppliers/gpu/power</output>
 	</logic>
+	
+	<!-- Determine primary bus power -->
+	<filter>
+		<name>Primary bus volts</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<property>/systems/electrical/suppliers/battery/power</property>
+			</condition>
+			<property>/systems/electrical/suppliers/battery/volts</property>
+		</input>
+		<input>
+			<condition>
+				<property>/systems/electrical/suppliers/alternator/power</property>
+			</condition>
+			<property>/systems/electrical/suppliers/alternator/volts</property>
+		</input>
+		<input>
+			<condition>
+				<property>/systems/electrical/suppliers/gpu/power</property>
+			</condition>
+			<property>/systems/electrical/suppliers/gpu/volts</property>
+		</input>
+		<output>/systems/electrical/buses/primary/volts</output>
+	</filter>
+	<filter>
+		<name>Primary bus amps</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<property>/systems/electrical/suppliers/battery/power</property>
+			</condition>
+			<property>/systems/electrical/suppliers/battery/amps</property>
+		</input>
+		<input>
+			<condition>
+				<property>/systems/electrical/suppliers/alternator/power</property>
+			</condition>
+			<property>/systems/electrical/suppliers/alternator/amps</property>
+		</input>
+		<input>
+			<condition>
+				<property>/systems/electrical/suppliers/gpu/power</property>
+			</condition>
+			<property>/systems/electrical/suppliers/gpu/amps</property>
+		</input>
+		<output>/systems/electrical/buses/primary/amps</output>
+	</filter>
+	
+	<!-- Avionics bus power -->
+	<filter>
+		<type>gain</type>
+		<gain>/controls/electric/avionics-power</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/avionics/volts</output>
+	</filter>
+	<filter>
+		<type>gain</type>
+		<gain>/controls/electric/avionics-power</gain>
+		<input>/systems/electrical/buses/primary/amps</input>
+		<output>/systems/electrical/buses/avionics/amps</output>
+	</filter>
+	
+	<!-- Primary bus consumers power -->
+	<filter>
+		<name>Radio and instrument lights volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/radio-instrument-lights</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/radio-instrument-lights/volts</output>
+	</filter>
+	<filter>
+		<name>Radio and instrument lights amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/radio-instrument-lights</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<div>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/normal-amps</property>
+					</div>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/radio-instrument-lights/amps</output>
+	</filter>
 </PropertyList>
