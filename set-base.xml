@@ -539,7 +539,8 @@
 							<oil-temp-gauges-amps type="double">0.1</oil-temp-gauges-amps>
 						</engine-instruments>
 						<turn-coordinator>
-							<turn-coordinator-amps type="double">0.3</turn-coordinator-amps>
+							<!-- not yet modelled -->
+							<!--<turn-coordinator-amps type="double">0.3</turn-coordinator-amps>-->
 							<turn-and-bank-indicator-amps type="double">0.2</turn-and-bank-indicator-amps>
 						</turn-coordinator>
 						<fuel-quantity>

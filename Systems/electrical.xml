@@ -18,6 +18,9 @@
 			Voltage: 28 V
 			Current: 60 A
 			Type: Direct current
+	
+	TODO: a lot, mainly:
+		* model over current (too high amps load decreases voltage and potentially damages the power supplier if it lasts too long)
 -->
 <PropertyList>
 	<!-- First, every supplier calculates it's avilable voltage and current -->
@@ -125,23 +128,7 @@
 		<output>/systems/electrical/suppliers/battery/available-amps</output>
 	</filter>
 	
-	<!-- Then, every supplier sets it's actual voltage and current based on the master switches -->
-	<filter>
-		<name>Alternator amps</name>
-		<type>gain</type>
-		<gain>1</gain>
-		<input>
-			<condition>
-				<and>
-					<property>/controls/electric/battery-switch</property>
-					<property>/controls/electric/engine[0]/master-alt</property>
-					<property>/controls/electric/circuit-breakers/alt-reg</property>
-				</and>
-			</condition>
-			<property>/systems/electrical/suppliers/alternator/available-amps</property>
-		</input>
-		<output>/systems/electrical/suppliers/alternator/amps</output>
-	</filter>
+	<!-- Then, every supplier sets it's actual voltage based on the master switches -->
 	<filter>
 		<name>Alternator volts</name>
 		<type>gain</type>
@@ -160,18 +147,6 @@
 	</filter>
 	
 	<filter>
-		<name>Ground power amps</name>
-		<type>gain</type>
-		<gain>1</gain>
-		<input>
-			<condition>
-				<property>/controls/electric/battery-switch</property>
-			</condition>
-			<property>/systems/electrical/suppliers/gpu/available-amps</property>
-		</input>
-		<output>/systems/electrical/suppliers/gpu/amps</output>
-	</filter>
-	<filter>
 		<name>Ground power volts</name>
 		<type>gain</type>
 		<gain>1</gain>
@@ -184,19 +159,6 @@
 		<output>/systems/electrical/suppliers/gpu/volts</output>
 	</filter>
 	
-	<!-- Battery -->
-	<filter>
-		<name>Battery amps</name>
-		<type>gain</type>
-		<gain>1</gain>
-		<input>
-			<condition>
-				<property>/controls/electric/battery-switch</property>
-			</condition>
-			<property>/systems/electrical/suppliers/battery/available-amps</property>
-		</input>
-		<output>/systems/electrical/suppliers/battery/amps</output>
-	</filter>
 	<filter>
 		<name>Battery volts</name>
 		<type>gain</type>
@@ -228,22 +190,23 @@
 						<dif>
 							<max>
 								<sum>
+									<!-- TODO: make battery loading add to the load of the alternator / gpu -->
 									<prod>
-										<property>/systems/electrical/suppliers/alternator/amps</property>
+										<property>/systems/electrical/suppliers/alternator/available-amps</property>
 										<property>/systems/electrical/suppliers/alternator/power</property>
 									</prod>
 									<prod>
-										<property>/systems/electrical/suppliers/gpu/amps</property>
+										<property>/systems/electrical/suppliers/gpu/available-amps</property>
 										<property>/systems/electrical/suppliers/gpu/power</property>
 									</prod>
 								</sum>
 								<!-- most sources I found recommend charging a lead-acid battery at a quarter of their Ah rating -->
-								<quotient>
+								<div>
 									<property>/systems/electrical/suppliers/battery/capacity-amp_hours</property>
 									<value>4</value>
-								</quotient>
+								</div>
 							</max>
-							<property>/systems/electrical/suppliers/battery/output-amps</property>
+							<property>/systems/electrical/suppliers/battery/amps</property>
 						</dif>
 						 <!-- Seconds of an hour (3600) * 120 Hz - that will empty the battery in one hour if discharged at it's Ah rating -->
 						<value>432000</value>
@@ -261,10 +224,7 @@
 		<name>Reset recharge flag</name>
 		<input>
 			<condition>
-				<equals>
-					<value>1</value>
-					<value>0</value>
-				</equals>
+				<value type="bool">true</value>
 			</condition>
 		</input>
 		<output>/systems/electrical/suppliers/battery/reset-to-full-charge</output>
@@ -297,8 +257,10 @@
 			<condition>
 				<and>
 					<not>
-						<property>/systems/electrical/suppliers/alternator/power</property>
-						<property>/systems/electrical/suppliers/gpu/power</property>
+						<or>
+							<property>/systems/electrical/suppliers/alternator/power</property>
+							<property>/systems/electrical/suppliers/gpu/power</property>
+						</or>
 					</not>
 					<greater-than>
 						<property>/systems/electrical/suppliers/battery/volts</property>
@@ -377,21 +339,21 @@
 			<condition>
 				<property>/systems/electrical/suppliers/battery/power</property>
 			</condition>
-			<property>/systems/electrical/suppliers/battery/amps</property>
+			<property>/systems/electrical/suppliers/battery/available-amps</property>
 		</input>
 		<input>
 			<condition>
 				<property>/systems/electrical/suppliers/alternator/power</property>
 			</condition>
-			<property>/systems/electrical/suppliers/alternator/amps</property>
+			<property>/systems/electrical/suppliers/alternator/available-amps</property>
 		</input>
 		<input>
 			<condition>
 				<property>/systems/electrical/suppliers/gpu/power</property>
 			</condition>
-			<property>/systems/electrical/suppliers/gpu/amps</property>
+			<property>/systems/electrical/suppliers/gpu/available-amps</property>
 		</input>
-		<output>/systems/electrical/buses/primary/amps</output>
+		<output>/systems/electrical/buses/primary/available-amps</output>
 	</filter>
 	
 	<!-- Avionics bus power -->
@@ -404,8 +366,8 @@
 	<filter>
 		<type>gain</type>
 		<gain>/controls/electric/avionics-power</gain>
-		<input>/systems/electrical/buses/primary/amps</input>
-		<output>/systems/electrical/buses/avionics/amps</output>
+		<input>/systems/electrical/buses/primary/available-amps</input>
+		<output>/systems/electrical/buses/avionics/available-amps</output>
 	</filter>
 	
 	<!-- Primary bus consumers power -->
@@ -492,11 +454,114 @@
 					<prod>
 						<value>28</value>
 						<property>/systems/electrical/buses/primary/consumers/instrument-flood-lights/glareshield-flood-lights-amps</property>
-						</sum>
 					</prod>
 				</div>
 			</expression>
 		</input>
 		<output>/systems/electrical/buses/primary/consumers/instrument-flood-lights/amps</output>
+	</filter>
+	<filter>
+		<name>Cabin lights amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/cabin-lights</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/instrument-flood-lights/glareshield-flood-lights-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/instrument-flood-lights/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Avionics bus load</name>
+		<type>gain</type>
+		<gain>/controls/electric/avionics-power</gain>
+		<input>
+			<expression>
+				<sum>
+					<property>/systems/electrical/buses/avionics/consumers/radio-1/amps</property>
+					<property>/systems/electrical/buses/avionics/consumers/radio-2/amps</property>
+					<property>/systems/electrical/buses/avionics/consumers/radio-3/amps</property>
+					<property>/systems/electrical/buses/avionics/consumers/radio-4/amps</property>
+					<property>/systems/electrical/buses/avionics/consumers/radio-5/amps</property>
+					<property>/systems/electrical/buses/avionics/consumers/marker-beacon/amps</property>
+					<property>/systems/electrical/buses/avionics/consumers/wxradar/amps</property>
+					<property>/systems/electrical/buses/avionics/consumers/gyro-slaving/amps</property>
+					<property>/systems/electrical/buses/avionics/consumers/ap-control/amps</property>
+					<property>/systems/electrical/buses/avionics/consumers/ap-actuators/amps</property>
+				</sum>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/avionics/amps</output>
+	</filter>
+	<filter>
+		<name>Primary bus load</name>
+		<type>gain</type>
+		<gain>/controls/electric/battery-switch</gain>
+		<input>
+			<expression>
+				<sum>
+					<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/cabin-lights/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/instrument-flood-lights/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/nav-lights/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/strobe/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/beacon/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/tail-flood/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/taxi/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/landing/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/flaps/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/vent-fan/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/avionics-fan/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/wing-deice/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/gear-pump/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/trim/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/alt-reg/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/pressurization/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/prop-anti-ice/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/windshield-anti-ice/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/pitot-heat/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/fuel-pump/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/engine-instruments/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/turn-coordinator/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/fuel-quantity/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/stall-warning/amps</property>
+					<property>/systems/electrical/buses/primary/consumers/landing-gear/amps</property>
+					<property>/systems/electrical/buses/avionics/amps</property>
+				</sum>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Apply bus loads to power source</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>/systems/electrical/buses/primary/amps</input>
+		<output>
+			<condition>
+				<property>/systems/electrical/suppliers/battery/power</property>
+			</condition>
+			<property>/systems/electrical/suppliers/battery/amps</property>
+		</output>
+		<output>
+			<condition>
+				<property>/systems/electrical/suppliers/alternator/power</property>
+			</condition>
+			<property>/systems/electrical/suppliers/alternator/amps</property>
+		</output>
+		<output>
+			<condition>
+				<property>/systems/electrical/suppliers/gpu/power</property>
+			</condition>
+			<property>/systems/electrical/suppliers/gpu/amps</property>
+		</output>
 	</filter>
 </PropertyList>
