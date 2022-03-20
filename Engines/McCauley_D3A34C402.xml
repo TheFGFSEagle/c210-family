@@ -10,8 +10,17 @@
 	<minrpm>2200</minrpm>
 	<maxrpm>2700</maxrpm>
 	
-	<ct_factor>2.4</ct_factor>
-	<cp_factor>1.45</cp_factor>
+	<ct_factor>2.2</ct_factor>
+	<cp_factor>1.4</cp_factor>
+	
+	<!-- 
+		Thrust needed to achieve POH performance with current drag values
+		
+		Climb rate 900 FPM at 2000 ft: around 1000 lbs
+		Cruise speed 172 KTAS at 8000 ft: 415 lbs
+		Cruise speed 183 KTAS at 17000 ft: 369 lbs
+		Cruise speed 196 KTAS at 23000 ft: 368 lbs
+	-->
 	
 	<!-- thrust coefficient as a function of advance ratio and blade angle -->
 	<table name="C_THRUST" type="internal">

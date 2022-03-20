@@ -560,7 +560,7 @@
 				<avionics>
 					<consumers>
 						<radio-1>
-							<com-nav-1-amps type="double">1.6</com-nav-1-glideslope-amps>
+							<com-nav-1-amps type="double">1.6</com-nav-1-amps>
 							<glideslope-amps type="double">0.5</glideslope-amps>
 						</radio-1>
 						<radio-2>

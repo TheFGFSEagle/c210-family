@@ -424,13 +424,79 @@
 			<expression>
 				<div>
 					<property>/systems/electrical/buses/primary/volts</property>
-					<div>
+					<prod>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/normal-amps</property>
-					</div>
+						<sum>
+							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/post-lights-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/engine-instrument-lights-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/pedestal-lights-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/digital-clock-backlight-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/approach-plate-map-light-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/compass-light-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/radio-lights-amps</property>
+						</sum>
+					</prod>
 				</div>
 			</expression>
 		</input>
 		<output>/systems/electrical/buses/primary/consumers/radio-instrument-lights/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Cabin lights volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/cabin-lights</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/cabin-lights/volts</output>
+	</filter>
+	<filter>
+		<name>Cabin lights amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/cabin-lights</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<sum>
+							<property>/systems/electrical/buses/primary/consumers/cabin-lights/ice-detector-light-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/cabin-lights/dome-courtesy-baggage-lights-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/cabin-lights/low-voltage-warning-light-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/cabin-lights/oxygen-lights-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/cabin-lights/overhead-flood-light-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/cabin-lights/ignition-switch-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/cabin-lights/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Instrument flood lights volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/instrument-flood-lights</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/instrument-flood-lights/volts</output>
+	</filter>
+	<filter>
+		<name>Cabin lights amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/cabin-lights</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/instrument-flood-lights/glareshield-flood-lights-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/instrument-flood-lights/amps</output>
 	</filter>
 </PropertyList>
