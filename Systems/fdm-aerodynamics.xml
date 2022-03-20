@@ -292,7 +292,7 @@
 		<function name="aero/force/X_base">
 			<description>X base</description>						
 			<product>
-				<property>aero/propeller-stream-factor</property>
+				<!--<property>aero/propeller-stream-factor</property>-->
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<value>-1</value>
@@ -340,7 +340,7 @@
 		<function name="aero/force/X_cowlflaps">
 		<description>Drag due to cowl flaps</description>
 			<product>
-				<property>aero/propeller-stream-factor</property>
+				<!--<property>aero/propeller-stream-factor</property>-->
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>propulsion/engine[0]/cowl-flaps-norm</property>
@@ -351,7 +351,7 @@
 		<function name="aero/force/X_gear">
 			<description>Drag due to gear</description>						
 			<product>
-				<property>aero/propeller-stream-factor</property>
+				<!--<property>aero/propeller-stream-factor</property>-->
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<table>
@@ -442,7 +442,7 @@
 		<function name="aero/force/X_elevator">
 			<description>X due to Elevator Deflection</description>
 			<product>
-				<property>aero/propeller-stream-factor</property>
+				<!--<property>aero/propeller-stream-factor</property>-->
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<abs><property>fcs/elevator-pos-rad</property></abs>
@@ -588,7 +588,7 @@
 		<function name="aero/force/X_rudder">
 			<description>Drag due to rudder deflection</description>
 			<product>
-				<property>aero/propeller-stream-factor</property>
+				<!--<property>aero/propeller-stream-factor</property>-->
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<abs><property>fcs/rudder-pos-rad</property></abs>
