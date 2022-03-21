@@ -294,7 +294,7 @@
 		<function name="aero/force/X_base">
 			<description>X base</description>						
 			<product>
-				<!--<!--<property>aero/propeller-stream-factor</property>-->-->
+				<!--<property>aero/propeller-stream-factor</property>-->
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<value>-1</value>
