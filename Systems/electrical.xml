@@ -475,6 +475,7 @@
 							<property>/systems/electrical/buses/primary/consumers/nav-lights/nav-lights-amps</property>
 							<property>/systems/electrical/buses/primary/consumers/nav-lights/yoke-map-light-amps</property>
 							<property>/systems/electrical/buses/primary/consumers/nav-lights/electroluminescent-panel-lights-amps</property>
+						</sum>
 					</prod>
 				</div>
 			</expression>
@@ -1019,6 +1020,7 @@
 							<property>/systems/electrical/buses/primary/consumers/landing-gear/landing-gear-system-amps</property>
 							<property>/systems/electrical/buses/primary/consumers/landing-gear/gear-position-lights-amps</property>
 							<property>/systems/electrical/buses/primary/consumers/landing-gear/gear-warning-system-amps</property>
+						</sum>
 					</prod>
 				</div>
 			</expression>
@@ -1100,7 +1102,6 @@
 					<prod>
 						<value>28</value>
 						<property>/systems/electrical/buses/avionics/consumers/radio-3/transponder-amps</property>
-						</sum>
 					</prod>
 				</div>
 			</expression>
@@ -1126,7 +1127,6 @@
 					<prod>
 						<value>28</value>
 						<property>/systems/electrical/buses/avionics/consumers/radio-4/dme-amps</property>
-						</sum>
 					</prod>
 				</div>
 			</expression>
@@ -1152,7 +1152,6 @@
 					<prod>
 						<value>28</value>
 						<property>/systems/electrical/buses/avionics/consumers/radio-5/adf-amps</property>
-						</sum>
 					</prod>
 				</div>
 			</expression>
@@ -1178,7 +1177,6 @@
 					<prod>
 						<value>28</value>
 						<property>/systems/electrical/buses/avionics/consumers/marker-beacon/marker-beacon-amps</property>
-						</sum>
 					</prod>
 				</div>
 			</expression>
@@ -1204,7 +1202,6 @@
 					<prod>
 						<value>28</value>
 						<property>/systems/electrical/buses/avionics/consumers/wxradar/weather-radar-amps</property>
-						</sum>
 					</prod>
 				</div>
 			</expression>
@@ -1230,7 +1227,6 @@
 					<prod>
 						<value>28</value>
 						<property>/systems/electrical/buses/avionics/consumers/gyro-slaving/slaved-gyros-hsi-amps</property>
-						</sum>
 					</prod>
 				</div>
 			</expression>
