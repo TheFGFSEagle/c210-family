@@ -92,7 +92,7 @@
 		</tableData>
 	</table>-->
 	
-	<ct_factor>1</ct_factor>
+	<ct_factor>1.07</ct_factor>
 	<cp_factor>1.05</cp_factor>
 	
 	<table name="C_THRUST" type="internal">
