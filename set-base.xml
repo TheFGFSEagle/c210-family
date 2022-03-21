@@ -586,7 +586,7 @@
 						<engine-instruments>
 							<!-- service manual indicates 0.2 for both combined -->
 							<cht-gauge-amps type="double">0.1</cht-gauge-amps>
-							<oil-temp-gauge-amps type="double">0.1</oil-temp-gauges-amps>
+							<oil-temp-gauge-amps type="double">0.1</oil-temp-gauge-amps>
 						</engine-instruments>
 						<turn-coordinator>
 							<!-- not yet modelled -->
@@ -663,6 +663,7 @@
 				<dme alias="/systems/electrical/buses/avionics/consumers/radio-4/volts"/>
 				<adf alias="/systems/electrical/buses/avionics/consumers/radio-5/volts"/>
 				<dme alias="/systems/electrical/buses/primary/consumers/turn-coordinator/volts"/>
+			</outputs>
 		</electrical>
 	</systems>
 </PropertyList>
