@@ -285,10 +285,42 @@
 				<master-alt type="bool">false</master-alt>
 			</engine>
 			<circuit-breakers>
-				<alt-reg type="bool">true</alt-reg>
 				<radio-instrument-lights type="bool">true</radio-instrument-lights>
 				<cabin-lights type="bool">true</cabin-lights>
 				<instrument-flood-lights type="bool">true</instrument-flood-lights>
+				<nav-lights type="bool">true</nav-lights>
+				<strobe type="boool">true</strobe>
+				<beacon type="bool">true</beacon>
+				<tail-flood type="bool">true</tail-flood>
+				<taxi type="bool">true</taxi>
+				<landing type="bool">true</landing>
+				<flaps type="bool">true</flaps>
+				<vent-fan type="bool">true</vent-fan>
+				<avionics-fan type="bool">true</avionics-fan>
+				<wing-deice type="bool">true</wing-deice>
+				<gear-pump type="bool">true</gear-pump>
+				<trim type="bool">true</trim>
+				<alt-reg type="bool">true</alt-reg>
+				<pressurization type="bool">true</pressurization>
+				<prop-anti-ice type="bool">true</prop-anti-ice>
+				<windshield-anti-ice type="bool">true</windshield-anti-ice>
+				<pitot-heat type="bool">true</pitot-heat>
+				<fuel-pump type="bool">true</fuel-pump>
+				<engine-instruments type="bool">true</engine-instruments>
+				<turn-coordinator type="bool">true</turn-coordinator>
+				<fuel-quantity type="bool">true</fuel-quantity>
+				<stall-warning type="bool">true</stall-warning>
+				<landing-gear type="bool">true</landing-gear>
+				<radio-1 type="bool">true</radio-1>
+				<radio-2 type="bool">true</radio-2>
+				<radio-3 type="bool">true</radio-3>
+				<radio-4 type="bool">true</radio-4>
+				<radio-5 type="bool">true</radio-5>
+				<marker-beacon type="bool">true</marker-beacon>
+				<wxradar type="bool">true</wxradar>
+				<gyro-slaving type="bool">true</gyro-slaving>
+				<ap-control type="boool">true</ap-control>
+				<ap-actuators type="bool">true</ap-actuators>
 			</circuit-breakers>
 		</electric>
 		<anti-ice>
@@ -461,8 +493,6 @@
 					<power type="bool">false</power>
 				</gpu>
 			</suppliers>
-			<!-- every consumer component amps property that has a value of 0 is not included yet in the electrical system as I need 
-				to find correct values for these first -->
 			<buses>
 				<primary>
 					<consumers>
@@ -556,23 +586,25 @@
 						<engine-instruments>
 							<!-- service manual indicates 0.2 for both combined -->
 							<cht-gauge-amps type="double">0.1</cht-gauge-amps>
-							<oil-temp-gauges-amps type="double">0.1</oil-temp-gauges-amps>
+							<oil-temp-gauge-amps type="double">0.1</oil-temp-gauges-amps>
 						</engine-instruments>
 						<turn-coordinator>
 							<!-- not yet modelled -->
 							<!--<turn-coordinator-amps type="double">0.3</turn-coordinator-amps>-->
+							<turn-coordinator-amps type="double">0</turn-coordinator-amps>
 							<turn-and-bank-indicator-amps type="double">0.2</turn-and-bank-indicator-amps>
 						</turn-coordinator>
 						<fuel-quantity>
-							<!-- guessed -->
-							<fuel-quantity-indicators-amps type="double">0.2</fuel-quantity-indicators-amps>
+							<!-- both guessed -->
+							<left-fuel-quantity-indicator-amps type="double">0.1</left-fuel-quantity-indicator-amps>
+							<right-fuel-quantity-indicator-amps type="double">0.1</right-fuel-quantity-indicator-amps>
 						</fuel-quantity>
-						<stall-warning>
+						<stall-warn>
 							<stall-warning-system-amps type="double">0.28</stall-warning-system-amps>
-						</stall-warning>
+						</stall-warn>
 						<landing-gear>
 							<!-- guessed -->
-							<landing-gear-system-amps type="double">5</landing-gear-system-amps>
+							<landing-gear-system-amps type="double">1</landing-gear-system-amps>
 							<gear-position-lights-amps type="double">0.04</gear-position-lights-amps>
 							<gear-warning-system-amps type="double">0.8</gear-warning-system-amps>
 						</landing-gear>
@@ -586,12 +618,14 @@
 						</radio-1>
 						<radio-2>
 							<com-nav-2-amps type="double">1.6</com-nav-2-amps>
+							<!-- no idea if this is really branched here … -->
 							<rnav-amps type="double">1</rnav-amps>
 						</radio-2>
 						<radio-3>
 							<transponder-amps type="double">2</transponder-amps>
 						</radio-3>
 						<radio-4>
+							<!-- POH doesn't say what radios are connected ro the radio-4 and radio-5 circuits, so guessed (the amps values are not guessed though) -->
 							<dme-amps type="double">1.5</dme-amps>
 						</radio-4>
 						<radio-5>
@@ -621,6 +655,14 @@
 					</consumers>
 				</avionics>
 			</buses>
+			<outputs>
+				<DG alias="/systems/electrical/buses/avionics/consumers/gyro-slaving/volts"/>
+				<nav n="0" alias="/systems/electrical/buses/avionics/consumers/radio-1/volts"/>
+				<nav n="1" alias="/systems/electrical/buses/avionics/consumers/radio-2/volts"/>
+				<transponder alias="/systems/electrical/buses/avionics/consumers/radio-3/volts"/>
+				<dme alias="/systems/electrical/buses/avionics/consumers/radio-4/volts"/>
+				<adf alias="/systems/electrical/buses/avionics/consumers/radio-5/volts"/>
+				<dme alias="/systems/electrical/buses/primary/consumers/turn-coordinator/volts"/>
 		</electrical>
 	</systems>
 </PropertyList>

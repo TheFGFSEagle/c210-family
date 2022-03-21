@@ -455,6 +455,847 @@
 	</filter>
 	
 	<filter>
+		<name>Nav lights volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/nav-lights</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/nav-lights/volts</output>
+	</filter>
+	<filter>
+		<name>Nav lights amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/nav-lights</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<sum>
+							<property>/systems/electrical/buses/primary/consumers/nav-lights/nav-lights-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/nav-lights/yoke-map-light-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/nav-lights/electroluminescent-panel-lights-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/nav-lights/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Strobe lights volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/strobe</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/strobe/volts</output>
+	</filter>
+	<filter>
+		<name>Strobe lights amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/strobe</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/strobe/strobe-lights-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/strobe/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Beacon light volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/beacon</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/beacon/volts</output>
+	</filter>
+	<filter>
+		<name>Beacon light amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/beacon</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/beacon/flashing-beacon-light-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/beacon/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Tail flood lights volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/tail-flood</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/tail-flood/volts</output>
+	</filter>
+	<filter>
+		<name>Instrument flood lights amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/tail-flood</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/tail-flood/tail-flood-lights-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/tail-flood/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Taxi light volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/taxi</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/taxi/volts</output>
+	</filter>
+	<filter>
+		<name>Instrument flood lights amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/taxi</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/taxi/taxi-light-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/taxi/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Landing light volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/landing</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/landing/volts</output>
+	</filter>
+	<filter>
+		<name>Landing light amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/landing</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/landing/landing-light-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/landing/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Flaps motor volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/flaps</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/flaps/volts</output>
+	</filter>
+	<filter>
+		<name>Flaps motor amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/flaps</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/flaps/wing-flaps-motor-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/flaps/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Vent fan volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/vent-fan</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/vent-fan/volts</output>
+	</filter>
+	<filter>
+		<name>Vent fan amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/vent-fan</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<sum>
+							<property>/systems/electrical/buses/primary/consumers/vent-fan/overhead-vent-fan-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/vent-fan/air-conditioning-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/vent-fan/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Avionics fan volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/avionics-fan</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/avionics-fan/volts</output>
+	</filter>
+	<filter>
+		<name>Avionics fan amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/avionics-fan</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/avionics-fan/avionics-cooling-fan-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/avionics-fan/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Wing deice volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/wing-deice</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/wing-deice/volts</output>
+	</filter>
+	<filter>
+		<name>Wing deice amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/wing-deice</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/wing-deice/wing-deice-system-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/wing-deice/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Electric trim volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/trim</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/trim/volts</output>
+	</filter>
+	<filter>
+		<name>Electric trim amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/trim</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/trim/electric-elevator-trim-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/trim/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Alternator control volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/alt-reg</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/alt-reg/volts</output>
+	</filter>
+	<filter>
+		<name>Instrument flood lights amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/alt-reg</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/alt-reg/alternator-control-unit-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/alt-reg/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Pressurization system volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/pressurization</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/pressurization/volts</output>
+	</filter>
+	<filter>
+		<name>Pressurization system amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/pressurization</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/pressurization/pressurization-system-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/pressurization/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Propeller anti-ice volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/prop-anti-ice</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/prop-anti-ice/volts</output>
+	</filter>
+	<filter>
+		<name>Propeller anti-ice amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/prop-anti-ice</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/prop-anti-ice/propeller-anti-ice-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/prop-anti-ice/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Windshield anti-ice volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/windshield-anti-ice</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/windshield-anti-ice/volts</output>
+	</filter>
+	<filter>
+		<name>Windshield anti-ice amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/windshield-anti-ice</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/windshield-anti-ice/windshield-anti-ice-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/windshield-anti-ice/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Pitot heat volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/pitot-heat</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/pitot-heat/volts</output>
+	</filter>
+	<filter>
+		<name>Pitot heat amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/pitot-heat</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<sum>
+							<property>/systems/electrical/buses/primary/consumers/pitot-heat/pitot-heat-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/pitot-heat/stall-warning-heat-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/pitot-heat/digital-clock-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/pitot-heat/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Fuel pump volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/fuel-pump</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/fuel-pump/volts</output>
+	</filter>
+	<filter>
+		<name>Fuel pump amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/fuel-pump</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/fuel-pump/aux-fuel-pump-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/fuel-pump/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Engine instruments volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/engine-instruments</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/engine-instruments/volts</output>
+	</filter>
+	<filter>
+		<name>Engine instruments amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/engine-instruments</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<sum>
+							<property>/systems/electrical/buses/primary/consumers/engine-instruments/cht-gauge-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/engine-instruments/oil-temp-gauge-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/engine-instruments/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Turn coordinator volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/turn-coordinator</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/turn-coordinator/volts</output>
+	</filter>
+	<filter>
+		<name>Turn coordinator amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/turn-coordinator</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<sum>
+							<property>/systems/electrical/buses/primary/consumers/turn-coordinator/turn-coordinator-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/turn-coordinator/turn-and-bank-indicator-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/turn-coordinator/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Fuel quantity gauges volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/fuel-quantity</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/fuel-quantity/volts</output>
+	</filter>
+	<filter>
+		<name>Fuel quantity gauges amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/fuel-quantity</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<sum>
+							<property>/systems/electrical/buses/primary/consumers/fuel-quantity/left-fuel-quantity-indicator-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/fuel-quantity/right-fuel-quantity-indicator-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/fuel-quantity/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Stall warning system volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/stall-warn</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/stall-warn/volts</output>
+	</filter>
+	<filter>
+		<name>Stall warning system amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/stall-warn</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/stall-warn/stall-warning-system-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/stall-warn/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Landing gear system volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/landing-gear</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/landing-gear/volts</output>
+	</filter>
+	<filter>
+		<name>Landing gear system amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/landing-gear</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<prod>
+						<value>28</value>
+						<sum>
+							<property>/systems/electrical/buses/primary/consumers/landing-gear/landing-gear-system-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/landing-gear/gear-position-lights-amps</property>
+							<property>/systems/electrical/buses/primary/consumers/landing-gear/gear-warning-system-amps</property>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/landing-gear/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Radio 1 volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/radio-1</gain>
+		<input>/systems/electrical/buses/avionics/volts</input>
+		<output>/systems/electrical/buses/avionics/consumers/radio-1/volts</output>
+	</filter>
+	<filter>
+		<name>Radio 1 amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/radio-1</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/avionics/volts</property>
+					<prod>
+						<value>28</value>
+						<sum>
+							<property>/systems/electrical/buses/avionics/consumers/radio-1/com-nav-1-amps</property>
+							<property>/systems/electrical/buses/avionics/consumers/radio-1/glideslope-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/avionics/consumers/radio-1/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Radio 2 volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/radio-2</gain>
+		<input>/systems/electrical/buses/avionics/volts</input>
+		<output>/systems/electrical/buses/avionics/consumers/radio-2/volts</output>
+	</filter>
+	<filter>
+		<name>Radio 2 amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/radio-2</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/avionics/volts</property>
+					<prod>
+						<value>28</value>
+						<sum>
+							<property>/systems/electrical/buses/avionics/consumers/radio-2/com-nav-2-amps</property>
+							<property>/systems/electrical/buses/avionics/consumers/radio-2/rnav-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/avionics/consumers/radio-2/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Radio 3 volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/radio-3</gain>
+		<input>/systems/electrical/buses/avionics/volts</input>
+		<output>/systems/electrical/buses/avionics/consumers/radio-3/volts</output>
+	</filter>
+	<filter>
+		<name>Radio 3 amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/radio-3</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/avionics/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/avionics/consumers/radio-3/transponder-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/avionics/consumers/radio-3/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Radio 4 volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/radio-4</gain>
+		<input>/systems/electrical/buses/avionics/volts</input>
+		<output>/systems/electrical/buses/avionics/consumers/radio-4/volts</output>
+	</filter>
+	<filter>
+		<name>Radio 4 amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/radio-4</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/avionics/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/avionics/consumers/radio-4/dme-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/avionics/consumers/radio-4/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Radio 5 volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/radio-5</gain>
+		<input>/systems/electrical/buses/avionics/volts</input>
+		<output>/systems/electrical/buses/avionics/consumers/radio-5/volts</output>
+	</filter>
+	<filter>
+		<name>Radio 5 amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/radio-5</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/avionics/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/avionics/consumers/radio-5/adf-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/avionics/consumers/radio-5/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Marker beacon volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/marker-beacon</gain>
+		<input>/systems/electrical/buses/avionics/volts</input>
+		<output>/systems/electrical/buses/avionics/consumers/marker-beacon/volts</output>
+	</filter>
+	<filter>
+		<name>Marker beacon amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/marker-beacon</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/avionics/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/avionics/consumers/marker-beacon/marker-beacon-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/avionics/consumers/marker-beacon/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Weather radar volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/wxradar</gain>
+		<input>/systems/electrical/buses/avionics/volts</input>
+		<output>/systems/electrical/buses/avionics/consumers/wxradar/volts</output>
+	</filter>
+	<filter>
+		<name>Weather radar amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/wxradar</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/avionics/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/avionics/consumers/wxradar/weather-radar-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/avionics/consumers/wxradar/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Gyro slaving system volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/gyro-slaving</gain>
+		<input>/systems/electrical/buses/avionics/volts</input>
+		<output>/systems/electrical/buses/avionics/consumers/gyro-slaving/volts</output>
+	</filter>
+	<filter>
+		<name>Gyro slaving system amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/gyro-slaving</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/avionics/volts</property>
+					<prod>
+						<value>28</value>
+						<property>/systems/electrical/buses/avionics/consumers/gyro-slaving/slaved-gyros-hsi-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/avionics/consumers/gyro-slaving/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Autopilot volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/ap-control</gain>
+		<input>/systems/electrical/buses/avionics/volts</input>
+		<output>/systems/electrical/buses/avionics/consumers/ap-control/volts</output>
+	</filter>
+	<filter>
+		<name>Autopilot amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/ap-control</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/avionics/volts</property>
+					<prod>
+						<value>28</value>
+						<sum>
+							<property>/systems/electrical/buses/avionics/consumers/ap-control/autopilot-amps</property>
+							<property>/systems/electrical/buses/avionics/consumers/ap-control/ap-control-amps</property>
+							<property>/systems/electrical/buses/avionics/consumers/ap-control/backcourse-light-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/avionics/consumers/ap-control/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Autopilot actuators volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/ap-actuators</gain>
+		<input>/systems/electrical/buses/avionics/volts</input>
+		<output>/systems/electrical/buses/avionics/consumers/ap-actuators/volts</output>
+	</filter>
+	<filter>
+		<name>Autopilot actuators amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/ap-actuators</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/avionics/volts</property>
+					<prod>
+						<value>28</value>
+						<sum>
+							<property>/systems/electrical/buses/avionics/consumers/ap-actuators/roll-actuator-amps</property>
+							<property>/systems/electrical/buses/avionics/consumers/ap-actuators/pitch-actuator-amps</property>
+						</sum>
+					</prod>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/avionics/consumers/ap-actuators/amps</output>
+	</filter>
+	
+	<filter>
 		<name>Avionics bus load</name>
 		<type>gain</type>
 		<gain>/controls/electric/avionics-power</gain>
