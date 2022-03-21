@@ -32,15 +32,15 @@
 		<input>
 			<expression>
 				<div>
-					<log>
-						<!-- log gives negative values between 1 and 0, so offset the RPM by 1-->
+					<log10>
+						<!-- log10() gives negative values between 1 and 0, so offset the RPM by 1-->
 						<sum>
 							<property>/engines/engine/rpm</property>
 							<value>1</value>
 						</sum>
-					</log>
-					<!-- log 800 -->
-					<value>6.68586094706836</value>
+					</log10>
+					<!-- log10(800) -->
+					<value>2.9030899869919438</value>
 				</div>
 			</expression>
 		</input>
