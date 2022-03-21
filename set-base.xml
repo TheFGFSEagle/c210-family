@@ -136,8 +136,10 @@
 		<aircraft-data>
 			<path>/controls/engines/engine/cowl-flaps-norm</path>
 			<path>/controls/engines/engine/throttle</path>
-			<path>/controls/engines/engine/master-alt</path>
+			<path>/controls/electric/engine/master-alt</path>
 			<path>/controls/electric/battery-switch</path>
+			<path>/controls/electric/avionics-power</path>
+			<path>/controls/electric/circuit-breakers</path>
 			<path>/controls/anti-ice/pitot-heat</path>
 			<path>/controls/anti-ice/wing-deice</path>
 			<path>/controls/anti-ice/deice-light</path>
@@ -280,6 +282,7 @@
 		</engines>
 		<electric>
 			<ground-power-connected type="bool">false</ground-power-connected>
+			<avionics-power type="bool">true</avionics-power>
 			<battery-switch type="bool">false</battery-switch>
 			<engine>
 				<master-alt type="bool">false</master-alt>
