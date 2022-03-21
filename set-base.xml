@@ -289,7 +289,7 @@
 				<cabin-lights type="bool">true</cabin-lights>
 				<instrument-flood-lights type="bool">true</instrument-flood-lights>
 				<nav-lights type="bool">true</nav-lights>
-				<strobe type="boool">true</strobe>
+				<strobe type="bool">true</strobe>
 				<beacon type="bool">true</beacon>
 				<tail-flood type="bool">true</tail-flood>
 				<taxi type="bool">true</taxi>
@@ -319,7 +319,7 @@
 				<marker-beacon type="bool">true</marker-beacon>
 				<wxradar type="bool">true</wxradar>
 				<gyro-slaving type="bool">true</gyro-slaving>
-				<ap-control type="boool">true</ap-control>
+				<ap-control type="bool">true</ap-control>
 				<ap-actuators type="bool">true</ap-actuators>
 			</circuit-breakers>
 		</electric>
