@@ -33,20 +33,20 @@
 			<expression>
 				<div>
 					<log10>
-						<!-- log10() gives negative values between 1 and 0, so offset the RPM by 1-->
+						<!-- log10 gives negative values between 1 and 0, so offset the RPM by 1-->
 						<sum>
 							<property>/engines/engine/rpm</property>
 							<value>1</value>
 						</sum>
 					</log10>
-					<!-- log10(800) -->
-					<value>2.9030899869919438</value>
+					<!-- log10(1000) -->
+					<value>3</value>
 				</div>
 			</expression>
 		</input>
 		<output>/systems/electrical/suppliers/alternator/available-amps</output>
 		<min>0</min>
-		<max>60</max>
+		<max>/systems/electrical/suppliers/alternator/rated-amps</max>
 	</filter>
 	<filter>
 		<name>Available alternator volts</name>
