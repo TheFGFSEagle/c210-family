@@ -274,11 +274,16 @@
 		<engines>
 			<engine>
 				<cowl-flaps-norm>1</cowl-flaps-norm>
+				<master-alt alias="/controls/electric/engine/master-alt"/>
+				<master-bat alias="/controls/electric/battery-switch"/>
 			</engine>
 		</engines>
 		<electric>
 			<ground-power-connected type="bool">false</ground-power-connected>
-			<battery-switch type="bool">true</battery-switch>
+			<battery-switch type="bool">false</battery-switch>
+			<engine>
+				<master-alt type="bool">false</master-alt>
+			</engine>
 			<circuit-breakers>
 				<alt-reg type="bool">true</alt-reg>
 				<radio-instrument-lights type="bool">true</radio-instrument-lights>
@@ -444,9 +449,17 @@
 		<electrical>
 			<suppliers>
 				<battery>
-					<capacity-amp_hours type="double">12.75</capacity-amp_hours>
-					<charge-amp_hours type="double">12.75</charge-amp_hours>
+					<capacity-amp_hours>12.75</capacity-amp_hours>
+					<charge-amp_hours>12.75</charge-amp_hours>
+					<power type="bool">false</power>
 				</battery>
+				<alternator>
+					<power type="bool">false</power>
+					<rated-amps>60</rated-amps>
+				</alternator>
+				<gpu>
+					<power type="bool">false</power>
+				</gpu>
 			</suppliers>
 			<!-- every consumer component amps property that has a value of 0 is not included yet in the electrical system as I need 
 				to find correct values for these first -->

@@ -28,7 +28,7 @@
 	<filter>
 		<name>Available alternator amps</name>
 		<type>gain</type>
-		<gain>60</gain>
+		<gain>/systems/electrical/suppliers/alternator/rated-amps</gain>
 		<input>
 			<expression>
 				<div>
@@ -253,54 +253,48 @@
 	<logic>
 		<name>Determine if battery is supplying power</name>
 		<input>
-			<condition>
-				<and>
-					<not>
-						<or>
-							<property>/systems/electrical/suppliers/alternator/power</property>
-							<property>/systems/electrical/suppliers/gpu/power</property>
-						</or>
-					</not>
-					<greater-than>
-						<property>/systems/electrical/suppliers/battery/volts</property>
-						<value>12</value>
-					</greater-than>
-				</and>
-			</condition>
+			<and>
+				<not>
+					<or>
+						<property>/systems/electrical/suppliers/alternator/power</property>
+						<property>/systems/electrical/suppliers/gpu/power</property>
+					</or>
+				</not>
+				<greater-than>
+					<property>/systems/electrical/suppliers/battery/volts</property>
+					<value>12</value>
+				</greater-than>
+			</and>
 		</input>
 		<output>/systems/electrical/suppliers/battery/power</output>
 	</logic>
 	<logic>
 		<name>Determine if alternator is supplying power</name>
 		<input>
-			<condition>
-				<and>
-					<not>
-						<property>/systems/electrical/suppliers/gpu/power</property>
-					</not>
-					<greater-than>
-						<property>/systems/electrical/suppliers/alternator/volts</property>
-						<property>/systems/electrical/suppliers/battery/volts</property>
-					</greater-than>
-				</and>
-			</condition>
+			<and>
+				<not>
+					<property>/systems/electrical/suppliers/gpu/power</property>
+				</not>
+				<greater-than>
+					<property>/systems/electrical/suppliers/alternator/volts</property>
+					<property>/systems/electrical/suppliers/battery/volts</property>
+				</greater-than>
+			</and>
 		</input>
 		<output>/systems/electrical/suppliers/alternator/power</output>
 	</logic>
 	<logic>
 		<name>Determine if ground power receptacle is supplying power</name>
 		<input>
-			<condition>
-				<greater-than>
-					<property>/systems/electrical/suppliers/gpu/volts</property>
-					<expression>
-						<max>
-							<property>/systems/electrical/suppliers/alternator/volts</property>
-							<property>/systems/electrical/suppliers/battery/volts</property>
-						</max>
-					</expression>
-				</greater-than>
-			</condition>
+			<greater-than>
+				<property>/systems/electrical/suppliers/gpu/volts</property>
+				<expression>
+					<max>
+						<property>/systems/electrical/suppliers/alternator/volts</property>
+						<property>/systems/electrical/suppliers/battery/volts</property>
+					</max>
+				</expression>
+			</greater-than>
 		</input>
 		<output>/systems/electrical/suppliers/gpu/power</output>
 	</logic>

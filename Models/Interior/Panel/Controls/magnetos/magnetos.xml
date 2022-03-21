@@ -30,6 +30,12 @@
 	</animation>
 	
 	<animation>
+		<condition>
+			<equals>
+				<property>controls/engines/engine/magnetos</property>
+				<value>3</value>
+			</equals>
+		</condition>
 		<type>rotate</type>
 		<object-name>MainKey</object-name>
 		<axis>
