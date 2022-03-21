@@ -224,7 +224,7 @@
 		<name>Reset recharge flag</name>
 		<inverted type="bool">true</inverted>
 		<input>
-			<value type="bool">false</value>
+			<value type="bool">true</value>
 		</input>
 		<output>/systems/electrical/suppliers/battery/reset-to-full-charge</output>
 	</logic>
