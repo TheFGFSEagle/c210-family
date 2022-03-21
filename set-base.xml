@@ -276,9 +276,16 @@
 				<cowl-flaps-norm>1</cowl-flaps-norm>
 			</engine>
 		</engines>
-		<electrical>
+		<electric>
 			<ground-power-connected type="bool">false</ground-power-connected>
-		</electrical>
+			<battery-switch type="bool">true</battery-switch>
+			<circuit-breakers>
+				<alt-reg type="bool">true</alt-reg>
+				<radio-instrument-lights type="bool">true</radio-instrument-lights>
+				<cabin-lights type="bool">true</cabin-lights>
+				<instrument-flood-lights type="bool">true</instrument-flood-lights>
+			</circuit-breakers>
+		</electric>
 		<anti-ice>
 			<window-heat type="bool">false</window-heat>
 			<wing-deice type="bool">false</wing-deice>

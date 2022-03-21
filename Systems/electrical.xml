@@ -63,7 +63,7 @@
 		<name>Available ground power amps</name>
 		<type>gain</type>
 		<gain>60</gain>
-		<input>/controls/electrical/ground-power-connected</input>
+		<input>/controls/electric/ground-power-connected</input>
 		<output>/systems/electrical/suppliers/gpu/available-amps</output>
 		<min>0</min>
 		<max>60</max>
@@ -72,7 +72,7 @@
 		<name>Available ground power volts</name>
 		<type>gain</type>
 		<gain>24</gain>
-		<input>/controls/electrical/ground-power-connected</input>
+		<input>/controls/electric/ground-power-connected</input>
 		<output>/systems/electrical/suppliers/gpu/available-volts</output>
 		<min>0</min>
 		<max>24</max>
@@ -222,10 +222,9 @@
 	</filter>
 	<logic>
 		<name>Reset recharge flag</name>
+		<inverted type="bool">true</inverted>
 		<input>
-			<condition>
-				<value type="bool">true</value>
-			</condition>
+			<value type="bool">false</value>
 		</input>
 		<output>/systems/electrical/suppliers/battery/reset-to-full-charge</output>
 	</logic>
@@ -444,26 +443,9 @@
 		<output>/systems/electrical/buses/primary/consumers/instrument-flood-lights/volts</output>
 	</filter>
 	<filter>
-		<name>Cabin lights amps</name>
+		<name>Instrument flood lights amps</name>
 		<type>gain</type>
-		<gain>/controls/electric/circuit-breakers/cabin-lights</gain>
-		<input>
-			<expression>
-				<div>
-					<property>/systems/electrical/buses/primary/volts</property>
-					<prod>
-						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/instrument-flood-lights/glareshield-flood-lights-amps</property>
-					</prod>
-				</div>
-			</expression>
-		</input>
-		<output>/systems/electrical/buses/primary/consumers/instrument-flood-lights/amps</output>
-	</filter>
-	<filter>
-		<name>Cabin lights amps</name>
-		<type>gain</type>
-		<gain>/controls/electric/circuit-breakers/cabin-lights</gain>
+		<gain>/controls/electric/circuit-breakers/instrument-flood-lights</gain>
 		<input>
 			<expression>
 				<div>
