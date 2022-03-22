@@ -23,6 +23,27 @@
 		* model over current (too high amps load decreases voltage and potentially damages the power supplier if it lasts too long)
 -->
 <PropertyList>
+	<filter>
+		<name>Calculate dt</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<expression>
+				<dif>
+					<property>/sim/time/elapsed-sec</property>
+					<property>/systems/electrical/last-exec-time</property>
+				</dif>
+			</expression>
+		</input>
+		<output>/systems/electrical/dt</output>
+	</filter>
+	<filter>
+		<name>Save current elapsed-sec for next iteration</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>/sim/time/elapsed-sec</input>
+		<output>/systems/electrical/last-exec-time</output>
+	</filter>
 	<!-- First, every supplier calculates it's avilable voltage and current -->
 	<!-- Alternator -->
 	<filter>
@@ -231,12 +252,14 @@
 				<sum>
 					<property>/systems/electrical/suppliers/battery/charge-amp_hours</property>
 					<div>
-						<dif>
-							<property>/systems/electrical/suppliers/battery/amps</property>
-							<property>/systems/electrical/suppliers/battery/charge-rate-amps</property>
-						</dif>
-						 <!-- Seconds of an hour (3600) * 120 Hz - that should empty the battery in one hour if discharged at it's Ah rating -->
-						<value>432000</value>
+						<prod>
+							<dif>
+								<property>/systems/electrical/suppliers/battery/charge-rate-amps</property>
+								<property>/systems/electrical/suppliers/battery/amps</property>
+							</dif>
+							<property>/systems/electrical/dt</property>
+						</prod>
+						<value>3600</value>
 					</div>
 				</sum>
 			</expression>
@@ -291,7 +314,7 @@
 					<property>/systems/electrical/suppliers/battery/volts</property>
 					<value>12</value>
 				</greater-than>
-				<property>/controls/electric/engine/master-bat</property>
+				<property>/controls/electric/battery-switch</property>
 			</and>
 		</input>
 		<output>/systems/electrical/suppliers/battery/power</output>
@@ -308,7 +331,7 @@
 					<property>/systems/electrical/suppliers/battery/volts</property>
 				</greater-than>
 				<property>/controls/electric/engine/master-alt</property>
-				<property>/controls/electric/engine/master-bat</property>
+				<property>/controls/electric/battery-switch</property>
 			</and>
 		</input>
 		<output>/systems/electrical/suppliers/alternator/power</output>

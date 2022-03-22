@@ -3,7 +3,8 @@
 	<electrical>
 		<name>electrical</name>
 		<number>0</number>
-		<path>Systems/generic-electrical.xml</path>
+		<!--<path>Systems/generic-electrical.xml</path>-->
+		<path/>
 	</electrical>
 	
 	<pitot>

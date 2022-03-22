@@ -666,7 +666,8 @@
 				<transponder alias="/systems/electrical/buses/avionics/consumers/radio-3/volts"/>
 				<dme alias="/systems/electrical/buses/avionics/consumers/radio-4/volts"/>
 				<adf alias="/systems/electrical/buses/avionics/consumers/radio-5/volts"/>
-				<dme alias="/systems/electrical/buses/primary/consumers/turn-coordinator/volts"/>
+				<turn-coordinator alias="/systems/electrical/buses/primary/consumers/turn-coordinator/volts"/>
+				<fuel-pump alias="/systems/electrical/buses/primary/consumers/fuel-pump/volts"/>
 			</outputs>
 		</electrical>
 	</systems>
