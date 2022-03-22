@@ -30,17 +30,31 @@
 		<type>gain</type>
 		<gain>/systems/electrical/suppliers/alternator/rated-amps</gain>
 		<input>
+			<condition>
+				<greater-than-equals>
+					<property>/engines/engine/rpm</property>
+					<value>166</value>
+				</greater-than-equals>
+			</condition>
+			<!-- graph of this formula: https://www.desmos.com/calculator/drhmyc1e3h -->
 			<expression>
 				<div>
-					<log10>
-						<!-- log10 gives negative values between 1 and 0, so offset the RPM by 1-->
-						<sum>
-							<property>/engines/engine/rpm</property>
-							<value>1</value>
-						</sum>
-					</log10>
-					<!-- log10(1000) -->
-					<value>3</value>
+					<dif>
+						<prod>
+							<value>30.811</value>
+							<log>
+								<dif>
+									<prod>
+										<property>/engines/engine/rpm</property>
+										<value>8</value>
+									</prod>
+									<value>1300</value>
+								</dif>
+							</log>
+						</prod>
+						<value>98.1</value>
+					</dif>
+					<value>2.86666666</value>
 				</div>
 			</expression>
 		</input>
@@ -172,12 +186,41 @@
 		<output>/systems/electrical/suppliers/battery/volts</output>
 	</filter>
 	
+	
 	<!-- Some extra work for the battery: Charge / discharge the battery based on available / needed current -->
+	
+	<filter>
+		<name>Battery charge rate</name>
+		<type>gain</type>
+		<gain>/controls/electric/battery-switch</gain>
+		<input>
+			<expression>
+				<min>
+					<sum>
+						<prod>
+							<property>/systems/electrical/suppliers/alternator/available-amps</property>
+							<property>/systems/electrical/suppliers/alternator/power</property>
+						</prod>
+						<prod>
+							<property>/systems/electrical/suppliers/gpu/available-amps</property>
+							<property>/systems/electrical/suppliers/gpu/power</property>
+						</prod>
+					</sum>
+					<!-- most sources I found recommend charging a lead-acid battery at a quarter of their Ah rating -->
+					<div>
+						<property>/systems/electrical/suppliers/battery/capacity-amp_hours</property>
+						<value>4</value>
+					</div>
+				</min>
+			</expression>
+		</input>
+		<output>/systems/electrical/suppliers/battery/charge-rate-amps</output>
+	</filter>
+			
 	<filter>
 		<name>Apply battery input / output to charge</name>
 		<type>gain</type>
 		<gain>1</gain>
-		<update-interval-secs>0.01</update-interval-secs>
 		<input>
 			<condition>
 				<not>
@@ -189,28 +232,11 @@
 					<property>/systems/electrical/suppliers/battery/charge-amp_hours</property>
 					<div>
 						<dif>
-							<max>
-								<sum>
-									<!-- TODO: make battery loading add to the load of the alternator / gpu -->
-									<prod>
-										<property>/systems/electrical/suppliers/alternator/available-amps</property>
-										<property>/systems/electrical/suppliers/alternator/power</property>
-									</prod>
-									<prod>
-										<property>/systems/electrical/suppliers/gpu/available-amps</property>
-										<property>/systems/electrical/suppliers/gpu/power</property>
-									</prod>
-								</sum>
-								<!-- most sources I found recommend charging a lead-acid battery at a quarter of their Ah rating -->
-								<div>
-									<property>/systems/electrical/suppliers/battery/capacity-amp_hours</property>
-									<value>4</value>
-								</div>
-							</max>
 							<property>/systems/electrical/suppliers/battery/amps</property>
+							<property>/systems/electrical/suppliers/battery/charge-rate-amps</property>
 						</dif>
-						 <!-- Seconds of an hour (3600) * 100 Hz - that will empty the battery in one hour if discharged at it's Ah rating -->
-						<value>360000</value>
+						 <!-- Seconds of an hour (3600) * 120 Hz - that should empty the battery in one hour if discharged at it's Ah rating -->
+						<value>432000</value>
 					</div>
 				</sum>
 			</expression>
@@ -265,6 +291,7 @@
 					<property>/systems/electrical/suppliers/battery/volts</property>
 					<value>12</value>
 				</greater-than>
+				<property>/controls/electric/engine/master-bat</property>
 			</and>
 		</input>
 		<output>/systems/electrical/suppliers/battery/power</output>
@@ -280,6 +307,8 @@
 					<property>/systems/electrical/suppliers/alternator/volts</property>
 					<property>/systems/electrical/suppliers/battery/volts</property>
 				</greater-than>
+				<property>/controls/electric/engine/master-alt</property>
+				<property>/controls/electric/engine/master-bat</property>
 			</and>
 		</input>
 		<output>/systems/electrical/suppliers/alternator/power</output>
@@ -287,15 +316,19 @@
 	<logic>
 		<name>Determine if ground power receptacle is supplying power</name>
 		<input>
-			<greater-than>
-				<property>/systems/electrical/suppliers/gpu/volts</property>
-				<expression>
-					<max>
-						<property>/systems/electrical/suppliers/alternator/volts</property>
-						<property>/systems/electrical/suppliers/battery/volts</property>
-					</max>
-				</expression>
-			</greater-than>
+			<and>
+				<greater-than>
+					<property>/systems/electrical/suppliers/gpu/volts</property>
+					<expression>
+						<max>
+							<property>/systems/electrical/suppliers/alternator/volts</property>
+							<property>/systems/electrical/suppliers/battery/volts</property>
+						</max>
+					</expression>
+				</greater-than>
+				<property>/controls/electric/ground-power-connected</property>
+				<property>/controls/electric/engine/master-bat</property>
+			</and>
 		</input>
 		<output>/systems/electrical/suppliers/gpu/power</output>
 	</logic>
@@ -1355,27 +1388,41 @@
 	</filter>
 	
 	<filter>
-		<name>Apply bus loads to power source</name>
+		<name>Determine battery load</name>
 		<type>gain</type>
 		<gain>1</gain>
-		<input>/systems/electrical/buses/primary/amps</input>
-		<output>
+		<input>
 			<condition>
 				<property>/systems/electrical/suppliers/battery/power</property>
 			</condition>
-			<property>/systems/electrical/suppliers/battery/amps</property>
-		</output>
-		<output>
+			<property>/systems/electrical/buses/primary/amps</property>
+		</input>
+		<output>/systems/electrical/suppliers/battery/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Determine alternator load</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
 			<condition>
 				<property>/systems/electrical/suppliers/alternator/power</property>
 			</condition>
-			<property>/systems/electrical/suppliers/alternator/amps</property>
-		</output>
-		<output>
+			<property>/systems/electrical/buses/primary/amps</property>
+		</input>
+		<output>/systems/electrical/suppliers/alternator/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Determine ground power load</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
 			<condition>
 				<property>/systems/electrical/suppliers/gpu/power</property>
 			</condition>
-			<property>/systems/electrical/suppliers/gpu/amps</property>
-		</output>
+			<property>/systems/electrical/buses/primary/amps</property>
+		</input>
+		<output>/systems/electrical/suppliers/gpu/amps</output>
 	</filter>
 </PropertyList>

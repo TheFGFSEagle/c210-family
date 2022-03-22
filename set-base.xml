@@ -282,7 +282,7 @@
 		</engines>
 		<electric>
 			<ground-power-connected type="bool">false</ground-power-connected>
-			<external-power alias="/controls/electric/external-power"/>
+			<external-power alias="/controls/electric/ground-power-connected"/>
 			<avionics-power type="bool">true</avionics-power>
 			<battery-switch type="bool">false</battery-switch>
 			<engine>
