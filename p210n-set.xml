@@ -31,12 +31,12 @@
 				<splash type="bool">true</splash>
 				<path>Previews/cruising-over-industry.png</path>
 			</preview>
-			<!--<preview>
+			<preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
-				<path>Previews/caravan-5.png</path>
+				<path>Previews/climbing-winter-seaside.png</path>
 			</preview>
-			<preview>
+			<!--<preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
 				<path>Previews/caravan-6.png</path>
