@@ -142,7 +142,7 @@
 			<path>/controls/electric/circuit-breakers</path>
 			<path>/controls/anti-ice/pitot-heat</path>
 			<path>/controls/anti-ice/wing-deice</path>
-			<path>/controls/anti-ice/deice-light</path>
+			<path>/controls/anti-ice/ice-detector-light</path>
 			<path>/controls/anti-ice/window-heat</path>
 			<path>/controls/anti-ice/propeller-heat</path>
 			<path>/controls/flight/rudder</path>
@@ -273,6 +273,10 @@
 		</engine>
 	</engines>
 	<controls>
+		<flight>
+			<electric-trim-engaged type="bool">false</electric-trim-engaged>
+			<electric-trim-actuate>0</electric-trim-actuate>
+		</flight>
 		<engines>
 			<engine>
 				<cowl-flaps-norm>1</cowl-flaps-norm>
@@ -280,6 +284,13 @@
 				<master-bat alias="/controls/electric/battery-switch"/>
 			</engine>
 		</engines>
+		<lighting>
+			<dome-baggage-light type="bool">true</dome-baggage-light>
+			<panel-integral-norm>1</panel-integral-norm>
+			<panel-post-norm>0</panel-post-norm>
+			<panel-flood-norm>0</panel-flood-norm>
+			<panel-electroluminescent-norm>0</panel-electroluminescent-norm>
+		</lighting>
 		<electric>
 			<ground-power-connected type="bool">false</ground-power-connected>
 			<external-power alias="/controls/electric/ground-power-connected"/>
@@ -330,7 +341,7 @@
 		<anti-ice>
 			<window-heat type="bool">false</window-heat>
 			<wing-deice type="bool">false</wing-deice>
-			<deice-light type="bool">false</deice-light>
+			<ice-detector-light type="bool">false</ice-detector-light>
 			<propeller-heat type="bool">false</propeller-heat>
 			<pitot-heat type="bool">false</pitot-heat>
 		</anti-ice>
@@ -359,6 +370,7 @@
 			<!-- Pushed in (false): Floor defrost, pulled out (true): Forward air -->
 			<floor-defrost type="bool">false</floor-defrost>
 			<overhead-vent-fan type="int">0</overhead-vent-fan>
+			<air-conditioning type="bool">false</air-conditioning>
 		</cabin-air>
 	</controls>
 	

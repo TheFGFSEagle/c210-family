@@ -44,12 +44,14 @@
 		<input>/sim/time/elapsed-sec</input>
 		<output>/systems/electrical/last-exec-time</output>
 	</filter>
+	
 	<!-- First, every supplier calculates it's avilable voltage and current -->
 	<!-- Alternator -->
 	<filter>
 		<name>Available alternator amps</name>
 		<type>gain</type>
-		<gain>/systems/electrical/suppliers/alternator/rated-amps</gain>
+		<!--<gain>/systems/electrical/suppliers/alternator/rated-amps</gain>-->
+		<gain>1</gain>
 		<input>
 			<condition>
 				<greater-than-equals>
@@ -115,8 +117,6 @@
 	
 	<!-- Battery -->
 	<filter>
-		<!-- TODO: find a better formula - this is a simple polynomial that I just copied from the C182S,
-			but the resulting curve looks quite different from an actual power-vs-charge curve of a lea-acid battery -->
 		<name>Battery output factor based on charge</name>
 		<type>gain</type>
 		<gain>1</gain>
@@ -439,13 +439,26 @@
 					<div>
 						<value>28</value>
 						<sum>
-							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/post-lights-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/engine-instrument-lights-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/pedestal-lights-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/digital-clock-backlight-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/approach-plate-map-light-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/compass-light-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/radio-lights-amps</property>
+							<prod>
+								<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/post-lights-amps</property>
+								<property>/controls/lighting/panel-post-norm</property>
+							</prod>
+							<prod>
+								<sum>
+									<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/engine-instrument-lights-amps</property>
+									<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/digital-clock-backlight-amps</property>
+									<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/compass-light-amps</property>
+								</sum>
+								<property>/controls/lighting/panel-integral-norm</property>
+							</prod>
+							<prod>
+								<sum>
+									<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/pedestal-lights-amps</property>
+									<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/approach-plate-map-light-amps</property>
+									<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/radio-lights-amps</property>
+								</sum>
+								<property>/controls/lighting/panel-flood-norm</property>
+							</prod>
 						</sum>
 					</div>
 				</div>
@@ -472,12 +485,30 @@
 					<div>
 						<value>28</value>
 						<sum>
-							<property>/systems/electrical/buses/primary/consumers/cabin-lights/ice-detector-light-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/cabin-lights/dome-courtesy-baggage-lights-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/cabin-lights/low-voltage-warning-light-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/cabin-lights/oxygen-lights-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/cabin-lights/overhead-flood-light-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/cabin-lights/ignition-switch-amps</property>
+							<prod>
+								<property>/systems/electrical/buses/primary/consumers/cabin-lights/ice-detector-light-amps</property>
+								<property>/controls/lighting/ice-detector-light</property>
+							</prod>
+							<prod>
+								<property>/systems/electrical/buses/primary/consumers/cabin-lights/dome-courtesy-baggage-lights-amps</property>
+								<property>/controls/lighting/dome-courtesy-baggage-light</property>
+							</prod>
+							<prod>
+								<property>/systems/electrical/buses/primary/consumers/cabin-lights/low-voltage-warning-light-amps</property>
+								<property>/systems/electrical/low-voltage-light-norm</property>
+							</prod>
+							<prod>
+								<property>/systems/electrical/buses/primary/consumers/cabin-lights/oxygen-lights-amps</property>
+								<property>/systems/oxygen/oxygen-depleted</property>
+							</prod>
+							<prod>
+								<property>/systems/electrical/buses/primary/consumers/cabin-lights/overhead-flood-light-amps</property>
+								<property>/controls/lighting/panel-flood-norm</property>
+							</prod>
+							<prod>
+								<property>/systems/electrical/buses/primary/consumers/cabin-lights/ignition-switch-amps</property>
+								<property>/controls/engines/engine/starter</property>
+							</prod>
 						</sum>
 					</div>
 				</div>
@@ -503,7 +534,10 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/instrument-flood-lights/glareshield-flood-lights-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/instrument-flood-lights/glareshield-flood-lights-amps</property>
+							<property>/controls/lighting/panel-flood-norm</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -529,9 +563,17 @@
 					<div>
 						<value>28</value>
 						<sum>
-							<property>/systems/electrical/buses/primary/consumers/nav-lights/nav-lights-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/nav-lights/yoke-map-light-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/nav-lights/electroluminescent-panel-lights-amps</property>
+							<prod>
+								<sum>
+									<property>/systems/electrical/buses/primary/consumers/nav-lights/nav-lights-amps</property>
+									<property>/systems/electrical/buses/primary/consumers/nav-lights/yoke-map-light-amps</property>
+								</sum>
+								<property>/controls/lighting/nav-lights</property>
+							</prod>
+							<prod>
+								<property>/systems/electrical/buses/primary/consumers/nav-lights/electroluminescent-panel-lights-amps</property>
+								<property>/controls/lighting/panel-electroluminescent-norm</property>
+							</prod>
 						</sum>
 					</div>
 				</div>
@@ -557,7 +599,10 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/strobe/strobe-lights-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/strobe/strobe-lights-amps</property>
+							<property>/sim/model/lights/strobe/state</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -582,7 +627,10 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/beacon/flashing-beacon-light-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/beacon/flashing-beacon-light-amps</property>
+							<property>/sim/model/lights/beacon/state</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -607,7 +655,10 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/tail-flood/tail-flood-lights-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/tail-flood/tail-flood-lights-amps</property>
+							<property>/controls/lighting/logo-lights</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -632,7 +683,10 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/taxi/taxi-light-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/taxi/taxi-light-amps</property>
+							<property>/controls/lighting/taxi-light</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -657,7 +711,10 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/landing/landing-light-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/landing/landing-light-amps</property>
+							<property>/controls/lighting/landing-lights</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -708,8 +765,14 @@
 					<div>
 						<value>28</value>
 						<sum>
-							<property>/systems/electrical/buses/primary/consumers/vent-fan/overhead-vent-fan-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/vent-fan/air-conditioning-amps</property>
+							<prod>
+								<property>/systems/electrical/buses/primary/consumers/vent-fan/overhead-vent-fan-amps</property>
+								<property>/controls/cabin-air/overhead-vent-fan</property>
+							</prod>
+							<prod>
+								<property>/systems/electrical/buses/primary/consumers/vent-fan/air-conditioning-amps</property>
+								<property>/controls/cabin-air/air-conditioning</property>
+							</prod>
 						</sum>
 					</div>
 				</div>
@@ -735,7 +798,10 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/avionics-fan/avionics-cooling-fan-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/avionics-fan/avionics-cooling-fan-amps</property>
+							<property>/controls/electric/avionics-power</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -785,7 +851,15 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/trim/electric-elevator-trim-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/trim/electric-elevator-trim-amps</property>
+							<abs>
+								<prod>
+									<property>/controls/flight/electric-trim-engaged</property>
+									<property>/controls/flight/electric-trim-actuate</property>
+								</prod>
+							</abs>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -801,7 +875,7 @@
 		<output>/systems/electrical/buses/primary/consumers/alt-reg/volts</output>
 	</filter>
 	<filter>
-		<name>Instrument flood lights amps</name>
+		<name>Alternator control amps</name>
 		<type>gain</type>
 		<gain>/controls/electric/circuit-breakers/alt-reg</gain>
 		<input>
@@ -810,7 +884,10 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/alt-reg/alternator-control-unit-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/alt-reg/alternator-control-unit-amps</property>
+							<property>/controls/electric/engine/master-alt</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -835,7 +912,10 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/pressurization/pressurization-system-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/pressurization/pressurization-system-amps</property>
+							<property>/controls/pressurization/pressurize</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -860,7 +940,10 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/prop-anti-ice/propeller-anti-ice-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/prop-anti-ice/propeller-anti-ice-amps</property>
+							<property>/controls/anti-ice/propeller-heat</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -885,7 +968,10 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/windshield-anti-ice/windshield-anti-ice-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/windshield-anti-ice/windshield-anti-ice-amps</property>
+							<property>/controls/anti-ice/window-heat</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -911,8 +997,13 @@
 					<div>
 						<value>28</value>
 						<sum>
-							<property>/systems/electrical/buses/primary/consumers/pitot-heat/pitot-heat-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/pitot-heat/stall-warning-heat-amps</property>
+							<prod>
+								<sum>
+									<property>/systems/electrical/buses/primary/consumers/pitot-heat/pitot-heat-amps</property>
+									<property>/systems/electrical/buses/primary/consumers/pitot-heat/stall-warning-heat-amps</property>
+								</sum>
+								<property>/controls/anti-ice/pitot-heat</property>
+							</prod>
 							<property>/systems/electrical/buses/primary/consumers/pitot-heat/digital-clock-amps</property>
 						</sum>
 					</div>
@@ -939,7 +1030,16 @@
 					<property>/systems/electrical/buses/primary/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/fuel-pump/aux-fuel-pump-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/primary/consumers/fuel-pump/aux-fuel-pump-amps</property>
+							<div>
+								<sum>
+									<property>/controls/engines/engine/fuel-pump</property>
+									<property>/controls/engines/engine/fuel-pump-hi</property>
+								</sum>
+								<value>2</value>
+							</div>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -1075,7 +1175,13 @@
 						<value>28</value>
 						<sum>
 							<property>/systems/electrical/buses/primary/consumers/landing-gear/landing-gear-system-amps</property>
-							<property>/systems/electrical/buses/primary/consumers/landing-gear/gear-position-lights-amps</property>
+							<prod>
+								<property>/systems/electrical/buses/primary/consumers/landing-gear/gear-position-lights-amps</property>
+								<max>
+									<property>/sim/model/controls/gear/retracted-lamp-illumination</property>
+									<property>/sim/model/controls/gear/extended-lamp-illumination</property>
+								</max>
+							</prod>
 							<property>/systems/electrical/buses/primary/consumers/landing-gear/gear-warning-system-amps</property>
 						</sum>
 					</div>
@@ -1102,10 +1208,13 @@
 					<property>/systems/electrical/buses/avionics/volts</property>
 					<div>
 						<value>28</value>
-						<sum>
-							<property>/systems/electrical/buses/avionics/consumers/radio-1/com-nav-1-amps</property>
-							<property>/systems/electrical/buses/avionics/consumers/radio-1/glideslope-amps</property>
-						</sum>
+						<prod>
+							<sum>
+								<property>/systems/electrical/buses/avionics/consumers/radio-1/com-nav-1-amps</property>
+								<property>/systems/electrical/buses/avionics/consumers/radio-1/glideslope-amps</property>
+							</sum>
+							<property>/instrumentation/comm[0]/power-btn</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -1130,10 +1239,13 @@
 					<property>/systems/electrical/buses/avionics/volts</property>
 					<div>
 						<value>28</value>
-						<sum>
-							<property>/systems/electrical/buses/avionics/consumers/radio-2/com-nav-2-amps</property>
-							<property>/systems/electrical/buses/avionics/consumers/radio-2/rnav-amps</property>
-						</sum>
+						<prod>
+							<sum>
+								<property>/systems/electrical/buses/avionics/consumers/radio-2/com-nav-2-amps</property>
+								<property>/systems/electrical/buses/avionics/consumers/radio-2/rnav-amps</property>
+							</sum>
+							<property>/instrumentation/comm[1]/power-btn</property>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -1158,7 +1270,13 @@
 					<property>/systems/electrical/buses/avionics/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/avionics/consumers/radio-3/transponder-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/avionics/consumers/radio-3/transponder-amps</property>
+							<min>
+								<property>/instrumentation/transponder/knob-mode</property>
+								<value>1</value>
+							</min>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -1183,7 +1301,13 @@
 					<property>/systems/electrical/buses/avionics/volts</property>
 					<div>
 						<value>28</value>
-						<property>/systems/electrical/buses/avionics/consumers/radio-4/dme-amps</property>
+						<prod>
+							<property>/systems/electrical/buses/avionics/consumers/radio-4/dme-amps</property>
+							<min>
+								<property>/instrumentation/dme/mode</property>
+								<value>1</value>
+							</min>
+						</prod>
 					</div>
 				</div>
 			</expression>
@@ -1252,6 +1376,8 @@
 		<name>Weather radar amps</name>
 		<type>gain</type>
 		<gain>/controls/electric/circuit-breakers/wxradar</gain>
+		<!-- XXX: REMOVE this line when weather radar is implemented -->
+		<input>0</input>
 		<input>
 			<expression>
 				<div>
@@ -1309,7 +1435,10 @@
 					<div>
 						<value>28</value>
 						<sum>
-							<property>/systems/electrical/buses/avionics/consumers/ap-control/autopilot-amps</property>
+							<prod>
+								<property>/systems/electrical/buses/avionics/consumers/ap-control/autopilot-amps</property>
+								<property>/controls/autoflight/enabled</property>
+							</prod>
 							<property>/systems/electrical/buses/avionics/consumers/ap-control/ap-control-amps</property>
 							<property>/systems/electrical/buses/avionics/consumers/ap-control/backcourse-light-amps</property>
 						</sum>
@@ -1331,6 +1460,8 @@
 		<name>Autopilot actuators amps</name>
 		<type>gain</type>
 		<gain>/controls/electric/circuit-breakers/ap-actuators</gain>
+		<!-- XXX: REMOVE this line when proper autopilot is implemented -->
+		<input>0</input>
 		<input>
 			<expression>
 				<div>

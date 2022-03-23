@@ -151,7 +151,7 @@
 		</offsets>
 		<overlay>
 			<params>
-				<property>controls/anti-ice/deice-light</property>
+				<property>controls/anti-ice/ice-detector-light</property>
 			</params>
 		</overlay>
 	</model>
@@ -236,7 +236,7 @@
 		</offsets>
 		<overlay>
 			<params>
-				<property>controls/engines/engine/master-alt</property>
+				<property>controls/electric/engine/master-alt</property>
 			</params>
 		</overlay>
 	</model>
