@@ -503,7 +503,7 @@
 				</battery>
 				<alternator>
 					<power type="bool">false</power>
-					<rated-amps>60</rated-amps>
+					<rated-amps>95</rated-amps>
 				</alternator>
 				<gpu>
 					<power type="bool">false</power>

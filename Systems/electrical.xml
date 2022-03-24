@@ -50,7 +50,6 @@
 	<filter>
 		<name>Available alternator amps</name>
 		<type>gain</type>
-		<!--<gain>/systems/electrical/suppliers/alternator/rated-amps</gain>-->
 		<gain>1</gain>
 		<input>
 			<condition>
@@ -59,9 +58,9 @@
 					<value>166</value>
 				</greater-than-equals>
 			</condition>
-			<!-- graph of this formula: https://www.desmos.com/calculator/drhmyc1e3h -->
+			<!-- graph of this formula: https://www.desmos.com/calculator/yazibkyib5 where A = alternator/rated-amps -->
 			<expression>
-				<div>
+				<prod>
 					<dif>
 						<prod>
 							<value>30.811</value>
@@ -77,8 +76,11 @@
 						</prod>
 						<value>98.1</value>
 					</dif>
-					<value>2.86666666</value>
-				</div>
+					<div>
+						<property>/systems/electrical/suppliers/alternator/rated-amps</property>
+						<value>172</value>
+					</div>
+				</prod>
 			</expression>
 		</input>
 		<output>/systems/electrical/suppliers/alternator/available-amps</output>
@@ -99,20 +101,16 @@
 	<filter>
 		<name>Available ground power amps</name>
 		<type>gain</type>
-		<gain>60</gain>
+		<gain>120</gain>
 		<input>/controls/electric/ground-power-connected</input>
 		<output>/systems/electrical/suppliers/gpu/available-amps</output>
-		<min>0</min>
-		<max>60</max>
 	</filter>
 	<filter>
 		<name>Available ground power volts</name>
 		<type>gain</type>
-		<gain>24</gain>
+		<gain>28</gain>
 		<input>/controls/electric/ground-power-connected</input>
 		<output>/systems/electrical/suppliers/gpu/available-volts</output>
-		<min>0</min>
-		<max>24</max>
 	</filter>
 	
 	<!-- Battery -->
@@ -158,12 +156,12 @@
 	<filter>
 		<name>Available battery amps</name>
 		<type>gain</type>
-		<gain>/systems/electrical/suppliers/battery/available-power-factor</gain>
-		<input>60</input>
+		<gain>60</gain>
+		<input>/systems/electrical/suppliers/battery/available-power-factor</input>
 		<output>/systems/electrical/suppliers/battery/available-amps</output>
 	</filter>
 	
-	<!-- Then, every supplier sets it's actual voltage based on the master switches -->
+	<!-- Then, every supplier sets it's actual voltage based on the witches -->
 	<filter>
 		<name>Alternator volts</name>
 		<type>gain</type>
@@ -218,20 +216,42 @@
 			<expression>
 				<min>
 					<sum>
-						<prod>
+						<dif>
 							<property>/systems/electrical/suppliers/alternator/available-amps</property>
-							<property>/systems/electrical/suppliers/alternator/power</property>
-						</prod>
-						<prod>
+							<property>/systems/electrical/suppliers/alternator/amps</property>
+						</dif>
+						<dif>
 							<property>/systems/electrical/suppliers/gpu/available-amps</property>
-							<property>/systems/electrical/suppliers/gpu/power</property>
-						</prod>
+							<property>/systems/electrical/suppliers/gpu/amps</property>
+						</dif>
 					</sum>
-					<!-- most sources I found recommend charging a lead-acid battery at a quarter of their Ah rating -->
-					<div>
+					<prod>
 						<property>/systems/electrical/suppliers/battery/capacity-amp_hours</property>
-						<value>4</value>
-					</div>
+						<!--simulate slower loading when battery is almost full -->
+						<table>
+							<property>/systems/electrical/suppliers/battery/charge-norm</property>
+							<entry>
+								<ind>0.75</ind>
+								<dep>1</dep>
+							</entry>
+							<entry>
+								<ind>0.8</ind>
+								<dep>0.6</dep>
+							</entry>
+							<entry>
+								<ind>0.85</ind>
+								<dep>0.3</dep>
+							</entry>
+							<entry>
+								<ind>0.9</ind>
+								<dep>0.15</dep>
+							</entry>
+							<entry>
+								<ind>1</ind>
+								<dep>0.05</dep>
+							</entry>
+						</table>
+					</prod>
 				</min>
 			</expression>
 		</input>
@@ -1546,12 +1566,25 @@
 		<type>gain</type>
 		<gain>1</gain>
 		<input>
-			<condition>
-				<property>/systems/electrical/suppliers/battery/power</property>
-			</condition>
-			<property>/systems/electrical/buses/primary/amps</property>
+			<expression>
+				<dif>
+					<property>/systems/electrical/buses/primary/amps</property>
+					<max>
+						<prod>
+							<property>/systems/electrical/suppliers/alternator/available-amps</property>
+							<property>/systems/electrical/suppliers/alternator/power</property>
+						</prod>
+						<prod>
+							<property>/systems/electrical/suppliers/gpu/available-amps</property>
+							<property>/systems/electrical/suppliers/gpu/power</property>
+						</prod>
+					</max>
+				</dif>
+			</expression>
 		</input>
 		<output>/systems/electrical/suppliers/battery/amps</output>
+		<min>0</min>
+		<max>999</max>
 	</filter>
 	
 	<filter>
@@ -1562,7 +1595,12 @@
 			<condition>
 				<property>/systems/electrical/suppliers/alternator/power</property>
 			</condition>
-			<property>/systems/electrical/buses/primary/amps</property>
+			<expression>
+				<sum>
+					<property>/systems/electrical/buses/primary/amps</property>
+					<property>/systems/electrical/suppliers/battery/charge-rate-amps</property>
+				</sum>
+			</expression>
 		</input>
 		<output>/systems/electrical/suppliers/alternator/amps</output>
 	</filter>
@@ -1575,8 +1613,28 @@
 			<condition>
 				<property>/systems/electrical/suppliers/gpu/power</property>
 			</condition>
-			<property>/systems/electrical/buses/primary/amps</property>
+			<expression>
+				<sum>
+					<property>/systems/electrical/buses/primary/amps</property>
+					<property>/systems/electrical/suppliers/battery/charge-rate-amps</property>
+				</sum>
+			</expression>
 		</input>
 		<output>/systems/electrical/suppliers/gpu/amps</output>
+	</filter>
+	
+	<filter>
+		<name>Ammeter battery charge / discharge rate indication</name>
+		<type>noise-spike</type>
+		<max-rate-of-change>10</max-rate-of-change>
+		<input>
+			<expression>
+				<dif>
+					<property>/systems/electrical/suppliers/battery/charge-rate-amps</property>
+					<property>/systems/electrical/suppliers/battery/amps</property>
+				</dif>
+			</expression>
+		</input>
+		<output>/systems/electrical/ammeter-needle-amps</output>
 	</filter>
 </PropertyList>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertyList include="init-instrumentation-base.xml">
-	<!-- most of the stuff before <altimeter n="1"> should be replaced by system files to support electrcial / other system failures -->
+	<!-- most of the stuff before <altimeter n="1"> should be replaced by system files to support electrical / other system failures -->
 	<engine>
 		<indicated-egt-degf alias="/engines/engine/egt-degf"/>
 		<indicated-mp-inhg alias="/engines/engine/mp-inhg"/>
@@ -10,6 +10,6 @@
 		<indicated-cht-degf alias="/engines/engine/cht-degf"/>
 		<indicated-oil-temperature-degf alias="/engines/engine/oil-temperature-degf"/>
 		<indicated-oil-pressure-psi alias="/engines/engine/oil-pressure-psi"/>
-		<indicated-battery-charge-rate-amps alias="/systems/electrical/amps"/>
+		<indicated-battery-charge-rate-amps alias="/systems/electrical/ammeter-needle-amps"/>
 	</engine>
 </PropertyList>
