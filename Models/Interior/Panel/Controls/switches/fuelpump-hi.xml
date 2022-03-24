@@ -14,21 +14,19 @@
 		<factor>40</factor>
 		<action>
 			<binding>
-				<!-- do nothing if the fuel pump isn't already switched on in normal mode -->
-				<condition>
-					<property>controls/engines/engine/fuel-pump</property>
-				</condition>
 				<command>property-assign</command>
 				<property>controls/engines/engine/fuel-pump-hi</property>
+				<value type="bool">true</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<!-- the HI switch is mechanically tripped to the LO switch so that the latter gets switched on along with the HI switch when pressed and LO no on -->
+				<property>controls/engines/engine/fuel-pump</property>
 				<value type="bool">true</value>
 			</binding>
 		</action>
 		<release>
 			<binding>
-				<!-- do nothing if the fuel pump isn't already switched on in normal mode -->
-				<condition>
-					<property>controls/engines/engine/fuel-pump</property>
-				</condition>
 				<command>property-assign</command>
 				<property>controls/engines/engine/fuel-pump-hi</property>
 				<value type="bool">false</value>
