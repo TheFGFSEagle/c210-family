@@ -322,11 +322,22 @@
 	
 	<animation>
 		<condition>
-			<or>
-				<property>instrumentation/transponder/warmup</property>
-				<property>instrumentation/transponder/inputs/ident-btn</property>
-				<property>instrumentation/transponder/reply-lamp-flash</property>
-			</or>
+			<and>
+				<or>
+					<property>instrumentation/transponder/warmup</property>
+					<and>
+						<or>
+							<property>instrumentation/transponder/inputs/ident-btn</property>
+							<property>instrumentation/transponder/reply-lamp-flash</property>
+						</or>
+						<greater-than-equals>
+							<property>instrumentation/transponder/inputs/knob-mode</property>
+							<value>2</value>
+						</greater-than-equals>
+					</and>
+				</or>
+				<property>instrumentation/transponder/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>ReplyLamp</object-name>
@@ -340,7 +351,10 @@
 	<!-- Transponder test illumination of reply lamp is not dimmable, so need an extra animation for that -->
 	<animation>
 		<condition>
-			<property>instrumentation/transponder/test</property>
+			<and>
+				<property>instrumentation/transponder/test</property>
+				<property>instrumentation/transponder/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>ReplyLamp</object-name>

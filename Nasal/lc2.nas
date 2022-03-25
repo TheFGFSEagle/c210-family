@@ -96,6 +96,7 @@ var LC2 = {
 		};
 		
 		obj.modeNode = obj.rootNode.getNode("mode", 1);
+		obj.poweredNode = obj.rootNode.getNode("powered", 1);
 		obj.mode = obj.modeNode.getValue() or "timer";
 		obj.timerNode = obj.rootNode.getNode("timer", 1);
 		obj.utcNode = props.globals.getNode("/sim/time/utc");
@@ -152,6 +153,12 @@ var LC2 = {
 	},
 	
 	updateAnnunciators: func() {
+		if (!me.poweredNode.getBoolValue()) {
+			me.timerAnnun.hide();
+			me.clockAnnun.hide();
+			return;
+		}
+		
 		if (me.mode == "timer") {
 			me.timerAnnun.show();
 			me.clockAnnun.hide();
@@ -166,6 +173,11 @@ var LC2 = {
 	},
 	
 	updateClock: func() {
+		if (!me.poweredNode.getBoolValue()) {
+			me.text.setText("");
+			return;
+		}
+		
 		if (me._clockMode >= 1) {
 			me._clockMode -= 1;
 			var utcDays = sprintf("%02d", me.utcDayNode.getValue());
@@ -192,6 +204,10 @@ var LC2 = {
 	
 	updateTimer: func() {
 		# don't show timer time when the clock date / time is displayed
+		if (!me.poweredNode.getBoolValue()) {
+			me.text.setText("");
+			return;
+		}
 		if (me.clockTimer.isRunning) {
 			return;
 		}
@@ -235,6 +251,10 @@ var LC2 = {
 	},
 	
 	stSpDtAvPressed: func() {
+		if (!me.poweredNode.getBoolValue()) {
+			return;
+		}
+		
 		if (me.mode == "timer") {
 			me.timer.cycle();
 		} else {
@@ -245,12 +265,16 @@ var LC2 = {
 	},
 	
 	setResetPressed: func() {
-		if (me.mode == "timer" and !me.timer.active) {
+		if (me.mode == "timer" and !me.timer.active and me.poweredNode.getBoolValue()) {
 			me.timer.reset();
 		}
 	},
 	
 	modePressed: func() {
+		if (!me.poweredNode.getBoolValue()) {
+			return;
+		}
+		
 		if (me.mode == "timer") {
 			if (!me.timer.active) {
 				me.mode = "clock";

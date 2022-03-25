@@ -1596,10 +1596,16 @@
 				<property>/systems/electrical/suppliers/alternator/power</property>
 			</condition>
 			<expression>
-				<sum>
-					<property>/systems/electrical/buses/primary/amps</property>
-					<property>/systems/electrical/suppliers/battery/charge-rate-amps</property>
-				</sum>
+				<dif>
+					<sum>
+						<property>/systems/electrical/buses/primary/amps</property>
+						<property>/systems/electrical/suppliers/battery/charge-rate-amps</property>
+					</sum>
+					<prod>
+						<property>/systems/electrical/suppliers/battery/amps</property>
+						<property>/systems/electrical/suppliers/battery/power</property>
+					</prod>
+				</dif>
 			</expression>
 		</input>
 		<output>/systems/electrical/suppliers/alternator/amps</output>
@@ -1637,4 +1643,169 @@
 		</input>
 		<output>/systems/electrical/ammeter-needle-amps</output>
 	</filter>
+	
+	<logic>
+		<name>Determine if we have any power</name>
+		<input>
+			<and>
+				<or>
+					<property>/systems/electrical/suppliers/battery/power</property>
+					<property>/systems/electrical/suppliers/alternator/power</property>
+					<property>/systems/electrical/suppliers/gpu/power</property>
+				</or>
+				<greater-than>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<value>12</value>
+				</greater-than>
+			</and>
+		</input>
+	</logic>
+	
+	<filter>
+		<name>Set generic electrical amps property</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<expression>
+				<sum>
+					<property>/systems/electrical/suppliers/battery/amps</property>
+					<property>/systems/electrical/suppliers/alternator/amps</property>
+					<property>/systems/electrical/suppliers/gpu/amps</property>
+				</sum>
+			</expression>
+		</input>
+		<output>/systems/electrical/amps</output>
+	</filter>
+	<filter>
+		<name>Set generic electrical volts property</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/volts</output>
+	</filter>
+	
+	<logic>
+		<name>Determine if COM/NAV1 is powered</name>
+		<input>
+			<and>
+				<property>/instrumentation/comm/power-btn</property>
+				<greater-than>
+					<property>/systems/electrical/buses/avionics/consumers/radio-1/volts</property>
+					<value>12</value>
+				</greater-than>
+			</and>
+		</input>
+		<output>/instrumentation/comm/powered</output>
+		<output>/instrumentation/nav/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if COM/NAV2 is powered</name>
+		<input>
+			<and>
+				<property>/instrumentation/comm[1]/power-btn</property>
+				<greater-than>
+					<property>/systems/electrical/buses/avionics/consumers/radio-2/volts</property>
+					<value>12</value>
+				</greater-than>
+			</and>
+		</input>
+		<output>/instrumentation/comm[1]/powered</output>
+		<output>/instrumentation/nav[1]/powered</output>
+		<output>/instrumentation/rnav/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if transponder is powered</name>
+		<input>
+			<and>
+				<greater-than>
+					<property>/instrumentation/transponder/inputs/knob-mode</property>
+					<value>0</value>
+				</greater-than>
+				<greater-than>
+					<property>/systems/electrical/buses/avionics/consumers/radio-3/volts</property>
+					<value>12</value>
+				</greater-than>
+			</and>
+		</input>
+		<output>/instrumentation/transponder/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if DME is powered</name>
+		<input>
+			<and>
+				<greater-than>
+					<property>/instrumentation/dme/mode</property>
+					<value>0</value>
+				</greater-than>
+				<greater-than>
+					<property>/systems/electrical/buses/avionics/consumers/radio-4/volts</property>
+					<value>12</value>
+				</greater-than>
+			</and>
+		</input>
+		<output>/instrumentation/dme/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if ADF is powered</name>
+		<input>
+			<and>
+				<property>/instrumentation/adf/power-btn</property>
+				<greater-than>
+					<property>/systems/electrical/buses/avionics/consumers/radio-5/volts</property>
+					<value>12</value>
+				</greater-than>
+			</and>
+		</input>
+		<output>/instrumentation/adf/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if gear position lights are powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/landing-gear/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/sim/model/controls/gear/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if flaps are powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/flaps/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/sim/model/controls/flaps/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if autopilot control is powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/ap-control/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/sim/model/controls/ap-control/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if digital clock is powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/pitot-heat/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/instrumentation/clock/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if digital clock backlight is powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/radio-instrument-lights/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/instrumentation/clock/backlight-powered</output>
+	</logic>
 </PropertyList>

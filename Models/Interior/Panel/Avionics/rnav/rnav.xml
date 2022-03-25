@@ -350,6 +350,9 @@
 	</animation>
 	
 	<animation>
+		<condition>
+			<property>instrumentation/rnav/powered</property>
+		</condition>
 		<type>material</type>
 		<object-name>RNAVBearingDisplay</object-name>
 		<object-name>RNAVDistanceDisplay</object-name>
@@ -365,12 +368,15 @@
 		<type>material</type>
 		<object-name>DisplayFlyMismatchLamp</object-name>
 		<condition>
-			<not>
-				<equals>
-					<property>instrumentation/rnav/display-waypoint</property>
-					<property>instrumentation/rnav/fly-waypoint</property>
-				</equals>
-			</not>
+			<and>
+				<not>
+					<equals>
+						<property>instrumentation/rnav/display-waypoint</property>
+						<property>instrumentation/rnav/fly-waypoint</property>
+					</equals>
+				</not>
+				<property>instrumentation/rnav/powered</property>
+			</and>
 		</condition>
 		<emission>
 			<red>0.6</red>

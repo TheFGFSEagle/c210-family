@@ -22,6 +22,7 @@
 		<nav-memory3-script>c210.comNav1.memoryPressed("nav", 3);</nav-memory3-script>
 		<cycle-pressed>instrumentation/comm[0]/cycle-pressed</cycle-pressed>
 		<cycle-script>c210.comNav1.cyclePressed()</cycle-script>
+		<powered>instrumentation/comm[0]/powered</powered>
 		<label-text>COM/NAV 1</label-text>
 	</params>
 	
@@ -411,6 +412,9 @@
 	</animation>
 	
 	<animation>
+		<condition>
+			<property alias="../../../params/powered"/>
+		</condition>
 		<type>material</type>
 		<object-name>COM1FreqDisplay</object-name>
 		<object-name>NAV1FreqDisplay</object-name>

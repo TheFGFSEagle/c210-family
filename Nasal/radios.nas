@@ -88,7 +88,7 @@ var ComNavFreqDisplay = {
 		var obj = {
 			parents: [ComNavFreqDisplay],
 			_canvas: canvas.new({"size": [256, 80], "view": [256, 80]}),
-			poweredNode: deviceNode.getNode("power-btn"),
+			poweredNode: deviceNode.getNode("powered"),
 			selectedMhzFmtNode: deviceNode.getNode("frequencies/selected-mhz-fmt"),
 			placement: placement,
 		};
@@ -238,7 +238,7 @@ var DMEDisplays = {
 			sources: ["NAV2", "HOLD", "NAV1", "RNAV"],
 		};
 		
-		obj.poweredNode = obj.rootNode.getNode("power-btn", 1);
+		obj.poweredNode = obj.rootNode.getNode("powered", 1);
 		obj.distanceNode = obj.rootNode.getNode("KDI572-574/nm", 1);
 		obj.speedNode = obj.rootNode.getNode("KDI572-574/kt", 1);
 		obj.timeNode = obj.rootNode.getNode("KDI572-574/min", 1);
@@ -480,10 +480,10 @@ var RNAVDisplay = {
 			parents: [RNAVDisplay],
 			_canvas: canvas.new({"size": [160, 80], "view": [160, 80]}),
 			rootNode: instrumentationNode.getNode("rnav", 1),
-			poweredNode: instrumentationNode.getNode("nav[1]/power-btn", 1),
 			placement: placement,
 		};
 		
+		obj.poweredNode = obj.rootNode.getNode("powered");
 		obj.number1Node = obj.rootNode.getNode("waypoint[0]/" ~ numberPath, 1);
 		obj.number2Node = obj.rootNode.getNode("waypoint[1]/" ~ numberPath, 1);
 		obj.displayWaypointNode = obj.rootNode.getNode("display-waypoint");

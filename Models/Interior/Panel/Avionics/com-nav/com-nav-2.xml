@@ -25,6 +25,7 @@
 				<nav-memory3-script>c210.comNav2.memoryPressed("nav", 3);</nav-memory3-script>
 				<cycle-pressed>instrumentation/comm[1]/cycle-pressed</cycle-pressed>
 				<cycle-script>c210.comNav2.cyclePressed()</cycle-script>
+				<powered>instrumentation/comm[1]/powered</powered>
 				<label-text>COM/NAV 2</label-text>
 			</params>
 			<path>com-nav-2.ac</path>

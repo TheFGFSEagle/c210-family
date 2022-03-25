@@ -451,13 +451,32 @@
 	<animation>
 		<type>slider</type>
 		<object-name>ADFButton</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/adf/adf-pressed</property>
 		<action>
 			<binding>
 				<command>property-assign</command>
 				<property>instrumentation/adf/mode</property>
 				<value>adf</value>
 			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/adf/adf-pressed</property>
+				<value>1</value>
+			</binding>
 		</action>
+		<release>
+			<binding>
+				<command>property-interpolate</command>
+				<property>instrumentation/adf/adf-pressed</property>
+				<value>0</value>
+				<time>0.01</time>
+			</binding>
+		</release>
 		<hovered>
 			<binding>
 				<command>set-tooltip</command>
@@ -468,39 +487,36 @@
 			</binding>
 		</hovered>
 	</animation>
+	
 	<animation>
-		<condition>
-			<equals>
-				<property>instrumentation/adf/mode</property>
-				<value>adf</value>
-			</equals>
-		</condition>
-		<type>translate</type>
-		<object-name>ADFButton</object-name>
+		<type>slider</type>
+		<object-name>RECButton</object-name>
 		<axis>
 			<x>1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<expression>
-			<sum>
-				<value>0</value>
-				<!-- this is the real offset -->
-				<value>0.01</value>
-			</sum>
-		</expression>
-	</animation>
-	
-	<animation>
-		<type>slider</type>
-		<object-name>RECButton</object-name>
+		<property>instrumentation/adf/rec-pressed</property>
 		<action>
 			<binding>
 				<command>property-assign</command>
 				<property>instrumentation/adf/mode</property>
 				<value>ant</value>
 			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/adf/rec-pressed</property>
+				<value>1</value>
+			</binding>
 		</action>
+		<release>
+			<binding>
+				<command>property-interpolate</command>
+				<property>instrumentation/adf/rec-pressed</property>
+				<value>0</value>
+				<time>0.01</time>
+			</binding>
+		</release>
 		<hovered>
 			<binding>
 				<command>set-tooltip</command>
@@ -510,90 +526,81 @@
 				<property>instrumentation/adf/mode</property>
 			</binding>
 		</hovered>
-	</animation>
-	<animation>
-		<condition>
-			<equals>
-				<property>instrumentation/adf/mode</property>
-				<value>ant</value>
-			</equals>
-		</condition>
-		<type>translate</type>
-		<object-name>RECButton</object-name>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-		<expression>
-			<sum>
-				<value>0</value>
-				<!-- this is the real offset -->
-				<value>0.01</value>
-			</sum>
-		</expression>
 	</animation>
 	
 	<animation>
 		<type>slider</type>
-		<object-name>BFOButton</object-name>
-		<action>
-			<binding>
-				<command>property-assign</command>
-				<property>instrumentation/adf/mode</property>
-				<value>bfo</value>
-			</binding>
-		</action>
-		<hovered>
-			<binding>
-				<command>set-tooltip</command>
-				<tooltip-id>adf-mode</tooltip-id>
-				<label>ADF mode: %s</label>
-				<measure-text>ADF mode: ADF</measure-text>
-				<property>instrumentation/adf/mode</property>
-			</binding>
-		</hovered>
-	</animation>
-	<animation>
-		<condition>
-			<equals>
-				<property>instrumentation/adf/mode</property>
-				<value>bfo</value>
-			</equals>
-		</condition>
-		<type>translate</type>
 		<object-name>BFOButton</object-name>
 		<axis>
 			<x>1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<expression>
-			<sum>
+		<property>instrumentation/adf/bfo-pressed</property>
+		<action>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/adf/mode</property>
+				<value>bfo</value>
+			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/adf/bfo-pressed</property>
+				<value>1</value>
+			</binding>
+		</action>
+		<release>
+			<binding>
+				<command>property-interpolate</command>
+				<property>instrumentation/adf/bfo-pressed</property>
 				<value>0</value>
-				<!-- this is the real offset -->
-				<value>0.01</value>
-			</sum>
-		</expression>
+				<time>0.01</time>
+			</binding>
+		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>adf-mode</tooltip-id>
+				<label>ADF mode: %s</label>
+				<measure-text>ADF mode: ADF</measure-text>
+				<property>instrumentation/adf/mode</property>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
 		<type>slider</type>
 		<object-name>TestButton</object-name>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/adf/test-pressed</property>
 		<action>
 			<binding>
 				<command>property-assign</command>
 				<property>instrumentation/adf/mode</property>
 				<value>test</value>
 			</binding>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/adf/test-pressed</property>
+				<value>1</value>
+			</binding>
 		</action>
-		<released>
+		<release>
 			<binding>
 				<command>property-assign</command>
 				<property>instrumentation/adf/mode</property>
 				<value>adf</value>
 			</binding>
-		</released>
+			<binding>
+				<command>property-assign</command>
+				<property>instrumentation/adf/test-pressed</property>
+				<value>0</value>
+			</binding>
+		</release>
 		<hovered>
 			<binding>
 				<command>set-tooltip</command>
@@ -603,28 +610,6 @@
 				<property>instrumentation/adf/mode</property>
 			</binding>
 		</hovered>
-	</animation>
-	<animation>
-		<condition>
-			<equals>
-				<property>instrumentation/adf/mode</property>
-				<value>test</value>
-			</equals>
-		</condition>
-		<type>translate</type>
-		<object-name>TestButton</object-name>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-		<expression>
-			<sum>
-				<value>0</value>
-				<!-- this is the real offset -->
-				<value>0.01</value>
-			</sum>
-		</expression>
 	</animation>
 	
 	<animation>
@@ -644,6 +629,7 @@
 						<value>1699</value>
 					</greater-than>
 				</or>
+				<property>instrumentation/adf/powered</property>
 			</and>
 		</condition>
 		<type>material</type>
@@ -671,6 +657,7 @@
 						<value>1699</value>
 					</greater-than>
 				</or>
+				<property>instrumentation/adf/powered</property>
 			</and>
 		</condition>
 		<type>material</type>

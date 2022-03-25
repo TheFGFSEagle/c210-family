@@ -658,8 +658,8 @@
 						</gyro-slaving>
 						<ap-control>
 							<!-- service manual says 5 for both combined -->
-							<autopilot-amps type="double">4</autopilot-amps>
-							<ap-control-amps type="double">1</ap-control-amps>
+							<autopilot-amps type="double">3</autopilot-amps>
+							<ap-control-amps type="double">2</ap-control-amps>
 							<!-- guessed -->
 							<backcourse-light-amps type="double">0.01</backcourse-light-amps>
 						</ap-control>

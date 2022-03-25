@@ -165,12 +165,40 @@
 	
 	<animation>
 		<condition>
-			<not>
-				<or>
-					<property>instrumentation/ifcs/green-light-test</property>
-					<property>instrumentation/ifcs/ap-active</property>
-				</or>
-			</not>
+			<property>/sim/model/controls/ap-control/powered</property>
+		</condition>
+		<type>material</type>
+		<object-name>APAnnunciator</object-name>
+		<object-name>FDButton</object-name>
+		<object-name>Nav1Button</object-name>
+		<object-name>Nav2Button</object-name>
+		<object-name>HDGButton</object-name>
+		<object-name>NavButton</object-name>
+		<object-name>BackCourseButton</object-name>
+		<object-name>AltButton</object-name>
+		<object-name>VORAnnunciator</object-name>
+		<object-name>LOCAnnunciator</object-name>
+		<object-name>GSAnnunciator</object-name>
+		<object-name>GoAroundAnnunciator</object-name>
+		<emission>
+			<red>0</red>
+			<green>1</green>
+			<blue>0</blue>
+			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<condition>
+			<and>
+				<not>
+					<or>
+						<property>instrumentation/ifcs/green-light-test</property>
+						<property>instrumentation/ifcs/ap-active</property>
+					</or>
+				</not>
+				<property>sim/model/controls/ap-control/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>APAnnunciator</object-name>
@@ -182,24 +210,16 @@
 		</emission>
 	</animation>
 	<animation>
-		<type>material</type>
-		<object-name>APAnnunciator</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
 		<condition>
-			<not>
-				<or>
-					<property>instrumentation/ifcs/green-light-test</property>
-					<property>instrumentation/ifcs/fd-active</property>
-				</or>
-			</not>
+			<and>
+				<not>
+					<or>
+						<property>instrumentation/ifcs/green-light-test</property>
+						<property>instrumentation/ifcs/fd-active</property>
+					</or>
+				</not>
+				<property>sim/model/controls/ap-control/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>FDButton</object-name>
@@ -211,24 +231,16 @@
 		</emission>
 	</animation>
 	<animation>
-		<type>material</type>
-		<object-name>FDButton</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
 		<condition>
-			<not>
-				<or>
-					<property>instrumentation/ifcs/green-light-test</property>
-					<property>instrumentation/ifcs/nav-active[0]</property>
-				</or>
-			</not>
+			<and>
+				<not>
+					<or>
+						<property>instrumentation/ifcs/green-light-test</property>
+						<property>instrumentation/ifcs/nav-active[0]</property>
+					</or>
+				</not>
+				<property>sim/model/controls/ap-control/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>Nav1Button</object-name>
@@ -240,24 +252,16 @@
 		</emission>
 	</animation>
 	<animation>
-		<type>material</type>
-		<object-name>Nav1Button</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
 		<condition>
-			<not>
-				<or>
-					<property>instrumentation/ifcs/green-light-test</property>
-					<property>instrumentation/ifcs/nav-active[1]</property>
-				</or>
-			</not>
+			<and>
+				<not>
+					<or>
+						<property>instrumentation/ifcs/green-light-test</property>
+						<property>instrumentation/ifcs/nav-active[1]</property>
+					</or>
+				</not>
+				<property>sim/model/controls/ap-control/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>Nav2Button</object-name>
@@ -269,24 +273,16 @@
 		</emission>
 	</animation>
 	<animation>
-		<type>material</type>
-		<object-name>Nav2Button</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
 		<condition>
-			<not>
-				<or>
-					<property>instrumentation/ifcs/green-light-test</property>
-					<property>instrumentation/ifcs/hdg-active</property>
-				</or>
-			</not>
+			<and>
+				<not>
+					<or>
+						<property>instrumentation/ifcs/green-light-test</property>
+						<property>instrumentation/ifcs/hdg-active</property>
+					</or>
+				</not>
+				<property>sim/model/controls/ap-control/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>HDGButton</object-name>
@@ -298,25 +294,17 @@
 		</emission>
 	</animation>
 	<animation>
-		<type>material</type>
-		<object-name>HDGButton</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
 		<condition>
-			<not>
-				<or>
-					<property>instrumentation/ifcs/green-light-test</property>
-					<property>instrumentation/ifcs/nav-active[0]</property>
-					<property>instrumentation/ifcs/nav-active[1]</property>
-				</or>
-			</not>
+			<and>
+				<not>
+					<or>
+						<property>instrumentation/ifcs/green-light-test</property>
+						<property>instrumentation/ifcs/nav-active[0]</property>
+						<property>instrumentation/ifcs/nav-active[1]</property>
+					</or>
+				</not>
+				<property>sim/model/controls/ap-control/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>NavButton</object-name>
@@ -328,24 +316,16 @@
 		</emission>
 	</animation>
 	<animation>
-		<type>material</type>
-		<object-name>NavButton</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
 		<condition>
-			<not>
-				<or>
-					<property>instrumentation/ifcs/green-light-test</property>
-					<property>instrumentation/ifcs/backcourse-active</property>
-				</or>
-			</not>
+			<and>
+				<not>
+					<or>
+						<property>instrumentation/ifcs/green-light-test</property>
+						<property>instrumentation/ifcs/backcourse-active</property>
+					</or>
+				</not>
+				<property>sim/model/controls/ap-control/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>BackCourseButton</object-name>
@@ -357,24 +337,16 @@
 		</emission>
 	</animation>
 	<animation>
-		<type>material</type>
-		<object-name>BackCourseButton</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
 		<condition>
-			<not>
-				<or>
-					<property>instrumentation/ifcs/green-light-test</property>
-					<property>instrumentation/ifcs/alt-active</property>
-				</or>
-			</not>
+			<and>
+				<not>
+					<or>
+						<property>instrumentation/ifcs/green-light-test</property>
+						<property>instrumentation/ifcs/alt-active</property>
+					</or>
+				</not>
+				<property>sim/model/controls/ap-control/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>AltButton</object-name>
@@ -386,24 +358,16 @@
 		</emission>
 	</animation>
 	<animation>
-		<type>material</type>
-		<object-name>AltButton</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
 		<condition>
-			<not>
-				<or>
-					<property>instrumentation/ifcs/green-light-test</property>
-					<property>instrumentation/ifcs/vor-active</property>
-				</or>
-			</not>
+			<and>
+				<not>
+					<or>
+						<property>instrumentation/ifcs/green-light-test</property>
+						<property>instrumentation/ifcs/vor-active</property>
+					</or>
+				</not>
+				<property>sim/model/controls/ap-control/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>VORAnnunciator</object-name>
@@ -415,24 +379,16 @@
 		</emission>
 	</animation>
 	<animation>
-		<type>material</type>
-		<object-name>VORAnnunciator</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
 		<condition>
-			<not>
-				<or>
-					<property>instrumentation/ifcs/green-light-test</property>
-					<property>instrumentation/ifcs/loc-active</property>
-				</or>
-			</not>
+			<and>
+				<not>
+					<or>
+						<property>instrumentation/ifcs/green-light-test</property>
+						<property>instrumentation/ifcs/loc-active</property>
+					</or>
+				</not>
+				<property>sim/model/controls/ap-control/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>LOCAnnunciator</object-name>
@@ -444,24 +400,16 @@
 		</emission>
 	</animation>
 	<animation>
-		<type>material</type>
-		<object-name>LOCAnnunciator</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
 		<condition>
-			<not>
-				<or>
-					<property>instrumentation/ifcs/green-light-test</property>
-					<property>instrumentation/ifcs/gs-active</property>
-				</or>
-			</not>
+			<and>
+				<not>
+					<or>
+						<property>instrumentation/ifcs/green-light-test</property>
+						<property>instrumentation/ifcs/gs-active</property>
+					</or>
+				</not>
+				<property>sim/model/controls/ap-control/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>GSAnnunciator</object-name>
@@ -473,24 +421,16 @@
 		</emission>
 	</animation>
 	<animation>
-		<type>material</type>
-		<object-name>GSAnnunciator</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
 		<condition>
-			<not>
-				<or>
-					<property>instrumentation/ifcs/green-light-test</property>
-					<property>instrumentation/ifcs/go-around-active</property>
-				</or>
-			</not>
+			<and>
+				<not>
+					<or>
+						<property>instrumentation/ifcs/green-light-test</property>
+						<property>instrumentation/ifcs/go-around-active</property>
+					</or>
+				</not>
+				<property>sim/model/controls/ap-control/powered</property>
+			</and>
 		</condition>
 		<type>material</type>
 		<object-name>GoAroundAnnunciator</object-name>
@@ -499,16 +439,6 @@
 			<green>1</green>
 			<blue>1</blue>
 			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	<animation>
-		<type>material</type>
-		<object-name>GoAroundAnnunciator</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	
