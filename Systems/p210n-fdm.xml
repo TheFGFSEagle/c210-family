@@ -1214,6 +1214,30 @@
 				</range>
 				<output>fcs/right-aileron-pos-norm</output>
 			</aerosurface_scale>
+
+			<aerosurface_scale name="Aileron non-diff">
+				<input>fcs/roll-trim-sum</input>
+				<range>
+					<min>-0.35</min>
+					<max>0.35</max>
+				</range>
+				<output>fcs/aileron-non-diff</output>
+			</aerosurface_scale>
+
+			<kinematic name="aileron non-diff damping">
+				<input>fcs/aileron-non-diff</input>
+				<traverse>
+					<setting>
+						<position>-1</position>
+						<time>0</time>
+					</setting>
+					<setting>
+						<position>1</position>
+						<time>0.5</time>
+					</setting>
+				</traverse>
+				<output>fcs/aileron-non-diff-damped</output>
+			</kinematic>
 		</channel>
 		
 		<hysteresis_limits unit="RAD">
