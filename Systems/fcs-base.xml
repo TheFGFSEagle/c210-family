@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flight_control>
+	<channel name="NWS">
+		<switch name="gear/steering-enabled">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				/gear/gear[0]/position-norm EQ 1
+			</test>
+		</switch>
+		
+		<fcs_function name="gear/brakes-steer-factor">
+			<function>
+				<product>
+					<sum>
+						<product>
+							<property>fcs/left-brake-cmd-norm</property>
+							<value>-1</value>
+						</product>
+						<property>fcs/right-brake-cmd-norm</property>
+					</sum>
+					<property>/gear/gear[0]/rollspeed-ms</property>
+					<value>0.5</value> <!-- for adjusting braking influence -->
+					<property>gear/steering-enabled</property>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<!-- Drive the nose wheel with the rudder and brakes -->
+		<fcs_function name="fcs/steer-cmd-deg">
+			<function>
+				<table>
+					<independentVar lookup="row">gear/brakes-steer-factor</independentVar>
+					<independentVar lookup="column">/controls/flight/rudder</independentVar>
+					<tableData>
+								-1	   0		1
+					  -1	-35	   0   14.5
+					   0	-14.5	0   14.5
+					   1	-14.5	0	  35
+					</tableData>
+				</table>
+			</function>
+		</fcs_function>
+		
+		<actuator>
+			<input>fcs/steer-cmd-deg</input>
+			<rate_limit>80</rate_limit>
+			<output>fcs/steer-pos-norm</output>
+		</actuator>
+	</channel>
+	
+	<channel name="Pitch">
+		<summer>
+			<input>fcs/elevator-cmd-norm</input>
+			<input>fcs/pitch-trim-cmd-norm</input>
+			<clipto>
+				<min>-1</min>
+				<max>1</max>
+			</clipto>
+			<output>fcs/elevator-pos-norm</output>
+		</summer>
+		
+		<kinematic>
+			<input>fcs/elevator-pos-norm</input>
+			<traverse>
+				<setting>
+					<position>-1</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>0.5</time>
+				</setting>
+			</traverse>
+			<output>fcs/elevator-pos-norm-damped</output>
+		</kinematic>
+		
+		<aerosurface_scale>
+			<input>fcs/elevator-pos-norm-damped</input>
+			<range>
+				<min>-17</min>
+				<max>23</max>
+			</range>
+			<output>fcs/elevator-pos-deg</output>
+		</aerosurface_scale>
+	</channel>
+	
+	<channel name="Ailerons">
+		<summer>
+			<input>fcs/aileron-cmd-norm</input>
+			<input>fcs/roll-trim-cmd-norm</input>
+			<clipto>
+				<min>-1</min>
+				<max>1</max>
+			</clipto>
+			<output>fcs/aileron-pos-norm</output>
+		</summer>
+		
+		<kinematic>
+			<input>fcs/aileron-pos-norm</input>
+			<traverse>
+				<setting>
+					<position>-1</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>0.5</time>
+				</setting>
+			</traverse>
+			<output>fcs/aileron-pos-norm-damped</output>
+		</kinematic>
+		
+		<aerosurface_scale>
+			<input>fcs/aileron-pos-norm-damped</input>
+			<range>
+				<min>-17.5</min>
+				<max>17.5</max>
+			</range>
+			<output>fcs/aileron-pos-deg</output>
+		</aerosurface_scale>
+		
+		<aerosurface_scale>
+			<input>fcs/aileron-pos-deg</input>
+			<domain>
+				<min>-17.5</min>
+				<max>17.5</max>
+			</domain>
+			<range>
+				<min>-0.31</min>
+				<max>0.31</max>
+			</range>
+			<output>fcs/aileron-pos-rad</output>
+		</aerosurface_scale>
+
+		<aerosurface_scale>
+			<input>fcs/aileron-pos-norm</input>
+			<range>
+				<min>-1</min>
+				<max>1</max>
+			</range>
+			<output>fcs/left-aileron-pos-norm</output>
+		</aerosurface_scale>
+		
+		<aerosurface_scale>
+			<input>-fcs/aileron-pos-norm</input>
+			<range>
+				<min>-1</min>
+				<max>1</max>
+			</range>
+			<output>fcs/right-aileron-pos-norm</output>
+		</aerosurface_scale>
+		
+		<aerosurface_scale>
+			<input>fcs/left-aileron-pos-norm</input>
+			<range>
+				<min>-15</min>
+				<max>20</max>
+			</range>
+			<output>fcs/left-aileron-pos-deg</output>
+		</aerosurface_scale>
+		
+		<aerosurface_scale>
+			<input>fcs/right-aileron-pos-norm</input>
+			<range>
+				<min>-15</min>
+				<max>20</max>
+			</range>
+			<output>fcs/right-aileron-pos-deg</output>
+		</aerosurface_scale>
+	</channel>
+	
+	<hysteresis_limits unit="DEG">
+		<min>7</min>
+		<max>15</max>
+	</hysteresis_limits>
+	
+	<channel name="Rudder">
+		<summer>
+			<input>fcs/rudder-cmd-norm</input>
+			<input>fcs/yaw-trim-cmd-norm</input>
+			<clipto>
+				<min>-1</min>
+				<max>1</max>
+			</clipto>
+			<output>fcs/rudder-pos-norm</output>
+		</summer>
+		
+		<kinematic>
+			<input>fcs/rudder-pos-norm</input>
+			<traverse>
+				<setting>
+					<position>-1</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>0.5</time>
+				</setting>
+			</traverse>
+			<output>fcs/rudder-pos-norm-damped</output>
+		</kinematic>
+		
+		<aerosurface_scale>
+			<input>fcs/rudder-pos-norm-damped</input>
+			<range>
+				<min>-24</min>
+				<max>24</max>
+			</range>
+			<output>fcs/rudder-pos-deg</output>
+		</aerosurface_scale>
+	</channel>
+	
+	<channel name="Flaps" execute="/sim/model/controls/flaps/powered">
+		<kinematic>
+			<input>fcs/flap-cmd-norm</input>
+			<traverse>
+				<setting>
+					<position>0</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>10</position>
+					<time>2</time>
+				</setting>
+				<setting>
+					<position>20</position>
+					<time>3</time>
+				</setting>
+				<setting>
+					<position>30</position>
+					<time>3</time>
+				</setting>
+			</traverse>
+			<output>fcs/flap-pos-deg</output>
+		</kinematic>
+		
+		<aerosurface_scale name="flap normalization">
+			<input>fcs/flap-pos-deg</input>
+			<domain>
+				<min>0</min>
+				<max>30</max>
+			</domain>
+			<range>
+				<min>0</min>
+				<max>1</max>
+			</range>
+			<output>fcs/flap-pos-norm</output>
+		</aerosurface_scale>
+	</channel>
+	
+	<channel name="Landing Gear" execute="/systems/hydraulic/powered">
+		<kinematic name="Gear Control">
+			<input>gear/gear-cmd-norm</input>
+			<traverse>
+				<setting>
+					<position>0</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>7</time>
+				</setting>
+			</traverse>
+			<output>gear/gear-pos-norm</output>
+		</kinematic>
+	</channel>
+	
+	<channel name="Cowl flaps">
+		<kinematic name="Cowl flaps">
+			<input>/controls/engines/engine[0]/cowl-flaps-norm</input>
+			<traverse>
+				<setting>
+					<position>0</position>
+					<time>0</time>
+				</setting>
+				<setting>
+					<position>1</position>
+					<time>1</time>
+				</setting>
+			</traverse>
+			<output>propulsion/engine[0]/cowl-flaps-norm</output>
+		</kinematic>
+		
+		<aerosurface_scale>
+			<input>propulsion/engine[0]/cowl-flaps-norm</input>
+			<gain>1.0</gain>
+			<zero_centered>false</zero_centered>
+			<domain>
+				<min>0</min>
+				<max>1</max>
+			</domain>
+			<range>
+				<min>0.48</min>
+				<max>1</max>
+			</range>
+			<output>propulsion/engine[0]/cooling-factor</output>
+		</aerosurface_scale>
+	</channel>
+</flight_control>
+

@@ -1769,6 +1769,16 @@
 		<output>/sim/model/controls/gear/powered</output>
 	</logic>
 	<logic>
+		<name>Determine if gear pump is powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/gear-pump/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/systems/hydraulic/powered</output>
+	</logic>
+	<logic>
 		<name>Determine if flaps are powered</name>
 		<input>
 			<greater-than>
