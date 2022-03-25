@@ -175,15 +175,26 @@
 	</hysteresis_limits>
 	
 	<channel name="Rudder">
-		<summer>
-			<input>fcs/rudder-cmd-norm</input>
-			<input>fcs/yaw-trim-cmd-norm</input>
+		<fcs_function>
+			<function>			
+				<sum>
+					<property>fcs/rudder-cmd-norm</property>
+					<property>fcs/yaw-trim-cmd-norm</property>
+					<product>
+						<difference>
+							<property>fcs/rudder-cmd-norm</property>
+							<property>fcs/aileron-cmd-norm</property>
+						</difference>
+						<value>0.1</value>
+					</product>
+				</sum>
+			</function>			
 			<clipto>
 				<min>-1</min>
 				<max>1</max>
 			</clipto>
 			<output>fcs/rudder-pos-norm</output>
-		</summer>
+		</fcs_function>	
 		
 		<kinematic>
 			<input>fcs/rudder-pos-norm</input>
