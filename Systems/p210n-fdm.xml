@@ -1254,9 +1254,32 @@
 					<max>1</max>
 				</clipto>
 			</summer>
+			<fcs_function name="fcs/rudder-cmd-interconn">
+			<function>			
+				<product>
+				<value>0.909</value>
+				<sum>
+				<property>fcs/rudder-cmd-norm</property>
+				<property>fcs/yaw-trim-cmd-norm</property>
+				<product>
+					<value>0.1</value>
+					<difference>
+						<property>fcs/rudder-cmd-norm</property>
+						<property>fcs/aileron-cmd-norm</property>
+					</difference>
+				</product>
+				</sum>
+				</product>
+				<clipto>
+					<min>-1</min>
+					<max>1</max>
+				</clipto>
+			</function>			
+			</fcs_function>
+			
 			
 			<aerosurface_scale name="Rudder Control">
-				<input>fcs/rudder-command-sum</input>
+				<input>fcs/rudder-cmd-interconn</input>
 				<range>
 					<min>-0.47</min>
 					<max>0.47</max>
