@@ -1862,7 +1862,28 @@
 				</table>
 			</product>
 		</function>
-											
+
+		<function name="aero/moment/Yaw_damp_prop">
+			<description>Yaw moment due to yaw rate prop </description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/bw-ft</property>
+				<property>aero/bi2vel</property>
+				<property>velocities/r-aero-rad_sec</property>
+				<value>-1</value>
+				<table>
+					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
+					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
+					<tableData>
+						0	1.16	1.69
+					0	0	0.0095	0.0096
+					30	0	0.0095	0.0096
+					</tableData>						
+			</table>
+			</product>
+		</function>									
+			
 		<function name="aero/moment/Yaw_rudder">
 			<description>Yaw moment due to rudder</description>
 			<product>
