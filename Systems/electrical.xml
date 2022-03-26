@@ -855,6 +855,31 @@
 	</filter>
 	
 	<filter>
+		<name>Gear pump volts</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/gear-pump</gain>
+		<input>/systems/electrical/buses/primary/volts</input>
+		<output>/systems/electrical/buses/primary/consumers/gear-pump/volts</output>
+	</filter>
+	<filter>
+		<name>Wing deice amps</name>
+		<type>gain</type>
+		<gain>/controls/electric/circuit-breakers/gear-pump</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/systems/electrical/buses/primary/volts</property>
+					<div>
+						<value>28</value>
+						<property>/systems/electrical/buses/primary/consumers/gear-pump/gear-pump-motor-amps</property>
+					</div>
+				</div>
+			</expression>
+		</input>
+		<output>/systems/electrical/buses/primary/consumers/gear-pump/amps</output>
+	</filter>
+	
+	<filter>
 		<name>Electric trim volts</name>
 		<type>gain</type>
 		<gain>/controls/electric/circuit-breakers/trim</gain>
