@@ -273,7 +273,7 @@
 		<interpolation>
 			<entry>
 				<ind>1</ind>
-				<dep>-20</dep>
+				<dep>-15</dep>
 			</entry>
 			<entry>
 				<ind>0</ind>
@@ -281,7 +281,7 @@
 			</entry>
 			<entry>
 				<ind>-1</ind>
-				<dep>15</dep>
+				<dep>20</dep>
 			</entry>
 		</interpolation>
 	</animation>
@@ -297,7 +297,7 @@
 		<interpolation>
 			<entry>
 				<ind>1</ind>
-				<dep>-20</dep>
+				<dep>15</dep>
 			</entry>
 			<entry>
 				<ind>0</ind>
@@ -305,7 +305,7 @@
 			</entry>
 			<entry>
 				<ind>-1</ind>
-				<dep>15</dep>
+				<dep>-20</dep>
 			</entry>
 		</interpolation>
 	</animation>

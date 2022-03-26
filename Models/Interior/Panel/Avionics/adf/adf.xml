@@ -457,6 +457,7 @@
 			<z>0</z>
 		</axis>
 		<property>instrumentation/adf/adf-pressed</property>
+		<factor>0.007</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
@@ -497,6 +498,7 @@
 			<z>0</z>
 		</axis>
 		<property>instrumentation/adf/rec-pressed</property>
+		<factor>0.007</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
@@ -537,6 +539,7 @@
 			<z>0</z>
 		</axis>
 		<property>instrumentation/adf/bfo-pressed</property>
+		<factor>0.007</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
@@ -577,6 +580,7 @@
 			<z>0</z>
 		</axis>
 		<property>instrumentation/adf/test-pressed</property>
+		<factor>0.007</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
