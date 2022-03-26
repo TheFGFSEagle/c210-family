@@ -94,6 +94,9 @@
 	</animation>
 	
 	<animation>
+		<condition>
+			<property>/instrumentation/clock/backlight-powered</property>
+		</condition>
 		<type>material</type>
 		<object-name>ChronoDisplay</object-name>
 		<emission>
