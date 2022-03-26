@@ -176,9 +176,9 @@
 	
 	<channel name="Rudder">
 		<fcs_function>
+		<function>			
 			<product>
 			<value>0.909</value>
-			<function>			
 				<sum>
 					<property>fcs/rudder-cmd-norm</property>
 					<property>fcs/yaw-trim-cmd-norm</property>
