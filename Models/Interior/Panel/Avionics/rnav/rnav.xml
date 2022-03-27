@@ -305,7 +305,7 @@
 			<object-name>ModeSwitchAxis</object-name>
 		</axis>
 		<property>instrumentation/rnav/mode</property>
-		<factor>-40</factor>
+		<factor>40</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>

@@ -166,10 +166,11 @@
 		</period>
 	</filter>
 	<filter>
-		<name>Enroute radial deviation</name>
+		<name>CDI deflection</name>
 		<type>gain</type>
 		<gain>1</gain>
 		<input>
+			<!-- Enroute CDI deflection -->
 			<condition>
 				<and>
 					<property>/instrumentation/nav[1]/in-range</property>
@@ -194,14 +195,7 @@
 				</product>
 			</expression>
 		</input>
-		<output>/instrumentation/rnav/heading-needle-deflection-norm</output>
-		<min>-1</min>
-		<max>1</max>
-	</filter>
-	<filter>
-		<name>Approach radial deviation</name>
-		<type>gain</type>
-		<gain>1</gain>
+		<!-- Approach CDI deflection -->
 		<input>
 			<condition>
 				<and>
