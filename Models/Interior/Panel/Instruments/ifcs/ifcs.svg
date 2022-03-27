@@ -43,9 +43,9 @@
      inkscape:window-height="706"
      id="namedview434"
      showgrid="false"
-     inkscape:zoom="0.921875"
-     inkscape:cx="248.93291"
-     inkscape:cy="251.66598"
+     inkscape:zoom="0.65186406"
+     inkscape:cx="232.1697"
+     inkscape:cy="110.76332"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -1763,14 +1763,14 @@
      style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1" />
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;line-height:1.25;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono Bold';text-align:center;text-anchor:middle;opacity:1;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal;"
-     x="255.79198"
-     y="43.389828"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.33333206px;line-height:1.25;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono Bold';text-align:center;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+     x="255.77596"
+     y="42.805332"
      id="text1247"><tspan
        sodipodi:role="line"
        id="tspan1245"
-       x="255.79198"
-       y="43.389828">MODE SELECTOR</tspan></text>
+       x="255.77596"
+       y="42.805332">MODE SELECTOR</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:48px;line-height:1.25;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, ';text-align:center;text-anchor:middle;opacity:1;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal;"
@@ -1906,4 +1906,14 @@
      d="m 206.976,378.88 h 98.048"
      id="path1301"
      inkscape:connector-curvature="0" />
+  <text
+     id="text1057"
+     y="492.34134"
+     x="255.45863"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:37.33333206px;line-height:1.25;font-family:'Ubuntu Mono';-inkscape-font-specification:'Ubuntu Mono Bold';text-align:center;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+     xml:space="preserve"><tspan
+       y="492.34134"
+       x="255.45863"
+       id="tspan1055"
+       sodipodi:role="line">PUSH SELECT</tspan></text>
 </svg>
