@@ -147,7 +147,7 @@
 					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
 					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
 					<tableData>
-						0	1.16	1.69
+						1	1.16	1.69
 					0	0	0.0106	0.03
 					30	0	0.0106	0.03>
 					</tableData>						
@@ -304,17 +304,8 @@
 			</product>
 		</function>
 
-	
-	
-	
-	
 	</axis>
 
-	
-	
-	
-	
-	
 	
 	<!--<property>aero/force/testwindmill-enabled</property>-->
 											
@@ -758,7 +749,7 @@
 					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
 					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
 					<tableData>
-						0	1.16	1.69
+						1	1.16	1.69
 					0	0	0.0095	0.016
 					30	0	0.0095	0.016
 					</tableData>						
@@ -1038,7 +1029,7 @@
 					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
 					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
 					<tableData>
-						0	1.16	1.69
+						1	1.16	1.69
 					0	0	0.00148	0.0031
 					30	0	0.00148	0.0031
 					</tableData>						
@@ -1406,7 +1397,7 @@
 					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
 					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
 					<tableData>
-						0	1.16	1.69
+						1	1.16	1.69
 					0	0	0.00349	0.0216
 					30	0	0.00349	0.0216
 					</tableData>						
@@ -1546,7 +1537,7 @@
 					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
 					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
 					<tableData>
-						0	1.16	1.69
+						1	1.16	1.69
 					0	0	0.1	0.15
 					30	0	0.1	0.15
 					</tableData>						
@@ -1918,7 +1909,7 @@
 					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
 					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
 					<tableData>
-						0	1.16	1.69
+						1	1.16	1.69
 					0	0	0.0037	0.00614
 					30	0	0.0037	0.00614
 					</tableData>						
@@ -2015,7 +2006,7 @@
 					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
 					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
 					<tableData>
-						0	1.16	1.69
+						1	1.16	1.69
 					0	0	0.0095	0.0096
 					30	0	0.0095	0.0096
 					</tableData>						
@@ -2122,7 +2113,7 @@
 					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
 					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
 					<tableData>
-						0	1.16	1.69
+						1	1.16	1.69
 					0	0	0.009	0.015
 					30	0	0.009	0.015
 					</tableData>						
