@@ -1025,6 +1025,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<value>-1</value>
+				<value>0.45</value>
 				<table>
 					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
 					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
