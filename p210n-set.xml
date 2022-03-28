@@ -36,12 +36,12 @@
 				<splash type="bool">true</splash>
 				<path>Previews/climbing-winter-seaside.png</path>
 			</preview>
-			<!--<preview>
+			<preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
-				<path>Previews/caravan-6.png</path>
+				<path>Previews/takeoff-sunrise.png</path>
 			</preview>
-			<preview>
+			<!--<preview>
 				<type>exterior</type>
 				<splash type="bool">true</splash>
 				<path>Previews/caravan-7.png</path>
