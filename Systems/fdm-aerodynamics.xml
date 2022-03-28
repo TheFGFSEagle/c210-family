@@ -96,7 +96,6 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>aero/function/kCLge</property>
-				<!--<property>aero/propeller-stream-factor</property>-->
 				<value>-1</value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>						
@@ -136,7 +135,26 @@
 				</quotient>-->
 			</product>
 		</function>
-											
+
+		<function name="aero/moment/Z_prop">
+			<description>additional lift by prop </description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>aero/function/kCLge</property>
+				<value>-1</value>
+				<table>
+					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
+					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
+					<tableData>
+						0	1.16	1.69
+					0	0	0.0106	0.03
+					30	0	0.0106	0.03>
+					</tableData>						
+			</table>
+			</product>
+		</function>		
+				
 		<function name="aero/force/Z_mach">
 			<description>Pitch Z due to mach</description>
 			<product>
@@ -219,7 +237,6 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/elevator-pos-rad</property>
-				<!--<property>aero/propeller-stream-factor</property>-->
 				<value>1</value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>						
@@ -286,15 +303,25 @@
 				</table>
 			</product>
 		</function>
+
+	
+	
+	
+	
 	</axis>
-											
+
+	
+	
+	
+	
+	
+	
 	<!--<property>aero/force/testwindmill-enabled</property>-->
 											
 	<axis name="X">
 		<function name="aero/force/X_base">
 			<description>X base</description>						
 			<product>
-				<!--<property>aero/propeller-stream-factor</property>-->
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<value>-1</value>
@@ -342,7 +369,6 @@
 		<function name="aero/force/X_cowlflaps">
 		<description>Drag due to cowl flaps</description>
 			<product>
-				<property>aero/propeller-stream-factor</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>propulsion/engine[0]/cowl-flaps-norm</property>
@@ -353,7 +379,6 @@
 		<function name="aero/force/X_gear">
 			<description>Drag due to gear</description>						
 			<product>
-				<property>aero/propeller-stream-factor</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<table>
@@ -444,7 +469,6 @@
 		<function name="aero/force/X_elevator">
 			<description>X due to Elevator Deflection</description>
 			<product>
-				<property>aero/propeller-stream-factor</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<abs><property>fcs/elevator-pos-rad</property></abs>
@@ -590,7 +614,6 @@
 		<function name="aero/force/X_rudder">
 			<description>Drag due to rudder deflection</description>
 			<product>
-				<property>aero/propeller-stream-factor</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<abs><property>fcs/rudder-pos-rad</property></abs>
@@ -724,7 +747,25 @@
 				</table>
 			</product>
 		</function>
-											
+
+		<function name="aero/moment/Y_prop">
+			<description>additional side force by prop </description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<value>1</value>
+				<table>
+					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
+					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
+					<tableData>
+						0	1.16	1.69
+					0	0	0.0095	0.016
+					30	0	0.0095	0.016
+					</tableData>						
+			</table>
+			</product>
+		</function>		
+		
 		<function name="aero/force/Y_roll">
 			<description>side force due to roll rate</description>
 			<product>
@@ -985,8 +1026,26 @@
 				</table>
 			</product>
 		</function>
-											
-											
+		
+		<function name="aero/moment/roll_prop">
+			<description>additional roll moment by prop </description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/bw-ft</property>
+				<value>-1</value>
+				<table>
+					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
+					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
+					<tableData>
+						0	1.16	1.69
+					0	0	0.00148	0.0031
+					30	0	0.00148	0.0031
+					</tableData>						
+			</table>
+			</product>
+		</function>
+													
 		<function name="aero/moment/Roll_damp">
 			<description>Roll moment due to rollrate</description>
 			<product>
@@ -1336,6 +1395,47 @@
 			</product>
 		</function>
 
+		<function name="aero/moment/pitch_prop">
+			<description>additional pitch moment by prop </description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/cbarw-ft</property>
+				<value>1</value>
+				<table>
+					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
+					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
+					<tableData>
+						0	1.16	1.69
+					0	0	0.00349	0.0216
+					30	0	0.00349	0.0216
+					</tableData>						
+			</table>
+			</product>
+		</function>
+
+		<function name="aero/moment/pitchdamp_prop">
+			<description>additional pitch damping moment by prop </description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/cbarw-ft</property>
+				<property>aero/ci2vel</property>
+				<property>velocities/q-aero-rad_sec</property>
+				<value>1</value>
+				<table>
+					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
+					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
+					<tableData>
+						0	1.16	1.69
+					0	0	0.559	2.1
+					30	0	0.559	2.1
+					</tableData>						
+			</table>
+			</product>
+		</function>
+		
+		
 		<function name="aero/moment/Pitch_gear">
 			<description>Pitch moment gear</description>
 			<product>
@@ -1433,7 +1533,27 @@
 				</table>
 			</product>
 		</function>
-											
+		
+		<function name="aero/moment/yawpitch_elev_prop">
+			<description>additional elevator moment by prop </description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/cbarw-ft</property>
+				<property>fcs/elevator-pos-rad</property>
+				<value>-1</value>
+				<table>
+					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
+					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
+					<tableData>
+						0	1.16	1.69
+					0	0	0.1	0.15
+					30	0	0.1	0.15
+					</tableData>						
+			</table>
+			</product>
+		</function>
+				
 		<function name="aero/moment/Pitch_damp">
 			<description>Pitch moment due to pitch rate</description>
 			<product>
@@ -1787,7 +1907,26 @@
 				</table>
 			</product>
 		</function>
-											
+		<function name="aero/moment/yaw_prop">											
+			<description>additional yaw moment by prop </description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/bw-ft</property>
+				<value>-1</value>
+				<table>
+					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
+					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
+					<tableData>
+						0	1.16	1.69
+					0	0	0.0037	0.00614
+					30	0	0.0037	0.00614
+					</tableData>						
+			</table>
+			</product>
+		</function>
+		
+		
 		<function name="aero/moment/Yaw_damp">
 			<description>Yaw moment due to yaw rate</description>
 			<product>
@@ -1969,6 +2108,28 @@
 			</product>
 		</function>
 											
+		<function name="aero/moment/yaw_rudder_prop">
+			<description>additional rudder moment by prop </description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/bw-ft</property>
+				<property>metrics/bw-ft</property>
+				<property>fcs/rudder-pos-rad</property>
+
+				<value>-1</value>
+				<table>
+					<independentVar lookup="row">fcs/flap-pos-deg</independentVar>						
+					<independentVar lookup="column">aero/propeller-stream-factor</independentVar>						
+					<tableData>
+						0	1.16	1.69
+					0	0	0.009	0.015
+					30	0	0.009	0.015
+					</tableData>						
+			</table>
+			</product>
+		</function>
+		
 		<function name="aero/moment/Yaw_aileron">
 			<description>Adverse yaw</description>
 			<product>
