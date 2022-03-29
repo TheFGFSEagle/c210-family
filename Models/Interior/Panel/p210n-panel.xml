@@ -96,7 +96,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/ifcs/ifcs.xml</path>
+		<path>Avionics/if-550a-mode-selector.xml</path>
 		<offsets>
 			<x-m>0.423</x-m>
 			<y-m>-0.06</y-m>
@@ -199,7 +199,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Avionics/ap-control/ap-control.xml</path>
+		<path>Avionics/if-500a/if-550a-control.xml</path>
 		<offsets>
 			<x-m>0.433</x-m>
 			<y-m>0.07</y-m>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<engaged type="bool">false</engaged>
+	<flight-director type="bool">false</flight-director>
+	<disconnect-warn-horn type="bool">false</disconnect-warn-horn>
+	<disconnect-warn-light type="bool">false</disconnect-warn-light>
+	
+	<target-pitch-deg type="double">0</target-pitch-deg>
+	<target-turn-rate-norm type="double">0</target-turn-rate-norm>
+	
+	<white-light-intensity-norm type="float">1</white-light-intensity-norm>
+	<green-light-intensity-norm type="float">1</green-light-intensity-norm>
+	<green-light-test type="bool">false</green-light-test>
+	
+	<modes>
+		<roll type="bool">false</roll>
+		<heading type="bool">false</heading>
+		<nav type="bool">false</nav>
+		<backcourse type="bool">false</backcourse>
+		<pitch type="bool">false</pitch>
+		<altitude type="bool">false</altitude>
+		<go-around type="bool">false</go-around>
+	</modes>
+	<internal>
+		<nav-source type="int">1</nav-source>
+		<nav-type>vor</nav-type>
+		<gs-captured type="bool">false</gs-captured>
+		<g-switch type="bool">false</g-switch>
+	</internal>
+</PropertyList>

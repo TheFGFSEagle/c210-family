@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertyList>
-	<path>ifcs.ac</path>
+	<path>if-550a.ac</path>
 	
 	<animation>
 		<type>slider</type>
@@ -10,19 +10,23 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/ifcs/fd-pressed</property>
+		<property>autopilot/if-550a/fd-pressed</property>
 		<factor>0.004</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/ifcs/fd-pressed</property>
+				<property>autopilot/if-550a/fd-pressed</property>
 				<value>1</value>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>if550a.toggleFlightDirector();</script>
 			</binding>
 		</action>
 		<release>
 			<binding>
 				<command>property-interpolate</command>
-				<property>instrumentation/ifcs/fd-pressed</property>
+				<property>autopilot/if-550a/fd-pressed</property>
 				<value>0</value>
 				<time>0.01</time>
 			</binding>
@@ -38,19 +42,23 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/ifcs/nav-source-pressed</property>
+		<property>autopilot/if-550a/nav-source-pressed</property>
 		<factor>0.004</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/ifcs/nav-source-pressed</property>
+				<property>autopilot/if-550a/nav-source-pressed</property>
 				<value>1</value>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>if550a.toggleNavSource();</script>
 			</binding>
 		</action>
 		<release>
 			<binding>
 				<command>property-interpolate</command>
-				<property>instrumentation/ifcs/nav-source-pressed</property>
+				<property>autopilot/if-550a/nav-source-pressed</property>
 				<value>0</value>
 				<time>0.01</time>
 			</binding>
@@ -65,19 +73,23 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/ifcs/hdg-pressed</property>
+		<property>autopilot/if-550a/hdg-pressed</property>
 		<factor>0.004</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/ifcs/hdg-pressed</property>
+				<property>autopilot/if-550a/hdg-pressed</property>
 				<value>1</value>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>if550a.toggleHeadingMode();</script>
 			</binding>
 		</action>
 		<release>
 			<binding>
 				<command>property-interpolate</command>
-				<property>instrumentation/ifcs/hdg-pressed</property>
+				<property>autopilot/if-550a/hdg-pressed</property>
 				<value>0</value>
 				<time>0.01</time>
 			</binding>
@@ -91,19 +103,23 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/ifcs/nav-pressed</property>
+		<property>autopilot/if-550a/nav-pressed</property>
 		<factor>0.004</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/ifcs/nav-pressed</property>
+				<property>autopilot/if-550a/nav-pressed</property>
 				<value>1</value>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>if550a.toggleNavMode();</script>
 			</binding>
 		</action>
 		<release>
 			<binding>
 				<command>property-interpolate</command>
-				<property>instrumentation/ifcs/nav-pressed</property>
+				<property>autopilot/if-550a/nav-pressed</property>
 				<value>0</value>
 				<time>0.01</time>
 			</binding>
@@ -117,19 +133,23 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/ifcs/backcourse-pressed</property>
+		<property>autopilot/if-550a/backcourse-pressed</property>
 		<factor>0.004</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/ifcs/backcourse-pressed</property>
+				<property>autopilot/if-550a/backcourse-pressed</property>
 				<value>1</value>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>if550a.toggleBackcourseMode();</script>
 			</binding>
 		</action>
 		<release>
 			<binding>
 				<command>property-interpolate</command>
-				<property>instrumentation/ifcs/backcourse-pressed</property>
+				<property>autopilot/if-550a/backcourse-pressed</property>
 				<value>0</value>
 				<time>0.01</time>
 			</binding>
@@ -144,19 +164,23 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/ifcs/alt-pressed</property>
+		<property>autopilot/if-550a/alt-pressed</property>
 		<factor>0.004</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
-				<property>instrumentation/ifcs/alt-pressed</property>
+				<property>autopilot/if-550a/alt-pressed</property>
 				<value>1</value>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>if550a.toggleAltMode();</script>
 			</binding>
 		</action>
 		<release>
 			<binding>
 				<command>property-interpolate</command>
-				<property>instrumentation/ifcs/alt-pressed</property>
+				<property>autopilot/if-550a/alt-pressed</property>
 				<value>0</value>
 				<time>0.01</time>
 			</binding>
@@ -165,7 +189,7 @@
 	
 	<animation>
 		<condition>
-			<property>/sim/model/controls/ap-control/powered</property>
+			<property>sim/model/controls/ap-control/powered</property>
 		</condition>
 		<type>material</type>
 		<object-name>APAnnunciator</object-name>
@@ -184,7 +208,7 @@
 			<red>0</red>
 			<green>1</green>
 			<blue>0</blue>
-			<factor-prop>instrumentation/ifcs/green-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/green-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	
@@ -193,8 +217,8 @@
 			<and>
 				<not>
 					<or>
-						<property>instrumentation/ifcs/green-light-test</property>
-						<property>instrumentation/ifcs/ap-active</property>
+						<property>autopilot/if-550a/green-light-test</property>
+						<property>autopilot/if-550a/engaged</property>
 					</or>
 				</not>
 				<property>sim/model/controls/ap-control/powered</property>
@@ -206,7 +230,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	<animation>
@@ -214,8 +238,8 @@
 			<and>
 				<not>
 					<or>
-						<property>instrumentation/ifcs/green-light-test</property>
-						<property>instrumentation/ifcs/fd-active</property>
+						<property>autopilot/if-550a/green-light-test</property>
+						<property>autopilot/if-550a/flight-director</property>
 					</or>
 				</not>
 				<property>sim/model/controls/ap-control/powered</property>
@@ -227,7 +251,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	<animation>
@@ -235,8 +259,11 @@
 			<and>
 				<not>
 					<or>
-						<property>instrumentation/ifcs/green-light-test</property>
-						<property>instrumentation/ifcs/nav-active[0]</property>
+						<property>autopilot/if-550a/green-light-test</property>
+						<equals>
+							<property>autopilot/if-550a/internal/nav-source</property>
+							<value>0</value>
+						</equals>
 					</or>
 				</not>
 				<property>sim/model/controls/ap-control/powered</property>
@@ -248,7 +275,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	<animation>
@@ -256,8 +283,11 @@
 			<and>
 				<not>
 					<or>
-						<property>instrumentation/ifcs/green-light-test</property>
-						<property>instrumentation/ifcs/nav-active[1]</property>
+						<property>autopilot/if-550a/green-light-test</property>
+						<equals>
+							<property>autopilot/if-550a/internal/nav-source</property>
+							<value>1</value>
+						</equals>
 					</or>
 				</not>
 				<property>sim/model/controls/ap-control/powered</property>
@@ -269,7 +299,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	<animation>
@@ -277,8 +307,8 @@
 			<and>
 				<not>
 					<or>
-						<property>instrumentation/ifcs/green-light-test</property>
-						<property>instrumentation/ifcs/hdg-active</property>
+						<property>autopilot/if-550a/green-light-test</property>
+						<property>autopilot/if-550a/modes/heading</property>
 					</or>
 				</not>
 				<property>sim/model/controls/ap-control/powered</property>
@@ -290,7 +320,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	<animation>
@@ -298,9 +328,8 @@
 			<and>
 				<not>
 					<or>
-						<property>instrumentation/ifcs/green-light-test</property>
-						<property>instrumentation/ifcs/nav-active[0]</property>
-						<property>instrumentation/ifcs/nav-active[1]</property>
+						<property>autopilot/if-550a/green-light-test</property>
+						<property>autopilot/if-550a/modes/nav</property>
 					</or>
 				</not>
 				<property>sim/model/controls/ap-control/powered</property>
@@ -312,7 +341,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	<animation>
@@ -320,8 +349,8 @@
 			<and>
 				<not>
 					<or>
-						<property>instrumentation/ifcs/green-light-test</property>
-						<property>instrumentation/ifcs/backcourse-active</property>
+						<property>autopilot/if-550a/green-light-test</property>
+						<property>autopilot/if-550a/modes/backcourse</property>
 					</or>
 				</not>
 				<property>sim/model/controls/ap-control/powered</property>
@@ -333,7 +362,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	<animation>
@@ -341,8 +370,8 @@
 			<and>
 				<not>
 					<or>
-						<property>instrumentation/ifcs/green-light-test</property>
-						<property>instrumentation/ifcs/alt-active</property>
+						<property>autopilot/if-550a/green-light-test</property>
+						<property>autopilot/if-550a/modes/altitude</property>
 					</or>
 				</not>
 				<property>sim/model/controls/ap-control/powered</property>
@@ -354,7 +383,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	<animation>
@@ -362,8 +391,11 @@
 			<and>
 				<not>
 					<or>
-						<property>instrumentation/ifcs/green-light-test</property>
-						<property>instrumentation/ifcs/vor-active</property>
+						<property>autopilot/if-550a/green-light-test</property>
+						<equals>
+							<property>autopilot/if-550a/internal/nav-type</property>
+							<value>vor</value>
+						</equals>
 					</or>
 				</not>
 				<property>sim/model/controls/ap-control/powered</property>
@@ -375,7 +407,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	<animation>
@@ -383,8 +415,11 @@
 			<and>
 				<not>
 					<or>
-						<property>instrumentation/ifcs/green-light-test</property>
-						<property>instrumentation/ifcs/loc-active</property>
+						<property>autopilot/if-550a/green-light-test</property>
+						<equals>
+							<property>autopilot/if-550a/internal/nav-type</property>
+							<value>localizer</value>
+						</equals>
 					</or>
 				</not>
 				<property>sim/model/controls/ap-control/powered</property>
@@ -396,7 +431,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	<animation>
@@ -404,8 +439,11 @@
 			<and>
 				<not>
 					<or>
-						<property>instrumentation/ifcs/green-light-test</property>
-						<property>instrumentation/ifcs/gs-active</property>
+						<property>autopilot/if-550a/green-light-test</property>
+						<equals>
+							<property>autopilot/if-550a/internal/gs-captured</property>
+							<value>vor</value>
+						</equals>
 					</or>
 				</not>
 				<property>sim/model/controls/ap-control/powered</property>
@@ -417,7 +455,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	<animation>
@@ -425,8 +463,8 @@
 			<and>
 				<not>
 					<or>
-						<property>instrumentation/ifcs/green-light-test</property>
-						<property>instrumentation/ifcs/go-around-active</property>
+						<property>autopilot/if-550a/green-light-test</property>
+						<property>autopilot/if-550a/modes/go-around</property>
 					</or>
 				</not>
 				<property>sim/model/controls/ap-control/powered</property>
@@ -438,7 +476,7 @@
 			<red>1</red>
 			<green>1</green>
 			<blue>1</blue>
-			<factor-prop>instrumentation/ifcs/white-light-intensity-norm</factor-prop>
+			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	

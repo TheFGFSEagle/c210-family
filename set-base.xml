@@ -237,6 +237,9 @@
 		<pushback>
 			<file>Nasal/pushback.nas</file>
 		</pushback>
+		<if550a>
+			<file>Nasal/if-550a</file>
+		</if550a>
 	</nasal>
 	
 	<limits>
@@ -683,4 +686,8 @@
 			</outputs>
 		</electrical>
 	</systems>
+	
+	<autopilot>
+		<if-550a include="Systems/if-550a-init.xml"/>
+	</autopilot>
 </PropertyList>

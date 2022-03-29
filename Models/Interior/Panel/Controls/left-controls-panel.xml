@@ -165,7 +165,7 @@
 	</model>
 	
 	<model>
-		<path>lights/ifcs.xml</path>
+		<path>lights/if-550a.xml</path>
 		<offsets>
 			<x-m>0</x-m>
 			<y-m>0.02</y-m>

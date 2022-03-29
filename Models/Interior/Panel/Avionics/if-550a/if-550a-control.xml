@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertyList>
-	<path>ap-control.ac</path>
+	<path>if-550a-control.ac</path>
 	
 	<animation>
 		<type>knob</type>
@@ -10,14 +10,12 @@
 			<y>-1</y>
 			<z>0</z>
 		</axis>
-		<property>controls/autoflight/enabled</property>
+		<property>autopilot/if-550a/engaged</property>
 		<factor>40</factor>
 		<action>
 			<binding>
-				<command>property-toggle</command>
-				<property>controls/autoflight/enabled</property>
-				<value>0</value>
-				<value>1</value>
+				<command>nasal</command>
+				<script>if550a.toggleEngaged();</script>
 			</binding>
 		</action>
 	</animation>
@@ -27,18 +25,26 @@
 		<axis>
 			<object-name>PitchSelectWheelAxis</object-name>
 		</axis>
-		<property>controls/autoflight/target-pitch</property>
+		<property>autopilot/if-550a/target-pitch-deg</property>
 		<factor>5</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/autoflight/target-pitch</property>
-				<factor>0.25</factor>
+				<property>autopilot/if-550a/target-pitch-deg</property>
+				<factor>1</factor>
 				<min>-10</min>
 				<max>10</max>
-				<wrap>false</wrap>
 			</binding>
 		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>autopilot/if-550a/target-pitch-deg</property>
+				<factor>0.1</factor>
+				<min>-10</min>
+				<max>10</max>
+			</binding>
+		</shift-action>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -46,57 +52,47 @@
 		<axis>
 			<object-name>TurnSelectKnobAxis</object-name>
 		</axis>
-		<property>/controls/autoflight/target-turn-rate-norm</property>
+		<property>autopilot/if-550a/target-turn-rate-norm</property>
 		<factor>20</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>/controls/autoflight/target-turn-rate-norm</property>
-				<factor>0.05</factor>
+				<property>autopilot/if-550a/target-turn-rate-norm</property>
+				<factor>0.1</factor>
 				<min>-1</min>
 				<max>1</max>
-				<wrap>false</wrap>
 			</binding>
 		</action>
-	</animation>
-	<animation>
-		<type>knob</type>
-		<object-name>TurnSelectKnob</object-name>
-		<axis>
-			<object-name>TurnSelectKnobAxis</object-name>
-		</axis>
-		<property>/controls/autoflight/target-turn-rate-norm</property>
-		<factor>20</factor>
-		<action>
+		<shift-action>
 			<binding>
 				<command>property-adjust</command>
-				<property>/controls/autoflight/target-turn-rate-norm</property>
-				<factor>0.05</factor>
+				<property>autopilot/if-550a/target-turn-rate-norm</property>
+				<factor>0.01</factor>
 				<min>-1</min>
 				<max>1</max>
-				<wrap>false</wrap>
 			</binding>
-		</action>
+		</shift-action>
 	</animation>
-	<animation>
+	<!--<animation>
 		<type>knob</type>
 		<object-name>WingsLevelTrimSelectKnob</object-name>
 		<axis>
 			<object-name>TurnSelectKnobAxis</object-name>
 		</axis>
-		<property>controls/autoflight/wings-level-trim-norm</property>
+		<property>autopilot/if-550a/wings-level-trim-norm</property>
 		<factor>20</factor>
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>controls/autoflight/wings-level-trim-norm</property>
+				<property>autopilot/if-550a/wings-level-trim-norm</property>
 				<factor>0.05</factor>
 				<min>-1</min>
 				<max>1</max>
 				<wrap>false</wrap>
 			</binding>
 		</action>
-	</animation>
+	</animation>-->
+	
 	<animation>
 		<type>slider</type>
 		<object-name>TestButton</object-name>
@@ -105,19 +101,23 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>controls/autoflight/test</property>
+		<property>autopilot/if-550a/test-pressed</property>
 		<factor>0.006</factor>
 		<action>
 			<binding>
 				<command>property-assign</command>
-				<property>controls/autoflight/test</property>
+				<property>autopilot/if-550a/test-pressed</property>
 				<value>1</value>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>if550a.test();</script>
 			</binding>
 		</action>
 		<release>
 			<binding>
 				<command>property-assign</command>
-				<property>controls/autoflight/test</property>
+				<property>autopilot/if-550a/test-pressed</property>
 				<value>0</value>
 			</binding>
 		</release>
