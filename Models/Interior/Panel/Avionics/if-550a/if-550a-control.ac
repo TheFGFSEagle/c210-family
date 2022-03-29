@@ -5,7 +5,7 @@ MATERIAL "DisconnectLampMaterial" rgb 1.000 0.750 0.000  amb 1.000 0.750 0.000  
 MATERIAL "FaceMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 MATERIAL "TestButtonMaterial" rgb 0.523 0.523 0.523  amb 0.523 0.523 0.523  emis 0.000 0.000 0.000  spec 1.000 1.000 1.000  shi 102 trans 0.000
 OBJECT world
-name "Blender_exporter_v3.3__ap-control.ac"
+name "Blender_exporter_v3.3__if-550a-control.ac"
 kids 10
 OBJECT poly
 name "Case"
@@ -494,7 +494,7 @@ name "Face"
 data 9
 Plane.001
 crease 40.0
-texture "ap-control.png"
+texture "if-550a-control.png"
 numvert 117
 0 0.03 0.08
 -0 -0.03 0.08
@@ -1056,7 +1056,7 @@ name "PitchSelectWheel"
 data 8
 Cylinder
 crease 30.0
-texture "ap-control.png"
+texture "if-550a-control.png"
 numvert 144
 -0.015 0.025 0.05625
 -0.015 0.025 0.06375
@@ -2069,7 +2069,7 @@ name "TurnSelectKnob"
 data 12
 Cylinder.001
 crease 30.0
-texture "ap-control.png"
+texture "if-550a-control.png"
 numvert 82
 0 0 0.0075
 0.005 -0 0.0075

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertyList>
-	<path>if-550a.ac</path>
+	<path>if-550a-mode-selector.ac</path>
 	
 	<animation>
 		<type>slider</type>
@@ -189,7 +189,7 @@
 	
 	<animation>
 		<condition>
-			<property>sim/model/controls/ap-control/powered</property>
+			<property>autopilot/powered</property>
 		</condition>
 		<type>material</type>
 		<object-name>APAnnunciator</object-name>
@@ -221,7 +221,7 @@
 						<property>autopilot/if-550a/engaged</property>
 					</or>
 				</not>
-				<property>sim/model/controls/ap-control/powered</property>
+				<property>autopilot/powered</property>
 			</and>
 		</condition>
 		<type>material</type>
@@ -242,7 +242,7 @@
 						<property>autopilot/if-550a/flight-director</property>
 					</or>
 				</not>
-				<property>sim/model/controls/ap-control/powered</property>
+				<property>autopilot/powered</property>
 			</and>
 		</condition>
 		<type>material</type>
@@ -266,7 +266,7 @@
 						</equals>
 					</or>
 				</not>
-				<property>sim/model/controls/ap-control/powered</property>
+				<property>autopilot/powered</property>
 			</and>
 		</condition>
 		<type>material</type>
@@ -290,7 +290,7 @@
 						</equals>
 					</or>
 				</not>
-				<property>sim/model/controls/ap-control/powered</property>
+				<property>autopilot/powered</property>
 			</and>
 		</condition>
 		<type>material</type>
@@ -311,7 +311,7 @@
 						<property>autopilot/if-550a/modes/heading</property>
 					</or>
 				</not>
-				<property>sim/model/controls/ap-control/powered</property>
+				<property>autopilot/powered</property>
 			</and>
 		</condition>
 		<type>material</type>
@@ -332,7 +332,7 @@
 						<property>autopilot/if-550a/modes/nav</property>
 					</or>
 				</not>
-				<property>sim/model/controls/ap-control/powered</property>
+				<property>autopilot/powered</property>
 			</and>
 		</condition>
 		<type>material</type>
@@ -353,7 +353,7 @@
 						<property>autopilot/if-550a/modes/backcourse</property>
 					</or>
 				</not>
-				<property>sim/model/controls/ap-control/powered</property>
+				<property>autopilot/powered</property>
 			</and>
 		</condition>
 		<type>material</type>
@@ -374,7 +374,7 @@
 						<property>autopilot/if-550a/modes/altitude</property>
 					</or>
 				</not>
-				<property>sim/model/controls/ap-control/powered</property>
+				<property>autopilot/powered</property>
 			</and>
 		</condition>
 		<type>material</type>
@@ -398,7 +398,7 @@
 						</equals>
 					</or>
 				</not>
-				<property>sim/model/controls/ap-control/powered</property>
+				<property>autopilot/powered</property>
 			</and>
 		</condition>
 		<type>material</type>
@@ -422,7 +422,7 @@
 						</equals>
 					</or>
 				</not>
-				<property>sim/model/controls/ap-control/powered</property>
+				<property>autopilot/powered</property>
 			</and>
 		</condition>
 		<type>material</type>
@@ -446,7 +446,7 @@
 						</equals>
 					</or>
 				</not>
-				<property>sim/model/controls/ap-control/powered</property>
+				<property>autopilot/powered</property>
 			</and>
 		</condition>
 		<type>material</type>
@@ -467,7 +467,7 @@
 						<property>autopilot/if-550a/modes/go-around</property>
 					</or>
 				</not>
-				<property>sim/model/controls/ap-control/powered</property>
+				<property>autopilot/powered</property>
 			</and>
 		</condition>
 		<type>material</type>

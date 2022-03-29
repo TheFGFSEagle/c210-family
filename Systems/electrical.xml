@@ -1821,7 +1821,17 @@
 				<value>12</value>
 			</greater-than>
 		</input>
-		<output>/sim/model/controls/ap-control/powered</output>
+		<output>/autopilot/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if autopilot actuators are powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/ap-actuators/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/autopilot/actuators-powered</output>
 	</logic>
 	<logic>
 		<name>Determine if digital clock is powered</name>
