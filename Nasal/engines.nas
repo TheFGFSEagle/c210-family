@@ -37,6 +37,7 @@ var PistonEngine = {
 		};
 		
 		obj.magnetosNode = obj.controlsNode.getNode("magnetos");
+		obj.alternatorNode = obj.rootNode.getNode("controls/electric/engine/master-alt");
 		obj.mixtureNode = obj.controlsNode.getNode("mixture");
 		obj.propPitchNode = obj.controlsNode.getNode("propeller-pitch");
 		obj.fuelPumpNode = obj.controlsNode.getNode("fuel-pump");
@@ -68,6 +69,7 @@ var PistonEngine = {
 		me.propPitchNode.setDoubleValue(1);
 		me.fuelPumpNode.setBoolValue(1);
 		me.starterNode.setBoolValue(1);
+		me.alternatorNode.setBoolValue(1);
 		
 		var disengageStarterListener = setlistener(me.runningNode, func (running) {
 			var value = running.getBoolValue();

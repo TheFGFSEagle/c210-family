@@ -10,7 +10,7 @@ var apNode = treeRoot.getNode("autopilot/if-550a", 1);
 var engagedNode = apNode.getNode("engaged", 1);
 var flightDirectorNode = apNode.getNode("flight-director", 1);
 var disconnectWarnHornNode = apNode.getNode("disconnect-warn-horn", 1);
-var disconnectWarnHornNode = apNode.getNode("disconnect-warn-light", 1);
+var disconnectWarnLightNode = apNode.getNode("disconnect-warn-light", 1);
 
 # Internal stuff
 var internalNode = apNode.getNode("internal", 1);

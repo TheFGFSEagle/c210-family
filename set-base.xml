@@ -132,6 +132,11 @@
 				<name>Electrical</name>
 				<path>Systems/electrical.xml</path>
 			</property-rule>
+			
+			<autopilot n="100">
+				<name>IF-550A autopilot</name>
+				<path>Systems/if-550a.xml</path>
+			</autopilot>
 		</systems>
 		<aircraft-data>
 			<path>/controls/engines/engine/cowl-flaps-norm</path>
@@ -238,7 +243,7 @@
 			<file>Nasal/pushback.nas</file>
 		</pushback>
 		<if550a>
-			<file>Nasal/if-550a</file>
+			<file>Nasal/if-550a.nas</file>
 		</if550a>
 	</nasal>
 	

@@ -189,31 +189,6 @@
 	
 	<animation>
 		<condition>
-			<property>autopilot/powered</property>
-		</condition>
-		<type>material</type>
-		<object-name>APAnnunciator</object-name>
-		<object-name>FDButton</object-name>
-		<object-name>Nav1Button</object-name>
-		<object-name>Nav2Button</object-name>
-		<object-name>HDGButton</object-name>
-		<object-name>NavButton</object-name>
-		<object-name>BackCourseButton</object-name>
-		<object-name>AltButton</object-name>
-		<object-name>VORAnnunciator</object-name>
-		<object-name>LOCAnnunciator</object-name>
-		<object-name>GSAnnunciator</object-name>
-		<object-name>GoAroundAnnunciator</object-name>
-		<emission>
-			<red>0</red>
-			<green>1</green>
-			<blue>0</blue>
-			<factor-prop>autopilot/if-550a/green-light-intensity-norm</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
-		<condition>
 			<and>
 				<not>
 					<or>
@@ -440,10 +415,7 @@
 				<not>
 					<or>
 						<property>autopilot/if-550a/green-light-test</property>
-						<equals>
-							<property>autopilot/if-550a/internal/gs-captured</property>
-							<value>vor</value>
-						</equals>
+						<property>autopilot/if-550a/internal/gs-captured</property>
 					</or>
 				</not>
 				<property>autopilot/powered</property>
@@ -477,6 +449,31 @@
 			<green>1</green>
 			<blue>1</blue>
 			<factor-prop>autopilot/if-550a/white-light-intensity-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	<animation>
+		<condition>
+			<property>autopilot/powered</property>
+		</condition>
+		<type>material</type>
+		<object-name>APAnnunciator</object-name>
+		<object-name>FDButton</object-name>
+		<object-name>Nav1Button</object-name>
+		<object-name>Nav2Button</object-name>
+		<object-name>HDGButton</object-name>
+		<object-name>NavButton</object-name>
+		<object-name>BackCourseButton</object-name>
+		<object-name>AltButton</object-name>
+		<object-name>VORAnnunciator</object-name>
+		<object-name>LOCAnnunciator</object-name>
+		<object-name>GSAnnunciator</object-name>
+		<object-name>GoAroundAnnunciator</object-name>
+		<emission>
+			<red>0</red>
+			<green>1</green>
+			<blue>0</blue>
+			<factor-prop>autopilot/if-550a/green-light-intensity-norm</factor-prop>
 		</emission>
 	</animation>
 	

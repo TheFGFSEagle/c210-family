@@ -1817,7 +1817,7 @@
 		<name>Determine if autopilot control is powered</name>
 		<input>
 			<greater-than>
-				<property>/systems/electrical/buses/primary/consumers/ap-control/volts</property>
+				<property>/systems/electrical/buses/avionics/consumers/ap-control/volts</property>
 				<value>12</value>
 			</greater-than>
 		</input>
@@ -1827,7 +1827,7 @@
 		<name>Determine if autopilot actuators are powered</name>
 		<input>
 			<greater-than>
-				<property>/systems/electrical/buses/primary/consumers/ap-actuators/volts</property>
+				<property>/systems/electrical/buses/avionics/consumers/ap-actuators/volts</property>
 				<value>12</value>
 			</greater-than>
 		</input>
