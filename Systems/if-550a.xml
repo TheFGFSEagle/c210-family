@@ -2,7 +2,7 @@
 <!--	Property rules for the IF-550A autopilot
 	by TheEagle
 -->
-	
+
 <PropertyList>
 	<pid-controller>
 		<name>Wing leveler (turn-coordinator based)</name>
@@ -19,9 +19,9 @@
 		<reference>/autopilot/if-550a/target-turn-rate</reference>
 		<output>/autopilot/if-550a/internal/aileron</output>
 		<config>
-			<Kp>0.15</Kp>
-			<Ti>10</Ti>
-			<Td>0.005</Td>
+			<Kp>0.1</Kp>
+			<Ti>15</Ti>
+			<Td>0.01</Td>
 			<u_min>-0.25</u_min>
 			<u_max>0.25</u_max>
 		</config>
@@ -30,6 +30,7 @@
 	<filter>
 		<name>Aileron servo</name>
 		<type>noise-spike</type>
+		<feedback-if-disabled>true</feedback-if-disabled>
 		<enable>
 			<condition>
 				<and>
@@ -43,5 +44,53 @@
 		<output>/controls/flight/aileron</output>
 		<max-rate-of-change>0.2</max-rate-of-change>
 		<!-- 10 seconds for one full move -->
+	</filter>
+	
+	<pid-controller>
+		<name>Pitch hold</name>
+		<enable>
+			<condition>
+				<and>
+					<property>/autopilot/if-550a/modes/pitch</property>
+					<property>/autopilot/powered</property>
+					<property>/autopilot/actuators-powered</property>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
+			<scale>0.1</scale>
+		</input>
+		<reference>
+			<property>/autopilot/if-550a/target-pitch-deg</property>
+			<scale>0.1</scale>
+		</reference>
+		<output>/autopilot/if-550a/internal/elevator</output>
+		<config>
+			<Kp>-0.4</Kp>
+			<Ti>20</Ti>
+			<Td>0.005</Td>
+			<u_min>-0.5</u_min>
+			<u_max>0.5</u_max>
+		</config>
+	</pid-controller>
+	
+	<filter>
+		<name>Elevator servo</name>
+		<type>noise-spike</type>
+		<feedback-if-disabled>true</feedback-if-disabled>
+		<enable>
+			<condition>
+				<and>
+					<property>/autopilot/if-550a/engaged</property>
+					<property>/autopilot/powered</property>
+					<property>/autopilot/actuators-powered</property>
+				</and>
+			</condition>
+		</enable>
+		<input>/autopilot/if-550a/internal/elevator</input>
+		<output>/controls/flight/elevator</output>
+		<!-- 25 seconds for one full move -->
+		<max-rate-of-change>0.08</max-rate-of-change>
 	</filter>
 </PropertyList>
