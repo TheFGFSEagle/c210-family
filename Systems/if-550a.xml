@@ -4,8 +4,24 @@
 -->
 
 <PropertyList>
+	<filter>
+		<name>Target turn rate damped</name>
+		<type>noise-spike</type>
+		<input>/autopilot/if-550a/target-turn-rate</input>
+		<output>/autopilot/if-550a/internal/target-turn-rate-damped</output>
+		<max-rate-of-change>0.2</max-rate-of-change>
+	</filter>
+	
+	<predict-simple>
+		<name>Predict indicated turn rate</name>
+		<input>/instrumentation/turn-indicator/indicated-turn-rate</input>
+		<output>/autopilot/if-550a/internal/predicted-turn-rate</output>
+		<seconds>1.25</seconds>
+		<filter-time>1</filter-time>
+	</predict-simple>
+	
 	<pid-controller>
-		<name>Wing leveler (turn-coordinator based)</name>
+		<name>Turn rate hold</name>
 		<enable>
 			<condition>
 				<and>
@@ -15,21 +31,22 @@
 				</and>
 			</condition>
 		</enable>
-		<input>/instrumentation/turn-indicator/indicated-turn-rate</input>
-		<reference>/autopilot/if-550a/target-turn-rate</reference>
+		<input>/autopilot/if-550a/internal/predicted-turn-rate</input>
+		<reference>/autopilot/if-550a/internal/target-turn-rate-damped</reference>
 		<output>/autopilot/if-550a/internal/aileron</output>
 		<config>
-			<Kp>0.1</Kp>
-			<Ti>15</Ti>
-			<Td>0.01</Td>
-			<u_min>-0.25</u_min>
-			<u_max>0.25</u_max>
+			<Kp>0.09</Kp>
+			<Ti>5</Ti>
+			<Td>0.001</Td>
+			<u_min>-1</u_min>
+			<u_max>1</u_max>
 		</config>
 	</pid-controller>
 	
 	<filter>
 		<name>Aileron servo</name>
 		<type>noise-spike</type>
+		<initialize-to>output</initialize-to>
 		<feedback-if-disabled>true</feedback-if-disabled>
 		<enable>
 			<condition>
@@ -43,8 +60,23 @@
 		<input>/autopilot/if-550a/internal/aileron</input>
 		<output>/controls/flight/aileron</output>
 		<max-rate-of-change>0.2</max-rate-of-change>
-		<!-- 10 seconds for one full move -->
 	</filter>
+	
+	<filter>
+		<name>Target pitch damped</name>
+		<type>noise-spike</type>
+		<input>/autopilot/if-550a/target-pitch-deg</input>
+		<output>/autopilot/if-550a/internal/target-pitch-deg-damped</output>
+		<max-rate-of-change>2</max-rate-of-change>
+	</filter>
+	
+	<predict-simple>
+		<name>Predict indicated pitch</name>
+		<input>/instrumentation/attitude-indicator/indicated-pitch-deg</input>
+		<output>/autopilot/if-550a/internal/predicted-pitch-deg</output>
+		<seconds>1.25</seconds>
+		<filter-time>1</filter-time>
+	</predict-simple>
 	
 	<pid-controller>
 		<name>Pitch hold</name>
@@ -57,27 +89,22 @@
 				</and>
 			</condition>
 		</enable>
-		<input>
-			<property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
-			<scale>0.1</scale>
-		</input>
-		<reference>
-			<property>/autopilot/if-550a/target-pitch-deg</property>
-			<scale>0.1</scale>
-		</reference>
+		<input>/autopilot/if-550a/internal/predicted-pitch-deg</input>
+		<reference>/autopilot/if-550a/internal/target-pitch-deg-damped</reference>
 		<output>/autopilot/if-550a/internal/elevator</output>
 		<config>
-			<Kp>-0.4</Kp>
-			<Ti>20</Ti>
-			<Td>0.005</Td>
-			<u_min>-0.5</u_min>
-			<u_max>0.5</u_max>
+			<Kp>-0.05</Kp>
+			<Ti>3.5</Ti>
+			<Td>0.001</Td>
+			<u_min>-1</u_min>
+			<u_max>1</u_max>
 		</config>
 	</pid-controller>
 	
 	<filter>
 		<name>Elevator servo</name>
 		<type>noise-spike</type>
+		<initialize-to>output</initialize-to>
 		<feedback-if-disabled>true</feedback-if-disabled>
 		<enable>
 			<condition>
@@ -90,7 +117,6 @@
 		</enable>
 		<input>/autopilot/if-550a/internal/elevator</input>
 		<output>/controls/flight/elevator</output>
-		<!-- 25 seconds for one full move -->
 		<max-rate-of-change>0.08</max-rate-of-change>
 	</filter>
 </PropertyList>
