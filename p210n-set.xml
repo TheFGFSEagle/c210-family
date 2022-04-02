@@ -70,7 +70,7 @@
 			<path>/controls/engines/engine/fuel-pump</path>
 			<path>/controls/engines/engine/fuel-pump-hi</path>
 			<path>/sim/model/controls/magnetos/key-inserted</path>
-			<path>/instrumentation/egt/target-temperature-degf</path>
+			<path>/instrumentation/engine/target-egt-degf</path>
 		</aircraft-data>
 		<systems>
 			<path>Systems/p210n-systems.xml</path>
