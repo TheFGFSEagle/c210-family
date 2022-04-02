@@ -27,7 +27,6 @@
 				<and>
 					<property>/autopilot/if-550a/modes/roll</property>
 					<property>/autopilot/powered</property>
-					<property>/autopilot/actuators-powered</property>
 				</and>
 			</condition>
 		</enable>
@@ -35,7 +34,7 @@
 		<reference>/autopilot/if-550a/internal/target-turn-rate-damped</reference>
 		<output>/autopilot/if-550a/internal/aileron</output>
 		<config>
-			<Kp>0.09</Kp>
+			<Kp>0.07</Kp>
 			<Ti>5</Ti>
 			<Td>0.001</Td>
 			<u_min>-1</u_min>
@@ -63,8 +62,65 @@
 	</filter>
 	
 	<filter>
+		<name>Save target pressure altitude</name>
+		<type>gain</type>
+		<gain>1.0</gain>
+		<enable>
+			<condition>
+				<and>
+					<not>
+						<property>/autopilot/if-550a/modes/altitude</property>
+					</not>
+					<property>/autopilot/powered</property>
+				</and>
+			</condition>
+		</enable>
+		<input>/instrumentation/altimeter/indicated-altitude-ft</input>
+		<output>/autopilot/if-550a/internal/target-altitude-ft</output>
+	</filter>
+	
+	<pid-controller>
+		<name>Target pitch for altitude hold</name>
+		<enable>
+			<condition>
+				<and>
+					<property>/autopilot/if-550a/modes/altitude</property>
+					<property>/autopilot/powered</property>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<expression>
+				<dif>
+					<property>/instrumentation/altimeter/indicated-altitude-ft</property>
+					<property>/autopilot/if-550a/internal/target-altitude-ft</property>
+				</dif>
+			</expression>
+			<min>-200</min>
+			<max>200</max>
+		</input>
+		<reference>0</reference>
+		<output>/autopilot/if-550a/internal/altitude-target-pitch-deg</output>
+		<config>
+			<Kp>0.09</Kp>
+			<Ti>20</Ti>
+			<Td>0.0001</Td>
+			<u_min>-10</u_min>
+			<u_max>10</u_max>
+		</config>
+	</pid-controller>
+	
+	<filter>
 		<name>Target pitch damped</name>
 		<type>noise-spike</type>
+		<input>
+			<!-- If ALT (altitude hold) mode is engaged, use the pitch needed to get to the target altitude -->
+			<condition>
+				<property>/autopilot/if-550a/modes/altitude</property>
+			</condition>
+			<property>/autopilot/if-550a/internal/altitude-target-pitch-deg</property>
+		</input>
+		<!-- Else use the pilot-set pitch -->
 		<input>/autopilot/if-550a/target-pitch-deg</input>
 		<output>/autopilot/if-550a/internal/target-pitch-deg-damped</output>
 		<max-rate-of-change>2</max-rate-of-change>
@@ -85,7 +141,6 @@
 				<and>
 					<property>/autopilot/if-550a/modes/pitch</property>
 					<property>/autopilot/powered</property>
-					<property>/autopilot/actuators-powered</property>
 				</and>
 			</condition>
 		</enable>
@@ -93,7 +148,7 @@
 		<reference>/autopilot/if-550a/internal/target-pitch-deg-damped</reference>
 		<output>/autopilot/if-550a/internal/elevator</output>
 		<config>
-			<Kp>-0.05</Kp>
+			<Kp>-0.02</Kp>
 			<Ti>3.5</Ti>
 			<Td>0.001</Td>
 			<u_min>-1</u_min>

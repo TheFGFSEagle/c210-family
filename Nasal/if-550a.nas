@@ -34,7 +34,6 @@ var goAroundModeNode = modesNode.getNode("go-around", 1);
 var disengageLateralModes = func {
 	rollModeNode.setBoolValue(0);
 	navModeNode.setBoolValue(0);
-	backcourseModeNode.setBoolValue(0);
 	headingModeNode.setBoolValue(0);
 };
 var disengageVerticalModes = func {
@@ -145,9 +144,6 @@ var toggleNavMode = func {
 };
 
 var toggleBackcourseMode = func {
-	if (!(engagedNode.getBoolValue() or flightDirectorNode.getBoolValue())) {
-		return;
-	}
 	var active = backcourseModeNode.getBoolValue();
 	print("backcourse: ", active);
 	if (navModeNode.getBoolValue()) {

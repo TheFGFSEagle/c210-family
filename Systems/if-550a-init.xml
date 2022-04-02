@@ -26,5 +26,6 @@
 		<nav-type>vor</nav-type>
 		<gs-captured type="bool">false</gs-captured>
 		<g-switch type="bool">false</g-switch>
+		<target-altitude-ft type="int">0</target-altitude-ft>
 	</internal>
 </PropertyList>
