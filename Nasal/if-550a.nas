@@ -11,10 +11,10 @@ var engagedNode = apNode.getNode("engaged", 1);
 var flightDirectorNode = apNode.getNode("flight-director", 1);
 var disconnectWarnHornNode = apNode.getNode("disconnect-warn-horn", 1);
 var disconnectWarnLightNode = apNode.getNode("disconnect-warn-light", 1);
+var navSourceNode = apNode.getNode("nav-source", 1);
 
 # Internal stuff
 var internalNode = apNode.getNode("internal", 1);
-var navSourceNode = internalNode.getNode("nav-source", 1);
 var gSwitchNode = internalNode.getNode("g-switch", 1);
 
 # Modes
@@ -61,13 +61,14 @@ var disconnect = func {
 
 setlistener(gSwitchNode, disconnect);
 
-# Mode managing functions
 var disengage = func {
 	disengageLateralModes();
 	disengageVerticalModes();
 	engagedNode.setBoolValue(0);
 	disconnectWarnLightNode.setBoolValue(0);
 }
+
+# Mode managing functions
 
 var toggleEngaged = func {
 	var engaged = engagedNode.getBoolValue();

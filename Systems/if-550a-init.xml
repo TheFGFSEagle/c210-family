@@ -7,6 +7,7 @@
 	
 	<target-pitch-deg type="double">0</target-pitch-deg>
 	<target-turn-rate type="double">0</target-turn-rate>
+	<nav-source type="int">0</nav-source>
 	
 	<white-light-intensity-norm type="float">1</white-light-intensity-norm>
 	<green-light-intensity-norm type="float">1</green-light-intensity-norm>
@@ -22,10 +23,8 @@
 		<go-around type="bool">false</go-around>
 	</modes>
 	<internal>
-		<nav-source type="int">1</nav-source>
 		<nav-type>vor</nav-type>
 		<gs-captured type="bool">false</gs-captured>
 		<g-switch type="bool">false</g-switch>
-		<target-altitude-ft type="int">0</target-altitude-ft>
 	</internal>
 </PropertyList>

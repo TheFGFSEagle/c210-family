@@ -236,7 +236,7 @@
 					<or>
 						<property>autopilot/if-550a/green-light-test</property>
 						<equals>
-							<property>autopilot/if-550a/internal/nav-source</property>
+							<property>autopilot/if-550a/nav-source</property>
 							<value>0</value>
 						</equals>
 					</or>
@@ -260,7 +260,7 @@
 					<or>
 						<property>autopilot/if-550a/green-light-test</property>
 						<equals>
-							<property>autopilot/if-550a/internal/nav-source</property>
+							<property>autopilot/if-550a/nav-source</property>
 							<value>1</value>
 						</equals>
 					</or>

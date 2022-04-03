@@ -13,6 +13,18 @@
 		<serviceable type="bool">true</serviceable>
 	</altimeter>
 	
+	<alt-encoder>
+		<serviceable type="bool">true</serviceable>
+	</alt-encoder>
+	
+	<heading-indicator>
+		<heading-bug-deg type="double">0</heading-bug-deg>
+	</heading-indicator>
+	
+	<attitude-indicator>
+		<pitch-offset-deg type="double">0</pitch-offset-deg>
+	</attitude-indicator>
+	
 	<!-- radios -->
 	<comm n="0">
 		<frequencies>

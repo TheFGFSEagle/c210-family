@@ -4,9 +4,126 @@
 -->
 
 <PropertyList>
+	<!-- Horizontal modes (TURN, HDG, NAV) -->
+	
+	<pi-simple-controller>
+		<name>Course error from CDI deflection</name>
+		<debug>false</debug>
+		<gain>
+			<condition>
+				<property>/autopilot/if-550a/internal/modes/backcourse</property>
+			</condition>
+			<value>-1</value>
+		</gain>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<equals>
+					<property>/autopilot/if-550a/nav-source</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/instrumentation/nav/heading-needle-deflection-norm</property>
+		</input>
+		<input>
+			<condition>
+				<equals>
+					<property>/autopilot/if-550a/nav-source</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<property>/instrumentation/rnav/heading-needle-deflection-norm</property>
+		</input>
+		<output>/autopilot/if-550a/internal/nav-course-error-deg</output>
+		<config>
+			<Kp>30</Kp>
+			<Ki>0.3</Ki>
+		</config>
+		<min>-30</min>
+		<max>30</max>
+	</pi-simple-controller>
+	
+	<filter>
+		<name>NAV intercept heading</name>
+		<debug>false</debug>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<equals>
+					<property>/autopilot/if-550a/nav-source</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/instrumentation/nav/radials/selected-deg</property>
+		</input>
+		<input>
+			<condition>
+				<equals>
+					<property>/autopilot/if-550a/nav-source</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<property>/instrumentation/nav[1]/radials/selected-deg</property>
+		</input>
+		<reference>/autopilot/if-550a/internal/nav-course-error-deg</reference>
+		<output>/autopilot/if-550a/internal/nav-intercept-heading-deg</output>
+		<period>
+			<min>0</min>
+			<max>360</max>
+		</period>
+	</filter>
+	
+	<filter>
+		<name>Heading error</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<property>/autopilot/if-550a/modes/nav</property>
+			</condition>
+			<property>/autopilot/if-550a/internal/nav-intercept-heading-deg</property>
+		</input>
+		<input>/instrumentation/heading-indicator/heading-bug-deg</input>
+		<reference>/instrumentation/heading-indicator/indicated-heading-deg</reference>
+		<output>
+			<property>/autopilot/if-550a/internal/heading-error-deg</property>
+			<period>
+				<min>-180</min>
+				<max>180</max>
+			</period>
+		</output>
+	</filter>
+	
+	<filter>
+		<name>Turn rate from heading error</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<expression>
+				<div>
+					<property>/autopilot/if-550a/internal/heading-error-deg</property>
+					<value>30</value>
+				</div>
+			</expression>
+			<min>-1</min>
+			<max>1</max>
+		</input>
+		<output>/autopilot/if-550a/internal/heading-target-turn-rate</output>
+	</filter>
+	
 	<filter>
 		<name>Target turn rate damped</name>
 		<type>noise-spike</type>
+		<input>
+			<condition>
+				<or>
+					<property>/autopilot/if-550a/modes/heading</property>
+					<property>/autopilot/if-550a/modes/nav</property>
+				</or>
+			</condition>
+			<property>/autopilot/if-550a/internal/heading-target-turn-rate</property>
+		</input>
 		<input>/autopilot/if-550a/target-turn-rate</input>
 		<output>/autopilot/if-550a/internal/target-turn-rate-damped</output>
 		<max-rate-of-change>0.2</max-rate-of-change>
@@ -25,7 +142,7 @@
 		<enable>
 			<condition>
 				<and>
-					<property>/autopilot/if-550a/modes/roll</property>
+					<property>/autopilot/if-550a/engaged</property>
 					<property>/autopilot/powered</property>
 				</and>
 			</condition>
@@ -61,6 +178,9 @@
 		<max-rate-of-change>0.2</max-rate-of-change>
 	</filter>
 	
+	
+	<!-- Vertical modes (PITCH, ALT) -->
+	
 	<filter>
 		<name>Save target pressure altitude</name>
 		<type>gain</type>
@@ -79,34 +199,46 @@
 		<output>/autopilot/if-550a/internal/target-altitude-ft</output>
 	</filter>
 	
+	<filter>
+		<name>Altitude error</name>
+		<type>noise-spike</type>
+		<gain>-1</gain>
+		<initialize-to>output</initialize-to>
+		<input>/instrumentation/altimeter/indicated-altitude-ft</input>
+		<reference>/autopilot/if-550a/internal/target-altitude-ft</reference>
+		<output>/autopilot/if-550a/internal/altitude-error-ft</output>
+		<max-rate-of-change>
+			<condition>
+				<property>/autopilot/if-550a/modes/altitude</property>
+			</condition>
+			<value>100</value>
+		</max-rate-of-change>
+		<max-rate-of-change>10000</max-rate-of-change>
+	</filter>
+	
+	<predict-simple>
+		<name>Predict altitude error</name>
+		<input>/autopilot/if-550a/internal/altitude-error-ft</input>
+		<output>/autopilot/if-550a/internal/predicted-altitude-error-ft</output>
+		<seconds>1.25</seconds>
+		<filter-time>1</filter-time>
+	</predict-simple>
+	
 	<pid-controller>
 		<name>Target pitch for altitude hold</name>
-		<enable>
-			<condition>
-				<and>
-					<property>/autopilot/if-550a/modes/altitude</property>
-					<property>/autopilot/powered</property>
-				</and>
-			</condition>
-		</enable>
 		<input>
-			<expression>
-				<dif>
-					<property>/instrumentation/altimeter/indicated-altitude-ft</property>
-					<property>/autopilot/if-550a/internal/target-altitude-ft</property>
-				</dif>
-			</expression>
+			<property>/autopilot/if-550a/internal/predicted-altitude-error-ft</property>
 			<min>-200</min>
 			<max>200</max>
 		</input>
 		<reference>0</reference>
 		<output>/autopilot/if-550a/internal/altitude-target-pitch-deg</output>
 		<config>
-			<Kp>0.09</Kp>
-			<Ti>20</Ti>
-			<Td>0.0001</Td>
+			<Kp>0.2</Kp>
+			<Ti>10</Ti>
+			<Td>0.001</Td>
 			<u_min>-10</u_min>
-			<u_max>10</u_max>
+			<u_max>5</u_max>
 		</config>
 	</pid-controller>
 	
@@ -139,7 +271,7 @@
 		<enable>
 			<condition>
 				<and>
-					<property>/autopilot/if-550a/modes/pitch</property>
+					<property>/autopilot/if-550a/engaged</property>
 					<property>/autopilot/powered</property>
 				</and>
 			</condition>

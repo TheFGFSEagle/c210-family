@@ -201,8 +201,10 @@
 			<path>/instrumentation/altimeter[1]/setting-inhg</path>
 			<path>/instrumentation/heading-indicator/heading-bug-deg</path>
 			<path>/instrumentation/attitude-indicator/pitch-offset-deg</path>
-			<path>/instrumentation/ifcs/green-light-intensity-norm</path>
-			<path>/instrumentation/ifcs/white-light-intensity-norm</path>
+			<path>/autopilot/if-550a/green-light-intensity-norm</path>
+			<path>/autopilot/if-550a/white-light-intensity-norm</path>
+			<path>/autopilot/if-550a/target-pitch-deg</path>
+			<path>/autopilot/if-550a/target-turn-rate</path>
 			<path>/fdm/jsbsim/propulsion/engine/tach-time-sec</path>
 			<path>/instrumentation/hobbs-meter/indicated-hobbs-time-sec</path>
 			<path>/instrumentation/clock/mode</path>
