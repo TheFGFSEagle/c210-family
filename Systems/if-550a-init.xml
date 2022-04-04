@@ -24,6 +24,7 @@
 	</modes>
 	<internal>
 		<nav-type>vor</nav-type>
+		<backcourse-active type="bool">false</backcourse-active>
 		<gs-captured type="bool">false</gs-captured>
 		<g-switch type="bool">false</g-switch>
 	</internal>
