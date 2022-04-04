@@ -6,12 +6,12 @@
 <PropertyList>
 	<!-- Horizontal modes (TURN, HDG, NAV) -->
 	
-	<pi-simple-controller>
-		<name>Course error from CDI deflection</name>
-		<debug>false</debug>
+	<filter>
+		<name>CDI deflection</name>
+		<type>gain</type>
 		<gain>
 			<condition>
-				<property>/autopilot/if-550a/internal/modes/backcourse</property>
+				<property>/autopilot/if-550a/modes/backcourse</property>
 			</condition>
 			<value>-1</value>
 		</gain>
@@ -34,6 +34,13 @@
 			</condition>
 			<property>/instrumentation/rnav/heading-needle-deflection-norm</property>
 		</input>
+		<output>/autopilot/if-550a/internal/cdi-deflection-norm</output>
+	</filter>
+	
+	<pi-simple-controller>
+		<name>Course error from CDI deflection</name>
+		<debug>false</debug>
+		<input>/autopilot/if-550a/internal/cdi-deflection-norm</input>
 		<output>/autopilot/if-550a/internal/nav-course-error-deg</output>
 		<config>
 			<Kp>30</Kp>
@@ -55,7 +62,15 @@
 					<value>0</value>
 				</equals>
 			</condition>
-			<property>/instrumentation/nav/radials/selected-deg</property>
+			<expression>
+				<sum>
+					<property>/instrumentation/nav/radials/selected-deg</property>
+					<prod>
+						<property>/autopilot/if-550a/modes/backcourse</property>
+						<value>180</value>
+					</prod>
+				</sum>
+			</expression>
 		</input>
 		<input>
 			<condition>
@@ -64,7 +79,15 @@
 					<value>1</value>
 				</equals>
 			</condition>
-			<property>/instrumentation/nav[1]/radials/selected-deg</property>
+			<expression>
+				<sum>
+					<property>/instrumentation/nav[1]/radials/selected-deg</property>
+					<prod>
+						<property>/autopilot/if-550a/modes/backcourse</property>
+						<value>180</value>
+					</prod>
+				</sum>
+			</expression>
 		</input>
 		<reference>/autopilot/if-550a/internal/nav-course-error-deg</reference>
 		<output>/autopilot/if-550a/internal/nav-intercept-heading-deg</output>
@@ -86,13 +109,11 @@
 		</input>
 		<input>/instrumentation/heading-indicator/heading-bug-deg</input>
 		<reference>/instrumentation/heading-indicator/indicated-heading-deg</reference>
-		<output>
-			<property>/autopilot/if-550a/internal/heading-error-deg</property>
-			<period>
-				<min>-180</min>
-				<max>180</max>
-			</period>
-		</output>
+		<output>/autopilot/if-550a/internal/heading-error-deg</output>
+		<period>
+			<min>-180</min>
+			<max>180</max>
+		</period>
 	</filter>
 	
 	<filter>
