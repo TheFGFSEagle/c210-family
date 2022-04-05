@@ -24,6 +24,6 @@
 		<zero_angle type="float">0.98</zero_angle>
 		<outer_gain type="float">0.1</outer_gain>
 		
-		<intensity_scale type="float"><use>controls/lighting/nav-lights</use></intensity_scale>
+		<intensity_scale type="float"><use>sim/model/lights/nav/state</use></intensity_scale>
 	</parameters>
 </PropertyList>

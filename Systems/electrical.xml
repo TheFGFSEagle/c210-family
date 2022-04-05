@@ -588,7 +588,7 @@
 									<property>/systems/electrical/buses/primary/consumers/nav-lights/nav-lights-amps</property>
 									<property>/systems/electrical/buses/primary/consumers/nav-lights/yoke-map-light-amps</property>
 								</sum>
-								<property>/controls/lighting/nav-lights</property>
+								<property>/sim/model/lights/nav/state</property>
 							</prod>
 							<prod>
 								<property>/systems/electrical/buses/primary/consumers/nav-lights/electroluminescent-panel-lights-amps</property>
@@ -666,7 +666,7 @@
 		<output>/systems/electrical/buses/primary/consumers/tail-flood/volts</output>
 	</filter>
 	<filter>
-		<name>Instrument flood lights amps</name>
+		<name>Tail flood lights amps</name>
 		<type>gain</type>
 		<gain>/controls/electric/circuit-breakers/tail-flood</gain>
 		<input>
@@ -677,7 +677,7 @@
 						<value>28</value>
 						<prod>
 							<property>/systems/electrical/buses/primary/consumers/tail-flood/tail-flood-lights-amps</property>
-							<property>/controls/lighting/logo-lights</property>
+							<property>/sim/model/lights/tail-flood/state</property>
 						</prod>
 					</div>
 				</div>
@@ -694,7 +694,7 @@
 		<output>/systems/electrical/buses/primary/consumers/taxi/volts</output>
 	</filter>
 	<filter>
-		<name>Instrument flood lights amps</name>
+		<name>Taxi lights amps</name>
 		<type>gain</type>
 		<gain>/controls/electric/circuit-breakers/taxi</gain>
 		<input>
@@ -705,7 +705,7 @@
 						<value>28</value>
 						<prod>
 							<property>/systems/electrical/buses/primary/consumers/taxi/taxi-light-amps</property>
-							<property>/controls/lighting/taxi-light</property>
+							<property>/sim/model/light/taxi/state</property>
 						</prod>
 					</div>
 				</div>
@@ -733,7 +733,7 @@
 						<value>28</value>
 						<prod>
 							<property>/systems/electrical/buses/primary/consumers/landing/landing-light-amps</property>
-							<property>/controls/lighting/landing-lights</property>
+							<property>/sim/model/lights/landing/state</property>
 						</prod>
 					</div>
 				</div>
@@ -1505,7 +1505,7 @@
 		<name>Autopilot actuators amps</name>
 		<type>gain</type>
 		<gain>/controls/electric/circuit-breakers/ap-actuators</gain>
-		<!-- XXX: REMOVE this line when proper autopilot is implemented -->
+		<!-- TODO: Implement actuator-is-moving property because servos only add load when moving, then remove below line -->
 		<input>0</input>
 		<input>
 			<expression>
@@ -1852,5 +1852,65 @@
 			</greater-than>
 		</input>
 		<output>/instrumentation/clock/backlight-powered</output>
+	</logic>
+	<logic>
+		<name>Determine if flashing beacon is powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/beacon/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/sim/model/lights/beacon/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if strobe lights are powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/strobe/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/sim/model/lights/strobe/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if nav lights are powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/nav-lights/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/sim/model/lights/nav/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if tail flood lights are powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/tail-flood/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/sim/model/lights/tail-flood/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if taxi light is powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/taxi/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/sim/model/lights/taxi/powered</output>
+	</logic>
+	<logic>
+		<name>Determine if landing light is powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/landing/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/sim/model/lights/landing/powered</output>
 	</logic>
 </PropertyList>

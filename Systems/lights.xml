@@ -1,17 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
 	<filter>
-		<name>Left landing light is also used as taxi light</name>
+		<name>Nav lights</name>
 		<type>gain</type>
 		<gain>1</gain>
 		<input>
+			<condition>
+				<and>
+					<property>/sim/model/lights/nav/powered</property>
+					<property>/controls/lighting/nav-lights</property>
+				</and>
+			</condition>
+			<value>1</value>
+		</input>
+		<input>0</input>
+		<output>/sim/model/lights/nav/state</output>
+	</filter>
+	
+	<filter>
+		<name>Tail flood lights</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<and>
+					<property>/sim/model/lights/tail-flood/powered</property>
+					<property>/controls/lighting/logo-lights</property>
+				</and>
+			</condition>
+			<value>1</value>
+		</input>
+		<input>0</input>
+		<output>/sim/model/lights/tail-flood/state</output>
+	</filter>
+	
+	<filter>
+		<name>Left landing light can be switched on separately as taxi light</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<or>
+					<and>
+						<property>/sim/model/lights/taxi/powered</property>
+						<property>/controls/lighting/taxi-light</property>
+					</and>
+					<and>
+						<property>/sim/model/lights/landing/powered</property>
+						<property>/controls/lighting/landing-lights</property>
+					</and>
+				</or>
+			</condition>
+			<value>1</value>
+		</input>
+		<input>0</input>
+		<output>/sim/model/lights/taxi/state</output>
+	</filter>
+	
+	<filter>
+		<name>Right landing light</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<and>
+					<property>/sim/model/lights/landing/powered</property>
+					<property>/controls/lighting/landing-lights</property>
+				</and>
+			</condition>
+			<value>1</value>
+		</input>
+		<input>0</input>
+		<output>/sim/model/lights/landing/state</output>
+	</filter>
+	
+	<filter>
+		<name>Flashing beacon</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<and>
+					<property>/controls/lighting/beacon</property>
+					<property>/sim/model/lights/beacon/powered</property>
+				</and>
+			</condition>
 			<expression>
-				<max>
-					<property>/controls/lights/landing-lights</property>
-					<property>/controls/lighting/taxi-light</property>
-				</max>
+				<floor>
+					<div>
+						<mod>
+							<property>/sim/time/elapsed-sec</property>
+							<value>1</value> <!-- flash frequency -->
+						</mod>
+						<value>0.8</value> <!-- flash frequency - flash duration = duration between flashes -->
+					</div>
+				</floor>
 			</expression>
 		</input>
-		<output>/sim/model/lights/landing-taxi</output>
+		<input>0</input>
+		<output>/sim/model/lights/beacon/state</output>
+	</filter>
+	
+	<filter>
+		<name>Strobe lights</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<and>
+					<property>/controls/lighting/strobe</property>
+					<property>/sim/model/lights/strobe/powered</property>
+				</and>
+			</condition>
+			<expression>
+				<floor>
+					<table>
+						<mod>
+							<property>/sim/time/elapsed-sec</property>
+							<value>2</value> <!-- frequency of the flash pattern -->
+						</mod>
+						<!-- flash pattern -->
+						
+						<!-- light 0.05 seconds -->
+						<entry>
+							<ind>0</ind>
+							<dep>1</dep>
+						</entry>
+						<entry>
+							<ind>0.05</ind>
+							<dep>1</dep>
+						</entry>
+						<!-- no light 0.05 seconds -->
+						<entry>
+							<ind>0.075</ind>
+							<dep>0</dep>
+						</entry>
+						<!-- light 0.05 seconds -->
+						<entry>
+							<ind>0.1</ind>
+							<dep>1</dep>
+						</entry>
+						<entry>
+							<ind>0.15</ind>
+							<dep>1</dep>
+						</entry>
+						<!-- no light 1.85 seconds -->
+						<entry>
+							<ind>2</ind>
+							<dep>0</dep>
+						</entry>
+					</table>
+				</floor>
+			</expression>
+		</input>
+		<input>0</input>
+		<output>/sim/model/lights/strobe/state</output>
 	</filter>
 </PropertyList>

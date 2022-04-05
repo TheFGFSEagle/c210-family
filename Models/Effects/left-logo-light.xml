@@ -26,7 +26,7 @@
 		<overlay>
 			<params>
 				<light-used>white</light-used>
-				<show-prop>controls/lighting/logo-lights</show-prop>
+				<show-prop>sim/model/lights/tail-flood/state</show-prop>
 			</params>
 		</overlay>
 	</model>
@@ -72,7 +72,7 @@
 		<spot-cutoff>40</spot-cutoff>
 		<range-m>10</range-m>
 		<dim-factor>
-			<property>controls/lighting/logo-lights</property>
+			<property>sim/model/lights/tail-flood/state</property>
 		</dim-factor>
 	</light>
 </PropertyList>

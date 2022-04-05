@@ -72,7 +72,7 @@
 		<spot-cutoff>70</spot-cutoff>
 		<range-m>20</range-m>
 		<dim-factor>
-			<property>controls/lighting/nav-lights</property>
+			<property>sim/model/lights/nav/state</property>
 		</dim-factor>
 	</light>
 </PropertyList>

@@ -26,7 +26,7 @@
 		<overlay>
 			<params>
 				<light-used>landing</light-used>
-				<show-prop>controls/lighting/landing-lights</show-prop>
+				<show-prop>sim/model/lights/landing/state</show-prop>
 			</params>
 		</overlay>
 	</model>
@@ -72,7 +72,7 @@
 		<spot-cutoff>40</spot-cutoff>
 		<range-m>500</range-m>
 		<dim-factor>
-			<property>controls/lighting/landing-lights</property>
+			<property>sim/model/lights/landing/state</property>
 		</dim-factor>
 	</light>
 </PropertyList>

@@ -26,7 +26,7 @@
 		<overlay>
 			<params>
 				<light-used>red</light-used>
-				<show-prop>controls/lighting/nav-lights</show-prop>
+				<show-prop>sim/model/lights/nav/state</show-prop>
 			</params>
 		</overlay>
 	</model>
@@ -72,7 +72,7 @@
 		<spot-cutoff>55</spot-cutoff>
 		<range-m>20</range-m>
 		<dim-factor>
-			<property>controls/lighting/nav-lights</property>
+			<property>sim/model/lights/nav/state</property>
 		</dim-factor>
 	</light>
 </PropertyList>
