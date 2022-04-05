@@ -705,7 +705,7 @@
 						<value>28</value>
 						<prod>
 							<property>/systems/electrical/buses/primary/consumers/taxi/taxi-light-amps</property>
-							<property>/sim/model/light/taxi/state</property>
+							<property>/sim/model/lights/taxi/state</property>
 						</prod>
 					</div>
 				</div>

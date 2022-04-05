@@ -15,14 +15,14 @@
 						<property>/autopilot/if-550a/nav-source</property>
 						<value>0</value>
 					</equals>
-					<property>/instrumentation/nav/loc-active</property>
+					<property>/instrumentation/nav/nav-loc</property>
 				</and>
 				<and>
 					<equals>
 						<property>/autopilot/if-550a/nav-source</property>
 						<value>1</value>
 					</equals>
-					<property>/instrumentation/nav[1]/loc-active</property>
+					<property>/instrumentation/nav[1]/nav-loc</property>
 				</and>
 			</or>
 		</input>
