@@ -23,7 +23,7 @@
 		<go-around type="bool">false</go-around>
 	</modes>
 	<internal>
-		<nav-type>vor</nav-type>
+		<nav-is-loc type="bool">false</nav-is-loc>
 		<backcourse-active type="bool">false</backcourse-active>
 		<gs-captured type="bool">false</gs-captured>
 		<g-switch type="bool">false</g-switch>

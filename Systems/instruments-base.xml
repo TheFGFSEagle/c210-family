@@ -104,7 +104,7 @@
 							<property>/sim/time/elapsed-sec</property>
 							<value>5</value> <!-- this value sets the frequency of the flash … -->
 						</mod>
-						<value>4.5</value> <!-- and this one minus the last one will be the duration of the flash -->
+						<value>4.5</value> <!-- … and the last one minus this one will be the duration of the flash -->
 					</div>
 				</floor>
 			</expression>

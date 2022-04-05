@@ -25,7 +25,7 @@
 		<overlay>
 			<params>
 				<light-used>landing</light-used>
-				<show-prop>sim/models/lights/landing-taxi</show-prop>
+				<show-prop>sim/model/lights/landing-taxi</show-prop>
 			</params>
 		</overlay>
 	</model>
@@ -71,7 +71,7 @@
 		<spot-cutoff>40</spot-cutoff>
 		<range-m>500</range-m>
 		<dim-factor>
-			<property>sim/models/lights/landing-taxi</property>
+			<property>sim/model/lights/landing-taxi</property>
 		</dim-factor>
 	</light>
 </PropertyList>

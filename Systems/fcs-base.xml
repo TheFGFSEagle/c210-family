@@ -178,7 +178,7 @@
 		<fcs_function>
 		<function>			
 			<product>
-			<value>0.909</value>
+			<value>0.8</value>
 				<sum>
 					<property>fcs/rudder-cmd-norm</property>
 					<property>fcs/yaw-trim-cmd-norm</property>
@@ -187,7 +187,7 @@
 							<property>fcs/rudder-cmd-norm</property>
 							<property>fcs/aileron-cmd-norm</property>
 						</difference>
-						<value>0.1</value>
+						<value>0.2</value>
 					</product>
 				</sum>
 			</product>

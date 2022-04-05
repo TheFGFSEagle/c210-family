@@ -221,6 +221,15 @@
 				</product>
 			</expression>
 		</input>
+		<input>
+			<condition>
+				<equals>
+					<property>/instrumentation/rnav/current-waypoint/distance-nm</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/instrumentation/nav[1]/heading-needle-deflection-norm</property>
+		</input>
 		<output>/instrumentation/rnav/heading-needle-deflection-norm</output>
 		<min>-1</min>
 		<max>1</max>

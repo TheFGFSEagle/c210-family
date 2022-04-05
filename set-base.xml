@@ -117,23 +117,23 @@
 				<path>Systems/render-options.xml</path>
 			</property-rule>
 			<property-rule n="102">
-				<name>RNAV</name>
-				<path>Systems/rnav.xml</path>
-			</property-rule>
-			<property-rule n="103">
 				<name>Instrument indications common to all variants</name>
 				<path>Systems/instruments-base.xml</path>
 			</property-rule>
-			<property-rule n="104">
+			<property-rule n="103">
 				<name>Lights</name>
 				<path>Systems/lights.xml</path>
 			</property-rule>
-			<property-rule n="105">
+			<property-rule n="104">
 				<name>Electrical</name>
 				<path>Systems/electrical.xml</path>
 			</property-rule>
 			
 			<autopilot n="100">
+				<name>RNAV</name>
+				<path>Systems/rnav.xml</path>
+			</autopilot>
+			<autopilot n="101">
 				<name>IF-550A autopilot</name>
 				<path>Systems/if-550a.xml</path>
 			</autopilot>

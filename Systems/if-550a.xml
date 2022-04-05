@@ -6,12 +6,10 @@
 <PropertyList>
 	<!-- Horizontal modes (TURN, HDG, NAV) -->
 	
-	<filter>
+	<logic>
 		<name>Determine NAV type (VOR or LOC)</name>
-		<type>gain</type>
-		<gain>1</gain>
 		<input>
-			<condition>
+			<or>
 				<and>
 					<equals>
 						<property>/autopilot/if-550a/nav-source</property>
@@ -26,24 +24,17 @@
 					</equals>
 					<property>/instrumentation/nav[1]/loc-active</property>
 				</and>
-			</condition>
-			<value>loc</value>
+			</or>
 		</input>
-		<input>
-			<value>vor</value>
-		</input>
-		<output>/autopilot/if-550a/internal/nav-type</output>
-	</filter>
+		<output>/autopilot/if-550a/internal/nav-is-loc</output>
+	</logic>
 	
 	<logic>
 		<name>Backcourse active</name>
 		<input>
 			<and>
 				<property>/autopilot/if-550a/modes/backcourse</property>
-				<equals>
-					<property>/autopilot/if-550a/internal/nav-type</property>
-					<value>loc</value>
-				</equals>
+				<property>/autopilot/if-550a/internal/nav-is-loc</property>
 			</and>
 		</input>
 		<output>/autopilot/if-550a/internal/backcourse-active</output>
@@ -223,7 +214,7 @@
 		<output>/autopilot/if-550a/internal/target-roll-deg</output>
 		<config>
 			<Kp>25</Kp>
-			<Ti>5</Ti>
+			<Ti>3.5</Ti>
 			<Td>0.001</Td>
 			<u_min>-25</u_min>
 			<u_max>25</u_max>
@@ -343,8 +334,8 @@
 		<reference>0</reference>
 		<output>/autopilot/if-550a/internal/altitude-target-pitch-deg</output>
 		<config>
-			<Kp>0.2</Kp>
-			<Ti>10</Ti>
+			<Kp>0.1</Kp>
+			<Ti>5</Ti>
 			<Td>0.001</Td>
 			<u_min>-10</u_min>
 			<u_max>5</u_max>

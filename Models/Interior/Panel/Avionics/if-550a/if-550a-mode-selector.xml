@@ -367,10 +367,9 @@
 				<not>
 					<or>
 						<property>autopilot/if-550a/green-light-test</property>
-						<equals>
-							<property>autopilot/if-550a/internal/nav-type</property>
-							<value>vor</value>
-						</equals>
+						<not>
+							<property>autopilot/if-550a/internal/nav-is-loc</property>
+						</not>
 					</or>
 				</not>
 				<property>autopilot/powered</property>
@@ -391,10 +390,7 @@
 				<not>
 					<or>
 						<property>autopilot/if-550a/green-light-test</property>
-						<equals>
-							<property>autopilot/if-550a/internal/nav-type</property>
-							<value>localizer</value>
-						</equals>
+						<property>autopilot/if-550a/internal/nav-is-loc</property>
 					</or>
 				</not>
 				<property>autopilot/powered</property>
