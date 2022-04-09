@@ -302,7 +302,7 @@
 					<value>1</value>
 				</equals>
 			</condition>
-			<property>/instrumentation/rnav/gs-needle-deflection-norm</property>
+			<property>/instrumentation/nav[1]/gs-needle-deflection-norm</property>
 		</input>
 		<output>/autopilot/if-550a/internal/gs-deflection-norm</output>
 	</filter>
@@ -625,7 +625,7 @@
 	<filter>
 		<name>Flight director pitch error</name>
 		<type>gain</type>
-		<gain>4</gain>
+		<gain>0.1</gain>
 		<input>/instrumentation/attitude-indicator/indicated-pitch-deg</input>
 		<reference>/autopilot/if-550a/internal/target-pitch-deg-damped</reference>
 		<output>/autopilot/if-550a/flight-director/pitch-error-norm</output>
@@ -635,7 +635,7 @@
 	<filter>
 		<name>Flight director roll error</name>
 		<type>gain</type>
-		<gain>4</gain>
+		<gain>0.1</gain>
 		<input>/instrumentation/attitude-indicator/indicated-roll-deg</input>
 		<reference>/autopilot/if-550a/internal/target-roll-deg-damped</reference>
 		<output>/autopilot/if-550a/flight-director/roll-error-norm</output>
@@ -663,11 +663,12 @@
 		<input>
 			<expression>
 				<sum>
-					<property>/autopilot/if-550a/internal/elevator-trim</property>
+					<property>/controls/flight/elevator-trim</property>
 					<div>
-						<property>/controls/flight/electric-trim-actuate</property>
-						<value>120</value>
-						
+						<div>
+							<property>/controls/flight/electric-trim-actuate</property>
+							<value>120</value>
+						</div>
 						<!-- trim tab takes <value> * 2 seconds to move from -1 to 1 -->
 						<value>20</value>
 					</div>
