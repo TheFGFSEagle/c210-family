@@ -1913,4 +1913,14 @@
 		</input>
 		<output>/sim/model/lights/landing/powered</output>
 	</logic>
+	<logic>
+		<name>Determine if electric trim is powered</name>
+		<input>
+			<greater-than>
+				<property>/systems/electrical/buses/primary/consumers/trim/volts</property>
+				<value>12</value>
+			</greater-than>
+		</input>
+		<output>/sim/model/controls/electric-trim/powered</output>
+	</logic>
 </PropertyList>

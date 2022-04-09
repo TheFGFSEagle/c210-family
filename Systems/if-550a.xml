@@ -173,10 +173,7 @@
 		<gain>2</gain>
 		<enable>
 			<condition>
-				<and>
-					<property>/autopilot/if-550a/engaged</property>
-					<property>/autopilot/powered</property>
-				</and>
+				<property>/autopilot/powered</property>
 			</condition>
 		</enable>
 		<input>/autopilot/if-550a/internal/heading-error-deg</input>
@@ -205,10 +202,7 @@
 		<name>Target roll for turn rate hold</name>
 		<enable>
 			<condition>
-				<and>
-					<property>/autopilot/if-550a/engaged</property>
-					<property>/autopilot/powered</property>
-				</and>
+				<property>/autopilot/powered</property>
 			</condition>
 		</enable>
 		<input>/autopilot/if-550a/internal/predicted-turn-rate</input>
@@ -252,10 +246,7 @@
 		<name>Roll hold</name>
 		<enable>
 			<condition>
-				<and>
-					<property>/autopilot/if-550a/engaged</property>
-					<property>/autopilot/powered</property>
-				</and>
+				<property>/autopilot/powered</property>
 			</condition>
 		</enable>
 		<input>/autopilot/if-550a/internal/predicted-roll-deg</input>
@@ -595,10 +586,7 @@
 		<name>Pitch hold</name>
 		<enable>
 			<condition>
-				<and>
-					<property>/autopilot/if-550a/engaged</property>
-					<property>/autopilot/powered</property>
-				</and>
+				<property>/autopilot/powered</property>
 			</condition>
 		</enable>
 		<input>/autopilot/if-550a/internal/predicted-pitch-deg</input>
@@ -630,5 +618,62 @@
 		<input>/autopilot/if-550a/internal/elevator</input>
 		<output>/controls/flight/elevator</output>
 		<max-rate-of-change>0.08</max-rate-of-change>
+	</filter>
+	
+	
+	<!-- Flight director -->
+	<filter>
+		<name>Flight director pitch error</name>
+		<type>gain</type>
+		<gain>4</gain>
+		<input>/instrumentation/attitude-indicator/indicated-pitch-deg</input>
+		<reference>/autopilot/if-550a/internal/target-pitch-deg-damped</reference>
+		<output>/autopilot/if-550a/flight-director/pitch-error-norm</output>
+		<min>-1</min>
+		<max>1</max>
+	</filter>
+	<filter>
+		<name>Flight director roll error</name>
+		<type>gain</type>
+		<gain>4</gain>
+		<input>/instrumentation/attitude-indicator/indicated-roll-deg</input>
+		<reference>/autopilot/if-550a/internal/target-roll-deg-damped</reference>
+		<output>/autopilot/if-550a/flight-director/roll-error-norm</output>
+		<min>-1</min>
+		<max>1</max>
+	</filter>
+	
+	<!-- Electric elevator trim -->
+	<filter>
+		<name>Electric elevator trim actuator</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<enable>
+			<condition>
+				<and>
+					<not>
+						<property>/autopilot/if-550a/engaged</property>
+					</not>
+					<property>/controls/flight/electric-trim-engaged</property>
+					<property>/autopilot/powered</property>
+					<property>/autopilot/actuators-powered</property>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<expression>
+				<sum>
+					<property>/autopilot/if-550a/internal/elevator-trim</property>
+					<div>
+						<property>/controls/flight/electric-trim-actuate</property>
+						<value>120</value>
+						
+						<!-- trim tab takes <value> * 2 seconds to move from -1 to 1 -->
+						<value>20</value>
+					</div>
+				</sum>
+			</expression>
+		</input>
+		<output>/controls/flight/elevator-trim</output>
 	</filter>
 </PropertyList>

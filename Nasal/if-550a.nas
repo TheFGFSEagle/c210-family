@@ -5,8 +5,10 @@
 var treeRoot = props.globals;
 
 var instrumentationNode = treeRoot.getNode("instrumentation", 1);
+var indicatedPitchNode = instrumentationNode.getNode("attitude-indicator/indicated-pitch-deg");
 
 var apNode = treeRoot.getNode("autopilot/if-550a", 1);
+var targetPitchNode = apNode.getNode("target-pitch-deg");
 var engagedNode = apNode.getNode("engaged", 1);
 var flightDirectorNode = apNode.getNode("flight-director", 1);
 var disconnectWarnHornNode = apNode.getNode("disconnect-warn-horn", 1);
@@ -77,6 +79,8 @@ var toggleEngaged = func {
 	if (engaged) {
 		disengage();
 	} else {
+		flightDirectorNode.setBoolValue(0);
+		goAroundModeNode.setBoolValue(0);
 		engagedNode.setBoolValue(1);
 		rollModeNode.setBoolValue(1);
 		pitchModeNode.setBoolValue(1);
@@ -84,30 +88,45 @@ var toggleEngaged = func {
 };
 
 var toggleFlightDirector = func {
+	if (engagedNode.getBoolValue()) {
+		return;
+	}
 	var active = flightDirectorNode.getBoolValue();
 	print("flight director: ", active);
-	flightDirectorNode.setBoolValue(1 - active);
-};
-
-var goAroundMode = func {
-	var apActive = engagedNode.getBoolValue();
-	var fdActive = flightDirectorNode.getBoolValue();
-	print("go around - ap: ", apActive, " fd: ", fdActive);
-	
-	if (apActive) {
-		engagedNode.setBoolValue(0);
+	if (!active) {
 		flightDirectorNode.setBoolValue(1);
-		fdActive = 1;
-		disconnectWarnNode.setBoolValue(1);
-		resetDisconnectWarnHornTimer.start();
-	}
-	
-	if (fdActive) {
 		disengageLateralModes();
 		disengageVerticalModes();
-		goAroundModeNode.setBoolValue(1);
-		rollModeNode.setBoolValue(1);
+		targetPitchNode.setDoubleValue(sprintf("%.1f", math.round(indicatedPitchNode.getValue() * 10, 1) / 10));
 		pitchModeNode.setBoolValue(1);
+		rollModeNode.setBoolValue(1);
+	} else {
+		disengageLateralModes();
+		disengageVerticalModes();
+		flightDirectorNode.setBoolValue(0);
+	}
+};
+
+var toggleGoAroundMode = func {
+	var apActive = engagedNode.getBoolValue();
+	var fdActive = flightDirectorNode.getBoolValue();
+	var active = goAroundModeNode.getBoolValue();
+	print("go around - ap: ", apActive, " fd: ", fdActive);
+	
+	if (!active) {
+		if (apActive) {
+			disengage();
+			fdActive = 1;
+			flightDirectorNode.setBoolValue(1);
+		}
+		
+		if (fdActive) {
+			goAroundModeNode.setBoolValue(1);
+			rollModeNode.setBoolValue(1);
+			pitchModeNode.setBoolValue(1);
+		}
+	} else {
+		goAroundModeNode.setBoolValue(0);
 	}
 };
 
@@ -124,15 +143,16 @@ var toggleHeadingMode = func {
 	var active = headingModeNode.getBoolValue();
 	print("heading: ", active);
 	disengageLateralModes();
-	if (active) {
+	if (active and !goAroundModeNode.getBoolValue()) {
 		rollModeNode.setBoolValue(1);
 	} else {
+		goAroundModeNode.setBoolValue(0);
 		headingModeNode.setBoolValue(1);
 	}
 };
 
 var toggleNavMode = func {
-	if (!(engagedNode.getBoolValue() or flightDirectorNode.getBoolValue())) {
+	if (!(engagedNode.getBoolValue() or flightDirectorNode.getBoolValue()) or goAroundModeNode.getBoolValue()) {
 		return;
 	}
 	var active = navModeNode.getBoolValue();
@@ -146,7 +166,7 @@ var toggleNavMode = func {
 };
 
 var toggleBackcourseMode = func {
-	if (!(engagedNode.getBoolValue() or flightDirectorNode.getBoolValue())) {
+	if (!(engagedNode.getBoolValue() or flightDirectorNode.getBoolValue()) or goAroundModeNode.getBoolValue()) {
 		return;
 	}
 	
@@ -158,7 +178,7 @@ var toggleBackcourseMode = func {
 };
 
 var toggleAltMode = func {
-	if (!(engagedNode.getBoolValue() or flightDirectorNode.getBoolValue())) {
+	if (!(engagedNode.getBoolValue() or flightDirectorNode.getBoolValue()) or goAroundModeNode.getBoolValue()) {
 		return;
 	}
 	var active = altModeNode.getBoolValue();

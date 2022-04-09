@@ -32,6 +32,37 @@
 	</animation>
 	
 	<animation>
+		<type>select</type>
+		<condition>
+			<and>
+				<property>/autopilot/powered</property>
+				<property>/autopilot/if-550a/flight-director</property>
+			</and>
+		</condition>
+		<object-name>HorizontalDeviationNeedle</object-name>
+		<object-name>VerticalDeviationNeedle</object-name>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>HorizontalDeviationNeedle</object-name>
+		<axis>
+			<object-name>HorizontalDeviationNeedleAxis</object-name>
+		</axis>
+		<property>/autopilot/if-550a/flight-director/roll-error-norm</property>
+		<factor>25</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>VerticalDeviationNeedle</object-name>
+		<axis>
+			<object-name>VerticalDeviationNeedleAxis</object-name>
+		</axis>
+		<property>/autopilot/if-550a/flight-director/pitch-error-norm</property>
+		<factor>25</factor>
+	</animation>
+	
+	<animation>
 		<type>knob</type>
 		<object-name>Knob</object-name>
 		<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
