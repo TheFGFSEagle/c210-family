@@ -4,7 +4,7 @@
 -->
 
 <PropertyList>
-	<!-- Horizontal modes (TURN, HDG, NAV) -->
+	<!-- Horizontal modes (TURN, HDG, NAV[VOR/LOC]) -->
 	
 	<logic>
 		<name>Determine NAV type (VOR or LOC)</name>
@@ -71,14 +71,22 @@
 		<output>/autopilot/if-550a/internal/cdi-deflection-norm</output>
 	</filter>
 	
+	<predict-simple>
+		<name>Predict CDI deflection</name>
+		<input>/autopilot/if-550a/internal/cdi-deflection-norm</input>
+		<output>/autopilot/if-550a/internal/predicted-cdi-deflection-norm</output>
+		<seconds>3</seconds>
+		<filter-time>0.5</filter-time>
+	</predict-simple>
+	
 	<pi-simple-controller>
 		<name>Course error from CDI deflection</name>
 		<debug>false</debug>
-		<input>/autopilot/if-550a/internal/cdi-deflection-norm</input>
+		<input>/autopilot/if-550a/internal/predicted-cdi-deflection-norm</input>
 		<output>/autopilot/if-550a/internal/nav-course-error-deg</output>
 		<config>
 			<Kp>45</Kp>
-			<Ki>0.3</Ki>
+			<Ki>0.5</Ki>
 		</config>
 		<min>-45</min>
 		<max>45</max>
@@ -160,43 +168,37 @@
 	</filter>
 	
 	<filter>
-		<name>Turn rate from heading error</name>
+		<name>Target roll for heading hold</name>
 		<type>gain</type>
-		<gain>1</gain>
-		<input>
-			<expression>
-				<div>
-					<property>/autopilot/if-550a/internal/heading-error-deg</property>
-					<value>30</value>
-				</div>
-			</expression>
-		</input>
-		<output>/autopilot/if-550a/internal/heading-target-turn-rate</output>
+		<gain>2</gain>
+		<enable>
+			<condition>
+				<and>
+					<property>/autopilot/if-550a/engaged</property>
+					<property>/autopilot/powered</property>
+				</and>
+			</condition>
+		</enable>
+		<input>/autopilot/if-550a/internal/heading-error-deg</input>
+		<output>/autopilot/if-550a/internal/heading-target-roll-deg</output>
+		<min>-25</min>
+		<max>25</max>
 	</filter>
 	
 	<filter>
 		<name>Target turn rate damped</name>
 		<type>noise-spike</type>
-		<input>
-			<condition>
-				<or>
-					<property>/autopilot/if-550a/modes/heading</property>
-					<property>/autopilot/if-550a/modes/nav</property>
-				</or>
-			</condition>
-			<property>/autopilot/if-550a/internal/heading-target-turn-rate</property>
-		</input>
 		<input>/autopilot/if-550a/target-turn-rate</input>
 		<output>/autopilot/if-550a/internal/target-turn-rate-damped</output>
-		<max-rate-of-change>0.2</max-rate-of-change>
+		<max-rate-of-change>0.4</max-rate-of-change>
 	</filter>
 	
 	<predict-simple>
 		<name>Predict indicated turn rate</name>
 		<input>/instrumentation/turn-indicator/indicated-turn-rate</input>
 		<output>/autopilot/if-550a/internal/predicted-turn-rate</output>
-		<seconds>1.25</seconds>
-		<filter-time>1</filter-time>
+		<seconds>1</seconds>
+		<filter-time>0</filter-time>
 	</predict-simple>
 	
 	<pid-controller>
@@ -211,7 +213,7 @@
 		</enable>
 		<input>/autopilot/if-550a/internal/predicted-turn-rate</input>
 		<reference>/autopilot/if-550a/internal/target-turn-rate-damped</reference>
-		<output>/autopilot/if-550a/internal/target-roll-deg</output>
+		<output>/autopilot/if-550a/internal/turn-rate-target-roll-deg</output>
 		<config>
 			<Kp>25</Kp>
 			<Ti>3.5</Ti>
@@ -224,17 +226,26 @@
 	<filter>
 		<name>Target roll damped</name>
 		<type>noise-spike</type>
-		<input>/autopilot/if-550a/internal/target-roll-deg</input>
+		<input>
+			<condition>
+				<or>
+					<property>/autopilot/if-550a/modes/heading</property>
+					<property>/autopilot/if-550a/modes/nav</property>
+				</or>
+			</condition>
+			<property>/autopilot/if-550a/internal/heading-target-roll-deg</property>
+		</input>
+		<input>/autopilot/if-550a/internal/turn-rate-target-roll-deg</input>
 		<output>/autopilot/if-550a/internal/target-roll-deg-damped</output>
-		<max-rate-of-change>2</max-rate-of-change>
+		<max-rate-of-change>10</max-rate-of-change>
 	</filter>
 	
 	<predict-simple>
 		<name>Predict indicated roll</name>
 		<input>/instrumentation/attitude-indicator/indicated-roll-deg</input>
 		<output>/autopilot/if-550a/internal/predicted-roll-deg</output>
-		<seconds>1.25</seconds>
-		<filter-time>1</filter-time>
+		<seconds>3</seconds>
+		<filter-time>0</filter-time>
 	</predict-simple>
 	
 	<pid-controller>
@@ -251,8 +262,8 @@
 		<reference>/autopilot/if-550a/internal/target-roll-deg-damped</reference>
 		<output>/autopilot/if-550a/internal/aileron</output>
 		<config>
-			<Kp>0.005</Kp>
-			<Ti>3.5</Ti>
+			<Kp>0.015</Kp>
+			<Ti>10</Ti>
 			<Td>0.001</Td>
 			<u_min>-1</u_min>
 			<u_max>1</u_max>
@@ -280,6 +291,210 @@
 	
 	
 	<!-- Vertical modes (PITCH, ALT) -->
+	
+	<filter>
+		<name>Glideslope needle deflection</name>
+		<type>gain</type>
+		<input>
+			<condition>
+				<equals>
+					<property>/autopilot/if-550a/nav-source</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/instrumentation/nav/gs-needle-deflection-norm</property>
+		</input>
+		<input>
+			<condition>
+				<equals>
+					<property>/autopilot/if-550a/nav-source</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<property>/instrumentation/rnav/gs-needle-deflection-norm</property>
+		</input>
+		<output>/autopilot/if-550a/internal/gs-deflection-norm</output>
+	</filter>
+	
+	<predict-simple>
+		<name>Predict glideslope deviation</name>
+		<input>/autopilot/if-550a/internal/gs-deflection-norm</input>
+		<output>/autopilot/if-550a/internal/predicted-gs-deflection-norm</output>
+		<seconds>3</seconds>
+		<filter-time>1</filter-time>
+	</predict-simple>
+	
+	<logic>
+		<name>Arm glideslope</name>
+		<enable>
+			<condition>
+				<and>
+					<property>/autopilot/if-550a/modes/nav</property>
+					<or>
+						<and>
+							<equals>
+								<property>/autopilot/if-550a/nav-source</property>
+								<value>0</value>
+							</equals>
+							<property>/instrumentation/nav/gs-in-range</property>
+							<property>/instrumentation/nav/has-gs</property>
+						</and>
+						<and>
+							<equals>
+								<property>/autopilot/if-550a/nav-source</property>
+								<value>1</value>
+							</equals>
+							<property>/instrumentation/nav[1]/gs-in-range</property>
+							<property>/instrumentation/nav[1]/has-gs</property>
+						</and>
+					</or>
+					<not>
+						<property>/autopilot/if-550a/internal/gs-captured</property>
+					</not>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<true/>
+		</input>
+		<output>/autopilot/if-550a/internal/gs-armed</output>
+	</logic>
+	
+	<logic>
+		<name>Capture GS</name>
+		<enable>
+			<condition>
+				<and>
+					<property>/autopilot/if-550a/modes/nav</property>
+					<property>/autopilot/if-550a/internal/nav-is-loc</property>
+					<or>
+						<and>
+							<equals>
+								<property>/autopilot/if-550a/nav-source</property>
+								<value>0</value>
+							</equals>
+							<property>/instrumentation/nav/gs-in-range</property>
+							<property>/instrumentation/nav/has-gs</property>
+						</and>
+						<and>
+							<equals>
+								<property>/autopilot/if-550a/nav-source</property>
+								<value>1</value>
+							</equals>
+							<property>/instrumentation/nav[1]/gs-in-range</property>
+							<property>/instrumentation/nav[1]/has-gs</property>
+						</and>
+					</or>
+					<greater-than>
+						<property>/autopilot/if-550a/internal/gs-deflection-norm</property>
+						<value>0</value>
+					</greater-than>
+					<less-than>
+						<property>/autopilot/if-550a/internal/gs-deflection-norm</property>
+						<value>0.2</value>
+					</less-than>
+					<property>/autopilot/if-550a/internal/gs-armed</property>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<true/>
+		</input>
+		<output>/autopilot/if-550a/internal/gs-captured</output>
+	</logic>
+	
+	<logic>
+		<name>Disengage ALT and PITCH modes when glideslope is captured</name>
+		<enable>
+			<condition>
+				<and>
+					<property>/autopilot/if-550a/internal/gs-armed</property>
+					<property>/autopilot/if-550a/internal/gs-captured</property>
+					<or>
+						<property>/autopilot/if-550a/modes/altitude</property>
+						<property>/autopilot/if-550a/modes/pitch</property>
+					</or>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<false/>
+		</input>
+		<output>/autopilot/if-550a/modes/altitude</output>
+		<output>/autopilot/if-550a/modes/pitch</output>
+	</logic>
+	
+	<logic>
+		<name>Disarm glideslope</name>
+		<enable>
+			<condition>
+				<property>/autopilot/if-550a/internal/gs-captured</property>
+			</condition>
+		</enable>
+		<input>
+			<false/>
+		</input>
+		<output>/autopilot/if-550a/internal/gs-armed</output>
+	</logic>
+	
+	<logic>
+		<name>Clear GS</name>
+		<debug>true</debug>
+		<enable>
+			<condition>
+				<and>
+					<property>/autopilot/if-550a/gs-captured</property>
+					<or>
+						<not>
+							<property>/autopilot/if-550a/modes/nav</property>
+						</not>
+						<and>
+							<equals>
+								<property>/autopilot/if-550a/nav-source</property>
+								<value>0</value>
+							</equals>
+							<property>/instrumentation/nav/has-gs</property>
+							<property>/instrumentation/nav/gs-in-range</property>
+						</and>
+						<and>
+							<equals>
+								<property>/autopilot/if-550a/nav-source</property>
+								<value>1</value>
+							</equals>
+							<property>/instrumentation/nav[1]/has-gs</property>
+							<property>/instrumentation/nav[1]/gs-in-range</property>
+						</and>
+					</or>
+				</and>
+			</condition>
+		</enable>
+		<input>
+			<false/>
+		</input>
+		<output>/autopilot/if-550a/internal/gs-captured</output>
+	</logic>
+			
+	<pid-controller>
+		<name>Target pitch for glideslope</name>
+		<enable>
+			<condition>
+				<and>
+					<property>/autopilot/if-550a/modes/nav</property>
+					<property>/autopilot/if-550a/internal/gs-captured</property>
+				</and>
+			</condition>
+		</enable>
+		<input>/autopilot/if-550a/internal/predicted-gs-deflection-norm</input>
+		<reference>0</reference>
+		<output>/autopilot/if-550a/internal/gs-target-pitch-deg</output>
+		<config>
+			<Kp>-20</Kp>
+			<Ti>10</Ti>
+			<Td>0.001</Td>
+			<u_min>-10</u_min>
+			<u_max>5</u_max>
+		</config>
+	</pid-controller>
 	
 	<filter>
 		<name>Save target pressure altitude</name>
@@ -321,7 +536,7 @@
 		<input>/autopilot/if-550a/internal/altitude-error-ft</input>
 		<output>/autopilot/if-550a/internal/predicted-altitude-error-ft</output>
 		<seconds>1.25</seconds>
-		<filter-time>1</filter-time>
+		<filter-time>0.5</filter-time>
 	</predict-simple>
 	
 	<pid-controller>
@@ -352,6 +567,16 @@
 			</condition>
 			<property>/autopilot/if-550a/internal/altitude-target-pitch-deg</property>
 		</input>
+		<input>
+			<!-- If NAV glideslope is captured, use the pitch needed to follow the glideslope beam -->
+			<condition>
+				<and>
+					<property>/autopilot/if-550a/modes/nav</property>
+					<property>/autopilot/if-550a/internal/gs-captured</property>
+				</and>
+			</condition>
+			<property>/autopilot/if-550a/internal/gs-target-pitch-deg</property>
+		</input>
 		<!-- Else use the pilot-set pitch -->
 		<input>/autopilot/if-550a/target-pitch-deg</input>
 		<output>/autopilot/if-550a/internal/target-pitch-deg-damped</output>
@@ -363,7 +588,7 @@
 		<input>/instrumentation/attitude-indicator/indicated-pitch-deg</input>
 		<output>/autopilot/if-550a/internal/predicted-pitch-deg</output>
 		<seconds>1.25</seconds>
-		<filter-time>1</filter-time>
+		<filter-time>0.5</filter-time>
 	</predict-simple>
 	
 	<pid-controller>
