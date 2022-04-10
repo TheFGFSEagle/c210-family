@@ -345,7 +345,7 @@
 	
 	<!-- yokes -->
 	<model>
-		<path>Controls/yoke/yoke.xml</path>
+		<path>Controls/yoke/yoke-pilot.xml</path>
 		<offsets>
 			<x-m>0.42</x-m>
 			<y-m>-0.24</y-m>
@@ -354,7 +354,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Controls/yoke/yoke.xml</path>
+		<path>Controls/yoke/yoke-copilot.xml</path>
 		<offsets>
 			<x-m>0.42</x-m>
 			<y-m>0.28</y-m>

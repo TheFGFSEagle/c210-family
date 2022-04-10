@@ -196,15 +196,15 @@
 			</entry>
 			<entry>
 				<ind>1</ind>
-				<dep>-37.5</dep>
+				<dep>37.5</dep>
 			</entry>
 			<entry>
 				<ind>4</ind>
-				<dep>-75</dep>
+				<dep>75</dep>
 			</entry>
 			<entry>
 				<ind>5</ind>
-				<dep>-112.5</dep>
+				<dep>112.5</dep>
 			</entry>
 		</interpolation>
 		<increase>

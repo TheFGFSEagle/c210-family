@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
-	<path>yoke.ac</path>
+	<path>yoke-copilot.ac</path>
 	
 	<animation>
 		<type>translate</type>
@@ -57,4 +57,9 @@
 			<property>sim/model/controls/show-yokes</property>
 		</condition>
 	</animation>
+	
+	<effect>
+		<inherits-from>yoke-normalmap</inherits-from>
+		<object-name>Middle</object-name>
+	</effect>
 </PropertyList>

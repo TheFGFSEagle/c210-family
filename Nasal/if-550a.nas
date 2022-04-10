@@ -124,6 +124,7 @@ var toggleGoAroundMode = func {
 			goAroundModeNode.setBoolValue(1);
 			rollModeNode.setBoolValue(1);
 			pitchModeNode.setBoolValue(1);
+			targetPitchNode.setDoubleValue(5);
 		}
 	} else {
 		goAroundModeNode.setBoolValue(0);

@@ -434,7 +434,7 @@
 		<enable>
 			<condition>
 				<and>
-					<property>/autopilot/if-550a/gs-captured</property>
+					<property>/autopilot/if-550a/internal/gs-captured</property>
 					<or>
 						<not>
 							<property>/autopilot/if-550a/modes/nav</property>
@@ -667,7 +667,7 @@
 					<div>
 						<div>
 							<property>/controls/flight/electric-trim-actuate</property>
-							<value>120</value>
+							<value>-120</value>
 						</div>
 						<!-- trim tab takes <value> * 2 seconds to move from -1 to 1 -->
 						<value>20</value>
