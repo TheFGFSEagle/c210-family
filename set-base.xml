@@ -151,7 +151,7 @@
 			<path>/controls/electric/circuit-breakers</path>
 			<path>/controls/anti-ice/pitot-heat</path>
 			<path>/controls/anti-ice/wing-deice</path>
-			<path>/controls/anti-ice/ice-detector-light</path>
+			<path>/controls/anti-ice/ice-detection-light</path>
 			<path>/controls/anti-ice/window-heat</path>
 			<path>/controls/anti-ice/propeller-heat</path>
 			<path>/controls/flight/rudder</path>
@@ -358,7 +358,7 @@
 		<anti-ice>
 			<window-heat type="bool">false</window-heat>
 			<wing-deice type="bool">false</wing-deice>
-			<ice-detector-light type="bool">false</ice-detector-light>
+			<ice-detection-light type="bool">false</ice-detection-light>
 			<propeller-heat type="bool">false</propeller-heat>
 			<pitot-heat type="bool">false</pitot-heat>
 		</anti-ice>
@@ -541,7 +541,7 @@
 							<radio-lights-amps type="double">0.5</radio-lights-amps>
 						</radio-instrument-lights>
 						<cabin-lights>
-							<ice-detector-light-amps type="double">1.5</ice-detector-light-amps>
+							<ice-detection-light-amps type="double">1.5</ice-detection-light-amps>
 							<dome-courtesy-baggage-lights-amps type="double">1.2</dome-courtesy-baggage-lights-amps>
 							<!-- all other cabin lights guessed -->
 							<low-voltage-warning-light-amps type="double">1.5</low-voltage-warning-light-amps>

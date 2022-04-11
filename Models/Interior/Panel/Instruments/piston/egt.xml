@@ -79,8 +79,8 @@
 			<binding>
 				<command>set-tooltip</command>
 				<tooltip-id>egt-indicator</tooltip-id>
-				<label>Current EGT temperature: %4d °F\nTarget EGT temperature:  %4d °F</label>
-				<measure-text>Current EGT temperature: 1700 °F\nTarget EGT temperature: 1700 °F</measure-text>
+				<label>Current EGT: %4d °F\nTarget EGT:  %4d °F</label>
+				<measure-text>Current EGT: 1700 °F\nTarget EGT: 1700 °F</measure-text>
 				<property>instrumentation/engine/indicated-egt-degf</property>
 				<property>instrumentation/engine/target-egt-degf</property>
 			</binding>

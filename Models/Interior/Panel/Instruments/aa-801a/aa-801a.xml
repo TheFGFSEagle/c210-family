@@ -31,6 +31,13 @@
 				<time>0.01</time>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>alt-alert-arm</tooltip-id>
+				<label>Arm autopilot altitude capture</label>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>

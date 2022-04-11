@@ -4,7 +4,13 @@
 	
 	<params>
 		<outer-prop>controls/lighting/panel-flood-norm</outer-prop>
+		<outer-label>Panel flood light intensity: %3d%%</outer-label>
+		<outer-measure-text>Panel flood light intensity: 100%</outer-measure-text>
+		<outer-tooltip-id>panel-light-dim-flood</outer-tooltip-id>
 		<inner-prop>controls/lighting/panel-post-norm</inner-prop>
+		<inner-label>Panel post light intensity: %3d%%</inner-label>
+		<inner-measure-text>Panel post light intensity: 100%</inner-measure-text>
+		<inner-tooltip-id>panel-light-dim-post</inner-tooltip-id>
 	</params>
 	
 	<animation>
@@ -26,6 +32,16 @@
 				<factor>0.05</factor>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id alias="../../../../params/outer-tooltip-id"/>
+				<label alias="../../../../params/outer-label"/>
+				<measure-text alias="../../../../params/outer-measure-text"/>
+				<property alias="../../../../params/outer-prop"/>
+				<mapping>percent</mapping>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -46,6 +62,16 @@
 				<factor>0.05</factor>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id alias="../../../../params/inner-tooltip-id"/>
+				<label alias="../../../../params/inner-label"/>
+				<measure-text alias="../../../../params/inner-measure-text"/>
+				<property alias="../../../../params/inner-prop"/>
+				<mapping>percent</mapping>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<effect>

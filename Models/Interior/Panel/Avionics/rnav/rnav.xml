@@ -17,12 +17,21 @@
 				<min>0</min>
 				<max>3</max>
 				<factor>1</factor>
+			</binding>
 			<binding>
 				<command>nasal</command>
 				<script>c210.rnav.updateBearing();</script>
 			</binding>
-			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rnav-bearing</tooltip-id>
+				<label>Waypoint bearing: %3.1f°</label>
+				<measure-text>Waypoint bearing: 359.9°</measure-text>
+				<property>instrumentation/rnav/selected-bearing-deg</property>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -45,6 +54,15 @@
 				<script>c210.rnav.updateBearing();</script>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rnav-bearing</tooltip-id>
+				<label>Waypoint bearing: %3.1f°</label>
+				<measure-text>Waypoint bearing: 359.9°</measure-text>
+				<property>instrumentation/rnav/selected-bearing-deg</property>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -67,6 +85,15 @@
 				<script>c210.rnav.updateBearing();</script>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rnav-bearing</tooltip-id>
+				<label>Waypoint bearing: %3.1f°</label>
+				<measure-text>Waypoint bearing: 359.9°</measure-text>
+				<property>instrumentation/rnav/selected-bearing-deg</property>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -89,6 +116,15 @@
 				<script>c210.rnav.updateBearing();</script>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rnav-bearing</tooltip-id>
+				<label>Waypoint bearing: %3.1f°</label>
+				<measure-text>Waypoint bearing: 359.9°</measure-text>
+				<property>instrumentation/rnav/selected-bearing-deg</property>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
@@ -112,6 +148,15 @@
 				<script>c210.rnav.updateDistance();</script>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rnav-distance</tooltip-id>
+				<label>Waypoint distance: %3.1f°</label>
+				<measure-text>Waypoint distance: 200.0°</measure-text>
+				<property>instrumentation/rnav/selected-distance-nm</property>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -134,6 +179,15 @@
 				<script>c210.rnav.updateDistance();</script>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rnav-distance</tooltip-id>
+				<label>Waypoint distance: %3.1f°</label>
+				<measure-text>Waypoint distance: 200.0°</measure-text>
+				<property>instrumentation/rnav/selected-distance-nm</property>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -156,6 +210,15 @@
 				<script>c210.rnav.updateDistance();</script>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rnav-distance</tooltip-id>
+				<label>Waypoint distance: %3.1f°</label>
+				<measure-text>Waypoint distance: 200.0°</measure-text>
+				<property>instrumentation/rnav/selected-distance-nm</property>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -178,6 +241,15 @@
 				<script>c210.rnav.updateDistance();</script>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rnav-distance</tooltip-id>
+				<label>Waypoint distance: %3.1f°</label>
+				<measure-text>Waypoint distance: 200.0°</measure-text>
+				<property>instrumentation/rnav/selected-distance-nm</property>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
@@ -273,6 +345,15 @@
 				<wrap type="bool">true</wrap>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rnav-display-waypoint</tooltip-id>
+				<label>Displayed waypoint: %d</label>
+				<measure-text>Displayed waypoint: 1</measure-text>
+				<property>instrumentation/rnav/display-waypoint</property>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -297,6 +378,15 @@
 				<script>c210.rnav.updateCurrentWaypoint();</script>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rnav-fly-waypoint</tooltip-id>
+				<label>Fly waypoint: %d</label>
+				<measure-text>Fly waypoint: 1</measure-text>
+				<property>instrumentation/rnav/fly-waypoint</property>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -316,6 +406,19 @@
 				<wrap type="bool">true</wrap>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rnav-mode</tooltip-id>
+				<label>Mode: %s</label>
+				<measure-text>Mode: Enroute</measure-text>
+				<property>instrumentation/rnav/mode</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Enroute", "Approach"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
@@ -347,6 +450,13 @@
 				<time>0.01</time>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>rnav-display-waypoint</tooltip-id>
+				<label>Push to transfer selected bearing and distance into waypoint 1 or 2 as selected by the Display switch</label>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>

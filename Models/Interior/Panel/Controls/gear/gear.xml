@@ -42,6 +42,19 @@
 				<property>controls/gear/gear-down</property>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>gear-lever</tooltip-id>
+				<label>Gear position: %s</label>
+				<measure-text>Gear position: Down</measure-text>
+				<property>controls/gear/gear-down</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Up", "Down"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<!-- gear lever needs to be pulled out in order to be moveable -->
@@ -90,6 +103,13 @@
 				<property>sim/model/controls/gear/retracted-lamp-test</property>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>gear-retracted-lamp</tooltip-id>
+				<label>Gear retracted indicator light (push to test)</label>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
@@ -112,6 +132,13 @@
 				<value>2</value> <!-- test lamp illumination -->
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>gear-extended-lamp</tooltip-id>
+				<label>Gear extended indicator light (push to test)</label>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>

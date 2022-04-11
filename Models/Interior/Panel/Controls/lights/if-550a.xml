@@ -21,6 +21,16 @@
 				<factor>0.05</factor>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>if-550a-annun-dim-white</tooltip-id>
+				<label>Autopilot mode selector white light intensity: %3d%%</label>
+				<measure-text>Autopilot mode selector white light intensity: 100%</measure-text>
+				<property>autopilot/if-550a/white-light-intensity-norm</property>
+				<mapping>percent</mapping>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -48,6 +58,16 @@
 				<property>autopilot/if-550a/green-light-test</property>
 			</binding>
 		</shift-action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>if-550a-annun-dim-white</tooltip-id>
+				<label>Autopilot mode selector green light intensity: %3d%%\nPush to test green lights</label>
+				<measure-text>Autopilot mode selector green light intensity: 100%\nPush to test green lights</measure-text>
+				<property>autopilot/if-550a/green-light-intensity-norm</property>
+				<mapping>percent</mapping>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>

@@ -2,6 +2,13 @@
 <PropertyList>
 	<path>valve.ac</path>
 	
+	<params>
+		<property>none</property>
+		<tooltip-id>none</tooltip-id>
+		<label>none</label>
+		<measure-text>none</measure-text>
+	</params>
+	
 	<animation>
 		<type>slider</type>
 		<object-name>Handle</object-name>
@@ -20,6 +27,19 @@
 				<property alias="../../../../params/property"/>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id alias="../../../../params/tooltip-id"/>
+				<label alias="../../../../params/label"/>
+				<measure-text alias="../../../../params/measure-text"/>
+				<property alias="../../../../params/property"/>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Off", "On"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<effect>

@@ -18,6 +18,19 @@
 				<script>if550a.toggleEngaged();</script>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>ap-engaged</tooltip-id>
+				<label>Autopilot: %s</label>
+				<measure-text>Autopilot: Disengaged</measure-text>
+				<property>autopilot/if-550a/engaged</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Disengaged", "Engaged"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -45,6 +58,15 @@
 				<max>10</max>
 			</binding>
 		</shift-action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>ap-target-pitch</tooltip-id>
+				<label>Target pitch: %2.1f°</label>
+				<measure-text>Target pitch -10.0°</measure-text>
+				<property>autopilot/if-550a/target-pitch-deg</property>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -72,6 +94,30 @@
 				<max>1</max>
 			</binding>
 		</shift-action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>ap-target-turn-rate</tooltip-id>
+				<label>Target turn rate: %s</label>
+				<measure-text>Target turn rate: 3° right per second (standard rate turn)</measure-text>
+				<property>autopilot/if-550a/target-turn-rate</property>
+				<mapping>nasal</mapping>
+				<script><![CDATA[
+					var s = "";
+					if (arg[0] < 0) {
+						s = sprintf("%1.1f° left per second", arg[0]);
+					} elsif (arg[0] > 0) {
+						return sprintf("%1.1f° right per second", arg[0]);
+					} else {
+						return "0° per second";
+					}
+					if (math.abs(arg[0]) == 1) {
+						s ~= " (standard rate turn)";
+					}
+					return s
+				]]></script>
+			</binding>
+		</hovered>
 	</animation>
 	<!--<animation>
 		<type>knob</type>
@@ -121,6 +167,13 @@
 				<value>0</value>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>ap-test</tooltip-id>
+				<label>Push to test autopilot disconnect mechanism</label>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<text>

@@ -23,6 +23,19 @@
 				<script>c210.dme.sourceChanged();</script>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>dme-source</tooltip-id>
+				<label>DME source: %s</label>
+				<measure-text>DME source: RNAV</measure-text>
+				<property>instrumentation/dme/source-knob</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["NAV1", "HOLD", "NAV2", "RNAV"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
@@ -70,6 +83,19 @@
 				<script>c210.dme.modeChanged();</script>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>dme-mode</tooltip-id>
+				<label>DME mode: %s</label>
+				<measure-text>DME mode: Test</measure-text>
+				<property>instrumentation/dme/mode</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Off", "On", "Test"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -89,6 +115,19 @@
 				<wrap type="bool">true</wrap>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>dme-display-mode</tooltip-id>
+				<label>Display mode: %s</label>
+				<measure-text>Display mode: Time-to-station</measure-text>
+				<property>instrumentation/dme/display-mode</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Time-to-station", "Groundspeed"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>

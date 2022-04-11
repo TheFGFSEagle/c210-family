@@ -17,6 +17,13 @@
 				<property>sim/model/controls/magnetos/key-inserted</property>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>magneto-key-in-out</tooltip-id>
+				<label>Press to insert / remove keys</label>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
@@ -84,6 +91,23 @@
 				<value type="bool">false</value>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>magnetos</tooltip-id>
+				<label>Magnetos: %s</label>
+				<measure-text>Magnetos: Start</measure-text>
+				<property>controls/engines/engine/magnetos</property>
+				<mapping>nasal</mapping>
+				<script>
+					if (getprop("controls/engines/engine/starter")) {
+						return "Start";
+					} else {
+						return ["Off", "Left", "Right", "Both"][arg[0]];
+					}
+				</script>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<effect>

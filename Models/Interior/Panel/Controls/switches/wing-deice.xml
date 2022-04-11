@@ -27,5 +27,12 @@
 				<time>0.01</time>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>wing-deice</tooltip-id>
+				<label>Initiate wing deice cycle</label>
+			</binding>
+		</hovered>
 	</animation>
 </PropertyList>

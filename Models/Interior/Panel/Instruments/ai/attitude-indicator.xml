@@ -74,11 +74,29 @@
 			<binding>
 				<command>property-adjust</command>
 				<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
-				<factor>0.25</factor>
+				<factor>1</factor>
 				<min>-10</min>
 				<max>10</max>
 			</binding>
 		</action>
+		<shift-action>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
+				<factor>0.1</factor>
+				<min>-10</min>
+				<max>10</max>
+			</binding>
+		</shift-action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>attitude-indicator-pitch-offset</tooltip-id>
+				<label>Symbolic airplane vertical offset: %.1f°</label>
+				<measure-text>Symbolic airplane vertcal offset: 10.0°</measure-text>
+				<property>instrumentation/attitude-indicator/pitch-offset-deg</property>
+			</binding>
+		</hovered>
 	</animation>
 	 <text>
 		<name>Label</name>

@@ -20,7 +20,7 @@
 			</binding>
 			<binding>
 				<command>property-assign</command>
-				<!-- the HI switch is mechanically tripped to the LO switch so that the latter gets switched on along with the HI switch when pressed and LO no on -->
+				<!-- the HI switch is mechanically tripped to the LO switch so that the latter gets switched on along with the HI switch when pressed and LO not on -->
 				<property>controls/engines/engine/fuel-pump</property>
 				<value type="bool">true</value>
 			</binding>
@@ -32,5 +32,18 @@
 				<value type="bool">false</value>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>fuel-pump-hi</tooltip-id>
+				<label>Fuel pump speed: %s</label>
+				<measure-text>Fuel pump speed: High</measure-text>
+				<property>controls/engines/engine/fuel-pump-hi</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Low", "High"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
 	</animation>
 </PropertyList>

@@ -506,8 +506,8 @@
 						<value>28</value>
 						<sum>
 							<prod>
-								<property>/systems/electrical/buses/primary/consumers/cabin-lights/ice-detector-light-amps</property>
-								<property>/controls/lighting/ice-detector-light</property>
+								<property>/systems/electrical/buses/primary/consumers/cabin-lights/ice-detection-light-amps</property>
+								<property>/controls/lighting/ice-detection-light</property>
 							</prod>
 							<prod>
 								<property>/systems/electrical/buses/primary/consumers/cabin-lights/dome-courtesy-baggage-lights-amps</property>

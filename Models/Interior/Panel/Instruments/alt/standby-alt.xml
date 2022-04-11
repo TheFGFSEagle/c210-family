@@ -96,6 +96,15 @@
 				<wrap>false</wrap>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>altimeter-baroset</tooltip-id>
+				<label>Pressure setting: %2.2f inHg</label>
+				<measure-text>Pressure setting: 29.92 inHg</measure-text>
+				<property>instrumentation/altimeter[1]/setting-inhg</property>
+			</binding>
+		</hovered>
 	</animation>
 	 <text>
 		<name>Label</name>

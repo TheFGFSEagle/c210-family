@@ -21,6 +21,9 @@
 		<overlay>
 			<params>
 				<property>controls/lighting/nav-lights</property>
+				<tooltip-id>nav-lights</tooltip-id>
+				<label>Nav lights: %s</label>
+				<measure-text>Nav lights: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -34,6 +37,9 @@
 		<overlay>
 			<params>
 				<property>controls/lighting/beacon</property>
+				<tooltip-id>beacon-light</tooltip-id>
+				<label>Flashing beacon: %s</label>
+				<measure-text>Flashing beacon: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -47,6 +53,9 @@
 		<overlay>
 			<params>
 				<property>controls/lighting/strobe</property>
+				<tooltip-id>strobe-lights</tooltip-id>
+				<label>Strobe lights: %s</label>
+				<measure-text>Strobe lights: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -60,6 +69,9 @@
 		<overlay>
 			<params>
 				<property>controls/lighting/logo-lights</property>
+				<tooltip-id>tail-flood-lights</tooltip-id>
+				<label>Tail flood lights: %s</label>
+				<measure-text>Tail flood lights: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -73,6 +85,9 @@
 		<overlay>
 			<params>
 				<property>controls/lighting/taxi-light</property>
+				<tooltip-id>taxi-light</tooltip-id>
+				<label>Taxi light: %s</label>
+				<measure-text>Taxi light: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -86,6 +101,9 @@
 		<overlay>
 			<params>
 				<property>controls/lighting/landing-lights</property>
+				<tooltip-id>landing-lights</tooltip-id>
+				<label>Landing lights: %s</label>
+				<measure-text>Landing lights: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -100,6 +118,9 @@
 		<overlay>
 			<params>
 				<property>controls/anti-ice/pitot-heat</property>
+				<tooltip-id>pitot-heat</tooltip-id>
+				<label>Pitot heat: %s</label>
+				<measure-text>Pitot heat: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -113,6 +134,9 @@
 		<overlay>
 			<params>
 				<property>controls/anti-ice/propeller-heat</property>
+				<tooltip-id>propeller-heat</tooltip-id>
+				<label>Propeller heat: %s</label>
+				<measure-text>Propeller heat: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -125,7 +149,10 @@
 		</offsets>
 		<overlay>
 			<params>
-				<property>controls/anti-ice/window-heat</property>
+				<property>controls/anti-ice/windshield-heat</property>
+				<tooltip-id>window-heat</tooltip-id>
+				<label>Windshield heat: %s</label>
+				<measure-text>Windshield heat: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -152,6 +179,9 @@
 		<overlay>
 			<params>
 				<property>controls/anti-ice/ice-detector-light</property>
+				<tooltip-id>ice-detection-light</tooltip-id>
+				<label>Ice detection light: %s</label>
+				<measure-text>Ice detection light: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -182,7 +212,13 @@
 		<overlay>
 			<params>
 				<outer-prop>controls/lighting/panel-flood-norm</outer-prop>
+				<outer-label>Panel flood light intensity: %3d%%</outer-label>
+				<outer-measure-text>Panel flood light intensity: 100%</outer-measure-text>
+				<outer-tooltip-id>panel-light-dim-flood</outer-tooltip-id>
 				<inner-prop>controls/lighting/panel-post-norm</inner-prop>
+				<inner-label>Panel post light intensity: %3d%%</inner-label>
+				<inner-measure-text>Panel post light intensity: 100%</inner-measure-text>
+				<inner-tooltip-id>panel-light-dim-post</inner-tooltip-id>
 			</params>
 		</overlay>
 	</model>
@@ -196,7 +232,13 @@
 		<overlay>
 			<params>
 				<outer-prop>controls/lighting/panel-integral-norm</outer-prop>
+				<outer-label>Panel integral light intensity: %3d%%</outer-label>
+				<outer-measure-text>Panel integral light intensity: 100%</outer-measure-text>
+				<outer-tooltip-id>panel-light-dim-integral</outer-tooltip-id>
 				<inner-prop>controls/lighting/panel-electroluminescent-norm</inner-prop>
+				<inner-label>Panel electroluminescent light intensity: %3d%%</inner-label>
+				<inner-measure-text>Panel electroluminescent light intensity: 100%</inner-measure-text>
+				<inner-tooltip-id>panel-light-dim-electroluminescent</inner-tooltip-id>
 			</params>
 		</overlay>
 	</model>
@@ -237,6 +279,9 @@
 		<overlay>
 			<params>
 				<property>controls/electric/engine/master-alt</property>
+				<tooltip-id>master-alt</tooltip-id>
+				<label>Alternator master: %s</label>
+				<measure-text>Alternator master: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -250,6 +295,9 @@
 		<overlay>
 			<params>
 				<property>controls/electric/battery-switch</property>
+				<tooltip-id>master-bat</tooltip-id>
+				<label>Battery master: %s</label>
+				<measure-text>Battery master: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -264,6 +312,9 @@
 		<overlay>
 			<params>
 				<property>controls/alt-static-air</property>
+				<tooltip-id>alt-static-air</tooltip-id>
+				<label>Alternate static source: %s</label>
+				<measure-text>Alternate static source: Off</measure-text>
 			</params>
 		</overlay>
 	</model>

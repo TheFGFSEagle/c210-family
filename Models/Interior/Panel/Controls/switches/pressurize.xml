@@ -21,6 +21,19 @@
 				<factor>1</factor>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>pressurize-switch</tooltip-id>
+				<label>Pressurization: %s</label>
+				<measure-text>Pressurization: Off</measure-text>
+				<property>controls/pressurization/pressurize</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Off", "On"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<effect>

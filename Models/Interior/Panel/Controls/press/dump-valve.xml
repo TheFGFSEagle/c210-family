@@ -19,6 +19,19 @@
 				<property>controls/pressurization/dump-valve</property>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>cabin-pressure-dump-valve</tooltip-id>
+				<label>Cabin pressure dump valve: %s</label>
+				<measure-text>Cabin pressure dump valve: Closed</measure-text>
+				<property>controls/pressurization/dump-valve</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Closed", "Open"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<effect>

@@ -333,9 +333,9 @@ var DMEDisplays = {
 			me.speedTimeDisplay.ktsAnnun.show();
 			me.speedTimeDisplay.minAnnun.show();
 			
-			me.distanceDisplay.text.setText("000.0");
+			me.distanceDisplay.text.setText("188.8");
 			me.distanceDisplay.text.show();
-			me.speedTimeDisplay.text.setText("000");
+			me.speedTimeDisplay.text.setText("888");
 			me.speedTimeDisplay.text.show();
 		} else {
 			# normal operation

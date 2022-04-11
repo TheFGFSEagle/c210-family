@@ -21,6 +21,9 @@
 		<overlay>
 			<params>
 				<property>controls/cabin-air/cabin-heat</property>
+				<tooltip-id>cabin-heat</tooltip-id>
+				<label>Cabin heat: %s</label>
+				<measure-text>Cabin heat: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -35,6 +38,9 @@
 		<overlay>
 			<params>
 				<property>controls/cabin-air/defrost</property>
+				<tooltip-id>cabin-defrost</tooltip-id>
+				<label>Cabin defrost: %s</label>
+				<measure-text>Cabin defrost: Off</measure-text>
 			</params>
 		</overlay>
 	</model>
@@ -58,6 +64,9 @@
 		<overlay>
 			<params>
 				<property>controls/cabin-air/floor-defrost</property>
+				<tooltip-id>floor-defrost</tooltip-id>
+				<label>Floor defrost: %s</label>
+				<measure-text>Floor defrost: Off</measure-text>
 			</params>
 		</overlay>
 	</model>

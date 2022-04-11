@@ -94,6 +94,15 @@
 				<time>0.1</time>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>cdi2-obs</tooltip-id>
+				<label>NAV2 radial: %3d°</label>
+				<measure-text>NAV2 radial: 359°</measure-text>
+				<property>instrumentation/nav[1]/radials/selected-deg</property>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
