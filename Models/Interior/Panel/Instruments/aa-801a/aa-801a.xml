@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <PropertyList>
-	<path>alt-alert.ac</path>
+	<path>aa-801a.ac</path>
 	
 	<animation>
 		<type>slider</type>
@@ -14,27 +14,26 @@
 		<factor>0.002</factor>
 		<action>
 			<binding>
-				<command>property-adjust</command>
+				<command>property-assign</command>
 				<property>instrumentation/alt-alert/arm-button-pressed</property>
-				<step>1</step>
-				<min>0</min>
-				<max>1</max>
+				<value>1</value>
 			</binding>
 		</action>
 		<release>
 			<binding>
-				<command>property-assign</command>
+				<command>property-interpolate</command>
 				<property>instrumentation/alt-alert/arm-button-pressed</property>
 				<value>0</value>
+				<time>0.01</time>
 			</binding>
 		</release>
 	</animation>
 	
 	<animation>
 		<type>knob</type>
-		<object-name>Knob100</object-name>
+		<object-name>Minilever100</object-name>
 		<axis>
-			<object-name>KnobsScalesAxis</object-name>
+			<object-name>MinileversScalesAxis</object-name>
 		</axis>
 		<property>instrumentation/alt-alert/selected-altitude-ft-hundreds</property>
 		<factor>-7.4</factor>
@@ -47,13 +46,26 @@
 				<max>9</max>
 				<wrap>false</wrap>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>aa801a.updateSelectedAltitude();</script>
+			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>alt-alert-altitude</tooltip-id>
+				<label>Selected alert altitude: %d ft</label>
+				<measure-text>Selected alert altitude: 23000 ft</measure-text>
+				<property>instrumentation/alt-alert/selected-altitude-ft</property>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
-		<object-name>Knob1000</object-name>
+		<object-name>Minilever1000</object-name>
 		<axis>
-			<object-name>KnobsScalesAxis</object-name>
+			<object-name>MinileversScalesAxis</object-name>
 		</axis>
 		<property>instrumentation/alt-alert/selected-altitude-ft-thousands</property>
 		<factor>-7.4</factor>
@@ -66,13 +78,26 @@
 				<max>9</max>
 				<wrap>false</wrap>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>aa801a.updateSelectedAltitude();</script>
+			</binding>	
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>alt-alert-altitude</tooltip-id>
+				<label>Selected alert altitude: %d ft</label>
+				<measure-text>Selected alert altitude: 23000 ft</measure-text>
+				<property>instrumentation/alt-alert/selected-altitude-ft</property>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
-		<object-name>Knob10000</object-name>
+		<object-name>Minilever10000</object-name>
 		<axis>
-			<object-name>KnobsScalesAxis</object-name>
+			<object-name>MinileversScalesAxis</object-name>
 		</axis>
 		<property>instrumentation/alt-alert/selected-altitude-ft-tenthousands</property>
 		<factor>-7.4</factor>
@@ -85,14 +110,27 @@
 				<max>2</max>
 				<wrap>false</wrap>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>aa801a.updateSelectedAltitude();</script>
+			</binding>	
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>alt-alert-altitude</tooltip-id>
+				<label>Selected alert altitude: %d ft</label>
+				<measure-text>Selected alert altitude: 23000 ft</measure-text>
+				<property>instrumentation/alt-alert/selected-altitude-ft</property>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
 		<type>rotate</type>
 		<object-name>AltScale100</object-name>
 		<axis>
-			<object-name>KnobsScalesAxis</object-name>
+			<object-name>MinileversScalesAxis</object-name>
 		</axis>
 		<property>instrumentation/alt-alert/selected-altitude-ft-hundreds</property>
 		<factor>-36</factor>
@@ -101,7 +139,7 @@
 		<type>rotate</type>
 		<object-name>AltScale1000</object-name>
 		<axis>
-			<object-name>KnobsScalesAxis</object-name>
+			<object-name>MinileversScalesAxis</object-name>
 		</axis>
 		<property>instrumentation/alt-alert/selected-altitude-ft-thousands</property>
 		<factor>-36</factor>
@@ -111,10 +149,61 @@
 		<object-name>AltScale10000</object-name>
 		<object-name>Flag</object-name>
 		<axis>
-			<object-name>KnobsScalesAxis</object-name>
+			<object-name>MinileversScalesAxis</object-name>
 		</axis>
 		<property>instrumentation/alt-alert/selected-altitude-ft-tenthousands</property>
 		<factor>-36</factor>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>HighLamp</object-name>
+		<emission>
+			<red>1</red>
+			<green>0.5</green>
+			<blue>0.25</blue>
+			<factor-prop>instrumentation/alt-alert/high-alert</factor-prop>
+		</emission>
+	</animation>
+	<animation>
+		<type>material</type>
+		<object-name>LevelLamp</object-name>
+		<emission>
+			<red>0.2</red>
+			<green>0.6</green>
+			<blue>0.2</blue>
+			<factor-prop>instrumentation/alt-alert/level-alert</factor-prop>
+		</emission>
+	</animation>
+	<animation>
+		<type>material</type>
+		<object-name>LowLamp</object-name>
+		<emission>
+			<red>1</red>
+			<green>0.5</green>
+			<blue>0.25</blue>
+			<factor-prop>instrumentation/alt-alert/low-alert</factor-prop>
+		</emission>
+	</animation>
+	<animation>
+		<type>material</type>
+		<object-name>ArmedLamp</object-name>
+		<emission>
+			<red>1</red>
+			<green>0.5</green>
+			<blue>0.25</blue>
+			<factor-prop>instrumentation/alt-alert/armed</factor-prop>
+		</emission>
+	</animation>
+	<animation>
+		<type>material</type>
+		<object-name>CoupledLamp</object-name>
+		<emission>
+			<red>0.2</red>
+			<green>0.6</green>
+			<blue>0.2</blue>
+			<factor-prop>instrumentation/alt-alert/coupled</factor-prop>
+		</emission>
 	</animation>
 	
 	 <text>
@@ -160,8 +249,8 @@
 	
 	<effect>
 		<inherits-from>../../../../Effects/p210n-interior-metal</inherits-from>
-		<object-name>Knob100</object-name>
-		<object-name>Knob1000</object-name>
-		<object-name>Knob10000</object-name>
+		<object-name>Minilever100</object-name>
+		<object-name>Minilever1000</object-name>
+		<object-name>Minilever10000</object-name>
 	</effect>
 </PropertyList>

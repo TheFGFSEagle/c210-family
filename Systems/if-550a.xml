@@ -488,24 +488,6 @@
 	</pid-controller>
 	
 	<filter>
-		<name>Save target pressure altitude</name>
-		<type>gain</type>
-		<gain>1.0</gain>
-		<enable>
-			<condition>
-				<and>
-					<not>
-						<property>/autopilot/if-550a/modes/altitude</property>
-					</not>
-					<property>/autopilot/powered</property>
-				</and>
-			</condition>
-		</enable>
-		<input>/instrumentation/altimeter/indicated-altitude-ft</input>
-		<output>/autopilot/if-550a/internal/target-altitude-ft</output>
-	</filter>
-	
-	<filter>
 		<name>Altitude error</name>
 		<type>noise-spike</type>
 		<gain>-1</gain>

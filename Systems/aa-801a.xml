@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Property rules for the AA-801А altitude alerter
+	by TheEagle
+-->
+<PropertyList>
+	<filter>
+		<name>Difference between indicated and selected altitude</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>/instrumentation/altimeter/indicated-altitude-ft</input>
+		<reference>/instrumentation/alt-alert/selected-altitude-ft</reference>
+		<output>/instrumentation/alt-alert/altitude-error-ft</output>
+	</filter>
+	
+	<logic>
+		<name>Determine HIGH altitude lamp illumination</name>
+		<input>
+			<less-than>
+				<property>/instrumentation/alt-alert/altitude-error-ft</property>
+				<value>1000</value>
+			</less-than>
+			<greater-than>
+				<property>/instrumentation/alt-alert/altitude-error-ft</property>
+				<value>300</value>
+			</greater-than>
+		</input>
+		<output>/instrumentation/alt-alert/high-alert</output>
+	</logic>
+	<logic>
+		<name>Determine level altitude lamp illumination</name>
+		<input>
+			<less-than>
+				<expression>
+					<abs>
+						<property>/instrumentation/alt-alert/altitude-error-ft</property>
+					</abs>
+				</expression>
+				<value>300</value>
+			</less-than>
+		</input>
+		<output>/instrumentation/alt-alert/level-alert</output>
+	</logic>
+	<logic>
+		<name>Determine LOW altitude lamp illumination</name>
+		<input>
+			<greater-than>
+				<property>/instrumentation/alt-alert/altitude-error-ft</property>
+				<value>-1000</value>
+			</greater-than>
+			<less-than>
+				<property>/instrumentation/alt-alert/altitude-error-ft</property>
+				<value>-300</value>
+			</less-than>
+		</input>
+		<output>/instrumentation/alt-alert/low-alert</output>
+	</logic>
+	
+	<logic>
+		<name>Engage autopilot altitude hold mode</name>
+		<enable>
+			<and>
+				<less-than>
+					<expression>
+						<abs>
+							<property>/instrumentation/alt-alert/altitude-error-ft</property>
+						</abs>
+					</expression>
+					<value>100</value>
+				</less-than>
+				<property>/instrumentation/alt-alert/armed</property>
+				<not>
+					<property>/autopilot/if-550a/modes/altitude</property>
+				</not>
+			</and>
+		</enable>
+		<input>
+			<true/>
+		</input>
+		<output>/autopilot/if-550a/modes/altitude</output>
+	</logic>
+	
+	<logic>
+		<name>Set coupled</name>
+		<input>
+			<and>
+				<equals>
+					<property>/instrumentation/alt-alert/selected-altitude-ft</property>
+					<property>/autopilot/if-550a/internal/target-altitude-ft</property>
+				</equals>
+				<not>
+					<property>/instrumentation/alt-alert/armed</property>
+				</not>
+				<property>/autopilot/if-550a/modes/altitude</property>
+			</and>
+		</input>
+		<output>/instrumentation/alt-alert/coupled</output>
+	</logic>
+	
+	<logic>
+		<name>Disarm altitude capture</name>
+		<enable>
+			<and>
+				<less-than>
+					<expression>
+						<abs>
+							<property>/instrumentation/alt-alert/altitude-error-ft</property>
+						</abs>
+					</expression>
+					<value>100</value>
+				</less-than>
+				<property>/instrumentation/alt-alert/armed</property>
+				<property>/autopilot/if-550a/modes/altitude</property>
+			</and>
+		</enable>
+		<input>
+			<false/>
+		</input>
+		<output>/instrumentation/alt-alert/armed</output>
+	</logic>
+</PropertyList>

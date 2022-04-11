@@ -107,7 +107,8 @@
 	
 	<!-- auxiliary instruments -->
 	<model>
-		<path>Instruments/alt-alert/alt-alert.xml</path>
+		<name>AltAlert</name>
+		<path>Instruments/aa-801a/aa-801a.xml</path>
 		<offsets>
 			<x-m>0.413</x-m>
 			<y-m>-0.45</y-m>

@@ -6,6 +6,7 @@ var treeRoot = props.globals;
 
 var instrumentationNode = treeRoot.getNode("instrumentation", 1);
 var indicatedPitchNode = instrumentationNode.getNode("attitude-indicator/indicated-pitch-deg");
+var indicatedAltitudeNode = instrumentationNode.getNode("altimeter/indicated-altitude-ft", 1);
 
 var apNode = treeRoot.getNode("autopilot/if-550a", 1);
 var targetPitchNode = apNode.getNode("target-pitch-deg");
@@ -18,6 +19,7 @@ var navSourceNode = apNode.getNode("nav-source", 1);
 # Internal stuff
 var internalNode = apNode.getNode("internal", 1);
 var gSwitchNode = internalNode.getNode("g-switch", 1);
+var targetAltitudeNode = internalNode.getNode("target-altitude-ft", 1);
 
 # Modes
 var modesNode = apNode.getNode("modes", 1);
@@ -186,6 +188,9 @@ var toggleAltMode = func {
 	print("alt: ", active);
 	pitchModeNode.setBoolValue(active);
 	altModeNode.setBoolValue(1 - active);
+	if (active) {
+		targetAltitudeNode.setDoubleValue(indicatedAltitudeNode.getValue());
+	}
 };
 
 
