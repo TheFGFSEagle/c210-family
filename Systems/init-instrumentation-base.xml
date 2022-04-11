@@ -149,5 +149,7 @@
 		<!-- mode for determining sensitivity of the CDI needle 0=ENR (enroute), 1=APPR (approach) -->
 		<mode type="int">0</mode>
 	</rnav>
+	
+	<alt-alert include="aa-801a-init.xml"/>
 </PropertyList>
 

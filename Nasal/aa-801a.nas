@@ -3,7 +3,7 @@
 
 var treeRoot = props.globals;
 
-var rootNode = treeRoot.getNode("alt-alert", 1);
+var rootNode = treeRoot.getNode("/instrumentation/alt-alert", 1);
 var selectedAltitudeNode = rootNode.getNode("selected-altitude-ft", 1);
 var selectedAltitudeTenthousandsNode = rootNode.getNode("selected-altitude-ft-tenthousands", 1);
 var selectedAltitudeThousandsNode = rootNode.getNode("selected-altitude-ft-thousands", 1);
