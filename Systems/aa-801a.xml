@@ -58,20 +58,22 @@
 	<logic>
 		<name>Engage autopilot altitude hold mode</name>
 		<enable>
-			<and>
-				<less-than>
-					<expression>
-						<abs>
-							<property>/instrumentation/alt-alert/altitude-error-ft</property>
-						</abs>
-					</expression>
-					<value>100</value>
-				</less-than>
-				<property>/instrumentation/alt-alert/armed</property>
-				<not>
-					<property>/autopilot/if-550a/modes/altitude</property>
-				</not>
-			</and>
+			<condition>
+				<and>
+					<less-than>
+						<expression>
+							<abs>
+								<property>/instrumentation/alt-alert/altitude-error-ft</property>
+							</abs>
+						</expression>
+						<value>100</value>
+					</less-than>
+					<property>/instrumentation/alt-alert/armed</property>
+					<not>
+						<property>/autopilot/if-550a/modes/altitude</property>
+					</not>
+				</and>
+			</condition>
 		</enable>
 		<input>
 			<true/>
@@ -99,18 +101,20 @@
 	<logic>
 		<name>Disarm altitude capture</name>
 		<enable>
-			<and>
-				<less-than>
-					<expression>
-						<abs>
-							<property>/instrumentation/alt-alert/altitude-error-ft</property>
-						</abs>
-					</expression>
-					<value>100</value>
-				</less-than>
-				<property>/instrumentation/alt-alert/armed</property>
-				<property>/autopilot/if-550a/modes/altitude</property>
-			</and>
+			<condition>
+				<and>
+					<less-than>
+						<expression>
+							<abs>
+								<property>/instrumentation/alt-alert/altitude-error-ft</property>
+							</abs>
+						</expression>
+						<value>100</value>
+					</less-than>
+					<property>/instrumentation/alt-alert/armed</property>
+					<property>/autopilot/if-550a/modes/altitude</property>
+				</and>
+			</condition>
 		</enable>
 		<input>
 			<false/>

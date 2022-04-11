@@ -5,7 +5,7 @@
 	<parameters>
 		<normalmap-enabled type="int">1</normalmap-enabled>
 		<texture n="2">
-			<image>yoke-normalmap.png</image>
+			<image>Aircraft/c210-family/Models/Interior/Panel/Controls/yoke/yoke-normalmap.png</image>
 		</texture>
 	</parameters>
 	

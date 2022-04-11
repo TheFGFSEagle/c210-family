@@ -18,6 +18,10 @@
 				<property>instrumentation/alt-alert/arm-button-pressed</property>
 				<value>1</value>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>aa801a.armButtonPressed();</script>
+			</binding>
 		</action>
 		<release>
 			<binding>
