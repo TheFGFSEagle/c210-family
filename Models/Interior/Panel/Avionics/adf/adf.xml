@@ -452,7 +452,7 @@
 		<type>slider</type>
 		<object-name>ADFButton</object-name>
 		<axis>
-			<x>1</x>
+			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
@@ -475,7 +475,7 @@
 				<command>property-interpolate</command>
 				<property>instrumentation/adf/adf-pressed</property>
 				<value>0</value>
-				<time>0.01</time>
+				<time>0.1</time>
 			</binding>
 		</release>
 		<hovered>
@@ -493,7 +493,7 @@
 		<type>slider</type>
 		<object-name>RECButton</object-name>
 		<axis>
-			<x>1</x>
+			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
@@ -516,7 +516,7 @@
 				<command>property-interpolate</command>
 				<property>instrumentation/adf/rec-pressed</property>
 				<value>0</value>
-				<time>0.01</time>
+				<time>0.1</time>
 			</binding>
 		</release>
 		<hovered>
@@ -534,7 +534,7 @@
 		<type>slider</type>
 		<object-name>BFOButton</object-name>
 		<axis>
-			<x>1</x>
+			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
@@ -557,7 +557,7 @@
 				<command>property-interpolate</command>
 				<property>instrumentation/adf/bfo-pressed</property>
 				<value>0</value>
-				<time>0.01</time>
+				<time>0.1</time>
 			</binding>
 		</release>
 		<hovered>
@@ -575,7 +575,7 @@
 		<type>slider</type>
 		<object-name>TestButton</object-name>
 		<axis>
-			<x>1</x>
+			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
