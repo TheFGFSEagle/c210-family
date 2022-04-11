@@ -10,7 +10,7 @@ var selectedAltitudeThousandsNode = rootNode.getNode("selected-altitude-ft-thous
 var selectedAltitudeHundredsNode = rootNode.getNode("selected-altitude-ft-hundreds", 1);
 var armedNode = rootNode.getNode("armed", 1);
 
-var autopilotNode = rootNode.getNode("autopilot/if-550a", 1);
+var autopilotNode = treeRoot.getNode("autopilot/if-550a", 1);
 var altitudeModeNode = autopilotNode.getNode("modes/altitude", 1);
 var gsCapturedNode = autopilotNode.getNode("internal/gs-captured", 1);
 var targetAltitudeNode = autopilotNode.getNode("internal/target-altitude-ft", 1);
