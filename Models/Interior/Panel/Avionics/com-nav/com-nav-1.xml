@@ -46,6 +46,15 @@
 				<mask>integer</mask>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>com-freq-mhz</tooltip-id>
+				<label>COM frequency: %3.2f MHz</label>
+				<measure-text>COM frequency: 118.95 MHz</measure-text>
+				<property alias="../../../../params/com-freq-mhz"/>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -65,6 +74,15 @@
 				<mask>decimal</mask>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>com-freq-khz</tooltip-id>
+				<label>COM frequency: %3.2f MHz</label>
+				<measure-text>COM frequency: 118.95 MHz</measure-text>
+				<property alias="../../../../params/com-freq-mhz"/>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
@@ -85,6 +103,15 @@
 				<mask>integer</mask>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>nav-freq-mhz</tooltip-id>
+				<label>NAV frequency: %3.2f MHz</label>
+				<measure-text>NAV frequency: 108.95 MHz</measure-text>
+				<property alias="../../../../params/nav-freq-mhz"/>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -104,6 +131,15 @@
 				<mask>decimal</mask>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>nav-freq-khz</tooltip-id>
+				<label>NAV frequency: %3.2f MHz</label>
+				<measure-text>NAV frequency: 108.95 MHz</measure-text>
+				<property alias="../../../../params/nav-freq-mhz"/>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
@@ -127,6 +163,15 @@
 				<script alias="../../../../params/com-volume-script"/>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>com-volume</tooltip-id>
+				<label>COM volume: %d%%</label>
+				<measure-text>COM volume: 100%</measure-text>
+				<property alias="../../../../params/com-volume"/>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>knob</type>
@@ -145,6 +190,15 @@
 				<max>1</max>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>nav-volume</tooltip-id>
+				<label>NAV volume: %d%%</label>
+				<measure-text>NAV volume: 100%</measure-text>
+				<property alias="../../../../params/nav-volume"/>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
@@ -164,6 +218,15 @@
 				<max>1</max>
 			</binding>
 		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>com-squelch</tooltip-id>
+				<label>COM squelch: %d%%</label>
+				<measure-text>COM squelch 100%</measure-text>
+				<property alias="../../../../params/com-squelch"/>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
@@ -197,6 +260,20 @@
 				<time>0.01</time>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>nav-mode</tooltip-id>
+				<label>NAV mode: %s</label>
+				<measure-text>NAV mode: Ident</measure-text>
+				<property alias="../../../../params/nav-mode"/>
+				<mapping>nasal</mapping>
+				<script>
+					# -1 = Test, 0 = Voice, 1 = Ident
+					return ["Voice", "Ident", "Test"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
@@ -228,6 +305,13 @@
 				<time>0.01</time>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>com-memory1</tooltip-id>
+				<label>Set COM memory 1</label>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>slider</type>
@@ -258,6 +342,13 @@
 				<time>0.01</time>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>com-memory2</tooltip-id>
+				<label>Set COM memory 2</label>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>slider</type>
@@ -288,6 +379,13 @@
 				<time>0.01</time>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>com-memory3</tooltip-id>
+				<label>Set COM memory 3</label>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>slider</type>
@@ -318,6 +416,13 @@
 				<time>0.01</time>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>nav-memory1</tooltip-id>
+				<label>Set NAV memory 1</label>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>slider</type>
@@ -348,6 +453,13 @@
 				<time>0.01</time>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>nav-memory2</tooltip-id>
+				<label>Set NAV memory 2</label>
+			</binding>
+		</hovered>
 	</animation>
 	<animation>
 		<type>slider</type>
@@ -378,6 +490,13 @@
 				<time>0.01</time>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>nav-memory3</tooltip-id>
+				<label>Set NAV memory 3</label>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
@@ -409,6 +528,13 @@
 				<time>0.01</time>
 			</binding>
 		</release>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>com-freq-cycle</tooltip-id>
+				<label>Cycle COM frequency\nIf it ends on 0 or 5, changes it to end on 2[5] or 7[5];\nif it ends on 2[5] or 7[5], changes it to end on 0 or 5.\nThe digit in brackets is not shown on the display</label>
+			</binding>
+		</hovered>
 	</animation>
 	
 	<animation>
