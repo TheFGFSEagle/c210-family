@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<selected-altitude-ft type="int">0</selected-altitude-ft>
+	<selected-altitude-ft-tenthousands type="int">0</selected-altitude-ft-tenthousands>
+	<selected-altitude-ft-thousands type="int">0</selected-altitude-ft-thousands>
+	<selected-altitude-ft-hundreds type="int">0</selected-altitude-ft-hundreds>
+	<armed type="bool">false</armed>
+	<coupled type="bool">false</coupled>
+	<high-alert type="bool">false</high-alert>
+	<level-alert type="bool">false</level-alert>
+	<low-alert type="bool">false</low-alert>
+</PropertyList>
+
