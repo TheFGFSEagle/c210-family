@@ -430,7 +430,7 @@
 	
 	<logic>
 		<name>Clear GS</name>
-		<debug>true</debug>
+		<debug>false</debug>
 		<enable>
 			<condition>
 				<and>
@@ -444,16 +444,28 @@
 								<property>/autopilot/if-550a/nav-source</property>
 								<value>0</value>
 							</equals>
-							<property>/instrumentation/nav/has-gs</property>
-							<property>/instrumentation/nav/gs-in-range</property>
+							<or>
+								<not>
+									<property>/instrumentation/nav/has-gs</property>
+								</not>
+								<not>
+									<property>/instrumentation/nav/gs-in-range</property>
+								</not>
+							</or>
 						</and>
 						<and>
 							<equals>
 								<property>/autopilot/if-550a/nav-source</property>
 								<value>1</value>
 							</equals>
-							<property>/instrumentation/nav[1]/has-gs</property>
-							<property>/instrumentation/nav[1]/gs-in-range</property>
+							<or>
+								<not>
+									<property>/instrumentation/nav[1]/has-gs</property>
+								</not>
+								<not>
+									<property>/instrumentation/nav[1]/gs-in-range</property>
+								</not>
+							</or>
 						</and>
 					</or>
 				</and>

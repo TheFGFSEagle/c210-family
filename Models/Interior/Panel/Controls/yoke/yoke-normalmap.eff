@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
 	<name>yoke-normalmap</name>
-	<inherits-from>Effects/model-combined-deferred</inherits-from>
+	<inherits-from>Effects/model-combined</inherits-from>
 	<parameters>
 		<normalmap-enabled type="int">1</normalmap-enabled>
 		<texture n="2">
