@@ -2,6 +2,14 @@
 <PropertyList>
 	<path>yoke-copilot.ac</path>
 	
+	<model>
+		<name>Cable</name>
+		<path>cable.xml</path>
+		<offsets>
+			<z-m>-0.05</z-m>
+		</offsets>
+	</model>
+	
 	<animation>
 		<type>translate</type>
 		<object-name>Bar</object-name>
@@ -53,6 +61,7 @@
 		<object-name>Bar</object-name>
 		<object-name>Middle</object-name>
 		<object-name>Handle</object-name>
+		<object-name>Cable</object-name>
 		<condition>
 			<property>sim/model/controls/show-yokes</property>
 		</condition>

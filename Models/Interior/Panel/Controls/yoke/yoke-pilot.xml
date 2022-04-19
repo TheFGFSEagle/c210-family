@@ -2,6 +2,14 @@
 <PropertyList>
 	<path>yoke-pilot.ac</path>
 	
+	<model>
+		<name>Cable</name>
+		<path>cable.xml</path>
+		<offsets>
+			<z-m>-0.05</z-m>
+		</offsets>
+	</model>
+	
 	<animation>
 		<name>Controls</name>
 		<object-name>AutopilotDisengageSwitch</object-name>
@@ -78,6 +86,7 @@
 		<object-name>Handle</object-name>
 		<object-name>Controls</object-name>
 		<object-name>ButtonsMount</object-name>
+		<object-name>Cable</object-name>
 		<condition>
 			<property>sim/model/controls/show-yokes</property>
 		</condition>
