@@ -10,9 +10,9 @@
 		<object-name>PanelPart</object-name>
 		<object-name>PanelEnd</object-name>
 		<property>controls/flight/elevator</property>
-		<x-factor>-0.65</x-factor>
+		<x-factor>-0.7</x-factor>
 		<x-offset>1</x-offset>
-		<x-min>1</x-min>
+		<x-min>0</x-min>
 		<x-max>2</x-max>
 		<y-min>1</y-min>
 		<y-max>1</y-max>
@@ -20,7 +20,7 @@
 		<z-max>1</z-max>
 	</animation>
 	
-	<animation>
+	<!--<animation>
 		<type>rotate</type>
 		<object-name>PanelPart</object-name>
 		<object-name>MiddlePart</object-name>
@@ -158,7 +158,7 @@
 		</expression>
 		<min-deg>0</min-deg>
 		<max-deg>80</max-deg>
-	</animation>
+	</animation>-->
 	
 	<animation>
 		<type>rotate</type>
@@ -170,10 +170,10 @@
 			<z>1</z>
 		</axis>
 		<center>
-			<x>0.01</x>
+			<x-m>0.01</x-m>
 		</center>
 		<property>controls/flight/aileron</property>
-		<factor>8</factor>
+		<factor>-10</factor>
 	</animation>
 	
 	<animation>
@@ -186,13 +186,15 @@
 			<y>1</y>
 		</axis>
 		<center>
-			<x>0.01</x>
+			<x-m>0.01</x-m>
 		</center>
 		<expression>
-			<abs>
-				<property>controls/flight/aileron</property>
-			</abs>
+			<prod>
+				<abs>
+					<property>controls/flight/aileron</property>
+				</abs>
+				<value>-8</value>
+			</prod>
 		</expression>
-		<factor>8</factor>
 	</animation>
 </PropertyList>
