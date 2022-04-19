@@ -348,7 +348,7 @@
 	<model>
 		<path>Controls/yoke/yoke-pilot.xml</path>
 		<offsets>
-			<x-m>0.42</x-m>
+			<x-m>0.425</x-m>
 			<y-m>-0.24</y-m>
 			<z-m>0.23</z-m>
 			<pitch-deg>-5.7</pitch-deg>
@@ -357,7 +357,7 @@
 	<model>
 		<path>Controls/yoke/yoke-copilot.xml</path>
 		<offsets>
-			<x-m>0.42</x-m>
+			<x-m>0.425</x-m>
 			<y-m>0.28</y-m>
 			<z-m>0.23</z-m>
 			<pitch-deg>-5.7</pitch-deg>
