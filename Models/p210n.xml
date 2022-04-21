@@ -92,6 +92,7 @@
 		<object-name>PropellerBlade2</object-name>
 		<object-name>PropellerBlade3</object-name>
 		<object-name>PropellerSpinner</object-name>
+		<object-name>FastPropellerSpinner</object-name>
 		<object-name>EngineExhaustPipe</object-name>
 		<object-name>CowlPlugsRest</object-name>
 		<object-name>PilotDoorExterior</object-name>
