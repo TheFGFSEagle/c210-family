@@ -96,6 +96,7 @@
 		<object-name>PropellerBlade2</object-name>
 		<object-name>PropellerBlade3</object-name>
 		<object-name>PropellerSpinner</object-name>
+		<object-name>FastPropellerSpinner</object-name>
 		<object-name>LeftEngineExhaustPipe</object-name>
 		<object-name>RightEngineExhaustPipe</object-name>
 		<object-name>EngineAirIntakeFan</object-name>
