@@ -247,8 +247,12 @@
 								<dep>0.15</dep>
 							</entry>
 							<entry>
-								<ind>1</ind>
+								<ind>0.95</ind>
 								<dep>0.05</dep>
+							</entry>
+							<entry>
+								<ind>1</ind>
+								<dep>0</dep>
 							</entry>
 						</table>
 					</prod>
