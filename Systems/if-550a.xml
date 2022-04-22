@@ -222,6 +222,14 @@
 		<type>noise-spike</type>
 		<input>
 			<condition>
+				<not>
+					<property>/autopilot/if-550a/engaged</property>
+				</not>
+			</condition>
+			<property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
+		</input>
+		<input>
+			<condition>
 				<or>
 					<property>/autopilot/if-550a/modes/heading</property>
 					<property>/autopilot/if-550a/modes/nav</property>
@@ -231,6 +239,14 @@
 		</input>
 		<input>/autopilot/if-550a/internal/turn-rate-target-roll-deg</input>
 		<output>/autopilot/if-550a/internal/target-roll-deg-damped</output>
+		<max-rate-of-change>
+			<condition>
+				<not>
+					<property>/autopilot/if-550a/engaged</property>
+				</not>
+			</condition>
+			<value>500</value>
+		</max-rate-of-change>
 		<max-rate-of-change>10</max-rate-of-change>
 	</filter>
 	
@@ -253,7 +269,7 @@
 		<reference>/autopilot/if-550a/internal/target-roll-deg-damped</reference>
 		<output>/autopilot/if-550a/internal/aileron</output>
 		<config>
-			<Kp>0.015</Kp>
+			<Kp>0.005</Kp>
 			<Ti>10</Ti>
 			<Td>0.001</Td>
 			<u_min>-1</u_min>
@@ -546,6 +562,14 @@
 		<name>Target pitch damped</name>
 		<type>noise-spike</type>
 		<input>
+			<condition>
+				<not>
+					<property>/autopilot/if-550a/engaged</property>
+				</not>
+			</condition>
+			<property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
+		</input>
+		<input>
 			<!-- If ALT (altitude hold) mode is engaged, use the pitch needed to get to the target altitude -->
 			<condition>
 				<property>/autopilot/if-550a/modes/altitude</property>
@@ -565,6 +589,14 @@
 		<!-- Else use the pilot-set pitch -->
 		<input>/autopilot/if-550a/target-pitch-deg</input>
 		<output>/autopilot/if-550a/internal/target-pitch-deg-damped</output>
+		<max-rate-of-change>
+			<condition>
+				<not>
+					<property>/autopilot/if-550a/engaged</property>
+				</not>
+			</condition>
+			<value>100</value>
+		</max-rate-of-change>
 		<max-rate-of-change>2</max-rate-of-change>
 	</filter>
 	

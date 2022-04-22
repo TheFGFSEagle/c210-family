@@ -105,9 +105,9 @@
 				<script><![CDATA[
 					var s = "";
 					if (arg[0] < 0) {
-						s = sprintf("%1.1f° left per second", arg[0]);
+						s = sprintf("%1.1f° left per second", arg[0] * 3);
 					} elsif (arg[0] > 0) {
-						return sprintf("%1.1f° right per second", arg[0]);
+						return sprintf("%1.1f° right per second", arg[0] * 3);
 					} else {
 						return "0° per second";
 					}
