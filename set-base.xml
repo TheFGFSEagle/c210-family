@@ -291,7 +291,7 @@
 	</engines>
 	<controls>
 		<flight>
-			<electric-trim-engaged type="bool">false</electric-trim-engaged>
+			<electric-trim-engaged type="bool">trim</electric-trim-engaged>
 			<electric-trim-actuate>0</electric-trim-actuate>
 		</flight>
 		<engines>
@@ -328,9 +328,9 @@
 				<landing type="bool">true</landing>
 				<flaps type="bool">true</flaps>
 				<vent-fan type="bool">true</vent-fan>
+				<gear-pump type="bool">true</gear-pump>
 				<avionics-fan type="bool">true</avionics-fan>
 				<wing-deice type="bool">true</wing-deice>
-				<gear-pump type="bool">true</gear-pump>
 				<trim type="bool">true</trim>
 				<alt-reg type="bool">true</alt-reg>
 				<pressurization type="bool">true</pressurization>

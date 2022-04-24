@@ -46,7 +46,7 @@
 						<property>/controls/lighting/taxi-light</property>
 					</and>
 					<and>
-						<property>/sim/model/lights/landing/powered</property>
+						<property>/sim/model/lights/taxi/powered</property>
 						<property>/controls/lighting/landing-lights</property>
 					</and>
 				</or>

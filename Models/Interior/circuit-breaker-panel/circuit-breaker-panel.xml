@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>circuit-breaker-panel.ac</path>
+	
+	<animation>
+		<type>knob</type>
+		<object-name>AvionicsPowerSwitch</object-name>
+		<axis>
+			<z>1</z>
+		</axis>
+		<center>
+			<y-m>-0.01</y-m>
+		</center>
+		<property>controls/electric/avionics-power</property>
+		<factor>40</factor>
+		<action>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/avionics-power</property>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>avionics-power-switch</tooltip-id>
+				<label>Avionics power: %s</label>
+				<measure-text>Avionics power: On</measure-text>
+				<property>controls/electric/avionics-power</property>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Off", "On"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<!-- First row - lights -->
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.075</y-m>
+			<z-m>0.0475</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/radio-instrument-lights</property>
+				<tooltip-id>circuit-breaker-radio-instrument-lights</tooltip-id>
+				<label>Radio and instrument lights: %s</label>
+				<measure-text>Radio and instrument lights: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0584</y-m>
+			<z-m>0.0475</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/cabin-lights</property>
+				<tooltip-id>circuit-breaker-cabin-lights</tooltip-id>
+				<label>Cabin lights: %s</label>
+				<measure-text>Cabin lights: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0418</y-m>
+			<z-m>0.0475</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/instrument-flood-lights</property>
+				<tooltip-id>circuit-breaker-instrument-flood-lights</tooltip-id>
+				<label>Instrument flood lights: %s</label>
+				<measure-text>Instrument flood lights: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0252</y-m>
+			<z-m>0.0475</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/nav-lights</property>
+				<tooltip-id>circuit-breaker-nav-lights</tooltip-id>
+				<label>Nav lights: %s</label>
+				<measure-text>Nav lights: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0086</y-m>
+			<z-m>0.0475</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/strobe</property>
+				<tooltip-id>circuit-breaker-strobe</tooltip-id>
+				<label>Strobe lights: %s</label>
+				<measure-text>Strobe lights: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0086</y-m>
+			<z-m>0.0475</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>10</amps>
+				<property>controls/electric/circuit-breakers/beacon</property>
+				<tooltip-id>circuit-breaker-beacon</tooltip-id>
+				<label>Flashing beacon: %s</label>
+				<measure-text>Flashing beacon: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0252</y-m>
+			<z-m>0.0475</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>2</amps>
+				<property>controls/electric/circuit-breakers/tail-flood</property>
+				<tooltip-id>circuit-breaker-tail-flood</tooltip-id>
+				<label>Tail flood lights: %s</label>
+				<measure-text>Tail flood lights: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0418</y-m>
+			<z-m>0.0475</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/taxi</property>
+				<tooltip-id>circuit-breaker-taxi</tooltip-id>
+				<label>Taxi light: %s</label>
+				<measure-text>Taxi light: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0584</y-m>
+			<z-m>0.0475</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>10</amps>
+				<property>controls/electric/circuit-breakers/landing</property>
+				<tooltip-id>circuit-breaker-landing</tooltip-id>
+				<label>Landing light: %s</label>
+				<measure-text>Landing light: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	
+	<!-- Second row - General -->
+	<model>
+		<path>circuit-breaker-placeholder.ac</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.075</y-m>
+			<z-m>0.0075</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0584</y-m>
+			<z-m>0.0075</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>10</amps>
+				<property>controls/electric/circuit-breakers/flaps</property>
+				<tooltip-id>circuit-breaker-flaps</tooltip-id>
+				<label>Flaps: %s</label>
+				<measure-text>Flaps: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-placeholder.ac</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0418</y-m>
+			<z-m>0.0075</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0252</y-m>
+			<z-m>0.0075</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/vent-fan</property>
+				<tooltip-id>circuit-breaker-vent-fan</tooltip-id>
+				<label>Overhead vent fan: %s</label>
+				<measure-text>Overhead vent fan: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-pull-off.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0086</y-m>
+			<z-m>0.0075</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/avionics-fan</property>
+				<tooltip-id>circuit-breaker-avionics-fan</tooltip-id>
+				<label>Avionics cooling fan: %s</label>
+				<measure-text>Avionics cooling fan: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-pull-off.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0086</y-m>
+			<z-m>0.0075</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/wing-deice</property>
+				<tooltip-id>circuit-breaker-wing-deice</tooltip-id>
+				<label>Wing deice: %s</label>
+				<measure-text>Wing deice: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-pull-off.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0252</y-m>
+			<z-m>0.0075</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>30</amps>
+				<property>controls/electric/circuit-breakers/gear-pump</property>
+				<tooltip-id>circuit-breaker-gear-pump</tooltip-id>
+				<label>Gear pump: %s</label>
+				<measure-text>Gear pump: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-pull-off.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0418</y-m>
+			<z-m>0.0075</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/trim</property>
+				<tooltip-id>circuit-breaker-trim</tooltip-id>
+				<label>Electric elevator trim: %s</label>
+				<measure-text>Electric elevator trim: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-placeholder.ac</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0584</y-m>
+			<z-m>0.0075</z-m>
+		</offsets>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.075</y-m>
+			<z-m>0.0075</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/alt-reg</property>
+				<tooltip-id>circuit-breaker-alt-reg</tooltip-id>
+				<label>Alternator regulation unit: %s</label>
+				<measure-text>Alternator regulation unit: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	
+	<!-- Third row - General -->
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.075</y-m>
+			<z-m>-0.0325</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/pressurization</property>
+				<tooltip-id>circuit-breaker-pressurization</tooltip-id>
+				<label>Pressurization: %s</label>
+				<measure-text>Pressurization: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0584</y-m>
+			<z-m>-0.0325</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>20</amps>
+				<property>controls/electric/circuit-breakers/prop-anti-ice</property>
+				<tooltip-id>circuit-breaker-prop-anti-ice</tooltip-id>
+				<label>Propeller anti-ice: %s</label>
+				<measure-text>Propeller anti-ice: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0418</y-m>
+			<z-m>-0.0325</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/windshield-anti-ice</property>
+				<tooltip-id>circuit-breaker-pressurization</tooltip-id>
+				<label>Windshield anti-ice: %s</label>
+				<measure-text>Windshield anti-ice: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0252</y-m>
+			<z-m>-0.0325</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>10</amps>
+				<property>controls/electric/circuit-breakers/pitot-heat</property>
+				<tooltip-id>circuit-breaker-pitot-heat</tooltip-id>
+				<label>Pitot heat: %s</label>
+				<measure-text>Pitot heat: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0086</y-m>
+			<z-m>-0.0325</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/fuel-pump</property>
+				<tooltip-id>circuit-breaker-fuel-pump</tooltip-id>
+				<label>Auxiliary fuel pump: %s</label>
+				<measure-text>Auxiliary fuel pump: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0086</y-m>
+			<z-m>-0.0325</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/engine-instruments</property>
+				<tooltip-id>circuit-breaker-engine-instruments</tooltip-id>
+				<label>Engine instruments: %s</label>
+				<measure-text>Engine instruments: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0252</y-m>
+			<z-m>-0.0325</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/turn-coordinator</property>
+				<tooltip-id>circuit-breaker-turn-coordinator</tooltip-id>
+				<label>Turn coordinator: %s</label>
+				<measure-text>Turn coordinator: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0418</y-m>
+			<z-m>-0.0325</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/fuel-quantity</property>
+				<tooltip-id>circuit-breaker-fuel-quantity</tooltip-id>
+				<label>Fuel quantity gauges: %s</label>
+				<measure-text>Fuel quantity gauges: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0584</y-m>
+			<z-m>-0.0325</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/stall-warning</property>
+				<tooltip-id>circuit-breaker-stall-warning</tooltip-id>
+				<label>Stall warning: %s</label>
+				<measure-text>Stall warning: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.075</y-m>
+			<z-m>-0.0325</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<property>controls/electric/circuit-breakers/landing-gear</property>
+				<tooltip-id>circuit-breaker-landing-gear</tooltip-id>
+				<label>Landing gear system: %s</label>
+				<measure-text>Landing gear system: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	
+	<!-- Fourth and last row - Avionics -->
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.075</y-m>
+			<z-m>-0.0725</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>2</amps>
+				<property>controls/electric/circuit-breakers/radio-1</property>
+				<tooltip-id>circuit-breaker-radio-1</tooltip-id>
+				<label>COM / NAV 1 and glideslope: %s</label>
+				<measure-text>COM / NAV 1 and glideslope: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0584</y-m>
+			<z-m>-0.0725</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>5</amps>
+				<property>controls/electric/circuit-breakers/radio-2</property>
+				<tooltip-id>circuit-breaker-radio-2</tooltip-id>
+				<label>COM / NAV 2: %s</label>
+				<measure-text>COM / NAV 2: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0418</y-m>
+			<z-m>-0.0725</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>5</amps>
+				<property>controls/electric/circuit-breakers/radio-3</property>
+				<tooltip-id>circuit-breaker-radio-3</tooltip-id>
+				<label>Transponder and altitude encoder: %s</label>
+				<measure-text>Transponder and altitude encoder: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0252</y-m>
+			<z-m>-0.0725</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>5</amps>
+				<property>controls/electric/circuit-breakers/radio-4</property>
+				<tooltip-id>circuit-breaker-radio-4</tooltip-id>
+				<label>DME: %s</label>
+				<measure-text>DME: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>-0.0086</y-m>
+			<z-m>-0.0725</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>2</amps>
+				<property>controls/electric/circuit-breakers/radio-5</property>
+				<tooltip-id>circuit-breaker-radio-5</tooltip-id>
+				<label>ADF: %s</label>
+				<measure-text>ADF: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0086</y-m>
+			<z-m>-0.0725</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>2</amps>
+				<property>controls/electric/circuit-breakers/marker-beacon</property>
+				<tooltip-id>circuit-breaker-marker-beacon</tooltip-id>
+				<label>Marker beacon: %s</label>
+				<measure-text>Marker beacon: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0252</y-m>
+			<z-m>-0.0725</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>5</amps>
+				<property>controls/electric/circuit-breakers/wxradar</property>
+				<tooltip-id>circuit-breaker-wxradar</tooltip-id>
+				<label>Weather radar: %s</label>
+				<measure-text>Weather radar: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0418</y-m>
+			<z-m>-0.0725</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>2</amps>
+				<property>controls/electric/circuit-breakers/gyro-slaving</property>
+				<tooltip-id>circuit-breaker-gyro-slaving</tooltip-id>
+				<label>Slaved gyros / HSI: %s</label>
+				<measure-text>Slaved gyros / HSI: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-push-reset.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.0584</y-m>
+			<z-m>-0.0725</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>5</amps>
+				<property>controls/electric/circuit-breakers/ap-control</property>
+				<tooltip-id>circuit-breaker-ap-control</tooltip-id>
+				<label>Autopilot control: %s</label>
+				<measure-text>Autopilot control: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<path>circuit-breaker-pull-off.xml</path>
+		<offsets>
+			<x-m>0</x-m>
+			<y-m>0.075</y-m>
+			<z-m>-0.0725</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<amps>10</amps>
+				<property>controls/electric/circuit-breakers/ap-actuators</property>
+				<tooltip-id>circuit-breaker-ap-actuators</tooltip-id>
+				<label>Autopilot actuators: %s</label>
+				<measure-text>Autopilot actuators: Closed</measure-text>
+			</params>
+		</overlay>
+	</model>
+	
+	<effect>
+		<inherits-from>../../Effects/p210n-interior</inherits-from>
+		<object-name>CircuitBreakerPanel</object-name>
+		<object-name>AvionicsPowerSwitch</object-name>
+	</effect>
+</PropertyList>
+

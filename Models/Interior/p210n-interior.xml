@@ -72,6 +72,19 @@
 		</offsets>
 	</model>
 	
+	<model>
+		<name>CircuitBreakerPanel</name>
+		<path>circuit-breaker-panel/circuit-breaker-panel.xml</path>
+		<offsets>
+			<x-m>0.55</x-m>
+			<y-m>-0.537</y-m>
+			<z-m>0.03</z-m>
+			<heading-deg>87</heading-deg>
+			<pitch-deg>0</pitch-deg>
+			<roll-deg>4</roll-deg>
+		</offsets>
+	</model>
+	
 	<effect>
 		<inherits-from>../Effects/p210n-interior</inherits-from>
 		<object-name>FrontLeftSeat</object-name>
@@ -82,5 +95,6 @@
 		<object-name>Panel</object-name>
 		<object-name>LeftPedals</object-name>
 		<object-name>RightPedals</object-name>
+		<object-name>CircuitBreakerPanel</object-name>
 	</effect>
 </PropertyList>

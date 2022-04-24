@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>circuit-breaker-push-reset.ac</path>
+	
+	<params>
+		<amps>5</amps>
+		<property>controls/electric/circuit-breakers/radio-instrument-lights</property>
+		<tooltip-id>circuit-breaker-radio-instrument-lights</tooltip-id>
+		<label>Radio and instrument lights: %s</label>
+		<measure-text>Radio and instrument lights: Closed</measure-text>
+	</params>
+	
+	<animation>
+		<type>slider</type>
+		<object-name>Breaker</object-name>
+		<axis>
+			<x>1</x>
+		</axis>
+		<expression>
+			<prod>
+				<dif>
+					<value>1</value>
+					<property alias="../../../../../params/property"/>
+				</dif>
+				<value>0.006</value>
+			</prod>
+		</expression>
+		<action>
+			<binding>
+				<command>property-assign</command>
+				<property alias="../../../../params/property"/>
+				<value type="bool">true</value>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id alias="../../../../params/tooltip-id"/>
+				<label alias="../../../../params/label"/>
+				<measure-text alias="../../../../params/measure-text"/>
+				<property alias="../../../../params/property"/>
+				<mapping>nasal</mapping>
+				<script>
+					return ["Open", "Closed"][arg[0]];
+				</script>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<condition>
+			<equals>
+				<value alias="../../../../params/amps"/>
+				<value>2</value>
+			</equals>
+		</condition>
+		<type>material</type>
+		<object-name>Breaker</object-name>
+		<texture>circuit-breaker-push-reset-2.png</texture>
+	</animation>
+	<animation>
+		<condition>
+			<equals>
+				<value alias="../../../../params/amps"/>
+				<value>5</value>
+			</equals>
+		</condition>
+		<type>material</type>
+		<object-name>Breaker</object-name>
+		<texture>circuit-breaker-push-reset-5.png</texture>
+	</animation>
+	<animation>
+		<condition>
+			<equals>
+				<value alias="../../../../params/amps"/>
+				<value>10</value>
+			</equals>
+		</condition>
+		<type>material</type>
+		<object-name>Breaker</object-name>
+		<texture>circuit-breaker-push-reset-10.png</texture>
+	</animation>
+	<animation>
+		<condition>
+			<equals>
+				<value alias="../../../../params/amps"/>
+				<value>20</value>
+			</equals>
+		</condition>
+		<type>material</type>
+		<object-name>Breaker</object-name>
+		<texture>circuit-breaker-push-reset-20.png</texture>
+	</animation>
+	
+	<effect>
+		<inherits-from>../../Effects/p210n-interior</inherits-from>
+		<object-name>Breaker</object-name>
+		<object-name>Ring</object-name>
+	</effect>
+	<effect>
+		<inherits-from>../../Effects/p210n-interior-metal</inherits-from>
+		<object-name>Mount</object-name>
+	</effect>
+</PropertyList>
