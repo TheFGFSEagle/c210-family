@@ -865,7 +865,7 @@
 		<output>/systems/electrical/buses/primary/consumers/gear-pump/volts</output>
 	</filter>
 	<filter>
-		<name>Wing deice amps</name>
+		<name>Gear pump amps</name>
 		<type>gain</type>
 		<gain>/controls/electric/circuit-breakers/gear-pump</gain>
 		<input>
