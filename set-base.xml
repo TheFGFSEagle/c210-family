@@ -291,7 +291,7 @@
 	</engines>
 	<controls>
 		<flight>
-			<electric-trim-engaged type="bool">trim</electric-trim-engaged>
+			<electric-trim-engaged type="bool">true</electric-trim-engaged>
 			<electric-trim-actuate>0</electric-trim-actuate>
 		</flight>
 		<engines>
