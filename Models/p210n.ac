@@ -1,7 +1,7 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 MATERIAL "WindowMaterial" rgb 0.692 1.000 1.000  amb 0.692 1.000 1.000  emis 0.000 0.000 0.000  spec 1.000 1.000 1.000  shi 115 trans 0.850
-MATERIAL "InteriorMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi -1664 trans 0.000
+MATERIAL "InteriorMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 MATERIAL "AxisMaterial" rgb 1.000 0.964 0.000  amb 1.000 0.964 0.000  emis 0.000 0.000 0.000  spec 0.000 0.000 0.000  shi 128 trans 0.000
 MATERIAL "FuselageMaterial" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 1.000 1.000 1.000  shi 77 trans 0.000
 MATERIAL "CarpetMaterial" rgb 0.000 0.000 0.000  amb 0.000 0.000 0.000  emis 0.000 0.000 0.000  spec 0.100 0.100 0.100  shi 64 trans 0.000
@@ -84661,6 +84661,11 @@ refs 3
 SURF 0X12
 mat 13
 refs 2
+2553 0 0
+2578 0 0
+SURF 0X12
+mat 13
+refs 2
 2592 0 0
 2606 0 0
 SURF 0X12
@@ -84668,11 +84673,6 @@ mat 13
 refs 2
 2595 0 0
 2611 0 0
-SURF 0X12
-mat 13
-refs 2
-2553 0 0
-2578 0 0
 kids 0
 OBJECT poly
 name "PilotDoorAxis"
