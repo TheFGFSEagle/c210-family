@@ -870,13 +870,17 @@
 		<gain>/controls/electric/circuit-breakers/gear-pump</gain>
 		<input>
 			<expression>
-				<div>
-					<property>/systems/electrical/buses/primary/volts</property>
+				<prod>
 					<div>
-						<value>28</value>
-						<property>/systems/electrical/buses/primary/consumers/gear-pump/gear-pump-motor-amps</property>
+						<property>/systems/electrical/buses/primary/volts</property>
+						<div>
+							<value>28</value>
+							<property>/systems/electrical/buses/primary/consumers/gear-pump/gear-pump-motor-amps</property>
+						</div>
 					</div>
-				</div>
+					<property>/systems/hydraulic/pump-rpm</property>
+					<value>0.001</value>
+				</prod>
 			</expression>
 		</input>
 		<output>/systems/electrical/buses/primary/consumers/gear-pump/amps</output>

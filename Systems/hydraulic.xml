@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="hydraulic">
+	<!-- Fluid capacity of the system -->
+	<property value="200">/systems/hydraulic/fluid-capacity-cu_in</property>
+	<!-- Current fluid level in the system -->
+	<property value="200">/systems/hydraulic/fluid-level-cu_in</property>
+	<!-- Leak rate in cu. in. per sec. -->
+	<property value="0">/systems/hydraulic/fluid-leak-cu_in_s</property>
+	<!-- Initial system pressure -->
+	<property value="1300">/systems/hydraulic/pressure-psi</property>
+	<property value="0">/systems/hydraulic/emergency-hand-pump-pos-norm</property>
+	
+	<channel name="Hydraulic system">
+		<fcs_function>
+			<name>Fluid level</name>
+			<function>
+				<difference>
+					<property>/systems/hydraulic/fluid-level-cu_in</property>
+					<product>
+						<property>/systems/hydraulic/fluid-leak-cu_in_s</property>
+						<property>simulation/channel-dt</property>
+					</product>
+				</difference>
+			</function>
+			<output>/systems/hydraulic/fluid-level-cu_in</output>
+			<clipto>
+				<min>0</min>
+				<max>/systems/hydraulic/fluid-capacity-cu_in</max>
+			</clipto>
+		</fcs_function>
+		
+		<fcs_function>
+			<name>Pump RPM</name>
+			<function>
+				<sum>
+					<property>/systems/hydraulic/pump-rpm</property>
+					<product>
+						<ifthen>
+							<and>
+								<property>/systems/hydraulic/powered</property>
+								<property>/systems/hydraulic/squat-switch</property>
+								<or>
+									<property>/systems/hydraulic/pressure-switch</property>
+									<lt>
+										<property>gear/gear-cmd-norm</property>
+										<min>
+											<property>gear/unit[0]/pos-norm</property>
+											<property>gear/unit[1]/pos-norm</property>
+											<property>gear/unit[2]/pos-norm</property>
+										</min>
+									</lt>
+									<gt>
+										<property>gear/gear-cmd-norm</property>
+										<max>
+											<property>gear/unit[0]/pos-norm</property>
+											<property>gear/unit[1]/pos-norm</property>
+											<property>gear/unit[2]/pos-norm</property>
+										</max>
+									</gt>
+								</or>
+							</and>
+							<value>1</value>
+							<value>-1</value>
+						</ifthen>
+						<property>simulation/channel-dt</property>
+						<value>2000</value>
+					</product>
+				</sum>
+			</function>
+			<output>/systems/hydraulic/pump-rpm</output>
+			<clipto>
+				<min>0</min>
+				<max>1000</max>
+			</clipto>
+		</fcs_function>
+		
+		<fcs_function>
+			<name>Pump pressure</name>
+			<function>
+				<product>
+					<property>/systems/hydraulic/pump-rpm</property>
+					<quotient>
+						<property>/systems/hydraulic/fluid-level-cu_in</property>
+						<property>/systems/hydraulic/fluid-capacity-cu_in</property>
+					</quotient>
+					<!--
+						Hydraulic pump runs usually 2 - 3 seconds to restore hydraulic pressure.
+						Let's assume it builds 500 psi per second at 1000 RPM.
+						So, value = (500 / 1000).
+					-->
+					<value>0.5</value>
+				</product>
+			</function>
+			<output>/systems/hydraulic/pump-pressure-psi</output>
+		</fcs_function>
+		
+		<summer>
+			<name>Save old emergency pump position for next iteration</name>
+			<input>/systems/hydraulic/emergency-hand-pump-pos-norm</input>
+			<output>/systems/hydraulic/old-emergency-hand-pump-pos-norm</output>
+		</summer>
+		
+		<fcs_function>
+			<name>Emergency hand pump pressure</name>
+			<function>
+				<ifthen>
+					<abs>
+						<difference>
+							<property>/systems/hydraulic/old-emergency-hand-pump-pos-norm</property>
+							<property>/systems/hydraulic/emergency-hand-pump-pos-norm</property>
+						</difference>
+					</abs>
+					<value>500</value>
+					<difference>
+						<property>/systems/hydraulic/emergency-hand-pump-pressure-psi</property>
+						<product>
+							<property>simulation/channel-dt</property>
+							<value>500</value>
+						</product>
+					</difference>
+				</ifthen>
+			</function>
+			<output>/systems/hydraulic/emergency-hand-pump-pressure-psi</output>
+			<clipto>
+				<min>0</min>
+				<max>500</max>
+			</clipto>
+		</fcs_function>
+		
+		<switch>
+			<name>Pressure relief valve</name>
+			<default value="/systems/hydraulic/pressure-relief-valve"/>
+			<test value="0">
+				/systems/hydraulic/pressure-psig LT 1300
+			</test>
+			<test value="1">
+				/systems/hydraulic/pressure-psig GT 1800
+			</test>
+			<output>/systems/hydraulic/pressure-relief-valve</output>
+		</switch>
+				
+		<fcs_function>
+			<name>System pressure (PSI)</name>
+			<function>
+				<sum>
+					<property>/systems/hydraulic/pressure-psi</property>
+					<product>
+						<property>simulation/channel-dt</property>
+						<property>/systems/hydraulic/pressure-relief-valve</property>
+						<value>100</value>
+					</product>
+					<product>
+						<property>/systems/hydraulic/emergency-hand-pump-pressure-psi</property>
+						<property>simulation/channel-dt</property>
+					</product>
+					<product>
+						<property>simulation/channel-dt</property>
+						<property>/systems/hydraulic/fluid-leak-cu_in_s</property>
+						<value>-25</value>
+					</product>
+					<product>
+						<property>/systems/hydraulic/pump-pressure-psi</property>
+						<property>simulation/channel-dt</property>
+					</product>
+					<product>
+						<property>simulation/channel-dt</property>
+						<!--
+							Hydraulic pump runs 2 - 3 times per hour, so let's assume a cycle time T of 30 minutes.
+							Pressure switch shuts off the pump at 1500 psi and restarts it at 1000 psi.
+							This gives a pressure loss L of 500 psi in T minutes.
+							So, value = (L / T / 60).
+						-->
+						<value>-0.277777777777777</value>
+					</product>
+					<product>
+						<quotient>
+							<abs>
+								<property>gear/unit[0]/actuator-moment-ftlbs</property>
+							</abs>
+							<value>-129.6</value>
+						</quotient>
+						<property>simulation/channel-dt</property>
+					</product>
+					<product>
+						<quotient>
+							<abs>
+								<property>gear/unit[1]/actuator-moment-ftlbs</property>
+							</abs>
+							<value>-43.2</value>
+						</quotient>
+						<property>simulation/channel-dt</property>
+					</product>
+					<product>
+						<quotient>
+							<abs>
+								<property>gear/unit[2]/actuator-moment-ftlbs</property>
+							</abs>
+							<value>-43.2</value>
+						</quotient>
+						<property>simulation/channel-dt</property>
+					</product>
+				</sum>
+			</function>
+			<output>/systems/hydraulic/pressure-psi</output>
+			<clipto>
+				<min>0</min>
+				<max>9999</max>
+			</clipto>
+		</fcs_function>
+		<fcs_function>
+			<name>Gauge pressure from system pressure and environment pressure</name>
+			<function>
+				<sum>
+					<product>
+						<property>/environment/pressure-inhg</property>
+						<!-- to psi -->
+						<value>2.03602</value>
+					</product>
+					<property>/systems/hydraulic/pressure-psi</property>
+				</sum>
+			</function>
+			<output>/systems/hydraulic/pressure-psig</output>
+		</fcs_function>
+		<pure_gain>
+			<name>System pressure (PSF)</name>
+			<input>/systems/hydraulic/pressure-psi</input>
+			<gain>144</gain>
+			<output>/systems/hydraulic/pressure-psf</output>
+		</pure_gain>
+		
+		<switch>
+			<name>Pressure switch</name>
+			<default value="/systems/hydraulic/pressure-switch"/>
+			<!-- Values from POH page 7-37 / 192-->
+			<test value="0">
+				/systems/hydraulic/pressure-psig GT 1500
+			</test>
+			<test value="1">
+				/systems/hydraulic/pressure-psig LT 1000
+			</test>
+			<output>/systems/hydraulic/pressure-switch</output>
+		</switch>
+		
+		<switch>
+			<name>Nose gear squat switch</name>
+			<default value="1"/>
+			<test value="0">
+				gear/unit[0]/WOW EQ 1
+				gear/unit[0]/pos-norm EQ 1
+			</test>
+			<output>/systems/hydraulic/squat-switch</output>
+		</switch>
+	</channel>
+</system>
+

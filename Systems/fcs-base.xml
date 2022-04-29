@@ -1,53 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flight_control>
-	<channel name="NWS">
-		<switch name="gear/steering-enabled">
-			<default value="0"/>
-			<test logic="OR" value="1">
-				/gear/gear[0]/position-norm EQ 1
-			</test>
-		</switch>
-		
-		<fcs_function name="gear/brakes-steer-factor">
-			<function>
-				<product>
-					<sum>
-						<product>
-							<property>fcs/left-brake-cmd-norm</property>
-							<value>-1</value>
-						</product>
-						<property>fcs/right-brake-cmd-norm</property>
-					</sum>
-					<property>/gear/gear[0]/rollspeed-ms</property>
-					<value>0.5</value> <!-- for adjusting braking influence -->
-					<property>gear/steering-enabled</property>
-				</product>
-			</function>
-		</fcs_function>
-		
-		<!-- Drive the nose wheel with the rudder and brakes -->
-		<fcs_function name="fcs/steer-cmd-deg">
-			<function>
-				<table>
-					<independentVar lookup="row">gear/brakes-steer-factor</independentVar>
-					<independentVar lookup="column">/controls/flight/rudder</independentVar>
-					<tableData>
-								-1	   0		1
-					  -1	-35	   0   14.5
-					   0	-14.5	0   14.5
-					   1	-14.5	0	  35
-					</tableData>
-				</table>
-			</function>
-		</fcs_function>
-		
-		<actuator>
-			<input>fcs/steer-cmd-deg</input>
-			<rate_limit>80</rate_limit>
-			<output>fcs/steer-pos-norm</output>
-		</actuator>
-	</channel>
-	
 	<channel name="Pitch">
 		<summer>
 			<input>fcs/elevator-cmd-norm</input>
@@ -262,7 +214,7 @@
 		</aerosurface_scale>
 	</channel>
 	
-	<channel name="Landing Gear" execute="/systems/hydraulic/powered">
+	<!--<channel name="Landing Gear">
 		<kinematic name="Gear Control">
 			<input>gear/gear-cmd-norm</input>
 			<traverse>
@@ -277,7 +229,7 @@
 			</traverse>
 			<output>gear/gear-pos-norm</output>
 		</kinematic>
-	</channel>
+	</channel>-->
 	
 	<channel name="Cowl flaps">
 		<kinematic name="Cowl flaps">

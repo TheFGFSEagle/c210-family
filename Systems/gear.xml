@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="gear">
+	<!-- Gear projected surfaces:
+			Nose: 0.58 sqft
+			Main (each): 1.57 sqft
+			Total: 3.72 sqft
+	-->
+	<channel name="Nose wheel steering">
+		<switch name="gear/unit[0]/steering-enabled">
+			<default value="0"/>
+			<test logic="OR" value="1">
+				gear/unit[0]/pos-norm EQ 1
+			</test>
+		</switch>
+		
+		<fcs_function name="gear/unit[0]/brakes-steer-factor">
+			<function>
+				<product>
+					<sum>
+						<product>
+							<property>fcs/left-brake-cmd-norm</property>
+							<value>-1</value>
+						</product>
+						<property>fcs/right-brake-cmd-norm</property>
+					</sum>
+					<property>/gear/gear[0]/rollspeed-ms</property>
+					<value>0.5</value> <!-- for adjusting braking influence -->
+					<property>gear/unit[0]/steering-enabled</property>
+				</product>
+			</function>
+		</fcs_function>
+		
+		<!-- Drive the nose wheel with the rudder and brakes -->
+		<fcs_function name="fcs/steer-cmd-norm">
+			<function>
+				<quotient>
+					<table name="fcs/steer-cmd-deg">
+						<independentVar lookup="row">gear/unit[0]/brakes-steer-factor</independentVar>
+						<independentVar lookup="column">/controls/flight/rudder</independentVar>
+						<tableData>
+							-1		0	1
+						  -1	-35		0	14.5
+						   0	-14.5	0	14.5
+						   1	-14.5	0	35
+						</tableData>
+					</table>
+					<value>35</value>
+				</quotient>
+			</function>
+			<output>fcs/steer-pos-norm</output>
+		</fcs_function>
+	</channel>
+	
+	<channel name="Common">
+		<fcs_function>
+			<name>Ensure that gear/gear-pos-norm is 1 all the time so that JSBsim actually reads gear/unit[n]/pos-norm</name>
+			<function>
+				<value>1</value>
+			</function>
+			<output>gear/gear-pos-norm</output>
+		</fcs_function>
+	</channel>
+	
+	<channel name="Nose gear actuator">
+		<switch>
+			<name>Gear down lock</name>
+			<default value="0"/>
+			<test logic="AND" value="1">
+				gear/unit[0]/pos-norm EQ 1
+				<test logic="OR" value="1">
+					gear/gear-cmd-norm EQ 1
+					gear/unit[0]/WOW EQ 1
+				</test>
+			</test>
+			<output>gear/unit[0]/locked</output>
+		</switch>
+		
+		<switch>
+			<name>Actuator direction (1=extend, -1=retract)</name>
+			<default value="0"/>
+			<test value="1">
+				gear/gear-cmd-norm EQ 1
+				gear/unit[0]/pos-norm LT 1
+			</test>
+			<test value="-1">
+				gear/gear-cmd-norm EQ 0
+				gear/unit[0]/pos-norm GT 0
+				/systems/hydraulic/powered EQ 1
+			</test>
+			<output>gear/unit[0]/actuator-cmd</output>
+		</switch>
+		
+		<fcs_function>
+			<name>Actuator moment</name>
+			<function>
+				<product>
+					<property>/systems/hydraulic/pressure-psf</property>
+					<!-- Hydraulic pressure available for this gear (rest is for the others) - projected gear area / projected area of all three gears -->
+					<value>0.16</value>
+					<!-- Length of gear strut between gear axle and hyd cylinder -->
+					<value>0.15</value>
+					<property>gear/unit[0]/actuator-cmd</property>
+				</product>
+			</function>
+			<output>gear/unit[0]/actuator-moment-ftlbs</output>
+		</fcs_function>
+		
+		<fcs_function>
+			<name>Drag moment</name>
+			<function>
+				<product>
+					<product>
+						<property>aero/qbar-psf</property>
+						<!-- projected surface area of left / right main gear each -->
+						<value>0.58</value>
+						<!-- Cylinder drag coefficient -->
+						<value>1.17</value>
+					</product>
+					<!-- Length of gear strut between wheel and gear axle -->
+					<value>1.35</value>
+					<sin>
+						<toradians>
+							<product>
+								<property>gear/unit[0]pos-norm</property>
+								<value>90</value>
+							</product>
+						</toradians>
+					</sin>
+				</product>
+			</function>
+			<output>gear/unit[0]/drag-moment-ftlbs</output>
+		</fcs_function>
+		
+		<summer>
+			<name>Net moment</name>
+			<input>gear/unit[0]/actuator-moment-ftlbs</input>
+			<input>gear/unit[0]/drag-moment-ftlbs</input>
+			<output>gear/unit[0]/moment-ftlbs</output>
+		</summer>
+		
+		<fcs_function>
+			<name>Compute gear position from moment</name>
+			<function>
+				<ifthen>
+					<property>gear/unit[0]/locked</property>
+					<value>1</value>
+					<sum>
+						<property>gear/unit[0]/pos-norm</property>
+						<ifthen>
+							<lt>
+								<property>/position/altitude-agl-ft</property>
+								<value>6</value>
+							</lt>
+							<product>
+								<!-- Make the gear retract fullly in 0.1 seconds when very low over the ground -->
+								<value>-10</value>
+								<property>simulation/channel-dt</property>
+							</product>
+							<quotient>
+								<product>
+									<table>
+										<independentVar>gear/unit[0]/moment-ftlbs</independentVar>
+										<tableData>
+											-500	-1
+											 500	 1
+										 </tableData>
+									 </table>
+									<property>simulation/channel-dt</property>
+								</product>
+								<!-- extension / retraction time -->
+								<value>7</value>
+							</quotient>
+						</ifthen>
+					</sum>
+				</ifthen>
+			</function>
+			<clipto>
+				<min>0</min>
+				<max>1</max>
+			</clipto>
+			<output>gear/unit[0]/pos-norm</output>
+		</fcs_function>
+	</channel>
+	<channel name="Left main gear actuator">
+		<switch>
+			<name>Gear down lock</name>
+			<default value="0"/>
+			<test logic="AND" value="1">
+				gear/unit[1]/pos-norm EQ 1
+				gear/gear-cmd-norm EQ 1
+			</test>
+			<output>gear/unit[1]/locked</output>
+		</switch>
+		
+		<switch>
+			<name>Actuator direction (1=extend, -1=retract)</name>
+			<default value="0"/>
+			<test value="1">
+				gear/gear-cmd-norm EQ 1
+				gear/unit[1]/pos-norm LT 1
+				gear/unit[1]/locked EQ 0
+			</test>
+			<test value="-1">
+				gear/gear-cmd-norm EQ 0
+				gear/unit[1]/pos-norm GT 0
+				/systems/hydraulic/powered EQ 1
+				gear/unit[1]/locked EQ 0
+			</test>
+			<output>gear/unit[1]/actuator-cmd</output>
+		</switch>
+		
+		<fcs_function>
+			<name>Actuator moment</name>
+			<function>
+				<product>
+					<property>/systems/hydraulic/pressure-psf</property>
+					<!-- Hydraulic pressure available for this gear (rest is for the others) - projected gear area / projected area of all three gears -->
+					<value>0.42</value>
+					<!-- Length of gear strut between gear axle and hyd cylinder -->
+					<value>0.1</value>
+					<property>gear/unit[1]/actuator-cmd</property>
+				</product>
+			</function>
+			<output>gear/unit[1]/actuator-moment-ftlbs</output>
+		</fcs_function>
+		
+		<fcs_function>
+			<name>Drag moment</name>
+			<function>
+				<product>
+					<product>
+						<property>aero/qbar-psf</property>
+						<!-- projected surface area of left / right main gear each -->
+						<value>1.57</value>
+						<!-- Cylinder drag coefficient -->
+						<value>1.17</value>
+					</product>
+					<!-- Length of gear strut between wheel and gear axle -->
+					<value>3.8</value>
+					<value>-1</value>
+					<sin>
+						<toradians>
+							<product>
+								<property>gear/unit[1]/pos-norm</property>
+								<value>90</value>
+							</product>
+						</toradians>
+					</sin>
+				</product>
+			</function>
+			<output>gear/unit[1]/drag-moment-ftlbs</output>
+		</fcs_function>
+		
+		<summer>
+			<name>Net moment</name>
+			<input>gear/unit[1]/actuator-moment-ftlbs</input>
+			<input>gear/unit[1]/drag-moment-ftlbs</input>
+			<output>gear/unit[1]/moment-ftlbs</output>
+		</summer>
+		
+		<fcs_function>
+			<name>Compute gear position from moment</name>
+			<function>
+				<ifthen>
+					<property>gear/unit[1]/locked</property>
+					<value>1</value>
+					<sum>
+						<property>gear/unit[1]/pos-norm</property>
+						<ifthen>
+							<lt>
+								<property>/position/altitude-agl-ft</property>
+								<value>6</value>
+							</lt>
+							<product>
+								<!-- Make the gear extend / retract fullly in 0.1 seconds when very low over the ground -->
+								<ifthen>
+									<lt>
+										<property>gear/unit[1]/pos-norm</property>
+										<value>0.5</value>
+									</lt>
+									<value>-10</value>
+									<value>10</value>
+								</ifthen>
+								<property>simulation/channel-dt</property>
+							</product>
+							<quotient>
+								<product>
+									<table>
+										<independentVar>gear/unit[1]/moment-ftlbs</independentVar>
+										<tableData>
+											-500	-1
+											 500	 1
+										 </tableData>
+									 </table>
+									<property>simulation/channel-dt</property>
+								</product>
+								<!-- extension / retraction time -->
+								<value>7</value>
+							</quotient>
+						</ifthen>
+					</sum>
+				</ifthen>
+			</function>
+			<clipto>
+				<min>0</min>
+				<max>1</max>
+			</clipto>
+			<output>gear/unit[1]/pos-norm</output>
+		</fcs_function>
+	</channel>
+	<channel name="Right main gear actuator">
+		<switch>
+			<name>Gear down lock</name>
+			<default value="0"/>
+			<test logic="AND" value="1">
+				gear/unit[2]/pos-norm EQ 1
+				gear/gear-cmd-norm EQ 1
+			</test>
+			<output>gear/unit[2]/locked</output>
+		</switch>
+		
+		<switch>
+			<name>Actuator direction (1=extend, -1=retract)</name>
+			<default value="0"/>
+			<test value="1">
+				gear/gear-cmd-norm EQ 1
+				gear/unit[2]/pos-norm LT 1
+				gear/unit[2]/locked EQ 0
+			</test>
+			<test value="-1">
+				gear/gear-cmd-norm EQ 0
+				gear/unit[2]/pos-norm GT 0
+				gear/unit[2]/locked EQ 0
+				/systems/hydraulic/powered EQ 1
+			</test>
+			<output>gear/unit[2]/actuator-cmd</output>
+		</switch>
+		
+		<fcs_function>
+			<name>Actuator moment</name>
+			<function>
+				<product>
+					<property>/systems/hydraulic/pressure-psf</property>
+					<!-- Hydraulic pressure available for this gear (rest is for the others) - projected gear area / projected area of all three gears -->
+					<value>0.42</value>
+					<!-- Length of gear strut between gear axle and hyd cylinder -->
+					<value>0.1</value>
+					<property>gear/unit[2]/actuator-cmd</property>
+				</product>
+			</function>
+			<output>gear/unit[2]/actuator-moment-ftlbs</output>
+		</fcs_function>
+		
+		<fcs_function>
+			<name>Drag moment</name>
+			<function>
+				<product>
+					<product>
+						<property>aero/qbar-psf</property>
+						<!-- projected surface area of left / right main gear each -->
+						<value>1.57</value>
+						<!-- Cylinder drag coefficient -->
+						<value>1.17</value>
+					</product>
+					<!-- Length of gear strut between wheel and gear axle -->
+					<value>3.8</value>
+					<value>-1</value>
+					<sin>
+						<toradians>
+							<product>
+								<property>gear/unit[2]/pos-norm</property>
+								<value>90</value>
+							</product>
+						</toradians>
+					</sin>
+				</product>
+			</function>
+			<output>gear/unit[2]/drag-moment-ftlbs</output>
+		</fcs_function>
+		
+		<summer>
+			<name>Net moment</name>
+			<input>gear/unit[2]/actuator-moment-ftlbs</input>
+			<input>gear/unit[2]/drag-moment-ftlbs</input>
+			<output>gear/unit[2]/moment-ftlbs</output>
+		</summer>
+		
+		<fcs_function>
+			<name>Compute gear position from moment</name>
+			<function>
+				<ifthen>
+					<property>gear/unit[2]/locked</property>
+					<value>1</value>
+					<sum>
+						<property>gear/unit[2]/pos-norm</property>
+						<ifthen>
+							<lt>
+								<property>/position/altitude-agl-ft</property>
+								<value>6</value>
+							</lt>
+							<product>
+								<!-- Make the gear extend / retract fullly in 0.1 seconds when very low over the ground -->
+								<ifthen>
+									<lt>
+										<property>gear/unit[2]/pos-norm</property>
+										<value>0.5</value>
+									</lt>
+									<value>-10</value>
+									<value>10</value>
+								</ifthen>
+								<property>simulation/channel-dt</property>
+							</product>
+							<quotient>
+								<product>
+									<table>
+										<independentVar>gear/unit[2]/moment-ftlbs</independentVar>
+										<tableData>
+											-500	-1
+											 500	 1
+										 </tableData>
+									 </table>
+									<property>simulation/channel-dt</property>
+								</product>
+								<!-- extension / retraction time -->
+								<value>7</value>
+							</quotient>
+						</ifthen>
+					</sum>
+				</ifthen>
+			</function>
+			<clipto>
+				<min>0</min>
+				<max>1</max>
+			</clipto>
+			<output>gear/unit[2]/pos-norm</output>
+		</fcs_function>
+	</channel>
+	
+	<channel name="Brakes">
+		<fcs_function>
+			<name>Left brake</name>
+			<function>
+				<ifthen>
+					<property>/controls/gear/brake-parking</property>
+					<value>1</value>
+					<product>
+						<property>/controls/gear/brake-left</property>
+						<min>
+							<property>/systems/hydraulic/pressure-psi</property>
+							<value>500</value>
+						</min>
+						<value>0.005</value>
+					</product>
+				</ifthen>
+			</function>
+			<output>fcs/left-brake-cmd-norm</output>
+		</fcs_function>
+		<fcs_function>
+			<name>Right brake</name>
+			<function>
+				<ifthen>
+					<property>/controls/gear/brake-parking</property>
+					<value>1</value>
+					<product>
+						<property>/controls/gear/brake-right</property>
+						<min>
+							<property>/systems/hydraulic/pressure-psi</property>
+							<value>500</value>
+						</min>
+						<value>0.005</value>
+					</product>
+				</ifthen>
+			</function>
+			<output>fcs/right-brake-cmd-norm</output>
+		</fcs_function>
+	</channel>
+</system>

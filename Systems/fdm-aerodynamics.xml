@@ -371,7 +371,7 @@
 					<independentVar lookup="row">gear/gear-pos-norm</independentVar>						
 					<tableData>						
 					0	0					
-					0.3	2					
+					0.1	2					
 					1	1					
 					</tableData>						
 				</table>
@@ -750,7 +750,7 @@
 					</tableData>						
 			</table>
 			</product>
-		</function>-->	
+		</function>-->
 		
 		<function name="aero/force/Y_roll">
 			<description>side force due to roll rate</description>
@@ -2008,7 +2008,7 @@
 					</tableData>						
 			</table>
 			</product>
-		</function>-->							
+		</function>-->
 			
 		<function name="aero/moment/Yaw_rudder">
 			<description>Yaw moment due to rudder</description>
