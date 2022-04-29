@@ -16,7 +16,7 @@
 		<reflection-type type="int">2</reflection-type>
 		<reflection-dynamic type="int">1</reflection-dynamic>
 		<ambient-correction type="float">0.1</ambient-correction>
-		<reflection-correction type="float">0</reflection-correction>
+		<reflection-correction type="float">-0.5</reflection-correction>
 		<reflection-fresnel type="float">1.0</reflection-fresnel>
 		<reflection-fresnel-factor type="float">0.8</reflection-fresnel-factor>
 		<reflection-noise type="float">0.0</reflection-noise>
