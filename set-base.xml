@@ -229,6 +229,9 @@
 				<mp-auto-connect-period type="float">1.0</mp-auto-connect-period>
 			</aerotow>
 		</hitches>
+		<sound>
+			<path>Systems/sound.xml</path>
+		</sound>
 	</sim>
 	
 	<nasal>
