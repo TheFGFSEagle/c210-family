@@ -1039,6 +1039,7 @@
 	<!--<system file="damage"/>-->
 	<system file="hydraulic"/>
 	<system file="gear"/>
+	<system file="flaps"/>
 	
 	<flight_control file="Systems/fcs-base.xml"/>
 	

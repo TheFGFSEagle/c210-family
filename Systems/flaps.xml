@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="flaps">
+	<channel name="Flaps">
+		<switch>
+			<name>Actuator movement (-1 = retract, 0 = no movement, 1 = extend)</name>
+			<default value="0"/>
+			<test value="-1">
+				fcs/flap-cmd-norm LT fcs/flap-pos-norm
+				/systems/flaps/powered EQ 1
+			</test>
+			<test value="1">
+				fcs/flap-cmd-norm GT fcs/flap-pos-norm
+				/systems/flaps/powered EQ 1
+			</test>
+			<output>/systems/flaps/actuator-cmd</output>
+		</switch>
+		
+		<fcs_function>
+			<name>Flap movement</name>
+			<function>
+				<sum>
+					<property>fcs/flap-pos-norm</property>
+					<quotient>
+						<product>
+							<property>/systems/flaps/actuator-cmd</property>
+							<property>simulation/channel-dt</property>
+						</product>
+						<!-- Flap extension time from UP to FULL -->
+						<value>10</value>
+					</quotient>
+				</sum>
+			</function>
+			<clipto>
+				<min>0</min>
+				<max>1</max>
+			</clipto>
+			<output>fcs/flap-pos-norm</output>
+		</fcs_function>
+		
+		<pure_gain>
+			<name>Flap position (degrees)</name>
+			<input>fcs/flap-pos-norm</input>
+			<gain>30</gain>
+			<output>fcs/flap-pos-deg</output>
+		</pure_gain>
+	</channel>
+</system>

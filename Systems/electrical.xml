@@ -1818,7 +1818,7 @@
 				<value>12</value>
 			</greater-than>
 		</input>
-		<output>/sim/model/controls/flaps/powered</output>
+		<output>/systems/flaps/powered</output>
 	</logic>
 	<logic>
 		<name>Determine if autopilot control is powered</name>
