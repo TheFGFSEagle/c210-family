@@ -129,13 +129,13 @@
 				<path>Systems/electrical.xml</path>
 			</property-rule>
 			
+			<autopilot n="0">
+				<name>IF-550A autopilot</name>
+				<path>Systems/if-550a.xml</path>
+			</autopilot>
 			<autopilot n="100">
 				<name>RNAV</name>
 				<path>Systems/rnav.xml</path>
-			</autopilot>
-			<autopilot n="101">
-				<name>IF-550A autopilot</name>
-				<path>Systems/if-550a.xml</path>
 			</autopilot>
 			<autopilot n="102">
 				<name>AA-801A Altituder alerter</name>
