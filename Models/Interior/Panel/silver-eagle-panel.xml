@@ -20,7 +20,7 @@
 		</offsets>
 	</model>
 	<model>
-		<path>Instruments/alt/alt.xml</path>
+		<path>Instruments/alt/encoding-alt.xml</path>
 		<offsets>
 			<x-m>0.406</x-m>
 			<y-m>-0.15</y-m>
@@ -78,7 +78,7 @@
 	
 	<!-- lower row -->
 	<model>
-		<path>Instruments/alt/standby-alt.xml</path>
+		<path>Instruments/alt/alt.xml</path>
 		<offsets>
 			<x-m>0.423</x-m>
 			<y-m>-0.33</y-m>

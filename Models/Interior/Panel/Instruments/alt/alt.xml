@@ -4,180 +4,94 @@
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>Needle</object-name>
+		<object-name>AltNeedle100</object-name>
 		<axis>
 			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<center>
-			<x-m>0</x-m>
-			<y-m>0</y-m>
-			<z-m>0</z-m>
-		</center>
 		<property>instrumentation/altimeter/indicated-altitude-ft</property>
-		<factor>0.36</factor>
-	</animation>
-	
-	<animation>
-		<type>select</type>
-		<object-name>GroundFlag</object-name>
-		<condition>
-			<less-than>
-				<property>instrumentation/altimeter/indicated-altitude-ft</property>
-				<value>10000</value>
-			</less-than>
-		</condition>
-	</animation>
-	<animation>
-		<type>select</type>
-		<object-name>FaultFlag</object-name>
-		<condition>
-			<not>
-				<property>instrumentation/altimeter/serviceable</property>
-			</not>
-		</condition>
-	</animation>
-	
-	<animation>
-		<type>rotate</type>
-		<object-name>AltScale10000</object-name>
-		<axis>
-			<object-name>AltScale1000Axis</object-name>
-		</axis>
-		<expression>
-			<product>
-				<difference>
-					<property>instrumentation/altimeter/indicated-altitude-ft</property>
-					<mod>
-						<property>instrumentation/altimeter/indicated-altitude-ft</property>
-						<value>10000</value>
-					</mod>
-				</difference>
-				<value>-0.0036</value>
-			</product>
-		</expression>
+		<factor>0.36</factor>	
 	</animation>
 	<animation>
 		<type>rotate</type>
-		<object-name>AltScale1000</object-name>
+		<object-name>AltNeedle1000</object-name>
 		<axis>
-			<object-name>AltScale1000Axis</object-name>
-		</axis>
-		<expression>
-			<product>
-				<difference>
-					<property>instrumentation/altimeter/indicated-altitude-ft</property>
-					<mod>
-						<property>instrumentation/altimeter/indicated-altitude-ft</property>
-						<value>1000</value>
-					</mod>
-				</difference>
-				<value>-0.036</value>
-			</product>
-		</expression>
-	</animation>
-	<animation>
-		<type>rotate</type>
-		<object-name>AltScale100</object-name>
-		<axis>
-			<object-name>AltScale100Axis</object-name>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
 		</axis>
 		<property>instrumentation/altimeter/indicated-altitude-ft</property>
-		<factor>-0.36</factor>
+		<factor>0.036</factor>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>AltNeedle10000</object-name>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<factor>0.0036</factor>
 	</animation>
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>PressScale10</object-name>
+		<object-name>InHgScale</object-name>
 		<axis>
-			<object-name>PressScaleAxis</object-name>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
 		</axis>
-		<expression>
-			<product>
-				<difference>
-					<property>instrumentation/altimeter/setting-inhg</property>
-					<mod>
-						<property>instrumentation/altimeter/setting-inhg</property>
-						<value>10</value>
-					</mod>
-				</difference>
-				<value>-3.6</value>
-			</product>
-		</expression>
-	</animation>	
+		<property>instrumentation/altimeter/setting-inhg</property>
+		<interpolation>
+			<entry>
+				<ind>27.5</ind>
+				<dep>10</dep>
+			</entry>
+			<entry>
+				<ind>31.0</ind>
+				<dep>360</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	
 	<animation>
 		<type>rotate</type>
-		<object-name>PressScale1</object-name>
+		<object-name>Flag</object-name>
 		<axis>
-			<object-name>PressScaleAxis</object-name>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
 		</axis>
-		<expression>
-			<product>
-				<difference>
-					<property>instrumentation/altimeter/setting-inhg</property>
-					<mod>
-						<property>instrumentation/altimeter/setting-inhg</property>
-						<value>1</value>
-					</mod>
-				</difference>
-				<value>-36</value>
-			</product>
-		</expression>
-	</animation>	
-	<animation>
-		<type>rotate</type>
-		<object-name>PressScale0.1</object-name>
-		<axis>
-			<object-name>PressScaleAxis</object-name>
-		</axis>
-		<expression>
-			<product>
-				<difference>
-					<property>instrumentation/altimeter/setting-inhg</property>
-					<mod>
-						<property>instrumentation/altimeter/setting-inhg</property>
-						<value>0.1</value>
-					</mod>
-				</difference>
-				<value>-360</value>
-			</product>
-		</expression>
-	</animation>	
-	<animation>
-		<type>rotate</type>
-		<object-name>PressScale0.01</object-name>
-		<axis>
-			<object-name>PressScaleAxis</object-name>
-		</axis>
-		<expression>
-			<product>
-				<difference>
-					<property>instrumentation/altimeter/setting-inhg</property>
-					<mod>
-						<property>instrumentation/altimeter/setting-inhg</property>
-						<value>0.01</value>
-					</mod>
-				</difference>
-				<value>-3600</value>
-			</product>
-		</expression>
-	</animation>	
+		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<interpolation>
+			<entry>
+				<ind>10000</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>15000</ind>
+				<dep>40</dep>
+			</entry>
+		</interpolation>
+	</animation>
 	
 	<animation>
 		<type>knob</type>
-		<object-name>Knob</object-name>
+		<object-name>InHgKnob</object-name>
 		<property>instrumentation/altimeter/setting-inhg</property>
-		<axis>
-			<object-name>KnobAxis</object-name>
-		</axis>
 		<factor>800</factor>
+		<axis>
+			<object-name>InHgKnobAxis</object-name>
+		</axis>
 		<action>
 			<binding>
 				<command>property-adjust</command>
 				<property>instrumentation/altimeter/setting-inhg</property>
 				<factor>0.01</factor>
-				<min>27.9</min>
+				<min>27.5</min>
 				<max>31.0</max>
 				<wrap>false</wrap>
 			</binding>
@@ -210,7 +124,7 @@
 		<alignment>center-center</alignment>
 		<offsets>
 			<x-m>0.01</x-m>
-			<y-m>0.0</y-m>
+			<y-m>0.0 </y-m>
 			<z-m>0.0</z-m>
 		</offsets>
 	</text>

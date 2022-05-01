@@ -6,7 +6,7 @@ var treeRoot = props.globals;
 
 var instrumentationNode = treeRoot.getNode("instrumentation", 1);
 var indicatedPitchNode = instrumentationNode.getNode("attitude-indicator/indicated-pitch-deg");
-var indicatedAltitudeNode = instrumentationNode.getNode("altimeter/indicated-altitude-ft", 1);
+var indicatedAltitudeNode = instrumentationNode.getNode("alt-encoder/indicated-altitude-ft", 1);
 
 var apNode = treeRoot.getNode("autopilot/if-550a", 1);
 var targetPitchNode = apNode.getNode("target-pitch-deg");

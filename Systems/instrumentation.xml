@@ -39,11 +39,13 @@ file, these values will be used (they are hardcoded).
 	</altimeter>
 	
 	<altimeter>
-		<name>altimeter</name>
-		<number>1</number>
+		<name>alt-encoder</name>
+		<number>0</number>
 		<!--<static-pressure>/systems/static-pressure-inhg-selected</static-pressure>-->
 		<quantum>0</quantum>
-		<tau>0</tau>
+		<tau>0.1</tau>
+		<encode-mode-c type="bool">1</encode-mode-c>
+		<encode-mode-s type="bool">1</encode-mode-s>
 	</altimeter>
 
 	<attitude-indicator>
@@ -66,16 +68,6 @@ file, these values will be used (they are hardcoded).
 		<name>gps</name>
 		<number>0</number>
 	</gps>
-
-	<altimeter>
-		<name>alt-encoder</name>
-		<number>0</number>
-		<!--<static-pressure>/systems/static-pressure-inhg-selected</static-pressure>-->
-		<quantum>10</quantum>
-		<tau>0.1</tau>
-		<encode-mode-c type="bool">1</encode-mode-c>
-		<encode-mode-s type="bool">1</encode-mode-s>
-	</altimeter>
 
 	<marker-beacon>
 		<name>marker-beacon</name>

@@ -9,10 +9,6 @@
 		<indicated-right-wing-fuel-level-lbs alias="/consumables/fuel/tank[1]/level-lbs"/>
 	</fuel>
 	
-	<altimeter n="1">
-		<serviceable type="bool">true</serviceable>
-	</altimeter>
-	
 	<alt-encoder>
 		<serviceable type="bool">true</serviceable>
 	</alt-encoder>

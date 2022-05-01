@@ -202,7 +202,7 @@
 			<path>/instrumentation/transponder/inputs/digit[3]</path>
 			<path>/instrumentation/transponder/inputs/knob-mode</path>
 			<path>/instrumentation/altimeter/setting-inhg</path>
-			<path>/instrumentation/altimeter[1]/setting-inhg</path>
+			<path>/instrumentation/alt-encoder/setting-inhg</path>
 			<path>/instrumentation/heading-indicator/heading-bug-deg</path>
 			<path>/instrumentation/attitude-indicator/pitch-offset-deg</path>
 			<path>/autopilot/if-550a/green-light-intensity-norm</path>
