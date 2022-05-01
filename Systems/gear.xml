@@ -73,6 +73,7 @@
 				</test>
 			</test>
 			<output>gear/unit[0]/locked</output>
+			<output>/gear/gear[0]/locked</output>
 		</switch>
 		
 		<switch>
@@ -190,6 +191,7 @@
 				gear/gear-cmd-norm EQ 1
 			</test>
 			<output>gear/unit[1]/locked</output>
+			<output>/gear/gear[1]/locked</output>
 		</switch>
 		
 		<switch>
@@ -317,6 +319,7 @@
 				gear/gear-cmd-norm EQ 1
 			</test>
 			<output>gear/unit[2]/locked</output>
+			<output>/gear/gear[2]/locked</output>
 		</switch>
 		
 		<switch>
