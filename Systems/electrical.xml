@@ -259,7 +259,7 @@
 								<property>/systems/electrical/suppliers/battery/charge-rate-amps</property>
 								<property>/systems/electrical/suppliers/battery/amps</property>
 							</dif>
-							<property>/sim/time/dt</property>
+							<property>/sim/time/delta-sec</property>
 						</prod>
 						<value>3600</value>
 					</div>
