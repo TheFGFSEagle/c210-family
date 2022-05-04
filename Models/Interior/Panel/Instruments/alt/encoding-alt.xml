@@ -15,7 +15,7 @@
 			<y-m>0</y-m>
 			<z-m>0</z-m>
 		</center>
-		<property>instrumentation/alt-encoder/indicated-altitude-ft</property>
+		<property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
 		<factor>0.36</factor>
 	</animation>
 	
@@ -24,7 +24,7 @@
 		<object-name>GroundFlag</object-name>
 		<condition>
 			<less-than>
-				<property>instrumentation/alt-encoder/indicated-altitude-ft</property>
+				<property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
 				<value>10000</value>
 			</less-than>
 		</condition>
@@ -34,7 +34,7 @@
 		<object-name>FaultFlag</object-name>
 		<condition>
 			<not>
-				<property>instrumentation/alt-encoder/serviceable</property>
+				<property>instrumentation/altimeter[1]/serviceable</property>
 			</not>
 		</condition>
 	</animation>
@@ -48,9 +48,9 @@
 		<expression>
 			<product>
 				<difference>
-					<property>instrumentation/alt-encoder/indicated-altitude-ft</property>
+					<property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
 					<mod>
-						<property>instrumentation/alt-encoder/indicated-altitude-ft</property>
+						<property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
 						<value>10000</value>
 					</mod>
 				</difference>
@@ -67,9 +67,9 @@
 		<expression>
 			<product>
 				<difference>
-					<property>instrumentation/alt-encoder/indicated-altitude-ft</property>
+					<property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
 					<mod>
-						<property>instrumentation/alt-encoder/indicated-altitude-ft</property>
+						<property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
 						<value>1000</value>
 					</mod>
 				</difference>
@@ -83,7 +83,7 @@
 		<axis>
 			<object-name>AltScale100Axis</object-name>
 		</axis>
-		<property>instrumentation/alt-encoder/indicated-altitude-ft</property>
+		<property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
 		<factor>-0.36</factor>
 	</animation>
 	
@@ -96,9 +96,9 @@
 		<expression>
 			<product>
 				<difference>
-					<property>instrumentation/alt-encoder/setting-inhg</property>
+					<property>instrumentation/altimeter[1]/setting-inhg</property>
 					<mod>
-						<property>instrumentation/alt-encoder/setting-inhg</property>
+						<property>instrumentation/altimeter[1]/setting-inhg</property>
 						<value>10</value>
 					</mod>
 				</difference>
@@ -115,9 +115,9 @@
 		<expression>
 			<product>
 				<difference>
-					<property>instrumentation/alt-encoder/setting-inhg</property>
+					<property>instrumentation/altimeter[1]/setting-inhg</property>
 					<mod>
-						<property>instrumentation/alt-encoder/setting-inhg</property>
+						<property>instrumentation/altimeter[1]/setting-inhg</property>
 						<value>1</value>
 					</mod>
 				</difference>
@@ -134,9 +134,9 @@
 		<expression>
 			<product>
 				<difference>
-					<property>instrumentation/alt-encoder/setting-inhg</property>
+					<property>instrumentation/altimeter[1]/setting-inhg</property>
 					<mod>
-						<property>instrumentation/alt-encoder/setting-inhg</property>
+						<property>instrumentation/altimeter[1]/setting-inhg</property>
 						<value>0.1</value>
 					</mod>
 				</difference>
@@ -153,9 +153,9 @@
 		<expression>
 			<product>
 				<difference>
-					<property>instrumentation/alt-encoder/setting-inhg</property>
+					<property>instrumentation/altimeter[1]/setting-inhg</property>
 					<mod>
-						<property>instrumentation/alt-encoder/setting-inhg</property>
+						<property>instrumentation/altimeter[1]/setting-inhg</property>
 						<value>0.01</value>
 					</mod>
 				</difference>
@@ -167,7 +167,7 @@
 	<animation>
 		<type>knob</type>
 		<object-name>Knob</object-name>
-		<property>instrumentation/alt-encoder/setting-inhg</property>
+		<property>instrumentation/altimeter[1]/setting-inhg</property>
 		<axis>
 			<object-name>KnobAxis</object-name>
 		</axis>
@@ -175,7 +175,7 @@
 		<action>
 			<binding>
 				<command>property-adjust</command>
-				<property>instrumentation/alt-encoder/setting-inhg</property>
+				<property>instrumentation/altimeter[1]/setting-inhg</property>
 				<factor>0.01</factor>
 				<min>27.9</min>
 				<max>31.0</max>
@@ -185,10 +185,10 @@
 		<hovered>
 			<binding>
 				<command>set-tooltip</command>
-				<tooltip-id>alt-encoder-baroset</tooltip-id>
+				<tooltip-id>altimeter[1]-baroset</tooltip-id>
 				<label>Pressure setting: %2.2f inHg</label>
 				<measure-text>Pressure setting: 29.92 inHg</measure-text>
-				<property>instrumentation/alt-encoder/setting-inhg</property>
+				<property>instrumentation/altimeter[1]/setting-inhg</property>
 			</binding>
 		</hovered>
 	</animation>

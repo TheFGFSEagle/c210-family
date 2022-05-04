@@ -26,27 +26,41 @@ file, these values will be used (they are hardcoded).
 	<airspeed-indicator>
 		<name>airspeed-indicator</name>
 		<number>0</number>
-		<!--<total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
-		<static-pressure>/systems/static-pressure-inhg-selected</static-pressure>-->
+		<!--<total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>-->
+		<static-pressure>/systems/static/pressure-inhg</static-pressure>
 	</airspeed-indicator>
 
+	<vertical-speed-indicator>
+		<name>vertical-speed-indicator</name>
+		<number>0</number>
+		<static-pressure>/systems/static/pressure-inhg</static-pressure>
+	</vertical-speed-indicator>
+	
 	<altimeter>
 		<name>altimeter</name>
 		<number>0</number>
-		<!--<static-pressure>/systems/static-pressure-inhg-selected</static-pressure>-->
+		<static-pressure>/systems/static/pressure-inhg</static-pressure>
 		<quantum>0</quantum>
 		<tau>0</tau>
 	</altimeter>
 	
 	<altimeter>
+		<name>altimeter</name>
+		<number>1</number>
+		<static-pressure>/systems/static/pressure-inhg</static-pressure>
+		<quantum>0</quantum>
+		<tau>0</tau>
+	</altimeter>
+	
+	<encoder>
 		<name>alt-encoder</name>
 		<number>0</number>
-		<!--<static-pressure>/systems/static-pressure-inhg-selected</static-pressure>-->
+		<static-pressure>/systems/static/pressure-inhg</static-pressure>
 		<quantum>0</quantum>
 		<tau>0.1</tau>
 		<encode-mode-c type="bool">1</encode-mode-c>
 		<encode-mode-s type="bool">1</encode-mode-s>
-	</altimeter>
+	</encoder>
 
 	<attitude-indicator>
 		<name>attitude-indicator</name>
@@ -188,12 +202,6 @@ file, these values will be used (they are hardcoded).
 		<number>0</number>
 	</turn-indicator>
 
-	<vertical-speed-indicator>
-		<name>vertical-speed-indicator</name>
-		<number>0</number>
-		<!--static-pressure>/systems/static-pressure-inhg-selected</static-pressure>-->
-	</vertical-speed-indicator>
-	
 	<radar>
 		<name>wxradar</name>
 		<number>0</number>

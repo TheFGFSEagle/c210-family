@@ -520,7 +520,7 @@
 		<type>noise-spike</type>
 		<gain>-1</gain>
 		<initialize-to>output</initialize-to>
-		<input>/instrumentation/alt-encoder/indicated-altitude-ft</input>
+		<input>/instrumentation/altimeter[1]/indicated-altitude-ft</input>
 		<reference>/autopilot/if-550a/internal/target-altitude-ft</reference>
 		<output>/autopilot/if-550a/internal/altitude-error-ft</output>
 		<max-rate-of-change>

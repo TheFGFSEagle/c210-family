@@ -15,4 +15,12 @@
 		<indicated-oil-pressure-psi alias="/engines/engine/oil-pressure-psi"/>
 		<indicated-propeller-rpm alias="/engines/engine/thruster/rpm"/>
 	</engine>
+	
+	<cabin-altimeter>
+		<serviceable type="bool">true</serviceable>
+	</cabin-altimeter>
+	
+	<cabin-vertical-speed-indicator>
+		<serviceable type="bool">true</serviceable>
+	</cabin-vertical-speed-indicator>
 </PropertyList>

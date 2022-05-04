@@ -10,7 +10,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/pressurization/indicated-cabin-altitude-ft</property>
+		<property>instrumentation/cabin-altimeter/indicated-altitude-ft</property>
 		<interpolation>
 			<entry>
 				<ind>0</ind>
@@ -55,7 +55,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/pressurization/indicated-differential-pressure-psi</property>
+		<property>instrumentation/cabin-altimeter/indicated-differential-pressure-psid</property>
 		<factor>30</factor>
 		<min>0</min>
 		<max>6</max>

@@ -7,7 +7,7 @@
 		<name>Difference between indicated and selected altitude</name>
 		<type>gain</type>
 		<gain>1</gain>
-		<input>/instrumentation/alt-encoder/indicated-altitude-ft</input>
+		<input>/instrumentation/altimeter[1]/indicated-altitude-ft</input>
 		<reference>/instrumentation/alt-alert/selected-altitude-ft</reference>
 		<output>/instrumentation/alt-alert/altitude-error-ft</output>
 	</filter>

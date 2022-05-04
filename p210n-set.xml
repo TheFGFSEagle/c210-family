@@ -71,17 +71,29 @@
 			<path>/controls/engines/engine/fuel-pump-hi</path>
 			<path>/sim/model/controls/magnetos/key-inserted</path>
 			<path>/instrumentation/engine/target-egt-degf</path>
+			<path>/controls/pressurization/dump-valve</path>
+			<path>/controls/pressurization/pressurize</path>
+			<path>/controls/pressurization/selected-cabin-altitude-ft</path>
 		</aircraft-data>
+		
+		<instrumentation>
+			<path>Systems/p210n-instrumentation.xml</path>
+		</instrumentation>
+		
 		<systems>
 			<path>Systems/p210n-systems.xml</path>
-			<property-rule n="201">
+			<property-rule n="200">
 				<name>P210N specific instrument indications</name>
 				<path>Systems/p210n-instruments.xml</path>
 			</property-rule>
-			<property-rule n="202">
+			<property-rule n="201">
 				<name>P210N specific controls (mostly animations)</name>
 				<path>Systems/p210n-controls.xml</path>
 			</property-rule>
+			<autopilot n="202">
+				<name>Pressurization system</name>
+				<path>Systems/pressurization.xml</path>
+			</autopilot>
 		</systems>
 	</sim>
 	<controls>
@@ -90,7 +102,26 @@
 				<fuel-pump-hi type="bool">false</fuel-pump-hi>
 			</engine>
 		</engines>
+		<electric>
+			<circuit-breakers>
+				<pressurization type="bool">true</pressurization>
+			</circuit-breakers>
+		</electric>
 	</controls>
+	
+	<systems>
+		<electrical>
+			<buses>
+				<primary>
+					<consumers>
+						<pressurization>
+							<pressurization-system-amps type="double">0.9</pressurization-system-amps>
+						</pressurization>
+					</consumers>
+				</primary>
+			</buses>
+		</electrical>
+	</systems>
 	
 	<instrumentation include="Systems/p210n-init-instrumentation.xml"/>
 </PropertyList>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<property-root>/systems/pressurization</property-root>
+	
+	<filter>
+		<name>Environment pressure (in PSI)</name>
+		<type>gain</type>
+		<gain>0.49115415</gain>
+		<input>/environment/pressure-inhg</input>
+		<output>environment-pressure-psi</output>
+	</filter>
+	
+	<filter>
+		<name>Turbocharger pressure (in PSI)</name>
+		<type>gain</type>
+		<gain>0.49115415</gain>
+		<input>
+			<expression>
+				<prod>
+					<property>/engines/engine/running</property>
+					<property>/engines/engine/mp-inhg</property>
+					<dif>
+						<value>1</value>
+						<property>/controls/pressurization/dump-valve</property>
+					</dif>
+				</prod>
+			</expression>
+		</input>
+		<output>turbocharger-pressure-psi</output>
+	</filter>
+	
+	<filter>
+		<name>Outflow valve</name>
+		<type>gain</type>
+		<input>
+			<expression>
+				<sum>
+					<max>
+						<dif>
+							<property>/controls/pressurization/selected-cabin-altitude-ft</property>
+							<property>/instrumentation/cabin-altimeter/indicated-altitude-ft</property>
+						</dif>
+						<value>0</value>
+					</max>
+					<max>
+						<prod>
+							<dif>
+								<property>cabin-pressure-psid</property>
+								<value>3.35</value>
+							</dif>
+							<value>20</value>
+						</prod>
+						<value>0</value>
+					</max>
+				</sum>
+			</expression>
+		</input>
+		<output>outflow-valve</output>
+		<min>0</min>
+		<max>1</max>
+	</filter>
+	
+	<filter>
+		<name>Safety valve</name>
+		<type>gain</type>
+		<input>
+			<expression>
+				<sum>
+					<max>
+						<prod>
+							<dif>
+								<property>cabin-pressure-psid</property>
+								<value>3.5</value>
+							</dif>
+							<value>10</value>
+						</prod>
+						<value>0</value>
+					</max>
+					<dif>
+						<value>1</value>
+						<property>/controls/pressurization/pressurize</property>
+					</dif>
+				</sum>
+			</expression>
+		</input>
+		<output>safety-valve</output>
+		<min>0</min>
+		<max>1</max>
+	</filter>
+	
+	<filter>
+		<name>Cabin absolute pressure (PSI)</name>
+		<type>exponential</type>
+		<input>
+			<expression>
+				<sum>
+					<property>cabin-pressure-psi</property>
+					<product>
+						<sum>
+							<property>safety-valve</property>
+							<property>outflow-valve</property>
+						</sum>
+						<!--<property>/sim/time/delta-sec</property>-->
+						<value>0.0083333333</value>
+						<value>-100</value>
+						<property>cabin-pressure-psid</property>
+					</product>
+					<product>
+						<min>
+							<max>
+								<dif>
+									<property>turbocharger-pressure-psi</property>
+									<property>cabin-pressure-psi</property>
+								</dif>
+								<table>
+									<property>/controls/pressurization/dump-valve</property>
+									<entry>
+										<ind>0</ind>
+										<dep>0</dep>
+							</max>
+							<value>2</value>
+						</min>
+						<!--<property>/sim/time/delta-sec</property>-->
+						<value>0.0083333333</value>
+						<value>50</value>
+					</product>
+				</sum>
+				<prod>
+					<value>-0.1</value>
+					<!--<property>/sim/time/delta-sec</property>-->
+					<value>0.0083333333</value>
+				</prod>
+			</expression>
+		</input>
+		<filter-time>10</filter-time>
+		<output>cabin-pressure-psi</output>
+		<min>environment-pressure-psi</min>
+		<max>9999</max>
+	</filter>
+	
+	<filter>
+		<name>Cabin absolute pressure (inHg)</name>
+		<type>gain</type>
+		<gain>2.0360207</gain>
+		<input>cabin-pressure-psi</input>
+		<output>cabin-pressure-inhg</output>
+	</filter>
+	
+	<filter>
+		<name>Cabin differential pressure</name>
+		<type>gain</type>
+		<input>cabin-pressure-psi</input>
+		<reference>environment-pressure-psi</reference>
+		<output>cabin-pressure-psid</output>
+	</filter>
+</PropertyList>

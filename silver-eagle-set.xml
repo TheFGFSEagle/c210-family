@@ -39,6 +39,11 @@
 				<path>Previews/cruising-over-industry.png</path>
 			</preview>
 		</previews>
+		
+		<instrumentation>
+			<path>Systems/silver-eagle-instrumentation.xml</path>
+		</instrumentation>
+		
 		<systems>
 			<path>Systems/silver-eagle-systems.xml</path>
 			<property-rule n="201">
@@ -49,10 +54,17 @@
 				<name>Silver Eagle specific controls (mostly animations)</name>
 				<path>Systems/silver-eagle-controls.xml</path>
 			</property-rule>
+			<property-rule n="105">
+				<name>Pressurization</name>
+				<path>Systems/pressurization.xml</path>
+			</property-rule>
 		</systems>
 		<aircraft-data>
 			<path>/controls/engines/engine/cutoff</path>
 			<path>/controls/electric/engine/generator</path>
+			<path>/controls/pressurization/dump-valve</path>
+			<path>/controls/pressurization/pressurize</path>
+			<path>/controls/pressurization/selected-cabin-altitude-ft</path>
 		</aircraft-data>
 	</sim>
 	<controls>
@@ -70,6 +82,11 @@
 			<left-transfer-pump type="bool">false</left-transfer-pump>
 			<right-transfer-pump type="bool">false</right-transfer-pump>
 		</fuel>
+		<electric>
+			<circuit-breakers>
+				<pressurization type="bool">true</pressurization>
+			</circuit-breakers>
+		</electric>
 	</controls>
 	
 	<engines>
@@ -96,6 +113,20 @@
 			</tank>
 		</fuel>
 	</consumables>
+	
+	<systems>
+		<electrical>
+			<buses>
+				<primary>
+					<consumers>
+						<pressurization>
+							<pressurization-system-amps type="double">0.9</pressurization-system-amps>
+						</pressurization>
+					</consumers>
+				</primary>
+			</buses>
+		</electrical>
+	</systems>
 	
 	<instrumentation include="Systems/silver-eagle-init-instrumentation.xml"/>
 	

@@ -25,7 +25,7 @@
 			</volume>
 		</crank>
 		
-		<engine>
+		<!--<engine>
 			<name>engine</name>
 			<mode>looped</mode>
 			<path>Sounds/wasp.wav</path>
@@ -47,7 +47,7 @@
 				<min>0.2</min>
 				<max>2.0</max>
 			</pitch>
-		</engine>
+		</engine>-->
 		
 		<propeller>
 			<name>propeller</name>
@@ -69,8 +69,9 @@
 			</volume>
 			<pitch>
 				<property>/engines/engine/rpm</property>
+				<offset>-500</offset>
 				<factor>0.001</factor>
-				<min>0.5</min>
+				<min>0</min>
 				<max>2</max>
 			</pitch>
 			<reference-dist>1</reference-dist>

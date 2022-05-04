@@ -104,9 +104,6 @@
 				<enabled type="bool">false</enabled>
 			</dynamic>
 		</view>
-		<instrumentation>
-			<path>Systems/instrumentation.xml</path>
-		</instrumentation>
 		<systems>
 			<property-rule n="100">
 				<name>Glass rain effect properties</name>
@@ -127,6 +124,10 @@
 			<property-rule n="104">
 				<name>Electrical</name>
 				<path>Systems/electrical.xml</path>
+			</property-rule>
+			<property-rule n="105">
+				<name>Controls common to all variants (mostly animations)</name>
+				<path>Systems/controls-base.xml</path>
 			</property-rule>
 			
 			<autopilot n="0">
@@ -162,9 +163,6 @@
 			<path>/controls/gear/gear-down</path>
 			<path>/controls/alt-static-air</path>
 			<path>/controls/fuel/selected-tank</path>
-			<path>/controls/pressurization/dump-valve</path>
-			<path>/controls/pressurization/pressurize</path>
-			<path>/controls/pressurization/selected-cabin-altitude-ft</path>
 			<path>/controls/lighting</path>
 			<path>/sim/model/doors/pilot/position-norm</path>
 			<path>/sim/model/doors/emergency-exit/position-norm</path>
@@ -336,7 +334,6 @@
 				<wing-deice type="bool">true</wing-deice>
 				<trim type="bool">true</trim>
 				<alt-reg type="bool">true</alt-reg>
-				<pressurization type="bool">true</pressurization>
 				<prop-anti-ice type="bool">true</prop-anti-ice>
 				<windshield-anti-ice type="bool">true</windshield-anti-ice>
 				<pitot-heat type="bool">true</pitot-heat>
@@ -600,9 +597,6 @@
 						<alt-reg>
 							<alternator-control-unit-amps type="double">2</alternator-control-unit-amps>
 						</alt-reg>
-						<pressurization>
-							<pressurization-system-amps type="double">0.9</pressurization-system-amps>
-						</pressurization>
 						<prop-anti-ice>
 							<propeller-anti-ice-amps type="double">18</propeller-anti-ice-amps>
 						</prop-anti-ice>

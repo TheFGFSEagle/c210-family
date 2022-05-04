@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList include="instrumentation-base.xml">
+	<altimeter n="2">
+		<name>cabin-altimeter</name>
+		<number>0</number>
+		<static-pressure>/systems/pressurization/cabin-pressure-inhg</static-pressure>
+		<quantum>0</quantum>
+		<tau>0</tau>
+	</altimeter>
+	
+	<vertical-speed-indicator n="1">
+		<name>cabin-vertical-speed-indicator</name>
+		<number>0</number>
+		<static-pressure>/systems/pressurization/cabin-pressure-inhg</static-pressure>
+	</vertical-speed-indicator>
+</PropertyList>
+
