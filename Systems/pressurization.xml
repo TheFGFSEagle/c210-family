@@ -2,6 +2,9 @@
 <PropertyList>
 	<property-root>/systems/pressurization</property-root>
 	
+	<!-- Normal pressure loss (due to cabin not being 100% sealed) -->
+	<property value="0.05">/systems/pressurization/normal-pressure-loss-psi_s</property>
+	
 	<filter>
 		<name>Environment pressure (in PSI)</name>
 		<type>gain</type>
@@ -55,9 +58,20 @@
 				</sum>
 			</expression>
 		</input>
-		<output>outflow-valve</output>
+		<output>outflow-valve-pos-norm</output>
 		<min>0</min>
 		<max>1</max>
+	</filter>
+	
+	<filter>
+		<type>gain</type>
+		<name>Pressure loss from outflow valve</name>
+		<gain>cabin-pressure-psid</gain>
+		<input>
+			<property>outflow-valve-pos-norm</property>
+			<scale>5</scale>
+		</input>
+		<output>outflow-valve-pressure-loss-psi_s</output>
 	</filter>
 	
 	<filter>
@@ -83,59 +97,63 @@
 				</sum>
 			</expression>
 		</input>
-		<output>safety-valve</output>
+		<output>safety-valve-pos-norm</output>
 		<min>0</min>
 		<max>1</max>
 	</filter>
 	
 	<filter>
-		<name>Cabin absolute pressure (PSI)</name>
+		<type>gain</type>
+		<name>Pressure loss from safety valve</name>
+		<gain>cabin-pressure-psid</gain>
+		<input>
+			<property>safety-valve-pos-norm</property>
+			<scale>5</scale>
+		</input>
+		<output>safety-valve-pressure-loss-psi_s</output>
+	</filter>
+	
+	<filter>
+		<type>gain</type>
+		<name>Pressure gain from turbocharger</name>
+		<input>turbocharger-pressure-psi</input>
+		<reference>cabin-pressure-psi</reference>
+		<output>turbocharger-pressure-gain-psi_s</output>
+	</filter>
+	
+	<filter>
+		<name>Absolute cabin pressure (PSI)</name>
 		<type>exponential</type>
 		<input>
 			<expression>
 				<sum>
 					<property>cabin-pressure-psi</property>
 					<product>
-						<sum>
-							<property>safety-valve</property>
-							<property>outflow-valve</property>
-						</sum>
-						<!--<property>/sim/time/delta-sec</property>-->
-						<value>0.0083333333</value>
-						<value>-100</value>
-						<property>cabin-pressure-psid</property>
+						<property>safety-valve-pressure-loss-psi_s</property>
+						<value>0.008333333</value>
+						<value>-1</value>
 					</product>
 					<product>
-						<min>
-							<max>
-								<dif>
-									<property>turbocharger-pressure-psi</property>
-									<property>cabin-pressure-psi</property>
-								</dif>
-								<table>
-									<property>/controls/pressurization/dump-valve</property>
-									<entry>
-										<ind>0</ind>
-										<dep>0</dep>
-							</max>
-							<value>2</value>
-						</min>
-						<!--<property>/sim/time/delta-sec</property>-->
-						<value>0.0083333333</value>
-						<value>50</value>
+						<property>outflow-valve-pressure-loss-psi_s</property>
+						<value>0.008333333</value>
+						<value>-1</value>
+					</product>
+					<product>
+						<property>turbocharger-pressure-gain-psi_s</property>
+						<value>0.008333333</value>
+					</product>
+					<product>
+						<property>normal-pressure-loss-psi_s</property>
+						<value>0.008333333</value>
+						<value>-1</value>
 					</product>
 				</sum>
-				<prod>
-					<value>-0.1</value>
-					<!--<property>/sim/time/delta-sec</property>-->
-					<value>0.0083333333</value>
-				</prod>
 			</expression>
 		</input>
-		<filter-time>10</filter-time>
 		<output>cabin-pressure-psi</output>
 		<min>environment-pressure-psi</min>
 		<max>9999</max>
+		<filter-time>0.2</filter-time>
 	</filter>
 	
 	<filter>
