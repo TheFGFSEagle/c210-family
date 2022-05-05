@@ -25,7 +25,7 @@
 			</volume>
 		</crank>
 		
-		<!--<engine>
+		<engine>
 			<name>engine</name>
 			<mode>looped</mode>
 			<path>Sounds/wasp.wav</path>
@@ -47,22 +47,23 @@
 				<min>0.2</min>
 				<max>2.0</max>
 			</pitch>
-		</engine>-->
+		</engine>
 		
 		<propeller>
 			<name>propeller</name>
 			<mode>looped</mode>
 			<path>Sounds/prop.wav</path>
+			<property>/engines/engine/rpm</property>
 			<volume>
 				<expression>
 					<sum>
 						<prod>
 							<property>/sim/current-view/internal</property>
-							<value>-0.2</value>
+							<value>-0.4</value>
 						</prod>
 						<prod>
 							<property>/engines/engine/rpm</property>
-							<value>0.00037</value>
+							<value>0.0005</value>
 						</prod>
 					</sum>
 				</expression>
@@ -137,7 +138,7 @@
 				<max>1.0</max>
 			</volume>
 			<volume>
-				<internal>dt_stop</internal>
+				<internal>dt_start</internal>
 				<factor>0.05</factor>
 				<max>1.0</max>
 			</volume>
@@ -152,7 +153,7 @@
 			<name>flaps</name>
 			<mode>in-transit</mode>
 			<path>Sounds/flaps.wav</path>
-			<property>/systems/flaps/actuator-cmd</property>
+			<property>/systems/flaps/actuator-rate</property>
 			<volume>
 				<factor>0.8</factor>
 			</volume>
