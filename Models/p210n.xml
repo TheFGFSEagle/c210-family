@@ -55,6 +55,7 @@
 		<object-name>NoseGearUpperLink</object-name>
 		<object-name>NoseGearLowerLink</object-name>
 		<object-name>NoseWheelHinge</object-name>
+		<object-name>NoseWheelAxle</object-name>
 		<object-name>NoseGearStrutInnerCylinder</object-name>
 		<object-name>NoseGearStrutOuterCylinder</object-name>
 		<object-name>LeftWheelStrut</object-name>
@@ -480,6 +481,7 @@
 		<!-- NoseGearLowerLink does not need to be included in the animation because it is a child of NoseGearUpperLink -->
 		<object-name>NoseGearUpperLink</object-name>
 		<object-name>NoseWheelHinge</object-name>
+		<object-name>NoseWheelAxle</object-name>
 		<object-name>NoseGearStrutInnerCylinder</object-name>
 		<object-name>NoseGearStrutOuterCylinder</object-name>
 		<object-name>NoseWheel</object-name>
@@ -503,6 +505,7 @@
 		<type>rotate</type>
 		<object-name>NoseGearUpperLink</object-name>
 		<object-name>NoseWheelHinge</object-name>
+		<object-name>NoseWheelAxle</object-name>
 		<object-name>NoseGearStrutInnerCylinder</object-name>
 		<object-name>NoseGearStrutOuterCylinder</object-name>
 		<object-name>NoseWheel</object-name>
@@ -647,6 +650,7 @@
 		<object-name>NoseWheel</object-name>
 		<object-name>NoseWheelRollingAxis</object-name>
 		<object-name>NoseWheelHinge</object-name>
+		<object-name>NoseWheelAxle</object-name>
 		<object-name>NoseGearStrutInnerCylinder</object-name>
 		<axis>
 			<object-name>NoseWheelSteeringAxis</object-name>
