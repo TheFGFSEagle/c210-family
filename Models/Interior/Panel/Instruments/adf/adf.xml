@@ -10,7 +10,7 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<property>instrumentation/heading-indicator/indicated-heading-deg</property>
+		<property>instrumentation/adf/rotation-deg</property>
 	</animation>
 	<animation>
 		<type>rotate</type>
@@ -33,6 +33,7 @@
 		<action>
 			<binding>
 				<command>property-adjust</command>
+				<property>instrumentation/adf/rotation-deg</property>
 				<min>0</min>
 				<max>360</max>
 				<factor>1</factor>
@@ -42,7 +43,7 @@
 		<shift-action>
 			<binding>
 				<command>property-adjust</command>
-				<property>instrumentation/adf/error-deg</property>
+				<property>instrumentation/adf/rotation-deg</property>
 				<min>0</min>
 				<max>360</max>
 				<factor>0.1</factor>
