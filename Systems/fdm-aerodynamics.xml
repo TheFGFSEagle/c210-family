@@ -401,14 +401,19 @@
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
-				<table>
-					<independentVar lookup="row">gear/unit[1]/pos-norm</independentVar>						
-					<tableData>						
-					0	0					
-					0.1	2					
-					1	1					
-					</tableData>						
-				</table>
+				<interpolate1d>
+					<sin>
+						<toradians>
+							<product>
+								<property>gear/unit[1]/pos-norm</property>			
+								<value>90</value>
+							</product>
+						</toradians>
+					</sin>			
+					<v>0</v>	<v>0</v>
+					<v>0.3</v>	<v>2</v>					
+					<v>1</v>	<v>1</v>
+				</interpolate1d>					
 				<value>-0.00714</value>
 			</product>
 		</function>
@@ -418,14 +423,19 @@
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
-				<table>
-					<independentVar lookup="row">gear/unit[2]/pos-norm</independentVar>						
-					<tableData>						
-					0	0					
-					0.1	2					
-					1	1					
-					</tableData>						
-				</table>
+				<interpolate1d>
+					<sin>
+						<toradians>
+							<product>
+								<property>gear/unit[1]/pos-norm</property>			
+								<value>90</value>
+							</product>
+						</toradians>
+					</sin>			
+					<v>0</v>	<v>0</v>
+					<v>0.3</v>	<v>2</v>					
+					<v>1</v>	<v>1</v>
+				</interpolate1d>					
 				<value>-0.00714</value>
 			</product>
 		</function>
