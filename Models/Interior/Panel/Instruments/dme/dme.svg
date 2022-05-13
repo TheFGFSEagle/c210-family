@@ -14,7 +14,7 @@
    id="svg774"
    sodipodi:docname="dme.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   inkscape:export-filename="/mnt/DATEN/blender-2.83.0-linux64/2.83/datafiles/colormanagement/filmic/fgfs-addons/Aircraft/c210-family/Models/Interior/Panel/Instruments/dme/dme.png"
+   inkscape:export-filename="/media/frederic/TOSHIBA EXT/.fg/fgfs-addons/Aircraft/c210-family/Models/Interior/Panel/Instruments/dme/dme.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <metadata
@@ -44,9 +44,9 @@
      inkscape:window-height="706"
      id="namedview776"
      showgrid="false"
-     inkscape:zoom="3.6875"
-     inkscape:cx="304.4808"
-     inkscape:cy="86.37645"
+     inkscape:zoom="1.3037281"
+     inkscape:cx="195.3805"
+     inkscape:cy="112.21047"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -1708,7 +1708,7 @@
        id="tspan2022"
        x="305.64832"
        y="513.62451"
-       style="stroke-width:5.35805845">NAV1</tspan></text>
+       style="stroke-width:5.35805845">NAV2</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:26.66666603px;line-height:1.25;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, ';text-align:center;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
@@ -1730,7 +1730,7 @@
        id="tspan2030"
        x="309.68655"
        y="450.45856"
-       style="stroke-width:5.26703358">NAV2</tspan></text>
+       style="stroke-width:5.26703358">NAV1</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.2470665px;line-height:1.25;font-family:'Ubuntu Condensed';-inkscape-font-specification:'Ubuntu Condensed, ';text-align:center;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.10882473;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
