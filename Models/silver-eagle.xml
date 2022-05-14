@@ -513,38 +513,6 @@
 	
 	<animation>
 		<type>rotate</type>
-		<object-name>NoseGearUpperLink</object-name>
-		<object-name>NoseWheelHinge</object-name>
-		<object-name>NoseWheelAxle</object-name>
-		<object-name>NoseGearStrutInnerCylinder</object-name>
-		<object-name>NoseGearStrutOuterCylinder</object-name>
-		<object-name>NoseWheel</object-name>
-		<axis>
-			<object-name>NoseWheelSteeringAxis</object-name>
-		</axis>
-		<property>gear/gear[0]/position-norm</property>
-		<interpolation>
-			<entry>
-				<ind>1</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>0.65</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>0.35</ind>
-				<dep>90</dep>
-			</entry>
-			<entry>
-				<ind>0</ind>
-				<dep>90</dep>
-			</entry>
-		</interpolation>
-	</animation>
-	
-	<animation>
-		<type>rotate</type>
 		<object-name>LeftForwardNoseGearDoorExterior</object-name>
 		<object-name>LeftForwardNoseGearDoorInterior</object-name>
 		<axis>
@@ -553,16 +521,8 @@
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry>
-				<ind>1</ind>
-				<dep>30</dep>
-			</entry>
-			<entry>
-				<ind>0.7</ind>
-				<dep>70</dep>
-			</entry>
-			<entry>
 				<ind>0.3</ind>
-				<dep>70</dep>
+				<dep>50</dep>
 			</entry>
 			<entry>
 				<ind>0</ind>
@@ -581,16 +541,8 @@
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry>
-				<ind>1</ind>
-				<dep>30</dep>
-			</entry>
-			<entry>
-				<ind>0.7</ind>
-				<dep>70</dep>
-			</entry>
-			<entry>
 				<ind>0.3</ind>
-				<dep>70</dep>
+				<dep>50</dep>
 			</entry>
 			<entry>
 				<ind>0</ind>
@@ -609,16 +561,8 @@
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry>
-				<ind>1</ind>
-				<dep>30</dep>
-			</entry>
-			<entry>
-				<ind>0.7</ind>
-				<dep>70</dep>
-			</entry>
-			<entry>
 				<ind>0.3</ind>
-				<dep>70</dep>
+				<dep>50</dep>
 			</entry>
 			<entry>
 				<ind>0</ind>
@@ -637,16 +581,8 @@
 		<property>gear/gear[0]/position-norm</property>
 		<interpolation>
 			<entry>
-				<ind>1</ind>
-				<dep>30</dep>
-			</entry>
-			<entry>
-				<ind>0.7</ind>
-				<dep>70</dep>
-			</entry>
-			<entry>
 				<ind>0.3</ind>
-				<dep>70</dep>
+				<dep>50</dep>
 			</entry>
 			<entry>
 				<ind>0</ind>
