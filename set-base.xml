@@ -156,8 +156,10 @@
 			<path>/controls/anti-ice/window-heat</path>
 			<path>/controls/anti-ice/propeller-heat</path>
 			<path>/controls/flight/rudder</path>
+			<path>/controls/flight/rudder-trim</path>
 			<path>/controls/flight/aileron</path>
 			<path>/controls/flight/elevator</path>
+			<path>/controls/flight/elevator-trim</path>
 			<path>/controls/flight/flaps</path>
 			<path>/controls/gear/brake-parking</path>
 			<path>/controls/gear/gear-down</path>
