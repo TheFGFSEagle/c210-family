@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flight_control>
 	<channel name="Pitch">
+
 		<summer>
 			<input>fcs/elevator-cmd-norm</input>
 			<input>fcs/pitch-trim-cmd-norm</input>
@@ -11,6 +12,7 @@
 			<output>fcs/elevator-pos-norm</output>
 		</summer>
 		
+
 		<kinematic>
 			<input>fcs/elevator-pos-norm</input>
 			<traverse>
@@ -37,6 +39,33 @@
 	</channel>
 	
 	<channel name="Ailerons">
+
+		<fcs_function> 
+		<function>			
+			<product>
+			<value>0.8</value>
+				<sum>
+					<property>fcs/aileron-cmd-norm</property>
+					<property>fcs/roll-trim-cmd-norm</property>
+					<product>
+						<difference>
+							<property>fcs/aileron-cmd-norm</property>
+							<property>fcs/rudder-cmd-norm</property>
+						</difference>
+						<value>0.2</value>
+					</product>
+				</sum>
+			</product>
+			</function>			
+			<clipto>
+				<min>-1</min>
+				<max>1</max>
+			</clipto>
+			<output>fcs/aileron-pos-norm</output>
+		</fcs_function> 
+
+
+<!--
 		<summer>
 			<input>fcs/aileron-cmd-norm</input>
 			<input>fcs/roll-trim-cmd-norm</input>
@@ -46,7 +75,7 @@
 			</clipto>
 			<output>fcs/aileron-pos-norm</output>
 		</summer>
-		
+-->		
 		<kinematic>
 			<input>fcs/aileron-pos-norm</input>
 			<traverse>
@@ -127,6 +156,18 @@
 	</hysteresis_limits>
 	
 	<channel name="Rudder">
+
+		<summer>
+			<input>fcs/rudder-cmd-norm</input>
+			<input>fcs/yaw-trim-cmd-norm</input>
+			<clipto>
+				<min>-1</min>
+				<max>1</max>
+			</clipto>
+			<output>fcs/rudder-pos-norm</output>
+		</summer>
+
+<!--
 		<fcs_function>
 		<function>			
 			<product>
@@ -150,7 +191,7 @@
 			</clipto>
 			<output>fcs/rudder-pos-norm</output>
 		</fcs_function>	
-		
+-->		
 		<kinematic>
 			<input>fcs/rudder-pos-norm</input>
 			<traverse>
@@ -208,4 +249,3 @@
 		</aerosurface_scale>
 	</channel>
 </flight_control>
-
