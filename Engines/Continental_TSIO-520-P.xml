@@ -18,7 +18,7 @@
    <air-intake-impedance-factor>0</air-intake-impedance-factor>
 
    <maxmp unit="INHG">28.8</maxmp>   
-   <minmp unit="INHG">10</minmp>
+   <minmp unit="INHG">8</minmp>
 
    <boostmanual>1</boostmanual>
    <numboostspeeds>1</numboostspeeds>
