@@ -151,7 +151,7 @@
 		</function>	
 				
 		<function name="aero/force/Z_mach">
-			<description>Pitch Z due to mach</description>
+			<description>forece Z due to mach</description>
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
