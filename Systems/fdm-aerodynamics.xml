@@ -84,7 +84,7 @@
 		</min>
 	</function>
 	<property>aero/tuning/prop-effects</property>
-		
+	<property>aero/tuning/pitch-slotflaps</property>	
 	<axis name="Z">
 		<function name="aero/force/Z_base">
 			<description>Z base</description>						
@@ -1838,6 +1838,18 @@
 				</table>
 			</product>
 		</function>
+
+		<function name="aero/moment/Pitch_slotflap">
+			<description>Pitch moment due to slotflaps</description>
+			<product>
+				<property>aero/tuning/pitch-slotflaps</property>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/cbarw-ft</property>
+				<independentVar lookup="table">fcs/flap-pos-deg</independentVar>
+				<value>-0.001</value>
+			</product>
+		</function>	
 	</axis>
 											
 											
