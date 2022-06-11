@@ -83,7 +83,8 @@
 			</sum>
 		</min>
 	</function>
-	
+	<property>aero/tuning/prop-effects</property>
+		
 	<axis name="Z">
 		<function name="aero/force/Z_base">
 			<description>Z base</description>						
@@ -134,6 +135,7 @@
 		<function name="aero/moment/Z_prop">
 			<description>additional lift by prop </description>
 			<product>
+				<property>aero/tuning/prop-effects</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>aero/function/kCLge</property>
@@ -795,9 +797,10 @@
 			</product>
 		</function>
 
-		<!--<function name="aero/moment/Y_prop">
+		<function name="aero/moment/Y_prop">
 			<description>additional side force by prop </description>
 			<product>
+				<property>aero/tuning/prop-effects</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<value>1</value>
@@ -1074,9 +1077,10 @@
 			</product>
 		</function>
 		
-		<!--<function name="aero/moment/roll_prop">
+	<function name="aero/moment/roll_prop">
 			<description>additional roll moment by prop </description>
 			<product>
+				<property>aero/tuning/prop-effects</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
@@ -1092,7 +1096,7 @@
 					</tableData>						
 			</table>
 			</product>
-		</function>-->
+		</function>
 													
 		<function name="aero/moment/Roll_damp">
 			<description>Roll moment due to rollrate</description>
@@ -1404,9 +1408,10 @@
 			</product>
 		</function>
 
-		<!--<function name="aero/moment/pitch_prop">
+		<function name="aero/moment/pitch_prop">
 			<description>additional pitch moment by prop </description>
 			<product>
+				<property>aero/tuning/prop-effects</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/cbarw-ft</property>
@@ -1426,6 +1431,7 @@
 		<function name="aero/moment/pitchdamp_prop">
 			<description>additional pitch damping moment by prop </description>
 			<product>
+				<property>aero/tuning/prop-effects</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/cbarw-ft</property>
@@ -1442,7 +1448,7 @@
 					</tableData>						
 			</table>
 			</product>
-		</function>-->
+		</function>
 		
 		
 		<!--<function name="aero/moment/Pitch_gear">
@@ -1579,6 +1585,7 @@
 		<function name="aero/moment/yawpitch_elev_prop">
 			<description>additional elevator moment by prop </description>
 			<product>
+				<property>aero/tuning/prop-effects</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/cbarw-ft</property>
@@ -1949,9 +1956,10 @@
 				</table>
 			</product>
 		</function>
-		<!--<function name="aero/moment/yaw_prop">											
+		<function name="aero/moment/yaw_prop">											
 			<description>additional yaw moment by prop </description>
 			<product>
+				<property>aero/tuning/prop-effects</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
@@ -1966,7 +1974,7 @@
 					</tableData>						
 			</table>
 			</product>
-		</function>-->
+		</function>
 		
 		
 		<function name="aero/moment/Yaw_damp">
@@ -2044,9 +2052,10 @@
 			</product>
 		</function>
 
-		<!--<function name="aero/moment/Yaw_damp_prop">
+		<function name="aero/moment/Yaw_damp_prop">
 			<description>Yaw moment due to yaw rate prop </description>
 			<product>
+				<property>aero/tuning/prop-effects</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
@@ -2063,7 +2072,7 @@
 					</tableData>						
 			</table>
 			</product>
-		</function>-->
+		</function>
 			
 		<function name="aero/moment/Yaw_rudder">
 			<description>Yaw moment due to rudder</description>
@@ -2150,9 +2159,10 @@
 			</product>
 		</function>
 											
-		<!--<function name="aero/moment/yaw_rudder_prop">
+		<function name="aero/moment/yaw_rudder_prop">
 			<description>additional rudder moment by prop </description>
 			<product>
+				<property>aero/tuning/prop-effects</property>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
@@ -2170,7 +2180,7 @@
 					</tableData>						
 			</table>
 			</product>
-		</function>-->
+		</function>
 		
 		<function name="aero/moment/Yaw_aileron">
 			<description>Adverse yaw</description>
