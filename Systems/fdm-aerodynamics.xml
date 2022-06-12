@@ -1605,7 +1605,7 @@
 			</product>
 		</function>
 		
-		<function name="aero/moment/yawpitch_elev_prop">
+		<function name="aero/moment/pitch_elev_prop">
 			<description>additional elevator moment by prop </description>
 			<product>
 				<property>aero/tuning/prop-effects</property>
