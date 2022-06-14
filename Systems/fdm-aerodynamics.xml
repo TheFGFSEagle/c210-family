@@ -1869,7 +1869,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/cbarw-ft</property>
-				<independentVar lookup="table">fcs/flap-pos-deg</independentVar>
+				<property>fcs/flap-pos-deg</property>
 				<value>-0.001</value>
 			</product>
 		</function>	
