@@ -86,10 +86,10 @@
 		
 	<function name="aero/alpha_ref">
 		<description>alpha based on reference line</description>
-			<diff>
+			<difference>
 			<property>aero/alpha-deg</property>				
 			<value>-3.7</value>
-			</diff>
+			</difference>
 	</function>
 		
 	<property>aero/tuning/prop-effects</property>
