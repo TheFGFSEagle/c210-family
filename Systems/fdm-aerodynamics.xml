@@ -94,6 +94,12 @@
 		
 	<property>aero/tuning/prop-effects</property>
 	<property>aero/tuning/pitch-slotflaps</property>	
+	
+	<function name="tuning/adverse-yaw-factor">	
+	<description>pure testing</description>	
+		<value>0.7</value>
+	</function>
+		
 	<axis name="Z">
 		<function name="aero/force/Z_base">
 			<description>Z base</description>						
@@ -2232,6 +2238,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
+				<property>aero/tuning/adverse-yaw</property>	
 				<value>1</value>
 				<difference>
 					<table>
