@@ -1331,6 +1331,18 @@
 				<property>fcs/rudder-pos-rad</property>
 				<value>-1</value>
 				<table>
+					<independentVar lookup="row">aero/beta-rad</independentVar>						
+					<tableData>
+						-0.5	1						
+						-0.26	0.8
+						-0.209	1
+						0	1						
+						0.209	1
+						0.26	0.8
+						0.5	1						
+					</tableData>
+				</table>				
+				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>						
 					<independentVar lookup="column">aero/beta-deg</independentVar>						
 					<independentVar lookup="table">fcs/flap-pos-deg</independentVar>						
@@ -2137,7 +2149,11 @@
 						-3.14	-1						
 						-1.57	0						
 						-0.5	1						
+						-0.26	0.8
+						-0.209	1
 						0	1						
+						0.209	1
+						0.26	0.8
 						0.5	1						
 						1.57	0						
 						3.14	-1						
