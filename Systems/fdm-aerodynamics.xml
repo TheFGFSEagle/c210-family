@@ -83,8 +83,23 @@
 			</sum>
 		</min>
 	</function>
+		
+	<function name="aero/alpha_ref">
+		<description>alpha based on reference line</description>
+			<difference>
+			<property>aero/alpha-deg</property>				
+			<value>-3.7</value>
+			</difference>
+	</function>
+		
 	<property>aero/tuning/prop-effects</property>
 	<property>aero/tuning/pitch-slotflaps</property>	
+	
+	<function name="aero/tuning/adverse-yaw-factor">	
+	<description>pure testing</description>	
+		<value>0.7</value>
+	</function>
+		
 	<axis name="Z">
 		<function name="aero/force/Z_base">
 			<description>Z base</description>						
@@ -1316,6 +1331,18 @@
 				<property>fcs/rudder-pos-rad</property>
 				<value>-1</value>
 				<table>
+					<independentVar lookup="row">aero/beta-rad</independentVar>						
+					<tableData>
+						-0.5	1						
+						-0.26	0.8
+						-0.209	1
+						0	1						
+						0.209	1
+						0.26	0.8
+						0.5	1						
+					</tableData>
+				</table>				
+				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>						
 					<independentVar lookup="column">aero/beta-deg</independentVar>						
 					<independentVar lookup="table">fcs/flap-pos-deg</independentVar>						
@@ -2122,7 +2149,11 @@
 						-3.14	-1						
 						-1.57	0						
 						-0.5	1						
+						-0.26	0.8
+						-0.209	1
 						0	1						
+						0.209	1
+						0.26	0.8
 						0.5	1						
 						1.57	0						
 						3.14	-1						
@@ -2223,6 +2254,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
+				<property>aero/tuning/adverse-yaw-factor</property>	
 				<value>1</value>
 				<difference>
 					<table>
