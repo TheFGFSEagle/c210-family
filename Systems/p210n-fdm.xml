@@ -1041,7 +1041,7 @@
 	<system file="gear"/>
 	<system file="flaps"/>
 	
-	<flight_control file="Systems/fcs-base.xml"/>
+	<flight_control file="Systems/fdm-fcs.xml"/>
 	
 	<aerodynamics file="Systems/fdm-aerodynamics.xml"/>
 	

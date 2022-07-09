@@ -1070,7 +1070,7 @@
 	<system file="gear"/>
 	<system file="flaps"/>
 	
-	<fllight_control file="Systems/fcs-base.xml"/>
+	<fllight_control file="Systems/fdm-fcs.xml"/>
 	
 	<aerodynamics file="Systems/fdm-aerodynamics.xml"/>
 	
