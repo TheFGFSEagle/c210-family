@@ -1292,6 +1292,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
+				<value>0.6</value> <!-- interim -->
 				<value>1</value>
 				<sum>
 				<table>

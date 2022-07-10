@@ -42,20 +42,22 @@
 
 		<fcs_function> 
 		<function>			
-			<product>
-			<value>0.8</value>
-				<sum>
-					<property>fcs/aileron-cmd-norm</property>
-					<property>fcs/roll-trim-cmd-norm</property>
-					<product>
-						<difference>
-							<property>fcs/aileron-cmd-norm</property>
-							<property>fcs/rudder-cmd-norm</property>
-						</difference>
-						<value>0.2</value>
-					</product>
-				</sum>
-			</product>
+		<sum>
+			<property>fcs/aileron-cmd-norm</property>
+			<property>fcs/roll-trim-cmd-norm</property>
+			<table>
+				<independentVar lookup="row">fcs/rudder-cmd-norm</independentVar>						
+				<independentVar lookup="column">fcs/aileron-cmd-norm</independentVar>
+				<tableData>
+					-1	-0.5	0	0.5		1
+				-1	0	0	0.1	0	0
+				-0.5	0	0	0	0	0
+				0	0	0	0	0	0
+				0.5	0	0	0	0	0
+				1	0	0	-0.1	0	0
+			</tableData>
+			</table>
+		</sum>
 			</function>			
 			<clipto>
 				<min>-1</min>
