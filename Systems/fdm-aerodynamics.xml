@@ -1429,37 +1429,28 @@
 				<property>metrics/cbarw-ft</property>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>						
-					<independentVar lookup="column">aero/beta-deg</independentVar>						
-					<independentVar lookup="table">fcs/flap-pos-deg</independentVar>						
-					<tableData breakPoint="0">
-								0
-						-15		0.31778
-						-10		0.22972
-						-5		0.13642
-						0		0.04202
-						5		-0.05764
-						10		-0.16228
-						15		-0.27987
-						20		-0.41906
-						25		-0.56023
+					<independentVar lookup="column">fcs/flap-pos-deg</independentVar>						
+					<tableData>
+								0	30
+						-15		0.31778	0.4275
+						-10		0.22972	0.3401
+						-5		0.13642	0.3078
+						0		0.04202	0.1641
+						5		-0.05764	0.0783
+						10		-0.16228	-0.0347
+						15		-0.27987	-0.1749
+						20		-0.41906	-0.3291
+						25		-0.56023	-0.4793
 
 					</tableData>						
-					<tableData breakPoint="30">
-								0
-						-15		0.4275
-						-10		0.3401
-						-5		0.3078
-						0		0.1641
-						5		0.0783
-						10		-0.0347
-						15		-0.1749
-						20		-0.3291
-						25		-0.4793
-
-					</tableData>						
-
+					
 <!--					
-					<tableData breakPoint="0">
+					<independentVar lookup="row">aero/alpha-deg</independentVar>						
+					<independentVar lookup="column">aero/beta-deg</independentVar>						
+					<independentVar lookup="table">fcs/flap-pos-deg</independentVar>
+     
+
+<tableData breakPoint="0">
 							-15	0	15
 						-15	0.08268	0.31778	0.08056	
 						-10	0.02054	0.22972	0.02070	
