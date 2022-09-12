@@ -58,7 +58,7 @@
 			<weight unit="LBS">170</weight>
 			<location name="POINTMASS" unit="IN">
 				<x>42.93</x>
-				<y>11</y>
+				<y>-11</y>
 				<z>0</z>
 			</location>
 		</pointmass> 
@@ -66,7 +66,7 @@
 			<weight unit="LBS">170</weight>
 			<location name="POINTMASS" unit="IN">
 				<x>42.93</x>
-				<y>-11</y>
+				<y>11</y>
 				<z>0</z>
 			</location>
 		</pointmass>
@@ -74,7 +74,7 @@
 			<weight unit="LBS">110</weight>
 			<location name="POINTMASS" unit="IN">
 				<x>70.9</x>
-				<y>11</y>
+				<y>-11</y>
 				<z>0.00</z>
 			</location>
 		</pointmass>
@@ -82,7 +82,7 @@
 			<weight unit="LBS">110</weight>
 			<location name="POINTMASS" unit="IN">
 				<x>70.9</x>
-				<y>-11</y>
+				<y>11</y>
 				<z>0.00</z>
 			</location>
 		</pointmass>
@@ -90,7 +90,7 @@
 			<weight unit="LBS">0</weight>
 			<location name="POINTMASS" unit="IN">
 				<x>100.9</x>
-				<y>11</y>
+				<y>-11</y>
 				<z>3</z>
 			</location>
 		</pointmass>
@@ -98,7 +98,7 @@
 			<weight unit="LBS">0</weight>
 			<location name="POINTMASS" unit="IN">
 				<x>100.9</x>
-				<y>-11</y>
+				<y>11</y>
 				<z>3</z>
 			</location>
 		</pointmass>
