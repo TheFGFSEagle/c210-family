@@ -257,6 +257,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/elevator-pos-rad</property>
+				<value>0.85</value> <!-- tuning -->
 				<value>1</value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>						
@@ -1007,6 +1008,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/rudder-pos-rad</property>
+				<value>0.85</value> <!-- tuning -->
 				<value>-1</value>
 				<table>
 					<independentVar lookup="row">aero/alpha-deg</independentVar>						
@@ -1330,6 +1332,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/rudder-pos-rad</property>
+				<value>0.85</value> <!-- tuning -->
 				<value>-1</value>
 				<table>
 					<independentVar lookup="row">aero/beta-rad</independentVar>						
@@ -1574,6 +1577,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/cbarw-ft</property>
 				<property>fcs/elevator-pos-rad</property>
+				<value>0.85</value> <!-- tuning -->
 				<value>0.95</value>
 				<value>-1</value>
 				<table>
@@ -2165,6 +2169,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/rudder-pos-rad</property>
+				<value>0.85</value> <!-- tuning -->
 				<table>
 					<independentVar lookup="row">aero/beta-rad</independentVar>						
 					<tableData>
