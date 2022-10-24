@@ -15,7 +15,7 @@
    id="svg1298"
    sodipodi:docname="rudder-trim.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   inkscape:export-filename="/mnt/DATEN/blender-2.83.0-linux64/2.83/datafiles/colormanagement/filmic/fgfs-addons/Aircraft/c210-family/Models/Interior/Panel/Controls/trim/rudder-trim.png"
+   inkscape:export-filename="/media/frederic/TOSHIBA EXT/.fg/fgfs-addons/Aircraft/c210-family/Models/Interior/Panel/Controls/trim/rudder-trim.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <metadata
@@ -49,9 +49,9 @@
      inkscape:window-height="706"
      id="namedview1300"
      showgrid="false"
-     inkscape:zoom="1.84375"
-     inkscape:cx="277.94467"
-     inkscape:cy="272.05103"
+     inkscape:zoom="1.3037281"
+     inkscape:cx="262.73184"
+     inkscape:cy="337.0901"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -2668,14 +2668,14 @@
      inkscape:original-d="m 134.913,281.548 c 19.664,4.22733 39.327,8.45567 58.989,12.685 19.662,4.22933 41.47567,3.11167 62.212,4.669 20.73633,1.55733 41.469,-3.26433 62.202,-4.895 20.733,-1.63067 39.29833,-8.603 58.946,-12.903" />
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333302px;line-height:1.25;font-family:Beteckna;-inkscape-font-specification:Beteckna;text-align:center;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal;letter-spacing:1px;"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333302px;line-height:1.25;font-family:Beteckna;-inkscape-font-specification:Beteckna;text-align:center;letter-spacing:1px;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
      id="text6473"
-     transform="translate(0,-3.5254237)"><textPath
+     y="-1.8983051"
+     transform="translate(3.5256569,-2.1694915)"><textPath
        xlink:href="#path6467"
        startOffset="50%"
-       id="textPath6475"><tspan
-   id="tspan6471"
-   style="letter-spacing:1px;">RUDDER    TRIM   </tspan></textPath></text>
+       id="textPath6475"
+       style="font-size:16px;letter-spacing:1px">RUDDER    TRIM    </textPath></text>
   <path
      style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
      d="m 256.08873,284.88095 -6.5227,11.29766 h 13.07804 z"
@@ -2685,8 +2685,8 @@
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333302px;line-height:1.25;font-family:Beteckna;-inkscape-font-specification:Beteckna;text-align:center;letter-spacing:1px;text-anchor:middle;opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
      id="text6482"
-     x="257.01562"
+     x="257.23438"
      y="207.32747"><tspan
-   id="tspan6480"
-   style="letter-spacing:1px;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none">   NOSE LEFT      NOSE RIGHT</tspan></text>
+       id="tspan6480"
+       style="font-size:16px;letter-spacing:1px;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none">   NOSE LEFT      NOSE RIGHT</tspan></text>
 </svg>
